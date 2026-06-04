@@ -982,5 +982,200 @@
       }
     ],
     "timestamp": "2026-06-04T23:34:10.445624"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "He walks through the dark night toward Jade's screams, then stays at her side, holding her hand until dawn breaks over the island.",
+    "thought": "She needed me. That's all that mattered.",
+    "location": {
+      "x": 20,
+      "y": 60
+    },
+    "shelter": "tent",
+    "mood": "protective",
+    "timestamp": "2026-06-04T23:36:08.755026"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He lies awake in his house, staring at the ceiling, listening to the island sounds and wondering where Jade disappeared to.",
+    "thought": "Where is she? Is she safe?",
+    "location": {
+      "x": 45,
+      "y": 50
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-04T23:36:08.755026"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She wakes from nightmares screaming, gasping for breath, then gradually calms as Marcus silently holds her hand through the long night.",
+    "thought": "His hand was warm. He stayed.",
+    "location": {
+      "x": 20,
+      "y": 60
+    },
+    "shelter": "hammock",
+    "mood": "shaken",
+    "timestamp": "2026-06-04T23:36:08.755026"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "jade"
+    ],
+    "description": "In the dark hours before dawn, by Jade's hammock, Marcus's quiet presence slowly steadies her terrified heart.",
+    "dialogue": [
+      {
+        "speaker": "jade",
+        "line": "—screams, gasping, flailing—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're safe. You're here."
+      },
+      {
+        "speaker": "jade",
+        "line": "What... what happened? Where—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Bad dream. You were screaming."
+      },
+      {
+        "speaker": "jade",
+        "line": "How long have you been standing there?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Long enough. Since the first scream."
+      },
+      {
+        "speaker": "jade",
+        "line": "I can't... I can't breathe right. Everything's—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Breathe slowly. In through your nose."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're not usually like this. Helping people."
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. I'm not."
+      },
+      {
+        "speaker": "jade",
+        "line": "Why are you awake anyway? Out here, I mean."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Couldn't sleep. Couldn't stay still."
+      },
+      {
+        "speaker": "jade",
+        "line": "You were thinking about something."
+      },
+      {
+        "speaker": "marcus",
+        "line": "...Yeah."
+      },
+      {
+        "speaker": "jade",
+        "line": "What was I screaming about? Did I say anything?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You were falling. Over and over. Like you couldn't stop."
+      },
+      {
+        "speaker": "jade",
+        "line": "Everything sees me. Everyone always sees."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I see you right now. You're here. You're safe."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's not how this usually works. You, comforting someone."
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. It's not."
+      },
+      {
+        "speaker": "jade",
+        "line": "Don't leave. Not yet."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I won't."
+      },
+      {
+        "speaker": "jade",
+        "line": "What time is it?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Still dark. Few hours to dawn."
+      },
+      {
+        "speaker": "jade",
+        "line": "Will you stay that long? With me?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. I will."
+      },
+      {
+        "speaker": "jade",
+        "line": "Thank you. For coming. For not just ignoring it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I couldn't do that."
+      },
+      {
+        "speaker": "jade",
+        "line": "Why not? You barely know me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know you better than you think."
+      },
+      {
+        "speaker": "jade",
+        "line": "—silence, his hand in hers, the sound of her breathing slowing—"
+      },
+      {
+        "speaker": "jade",
+        "line": "This is strange. Us. Like this."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah."
+      },
+      {
+        "speaker": "jade",
+        "line": "But it doesn't feel bad. It feels... right."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It does."
+      }
+    ],
+    "timestamp": "2026-06-04T23:36:08.755026"
   }
 ]
