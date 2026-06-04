@@ -5,28 +5,28 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 19,
-      "openness": 21,
+      "trust": 22,
+      "openness": 18,
       "ambition": 45,
       "loneliness": 78,
-      "resilience": 87
+      "resilience": 84
     },
-    "mood": "guarded",
+    "mood": "determined",
     "location": {
-      "x": 70,
-      "y": 35
+      "x": 72,
+      "y": 50
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 21,
-        "tension": 16,
+        "closeness": 20,
+        "tension": 15,
         "attraction": 0
       },
       "jade": {
-        "closeness": 18,
-        "tension": 7,
-        "attraction": 5
+        "closeness": 13,
+        "tension": 6,
+        "attraction": 1
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing."
@@ -37,28 +37,28 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 82,
-      "openness": 94,
-      "ambition": 73,
-      "loneliness": 26,
-      "resilience": 38
+      "trust": 76,
+      "openness": 87,
+      "ambition": 70,
+      "loneliness": 33,
+      "resilience": 39
     },
-    "mood": "anxious",
+    "mood": "focused",
     "location": {
-      "x": 45,
+      "x": 48,
       "y": 50
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 21,
-        "tension": 11,
+        "closeness": 20,
+        "tension": 10,
         "attraction": 0
       },
       "jade": {
-        "closeness": 33,
-        "tension": 6,
-        "attraction": 18
+        "closeness": 20,
+        "tension": 5,
+        "attraction": 8
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier."
@@ -69,28 +69,28 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 66,
-      "openness": 84,
+      "trust": 59,
+      "openness": 75,
       "ambition": 40,
-      "loneliness": 27,
-      "resilience": 62
+      "loneliness": 40,
+      "resilience": 60
     },
-    "mood": "tender",
+    "mood": "hopeful",
     "location": {
       "x": 25,
-      "y": 55
+      "y": 60
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 18,
-        "tension": 7,
-        "attraction": 5
+        "closeness": 13,
+        "tension": 6,
+        "attraction": 1
       },
       "ryan": {
-        "closeness": 33,
-        "tension": 6,
-        "attraction": 13
+        "closeness": 20,
+        "tension": 5,
+        "attraction": 3
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't."

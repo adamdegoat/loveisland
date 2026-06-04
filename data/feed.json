@@ -1,1381 +1,185 @@
 [
   {
     "day": 1,
-    "cycle": "dawn",
+    "cycle": "night",
     "character": "marcus",
-    "action": "He steps out of his tent, watching the island wake in silence, noticing smoke already rising from the central fire.",
-    "thought": "They're awake already. This is going to be hard.",
+    "action": "He returns from the east in darkness, soaked through, carrying a waterskin heavy with fresh water.",
+    "thought": "She looked at me like I mattered.",
     "location": {
-      "x": 75,
-      "y": 45
-    },
-    "shelter": "tent",
-    "mood": "watchful",
-    "timestamp": "2026-06-04T23:27:26.426499"
-  },
-  {
-    "day": 1,
-    "cycle": "dawn",
-    "character": "ryan",
-    "action": "He arranges stones for a fire pit outside his house, moving with purpose, already planning the day ahead.",
-    "thought": "Everything feels possible suddenly. Maybe this was right.",
-    "location": {
-      "x": 50,
+      "x": 72,
       "y": 50
     },
-    "shelter": "house",
-    "mood": "hopeful",
-    "timestamp": "2026-06-04T23:27:26.426499"
-  },
-  {
-    "day": 1,
-    "cycle": "dawn",
-    "character": "jade",
-    "action": "She stretches in her hammock, watching the light change, feeling the weight and realness of where she is.",
-    "thought": "It felt like a dream. Now sun's rising.",
-    "location": {
-      "x": 30,
-      "y": 55
-    },
-    "shelter": "hammock",
-    "mood": "uncertain",
-    "timestamp": "2026-06-04T23:27:26.426499"
-  },
-  {
-    "day": 1,
-    "cycle": "dawn",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade"
-    ],
-    "description": "Ryan encounters Jade near the beach at dawn. The island is quiet, the air cool and fresh.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "You're up early."
-      },
-      {
-        "speaker": "jade",
-        "line": "Couldn't really sleep."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah. I've been awake since about three."
-      },
-      {
-        "speaker": "jade",
-        "line": "You look like the type who wakes at three."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Is that supposed to be a compliment?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Just an observation. You built that house?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Started it yesterday. Wanted something solid before the heat gets bad."
-      },
-      {
-        "speaker": "jade",
-        "line": "It's nice. Practical."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Thanks. I can help with your hammock setup if you need—"
-      },
-      {
-        "speaker": "jade",
-        "line": "It's fine. Really."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Right. Okay. What's your shelter like then?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Two palms on the west side. It's peaceful."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That sounds good. Quiet."
-      },
-      {
-        "speaker": "jade",
-        "line": "Until you remember you're stuck here with two strangers."
-      },
-      {
-        "speaker": "ryan",
-        "line": "We don't have to stay strangers."
-      },
-      {
-        "speaker": "jade",
-        "line": "That's very eager of you."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Is that a bad thing?"
-      },
-      {
-        "speaker": "jade",
-        "line": "No. Just hopeful. I'm not used to hopeful."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Even on day one?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Especially on day one. That's when it all feels possible."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Then let's keep it that way. Let's find out who we are together."
-      },
-      {
-        "speaker": "jade",
-        "line": "You talk like you've thought about this before."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I haven't. Not about this, specifically. But I believe in trying."
-      },
-      {
-        "speaker": "jade",
-        "line": "That might be the bravest thing about you."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Or the stupidest."
-      },
-      {
-        "speaker": "jade",
-        "line": "Maybe both. I should go. Walk around. Think."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Okay. But if you need anything, I'm here."
-      },
-      {
-        "speaker": "jade",
-        "line": "I know. That's what worries me."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Why would that worry you?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Because I might actually take you up on it."
-      }
-    ],
-    "timestamp": "2026-06-04T23:27:26.426499"
-  },
-  {
-    "day": 1,
-    "cycle": "morning",
-    "character": "marcus",
-    "action": "He constructs a shelter extension from driftwood and palm fronds, methodical and alone.",
-    "thought": "I don't know why I keep looking.",
-    "location": {
-      "x": 75,
-      "y": 40
-    },
     "shelter": "tent",
-    "mood": "withdrawn",
-    "timestamp": "2026-06-04T23:29:09.186944"
+    "mood": "determined",
+    "timestamp": "2026-06-04T23:54:29.825879"
   },
   {
     "day": 1,
-    "cycle": "morning",
+    "cycle": "night",
     "character": "ryan",
-    "action": "He gathers fruit from the inland palms and fills water gourds, eager to return to the beach.",
-    "thought": "She's different. Don't mess this up.",
-    "location": {
-      "x": 50,
-      "y": 30
-    },
-    "shelter": "house",
-    "mood": "hopeful",
-    "timestamp": "2026-06-04T23:29:09.186944"
-  },
-  {
-    "day": 1,
-    "cycle": "morning",
-    "character": "jade",
-    "action": "She wades in the shallows near the palm grove, letting the morning cool her skin.",
-    "thought": "He's too much and somehow not enough.",
-    "location": {
-      "x": 40,
-      "y": 70
-    },
-    "shelter": "hammock",
-    "mood": "uncertain",
-    "timestamp": "2026-06-04T23:29:09.186944"
-  },
-  {
-    "day": 1,
-    "cycle": "morning",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade"
-    ],
-    "description": "By the calm beach in morning light, Ryan finds Jade standing in the shallows, watching the horizon. He approaches with water and fruit, an offering.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "Morning. Couldn't sleep?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Few hours. You?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Since sunrise. Couldn't stop thinking."
-      },
-      {
-        "speaker": "jade",
-        "line": "About?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "About you being at peace on the beach."
-      },
-      {
-        "speaker": "jade",
-        "line": "I felt safe there. Quiet."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's rare for you?"
-      },
-      {
-        "speaker": "jade",
-        "line": "I'm usually in my head too much."
-      },
-      {
-        "speaker": "ryan",
-        "line": "And now?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Now someone's here. You're intense."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Fair. I get attached quick. It's a problem."
-      },
-      {
-        "speaker": "jade",
-        "line": "Is it?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "My friends say so. But I can't help it."
-      },
-      {
-        "speaker": "jade",
-        "line": "What do you like about me?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "You're not pretending. Most people do."
-      },
-      {
-        "speaker": "jade",
-        "line": "I don't know how yet. Just being."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Exactly. It's real."
-      },
-      {
-        "speaker": "jade",
-        "line": "Or broken. You'll figure that out."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Maybe. But not today."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're sure?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'm curious. That's all I've got."
-      },
-      {
-        "speaker": "jade",
-        "line": "Curiosity's dangerous here."
-      },
-      {
-        "speaker": "ryan",
-        "line": "So is loneliness. Which scares you more?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Connection scares me. Solitude doesn't."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Then let's go slow."
-      },
-      {
-        "speaker": "jade",
-        "line": "Can you actually do that?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'll try. For you."
-      },
-      {
-        "speaker": "jade",
-        "line": "That's sweet and impossible."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Why impossible?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Because you're already in deep."
-      },
-      {
-        "speaker": "ryan",
-        "line": "So are you."
-      },
-      {
-        "speaker": "jade",
-        "line": "I'm trying not to be."
-      }
-    ],
-    "timestamp": "2026-06-04T23:29:09.186944"
-  },
-  {
-    "day": 1,
-    "cycle": "midday",
-    "character": "marcus",
-    "action": "He finds his way to the stream despite himself, drawn by the sound of water and voices.",
-    "thought": "She was right. I hate being seen.",
-    "location": {
-      "x": 40,
-      "y": 42
-    },
-    "shelter": "tent",
-    "mood": "guarded",
-    "timestamp": "2026-06-04T23:31:04.209553"
-  },
-  {
-    "day": 1,
-    "cycle": "midday",
-    "character": "ryan",
-    "action": "He leads the way to the cool stream, moving with purpose, hoping this time everyone will stay.",
-    "thought": "If I stay patient, maybe he'll come around.",
+    "action": "He's finishing repairs to his house roof, using the last light before darkness falls completely.",
+    "thought": "Shelter means safety. Shelter means I belong.",
     "location": {
       "x": 48,
-      "y": 45
-    },
-    "shelter": "house",
-    "mood": "warm",
-    "timestamp": "2026-06-04T23:31:04.209553"
-  },
-  {
-    "day": 1,
-    "cycle": "midday",
-    "character": "jade",
-    "action": "She follows the sound of water inland, her bare feet silent, moving toward something she can't name.",
-    "thought": "They both scare me. But maybe that's okay.",
-    "location": {
-      "x": 45,
       "y": 50
     },
-    "shelter": "hammock",
-    "mood": "thoughtful",
-    "timestamp": "2026-06-04T23:31:04.209553"
+    "shelter": "house",
+    "mood": "focused",
+    "timestamp": "2026-06-04T23:54:29.825879"
   },
   {
     "day": 1,
-    "cycle": "midday",
+    "cycle": "night",
+    "character": "jade",
+    "action": "She sits by her hammock as night falls, fingers tracing the rope knots, thinking about thirst.",
+    "thought": "Without water, we're actually finished, aren't we?",
+    "location": {
+      "x": 25,
+      "y": 60
+    },
+    "shelter": "hammock",
+    "mood": "hopeful",
+    "timestamp": "2026-06-04T23:54:29.825879"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
     "type": "interaction",
     "characters": [
-      "ryan",
       "marcus",
       "jade"
     ],
-    "description": "By a hidden stream in the island's center, Ryan, Marcus, and Jade find themselves in their first real conversation, each learning that the other is more tender than they seemed.",
+    "description": "Marcus returns from his exploration soaked and carrying water. Jade is at her hammock, and in the gathering dark, they talk—his matter-of-fact discovery and her quiet gratitude slowly breaking through his walls.",
     "dialogue": [
       {
-        "speaker": "ryan",
-        "line": "Water's cold up there. Come on, get out of the heat."
+        "speaker": "jade",
+        "line": "I was starting to worry. You've been gone all day."
       },
       {
         "speaker": "marcus",
-        "line": "Didn't know it was an invitation-only thing."
-      },
-      {
-        "speaker": "ryan",
-        "line": "It's not. I just meant—"
+        "line": "Went exploring. Found something."
       },
       {
         "speaker": "jade",
-        "line": "Is there really water?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah, fresh stream. Come here."
+        "line": "What? You look soaked."
       },
       {
         "speaker": "marcus",
-        "line": "You two seem to have plans already."
+        "line": "Water. Freshwater spring, east side, past the rocks."
       },
       {
         "speaker": "jade",
-        "line": "Do we?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "No, I just—Marcus, you should come. Both of you."
+        "line": "You're serious? We have water?"
       },
       {
         "speaker": "marcus",
-        "line": "I'm here, aren't I?"
+        "line": "You're welcome."
       },
       {
         "speaker": "jade",
-        "line": "This is nice. Quiet."
+        "line": "No, I—sorry. That came out wrong. How did you even find it?"
       },
       {
         "speaker": "marcus",
-        "line": "Won't last."
+        "line": "Listened. Most things flow downhill. Took a while."
       },
       {
-        "speaker": "ryan",
-        "line": "You're always so optimistic."
+        "speaker": "jade",
+        "line": "You did this alone. At night. For us."
       },
       {
         "speaker": "marcus",
-        "line": "About what?"
+        "line": "For you, specifically? No. For water, yes."
       },
       {
         "speaker": "jade",
-        "line": "About the future. About us."
+        "line": "Don't do that. Don't push it away."
       },
       {
         "speaker": "marcus",
-        "line": "There is no us. There's just three people on an island."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's not true though, is it?"
+        "line": "I'm not pushing anything. I'm being honest."
       },
       {
         "speaker": "jade",
-        "line": "What does it have to be?"
+        "line": "You could have told Ryan. Let him help."
       },
       {
         "speaker": "marcus",
-        "line": "I don't know."
-      },
-      {
-        "speaker": "ryan",
-        "line": "For what it's worth, I'm glad you're both here."
+        "line": "I work better alone."
       },
       {
         "speaker": "jade",
-        "line": "Even if it's complicated?"
+        "line": "I know. But you didn't have to."
       },
       {
         "speaker": "marcus",
-        "line": "Especially because it's complicated. No. That came out wrong."
-      },
-      {
-        "speaker": "ryan",
-        "line": "No, I think you meant it though."
+        "line": "You did."
       },
       {
         "speaker": "jade",
-        "line": "I know what he means. This matters because it's real."
+        "line": "Did what?"
       },
       {
         "speaker": "marcus",
-        "line": "And that's worse."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Why would it be worse?"
+        "line": "Need it. Water. So I found it."
       },
       {
         "speaker": "jade",
-        "line": "Because real things can break."
+        "line": "There's something else you're not saying."
       },
       {
         "speaker": "marcus",
-        "line": "Exactly."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Things can also heal. If you let them."
+        "line": "Maybe I just wanted to be useful."
       },
       {
         "speaker": "jade",
-        "line": "Maybe we should try that."
+        "line": "You're useful. You always are."
       },
       {
         "speaker": "marcus",
-        "line": "Or maybe we should focus on basics. Water, shelter, food."
+        "line": "Doesn't feel like it here."
       },
       {
-        "speaker": "ryan",
-        "line": "We can do both."
+        "speaker": "jade",
+        "line": "What do you mean?"
       },
       {
         "speaker": "marcus",
-        "line": "You think everything's possible."
+        "line": "I'm just... not used to this. Being around people."
       },
       {
         "speaker": "jade",
-        "line": "It is, until it isn't."
-      },
-      {
-        "speaker": "ryan",
-        "line": "So we just... go day by day?"
+        "line": "You're doing fine."
       },
       {
         "speaker": "marcus",
-        "line": "That's all anyone can do."
+        "line": "You don't have to say that."
       },
       {
         "speaker": "jade",
-        "line": "That's actually kind of beautiful."
+        "line": "I'm not saying it to be nice. You found water when we were all panicking."
       },
       {
         "speaker": "marcus",
-        "line": "It's not beautiful. It's survival."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Maybe it's both."
+        "line": "Ryan wasn't panicking."
       },
       {
         "speaker": "jade",
-        "line": "Come on. The sun's shifting. We should find dinner."
-      }
-    ],
-    "timestamp": "2026-06-04T23:31:04.209553"
-  },
-  {
-    "day": 1,
-    "cycle": "afternoon",
-    "character": "marcus",
-    "action": "He walked to the eastern edge of the island and began cutting firewood with mechanical precision, each swing harder than necessary.",
-    "thought": "I shouldn't have said that much. Now I can't take it back.",
-    "location": {
-      "x": 72,
-      "y": 28
-    },
-    "shelter": "tent",
-    "mood": "withdrawn",
-    "timestamp": "2026-06-04T23:32:19.071339"
-  },
-  {
-    "day": 1,
-    "cycle": "afternoon",
-    "character": "ryan",
-    "action": "He gathered water from the stream and found himself collecting smooth stones from the beach, arranging them in a small pattern near the rocks.",
-    "thought": "I can't stop thinking about her. The way she looked at me when I was talking.",
-    "location": {
-      "x": 48,
-      "y": 55
-    },
-    "shelter": "house",
-    "mood": "hopeful",
-    "timestamp": "2026-06-04T23:32:19.071339"
-  },
-  {
-    "day": 1,
-    "cycle": "afternoon",
-    "character": "jade",
-    "action": "She walked the western shore alone, her feet tracing the line where water meets sand, turning over the morning's conversation in her mind.",
-    "thought": "They're both so different. One scares me open. One scares me closed.",
-    "location": {
-      "x": 32,
-      "y": 48
-    },
-    "shelter": "hammock",
-    "mood": "conflicted",
-    "timestamp": "2026-06-04T23:32:19.071339"
-  },
-  {
-    "day": 1,
-    "cycle": "afternoon",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade"
-    ],
-    "description": "By the rocks on the southern shore, Ryan encounters Jade as she walks back from her solitary wandering. The afternoon light is golden and soft.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "I was hoping I'd run into you."
-      },
-      {
-        "speaker": "jade",
-        "line": "Were you. Or did you arrange the stones?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Is that weird? I just wanted to do something."
-      },
-      {
-        "speaker": "jade",
-        "line": "They're beautiful. The stones are beautiful."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Sit with me? Just for a bit?"
-      },
-      {
-        "speaker": "jade",
-        "line": "People don't usually ask. They just assume."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I want to ask. I want to know what you want."
-      },
-      {
-        "speaker": "jade",
-        "line": "I want to sit. Yes. Just not too close yet."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Okay. Not too close."
-      },
-      {
-        "speaker": "jade",
-        "line": "This morning was a lot. You and me and Marcus, all at once."
-      },
-      {
-        "speaker": "ryan",
-        "line": "He was real though. I've never seen him like that."
-      },
-      {
-        "speaker": "jade",
-        "line": "It scared me. How much he meant what he said."
-      },
-      {
-        "speaker": "ryan",
-        "line": "He doesn't talk much. When he does, you listen."
-      },
-      {
-        "speaker": "jade",
-        "line": "He's hurt. I think he's been hurt a long time."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Maybe. Or maybe he's just been alone."
-      },
-      {
-        "speaker": "jade",
-        "line": "Are they the same thing?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "I don't think so. Not if you're like us."
-      },
-      {
-        "speaker": "jade",
-        "line": "Can you be alone without being hurt?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "No. Not really. Not if you feel things."
-      },
-      {
-        "speaker": "jade",
-        "line": "How are you so sure about what people feel?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'm not. I'm just open. I pay attention."
-      },
-      {
-        "speaker": "jade",
-        "line": "That's a gift. Or a curse. I haven't decided."
-      },
-      {
-        "speaker": "ryan",
-        "line": "It's lonely sometimes. Seeing people and feeling nothing."
-      },
-      {
-        "speaker": "jade",
-        "line": "You feel things."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Around you I do."
-      },
-      {
-        "speaker": "jade",
-        "line": "Don't say that."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Why not? It's true."
-      },
-      {
-        "speaker": "jade",
-        "line": "Because I don't know what I feel back. And I don't want to hurt you."
-      },
-      {
-        "speaker": "ryan",
-        "line": "What if I'm okay with not knowing yet?"
-      },
-      {
-        "speaker": "jade",
-        "line": "No one's ever been okay with that. With me."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Then I guess I'm not like everyone else."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're not."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Is that good?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Ask me tomorrow."
-      }
-    ],
-    "timestamp": "2026-06-04T23:32:19.071339"
-  },
-  {
-    "day": 1,
-    "cycle": "evening",
-    "character": "marcus",
-    "action": "He sits on a rock overlooking the darkening water, arms crossed, replaying words from the stream.",
-    "thought": "I said too much. Shouldn't have.",
-    "location": {
-      "x": 78,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "withdrawn",
-    "timestamp": "2026-06-04T23:34:10.445624"
-  },
-  {
-    "day": 1,
-    "cycle": "evening",
-    "character": "ryan",
-    "action": "He arranges stones in a circle for a fire, working steadily, not quite focused on the task.",
-    "thought": "She felt it too. I'm sure.",
-    "location": {
-      "x": 48,
-      "y": 50
-    },
-    "shelter": "house",
-    "mood": "hopeful",
-    "timestamp": "2026-06-04T23:34:10.445624"
-  },
-  {
-    "day": 1,
-    "cycle": "evening",
-    "character": "jade",
-    "action": "She gathers driftwood slowly, moving through the beach as light turns golden, lost in thought.",
-    "thought": "Being seen. Being wanted. It's too much.",
-    "location": {
-      "x": 35,
-      "y": 45
-    },
-    "shelter": "hammock",
-    "mood": "conflicted",
-    "timestamp": "2026-06-04T23:34:10.445624"
-  },
-  {
-    "day": 1,
-    "cycle": "evening",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade"
-    ],
-    "description": "By a clearing near the freshwater stream, as evening settles into dusk, Ryan and Jade find themselves together, and the careful distance between them collapses.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "Hey. You okay? Big day."
-      },
-      {
-        "speaker": "jade",
-        "line": "Yeah. Just processing."
-      },
-      {
-        "speaker": "ryan",
-        "line": "What happened at the rocks? You went quiet."
-      },
-      {
-        "speaker": "jade",
-        "line": "Wasn't quiet. Thinking. Different thing."
-      },
-      {
-        "speaker": "ryan",
-        "line": "About?"
-      },
-      {
-        "speaker": "jade",
-        "line": "You. Him. What we are."
-      },
-      {
-        "speaker": "ryan",
-        "line": "And?"
-      },
-      {
-        "speaker": "jade",
-        "line": "I don't know yet."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Fair. I keep replaying everything from the stream."
-      },
-      {
-        "speaker": "jade",
-        "line": "Marcus was so exposed today."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah. He doesn't usually do that."
-      },
-      {
-        "speaker": "jade",
-        "line": "You can feel how much it costs him."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Maybe that's why it matters when he does."
-      },
-      {
-        "speaker": "jade",
-        "line": "He seems so alone though. Even with us."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Maybe he likes it that way."
-      },
-      {
-        "speaker": "jade",
-        "line": "Nobody likes being alone."
-      },
-      {
-        "speaker": "ryan",
-        "line": "No. They don't."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Jade. Can I be honest with you?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Please."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Today changed something for me. Seeing you."
-      },
-      {
-        "speaker": "jade",
-        "line": "Ryan..."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'm not asking for anything. You should know."
-      },
-      {
-        "speaker": "jade",
-        "line": "That's a lot for one day."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I know."
-      },
-      {
-        "speaker": "jade",
-        "line": "Do you though?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "I do. And I'm fine with slow."
-      },
-      {
-        "speaker": "jade",
-        "line": "I'm not used to being wanted. By more than one person."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Are you wanted by Marcus too?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Not like that. But he looks confused by me."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You confuse everyone. Me too, honestly."
-      },
-      {
-        "speaker": "jade",
-        "line": "Good confused or bad?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Good. Really good."
-      },
-      {
-        "speaker": "jade",
-        "line": "Ryan, I don't want to hurt anyone."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You won't."
-      },
-      {
-        "speaker": "jade",
-        "line": "You can't know that."
-      },
-      {
-        "speaker": "ryan",
-        "line": "No. But we're here for a while. We have time."
-      },
-      {
-        "speaker": "jade",
-        "line": "What if I hurt myself?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's the real risk. And it's honest."
-      },
-      {
-        "speaker": "jade",
-        "line": "I need to sit with this. Not think. Just sit."
+        "line": "No, but I was. And you noticed."
       },
       {
-        "speaker": "ryan",
-        "line": "I can sit with you if you want."
+        "speaker": "marcus",
+        "line": "Yeah."
       },
       {
         "speaker": "jade",
         "line": "Yeah?"
       },
       {
-        "speaker": "ryan",
-        "line": "Yeah. Right here."
+        "speaker": "marcus",
+        "line": "Yeah. I noticed."
       }
     ],
-    "timestamp": "2026-06-04T23:34:10.445624"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "character": "marcus",
-    "action": "He walks through the dark night toward Jade's screams, then stays at her side, holding her hand until dawn breaks over the island.",
-    "thought": "She needed me. That's all that mattered.",
-    "location": {
-      "x": 20,
-      "y": 60
-    },
-    "shelter": "tent",
-    "mood": "protective",
-    "timestamp": "2026-06-04T23:36:08.755026"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "character": "ryan",
-    "action": "He lies awake in his house, staring at the ceiling, listening to the island sounds and wondering where Jade disappeared to.",
-    "thought": "Where is she? Is she safe?",
-    "location": {
-      "x": 45,
-      "y": 50
-    },
-    "shelter": "house",
-    "mood": "anxious",
-    "timestamp": "2026-06-04T23:36:08.755026"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "character": "jade",
-    "action": "She wakes from nightmares screaming, gasping for breath, then gradually calms as Marcus silently holds her hand through the long night.",
-    "thought": "His hand was warm. He stayed.",
-    "location": {
-      "x": 20,
-      "y": 60
-    },
-    "shelter": "hammock",
-    "mood": "shaken",
-    "timestamp": "2026-06-04T23:36:08.755026"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "type": "interaction",
-    "characters": [
-      "marcus",
-      "jade"
-    ],
-    "description": "In the dark hours before dawn, by Jade's hammock, Marcus's quiet presence slowly steadies her terrified heart.",
-    "dialogue": [
-      {
-        "speaker": "jade",
-        "line": "—screams, gasping, flailing—"
-      },
-      {
-        "speaker": "marcus",
-        "line": "You're safe. You're here."
-      },
-      {
-        "speaker": "jade",
-        "line": "What... what happened? Where—"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Bad dream. You were screaming."
-      },
-      {
-        "speaker": "jade",
-        "line": "How long have you been standing there?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Long enough. Since the first scream."
-      },
-      {
-        "speaker": "jade",
-        "line": "I can't... I can't breathe right. Everything's—"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Breathe slowly. In through your nose."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're not usually like this. Helping people."
-      },
-      {
-        "speaker": "marcus",
-        "line": "No. I'm not."
-      },
-      {
-        "speaker": "jade",
-        "line": "Why are you awake anyway? Out here, I mean."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Couldn't sleep. Couldn't stay still."
-      },
-      {
-        "speaker": "jade",
-        "line": "You were thinking about something."
-      },
-      {
-        "speaker": "marcus",
-        "line": "...Yeah."
-      },
-      {
-        "speaker": "jade",
-        "line": "What was I screaming about? Did I say anything?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "You were falling. Over and over. Like you couldn't stop."
-      },
-      {
-        "speaker": "jade",
-        "line": "Everything sees me. Everyone always sees."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I see you right now. You're here. You're safe."
-      },
-      {
-        "speaker": "jade",
-        "line": "That's not how this usually works. You, comforting someone."
-      },
-      {
-        "speaker": "marcus",
-        "line": "No. It's not."
-      },
-      {
-        "speaker": "jade",
-        "line": "Don't leave. Not yet."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I won't."
-      },
-      {
-        "speaker": "jade",
-        "line": "What time is it?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Still dark. Few hours to dawn."
-      },
-      {
-        "speaker": "jade",
-        "line": "Will you stay that long? With me?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah. I will."
-      },
-      {
-        "speaker": "jade",
-        "line": "Thank you. For coming. For not just ignoring it."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I couldn't do that."
-      },
-      {
-        "speaker": "jade",
-        "line": "Why not? You barely know me."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I know you better than you think."
-      },
-      {
-        "speaker": "jade",
-        "line": "—silence, his hand in hers, the sound of her breathing slowing—"
-      },
-      {
-        "speaker": "jade",
-        "line": "This is strange. Us. Like this."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah."
-      },
-      {
-        "speaker": "jade",
-        "line": "But it doesn't feel bad. It feels... right."
-      },
-      {
-        "speaker": "marcus",
-        "line": "It does."
-      }
-    ],
-    "timestamp": "2026-06-04T23:36:08.755026"
-  },
-  {
-    "day": 2,
-    "cycle": "morning",
-    "character": "marcus",
-    "action": "Wakes before dawn and walks to the stream alone, moving carefully away from the hammocks.",
-    "thought": "Shouldn't have stayed. She needed it.",
-    "location": {
-      "x": 70,
-      "y": 35
-    },
-    "shelter": "tent",
-    "mood": "guarded",
-    "timestamp": "2026-06-04T23:49:52.086030"
-  },
-  {
-    "day": 2,
-    "cycle": "morning",
-    "character": "ryan",
-    "action": "Wakes in his house and looks out toward Jade's hammock, finding it empty, unease settling in.",
-    "thought": "Where was she all night? Something's shifted.",
-    "location": {
-      "x": 45,
-      "y": 50
-    },
-    "shelter": "house",
-    "mood": "anxious",
-    "timestamp": "2026-06-04T23:49:52.086030"
-  },
-  {
-    "day": 2,
-    "cycle": "morning",
-    "character": "jade",
-    "action": "Stirs in her hammock as dawn breaks, reaching for a warmth that's no longer there.",
-    "thought": "His warmth was real. Now I'm alone again.",
-    "location": {
-      "x": 25,
-      "y": 55
-    },
-    "shelter": "hammock",
-    "mood": "tender",
-    "timestamp": "2026-06-04T23:49:52.086030"
-  },
-  {
-    "day": 2,
-    "cycle": "morning",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade",
-      "marcus"
-    ],
-    "description": "At the freshwater stream in early morning light, Ryan finds Jade and Marcus together, creating unexpected tension as unspoken truths linger between them.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "Jade! I was looking for you everywhere this morning."
-      },
-      {
-        "speaker": "jade",
-        "line": "I just woke up early. Needed some air."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You look different. What happened?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Nothing happened. I'm just tired."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Morning."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Oh. Hey, Marcus. You're up early too."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Jade, you weren't at your hammock. Where were you all night?"
-      },
-      {
-        "speaker": "jade",
-        "line": "I couldn't sleep, so I went walking. Cleared my head."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Saw her down by the shore. Early morning."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You saw her? Like you were both..."
-      },
-      {
-        "speaker": "jade",
-        "line": "I went for a walk. He was getting water probably."
-      },
-      {
-        "speaker": "marcus",
-        "line": "That's right."
-      },
-      {
-        "speaker": "ryan",
-        "line": "At the same time. In the dark."
-      },
-      {
-        "speaker": "jade",
-        "line": "I felt safer after that. That's all."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Safer? Because of what?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Just... I wasn't alone anymore. It helped."
-      },
-      {
-        "speaker": "marcus",
-        "line": "We should collect firewood. Weather's going to shift."
-      },
-      {
-        "speaker": "ryan",
-        "line": "No. Jade, tell me what happened between you two."
-      },
-      {
-        "speaker": "jade",
-        "line": "Nothing happened. He was just there."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I didn't do anything. She just needed company."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That doesn't sound like you, Marcus."
-      },
-      {
-        "speaker": "jade",
-        "line": "Well, he did. And I'm grateful."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You should sleep better tonight."
-      },
-      {
-        "speaker": "ryan",
-        "line": "What does that mean?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Why are you doing this, Ryan? Why are you angry?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Because something's changed. I can feel it."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Nothing's changed. We're all still here."
-      },
-      {
-        "speaker": "jade",
-        "line": "Everything changed for me. Last night."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Because of him."
-      },
-      {
-        "speaker": "jade",
-        "line": "Because I felt safe. Because I'm not as alone."
-      },
-      {
-        "speaker": "marcus",
-        "line": "That's all it was."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Then why won't you both just say what happened?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Because there's nothing to say. Just feelings."
-      },
-      {
-        "speaker": "marcus",
-        "line": "We're going to be here a long time. We need to look out for each other."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Is that what you're calling it?"
-      }
-    ],
-    "timestamp": "2026-06-04T23:49:52.086030"
+    "timestamp": "2026-06-04T23:54:29.825879"
   }
 ]
