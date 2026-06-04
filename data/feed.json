@@ -173,5 +173,188 @@
       }
     ],
     "timestamp": "2026-06-04T23:27:26.426499"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "He constructs a shelter extension from driftwood and palm fronds, methodical and alone.",
+    "thought": "I don't know why I keep looking.",
+    "location": {
+      "x": 75,
+      "y": 40
+    },
+    "shelter": "tent",
+    "mood": "withdrawn",
+    "timestamp": "2026-06-04T23:29:09.186944"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "He gathers fruit from the inland palms and fills water gourds, eager to return to the beach.",
+    "thought": "She's different. Don't mess this up.",
+    "location": {
+      "x": 50,
+      "y": 30
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-04T23:29:09.186944"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "She wades in the shallows near the palm grove, letting the morning cool her skin.",
+    "thought": "He's too much and somehow not enough.",
+    "location": {
+      "x": 40,
+      "y": 70
+    },
+    "shelter": "hammock",
+    "mood": "uncertain",
+    "timestamp": "2026-06-04T23:29:09.186944"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade"
+    ],
+    "description": "By the calm beach in morning light, Ryan finds Jade standing in the shallows, watching the horizon. He approaches with water and fruit, an offering.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Morning. Couldn't sleep?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Few hours. You?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Since sunrise. Couldn't stop thinking."
+      },
+      {
+        "speaker": "jade",
+        "line": "About?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "About you being at peace on the beach."
+      },
+      {
+        "speaker": "jade",
+        "line": "I felt safe there. Quiet."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's rare for you?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm usually in my head too much."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And now?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Now someone's here. You're intense."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Fair. I get attached quick. It's a problem."
+      },
+      {
+        "speaker": "jade",
+        "line": "Is it?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "My friends say so. But I can't help it."
+      },
+      {
+        "speaker": "jade",
+        "line": "What do you like about me?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're not pretending. Most people do."
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't know how yet. Just being."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Exactly. It's real."
+      },
+      {
+        "speaker": "jade",
+        "line": "Or broken. You'll figure that out."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe. But not today."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're sure?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm curious. That's all I've got."
+      },
+      {
+        "speaker": "jade",
+        "line": "Curiosity's dangerous here."
+      },
+      {
+        "speaker": "ryan",
+        "line": "So is loneliness. Which scares you more?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Connection scares me. Solitude doesn't."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then let's go slow."
+      },
+      {
+        "speaker": "jade",
+        "line": "Can you actually do that?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'll try. For you."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's sweet and impossible."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Why impossible?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Because you're already in deep."
+      },
+      {
+        "speaker": "ryan",
+        "line": "So are you."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm trying not to be."
+      }
+    ],
+    "timestamp": "2026-06-04T23:29:09.186944"
   }
 ]

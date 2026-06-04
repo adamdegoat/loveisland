@@ -8,13 +8,13 @@
       "trust": 21,
       "openness": 16,
       "ambition": 45,
-      "loneliness": 81,
+      "loneliness": 83,
       "resilience": 83
     },
-    "mood": "watchful",
+    "mood": "withdrawn",
     "location": {
       "x": 75,
-      "y": 45
+      "y": 40
     },
     "shelter": "tent",
     "relationships": {
@@ -37,16 +37,16 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 76,
-      "openness": 87,
-      "ambition": 71,
-      "loneliness": 32,
-      "resilience": 40
+      "trust": 78,
+      "openness": 90,
+      "ambition": 72,
+      "loneliness": 30,
+      "resilience": 39
     },
     "mood": "hopeful",
     "location": {
       "x": 50,
-      "y": 50
+      "y": 30
     },
     "shelter": "house",
     "relationships": {
@@ -56,9 +56,9 @@
         "attraction": 0
       },
       "jade": {
-        "closeness": 21,
-        "tension": 5,
-        "attraction": 9
+        "closeness": 24,
+        "tension": 4,
+        "attraction": 11
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier."
@@ -69,16 +69,16 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 57,
-      "openness": 73,
+      "trust": 59,
+      "openness": 76,
       "ambition": 40,
-      "loneliness": 39,
-      "resilience": 61
+      "loneliness": 37,
+      "resilience": 60
     },
     "mood": "uncertain",
     "location": {
-      "x": 30,
-      "y": 55
+      "x": 40,
+      "y": 70
     },
     "shelter": "hammock",
     "relationships": {
@@ -88,9 +88,9 @@
         "attraction": 0
       },
       "ryan": {
-        "closeness": 21,
-        "tension": 5,
-        "attraction": 4
+        "closeness": 24,
+        "tension": 4,
+        "attraction": 6
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't."
