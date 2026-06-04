@@ -6,27 +6,27 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 19,
-      "openness": 20,
+      "openness": 21,
       "ambition": 45,
-      "loneliness": 80,
+      "loneliness": 78,
       "resilience": 87
     },
-    "mood": "protective",
+    "mood": "guarded",
     "location": {
-      "x": 20,
-      "y": 60
+      "x": 70,
+      "y": 35
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
         "closeness": 21,
-        "tension": 15,
+        "tension": 16,
         "attraction": 0
       },
       "jade": {
-        "closeness": 15,
-        "tension": 8,
-        "attraction": 3
+        "closeness": 18,
+        "tension": 7,
+        "attraction": 5
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing."
@@ -37,11 +37,11 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 83,
-      "openness": 93,
+      "trust": 82,
+      "openness": 94,
       "ambition": 73,
       "loneliness": 26,
-      "resilience": 39
+      "resilience": 38
     },
     "mood": "anxious",
     "location": {
@@ -52,12 +52,12 @@
     "relationships": {
       "marcus": {
         "closeness": 21,
-        "tension": 10,
+        "tension": 11,
         "attraction": 0
       },
       "jade": {
         "closeness": 33,
-        "tension": 5,
+        "tension": 6,
         "attraction": 18
       }
     },
@@ -69,27 +69,27 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 64,
-      "openness": 82,
+      "trust": 66,
+      "openness": 84,
       "ambition": 40,
-      "loneliness": 30,
-      "resilience": 61
+      "loneliness": 27,
+      "resilience": 62
     },
-    "mood": "shaken",
+    "mood": "tender",
     "location": {
-      "x": 20,
-      "y": 60
+      "x": 25,
+      "y": 55
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 15,
-        "tension": 8,
-        "attraction": 3
+        "closeness": 18,
+        "tension": 7,
+        "attraction": 5
       },
       "ryan": {
         "closeness": 33,
-        "tension": 5,
+        "tension": 6,
         "attraction": 13
       }
     },

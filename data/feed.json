@@ -1177,5 +1177,205 @@
       }
     ],
     "timestamp": "2026-06-04T23:36:08.755026"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "Wakes before dawn and walks to the stream alone, moving carefully away from the hammocks.",
+    "thought": "Shouldn't have stayed. She needed it.",
+    "location": {
+      "x": 70,
+      "y": 35
+    },
+    "shelter": "tent",
+    "mood": "guarded",
+    "timestamp": "2026-06-04T23:49:52.086030"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "Wakes in his house and looks out toward Jade's hammock, finding it empty, unease settling in.",
+    "thought": "Where was she all night? Something's shifted.",
+    "location": {
+      "x": 45,
+      "y": 50
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-04T23:49:52.086030"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "Stirs in her hammock as dawn breaks, reaching for a warmth that's no longer there.",
+    "thought": "His warmth was real. Now I'm alone again.",
+    "location": {
+      "x": 25,
+      "y": 55
+    },
+    "shelter": "hammock",
+    "mood": "tender",
+    "timestamp": "2026-06-04T23:49:52.086030"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "marcus"
+    ],
+    "description": "At the freshwater stream in early morning light, Ryan finds Jade and Marcus together, creating unexpected tension as unspoken truths linger between them.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Jade! I was looking for you everywhere this morning."
+      },
+      {
+        "speaker": "jade",
+        "line": "I just woke up early. Needed some air."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You look different. What happened?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Nothing happened. I'm just tired."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Morning."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Oh. Hey, Marcus. You're up early too."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Jade, you weren't at your hammock. Where were you all night?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I couldn't sleep, so I went walking. Cleared my head."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Saw her down by the shore. Early morning."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You saw her? Like you were both..."
+      },
+      {
+        "speaker": "jade",
+        "line": "I went for a walk. He was getting water probably."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's right."
+      },
+      {
+        "speaker": "ryan",
+        "line": "At the same time. In the dark."
+      },
+      {
+        "speaker": "jade",
+        "line": "I felt safer after that. That's all."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Safer? Because of what?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Just... I wasn't alone anymore. It helped."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We should collect firewood. Weather's going to shift."
+      },
+      {
+        "speaker": "ryan",
+        "line": "No. Jade, tell me what happened between you two."
+      },
+      {
+        "speaker": "jade",
+        "line": "Nothing happened. He was just there."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I didn't do anything. She just needed company."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That doesn't sound like you, Marcus."
+      },
+      {
+        "speaker": "jade",
+        "line": "Well, he did. And I'm grateful."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You should sleep better tonight."
+      },
+      {
+        "speaker": "ryan",
+        "line": "What does that mean?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Why are you doing this, Ryan? Why are you angry?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Because something's changed. I can feel it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Nothing's changed. We're all still here."
+      },
+      {
+        "speaker": "jade",
+        "line": "Everything changed for me. Last night."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Because of him."
+      },
+      {
+        "speaker": "jade",
+        "line": "Because I felt safe. Because I'm not as alone."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's all it was."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then why won't you both just say what happened?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Because there's nothing to say. Just feelings."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We're going to be here a long time. We need to look out for each other."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Is that what you're calling it?"
+      }
+    ],
+    "timestamp": "2026-06-04T23:49:52.086030"
   }
 ]
