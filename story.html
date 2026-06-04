@@ -494,15 +494,10 @@ function renderLog() {
         }).join('') +
         cycles[cyc].filter(e=>e.type==='interaction').map(e => {
           const cTag = CYCLE_HOUR_S[cyc]||cyc
-          const arr = Array.isArray(e.dialogue)?e.dialogue:(e.dialogue?[{speaker:(e.characters||['?'])[0],line:e.dialogue}]:[])
-          const preview = arr.slice(0,4)
-          const more = arr.length > 4 ? arr.length - 4 : 0
-          const dlgHtml = preview.map(d=>`<div style="font-size:12px;margin-top:2px"><span style="color:${CHARS[d.speaker]||'#e2e8f0'};font-weight:600">${CHAR_NAMES[d.speaker]||cap(d.speaker||'')}:</span> <em>"${d.line||''}"</em></div>`).join('')
-          const moreHtml = more ? `<div style="font-size:11px;color:var(--muted2);margin-top:3px">+${more} more lines</div>` : ''
           return `<div class="log-entry">
             <div class="log-cycle-tag">${cTag}</div>
             <div class="log-dot" style="background:#475569"></div>
-            <div style="flex:1;color:var(--muted)"><em>${e.description}</em>${dlgHtml?`<br>${dlgHtml}${moreHtml}`:''}</div>
+            <div style="flex:1;color:var(--muted)">${e.description||''}</div>
           </div>`
         }).join('')
       ).join('')}
