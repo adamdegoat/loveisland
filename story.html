@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love Island — Story</title>
+<title>Love Island SG — Story</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#070d18;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.07);
@@ -90,6 +90,7 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 .feed-action{font-size:12px;color:var(--muted);margin-bottom:.35rem;font-style:italic}
 .feed-thought{font-size:13px;color:var(--text);line-height:1.55}
 .feed-dialogue{font-size:13px;color:var(--text);line-height:1.55;font-style:italic}
+.feed-dialogue-line{font-size:13px;color:var(--text);line-height:1.6;margin-top:3px}
 
 /* CHARACTER CARDS */
 .profiles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
@@ -212,7 +213,7 @@ footer span{color:var(--muted);font-weight:600}
   <!-- Back bar -->
   <div class="back-bar">
     <a class="back-btn" href="index.html">← World</a>
-    <span class="back-bar-title">Love Island</span>
+    <span class="back-bar-title">Love Island SG</span>
     <div class="day-badge">
       <span class="day-dot"></span>
       <span id="day-label">Day 1</span>
@@ -276,7 +277,7 @@ footer span{color:var(--muted);font-weight:600}
   </div>
 
   <footer>
-    <p>Love Island · Updated by pressing <span>▶ Run Day</span> on the world page</p>
+    <p>Love Island SG · Updated by pressing <span>▶ Run</span> on the world page</p>
     <p style="margin-top:.4rem">Built with <span>Claude Haiku</span> · Running since Day 1</p>
   </footer>
 
@@ -337,17 +338,36 @@ function setCycle(cycle) {
   renderToday()
 }
 
+const CYCLE_HOUR_S = {dawn:'3am',morning:'7am',midday:'11am',afternoon:'3pm',evening:'7pm',night:'11pm'}
+
+function cycleLabelS(e) {
+  return `Day ${e.day||1} · ${CYCLE_HOUR_S[e.cycle]||e.cycle||''}`
+}
+
+function renderDialogue(dlg, chars) {
+  if(!dlg) return ''
+  const arr = Array.isArray(dlg) ? dlg : [{speaker:(chars||['?'])[0], line:dlg}]
+  return arr.map(d => {
+    const spk = (d.speaker||'').toLowerCase()
+    const col = CHARS[spk]||'#e2e8f0'
+    const nm = CHAR_NAMES[spk]||cap(spk)
+    return `<div class="feed-dialogue-line"><span style="color:${col};font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px">${nm}</span> <span style="font-style:italic">"${d.line||''}"</span></div>`
+  }).join('')
+}
+
 function renderToday() {
   const w = S.world
   const day = w.day
   const cycle = activeCycle || w.cycle || 'morning'
+  const ts = cycleLabelS({day, cycle})
   const entries = S.feed.filter(e => e.day===day && e.cycle===cycle)
   const el = document.getElementById('today-feed')
   if(!entries.length) {
     el.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:1rem 0;text-align:center">No updates for this cycle yet.</div>`
     return
   }
-  el.innerHTML = entries.map((e,idx) => {
+  el.innerHTML = `<div style="font-size:11px;color:var(--muted2);font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:.5rem">${ts}</div>` +
+  entries.map((e,idx) => {
     const color = e.character ? (CHARS[e.character]||'#fff') : '#475569'
     const name = e.character ? (S.chars[e.character]?.name || CHAR_NAMES[e.character]||e.character) : 'Interaction'
     const initials = name.split(' ').map(w=>w[0]).join('')
@@ -359,7 +379,7 @@ function renderToday() {
         ${e.action?`<div class="feed-action">${e.action}</div>`:''}
         ${e.thought?`<div class="feed-thought">"${e.thought}"</div>`:''}
         ${e.description?`<div class="feed-action">${e.description}</div>`:''}
-        ${e.dialogue?`<div class="feed-dialogue">"${e.dialogue}"</div>`:''}
+        ${isInt?renderDialogue(e.dialogue,e.characters):''}
       </div></div>`
   }).join('')
 }
@@ -428,18 +448,23 @@ function renderLog() {
         cycles[cyc].filter(e=>!e.type).map(e => {
           const color = CHARS[e.character]||'#fff'
           const name = S.chars[e.character]?.name || CHAR_NAMES[e.character] || e.character
+          const cTag = CYCLE_HOUR_S[cyc]||cyc
           return `<div class="log-entry">
-            <div class="log-cycle-tag">${cyc}</div>
+            <div class="log-cycle-tag">${cTag}</div>
             <div class="log-dot" style="background:${color}"></div>
             <div style="flex:1"><span style="color:${color};font-weight:600">${name}</span> — ${e.thought||e.action||''}</div>
           </div>`
         }).join('') +
-        cycles[cyc].filter(e=>e.type==='interaction').map(e =>
-          `<div class="log-entry">
-            <div class="log-cycle-tag">${cyc}</div>
+        cycles[cyc].filter(e=>e.type==='interaction').map(e => {
+          const cTag = CYCLE_HOUR_S[cyc]||cyc
+          const arr = Array.isArray(e.dialogue)?e.dialogue:(e.dialogue?[{speaker:(e.characters||['?'])[0],line:e.dialogue}]:[])
+          const dlgHtml = arr.length ? arr.map(d=>`<span style="color:${CHARS[d.speaker]||'#e2e8f0'}">${CHAR_NAMES[d.speaker]||cap(d.speaker||'')}:</span> "${d.line||''}" `).join(' ') : ''
+          return `<div class="log-entry">
+            <div class="log-cycle-tag">${cTag}</div>
             <div class="log-dot" style="background:#475569"></div>
-            <div style="flex:1;color:var(--muted)"><em>${e.description}</em>${e.dialogue?` "${e.dialogue}"`:''}</div>
-          </div>`).join('')
+            <div style="flex:1;color:var(--muted)"><em>${e.description}</em>${dlgHtml?`<br><span style="font-size:12px">${dlgHtml}</span>`:''}</div>
+          </div>`
+        }).join('')
       ).join('')}
     </div>`
   }).join('')
