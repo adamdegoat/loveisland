@@ -4,11 +4,8 @@
     "cycle": "morning",
     "character": "marcus",
     "action": "Climbed to the eastern cliff before sunrise and sat there alone, watching the horizon.",
-    "thought": "Woke up 5am, couldn't sleep anyway. This cliff is good. Nobody comes here.",
-    "location": {
-      "x": 80,
-      "y": 20
-    },
+    "thought": "Woke at five. Couldn't sleep anyway.",
+    "location": {"x": 80, "y": 20},
     "shelter": "tent",
     "mood": "distant",
     "timestamp": "2026-06-04T07:00:00+08:00"
@@ -18,11 +15,8 @@
     "cycle": "morning",
     "character": "ryan",
     "action": "Started laying the foundation for a second room in his house, just in case.",
-    "thought": "Eh, space for one more lah. Never know who might need it. Better to have than not have.",
-    "location": {
-      "x": 50,
-      "y": 50
-    },
+    "thought": "Might as well make room. Someone could use it.",
+    "location": {"x": 50, "y": 50},
     "shelter": "house",
     "mood": "cheerful",
     "timestamp": "2026-06-04T07:00:00+08:00"
@@ -32,11 +26,8 @@
     "cycle": "morning",
     "character": "jade",
     "action": "Slept in until 9am, then walked barefoot down to the shore for a swim.",
-    "thought": "Salt water, quiet beach, no Slack notifications. This is fine actually.",
-    "location": {
-      "x": 18,
-      "y": 80
-    },
+    "thought": "Salt water, quiet beach, no notifications. This is fine.",
+    "location": {"x": 18, "y": 80},
     "shelter": "hammock",
     "mood": "free",
     "timestamp": "2026-06-04T07:00:00+08:00"
@@ -45,12 +36,9 @@
     "day": 1,
     "cycle": "morning",
     "type": "interaction",
-    "characters": [
-      "ryan",
-      "marcus"
-    ],
+    "characters": ["ryan", "marcus"],
     "description": "Ryan spotted Marcus on the cliff and waved up at him. Marcus gave a single nod and looked back at the sea.",
-    "dialogue": "Ryan: 'Eh Marcus! Come down later, I cook dinner! Got extra rice!'",
+    "dialogue": "Come down later — I'm cooking dinner. There's enough for everyone.",
     "timestamp": "2026-06-04T07:05:00+08:00"
   },
   {
@@ -58,107 +46,83 @@
     "cycle": "afternoon",
     "character": "marcus",
     "action": "Gathered driftwood pieces and arranged them near his tent, working methodically without hurrying.",
-    "thought": "Dey all doing their own thing, got their plans. That's fine. The work keeps hands busy enough.",
-    "location": {
-      "x": 78,
-      "y": 35
-    },
+    "thought": "They're all doing their thing. The work keeps the mind quiet.",
+    "location": {"x": 78, "y": 35},
     "shelter": "tent",
     "mood": "guarded",
-    "timestamp": "2026-06-04T20:16:34.242709"
+    "timestamp": "2026-06-04T15:00:00+08:00"
   },
   {
     "day": 1,
     "cycle": "afternoon",
     "character": "ryan",
     "action": "Walked down to the lagoon searching for fresh water and spotted Jade wading near the shallows.",
-    "thought": "Walao, this girl also exploring the water side? Maybe can work together on the water problem, make it easier for everyone lah.",
-    "location": {
-      "x": 45,
-      "y": 72
-    },
+    "thought": "She's over here too. We could actually solve the water problem together.",
+    "location": {"x": 45, "y": 72},
     "shelter": "house",
     "mood": "cheerful",
-    "timestamp": "2026-06-04T20:16:34.242709"
+    "timestamp": "2026-06-04T15:00:00+08:00"
   },
   {
     "day": 1,
     "cycle": "afternoon",
     "character": "jade",
     "action": "Drifted along the lagoon edge, letting the cool water run over her arms and testing the reef beneath.",
-    "thought": "The island doesn't care what we do here. That's what makes it so clean, sia.",
-    "location": {
-      "x": 42,
-      "y": 75
-    },
+    "thought": "The island doesn't care what we do here. That's what makes it feel clean.",
+    "location": {"x": 42, "y": 75},
     "shelter": "hammock",
     "mood": "calm",
-    "timestamp": "2026-06-04T20:16:34.242709"
+    "timestamp": "2026-06-04T15:00:00+08:00"
   },
   {
     "day": 1,
     "cycle": "afternoon",
     "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade"
-    ],
-    "description": "Ryan approached Jade at the lagoon and pointed out a freshwater stream trickling down the rocks; Jade smiled and said they should both bring water back.",
-    "dialogue": "Eh Jade, you see that stream? This place is sibeh set-up already, can?",
-    "timestamp": "2026-06-04T20:16:34.242709"
+    "characters": ["ryan", "jade"],
+    "description": "Ryan pointed out a freshwater stream trickling down the rocks. Jade smiled and said they should both bring water back together.",
+    "dialogue": "Hey, you see that stream? We're actually pretty well set up on this island.",
+    "timestamp": "2026-06-04T15:05:00+08:00"
   },
   {
     "day": 1,
     "cycle": "night",
     "character": "marcus",
     "action": "Sits at the edge of his tent, listening to the island settle into darkness.",
-    "thought": "The work kept the noise down. Now it's just in the head again. She was smiling at him like that, eh. Not his problem, not his business.",
-    "location": {
-      "x": 82,
-      "y": 28
-    },
+    "thought": "The work kept the noise down. Now it's back.",
+    "location": {"x": 82, "y": 28},
     "shelter": "tent",
     "mood": "restless",
-    "timestamp": "2026-06-04T20:22:51.834709"
+    "timestamp": "2026-06-04T23:00:00+08:00"
   },
   {
     "day": 1,
     "cycle": "night",
     "character": "ryan",
     "action": "Lies in his house, turning over the day's moments with Jade, already thinking about tomorrow.",
-    "thought": "She's genuine, that one. Easy to work with. Tomorrow see if can do more together. Steady, don't push it.",
-    "location": {
-      "x": 48,
-      "y": 45
-    },
+    "thought": "She's genuine. Easy to be around. Don't push it.",
+    "location": {"x": 48, "y": 45},
     "shelter": "house",
     "mood": "content",
-    "timestamp": "2026-06-04T20:22:51.834709"
+    "timestamp": "2026-06-04T23:00:00+08:00"
   },
   {
     "day": 1,
     "cycle": "night",
     "character": "jade",
     "action": "Settles into her hammock as the stars appear above the lagoon.",
-    "thought": "No rush, no angle. He's just... there. Present. That's rare one, sia. No expectations at all.",
-    "location": {
-      "x": 22,
-      "y": 68
-    },
+    "thought": "No rush, no angle. Just present. That's rare.",
+    "location": {"x": 22, "y": 68},
     "shelter": "hammock",
     "mood": "peaceful",
-    "timestamp": "2026-06-04T20:22:51.834709"
+    "timestamp": "2026-06-04T23:00:00+08:00"
   },
   {
     "day": 1,
     "cycle": "night",
     "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade"
-    ],
+    "characters": ["ryan", "jade"],
     "description": "As night fell, Ryan walked Jade back toward her hammock and told her they made a solid team on the first day.",
-    "dialogue": "Ryan: We make a decent team already, la.",
-    "timestamp": "2026-06-04T20:22:51.834709"
+    "dialogue": "We make a decent team, you know.",
+    "timestamp": "2026-06-04T23:05:00+08:00"
   }
 ]
