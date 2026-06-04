@@ -33,6 +33,13 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* SVG transitions */
 #sky-bg,#sun-group,#moon-group,#night-stars,#night-overlay{transition:opacity 2.5s ease}
 
+/* ── DAY STAMP ── */
+#day-stamp{position:fixed;top:22px;left:18px;z-index:30;pointer-events:none;line-height:1.15}
+#ds-day{font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;
+  color:rgba(255,255,255,.1);letter-spacing:-1px}
+#ds-cycle{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;
+  color:rgba(255,255,255,.07);letter-spacing:3.5px;text-transform:uppercase}
+
 /* ── CHARACTERS ── */
 .char{position:absolute;z-index:20;transform:translate(-50%,-100%);
   transition:left 2.8s cubic-bezier(.4,0,.2,1),top 2.8s cubic-bezier(.4,0,.2,1)}
@@ -49,7 +56,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #char-jade .nametag{color:#fbcfe8}
 
 /* ── SPEECH BUBBLES (always visible) ── */
-.bubble{position:absolute;bottom:112px;left:50%;transform:translateX(-50%);
+.bubble{position:absolute;bottom:76px;left:50%;transform:translateX(-50%);
   background:rgba(0,0,0,.72);color:#f1f5f9;padding:7px 11px;border-radius:12px;
   font-size:10px;font-weight:600;max-width:165px;min-width:105px;text-align:center;
   line-height:1.45;box-shadow:0 4px 18px rgba(0,0,0,.5);pointer-events:none;
@@ -212,6 +219,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <body>
 <div id="world" class="afternoon">
 <canvas id="stars"></canvas>
+
+<!-- ══ DAY STAMP ══════════════════════════════════════════ -->
+<div id="day-stamp"><div id="ds-day">Day 1</div><div id="ds-cycle">—</div></div>
 
 <!-- ══ WORLD SVG ══════════════════════════════════════════ -->
 <svg id="world-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -450,7 +460,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <div class="bubble-name">Marcus</div>
     <span class="bubble-text" id="thought-marcus">…</span>
   </div>
-  <svg class="char-svg" id="svg-marcus" width="40" height="96" viewBox="-20 -92 40 96">
+  <svg class="char-svg" id="svg-marcus" width="27" height="64" viewBox="-20 -92 40 96">
     <ellipse cx="-7" cy="-2" rx="8.5" ry="3.5" fill="#111827"/>
     <ellipse cx="7" cy="-2" rx="8.5" ry="3.5" fill="#111827"/>
     <rect x="-12" y="-28" width="10.5" height="27" rx="3" fill="#1e2d40"/>
@@ -517,7 +527,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <div class="bubble-name">Ryan</div>
     <span class="bubble-text" id="thought-ryan">…</span>
   </div>
-  <svg class="char-svg" id="svg-ryan" width="40" height="96" viewBox="-20 -92 40 96">
+  <svg class="char-svg" id="svg-ryan" width="27" height="64" viewBox="-20 -92 40 96">
     <ellipse cx="-7" cy="-2" rx="8.5" ry="3.5" fill="#5c3d1e"/>
     <ellipse cx="7" cy="-2" rx="8.5" ry="3.5" fill="#5c3d1e"/>
     <rect x="-12" y="-28" width="10.5" height="27" rx="3" fill="#a08038"/>
@@ -583,7 +593,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <div class="bubble-name">Jade</div>
     <span class="bubble-text" id="thought-jade">…</span>
   </div>
-  <svg class="char-svg" id="svg-jade" width="40" height="96" viewBox="-20 -92 40 96">
+  <svg class="char-svg" id="svg-jade" width="27" height="64" viewBox="-20 -92 40 96">
     <!-- Back hair curls (behind body) -->
     <path d="M -11 -74 C -18 -64 -20 -54 -18 -43 C -16 -33 -20 -25 -18 -14 C -16 -5 -19 1 -17 6" stroke="#1a0804" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M 11 -74 C 18 -64 20 -54 18 -43 C 16 -33 20 -25 18 -14 C 16 -5 19 1 17 6" stroke="#1a0804" stroke-width="9" fill="none" stroke-linecap="round"/>
@@ -842,7 +852,7 @@ function toPos(x,y) {
     safeMaxPct = 88
   } else {
     // Desktop: keep characters clear of right-side chat panel (265px)
-    const charHalf = 44
+    const charHalf = 30
     const safePx = window.innerWidth - 265 - charHalf
     safeMaxPct = Math.min(76, (safePx / window.innerWidth) * 100)
   }
@@ -958,6 +968,8 @@ function updateWorld() {
   const w=S.world
   document.getElementById('day-label').textContent='Day '+(w.day||1)
   document.getElementById('cycle-label').textContent=cap(w.cycle||'')
+  document.getElementById('ds-day').textContent='Day '+(w.day||1)
+  document.getElementById('ds-cycle').textContent=cap(w.cycle||'')
   ;['marcus','ryan','jade'].forEach(cid=>{
     const c=S.chars[cid]; if(!c) return
     const el=document.getElementById('char-'+cid)
@@ -1205,7 +1217,15 @@ async function loadOracle() {
   try {
     const fate = await fetch('data/fate.json?t='+Date.now()).then(r=>r.json())
     document.getElementById('oracle-text').textContent = fate.text || '—'
-    document.getElementById('oracle-choice').textContent = `FATE ${fate.chosen||'?'} · DAY ${fate.day||1}`
+    let timeStr = ''
+    if(fate.revealed_at) {
+      const d = new Date(fate.revealed_at)
+      const sgt = new Date(d.getTime() + d.getTimezoneOffset()*60000 + 8*3600000)
+      const h=sgt.getHours(), m=String(sgt.getMinutes()).padStart(2,'0')
+      const ap=h>=12?'pm':'am', h12=h%12||12
+      timeStr = ` · ${h12}:${m}${ap}`
+    }
+    document.getElementById('oracle-choice').textContent = `FATE ${fate.chosen||'?'} · DAY ${fate.day||1}${timeStr}`
     document.getElementById('oracle-widget').classList.add('open')
   } catch {
     document.getElementById('oracle-text').textContent = 'Fate not yet revealed'
