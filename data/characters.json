@@ -1,0 +1,65 @@
+{
+  "marcus": {
+    "name": "Marcus Tan",
+    "age": 32,
+    "archetype": "loner",
+    "color": "#60a5fa",
+    "scores": {
+      "trust": 22,
+      "openness": 18,
+      "ambition": 45,
+      "loneliness": 78,
+      "resilience": 82
+    },
+    "mood": "distant",
+    "location": { "x": 80, "y": 20 },
+    "shelter": "tent",
+    "relationships": {
+      "ryan": { "closeness": 25, "tension": 15 },
+      "jade": { "closeness": 12, "tension": 8 }
+    },
+    "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing."
+  },
+  "ryan": {
+    "name": "Ryan Lim",
+    "age": 28,
+    "archetype": "builder",
+    "color": "#fbbf24",
+    "scores": {
+      "trust": 75,
+      "openness": 85,
+      "ambition": 70,
+      "loneliness": 35,
+      "resilience": 38
+    },
+    "mood": "cheerful",
+    "location": { "x": 50, "y": 50 },
+    "shelter": "house",
+    "relationships": {
+      "marcus": { "closeness": 25, "tension": 10 },
+      "jade": { "closeness": 45, "tension": 5 }
+    },
+    "bio": "28, ex-property agent. Built a proper house in his first week. Always says 'come lah'. Gets hurt easily but forgives even easier."
+  },
+  "jade": {
+    "name": "Jade Ng",
+    "age": 26,
+    "archetype": "drifter",
+    "color": "#f472b6",
+    "scores": {
+      "trust": 55,
+      "openness": 72,
+      "ambition": 40,
+      "loneliness": 42,
+      "resilience": 60
+    },
+    "mood": "free",
+    "location": { "x": 18, "y": 65 },
+    "shelter": "hammock",
+    "relationships": {
+      "marcus": { "closeness": 12, "tension": 8 },
+      "ryan": { "closeness": 45, "tension": 5 }
+    },
+    "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't."
+  }
+}

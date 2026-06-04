@@ -1,0 +1,44 @@
+[
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "Climbed to the eastern cliff before sunrise and sat there alone, watching the horizon.",
+    "thought": "Woke up 5am, couldn't sleep anyway. This cliff is good. Nobody comes here.",
+    "location": { "x": 80, "y": 20 },
+    "shelter": "tent",
+    "mood": "distant",
+    "timestamp": "2026-06-04T07:00:00+08:00"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "Started laying the foundation for a second room in his house, just in case.",
+    "thought": "Eh, space for one more lah. Never know who might need it. Better to have than not have.",
+    "location": { "x": 50, "y": 50 },
+    "shelter": "house",
+    "mood": "cheerful",
+    "timestamp": "2026-06-04T07:00:00+08:00"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "Slept in until 9am, then walked barefoot down to the shore for a swim.",
+    "thought": "Salt water, quiet beach, no Slack notifications. This is fine actually.",
+    "location": { "x": 18, "y": 80 },
+    "shelter": "hammock",
+    "mood": "free",
+    "timestamp": "2026-06-04T07:00:00+08:00"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": ["ryan", "marcus"],
+    "description": "Ryan spotted Marcus on the cliff and waved up at him. Marcus gave a single nod and looked back at the sea.",
+    "dialogue": "Ryan: 'Eh Marcus! Come down later, I cook dinner! Got extra rice!'",
+    "timestamp": "2026-06-04T07:05:00+08:00"
+  }
+]

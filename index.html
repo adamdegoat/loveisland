@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Island — A Living Simulation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#070d18; --card:rgba(255,255,255,.04); --border:rgba(255,255,255,.07);
+  --text:#e2e8f0; --muted:#64748b; --muted2:#475569;
+  --marcus:#60a5fa; --ryan:#fbbf24; --jade:#f472b6;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:14px;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(ellipse at 80% 0%,rgba(96,165,250,.07) 0%,transparent 50%),
+  radial-gradient(ellipse at 20% 100%,rgba(244,114,182,.06) 0%,transparent 50%);
+  min-height:100vh}
+.hidden{display:none!important}
+h1,h2,h3{font-family:'Playfair Display',serif}
+
+/* LOADING */
+#loading{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.spinner{width:36px;height:36px;border:3px solid rgba(255,255,255,.1);border-top-color:#60a5fa;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#loading p{color:var(--muted);font-size:13px;letter-spacing:.5px}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.15)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes glow{0%,100%{box-shadow:0 0 8px currentColor}50%{box-shadow:0 0 20px currentColor,0 0 40px currentColor}}
+.fade-in{animation:fadeUp .4s ease both}
+
+/* HEADER */
+header{text-align:center;padding:3.5rem 1.5rem 2rem;position:relative}
+.header-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
+header h1{font-size:clamp(2.8rem,8vw,5rem);font-weight:800;font-style:italic;
+  background:linear-gradient(135deg,#fff 0%,#f472b6 40%,#fbbf24 70%,#60a5fa 100%);
+  background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;animation:shimmer 6s linear infinite;line-height:1.1}
+.header-sub{color:var(--muted);font-size:14px;margin-top:.75rem;letter-spacing:.3px}
+.day-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:.4rem 1rem;
+  font-size:12px;font-weight:700;color:#fff;margin-top:1rem;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:.5px}
+.day-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+
+/* ISLAND MAP */
+.map-section{padding:0 1.5rem 2rem;max-width:860px;margin:0 auto}
+.map-wrap{position:relative;border-radius:20px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 0 60px rgba(96,165,250,.08),0 20px 60px rgba(0,0,0,.4)}
+#island-svg{width:100%;display:block}
+.map-legend{display:flex;justify-content:center;gap:2rem;margin-top:1.25rem;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:.5rem;font-size:12px;font-weight:600;
+  font-family:'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.6)}
+.legend-dot{width:10px;height:10px;border-radius:50%}
+
+/* CHARACTER CARDS */
+.section{padding:2rem 1.5rem;max-width:860px;margin:0 auto}
+.section-title{font-size:1.5rem;font-weight:700;font-style:italic;margin-bottom:1.25rem;
+  background:linear-gradient(135deg,#fff,rgba(255,255,255,.5));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.profiles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:640px){.profiles-grid{grid-template-columns:1fr}}
+.char-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);
+  padding:1.25rem;transition:all .25s;position:relative;overflow:hidden}
+.char-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.char-card.marcus::before{background:linear-gradient(90deg,transparent,var(--marcus),transparent)}
+.char-card.ryan::before{background:linear-gradient(90deg,transparent,var(--ryan),transparent)}
+.char-card.jade::before{background:linear-gradient(90deg,transparent,var(--jade),transparent)}
+.char-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.12)}
+.char-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:16px;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:.85rem}
+.char-name{font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:2px}
+.char-archetype{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:.85rem}
+.char-bio{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+.char-mood{display:inline-flex;align-items:center;gap:.35rem;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:10px;
+  background:rgba(255,255,255,.06);margin-bottom:1rem;font-family:'Plus Jakarta Sans',sans-serif}
+.score-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.45rem}
+.score-label{font-size:11px;color:var(--muted);width:75px;text-transform:capitalize}
+.score-track{flex:1;height:4px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin:0 .6rem}
+.score-fill{height:100%;border-radius:4px;transition:width .8s cubic-bezier(.4,0,.2,1)}
+.score-val{font-size:11px;font-weight:700;width:22px;text-align:right;font-family:'Plus Jakarta Sans',sans-serif}
+.shelter-tag{display:inline-flex;align-items:center;gap:.3rem;font-size:11px;color:var(--muted);
+  background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:2px 8px;margin-top:.75rem}
+
+/* TODAY'S FEED */
+.today-grid{display:flex;flex-direction:column;gap:.65rem}
+.feed-card{background:var(--card);border-radius:12px;border:1px solid var(--border);
+  padding:1rem 1.2rem;display:flex;gap:.85rem;align-items:flex-start;
+  animation:fadeUp .3s ease both}
+.feed-card.interaction{border-style:dashed;opacity:.85}
+.feed-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:12px;font-family:'Plus Jakarta Sans',sans-serif;flex-shrink:0}
+.feed-body{flex:1;min-width:0}
+.feed-name{font-size:12px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:2px}
+.feed-action{font-size:12px;color:var(--muted);margin-bottom:.35rem;font-style:italic}
+.feed-thought{font-size:13px;color:var(--text);line-height:1.55}
+.feed-dialogue{font-size:13px;color:var(--text);line-height:1.55;font-style:italic}
+.feed-cycle{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;
+  color:var(--muted2);margin-top:.35rem;font-family:'Plus Jakarta Sans',sans-serif}
+.cycle-tab{display:inline-flex;background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;margin-bottom:1rem}
+.cycle-btn{padding:.4rem .85rem;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;
+  font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s;border:none;background:none;color:inherit}
+.cycle-btn.active{background:rgba(255,255,255,.08);color:#fff}
+
+/* RELATIONSHIP WEB */
+.rel-wrap{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+#rel-svg{width:100%;max-width:380px}
+.rel-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;width:100%}
+.rel-card{background:var(--card);border-radius:10px;border:1px solid var(--border);padding:.85rem;text-align:center}
+.rel-pair{font-size:12px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:.5rem}
+.rel-bar-row{display:flex;align-items:center;gap:.4rem;margin-bottom:.25rem}
+.rel-bar-label{font-size:10px;color:var(--muted);width:48px;text-align:right;text-transform:capitalize}
+.rel-bar-track{flex:1;height:3px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.rel-bar-fill{height:100%;border-radius:3px;transition:width .8s}
+@media(max-width:480px){.rel-stats{grid-template-columns:1fr}}
+
+/* LOG */
+.log-day{margin-bottom:1.5rem}
+.log-day-header{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  color:var(--muted2);margin-bottom:.65rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);
+  font-family:'Plus Jakarta Sans',sans-serif}
+.log-entry{font-size:13px;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.04);
+  display:flex;gap:.6rem;align-items:flex-start;line-height:1.5}
+.log-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:.35rem}
+.log-cycle-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+  color:var(--muted2);flex-shrink:0;width:52px;margin-top:1px;font-family:'Plus Jakarta Sans',sans-serif}
+
+/* FOOTER */
+footer{text-align:center;padding:3rem 1.5rem;color:var(--muted2);font-size:12px;border-top:1px solid var(--border);margin-top:1rem}
+footer span{color:var(--muted);font-weight:600}
+
+/* DIVIDER */
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);margin:0 1.5rem}
+
+/* SCROLL FADE WRAPPER */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div id="loading">
+  <div class="spinner"></div>
+  <p>Loading the island...</p>
+</div>
+
+<div id="app" class="hidden">
+
+  <header class="reveal">
+    <div class="header-eyebrow">A Living Simulation</div>
+    <h1>Love Island</h1>
+    <div class="header-sub">Three Singaporeans. One island. Every day they change.</div>
+    <div class="day-badge">
+      <span class="day-dot"></span>
+      <span id="day-label">Day 1</span>
+      &nbsp;·&nbsp;
+      <span id="cycle-label">Morning</span>
+      &nbsp;·&nbsp;
+      <span id="weather-label">☀️ Clear</span>
+    </div>
+  </header>
+
+  <!-- Island Map -->
+  <div class="map-section reveal">
+    <div class="map-wrap">
+      <svg id="island-svg" viewBox="0 0 500 310" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ocean -->
+        <rect width="500" height="310" fill="#061220"/>
+        <!-- Ocean shimmer -->
+        <line x1="0" y1="30" x2="500" y2="30" stroke="#0a2040" stroke-width="40" opacity="0.3"/>
+        <line x1="0" y1="280" x2="500" y2="280" stroke="#0a2040" stroke-width="40" opacity="0.3"/>
+        <!-- Wave lines -->
+        <path d="M0 60 Q125 50 250 60 Q375 70 500 60" fill="none" stroke="#0d2844" stroke-width="1.5" opacity="0.5"/>
+        <path d="M0 250 Q125 240 250 250 Q375 260 500 250" fill="none" stroke="#0d2844" stroke-width="1.5" opacity="0.5"/>
+
+        <!-- Island base -->
+        <path d="M 155,42 C 215,24 310,28 368,62 C 415,90 412,155 396,196 C 378,240 332,255 278,260 C 222,265 168,256 128,236 C 86,215 70,180 70,148 C 70,112 80,72 110,56 C 126,48 142,44 155,42 Z" fill="#0d2010"/>
+        <!-- Beach ring -->
+        <path d="M 155,42 C 215,24 310,28 368,62 C 415,90 412,155 396,196 C 378,240 332,255 278,260 C 222,265 168,256 128,236 C 86,215 70,180 70,148 C 70,112 80,72 110,56 C 126,48 142,44 155,42 Z" fill="none" stroke="#b8874a" stroke-width="7" opacity="0.22"/>
+        <!-- Inner island terrain -->
+        <path d="M 165,55 C 220,40 305,44 358,75 C 400,100 397,155 382,190 C 366,228 325,242 275,246 C 226,250 177,242 142,222 C 105,202 92,172 92,148 C 92,118 102,82 128,68 C 142,60 155,57 165,55 Z" fill="#102814"/>
+
+        <!-- Forest area (north-center) -->
+        <ellipse cx="195" cy="90" rx="42" ry="22" fill="#0a1e0c" opacity="0.7"/>
+        <ellipse cx="245" cy="80" rx="28" ry="16" fill="#0a1e0c" opacity="0.6"/>
+        <!-- Tree dots in forest -->
+        <circle cx="185" cy="88" r="5" fill="#163820" opacity="0.9"/>
+        <circle cx="200" cy="82" r="4" fill="#163820" opacity="0.8"/>
+        <circle cx="215" cy="90" r="6" fill="#163820" opacity="0.9"/>
+        <circle cx="230" cy="84" r="4" fill="#163820" opacity="0.7"/>
+        <circle cx="248" cy="78" r="5" fill="#163820" opacity="0.8"/>
+
+        <!-- Eastern cliff (Marcus zone) -->
+        <path d="M 340,68 L 395,85 L 390,130 L 338,118 Z" fill="#1e1408" opacity="0.9"/>
+        <path d="M 350,68 L 395,82 L 392,90 L 348,76 Z" fill="#2a1c0c" opacity="0.8"/>
+
+        <!-- Fire pit (center) -->
+        <circle cx="215" cy="168" r="5" fill="#f97316" opacity="0.8"/>
+        <circle cx="215" cy="168" r="9" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="215" cy="168" r="14" fill="none" stroke="#f97316" stroke-width="1" opacity="0.15"/>
+        <!-- Fire glow -->
+        <circle cx="215" cy="168" r="20" fill="#f97316" opacity="0.04"/>
+
+        <!-- Ryan's house (center) -->
+        <rect x="222" y="148" width="22" height="16" rx="1" fill="#1a1008" stroke="#c49a4a" stroke-width="1.2" opacity="0.9"/>
+        <path d="M 219,148 L 233,136 L 247,148" fill="#241408" stroke="#c49a4a" stroke-width="1.2" opacity="0.9"/>
+        <!-- Window light -->
+        <rect x="226" y="153" width="6" height="6" rx="1" fill="#fbbf24" opacity="0.55"/>
+        <!-- Door -->
+        <rect x="232" y="157" width="5" height="7" rx="1" fill="#0a0804" opacity="0.9"/>
+        <!-- Label -->
+        <text x="234" y="178" text-anchor="middle" font-size="7" fill="#c49a4a" opacity="0.6" font-family="Inter">Ryan's</text>
+
+        <!-- Marcus's tent (east cliff) -->
+        <path d="M 352,96 L 366,114 L 338,114 Z" fill="#0e1e30" stroke="#60a5fa" stroke-width="1.2" opacity="0.85"/>
+        <line x1="352" y1="96" x2="352" y2="114" stroke="#60a5fa" stroke-width="0.8" opacity="0.5"/>
+        <text x="352" y="125" text-anchor="middle" font-size="7" fill="#60a5fa" opacity="0.6" font-family="Inter">Marcus</text>
+
+        <!-- Jade's hammock / palm tree area (west) -->
+        <line x1="115" y1="155" x2="118" y2="182" stroke="#5a3a1a" stroke-width="2.5"/>
+        <path d="M 108,155 Q 115,148 125,155" fill="#1a4a1a" opacity="0.8"/>
+        <path d="M 105,158 Q 115,150 128,156" fill="none" stroke="#1a5a1a" stroke-width="2" opacity="0.7"/>
+        <!-- Hammock string -->
+        <path d="M 108,172 Q 119,180 130,172" fill="none" stroke="#f472b6" stroke-width="1.8" opacity="0.65"/>
+        <text x="118" y="192" text-anchor="middle" font-size="7" fill="#f472b6" opacity="0.6" font-family="Inter">Jade's</text>
+
+        <!-- Beach/shore at bottom -->
+        <path d="M 128,236 Q 200,258 278,260 Q 320,262 360,250" fill="none" stroke="#b8874a" stroke-width="3" opacity="0.2"/>
+
+        <!-- Relationship lines (will be updated by JS) -->
+        <line id="rel-line-mr" x1="0" y1="0" x2="0" y2="0" stroke="#60a5fa" stroke-width="1" opacity="0" stroke-dasharray="4 3"/>
+        <line id="rel-line-mj" x1="0" y1="0" x2="0" y2="0" stroke="#f472b6" stroke-width="1" opacity="0" stroke-dasharray="4 3"/>
+        <line id="rel-line-rj" x1="0" y1="0" x2="0" y2="0" stroke="#fbbf24" stroke-width="1" opacity="0" stroke-dasharray="4 3"/>
+
+        <!-- Character dots -->
+        <g id="dot-marcus">
+          <circle r="10" fill="#60a5fa" opacity="0.15"/>
+          <circle r="6" fill="#60a5fa" opacity="0.8"/>
+          <circle r="3" fill="#fff"/>
+        </g>
+        <g id="dot-ryan">
+          <circle r="10" fill="#fbbf24" opacity="0.15"/>
+          <circle r="6" fill="#fbbf24" opacity="0.8"/>
+          <circle r="3" fill="#fff"/>
+        </g>
+        <g id="dot-jade">
+          <circle r="10" fill="#f472b6" opacity="0.15"/>
+          <circle r="6" fill="#f472b6" opacity="0.8"/>
+          <circle r="3" fill="#fff"/>
+        </g>
+      </svg>
+    </div>
+    <div class="map-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#60a5fa;box-shadow:0 0 6px #60a5fa"></div>Marcus Tan</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#fbbf24;box-shadow:0 0 6px #fbbf24"></div>Ryan Lim</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f472b6;box-shadow:0 0 6px #f472b6"></div>Jade Ng</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Today's Pulse -->
+  <div class="section reveal">
+    <div class="section-title">Today's Pulse</div>
+    <div class="cycle-tab">
+      <button class="cycle-btn active" onclick="setCycle('morning')">Morning</button>
+      <button class="cycle-btn" onclick="setCycle('afternoon')">Afternoon</button>
+      <button class="cycle-btn" onclick="setCycle('night')">Night</button>
+    </div>
+    <div class="today-grid" id="today-feed"></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Character Profiles -->
+  <div class="section reveal">
+    <div class="section-title">The Islanders</div>
+    <div class="profiles-grid" id="profiles-grid"></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Relationship Web -->
+  <div class="section reveal">
+    <div class="section-title">The Triangle</div>
+    <div class="rel-wrap">
+      <svg id="rel-svg" viewBox="0 0 340 260">
+        <defs>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <!-- Lines -->
+        <line id="rw-mr" x1="170" y1="40" x2="300" y2="220" stroke="#60a5fa" stroke-width="2" opacity="0.3"/>
+        <line id="rw-mj" x1="170" y1="40" x2="40" y2="220" stroke="#f472b6" stroke-width="2" opacity="0.3"/>
+        <line id="rw-rj" x1="300" y1="220" x2="40" y2="220" stroke="#fbbf24" stroke-width="2" opacity="0.3"/>
+        <!-- Nodes -->
+        <circle cx="170" cy="40" r="22" fill="#0d1e30" stroke="#60a5fa" stroke-width="2" filter="url(#glow)"/>
+        <text x="170" y="45" text-anchor="middle" font-size="12" fill="#fff" font-family="Plus Jakarta Sans" font-weight="700">MT</text>
+        <text x="170" y="20" text-anchor="middle" font-size="10" fill="#60a5fa" font-family="Inter">Marcus</text>
+        <circle cx="300" cy="220" r="22" fill="#1e1400" stroke="#fbbf24" stroke-width="2" filter="url(#glow)"/>
+        <text x="300" y="225" text-anchor="middle" font-size="12" fill="#fff" font-family="Plus Jakarta Sans" font-weight="700">RL</text>
+        <text x="300" y="252" text-anchor="middle" font-size="10" fill="#fbbf24" font-family="Inter">Ryan</text>
+        <circle cx="40" cy="220" r="22" fill="#1e0818" stroke="#f472b6" stroke-width="2" filter="url(#glow)"/>
+        <text x="40" y="225" text-anchor="middle" font-size="12" fill="#fff" font-family="Plus Jakarta Sans" font-weight="700">JN</text>
+        <text x="40" y="252" text-anchor="middle" font-size="10" fill="#f472b6" font-family="Inter">Jade</text>
+        <!-- Labels on lines -->
+        <text id="rw-label-mr" x="240" y="128" text-anchor="middle" font-size="10" fill="#64748b" font-family="Inter">—</text>
+        <text id="rw-label-mj" x="102" y="128" text-anchor="middle" font-size="10" fill="#64748b" font-family="Inter">—</text>
+        <text id="rw-label-rj" x="170" y="238" text-anchor="middle" font-size="10" fill="#64748b" font-family="Inter">—</text>
+      </svg>
+      <div class="rel-stats" id="rel-stats"></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Island Log -->
+  <div class="section reveal">
+    <div class="section-title">Island Log</div>
+    <div id="full-log"></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Updated 3× daily — morning, afternoon & night SGT</p>
+    <p style="margin-top:.4rem">Built with <span>Claude Haiku</span> · Running since Day 1</p>
+  </footer>
+
+</div>
+
+<script>
+const CHARS = { marcus:'#60a5fa', ryan:'#fbbf24', jade:'#f472b6' }
+const CHAR_NAMES = { marcus:'Marcus', ryan:'Ryan', jade:'Jade' }
+const CYCLE_ORDER = ['morning','afternoon','night']
+let S = { chars:{}, feed:[], world:{} }
+let activeCycle = null
+
+async function init() {
+  try {
+    const [c,f,w] = await Promise.all([
+      fetch('data/characters.json').then(r=>r.json()),
+      fetch('data/feed.json').then(r=>r.json()),
+      fetch('data/world.json').then(r=>r.json())
+    ])
+    S.chars = c; S.feed = f; S.world = w
+    render()
+    document.getElementById('loading').classList.add('hidden')
+    document.getElementById('app').classList.remove('hidden')
+    revealOnScroll()
+  } catch(e) {
+    document.getElementById('loading').innerHTML = '<p style="color:#ef4444">Could not load island data.</p>'
+  }
+}
+
+function render() {
+  const w = S.world
+  document.getElementById('day-label').textContent = `Day ${w.day}`
+  document.getElementById('cycle-label').textContent = capitalize(w.cycle||'morning')
+  const wx = {clear:'☀️ Clear',rain:'🌧 Rain',storm:'⛈ Storm',overcast:'☁️ Cloudy',foggy:'🌫 Foggy'}
+  document.getElementById('weather-label').textContent = wx[w.weather]||'☀️ Clear'
+
+  positionDots()
+  renderRelLines()
+  renderProfiles()
+  renderToday()
+  renderRelStats()
+  renderLog()
+}
+
+function toSVG(x, y) {
+  return { x: 70 + (x/100)*345, y: 40 + (y/100)*218 }
+}
+
+function positionDots() {
+  Object.entries(S.chars).forEach(([cid, c]) => {
+    const g = document.getElementById(`dot-${cid}`)
+    if(!g) return
+    const {x,y} = toSVG(c.location.x, c.location.y)
+    g.setAttribute('transform', `translate(${x},${y})`)
+  })
+  // Update relationship lines on map
+  const m = toSVG(S.chars.marcus?.location?.x||80, S.chars.marcus?.location?.y||20)
+  const r = toSVG(S.chars.ryan?.location?.x||50, S.chars.ryan?.location?.y||50)
+  const j = toSVG(S.chars.jade?.location?.x||18, S.chars.jade?.location?.y||65)
+  setLine('rel-line-mr', m, r, getCloseness('marcus','ryan'))
+  setLine('rel-line-mj', m, j, getCloseness('marcus','jade'))
+  setLine('rel-line-rj', r, j, getCloseness('ryan','jade'))
+}
+
+function setLine(id, a, b, closeness) {
+  const el = document.getElementById(id)
+  if(!el) return
+  el.setAttribute('x1',a.x); el.setAttribute('y1',a.y)
+  el.setAttribute('x2',b.x); el.setAttribute('y2',b.y)
+  el.setAttribute('opacity', (closeness/100*0.5+0.05).toFixed(2))
+  const w = closeness > 60 ? 2 : closeness > 30 ? 1.2 : 0.7
+  el.setAttribute('stroke-width', w)
+}
+
+function getCloseness(a, b) {
+  return S.chars[a]?.relationships?.[b]?.closeness || 0
+}
+
+function getTension(a, b) {
+  return S.chars[a]?.relationships?.[b]?.tension || 0
+}
+
+function renderProfiles() {
+  const el = document.getElementById('profiles-grid')
+  el.innerHTML = Object.entries(S.chars).map(([cid, c]) => {
+    const color = c.color || CHARS[cid]
+    const initials = c.name.split(' ').map(w=>w[0]).join('')
+    const scores = c.scores
+    const moodEmoji = moodToEmoji(c.mood)
+    const shelterEmoji = shelterToEmoji(c.shelter)
+    return `<div class="char-card ${cid}" style="box-shadow:0 0 30px ${color}12">
+      <div class="char-avatar" style="background:${color}18;border:2px solid ${color}40;color:${color}">${initials}</div>
+      <div class="char-name" style="color:${color}">${c.name}</div>
+      <div class="char-archetype">The ${capitalize(c.archetype)}</div>
+      <div class="char-bio">${c.bio}</div>
+      <div class="char-mood" style="color:${color}">${moodEmoji} ${capitalize(c.mood)}</div>
+      ${Object.entries(scores).map(([k,v])=>`
+        <div class="score-row">
+          <span class="score-label">${k}</span>
+          <div class="score-track"><div class="score-fill" style="width:${v}%;background:linear-gradient(90deg,${color}88,${color})"></div></div>
+          <span class="score-val" style="color:${color}">${v}</span>
+        </div>`).join('')}
+      <div class="shelter-tag">${shelterEmoji} ${capitalize(c.shelter)}</div>
+    </div>`
+  }).join('')
+}
+
+function setCycle(cycle) {
+  activeCycle = cycle
+  document.querySelectorAll('.cycle-btn').forEach(b => b.classList.remove('active'))
+  document.querySelectorAll('.cycle-btn').forEach(b => { if(b.textContent.toLowerCase()===cycle) b.classList.add('active') })
+  renderToday()
+}
+
+function renderToday() {
+  const world = S.world
+  const day = world.day
+  const cycle = activeCycle || world.cycle || 'morning'
+  const entries = S.feed.filter(e => e.day === day && e.cycle === cycle)
+  const el = document.getElementById('today-feed')
+  if(!entries.length) {
+    el.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:1rem 0;text-align:center">No updates for this cycle yet.</div>`
+    return
+  }
+  el.innerHTML = entries.map((e, idx) => {
+    const color = e.character ? (CHARS[e.character]||'#fff') : '#475569'
+    const name = e.character ? (S.chars[e.character]?.name || CHAR_NAMES[e.character]||e.character) : 'Interaction'
+    const initials = name.split(' ').map(w=>w[0]).join('')
+    const isInteraction = e.type === 'interaction'
+    return `<div class="feed-card${isInteraction?' interaction':''}" style="animation-delay:${idx*60}ms;border-color:${color}22">
+      <div class="feed-avatar" style="background:${color}18;border:2px solid ${color}40;color:${color}">${initials}</div>
+      <div class="feed-body">
+        <div class="feed-name" style="color:${color}">${isInteraction ? '💬 ' + (e.characters||[]).map(c=>CHAR_NAMES[c]||c).join(' & ') : name}</div>
+        ${e.action ? `<div class="feed-action">${e.action}</div>` : ''}
+        ${e.thought ? `<div class="feed-thought">"${e.thought}"</div>` : ''}
+        ${e.description ? `<div class="feed-action">${e.description}</div>` : ''}
+        ${e.dialogue ? `<div class="feed-dialogue">"${e.dialogue}"</div>` : ''}
+      </div>
+    </div>`
+  }).join('')
+}
+
+function renderRelStats() {
+  const pairs = [
+    {a:'marcus',b:'ryan',label:'Marcus & Ryan',color:'#60a5fa'},
+    {a:'marcus',b:'jade',label:'Marcus & Jade',color:'#f472b6'},
+    {a:'ryan',b:'jade',label:'Ryan & Jade',color:'#fbbf24'}
+  ]
+  const el = document.getElementById('rel-stats')
+  el.innerHTML = pairs.map(p=>{
+    const cl = getCloseness(p.a,p.b)
+    const tn = getTension(p.a,p.b)
+    return `<div class="rel-card">
+      <div class="rel-pair" style="color:${p.color}">${p.label}</div>
+      <div class="rel-bar-row">
+        <span class="rel-bar-label">closeness</span>
+        <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${cl}%;background:${p.color}"></div></div>
+        <span style="font-size:10px;font-weight:700;color:${p.color};width:20px;text-align:right">${cl}</span>
+      </div>
+      <div class="rel-bar-row">
+        <span class="rel-bar-label">tension</span>
+        <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${tn}%;background:#ef4444"></div></div>
+        <span style="font-size:10px;font-weight:700;color:#ef4444;width:20px;text-align:right">${tn}</span>
+      </div>
+    </div>`
+  }).join('')
+
+  // Update SVG relationship web line weights
+  updateRelWeb(pairs)
+}
+
+function updateRelWeb(pairs) {
+  pairs.forEach(p => {
+    const cl = getCloseness(p.a, p.b)
+    const tn = getTension(p.a, p.b)
+    const key = `${p.a[0]}${p.b[0]}`
+    const lineId = `rw-${p.a[0]}${p.a==='marcus'&&p.b==='ryan'?'mr':p.a==='marcus'&&p.b==='jade'?'mj':'rj'}`
+    const labelId = `rw-label-${p.a==='marcus'&&p.b==='ryan'?'mr':p.a==='marcus'&&p.b==='jade'?'mj':'rj'}`
+    const el = document.getElementById(`rw-${p.a==='marcus'&&p.b==='ryan'?'mr':p.a==='marcus'&&p.b==='jade'?'mj':'rj'}`)
+    const lbl = document.getElementById(`rw-label-${p.a==='marcus'&&p.b==='ryan'?'mr':p.a==='marcus'&&p.b==='jade'?'mj':'rj'}`)
+    if(el) {
+      el.setAttribute('stroke-width', cl>60?3:cl>30?1.8:0.8)
+      el.setAttribute('opacity', (cl/100*0.6+0.1).toFixed(2))
+      el.setAttribute('stroke', tn>50?'#ef4444':p.color)
+    }
+    if(lbl) lbl.textContent = cl > 50 ? '❤️' : tn > 50 ? '⚡' : '···'
+  })
+}
+
+function renderLog() {
+  const byDay = {}
+  S.feed.forEach(e => {
+    if(!byDay[e.day]) byDay[e.day] = {}
+    if(!byDay[e.day][e.cycle]) byDay[e.day][e.cycle] = []
+    byDay[e.day][e.cycle].push(e)
+  })
+  const el = document.getElementById('full-log')
+  const days = Object.keys(byDay).sort((a,b)=>b-a)
+  el.innerHTML = days.map(day => {
+    const cycles = byDay[day]
+    return `<div class="log-day">
+      <div class="log-day-header">Day ${day}</div>
+      ${CYCLE_ORDER.filter(c=>cycles[c]).map(cyc => {
+        const entries = cycles[cyc].filter(e=>!e.type)
+        const interactions = cycles[cyc].filter(e=>e.type==='interaction')
+        return entries.map(e => {
+          const color = CHARS[e.character]||'#fff'
+          const name = S.chars[e.character]?.name || CHAR_NAMES[e.character] || e.character
+          return `<div class="log-entry">
+            <div class="log-cycle-tag">${cyc}</div>
+            <div class="log-dot" style="background:${color}"></div>
+            <div style="flex:1"><span style="color:${color};font-weight:600">${name}</span> — ${e.thought||e.action||''}</div>
+          </div>`
+        }).join('') +
+        interactions.map(e => `<div class="log-entry">
+          <div class="log-cycle-tag">${cyc}</div>
+          <div class="log-dot" style="background:#475569"></div>
+          <div style="flex:1;color:var(--muted)"><em>${e.description}</em>${e.dialogue?` "${e.dialogue}"`:''}</div>
+        </div>`).join('')
+      }).join('')}
+    </div>`
+  }).join('')
+}
+
+function moodToEmoji(mood) {
+  const m = (mood||'').toLowerCase()
+  if(['happy','cheerful','excited','joyful'].includes(m)) return '😊'
+  if(['free','relaxed','calm','chill'].includes(m)) return '😌'
+  if(['pensive','thoughtful','reflective'].includes(m)) return '🤔'
+  if(['distant','cold','withdrawn'].includes(m)) return '😶'
+  if(['sad','lonely','melancholy'].includes(m)) return '😔'
+  if(['angry','frustrated','irritated'].includes(m)) return '😤'
+  if(['hopeful','warm'].includes(m)) return '🙂'
+  return '😐'
+}
+
+function shelterToEmoji(s) {
+  const map = {tent:'⛺',house:'🏠',hammock:'🌴',beach:'🏖',forest:'🌲',fire_pit:'🔥'}
+  return map[s]||'📍'
+}
+
+function capitalize(s) { return s ? s.charAt(0).toUpperCase()+s.slice(1) : '' }
+
+function revealOnScroll() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') })
+  }, { threshold: 0.1 })
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el))
+}
+
+init()
+</script>
+</body>
+</html>
