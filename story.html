@@ -313,8 +313,14 @@ footer span{color:var(--muted);font-weight:600}
 </div><!-- #story-scroll -->
 
 <script>
-const CHARS = {marcus:'#60a5fa',ryan:'#fbbf24',jade:'#f472b6'}
-const CHAR_NAMES = {marcus:'Marcus',ryan:'Ryan',jade:'Jade'}
+let CHARS = {marcus:'#60a5fa',ryan:'#fbbf24',jade:'#f472b6'}
+let CHAR_NAMES = {marcus:'Marcus',ryan:'Ryan',jade:'Jade'}
+function syncCharMaps(){
+  Object.entries(S.chars).forEach(([k,v])=>{
+    if(!CHARS[k]) CHARS[k] = v.color||'#a78bfa'
+    if(!CHAR_NAMES[k]) CHAR_NAMES[k] = v.name||cap(k)
+  })
+}
 const CYCLE_ORDER = ['morning','midday','evening','night']
 const WX = {clear:'☀️',rain:'🌧️',storm:'⛈️',overcast:'☁️',foggy:'🌫️'}
 const MOOD_EMOJI = {happy:'😊',cheerful:'😊',free:'😌',calm:'😌',content:'🙂',peaceful:'😌',neutral:'😐',
@@ -385,7 +391,7 @@ function renderDialogue(dlg, chars) {
 
 function absentCtxHtml(e, allEntries) {
   const present = (e.characters||[]).map(c=>c.toLowerCase())
-  const absent = ['marcus','ryan','jade'].filter(c=>!present.includes(c))
+  const absent = Object.keys(S.chars).filter(c=>!present.includes(c))
   return absent.map(cid => {
     const ctx = allEntries.find(x=>x.character===cid&&x.cycle===e.cycle&&x.day===e.day)
     if(!ctx) return ''
@@ -518,6 +524,7 @@ async function init() {
       fetch('data/world.json').then(r=>r.json())
     ])
     S.chars=c; S.feed=f; S.world=w
+    syncCharMaps()
     render()
     // Sync sky to real SGT time
     const sgt=new Date(Date.now()+new Date().getTimezoneOffset()*60000+8*3600000)

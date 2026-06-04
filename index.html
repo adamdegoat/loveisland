@@ -883,7 +883,7 @@ function toggleMobileChat() {
 
 // Tap character to show stat card on mobile
 function initTapStats() {
-  ;['marcus','ryan','jade'].forEach(cid => {
+  ;Object.keys(S.chars).forEach(cid => {
     const el = document.getElementById('char-'+cid)
     if(!el) return
     el.addEventListener('click', () => {
@@ -944,6 +944,7 @@ function updateBubble(cid) {
 
 const CYCLE_HOUR = {morning:'7am',midday:'12:30pm',evening:'6pm',night:'11pm'}
 const CHAR_COLOR = {marcus:'#c084fc',ryan:'#fb923c',jade:'#f472b6'}
+function getCharColor(cid){return CHAR_COLOR[cid]||S.chars[cid]?.color||'#e2e8f0'}
 
 function cycleLabel(e) {
   return `Day ${e.day||1} · ${CYCLE_HOUR[e.cycle]||e.cycle||''}`
@@ -965,11 +966,11 @@ function renderChat() {
       html+=`<div class="cl interaction"><span class="cl-label">${e.description||''}</span></div>`
       // absent character context
       const present=(e.characters||[]).map(c=>c.toLowerCase())
-      const absent=['marcus','ryan','jade'].filter(c=>!present.includes(c))
+      const absent=Object.keys(S.chars).filter(c=>!present.includes(c))
       absent.forEach(cid=>{
         const ctx=entries.find(x=>x.character===cid&&x.cycle===e.cycle&&x.day===e.day)
         if(ctx&&(ctx.action||ctx.thought)){
-          const col=CHAR_COLOR[cid]||'#e2e8f0'
+          const col=getCharColor(cid)
           html+=`<div class="cl-absent"><span style="color:${col};opacity:.6">${cap(cid)}</span><span class="cl-absent-txt"> — ${ctx.action||ctx.thought}</span></div>`
         }
       })
@@ -977,7 +978,7 @@ function renderChat() {
       const arr=Array.isArray(dlg)?dlg:[{speaker:(e.characters||['?'])[0],line:dlg}]
       arr.forEach(d=>{
         const spk=(d.speaker||'').toLowerCase()
-        const col=CHAR_COLOR[spk]||'#e2e8f0'
+        const col=getCharColor(spk)
         html+=`<div class="cl-msg"><span class="cl-spk" style="color:${col}">${cap(spk)}</span> <span class="cl-line">${d.line||''}</span></div>`
       })
     } else {
@@ -1034,6 +1035,41 @@ function nudgeBubbles(positions) {
   }
 }
 
+function makeGenericCharSVG(cid, color) {
+  return `<svg class="char-svg" id="svg-${cid}" viewBox="-20 -92 40 96" width="27" height="64" xmlns="http://www.w3.org/2000/svg">
+    <rect x="-8" y="-54" width="16" height="25" rx="4" fill="${color}" opacity=".85"/>
+    <ellipse cx="0" cy="-67" rx="11.5" ry="12" fill="#f5c9a0"/>
+    <ellipse cx="0" cy="-77" rx="11" ry="5.5" fill="${color}"/>
+    <circle cx="-4" cy="-68" r="1.8" fill="#2d1b00"/>
+    <circle cx="4" cy="-68" r="1.8" fill="#2d1b00"/>
+    <path id="mouth-${cid}" d="M -3 -63.5 Q 0 -61 3 -63.5" fill="none" stroke="#a0522d" stroke-width="1.2" stroke-linecap="round"/>
+    <rect x="-7" y="-29" width="5.5" height="13" rx="2.5" fill="${color}" opacity=".7"/>
+    <rect x="1.5" y="-29" width="5.5" height="13" rx="2.5" fill="${color}" opacity=".7"/>
+  </svg>`
+}
+
+function ensureCharDom(cid) {
+  if(document.getElementById('char-'+cid)) return
+  const c = S.chars[cid] || {}
+  const color = c.color || '#a78bfa'
+  const firstName = (c.name||cid).split(' ')[0].toUpperCase()
+  const div = document.createElement('div')
+  div.className = 'char'
+  div.id = 'char-' + cid
+  div.innerHTML =
+    makeGenericCharSVG(cid, color) +
+    `<div class="nametag" style="color:${color};border:1px solid ${color}33">${firstName}</div>` +
+    `<div class="bubble" id="bubble-${cid}" style="border-top:2px solid ${color}80">` +
+      `<div class="bubble-name" style="color:${color}">${firstName}</div>` +
+      `<div class="bubble-text" id="thought-${cid}"></div>` +
+    `</div>`
+  document.getElementById('world').appendChild(div)
+  div.addEventListener('click', ()=>{
+    if(!isMobile()) return
+    document.querySelectorAll('.stat-card').forEach(c=>c.classList.remove('tap-open'))
+  })
+}
+
 function updateWorld() {
   const w=S.world
   document.getElementById('day-label').textContent='Day '+(w.day||1)
@@ -1042,7 +1078,8 @@ function updateWorld() {
   document.getElementById('ds-cycle').textContent=cap(w.cycle||'')
   if(w.pulse) document.getElementById('pulse').textContent=w.pulse
 
-  const CHARS=['marcus','ryan','jade']
+  const CHARS=Object.keys(S.chars)
+  CHARS.forEach(cid=>ensureCharDom(cid))
   const W=window.innerWidth, H=window.innerHeight
   // compute raw pixel positions
   const positions=CHARS.map(cid=>{
@@ -1239,15 +1276,16 @@ async function init(){
 // ── STAT CARDS ───────────────────────────────────────────
 const SC_COLORS = {marcus:'#93c5fd',ryan:'#fde68a',jade:'#f9a8d4'}
 const SC_FILL   = {marcus:'#60a5fa',ryan:'#fbbf24',jade:'#f472b6'}
-const SC_OTHERS = {marcus:['ryan','jade'],ryan:['marcus','jade'],jade:['marcus','ryan']}
 const SCORE_LABELS = ['trust','openness','loneliness','resilience','ambition']
+function getScColor(cid){return SC_COLORS[cid]||(S.chars[cid]?.color||'#94a3b8')}
+function getScFill(cid){return SC_FILL[cid]||S.chars[cid]?.color||'#94a3b8'}
 
 function buildStatCard(cid) {
   const el = document.getElementById('sc-'+cid)
   if(!el || !S.chars[cid]) return
   const c = S.chars[cid]
-  const col = SC_COLORS[cid]
-  const fill = SC_FILL[cid]
+  const col = getScColor(cid)
+  const fill = getScFill(cid)
 
   const scoreRows = SCORE_LABELS.map(k => {
     const v = c.scores?.[k] ?? 0
@@ -1258,13 +1296,14 @@ function buildStatCard(cid) {
     </div>`
   }).join('')
 
-  const bondRows = SC_OTHERS[cid].map(oid => {
+  const others = Object.keys(S.chars).filter(k=>k!==cid)
+  const bondRows = others.map(oid => {
     const rel = c.relationships?.[oid] || {}
     const cl = rel.closeness ?? 0
     const at = rel.attraction ?? 0
     const heart = at >= 30 ? ' ❤' : at >= 10 ? ' ·' : ''
     const oName = S.chars[oid]?.name?.split(' ')[0] || cap(oid)
-    const oCol = SC_COLORS[oid]
+    const oCol = getScColor(oid)
     return `<div class="sc-bond" style="color:rgba(255,255,255,.6)">
       <span style="color:${oCol}">${oName}</span>
       <span style="color:rgba(255,255,255,.3)"> — closeness </span>
@@ -1293,7 +1332,7 @@ function buildStatCard(cid) {
 }
 
 function updateStatCards() {
-  ;['marcus','ryan','jade'].forEach(buildStatCard)
+  Object.keys(S.chars).forEach(buildStatCard)
 }
 
 // ── ORACLE ────────────────────────────────────────────────
