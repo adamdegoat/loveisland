@@ -5,7 +5,10 @@
     "character": "marcus",
     "action": "Climbed to the eastern cliff before sunrise and sat there alone, watching the horizon.",
     "thought": "Woke up 5am, couldn't sleep anyway. This cliff is good. Nobody comes here.",
-    "location": { "x": 80, "y": 20 },
+    "location": {
+      "x": 80,
+      "y": 20
+    },
     "shelter": "tent",
     "mood": "distant",
     "timestamp": "2026-06-04T07:00:00+08:00"
@@ -16,7 +19,10 @@
     "character": "ryan",
     "action": "Started laying the foundation for a second room in his house, just in case.",
     "thought": "Eh, space for one more lah. Never know who might need it. Better to have than not have.",
-    "location": { "x": 50, "y": 50 },
+    "location": {
+      "x": 50,
+      "y": 50
+    },
     "shelter": "house",
     "mood": "cheerful",
     "timestamp": "2026-06-04T07:00:00+08:00"
@@ -27,7 +33,10 @@
     "character": "jade",
     "action": "Slept in until 9am, then walked barefoot down to the shore for a swim.",
     "thought": "Salt water, quiet beach, no Slack notifications. This is fine actually.",
-    "location": { "x": 18, "y": 80 },
+    "location": {
+      "x": 18,
+      "y": 80
+    },
     "shelter": "hammock",
     "mood": "free",
     "timestamp": "2026-06-04T07:00:00+08:00"
@@ -36,9 +45,66 @@
     "day": 1,
     "cycle": "morning",
     "type": "interaction",
-    "characters": ["ryan", "marcus"],
+    "characters": [
+      "ryan",
+      "marcus"
+    ],
     "description": "Ryan spotted Marcus on the cliff and waved up at him. Marcus gave a single nod and looked back at the sea.",
     "dialogue": "Ryan: 'Eh Marcus! Come down later, I cook dinner! Got extra rice!'",
     "timestamp": "2026-06-04T07:05:00+08:00"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "Gathered driftwood pieces and arranged them near his tent, working methodically without hurrying.",
+    "thought": "Dey all doing their own thing, got their plans. That's fine. The work keeps hands busy enough.",
+    "location": {
+      "x": 78,
+      "y": 35
+    },
+    "shelter": "tent",
+    "mood": "guarded",
+    "timestamp": "2026-06-04T20:16:34.242709"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "Walked down to the lagoon searching for fresh water and spotted Jade wading near the shallows.",
+    "thought": "Walao, this girl also exploring the water side? Maybe can work together on the water problem, make it easier for everyone lah.",
+    "location": {
+      "x": 45,
+      "y": 72
+    },
+    "shelter": "house",
+    "mood": "cheerful",
+    "timestamp": "2026-06-04T20:16:34.242709"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "Drifted along the lagoon edge, letting the cool water run over her arms and testing the reef beneath.",
+    "thought": "The island doesn't care what we do here. That's what makes it so clean, sia.",
+    "location": {
+      "x": 42,
+      "y": 75
+    },
+    "shelter": "hammock",
+    "mood": "calm",
+    "timestamp": "2026-06-04T20:16:34.242709"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade"
+    ],
+    "description": "Ryan approached Jade at the lagoon and pointed out a freshwater stream trickling down the rocks; Jade smiled and said they should both bring water back.",
+    "dialogue": "Eh Jade, you see that stream? This place is sibeh set-up already, can?",
+    "timestamp": "2026-06-04T20:16:34.242709"
   }
 ]
