@@ -356,5 +356,217 @@
       }
     ],
     "timestamp": "2026-06-04T23:29:09.186944"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "He finds his way to the stream despite himself, drawn by the sound of water and voices.",
+    "thought": "She was right. I hate being seen.",
+    "location": {
+      "x": 40,
+      "y": 42
+    },
+    "shelter": "tent",
+    "mood": "guarded",
+    "timestamp": "2026-06-04T23:31:04.209553"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "He leads the way to the cool stream, moving with purpose, hoping this time everyone will stay.",
+    "thought": "If I stay patient, maybe he'll come around.",
+    "location": {
+      "x": 48,
+      "y": 45
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-04T23:31:04.209553"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "She follows the sound of water inland, her bare feet silent, moving toward something she can't name.",
+    "thought": "They both scare me. But maybe that's okay.",
+    "location": {
+      "x": 45,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "thoughtful",
+    "timestamp": "2026-06-04T23:31:04.209553"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade"
+    ],
+    "description": "By a hidden stream in the island's center, Ryan, Marcus, and Jade find themselves in their first real conversation, each learning that the other is more tender than they seemed.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Water's cold up there. Come on, get out of the heat."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Didn't know it was an invitation-only thing."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It's not. I just meant—"
+      },
+      {
+        "speaker": "jade",
+        "line": "Is there really water?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah, fresh stream. Come here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You two seem to have plans already."
+      },
+      {
+        "speaker": "jade",
+        "line": "Do we?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "No, I just—Marcus, you should come. Both of you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm here, aren't I?"
+      },
+      {
+        "speaker": "jade",
+        "line": "This is nice. Quiet."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Won't last."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're always so optimistic."
+      },
+      {
+        "speaker": "marcus",
+        "line": "About what?"
+      },
+      {
+        "speaker": "jade",
+        "line": "About the future. About us."
+      },
+      {
+        "speaker": "marcus",
+        "line": "There is no us. There's just three people on an island."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's not true though, is it?"
+      },
+      {
+        "speaker": "jade",
+        "line": "What does it have to be?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I don't know."
+      },
+      {
+        "speaker": "ryan",
+        "line": "For what it's worth, I'm glad you're both here."
+      },
+      {
+        "speaker": "jade",
+        "line": "Even if it's complicated?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Especially because it's complicated. No. That came out wrong."
+      },
+      {
+        "speaker": "ryan",
+        "line": "No, I think you meant it though."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know what he means. This matters because it's real."
+      },
+      {
+        "speaker": "marcus",
+        "line": "And that's worse."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Why would it be worse?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Because real things can break."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Exactly."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Things can also heal. If you let them."
+      },
+      {
+        "speaker": "jade",
+        "line": "Maybe we should try that."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Or maybe we should focus on basics. Water, shelter, food."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We can do both."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You think everything's possible."
+      },
+      {
+        "speaker": "jade",
+        "line": "It is, until it isn't."
+      },
+      {
+        "speaker": "ryan",
+        "line": "So we just... go day by day?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's all anyone can do."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's actually kind of beautiful."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's not beautiful. It's survival."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe it's both."
+      },
+      {
+        "speaker": "jade",
+        "line": "Come on. The sun's shifting. We should find dinner."
+      }
+    ],
+    "timestamp": "2026-06-04T23:31:04.209553"
   }
 ]
