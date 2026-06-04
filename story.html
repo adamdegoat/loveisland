@@ -130,6 +130,11 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 .rel-bar-fill{height:100%;border-radius:3px;transition:width .8s}
 @media(max-width:480px){.rel-stats{grid-template-columns:1fr}}
 
+/* ABSENT CONTEXT */
+.absent-ctx{font-size:12px;color:var(--muted);font-style:italic;margin:4px 0 8px;
+  padding:5px 10px;border-left:2px solid rgba(255,255,255,.08);opacity:.75;line-height:1.5}
+.absent-ctx strong{font-style:normal;font-weight:600}
+
 /* LOG */
 .log-day{margin-bottom:1.5rem}
 .log-day-header{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
@@ -376,6 +381,18 @@ function renderDialogue(dlg, chars) {
   }).join('')
 }
 
+function absentCtxHtml(e, allEntries) {
+  const present = (e.characters||[]).map(c=>c.toLowerCase())
+  const absent = ['marcus','ryan','jade'].filter(c=>!present.includes(c))
+  return absent.map(cid => {
+    const ctx = allEntries.find(x=>x.character===cid&&x.cycle===e.cycle&&x.day===e.day)
+    if(!ctx) return ''
+    const col = CHARS[cid]||'#e2e8f0'
+    const nm = S.chars[cid]?.name?.split(' ')[0] || cap(cid)
+    return `<div class="absent-ctx"><strong style="color:${col}">${nm}</strong> — ${ctx.action||ctx.thought||''}</div>`
+  }).join('')
+}
+
 function renderToday() {
   const w = S.world
   const day = w.day
@@ -400,6 +417,7 @@ function renderToday() {
         ${e.action?`<div class="feed-action">${e.action}</div>`:''}
         ${e.thought?`<div class="feed-thought">"${e.thought}"</div>`:''}
         ${e.description?`<div class="feed-action">${e.description}</div>`:''}
+        ${isInt?absentCtxHtml(e,entries):''}
         ${isInt?renderDialogue(e.dialogue,e.characters):''}
       </div></div>`
   }).join('')
@@ -479,11 +497,14 @@ function renderLog() {
         cycles[cyc].filter(e=>e.type==='interaction').map(e => {
           const cTag = CYCLE_HOUR_S[cyc]||cyc
           const arr = Array.isArray(e.dialogue)?e.dialogue:(e.dialogue?[{speaker:(e.characters||['?'])[0],line:e.dialogue}]:[])
-          const dlgHtml = arr.length ? arr.map(d=>`<span style="color:${CHARS[d.speaker]||'#e2e8f0'}">${CHAR_NAMES[d.speaker]||cap(d.speaker||'')}:</span> "${d.line||''}" `).join(' ') : ''
+          const preview = arr.slice(0,4)
+          const more = arr.length > 4 ? arr.length - 4 : 0
+          const dlgHtml = preview.map(d=>`<div style="font-size:12px;margin-top:2px"><span style="color:${CHARS[d.speaker]||'#e2e8f0'};font-weight:600">${CHAR_NAMES[d.speaker]||cap(d.speaker||'')}:</span> <em>"${d.line||''}"</em></div>`).join('')
+          const moreHtml = more ? `<div style="font-size:11px;color:var(--muted2);margin-top:3px">+${more} more lines</div>` : ''
           return `<div class="log-entry">
             <div class="log-cycle-tag">${cTag}</div>
             <div class="log-dot" style="background:#475569"></div>
-            <div style="flex:1;color:var(--muted)"><em>${e.description}</em>${dlgHtml?`<br><span style="font-size:12px">${dlgHtml}</span>`:''}</div>
+            <div style="flex:1;color:var(--muted)"><em>${e.description}</em>${dlgHtml?`<br>${dlgHtml}${moreHtml}`:''}</div>
           </div>`
         }).join('')
       ).join('')}
