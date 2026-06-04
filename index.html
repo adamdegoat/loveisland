@@ -4,527 +4,894 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Love Island</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=VT323&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans',sans-serif}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans',sans-serif;background:#020617}
+#world{position:relative;width:100vw;height:100vh;overflow:hidden}
+#world-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+#stars{position:absolute;inset:0;width:100%;height:34%;pointer-events:none;z-index:2;opacity:0;transition:opacity 3s}
+#world.night #stars,#world.dawn #stars{opacity:1}
 
-/* ── WORLD ───────────────────────────────────────────── */
-#world{position:relative;width:100vw;height:100vh;overflow:hidden;transition:background 4s ease}
+/* Cloud animations */
+@keyframes cloud-a{from{transform:translateX(0)}to{transform:translateX(1300px)}}
+.cl1{animation:cloud-a 90s linear infinite}
+.cl2{animation:cloud-a 115s linear infinite;animation-delay:-40s}
+.cl3{animation:cloud-a 72s linear infinite;animation-delay:-22s}
 
-#world.morning{background:linear-gradient(to bottom,
-  #e05c1a 0%,#f7923a 6%,#ffc87a 13%,#87ceeb 26%,#b8e4f9 36%,
-  #3a7020 44%,#2d5e18 52%,#4a7a28 58%,#5a8838 63%,
-  #c4a060 70%,#b08848 76%,#1a6888 82%,#0d3e58 90%,#071828 100%)}
+/* Fire animations */
+@keyframes flk{0%,100%{transform:scaleY(1) scaleX(1)}50%{transform:scaleY(1.22) scaleX(.9)}}
+.fa{animation:flk .75s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+.fb{animation:flk .55s ease-in-out infinite reverse;transform-box:fill-box;transform-origin:50% 100%}
+.fc{animation:flk .42s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
 
-#world.afternoon{background:linear-gradient(to bottom,
-  #1a8ed0 0%,#3ab4f0 10%,#87ceeb 22%,#b8e4f9 32%,
-  #3a7020 44%,#2d5e18 52%,#4a7a28 58%,#5a8838 63%,
-  #c4a060 70%,#b08848 76%,#1a6888 82%,#0d3e58 90%,#071828 100%)}
+/* Wave animations */
+@keyframes wv{from{transform:translateX(0)}to{transform:translateX(500px)}}
+.wa{animation:wv 13s linear infinite}
+.wb{animation:wv 19s linear infinite reverse}
 
-#world.night{background:linear-gradient(to bottom,
-  #050a14 0%,#0a1020 8%,#0d1830 18%,#141f38 28%,
-  #122018 44%,#0e1a10 52%,#142010 58%,#1a2810 63%,
-  #706040 70%,#604e30 76%,#0a2840 82%,#061020 90%,#030810 100%)}
+/* SVG transitions */
+#sky-bg,#sun-group,#moon-group,#night-stars,#night-overlay{transition:opacity 2.5s ease}
 
-/* Stars canvas */
-#stars{position:absolute;inset:0;width:100%;height:32%;pointer-events:none;z-index:1;opacity:0;transition:opacity 3s}
-#world.night #stars{opacity:1}
-
-/* ── LANDMARKS (emoji) ───────────────────────────────── */
-.lm{position:absolute;z-index:3;pointer-events:none;transform:translate(-50%,-50%);
-  filter:drop-shadow(0 2px 8px rgba(0,0,0,.6));line-height:1;transition:opacity 3s}
-#world.night .lm{filter:drop-shadow(0 2px 8px rgba(0,0,0,.9)) brightness(.65)}
-
-/* ── CHARACTERS ──────────────────────────────────────── */
-.char{position:absolute;z-index:10;cursor:pointer;transform:translate(-50%,-100%);
+/* ── CHARACTERS ── */
+.char{position:absolute;z-index:20;transform:translate(-50%,-100%);
   transition:left 2.8s cubic-bezier(.4,0,.2,1),top 2.8s cubic-bezier(.4,0,.2,1)}
-.char-svg{display:block;filter:drop-shadow(0 5px 10px rgba(0,0,0,.5));
-  animation:bob 2.4s ease-in-out infinite}
+.char-svg{display:block;filter:drop-shadow(0 6px 14px rgba(0,0,0,.65));animation:bob 2.4s ease-in-out infinite}
 .char-svg.sad{animation:bob-slow 3.5s ease-in-out infinite}
 .char-svg.angry{animation:bob-tense .9s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@keyframes bob-slow{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
-@keyframes bob-tense{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-2px) rotate(.5deg)}}
-
-.nametag{text-align:center;font-size:10px;font-weight:800;letter-spacing:.6px;
-  text-transform:uppercase;margin-top:3px;
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes bob-slow{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes bob-tense{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-3px) rotate(.5deg)}}
+.nametag{text-align:center;font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;margin-top:4px;
   text-shadow:0 1px 6px rgba(0,0,0,.9),0 0 10px rgba(0,0,0,.7)}
 #char-marcus .nametag{color:#93c5fd}
 #char-ryan .nametag{color:#fde68a}
 #char-jade .nametag{color:#fbcfe8}
 
-/* ── THOUGHT BUBBLE ──────────────────────────────────── */
-.bubble{position:absolute;bottom:82px;left:50%;transform:translateX(-50%) translateY(6px);
-  background:rgba(255,255,255,.95);color:#0f172a;padding:8px 12px;border-radius:14px;
-  font-size:11px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;
-  max-width:175px;min-width:120px;text-align:center;line-height:1.45;
-  box-shadow:0 6px 24px rgba(0,0,0,.4);opacity:0;pointer-events:none;
-  transition:opacity .22s,transform .22s;z-index:20;white-space:normal;letter-spacing:-.1px}
-.bubble.on{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.bubble::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);
-  border:8px solid transparent;border-top-color:rgba(255,255,255,.95);border-bottom:0}
+/* ── SPEECH BUBBLES (always visible) ── */
+.bubble{position:absolute;bottom:134px;left:50%;transform:translateX(-50%);
+  background:rgba(0,0,0,.72);color:#f1f5f9;padding:7px 11px;border-radius:12px;
+  font-size:10px;font-weight:600;max-width:165px;min-width:105px;text-align:center;
+  line-height:1.45;box-shadow:0 4px 18px rgba(0,0,0,.5);pointer-events:none;
+  white-space:normal;z-index:25;border:1px solid rgba(255,255,255,.1)}
+.bubble::after{content:'';position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);
+  border:7px solid transparent;border-top-color:rgba(0,0,0,.72);border-bottom:0}
+.bubble-name{font-size:9px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:3px}
+#char-marcus .bubble-name{color:#93c5fd}
+#char-ryan .bubble-name{color:#fde68a}
+#char-jade .bubble-name{color:#f9a8d4}
+.bubble-text{font-size:10.5px}
 
-/* ── MOOD BADGE ──────────────────────────────────────── */
-.mood-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);
-  font-size:14px;line-height:1;pointer-events:none}
+/* ── NEON CHAT PANEL ── */
+#chat-panel{position:fixed;right:0;bottom:52px;width:265px;height:56vh;
+  background:rgba(0,0,0,.68);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  z-index:50;display:flex;flex-direction:column;
+  border-left:1px solid rgba(255,255,255,.07);border-top:1px solid rgba(255,255,255,.07)}
+#chat-header{padding:7px 12px;font-family:'VT323',monospace;font-size:16px;color:#ff2d78;
+  border-bottom:1px solid rgba(255,255,255,.07);letter-spacing:2px;display:flex;align-items:center;gap:6px}
+#chat-dot{width:6px;height:6px;border-radius:50%;background:#ff2d78;animation:cdot 2s ease-in-out infinite}
+@keyframes cdot{0%,100%{opacity:1}50%{opacity:.2}}
+#chat-feed{flex:1;overflow-y:auto;padding:8px 10px;display:flex;flex-direction:column;gap:5px;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.1) transparent}
+#chat-feed::-webkit-scrollbar{width:3px}
+#chat-feed::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
+.cl{font-family:'VT323',monospace;font-size:15px;line-height:1.3;word-break:break-word}
+.cl.marcus{color:#c084fc}
+.cl.ryan{color:#fb923c}
+.cl.jade{color:#f472b6}
+.cl.interaction{color:#fbbf24}
+.cl-label{font-size:11px;letter-spacing:.8px;opacity:.6;text-transform:uppercase}
+.cl-dialogue{color:#e2e8f0;font-size:13px;opacity:.9}
 
-/* ── HUD ─────────────────────────────────────────────── */
+/* ── HUD ── */
 #hud{position:fixed;bottom:0;left:0;right:0;z-index:100;
-  background:rgba(4,10,24,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-  border-top:1px solid rgba(255,255,255,.07);padding:.55rem 1rem;
-  display:flex;align-items:center;gap:.75rem;min-height:52px}
-
-.hud-info{display:flex;align-items:center;gap:.4rem;font-size:12px;color:rgba(255,255,255,.45);flex-shrink:0}
-.hud-day{font-weight:800;color:rgba(255,255,255,.9);font-size:13px}
-.hud-sep{opacity:.25}
+  background:rgba(2,6,23,.93);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-top:1px solid rgba(255,255,255,.07);padding:0 1rem;
+  display:flex;align-items:center;gap:.6rem;height:52px}
+.hud-day{font-weight:800;color:rgba(255,255,255,.9);font-size:13px;flex-shrink:0}
+.hud-sep{color:rgba(255,255,255,.2);font-size:11px}
+#cycle-label{font-size:11px;color:rgba(255,255,255,.45);flex-shrink:0}
 
 /* Status strip */
-#status-strip{flex:1;display:flex;align-items:center;gap:.3rem;font-size:10px;flex-wrap:wrap}
-.stp{display:inline-flex;align-items:center;gap:.2rem;padding:.18rem .55rem;border-radius:8px;
+#status-strip{display:flex;align-items:center;gap:.3rem;font-size:10px;flex-shrink:0}
+.stp{display:inline-flex;align-items:center;padding:.15rem .5rem;border-radius:7px;
   border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.22);
   font-weight:700;letter-spacing:.3px;text-transform:uppercase;transition:all .4s}
-.stp.running{color:#fbbf24;border-color:rgba(251,191,36,.5);background:rgba(251,191,36,.1);
-  animation:spulse 1s ease-in-out infinite}
+.stp.running{color:#fbbf24;border-color:rgba(251,191,36,.5);background:rgba(251,191,36,.1);animation:spulse 1s ease-in-out infinite}
 .stp.done{color:#4ade80;border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.07)}
-@keyframes spulse{0%,100%{opacity:1}50%{opacity:.55}}
-.stp-arrow{color:rgba(255,255,255,.15);font-size:9px;margin:0 .05rem}
-#status-msg{font-size:10px;color:rgba(255,255,255,.3);font-style:italic;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:160px}
+@keyframes spulse{0%,100%{opacity:1}50%{opacity:.5}}
+.stp-arr{color:rgba(255,255,255,.12);font-size:9px}
+
+/* Tiny status info */
+#status-info{font-size:9px;color:rgba(255,255,255,.28);white-space:nowrap;flex-shrink:0;line-height:1.3;letter-spacing:.2px}
+#status-info span{color:rgba(255,255,255,.45)}
+#status-msg{font-size:9px;color:rgba(255,255,255,.3);font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}
 
 /* Buttons */
-.hud-actions{display:flex;align-items:center;gap:.5rem;margin-left:auto;flex-shrink:0}
-#run-btn{display:inline-flex;align-items:center;gap:.3rem;padding:.32rem .85rem;
-  border-radius:20px;border:1px solid rgba(244,114,182,.4);background:rgba(244,114,182,.12);
+.hud-actions{display:flex;align-items:center;gap:.45rem;margin-left:auto;flex-shrink:0}
+#run-btn{display:inline-flex;align-items:center;gap:.25rem;padding:.28rem .8rem;
+  border-radius:18px;border:1px solid rgba(244,114,182,.4);background:rgba(244,114,182,.12);
   color:#f472b6;font-size:11px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;
   cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
-#run-btn:hover:not(:disabled){background:rgba(244,114,182,.22);transform:translateY(-1px);
-  box-shadow:0 4px 18px rgba(244,114,182,.3)}
-#run-btn:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none}
+#run-btn:hover:not(:disabled){background:rgba(244,114,182,.22);transform:translateY(-1px);box-shadow:0 4px 16px rgba(244,114,182,.3)}
+#run-btn:disabled{opacity:.35;cursor:not-allowed}
 #run-btn.busy{color:#fbbf24;border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.1)}
 #run-btn.done{color:#4ade80;border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.08)}
-
-#story-btn{display:inline-flex;align-items:center;gap:.25rem;padding:.32rem .75rem;
-  border-radius:20px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);
+#story-btn{display:inline-flex;align-items:center;gap:.2rem;padding:.28rem .7rem;
+  border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);
   color:rgba(255,255,255,.5);font-size:11px;font-weight:700;letter-spacing:.3px;
   text-transform:uppercase;text-decoration:none;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
 #story-btn:hover{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.85);background:rgba(255,255,255,.09)}
 
-@media(max-width:520px){
-  #status-strip{display:none}
-  .hud-info{font-size:11px}
-  #run-btn,#story-btn{padding:.28rem .65rem;font-size:10px}
+@media(max-width:600px){
+  #chat-panel{width:220px}
+  #status-strip,#status-info{display:none}
+  #run-btn,#story-btn{padding:.24rem .6rem;font-size:10px}
 }
 </style>
 </head>
 <body>
 <div id="world" class="afternoon">
+<canvas id="stars"></canvas>
 
-  <canvas id="stars"></canvas>
+<!-- ══ WORLD SVG ══════════════════════════════════════════ -->
+<svg id="world-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="sky-morning" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#c2410c"/><stop offset="20%" stop-color="#ea580c"/>
+    <stop offset="42%" stop-color="#fbbf24"/><stop offset="65%" stop-color="#7dd3fc"/>
+    <stop offset="100%" stop-color="#bae6fd"/>
+  </linearGradient>
+  <linearGradient id="sky-midday" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0369a1"/><stop offset="35%" stop-color="#0ea5e9"/>
+    <stop offset="70%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#bae6fd"/>
+  </linearGradient>
+  <linearGradient id="sky-afternoon" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1d4ed8"/><stop offset="40%" stop-color="#0ea5e9"/>
+    <stop offset="75%" stop-color="#7dd3fc"/><stop offset="100%" stop-color="#dbeafe"/>
+  </linearGradient>
+  <linearGradient id="sky-evening" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#6d28d9"/><stop offset="22%" stop-color="#be185d"/>
+    <stop offset="48%" stop-color="#dc2626"/><stop offset="68%" stop-color="#ea580c"/>
+    <stop offset="85%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#fde68a"/>
+  </linearGradient>
+  <linearGradient id="sky-night" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#020617"/><stop offset="40%" stop-color="#0f172a"/>
+    <stop offset="80%" stop-color="#1e1b4b"/><stop offset="100%" stop-color="#1e1b4b"/>
+  </linearGradient>
+  <linearGradient id="sky-dawn" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1e1b4b"/><stop offset="28%" stop-color="#4c1d95"/>
+    <stop offset="52%" stop-color="#7c3aed"/><stop offset="72%" stop-color="#be185d"/>
+    <stop offset="88%" stop-color="#f97316"/><stop offset="100%" stop-color="#fbbf24"/>
+  </linearGradient>
+  <linearGradient id="ocean-g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0369a1"/><stop offset="60%" stop-color="#075985"/>
+    <stop offset="100%" stop-color="#0c4a6e"/>
+  </linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
 
-  <!-- Landmarks -->
-  <div class="lm" id="lm-tree1" style="left:8%;top:34%;font-size:clamp(1.6rem,3.5vw,2.8rem)">🌲</div>
-  <div class="lm" id="lm-tree2" style="left:12%;top:31%;font-size:clamp(1.4rem,3vw,2.4rem)">🌲</div>
-  <div class="lm" id="lm-tree3" style="left:16%;top:33%;font-size:clamp(1.5rem,3.2vw,2.6rem)">🌲</div>
-  <div class="lm" id="lm-tree4" style="left:20%;top:35%;font-size:clamp(1.3rem,2.8vw,2.2rem)">🌿</div>
-  <div class="lm" id="lm-cliff" style="left:83%;top:27%;font-size:clamp(2rem,4.5vw,3.8rem)">🏔️</div>
-  <div class="lm" id="lm-tent"  style="left:80%;top:34%;font-size:clamp(1.4rem,3vw,2.4rem)">⛺</div>
-  <div class="lm" id="lm-house" style="left:51%;top:55%;font-size:clamp(1.8rem,4vw,3.2rem)">🏠</div>
-  <div class="lm" id="lm-palm1" style="left:19%;top:57%;font-size:clamp(1.8rem,4vw,3.2rem)">🌴</div>
-  <div class="lm" id="lm-palm2" style="left:25%;top:54%;font-size:clamp(1.5rem,3.2vw,2.6rem)">🌴</div>
-  <div class="lm" id="lm-fire"  style="left:50%;top:68%;font-size:clamp(1.2rem,2.5vw,2rem)">🔥</div>
-  <div class="lm" id="lm-wave1" style="left:30%;top:77%;font-size:clamp(1rem,2.2vw,1.8rem);opacity:.6">🌊</div>
-  <div class="lm" id="lm-wave2" style="left:68%;top:79%;font-size:clamp(1rem,2.2vw,1.8rem);opacity:.5">🌊</div>
+<!-- SKY -->
+<rect id="sky-bg" width="1000" height="315" fill="url(#sky-afternoon)"/>
 
-  <!-- ── MARCUS ───────────────────────────────────── -->
-  <div class="char" id="char-marcus" onclick="toggleBubble('marcus')">
-    <div class="bubble" id="bubble-marcus"></div>
-    <div class="mood-badge" id="mood-marcus">😶</div>
-    <svg class="char-svg" id="svg-marcus" width="52" height="76" viewBox="-20 -76 40 80">
-      <!-- shoes -->
-      <ellipse cx="-7" cy="-2" rx="8.5" ry="3.5" fill="#111827"/>
-      <ellipse cx="7" cy="-2" rx="8.5" ry="3.5" fill="#111827"/>
-      <!-- pants -->
-      <rect x="-12" y="-28" width="10.5" height="27" rx="3" fill="#1e2d40"/>
-      <rect x="1.5" y="-28" width="10.5" height="27" rx="3" fill="#1e2d40"/>
-      <!-- navy jacket body -->
-      <rect x="-13" y="-57" width="26" height="31" rx="4" fill="#1e3a5f"/>
-      <!-- jacket lapels -->
-      <polygon points="-7,-57 0,-48 0,-57" fill="#162d4a"/>
-      <polygon points="7,-57 0,-48 0,-57" fill="#162d4a"/>
-      <!-- arms -->
-      <path d="M -13 -53 C -22 -43 -21 -32 -20 -27" stroke="#1e3a5f" stroke-width="9" fill="none" stroke-linecap="round"/>
-      <path d="M 13 -53 C 22 -43 21 -32 20 -27" stroke="#1e3a5f" stroke-width="9" fill="none" stroke-linecap="round"/>
-      <!-- hands -->
-      <circle cx="-20" cy="-26" r="5.5" fill="#c8a47a"/>
-      <circle cx="20" cy="-26" r="5.5" fill="#c8a47a"/>
-      <!-- neck -->
-      <rect x="-4.5" y="-64" width="9" height="9" rx="2.5" fill="#c8a47a"/>
-      <!-- head -->
-      <ellipse cx="0" cy="-72" rx="13.5" ry="13" fill="#c8a47a"/>
-      <!-- hair short dark military -->
-      <path d="M -13.5 -72 C -13.5 -88 -5 -86 0 -86 C 5 -86 13.5 -88 13.5 -72" fill="#221408"/>
-      <rect x="-13.5" y="-79" width="27" height="7" fill="#221408"/>
-      <!-- eyebrows slight furrow -->
-      <line x1="-9" y1="-77.5" x2="-3" y2="-76" stroke="#221408" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="3" y1="-76" x2="9" y2="-77.5" stroke="#221408" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- eyes -->
-      <ellipse cx="-5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/>
-      <ellipse cx="5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/>
-      <circle cx="-5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/>
-      <circle cx="5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/>
-      <!-- mouth neutral -->
-      <path id="mouth-marcus" d="M -4 -64.5 L 4 -64.5" stroke="#9a6e4a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-    </svg>
-    <div class="nametag">Marcus</div>
+<!-- SUN -->
+<g id="sun-group">
+  <circle cx="810" cy="88" r="70" fill="#fbbf24" opacity=".1"/>
+  <circle cx="810" cy="88" r="48" fill="#fcd34d" opacity=".18"/>
+  <circle cx="810" cy="88" r="32" fill="#fde68a"/>
+  <circle cx="810" cy="88" r="26" fill="#fef3c7"/>
+</g>
+<!-- MOON -->
+<g id="moon-group" opacity="0" filter="url(#glow)">
+  <circle cx="810" cy="88" r="30" fill="#e2e8f0"/>
+  <circle cx="824" cy="80" r="24" fill="#0f172a"/>
+</g>
+<!-- STARS -->
+<g id="night-stars" opacity="0">
+  <circle cx="55" cy="28" r="1.4" fill="white" opacity=".9"/><circle cx="138" cy="48" r="1.1" fill="white" opacity=".7"/>
+  <circle cx="218" cy="18" r="1.6" fill="white" opacity=".85"/><circle cx="305" cy="55" r="1.2" fill="white" opacity=".9"/>
+  <circle cx="388" cy="22" r="1.5" fill="white" opacity=".65"/><circle cx="452" cy="46" r="1.1" fill="white" opacity=".8"/>
+  <circle cx="528" cy="14" r="1.3" fill="white" opacity=".75"/><circle cx="612" cy="38" r="1.4" fill="white" opacity=".8"/>
+  <circle cx="685" cy="60" r="1.2" fill="white" opacity=".7"/><circle cx="748" cy="20" r="1.5" fill="white" opacity=".9"/>
+  <circle cx="862" cy="44" r="1.2" fill="white" opacity=".75"/><circle cx="948" cy="26" r="1.6" fill="white" opacity=".85"/>
+  <circle cx="105" cy="75" r="1" fill="white" opacity=".6"/><circle cx="272" cy="82" r="1.2" fill="white" opacity=".7"/>
+  <circle cx="465" cy="78" r="1" fill="white" opacity=".65"/><circle cx="655" cy="85" r="1.3" fill="white" opacity=".6"/>
+  <circle cx="828" cy="70" r="1.1" fill="white" opacity=".75"/><circle cx="178" cy="96" r="1" fill="white" opacity=".5"/>
+  <circle cx="362" cy="94" r="1.2" fill="white" opacity=".6"/><circle cx="562" cy="100" r="1" fill="white" opacity=".55"/>
+</g>
+
+<!-- CLOUDS -->
+<g class="cl1" opacity=".88">
+  <ellipse cx="-180" cy="75" rx="68" ry="26" fill="white"/>
+  <ellipse cx="-140" cy="64" rx="50" ry="22" fill="white"/>
+  <ellipse cx="-215" cy="80" rx="42" ry="19" fill="white"/>
+</g>
+<g class="cl2" opacity=".72">
+  <ellipse cx="-480" cy="50" rx="55" ry="20" fill="white"/>
+  <ellipse cx="-445" cy="41" rx="40" ry="17" fill="white"/>
+  <ellipse cx="-510" cy="54" rx="35" ry="15" fill="white"/>
+</g>
+<g class="cl3" opacity=".6">
+  <ellipse cx="-720" cy="108" rx="62" ry="23" fill="white"/>
+  <ellipse cx="-682" cy="97" rx="46" ry="19" fill="white"/>
+  <ellipse cx="-752" cy="112" rx="38" ry="17" fill="white"/>
+</g>
+
+<!-- DISTANT HILLS -->
+<path d="M 0 285 Q 120 248 250 272 Q 390 245 520 265 Q 660 242 790 265 Q 900 248 1000 262 L 1000 315 L 0 315 Z" fill="#166534" opacity=".7"/>
+<path d="M 0 298 Q 180 272 360 290 Q 530 270 700 286 Q 850 270 1000 282 L 1000 315 L 0 315 Z" fill="#15803d" opacity=".55"/>
+
+<!-- GROUND -->
+<rect x="0" y="305" width="1000" height="210" fill="#4ade80" opacity=".15"/>
+<rect x="0" y="310" width="1000" height="200" fill="#16a34a"/>
+<path d="M 0 310 Q 250 302 500 312 Q 750 302 1000 308" stroke="#15803d" stroke-width="4" fill="none" opacity=".6"/>
+<!-- Ground depth patches -->
+<ellipse cx="120" cy="335" rx="55" ry="10" fill="#15803d" opacity=".4"/>
+<ellipse cx="420" cy="328" rx="70" ry="8" fill="#15803d" opacity=".3"/>
+<ellipse cx="720" cy="338" rx="60" ry="9" fill="#15803d" opacity=".35"/>
+<!-- Dirt path from house to fire pit -->
+<path d="M 535 368 Q 520 395 512 420 Q 506 442 504 462" stroke="#a16207" stroke-width="16" fill="none" stroke-linecap="round" opacity=".4"/>
+
+<!-- ══ FOREST (NW) ══ -->
+<rect x="30" y="298" width="13" height="56" rx="3" fill="#92400e"/>
+<ellipse cx="37" cy="298" rx="32" ry="24" fill="#14532d"/>
+<ellipse cx="37" cy="284" rx="26" ry="19" fill="#166534"/>
+<ellipse cx="37" cy="272" rx="17" ry="14" fill="#16a34a"/>
+
+<rect x="88" y="290" width="12" height="50" rx="3" fill="#92400e"/>
+<ellipse cx="94" cy="290" rx="30" ry="22" fill="#14532d"/>
+<ellipse cx="94" cy="277" rx="24" ry="18" fill="#166534"/>
+<ellipse cx="94" cy="265" rx="16" ry="13" fill="#16a34a"/>
+
+<rect x="148" y="295" width="13" height="58" rx="3" fill="#92400e"/>
+<ellipse cx="155" cy="295" rx="34" ry="25" fill="#14532d"/>
+<ellipse cx="155" cy="280" rx="27" ry="20" fill="#166534"/>
+<ellipse cx="155" cy="267" rx="18" ry="15" fill="#16a34a"/>
+
+<rect x="205" y="302" width="11" height="46" rx="3" fill="#92400e"/>
+<ellipse cx="211" cy="302" rx="27" ry="21" fill="#14532d"/>
+<ellipse cx="211" cy="290" rx="21" ry="16" fill="#166534"/>
+<ellipse cx="211" cy="279" rx="14" ry="12" fill="#16a34a"/>
+
+<rect x="62" y="308" width="10" height="42" rx="3" fill="#78350f"/>
+<ellipse cx="67" cy="308" rx="25" ry="20" fill="#14532d" opacity=".85"/>
+<ellipse cx="67" cy="297" rx="19" ry="15" fill="#166534" opacity=".85"/>
+
+<!-- ══ CLIFF (NE) ══ -->
+<path d="M 822 318 L 812 258 L 828 202 L 856 168 L 892 160 L 928 180 L 952 222 L 968 272 L 988 308 L 1000 318 L 1000 355 L 822 355 Z" fill="#78716c"/>
+<path d="M 822 318 L 812 258 L 828 202 L 856 168 L 892 160 L 928 180 L 952 222 L 968 272" fill="none" stroke="#44403c" stroke-width="2.5"/>
+<path d="M 838 305 L 858 275 L 876 255" stroke="#44403c" stroke-width="2" fill="none" opacity=".5"/>
+<path d="M 858 285 L 878 260 L 900 242" stroke="#44403c" stroke-width="1.8" fill="none" opacity=".4"/>
+<path d="M 876 268 L 896 248 L 918 232" stroke="#44403c" stroke-width="1.5" fill="none" opacity=".35"/>
+<!-- Cliff top grass ledge -->
+<ellipse cx="878" cy="170" rx="52" ry="14" fill="#16a34a"/>
+<!-- Tent -->
+<polygon points="848,208 878,174 908,208" fill="#92400e"/>
+<polygon points="848,208 878,174 878,208" fill="#78350f"/>
+<path d="M 871 208 Q 878 198 885 208" fill="#1c0a00"/>
+<line x1="848" y1="208" x2="833" y2="228" stroke="#a16207" stroke-width="1.5" opacity=".6"/>
+<line x1="908" y1="208" x2="923" y2="228" stroke="#a16207" stroke-width="1.5" opacity=".6"/>
+<line x1="878" y1="174" x2="878" y2="162" stroke="#92400e" stroke-width="1.5"/>
+<polygon points="878,162 890,167 878,173" fill="#dc2626"/>
+
+<!-- ══ RYAN'S HOUSE ══ -->
+<rect x="474" y="362" width="118" height="12" rx="3" fill="#92400e"/>
+<rect x="478" y="318" width="110" height="48" fill="#fef3c7"/>
+<line x1="478" y1="334" x2="588" y2="334" stroke="#fde68a" stroke-width="1.2" opacity=".5"/>
+<line x1="478" y1="350" x2="588" y2="350" stroke="#fde68a" stroke-width="1.2" opacity=".5"/>
+<polygon points="466,321 533,280 600,321" fill="#9a3412"/>
+<polygon points="466,321 533,280 533,321" fill="#7c2d12"/>
+<rect x="552" y="284" width="15" height="30" fill="#78350f"/>
+<rect x="550" y="280" width="19" height="6" rx="2" fill="#44403c"/>
+<!-- Windows -->
+<rect x="488" y="326" width="25" height="21" fill="#bae6fd" rx="2"/>
+<line x1="488" y1="336.5" x2="513" y2="336.5" stroke="#38bdf8" stroke-width="1.2"/>
+<line x1="500.5" y1="326" x2="500.5" y2="347" stroke="#38bdf8" stroke-width="1.2"/>
+<rect x="489" y="327" width="11" height="9" fill="#e0f2fe" opacity=".5"/>
+<rect x="552" y="326" width="25" height="21" fill="#bae6fd" rx="2"/>
+<line x1="552" y1="336.5" x2="577" y2="336.5" stroke="#38bdf8" stroke-width="1.2"/>
+<line x1="564.5" y1="326" x2="564.5" y2="347" stroke="#38bdf8" stroke-width="1.2"/>
+<!-- Door -->
+<rect x="521" y="338" width="24" height="26" fill="#78350f" rx="3"/>
+<circle cx="541" cy="351" r="3" fill="#ca8a04"/>
+<rect x="521" y="338" width="12" height="26" fill="#44403c" opacity=".25" rx="3"/>
+<!-- Flowers -->
+<rect x="483" y="354" width="2.5" height="10" fill="#15803d"/>
+<circle cx="484" cy="352" r="5" fill="#f9a8d4"/>
+<rect x="498" y="356" width="2.5" height="8" fill="#15803d"/>
+<circle cx="499" cy="354" r="4" fill="#fbbf24"/>
+<rect x="569" y="354" width="2.5" height="10" fill="#15803d"/>
+<circle cx="570" cy="352" r="5" fill="#f9a8d4"/>
+<rect x="580" y="356" width="2.5" height="8" fill="#15803d"/>
+<circle cx="581" cy="354" r="4" fill="#86efac"/>
+
+<!-- ══ PALM TREES + HAMMOCK ══ -->
+<!-- Palm 1 -->
+<path d="M 194 398 Q 186 365 183 328 Q 181 302 172 280" stroke="#a16207" stroke-width="12" fill="none" stroke-linecap="round"/>
+<path d="M 194 398 Q 186 365 183 328 Q 181 302 172 280" stroke="#ca8a04" stroke-width="4" fill="none" stroke-linecap="round" opacity=".35"/>
+<path d="M 172 280 Q 135 264 115 254" stroke="#15803d" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 155 260 148 243" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 179 258 181 242" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 193 262 207 250" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 202 270 218 262" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
+<circle cx="165" cy="285" r="8" fill="#92400e"/><circle cx="177" cy="281" r="7" fill="#a16207"/>
+<!-- Palm 2 -->
+<path d="M 268 398 Q 276 365 279 328 Q 281 302 290 280" stroke="#a16207" stroke-width="12" fill="none" stroke-linecap="round"/>
+<path d="M 268 398 Q 276 365 279 328 Q 281 302 290 280" stroke="#ca8a04" stroke-width="4" fill="none" stroke-linecap="round" opacity=".35"/>
+<path d="M 290 280 Q 325 264 345 254" stroke="#15803d" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 307 260 314 243" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 283 258 281 242" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 269 262 256 250" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 260 270 244 262" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
+<circle cx="297" cy="285" r="8" fill="#92400e"/>
+<!-- Hammock -->
+<path d="M 185 342 Q 232 365 279 342" fill="#be185d" opacity=".88"/>
+<path d="M 185 342 Q 232 362 279 342" fill="none" stroke="#9d174d" stroke-width="2"/>
+<path d="M 188 343 Q 232 360 278 343" fill="none" stroke="white" stroke-width="1.5" opacity=".3"/>
+<path d="M 191 344 Q 232 358 277 344" fill="none" stroke="#f9a8d4" stroke-width="1" opacity=".45"/>
+<line x1="185" y1="342" x2="184" y2="323" stroke="#a16207" stroke-width="2.5"/>
+<line x1="279" y1="342" x2="280" y2="323" stroke="#a16207" stroke-width="2.5"/>
+
+<!-- ══ FIRE PIT ══ -->
+<ellipse cx="492" cy="438" rx="34" ry="14" fill="#1c0a00"/>
+<ellipse cx="492" cy="434" rx="30" ry="12" fill="none" stroke="#92400e" stroke-width="9"/>
+<ellipse cx="492" cy="434" rx="30" ry="12" fill="none" stroke="#b45309" stroke-width="3" opacity=".35"/>
+<line x1="469" y1="438" x2="514" y2="427" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
+<line x1="513" y1="438" x2="468" y2="427" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
+<path class="fa" d="M 483 428 Q 480 414 484 403 Q 488 393 492 384 Q 496 393 500 403 Q 504 414 501 428 Q 496 418 492 424 Q 488 418 483 428" fill="#dc2626"/>
+<path class="fb" d="M 485 426 Q 483 413 487 403 Q 489 395 492 388 Q 495 395 497 403 Q 501 413 499 426 Q 495 417 492 422 Q 489 417 485 426" fill="#f97316"/>
+<path class="fc" d="M 487 424 Q 486 413 488 405 Q 490 399 492 394 Q 494 399 496 405 Q 498 413 497 424 Q 494 416 492 421 Q 490 416 487 424" fill="#fbbf24"/>
+<ellipse cx="492" cy="428" rx="9" ry="4" fill="#f97316" opacity=".25"/>
+
+<!-- ══ BEACH ══ -->
+<path d="M 0 492 Q 200 480 400 488 Q 600 478 800 486 Q 900 483 1000 490 L 1000 525 L 0 525 Z" fill="#fef9c3"/>
+<path d="M 0 498 Q 200 490 400 496 Q 600 488 800 494 Q 900 492 1000 498" fill="none" stroke="#fde68a" stroke-width="1.8" opacity=".5"/>
+<ellipse cx="135" cy="510" rx="7" ry="3.5" fill="#fde68a" opacity=".6"/>
+<ellipse cx="325" cy="506" rx="5" ry="2.5" fill="#fcd34d" opacity=".5"/>
+<ellipse cx="585" cy="508" rx="6" ry="3" fill="#fde68a" opacity=".55"/>
+<ellipse cx="778" cy="512" rx="7" ry="3" fill="#fde68a" opacity=".5"/>
+<!-- Beach umbrella -->
+<line x1="118" y1="492" x2="118" y2="518" stroke="#a16207" stroke-width="3"/>
+<ellipse cx="118" cy="492" rx="26" ry="10" fill="#be185d" opacity=".8"/>
+<ellipse cx="118" cy="492" rx="13" ry="10" fill="#9d174d" opacity=".4"/>
+
+<!-- ══ OCEAN ══ -->
+<rect x="0" y="518" width="1000" height="82" fill="url(#ocean-g)"/>
+<path class="wa" d="M -500 534 Q -375 524 -250 534 Q -125 544 0 534 Q 125 524 250 534 Q 375 544 500 534 Q 625 524 750 534 Q 875 544 1000 534 Q 1125 524 1250 534 Q 1375 544 1500 534 L 1500 600 L -500 600 Z" fill="#0284c7" opacity=".45"/>
+<path class="wb" d="M -300 546 Q -175 537 -50 546 Q 75 555 200 546 Q 325 537 450 546 Q 575 555 700 546 Q 825 537 950 546 Q 1075 555 1200 546 Q 1325 537 1450 546 L 1450 600 L -300 600 Z" fill="#075985" opacity=".5"/>
+<path class="wa" d="M -500 528 Q -375 522 -250 528 Q -125 534 0 528 Q 125 522 250 528 Q 375 534 500 528 Q 625 522 750 528 Q 875 534 1000 528 Q 1125 522 1250 528 Q 1375 534 1500 528" fill="none" stroke="white" stroke-width="1.8" opacity=".28"/>
+
+<!-- NIGHT OVERLAY -->
+<rect id="night-overlay" width="1000" height="600" fill="#020617" opacity="0"/>
+</svg>
+
+<!-- ══ MARCUS ══════════════════════════════════════════════ -->
+<div class="char" id="char-marcus">
+  <div class="bubble" id="bubble-marcus">
+    <div class="bubble-name">Marcus</div>
+    <span class="bubble-text" id="thought-marcus">…</span>
+  </div>
+  <svg class="char-svg" id="svg-marcus" width="80" height="116" viewBox="-20 -76 40 80">
+    <ellipse cx="-7" cy="-2" rx="8.5" ry="3.5" fill="#111827"/>
+    <ellipse cx="7" cy="-2" rx="8.5" ry="3.5" fill="#111827"/>
+    <rect x="-12" y="-28" width="10.5" height="27" rx="3" fill="#1e2d40"/>
+    <rect x="1.5" y="-28" width="10.5" height="27" rx="3" fill="#1e2d40"/>
+    <rect x="-13" y="-57" width="26" height="31" rx="4" fill="#1e3a5f"/>
+    <polygon points="-7,-57 0,-48 0,-57" fill="#162d4a"/>
+    <polygon points="7,-57 0,-48 0,-57" fill="#162d4a"/>
+    <path d="M -13 -53 C -22 -43 -21 -32 -20 -27" stroke="#1e3a5f" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M 13 -53 C 22 -43 21 -32 20 -27" stroke="#1e3a5f" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <circle cx="-20" cy="-26" r="5.5" fill="#c8a47a"/>
+    <circle cx="20" cy="-26" r="5.5" fill="#c8a47a"/>
+    <rect x="-4.5" y="-64" width="9" height="9" rx="2.5" fill="#c8a47a"/>
+    <ellipse cx="0" cy="-72" rx="13.5" ry="13" fill="#c8a47a"/>
+    <path d="M -13.5 -72 C -13.5 -88 -5 -86 0 -86 C 5 -86 13.5 -88 13.5 -72" fill="#221408"/>
+    <rect x="-13.5" y="-79" width="27" height="7" fill="#221408"/>
+    <path id="brow-l-marcus" d="M -9 -77.5 L -3 -76" stroke="#221408" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path id="brow-r-marcus" d="M 3 -76 L 9 -77.5" stroke="#221408" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <g id="eyes-normal-marcus">
+      <ellipse cx="-5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/><ellipse cx="5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/>
+      <circle cx="-5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/><circle cx="5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/>
+    </g>
+    <g id="eyes-wide-marcus" display="none">
+      <ellipse cx="-5.5" cy="-72.5" rx="3.8" ry="3.5" fill="white"/><ellipse cx="5.5" cy="-72.5" rx="3.8" ry="3.5" fill="white"/>
+      <circle cx="-5.5" cy="-72" r="2.2" fill="#1a1a1a"/><circle cx="5.5" cy="-72" r="2.2" fill="#1a1a1a"/>
+      <circle cx="-4.4" cy="-73.5" r=".75" fill="white"/><circle cx="6.6" cy="-73.5" r=".75" fill="white"/>
+    </g>
+    <g id="eyes-narrow-marcus" display="none">
+      <path d="M -8.5 -72.5 Q -5.5 -70.5 -2.5 -72.5" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M 2.5 -72.5 Q 5.5 -70.5 8.5 -72.5" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="eyes-happy-marcus" display="none">
+      <path d="M -8.5 -72.5 Q -5.5 -69.5 -2.5 -72.5" stroke="#1a1a1a" stroke-width="2.5" fill="#c8a47a" stroke-linecap="round"/>
+      <path d="M 2.5 -72.5 Q 5.5 -69.5 8.5 -72.5" stroke="#1a1a1a" stroke-width="2.5" fill="#c8a47a" stroke-linecap="round"/>
+    </g>
+    <g id="eyes-bedroom-marcus" display="none">
+      <ellipse cx="-5.5" cy="-71.5" rx="3" ry="1.8" fill="white"/><ellipse cx="5.5" cy="-71.5" rx="3" ry="1.8" fill="white"/>
+      <circle cx="-5.5" cy="-71.5" r="1.4" fill="#1a1a1a"/><circle cx="5.5" cy="-71.5" r="1.4" fill="#1a1a1a"/>
+      <path d="M -8.5 -71.5 Q -5.5 -74.5 -2.5 -71.5" fill="#c8a47a"/>
+      <path d="M 2.5 -71.5 Q 5.5 -74.5 8.5 -71.5" fill="#c8a47a"/>
+    </g>
+    <g id="eyes-heart-marcus" display="none">
+      <path d="M -7.5 -73.5 Q -7.5 -76.5 -5.5 -75 Q -3.5 -76.5 -3.5 -73.5 Q -3.5 -71 -5.5 -69.5 Q -7.5 -71 -7.5 -73.5Z" fill="#f472b6"/>
+      <path d="M 3.5 -73.5 Q 3.5 -76.5 5.5 -75 Q 7.5 -76.5 7.5 -73.5 Q 7.5 -71 5.5 -69.5 Q 3.5 -71 3.5 -73.5Z" fill="#f472b6"/>
+    </g>
+    <g id="eyes-teary-marcus" display="none">
+      <ellipse cx="-5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/><ellipse cx="5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/>
+      <circle cx="-5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/><circle cx="5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/>
+      <ellipse cx="-5.5" cy="-69" rx="1.2" ry="1.9" fill="#93c5fd" opacity=".88"/>
+      <ellipse cx="5.5" cy="-69" rx="1.2" ry="1.9" fill="#93c5fd" opacity=".88"/>
+    </g>
+    <g id="blush-marcus" display="none">
+      <ellipse cx="-9.5" cy="-67.5" rx="5.5" ry="2.8" fill="#fda4af" opacity=".5"/>
+      <ellipse cx="9.5" cy="-67.5" rx="5.5" ry="2.8" fill="#fda4af" opacity=".5"/>
+    </g>
+    <path id="mouth-marcus" d="M -4 -64.5 L 4 -64.5" stroke="#9a6e4a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  </svg>
+  <div class="nametag">Marcus</div>
+</div>
+
+<!-- ══ RYAN ═══════════════════════════════════════════════ -->
+<div class="char" id="char-ryan">
+  <div class="bubble" id="bubble-ryan">
+    <div class="bubble-name">Ryan</div>
+    <span class="bubble-text" id="thought-ryan">…</span>
+  </div>
+  <svg class="char-svg" id="svg-ryan" width="80" height="116" viewBox="-20 -76 40 80">
+    <ellipse cx="-7" cy="-2" rx="8.5" ry="3.5" fill="#5c3d1e"/>
+    <ellipse cx="7" cy="-2" rx="8.5" ry="3.5" fill="#5c3d1e"/>
+    <rect x="-12" y="-28" width="10.5" height="27" rx="3" fill="#a08038"/>
+    <rect x="1.5" y="-28" width="10.5" height="27" rx="3" fill="#a08038"/>
+    <rect x="-13" y="-57" width="26" height="31" rx="4" fill="#d97706"/>
+    <path d="M -13 -53 C -22 -43 -21 -32 -20 -27" stroke="#d97706" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M 13 -53 C 22 -43 21 -32 20 -27" stroke="#d97706" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <circle cx="-20" cy="-26" r="5.5" fill="#c8a47a"/>
+    <circle cx="20" cy="-26" r="5.5" fill="#c8a47a"/>
+    <rect x="-4.5" y="-64" width="9" height="9" rx="2.5" fill="#c8a47a"/>
+    <ellipse cx="0" cy="-72" rx="13.5" ry="13" fill="#c8a47a"/>
+    <path d="M -13.5 -72 C -13.5 -87 -5 -86 0 -86 C 5 -86 13.5 -87 13.5 -72" fill="#5c3418"/>
+    <rect x="-13.5" y="-79" width="27" height="7" fill="#5c3418"/>
+    <path d="M -4 -85 C -1 -91 1 -91 4 -85" fill="#5c3418"/>
+    <path id="brow-l-ryan" d="M -9 -76 C -6 -78 -2 -77.5" stroke="#5c3418" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+    <path id="brow-r-ryan" d="M 2 -77.5 C 6 -78 9 -76" stroke="#5c3418" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+    <g id="eyes-normal-ryan">
+      <ellipse cx="-5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/><ellipse cx="5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/>
+      <circle cx="-5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/><circle cx="5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/>
+    </g>
+    <g id="eyes-wide-ryan" display="none">
+      <ellipse cx="-5.5" cy="-72.5" rx="3.8" ry="3.5" fill="white"/><ellipse cx="5.5" cy="-72.5" rx="3.8" ry="3.5" fill="white"/>
+      <circle cx="-5.5" cy="-72" r="2.2" fill="#1a1a1a"/><circle cx="5.5" cy="-72" r="2.2" fill="#1a1a1a"/>
+      <circle cx="-4.4" cy="-73.5" r=".75" fill="white"/><circle cx="6.6" cy="-73.5" r=".75" fill="white"/>
+    </g>
+    <g id="eyes-narrow-ryan" display="none">
+      <path d="M -8.5 -72.5 Q -5.5 -70.5 -2.5 -72.5" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M 2.5 -72.5 Q 5.5 -70.5 8.5 -72.5" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="eyes-happy-ryan" display="none">
+      <path d="M -8.5 -72.5 Q -5.5 -69.5 -2.5 -72.5" stroke="#1a1a1a" stroke-width="2.5" fill="#c8a47a" stroke-linecap="round"/>
+      <path d="M 2.5 -72.5 Q 5.5 -69.5 8.5 -72.5" stroke="#1a1a1a" stroke-width="2.5" fill="#c8a47a" stroke-linecap="round"/>
+    </g>
+    <g id="eyes-bedroom-ryan" display="none">
+      <ellipse cx="-5.5" cy="-71.5" rx="3" ry="1.8" fill="white"/><ellipse cx="5.5" cy="-71.5" rx="3" ry="1.8" fill="white"/>
+      <circle cx="-5.5" cy="-71.5" r="1.4" fill="#1a1a1a"/><circle cx="5.5" cy="-71.5" r="1.4" fill="#1a1a1a"/>
+      <path d="M -8.5 -71.5 Q -5.5 -74.5 -2.5 -71.5" fill="#c8a47a"/>
+      <path d="M 2.5 -71.5 Q 5.5 -74.5 8.5 -71.5" fill="#c8a47a"/>
+    </g>
+    <g id="eyes-heart-ryan" display="none">
+      <path d="M -7.5 -73.5 Q -7.5 -76.5 -5.5 -75 Q -3.5 -76.5 -3.5 -73.5 Q -3.5 -71 -5.5 -69.5 Q -7.5 -71 -7.5 -73.5Z" fill="#f472b6"/>
+      <path d="M 3.5 -73.5 Q 3.5 -76.5 5.5 -75 Q 7.5 -76.5 7.5 -73.5 Q 7.5 -71 5.5 -69.5 Q 3.5 -71 3.5 -73.5Z" fill="#f472b6"/>
+    </g>
+    <g id="eyes-teary-ryan" display="none">
+      <ellipse cx="-5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/><ellipse cx="5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/>
+      <circle cx="-5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/><circle cx="5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/>
+      <ellipse cx="-5.5" cy="-69" rx="1.2" ry="1.9" fill="#93c5fd" opacity=".88"/>
+      <ellipse cx="5.5" cy="-69" rx="1.2" ry="1.9" fill="#93c5fd" opacity=".88"/>
+    </g>
+    <g id="blush-ryan" display="none">
+      <ellipse cx="-9.5" cy="-67.5" rx="5.5" ry="2.8" fill="#fda4af" opacity=".5"/>
+      <ellipse cx="9.5" cy="-67.5" rx="5.5" ry="2.8" fill="#fda4af" opacity=".5"/>
+    </g>
+    <path id="mouth-ryan" d="M -4.5 -64.5 Q 0 -61 4.5 -64.5" stroke="#9a6e4a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  </svg>
+  <div class="nametag">Ryan</div>
+</div>
+
+<!-- ══ JADE ════════════════════════════════════════════════ -->
+<div class="char" id="char-jade">
+  <div class="bubble" id="bubble-jade">
+    <div class="bubble-name">Jade</div>
+    <span class="bubble-text" id="thought-jade">…</span>
+  </div>
+  <svg class="char-svg" id="svg-jade" width="80" height="120" viewBox="-20 -80 40 84">
+    <ellipse cx="-6" cy="-2" rx="7.5" ry="3" fill="#8b6914"/>
+    <ellipse cx="6" cy="-2" rx="7.5" ry="3" fill="#8b6914"/>
+    <path d="M -13 -28 C -16 -10 -12 0 -6 -2 L 6 -2 C 12 0 16 -10 13 -28 Z" fill="#db2777"/>
+    <rect x="-12" y="-57" width="24" height="31" rx="4" fill="#f9a8d4"/>
+    <path d="M -12 -53 C -20 -43 -19 -33 -18 -27" stroke="#f9a8d4" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M 12 -53 C 20 -43 19 -33 18 -27" stroke="#f9a8d4" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <circle cx="-18" cy="-26" r="5" fill="#c8a47a"/>
+    <circle cx="18" cy="-26" r="5" fill="#c8a47a"/>
+    <rect x="-4" y="-64" width="8" height="9" rx="2" fill="#c8a47a"/>
+    <ellipse cx="0" cy="-72" rx="12.5" ry="13" fill="#c8a47a"/>
+    <path d="M -12.5 -72 C -14 -89 -5 -87 0 -87 C 5 -87 14 -89 12.5 -72" fill="#160a04"/>
+    <rect x="-12.5" y="-79" width="25" height="7" fill="#160a04"/>
+    <path d="M -12.5 -72 C -17 -58 -16 -46 -14 -38" stroke="#160a04" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M 12.5 -72 C 17 -58 16 -46 14 -38" stroke="#160a04" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path id="brow-l-jade" d="M -8 -76 C -5 -78 -1 -77.5" stroke="#160a04" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+    <path id="brow-r-jade" d="M 1 -77.5 C 5 -78 8 -76" stroke="#160a04" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+    <g id="eyes-normal-jade">
+      <ellipse cx="-4.5" cy="-72.5" rx="3.2" ry="2.8" fill="white"/><ellipse cx="4.5" cy="-72.5" rx="3.2" ry="2.8" fill="white"/>
+      <circle cx="-4.5" cy="-72.5" r="1.9" fill="#1a1a1a"/><circle cx="4.5" cy="-72.5" r="1.9" fill="#1a1a1a"/>
+    </g>
+    <g id="eyes-wide-jade" display="none">
+      <ellipse cx="-4.5" cy="-72.5" rx="3.9" ry="3.6" fill="white"/><ellipse cx="4.5" cy="-72.5" rx="3.9" ry="3.6" fill="white"/>
+      <circle cx="-4.5" cy="-72" r="2.3" fill="#1a1a1a"/><circle cx="4.5" cy="-72" r="2.3" fill="#1a1a1a"/>
+      <circle cx="-3.4" cy="-73.6" r=".8" fill="white"/><circle cx="5.6" cy="-73.6" r=".8" fill="white"/>
+    </g>
+    <g id="eyes-narrow-jade" display="none">
+      <path d="M -7.5 -72.5 Q -4.5 -70.5 -1.5 -72.5" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M 1.5 -72.5 Q 4.5 -70.5 7.5 -72.5" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="eyes-happy-jade" display="none">
+      <path d="M -7.5 -72.5 Q -4.5 -69.5 -1.5 -72.5" stroke="#1a1a1a" stroke-width="2.5" fill="#c8a47a" stroke-linecap="round"/>
+      <path d="M 1.5 -72.5 Q 4.5 -69.5 7.5 -72.5" stroke="#1a1a1a" stroke-width="2.5" fill="#c8a47a" stroke-linecap="round"/>
+    </g>
+    <g id="eyes-bedroom-jade" display="none">
+      <ellipse cx="-4.5" cy="-71.5" rx="3.2" ry="1.9" fill="white"/><ellipse cx="4.5" cy="-71.5" rx="3.2" ry="1.9" fill="white"/>
+      <circle cx="-4.5" cy="-71.5" r="1.5" fill="#1a1a1a"/><circle cx="4.5" cy="-71.5" r="1.5" fill="#1a1a1a"/>
+      <path d="M -7.7 -71.5 Q -4.5 -74.8 -1.3 -71.5" fill="#c8a47a"/>
+      <path d="M 1.3 -71.5 Q 4.5 -74.8 7.7 -71.5" fill="#c8a47a"/>
+    </g>
+    <g id="eyes-heart-jade" display="none">
+      <path d="M -6.5 -73.5 Q -6.5 -76.5 -4.5 -75 Q -2.5 -76.5 -2.5 -73.5 Q -2.5 -71 -4.5 -69.5 Q -6.5 -71 -6.5 -73.5Z" fill="#f472b6"/>
+      <path d="M 2.5 -73.5 Q 2.5 -76.5 4.5 -75 Q 6.5 -76.5 6.5 -73.5 Q 6.5 -71 4.5 -69.5 Q 2.5 -71 2.5 -73.5Z" fill="#f472b6"/>
+    </g>
+    <g id="eyes-teary-jade" display="none">
+      <ellipse cx="-4.5" cy="-72.5" rx="3.2" ry="2.8" fill="white"/><ellipse cx="4.5" cy="-72.5" rx="3.2" ry="2.8" fill="white"/>
+      <circle cx="-4.5" cy="-72.5" r="1.9" fill="#1a1a1a"/><circle cx="4.5" cy="-72.5" r="1.9" fill="#1a1a1a"/>
+      <ellipse cx="-4.5" cy="-69" rx="1.2" ry="1.9" fill="#93c5fd" opacity=".88"/>
+      <ellipse cx="4.5" cy="-69" rx="1.2" ry="1.9" fill="#93c5fd" opacity=".88"/>
+    </g>
+    <g id="blush-jade" display="none">
+      <ellipse cx="-8.5" cy="-67.5" rx="5" ry="2.8" fill="#fda4af" opacity=".5"/>
+      <ellipse cx="8.5" cy="-67.5" rx="5" ry="2.8" fill="#fda4af" opacity=".5"/>
+    </g>
+    <path id="mouth-jade" d="M -3.5 -64.5 Q 0 -61.5 3.5 -64.5" stroke="#9a6e4a" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+  </svg>
+  <div class="nametag">Jade</div>
+</div>
+
+<!-- ══ CHAT PANEL ══════════════════════════════════════════ -->
+<div id="chat-panel">
+  <div id="chat-header"><span id="chat-dot"></span>ISLAND FEED</div>
+  <div id="chat-feed"></div>
+</div>
+
+<!-- ══ HUD ════════════════════════════════════════════════ -->
+<div id="hud">
+  <span class="hud-day" id="day-label">Day 1</span>
+  <span class="hud-sep">·</span>
+  <span id="cycle-label">—</span>
+  <span class="hud-sep">·</span>
+
+  <div id="status-strip">
+    <div class="stp" id="stp-morning">🌅 Morn</div>
+    <span class="stp-arr">›</span>
+    <div class="stp" id="stp-midday">☀️ Mid</div>
+    <span class="stp-arr">›</span>
+    <div class="stp" id="stp-afternoon">🌤 Aft</div>
+    <span class="stp-arr">›</span>
+    <div class="stp" id="stp-evening">🌆 Eve</div>
+    <span class="stp-arr">›</span>
+    <div class="stp" id="stp-night">🌙 Night</div>
+    <span class="stp-arr">›</span>
+    <div class="stp" id="stp-dawn">🌌 Dawn</div>
   </div>
 
-  <!-- ── RYAN ─────────────────────────────────────── -->
-  <div class="char" id="char-ryan" onclick="toggleBubble('ryan')">
-    <div class="bubble" id="bubble-ryan"></div>
-    <div class="mood-badge" id="mood-ryan">😊</div>
-    <svg class="char-svg" id="svg-ryan" width="52" height="76" viewBox="-20 -76 40 80">
-      <!-- shoes -->
-      <ellipse cx="-7" cy="-2" rx="8.5" ry="3.5" fill="#5c3d1e"/>
-      <ellipse cx="7" cy="-2" rx="8.5" ry="3.5" fill="#5c3d1e"/>
-      <!-- khaki pants -->
-      <rect x="-12" y="-28" width="10.5" height="27" rx="3" fill="#a08038"/>
-      <rect x="1.5" y="-28" width="10.5" height="27" rx="3" fill="#a08038"/>
-      <!-- amber/yellow shirt -->
-      <rect x="-13" y="-57" width="26" height="31" rx="4" fill="#d97706"/>
-      <!-- arms -->
-      <path d="M -13 -53 C -22 -43 -21 -32 -20 -27" stroke="#d97706" stroke-width="9" fill="none" stroke-linecap="round"/>
-      <path d="M 13 -53 C 22 -43 21 -32 20 -27" stroke="#d97706" stroke-width="9" fill="none" stroke-linecap="round"/>
-      <!-- hands -->
-      <circle cx="-20" cy="-26" r="5.5" fill="#c8a47a"/>
-      <circle cx="20" cy="-26" r="5.5" fill="#c8a47a"/>
-      <!-- neck -->
-      <rect x="-4.5" y="-64" width="9" height="9" rx="2.5" fill="#c8a47a"/>
-      <!-- head -->
-      <ellipse cx="0" cy="-72" rx="13.5" ry="13" fill="#c8a47a"/>
-      <!-- hair warm brown with small tuft -->
-      <path d="M -13.5 -72 C -13.5 -87 -5 -86 0 -86 C 5 -86 13.5 -87 13.5 -72" fill="#5c3418"/>
-      <rect x="-13.5" y="-79" width="27" height="7" fill="#5c3418"/>
-      <path d="M -4 -85 C -1 -91 1 -91 4 -85" fill="#5c3418"/>
-      <!-- eyebrows relaxed friendly -->
-      <path d="M -9 -76 C -6 -78 -2 -77.5" fill="none" stroke="#5c3418" stroke-width="1.6" stroke-linecap="round"/>
-      <path d="M 2 -77.5 C 6 -78 9 -76" fill="none" stroke="#5c3418" stroke-width="1.6" stroke-linecap="round"/>
-      <!-- eyes -->
-      <ellipse cx="-5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/>
-      <ellipse cx="5.5" cy="-72.5" rx="3" ry="2.5" fill="white"/>
-      <circle cx="-5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/>
-      <circle cx="5.5" cy="-72.5" r="1.7" fill="#1a1a1a"/>
-      <!-- smile -->
-      <path id="mouth-ryan" d="M -4.5 -64.5 Q 0 -61 4.5 -64.5" stroke="#9a6e4a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-    </svg>
-    <div class="nametag">Ryan</div>
+  <div id="status-info">
+    Last&nbsp;<span id="status-last">—</span>&nbsp;·&nbsp;Next&nbsp;<span id="status-next">—</span>&nbsp;(<span id="status-countdown">—</span>)
   </div>
+  <span id="status-msg"></span>
 
-  <!-- ── JADE ──────────────────────────────────────── -->
-  <div class="char" id="char-jade" onclick="toggleBubble('jade')">
-    <div class="bubble" id="bubble-jade"></div>
-    <div class="mood-badge" id="mood-jade">😌</div>
-    <svg class="char-svg" id="svg-jade" width="50" height="80" viewBox="-20 -80 40 84">
-      <!-- sandals -->
-      <ellipse cx="-6" cy="-2" rx="7.5" ry="3" fill="#8b6914"/>
-      <ellipse cx="6" cy="-2" rx="7.5" ry="3" fill="#8b6914"/>
-      <!-- flowy skirt/dress -->
-      <path d="M -13 -28 C -16 -10 -12 0 -6 -2 L 6 -2 C 12 0 16 -10 13 -28 Z" fill="#db2777"/>
-      <!-- top -->
-      <rect x="-12" y="-57" width="24" height="31" rx="4" fill="#f9a8d4"/>
-      <!-- arms -->
-      <path d="M -12 -53 C -20 -43 -19 -33 -18 -27" stroke="#f9a8d4" stroke-width="8" fill="none" stroke-linecap="round"/>
-      <path d="M 12 -53 C 20 -43 19 -33 18 -27" stroke="#f9a8d4" stroke-width="8" fill="none" stroke-linecap="round"/>
-      <!-- hands -->
-      <circle cx="-18" cy="-26" r="5" fill="#c8a47a"/>
-      <circle cx="18" cy="-26" r="5" fill="#c8a47a"/>
-      <!-- neck -->
-      <rect x="-4" y="-64" width="8" height="9" rx="2" fill="#c8a47a"/>
-      <!-- head -->
-      <ellipse cx="0" cy="-72" rx="12.5" ry="13" fill="#c8a47a"/>
-      <!-- long dark hair top -->
-      <path d="M -12.5 -72 C -14 -89 -5 -87 0 -87 C 5 -87 14 -89 12.5 -72" fill="#160a04"/>
-      <rect x="-12.5" y="-79" width="25" height="7" fill="#160a04"/>
-      <!-- hair flowing down sides -->
-      <path d="M -12.5 -72 C -17 -58 -16 -46 -14 -38" stroke="#160a04" stroke-width="6" fill="none" stroke-linecap="round"/>
-      <path d="M 12.5 -72 C 17 -58 16 -46 14 -38" stroke="#160a04" stroke-width="6" fill="none" stroke-linecap="round"/>
-      <!-- eyebrows soft -->
-      <path d="M -8 -76 C -5 -78 -1 -77.5" fill="none" stroke="#160a04" stroke-width="1.4" stroke-linecap="round"/>
-      <path d="M 1 -77.5 C 5 -78 8 -76" fill="none" stroke="#160a04" stroke-width="1.4" stroke-linecap="round"/>
-      <!-- eyes wider, expressive -->
-      <ellipse cx="-4.5" cy="-72.5" rx="3.2" ry="2.8" fill="white"/>
-      <ellipse cx="4.5" cy="-72.5" rx="3.2" ry="2.8" fill="white"/>
-      <circle cx="-4.5" cy="-72.5" r="1.9" fill="#1a1a1a"/>
-      <circle cx="4.5" cy="-72.5" r="1.9" fill="#1a1a1a"/>
-      <!-- soft smile -->
-      <path id="mouth-jade" d="M -3.5 -64.5 Q 0 -61.5 3.5 -64.5" stroke="#9a6e4a" stroke-width="1.6" stroke-linecap="round" fill="none"/>
-    </svg>
-    <div class="nametag">Jade</div>
+  <div class="hud-actions">
+    <button id="run-btn" onclick="runCycle()">▶ Run</button>
+    <a id="story-btn" href="story.html">📖 Story</a>
   </div>
-
-  <!-- ── HUD ───────────────────────────────────────── -->
-  <div id="hud">
-    <div class="hud-info">
-      <span class="hud-day" id="day-label">Day 1</span>
-      <span class="hud-sep">·</span>
-      <span id="cycle-label">—</span>
-      <span class="hud-sep">·</span>
-      <span id="weather-label">☀️</span>
-    </div>
-
-    <div id="status-strip">
-      <div class="stp" id="stp-morning">🌅 Morning</div>
-      <span class="stp-arrow">›</span>
-      <div class="stp" id="stp-afternoon">☀️ Afternoon</div>
-      <span class="stp-arrow">›</span>
-      <div class="stp" id="stp-night">🌙 Night</div>
-      <span id="status-msg"></span>
-    </div>
-
-    <div class="hud-actions">
-      <button id="run-btn" onclick="runDay()">▶ Run Day</button>
-      <a id="story-btn" href="story.html">📖 Story</a>
-    </div>
-  </div>
+</div>
 
 </div><!-- #world -->
 
 <script>
-const MOUTHS = {
-  happy:    { marcus:'M -4 -64.5 Q 0 -60.5 4 -64.5', ryan:'M -4.5 -64.5 Q 0 -60 4.5 -64.5', jade:'M -3.5 -64.5 Q 0 -60.5 3.5 -64.5' },
-  cheerful: { marcus:'M -4 -64.5 Q 0 -60 4 -64.5',   ryan:'M -4.5 -64.5 Q 0 -59.5 4.5 -64.5', jade:'M -3.5 -64.5 Q 0 -60 3.5 -64.5' },
-  free:     { marcus:'M -4 -64.5 Q 0 -61 4 -64.5',   ryan:'M -4.5 -64.5 Q 0 -60.5 4.5 -64.5', jade:'M -3.5 -64.5 Q 0 -60.5 3.5 -64.5' },
-  calm:     { marcus:'M -4 -64.5 Q 0 -62 4 -64.5',   ryan:'M -4.5 -64.5 Q 0 -61 4.5 -64.5',  jade:'M -3.5 -64.5 Q 0 -62 3.5 -64.5' },
-  content:  { marcus:'M -4 -64.5 Q 0 -62 4 -64.5',   ryan:'M -4.5 -64.5 Q 0 -61 4.5 -64.5',  jade:'M -3.5 -64.5 Q 0 -62 3.5 -64.5' },
-  peaceful: { marcus:'M -4 -64.5 Q 0 -62.5 4 -64.5', ryan:'M -4.5 -64.5 Q 0 -61.5 4.5 -64.5',jade:'M -3.5 -64.5 Q 0 -62.5 3.5 -64.5'},
-  neutral:  { marcus:'M -4 -64.5 L 4 -64.5',         ryan:'M -4.5 -64.5 L 4.5 -64.5',        jade:'M -3.5 -64.5 L 3.5 -64.5' },
-  guarded:  { marcus:'M -4 -64.5 Q 0 -65.8 4 -64.5', ryan:'M -4.5 -64.5 Q 0 -65.8 4.5 -64.5',jade:'M -3.5 -64.5 Q 0 -65.5 3.5 -64.5'},
-  distant:  { marcus:'M -4 -64.5 Q 0 -66 4 -64.5',   ryan:'M -4.5 -64.5 Q 0 -66 4.5 -64.5',  jade:'M -3.5 -64.5 Q 0 -65.8 3.5 -64.5'},
-  restless: { marcus:'M -4 -64.5 Q 0 -65.5 4 -64.5', ryan:'M -4.5 -64.5 Q 0 -65.5 4.5 -64.5',jade:'M -3.5 -64.5 Q 0 -65.2 3.5 -64.5'},
-  sad:      { marcus:'M -4 -64.5 Q 0 -67 4 -64.5',   ryan:'M -4.5 -64.5 Q 0 -67 4.5 -64.5',  jade:'M -3.5 -64.5 Q 0 -67 3.5 -64.5' },
-  lonely:   { marcus:'M -4 -64.5 Q 0 -67 4 -64.5',   ryan:'M -4.5 -64.5 Q 0 -67 4.5 -64.5',  jade:'M -3.5 -64.5 Q 0 -67 3.5 -64.5' },
-  angry:    { marcus:'M -4 -63.5 Q 0 -65.5 4 -63.5', ryan:'M -4.5 -63.5 Q 0 -65.5 4.5 -63.5',jade:'M -3.5 -63.5 Q 0 -65 3.5 -63.5' },
-  frustrated:{ marcus:'M -4 -63.5 Q 0 -65.5 4 -63.5',ryan:'M -4.5 -63.5 Q 0 -65.5 4.5 -63.5',jade:'M -3.5 -63.5 Q 0 -65 3.5 -63.5'},
-  hopeful:  { marcus:'M -4 -64.5 Q 0 -61.5 4 -64.5', ryan:'M -4.5 -64.5 Q 0 -61.5 4.5 -64.5',jade:'M -3.5 -64.5 Q 0 -61.5 3.5 -64.5'},
-}
-const MOOD_EMOJI = {
-  happy:'😄',cheerful:'😊',free:'😌',calm:'😌',content:'🙂',peaceful:'😌',hopeful:'🙂',
-  neutral:'😐',guarded:'😶',distant:'😶',cold:'😶',restless:'😕',
-  sad:'😔',lonely:'😔',melancholy:'😔',
-  angry:'😤',frustrated:'😤',irritated:'😤',
-  pensive:'🤔',thoughtful:'🤔',reflective:'🤔',
-  warm:'🙂'
-}
-const CYCLE_CLASS = {morning:'morning', afternoon:'afternoon', night:'night'}
-const WX = {clear:'☀️',rain:'🌧️',storm:'⛈️',overcast:'☁️',foggy:'🌫️'}
+// ── FACE DATA ─────────────────────────────────────────────
+const EYE_STATES = ['normal','wide','narrow','happy','bedroom','heart','teary']
 
-let S = {chars:{}, feed:[], world:{}}
-let openBubble = null
-
-// coord → CSS %
-function toPos(x, y) {
-  return { left: (6 + (x/100)*86) + '%', top: (16 + (y/100)*56) + '%' }
+const FACES = {
+  happy:       { bl:'M -9 -79 Q -6 -81 -3 -79',      br:'M 3 -79 Q 6 -81 9 -79',      eyes:'happy',   blush:false,
+                 mouth:{marcus:'M -5 -64.5 Q 0 -59.5 5 -64.5',ryan:'M -5 -64.5 Q 0 -59 5 -64.5',jade:'M -4 -64.5 Q 0 -59.5 4 -64.5'}},
+  calm:        { bl:'M -9 -77.5 Q -6 -79.5 -3 -77.5', br:'M 3 -77.5 Q 6 -79.5 9 -77.5', eyes:'normal', blush:false,
+                 mouth:{marcus:'M -4 -64.5 Q 0 -62 4 -64.5',ryan:'M -4.5 -64.5 Q 0 -61.5 4.5 -64.5',jade:'M -3.5 -64.5 Q 0 -62 3.5 -64.5'}},
+  neutral:     { bl:'M -9 -77.5 L -3 -76',            br:'M 3 -76 L 9 -77.5',           eyes:'normal', blush:false,
+                 mouth:{marcus:'M -4 -64.5 L 4 -64.5',ryan:'M -4.5 -64.5 L 4.5 -64.5',jade:'M -3.5 -64.5 L 3.5 -64.5'}},
+  hopeful:     { bl:'M -9 -78.5 Q -6 -80 -3 -78',    br:'M 3 -78 Q 6 -80 9 -78.5',    eyes:'normal', blush:false,
+                 mouth:{marcus:'M -4 -64.5 Q 0 -61.5 4 -64.5',ryan:'M -4.5 -64.5 Q 0 -61.5 4.5 -64.5',jade:'M -3.5 -64.5 Q 0 -61.5 3.5 -64.5'}},
+  guarded:     { bl:'M -9 -77.5 Q -6 -78 -3 -77',    br:'M 3 -77 Q 6 -78 9 -77.5',    eyes:'narrow', blush:false,
+                 mouth:{marcus:'M -4 -64.5 Q 0 -65.5 4 -64.5',ryan:'M -4.5 -64.5 Q 0 -65.5 4.5 -64.5',jade:'M -3.5 -64.5 Q 0 -65.2 3.5 -64.5'}},
+  sad:         { bl:'M -9 -76 Q -6 -79 -3 -76',      br:'M 3 -76 Q 6 -79 9 -76',       eyes:'narrow', blush:false,
+                 mouth:{marcus:'M -4 -64.5 Q 0 -67.5 4 -64.5',ryan:'M -4.5 -64.5 Q 0 -67.5 4.5 -64.5',jade:'M -3.5 -64.5 Q 0 -67 3.5 -64.5'}},
+  heartbroken: { bl:'M -9 -76 Q -6 -79 -3 -76',      br:'M 3 -76 Q 6 -79 9 -76',       eyes:'teary',  blush:false,
+                 mouth:{marcus:'M -4 -64.5 Q -1 -66.5 0 -65 Q 1 -66.5 4 -64.5',ryan:'M -4.5 -64.5 Q -1 -66.5 0 -65 Q 1 -66.5 4.5 -64.5',jade:'M -3.5 -64.5 Q -1 -66 0 -65 Q 1 -66 3.5 -64.5'}},
+  angry:       { bl:'M -9 -76 L -3 -79',              br:'M 3 -79 L 9 -76',              eyes:'narrow', blush:false,
+                 mouth:{marcus:'M -4 -63.5 Q 0 -65.5 4 -63.5',ryan:'M -4.5 -63.5 Q 0 -65.5 4.5 -63.5',jade:'M -3.5 -63.5 Q 0 -65 3.5 -63.5'}},
+  shocked:     { bl:'M -9 -80 Q -6 -82.5 -3 -80',    br:'M 3 -80 Q 6 -82.5 9 -80',     eyes:'wide',   blush:false,
+                 mouth:{marcus:'M -4 -64.5 Q 0 -62 4 -64.5 Q 0 -67 -4 -64.5',ryan:'M -4 -64.5 Q 0 -62 4 -64.5 Q 0 -67 -4 -64.5',jade:'M -3.5 -64.5 Q 0 -62 3.5 -64.5 Q 0 -66.5 -3.5 -64.5'}},
+  flirtatious: { bl:'M -9 -77.5 L -3 -77',            br:'M 3 -80 Q 6 -82 9 -79',       eyes:'bedroom',blush:false,
+                 mouth:{marcus:'M -4 -64.5 Q 1 -62 4 -64',ryan:'M -4.5 -64.5 Q 1 -62 4 -63.5',jade:'M -3.5 -64.5 Q 1 -62 3.5 -63.5'}},
+  smitten:     { bl:'M -9 -79 Q -6 -81 -3 -79',      br:'M 3 -79 Q 6 -81 9 -79',       eyes:'heart',  blush:false,
+                 mouth:{marcus:'M -5 -64.5 Q 0 -59.5 5 -64.5',ryan:'M -5 -64.5 Q 0 -59 5 -64.5',jade:'M -4 -64.5 Q 0 -59.5 4 -64.5'}},
+  jealous:     { bl:'M -9 -76 L -3 -78.5',            br:'M 3 -77.5 L 9 -78',           eyes:'narrow', blush:false,
+                 mouth:{marcus:'M -4 -64.5 Q 0 -65.8 4 -64.5',ryan:'M -4.5 -64.5 Q 0 -65.8 4.5 -64.5',jade:'M -3.5 -64.5 Q 0 -65.5 3.5 -64.5'}},
+  embarrassed: { bl:'M -9 -78 Q -6 -79.5 -3 -77.5',  br:'M 3 -77.5 Q 6 -79.5 9 -78',  eyes:'normal', blush:true,
+                 mouth:{marcus:'M -3 -64.5 Q 0 -62.5 3 -64.5',ryan:'M -3.5 -64.5 Q 0 -62 3.5 -64.5',jade:'M -3 -64.5 Q 0 -62.5 3 -64.5'}},
+  lustful:     { bl:'M -9 -77 Q -6 -78 -3 -77',      br:'M 3 -77 Q 6 -78 9 -77',       eyes:'bedroom',blush:true,
+                 mouth:{marcus:'M -4 -64.5 Q 0 -62 4 -64.5',ryan:'M -4.5 -64.5 Q 0 -62 4.5 -64.5',jade:'M -3.5 -64.5 Q 0 -62 3.5 -64.5'}},
 }
 
-function placeChar(cid) {
-  const c = S.chars[cid]
-  if(!c) return
-  const el = document.getElementById('char-' + cid)
-  const {left, top} = toPos(c.location.x, c.location.y)
-  el.style.left = left
-  el.style.top  = top
+const MOOD_MAP = {
+  happy:'happy',cheerful:'happy',joyful:'happy',elated:'happy',excited:'happy',giddy:'happy',
+  calm:'calm',content:'calm',peaceful:'calm',serene:'calm',free:'calm',relaxed:'calm',warm:'calm',
+  neutral:'neutral',okay:'neutral',fine:'neutral',
+  hopeful:'hopeful',optimistic:'hopeful',curious:'hopeful',
+  guarded:'guarded',distant:'guarded',cold:'guarded',restless:'guarded',pensive:'guarded',
+  thoughtful:'neutral',reflective:'neutral',
+  sad:'sad',lonely:'sad',melancholy:'sad',down:'sad',gloomy:'sad',
+  heartbroken:'heartbroken',devastated:'heartbroken',grieving:'heartbroken',hurt:'heartbroken',
+  angry:'angry',frustrated:'angry',irritated:'angry',furious:'angry',annoyed:'angry',
+  shocked:'shocked',surprised:'shocked',stunned:'shocked',
+  flirtatious:'flirtatious',playful:'flirtatious',teasing:'flirtatious',
+  smitten:'smitten',lovestruck:'smitten',infatuated:'smitten',
+  jealous:'jealous',envious:'jealous',
+  embarrassed:'embarrassed',flustered:'embarrassed',shy:'embarrassed',
+  lustful:'lustful',seductive:'lustful',longing:'lustful',yearning:'lustful',
 }
 
-function applyMood(cid) {
-  const c = S.chars[cid]
-  if(!c) return
-  const mood = (c.mood||'neutral').toLowerCase()
-  const mouths = MOUTHS[mood] || MOUTHS.neutral
-  const mPath = document.getElementById('mouth-' + cid)
-  if(mPath) mPath.setAttribute('d', mouths[cid])
-  const badge = document.getElementById('mood-' + cid)
-  if(badge) badge.textContent = MOOD_EMOJI[mood] || '😐'
-  // animation class
-  const svg = document.getElementById('svg-' + cid)
-  if(svg) {
+// ── SGT TIME ─────────────────────────────────────────────
+const RUN_HOURS = [3,7,11,15,19,23]
+const CYCLE_NAMES = {3:'dawn',7:'morning',11:'midday',15:'afternoon',19:'evening',23:'night'}
+
+function getSGT() {
+  const now = new Date()
+  return new Date(now.getTime() + now.getTimezoneOffset()*60000 + 8*3600000)
+}
+
+function skyFromHour(h) {
+  if(h>=23||h<3) return 'night'
+  if(h<7) return 'dawn'
+  if(h<11) return 'morning'
+  if(h<15) return 'midday'
+  if(h<19) return 'afternoon'
+  return 'evening'
+}
+
+function fmtTime(sgt) {
+  const h=sgt.getHours(), m=String(sgt.getMinutes()).padStart(2,'0')
+  const ap=h>=12?'pm':'am', dh=h%12||12
+  return `${dh}:${m}${ap}`
+}
+
+function nextRun(sgt) {
+  const total=sgt.getHours()*60+sgt.getMinutes()
+  let nh=RUN_HOURS.find(r=>r*60>total)
+  if(nh===undefined) nh=RUN_HOURS[0]+24
+  const diff=nh*60-total, dh=Math.floor(diff/60), dm=diff%60
+  const h24=nh%24, ap=h24>=12?'pm':'am', dh12=h24%12||12
+  return { time:`${dh12}:00${ap}`, cd:dh>0?`${dh}h ${dm}m`:`${dm}m` }
+}
+
+function applySky(sky) {
+  document.getElementById('sky-bg')?.setAttribute('fill',`url(#sky-${sky})`)
+  const isNight=sky==='night'||sky==='dawn'
+  document.getElementById('sun-group')?.setAttribute('opacity',isNight?'0':'1')
+  document.getElementById('moon-group')?.setAttribute('opacity',isNight?'1':'0')
+  document.getElementById('night-stars')?.setAttribute('opacity',isNight?'1':'0')
+  document.getElementById('night-overlay')?.setAttribute('opacity',isNight?'0.32':'0')
+  drawStars(isNight)
+  document.getElementById('world').className=isNight?'night':sky
+}
+
+function updateStatusBar() {
+  const sgt=getSGT()
+  const {time,cd}=nextRun(sgt)
+  document.getElementById('status-next').textContent=time
+  document.getElementById('status-countdown').textContent=cd
+
+  let lastStr='—'
+  if(S.feed&&S.feed.length>0) {
+    const ts=S.feed[S.feed.length-1].timestamp
+    if(ts) {
+      const d=new Date(ts)
+      const sgtD=new Date(d.getTime()+d.getTimezoneOffset()*60000+8*3600000)
+      lastStr=fmtTime(sgtD)
+    }
+  }
+  document.getElementById('status-last').textContent=lastStr
+  applySky(skyFromHour(sgt.getHours()))
+}
+
+// ── FACE/CHAR ─────────────────────────────────────────────
+function toPos(x,y) {
+  return {left:(5+(x/100)*80)+'%', top:(48+(y/100)*32)+'%'}
+}
+
+function applyFace(cid) {
+  const c=S.chars[cid]; if(!c) return
+  const mk=(c.mood||'neutral').toLowerCase()
+  const fk=MOOD_MAP[mk]||'neutral'
+  const f=FACES[fk]||FACES.neutral
+
+  const bl=document.getElementById('brow-l-'+cid)
+  const br=document.getElementById('brow-r-'+cid)
+  if(bl) bl.setAttribute('d',f.bl)
+  if(br) br.setAttribute('d',f.br)
+
+  document.getElementById('mouth-'+cid)?.setAttribute('d',f.mouth[cid])
+
+  EYE_STATES.forEach(s=>{
+    document.getElementById(`eyes-${s}-${cid}`)?.setAttribute('display',s===f.eyes?'':'none')
+  })
+  document.getElementById('blush-'+cid)?.setAttribute('display',f.blush?'':'none')
+
+  const svg=document.getElementById('svg-'+cid)
+  if(svg){
     svg.classList.remove('sad','angry')
-    if(['sad','lonely','melancholy','distant'].includes(mood)) svg.classList.add('sad')
-    if(['angry','frustrated'].includes(mood)) svg.classList.add('angry')
+    if(['sad','lonely','heartbroken','melancholy'].includes(mk)) svg.classList.add('sad')
+    if(['angry','frustrated','furious'].includes(mk)) svg.classList.add('angry')
   }
 }
 
 function updateBubble(cid) {
-  const feed = S.feed
-  const latest = [...feed].reverse().find(e => e.character === cid && (e.thought || e.action))
-  const el = document.getElementById('bubble-' + cid)
-  if(el && latest) el.textContent = latest.thought || latest.action || '...'
+  const latest=[...S.feed].reverse().find(e=>e.character===cid&&(e.thought||e.action))
+  const el=document.getElementById('thought-'+cid)
+  if(el){
+    const t=latest?(latest.thought||latest.action||'…'):'…'
+    el.textContent=t.length>78?t.slice(0,76)+'…':t
+  }
 }
 
-function toggleBubble(cid) {
-  if(openBubble && openBubble !== cid) {
-    document.getElementById('bubble-' + openBubble)?.classList.remove('on')
-  }
-  const el = document.getElementById('bubble-' + cid)
-  if(!el) return
-  const isOn = el.classList.contains('on')
-  el.classList.toggle('on', !isOn)
-  openBubble = !isOn ? cid : null
+function renderChat() {
+  const feed=document.getElementById('chat-feed')
+  if(!feed||!S.feed) return
+  const entries=S.feed.slice(-45)
+  feed.innerHTML=entries.map(e=>{
+    if(e.type==='interaction'){
+      const names=(e.characters||[]).join(' & ')
+      return `<div class="cl interaction"><span class="cl-label">[${names.toUpperCase()}]</span> ${e.description||''}${e.dialogue?`<br><span class="cl-dialogue">"${e.dialogue}"</span>`:''}</div>`
+    }
+    const ch=e.character||'', t=e.thought||e.action||''
+    return `<div class="cl ${ch}"><span class="cl-label">${ch.toUpperCase()} ${cap(e.cycle||'')}·</span> ${t}</div>`
+  }).join('')
+  feed.scrollTop=feed.scrollHeight
 }
 
 function updateWorld() {
-  const w = S.world
-  document.getElementById('day-label').textContent = 'Day ' + w.day
-  document.getElementById('cycle-label').textContent = cap(w.cycle||'')
-  document.getElementById('weather-label').textContent = WX[w.weather]||'☀️'
-  const wClass = CYCLE_CLASS[w.cycle] || 'afternoon'
-  document.getElementById('world').className = wClass
-  drawStars(wClass === 'night')
-  ;['marcus','ryan','jade'].forEach(cid => {
-    placeChar(cid)
-    applyMood(cid)
+  const w=S.world
+  document.getElementById('day-label').textContent='Day '+(w.day||1)
+  document.getElementById('cycle-label').textContent=cap(w.cycle||'')
+  ;['marcus','ryan','jade'].forEach(cid=>{
+    const c=S.chars[cid]; if(!c) return
+    const el=document.getElementById('char-'+cid)
+    const {left,top}=toPos(c.location?.x||50,c.location?.y||50)
+    el.style.left=left; el.style.top=top
+    applyFace(cid)
     updateBubble(cid)
   })
+  renderChat()
+  updateStatusBar()
 }
 
-// Stars
+// ── STARS CANVAS ─────────────────────────────────────────
 function drawStars(active) {
-  if(!active) return
-  const c = document.getElementById('stars')
-  c.width = window.innerWidth; c.height = window.innerHeight * .32
-  const ctx = c.getContext('2d')
-  ctx.clearRect(0,0,c.width,c.height)
-  // Use a seeded-ish pattern so stars don't flicker on redraw
-  for(let i=0;i<120;i++){
-    const x=(Math.sin(i*137.5)*0.5+0.5)*c.width
-    const y=(Math.sin(i*97.3)*0.5+0.5)*c.height
-    const r=Math.sin(i*43.1)*0.5+0.8
-    const a=Math.sin(i*61.7)*0.3+0.7
+  const c=document.getElementById('stars')
+  if(!active){c.style.opacity='0';return}
+  c.width=window.innerWidth;c.height=window.innerHeight*.34
+  const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height)
+  for(let i=0;i<130;i++){
+    const x=(Math.sin(i*137.5)*.5+.5)*c.width
+    const y=(Math.sin(i*97.3)*.5+.5)*c.height
+    const r=Math.sin(i*43.1)*.5+.8
+    const a=Math.sin(i*61.7)*.3+.7
     ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2)
     ctx.fillStyle=`rgba(255,255,255,${a})`;ctx.fill()
   }
 }
 
+// ── RUN CYCLE ─────────────────────────────────────────────
+const ALL_STEPS=['morning','midday','afternoon','evening','night','dawn']
+
+function setStep(s,state){
+  const el=document.getElementById('stp-'+s);if(!el)return
+  el.classList.remove('running','done')
+  if(state==='running')el.classList.add('running')
+  if(state==='done')el.classList.add('done')
+}
+function resetSteps(){ALL_STEPS.forEach(s=>setStep(s,'pending'))}
+
 function cap(s){return s?s[0].toUpperCase()+s.slice(1):''}
 
-// ── RUN DAY ──────────────────────────────────────────
-const STEPS = ['morning','afternoon','night']
+let S={chars:{},feed:[],world:{}}
 
-function setStep(cycle, state) {
-  const el = document.getElementById('stp-' + cycle)
-  if(!el) return
-  el.classList.remove('running','done')
-  if(state === 'running') el.classList.add('running')
-  if(state === 'done') el.classList.add('done')
-}
-
-function resetSteps() {
-  STEPS.forEach(s => setStep(s, 'pending'))
-}
-
-async function runDay() {
-  const btn = document.getElementById('run-btn')
-  const msg = document.getElementById('status-msg')
-  btn.disabled = true
-  btn.classList.add('busy')
-  btn.textContent = '⏳ Running…'
-  resetSteps()
-  msg.textContent = 'Starting…'
-
+async function runCycle() {
+  const btn=document.getElementById('run-btn')
+  const msg=document.getElementById('status-msg')
+  btn.disabled=true;btn.classList.add('busy');btn.textContent='⏳…'
+  resetSteps();msg.textContent='Contacting server…'
   try {
-    const r = await fetch('http://localhost:7777/runday', {signal: AbortSignal.timeout(3000)})
-    const d = await r.json()
-    if(d.status !== 'started') {
-      showBtnMsg(btn, 'busy', 'Already running…', 2500)
-      return
+    const r=await fetch('http://localhost:7777/runday',{signal:AbortSignal.timeout(3000)})
+    const d=await r.json()
+    if(d.status!=='started'){
+      showMsg(btn,'busy','Busy…',2500);return
     }
-    // Poll for progress
-    const timer = setInterval(async () => {
-      try {
-        const sr = await fetch('http://localhost:7777/status', {signal: AbortSignal.timeout(2000)})
-        const s = await sr.json()
-        // Update step indicators
-        STEPS.forEach(cyc => {
-          if(s.cycles_done?.includes(cyc)) setStep(cyc, 'done')
-          else if(s.current_cycle === cyc) setStep(cyc, 'running')
-          else setStep(cyc, 'pending')
+    msg.textContent='Running…'
+    const timer=setInterval(async()=>{
+      try{
+        const sr=await fetch('http://localhost:7777/status',{signal:AbortSignal.timeout(2000)})
+        const s=await sr.json()
+        ALL_STEPS.forEach(cyc=>{
+          if(s.cycles_done?.includes(cyc))setStep(cyc,'done')
+          else if(s.current_cycle===cyc)setStep(cyc,'running')
+          else setStep(cyc,'pending')
         })
-        const cycleLabels = {morning:'🌅 Morning',afternoon:'☀️ Afternoon',night:'🌙 Night'}
-        if(s.current_cycle) {
-          msg.textContent = cycleLabels[s.current_cycle] + ' running…'
-          btn.textContent = '⏳ ' + cap(s.current_cycle) + '…'
+        if(s.current_cycle){
+          msg.textContent=cap(s.current_cycle)+'…'
+          btn.textContent='⏳ '+cap(s.current_cycle)
         }
-        if(!s.running) {
+        if(!s.running){
           clearInterval(timer)
-          STEPS.forEach(c => setStep(c, 'done'))
-          msg.textContent = 'Done!'
-          btn.classList.remove('busy')
-          btn.classList.add('done')
-          btn.textContent = '✓ Day done'
+          ALL_STEPS.forEach(s=>setStep(s,'done'))
+          msg.textContent='Done!'
+          btn.classList.remove('busy');btn.classList.add('done');btn.textContent='✓ Done'
           await reloadData()
-          setTimeout(() => {
-            btn.classList.remove('done')
-            btn.textContent = '▶ Run Day'
-            btn.disabled = false
-            msg.textContent = ''
-          }, 2200)
+          setTimeout(()=>{btn.classList.remove('done');btn.textContent='▶ Run';btn.disabled=false;msg.textContent=''},2200)
         }
-      } catch {}
-    }, 1500)
-    setTimeout(() => clearInterval(timer), 120000)
-  } catch {
-    btn.classList.remove('busy')
-    btn.textContent = 'Server offline'
-    msg.textContent = 'Start trigger server on Mac'
-    setTimeout(() => {
-      btn.textContent = '▶ Run Day'; btn.disabled = false; msg.textContent = ''
-    }, 3500)
+      }catch{}
+    },1500)
+    setTimeout(()=>clearInterval(timer),120000)
+  }catch{
+    btn.classList.remove('busy');btn.textContent='Offline'
+    msg.textContent='Start trigger server'
+    setTimeout(()=>{btn.textContent='▶ Run';btn.disabled=false;msg.textContent=''},3500)
   }
 }
 
-function showBtnMsg(btn, cls, text, delay) {
-  btn.textContent = text
-  setTimeout(() => {
-    btn.classList.remove(cls); btn.textContent = '▶ Run Day'; btn.disabled = false
-  }, delay)
+function showMsg(btn,cls,text,delay){
+  btn.textContent=text
+  setTimeout(()=>{btn.classList.remove(cls);btn.textContent='▶ Run';btn.disabled=false},delay)
 }
 
-async function reloadData() {
-  const t = Date.now()
-  const [c,f,w] = await Promise.all([
+async function reloadData(){
+  const t=Date.now()
+  const [c,f,w]=await Promise.all([
     fetch('data/characters.json?t='+t).then(r=>r.json()),
     fetch('data/feed.json?t='+t).then(r=>r.json()),
     fetch('data/world.json?t='+t).then(r=>r.json()),
   ])
-  S.chars = c; S.feed = f; S.world = w
-  updateWorld()
+  S.chars=c;S.feed=f;S.world=w;updateWorld()
 }
 
-async function init() {
-  try {
-    const [c,f,w] = await Promise.all([
+async function init(){
+  try{
+    const [c,f,w]=await Promise.all([
       fetch('data/characters.json').then(r=>r.json()),
       fetch('data/feed.json').then(r=>r.json()),
       fetch('data/world.json').then(r=>r.json()),
     ])
-    S.chars = c; S.feed = f; S.world = w
-    updateWorld()
-    // auto-show thoughts briefly on load
-    setTimeout(() => {
-      ['marcus','ryan','jade'].forEach(cid => {
-        document.getElementById('bubble-' + cid)?.classList.add('on')
-      })
-      setTimeout(() => {
-        ['marcus','ryan','jade'].forEach(cid => {
-          if(openBubble !== cid) document.getElementById('bubble-' + cid)?.classList.remove('on')
-        })
-      }, 4000)
-    }, 600)
-  } catch(e) {
-    document.getElementById('day-label').textContent = 'Error loading'
+    S.chars=c;S.feed=f;S.world=w;updateWorld()
+  }catch(e){
+    document.getElementById('day-label').textContent='Error'
     console.error(e)
   }
 }
 
+setInterval(updateStatusBar,60000)
 init()
 </script>
 </body>
