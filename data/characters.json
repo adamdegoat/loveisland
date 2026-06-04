@@ -6,26 +6,26 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 21,
-      "openness": 17,
+      "openness": 16,
       "ambition": 45,
-      "loneliness": 82,
-      "resilience": 84
+      "loneliness": 84,
+      "resilience": 83
     },
     "mood": "distant",
     "location": {
       "x": 78,
-      "y": 45
+      "y": 38
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
         "closeness": 20,
-        "tension": 15,
+        "tension": 16,
         "attraction": 0
       },
       "jade": {
         "closeness": 10,
-        "tension": 8,
+        "tension": 9,
         "attraction": 0
       }
     },
@@ -37,28 +37,28 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 76,
-      "openness": 88,
-      "ambition": 70,
-      "loneliness": 32,
+      "trust": 77,
+      "openness": 90,
+      "ambition": 71,
+      "loneliness": 30,
       "resilience": 40
     },
     "mood": "cheerful",
     "location": {
       "x": 50,
-      "y": 22
+      "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
         "closeness": 20,
-        "tension": 10,
+        "tension": 11,
         "attraction": 0
       },
       "jade": {
-        "closeness": 22,
-        "tension": 5,
-        "attraction": 9
+        "closeness": 25,
+        "tension": 6,
+        "attraction": 11
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier."
@@ -69,28 +69,28 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 58,
+      "trust": 59,
       "openness": 74,
       "ambition": 40,
-      "loneliness": 40,
+      "loneliness": 39,
       "resilience": 60
     },
     "mood": "free",
     "location": {
-      "x": 25,
-      "y": 35
+      "x": 32,
+      "y": 50
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
         "closeness": 10,
-        "tension": 8,
+        "tension": 9,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 22,
-        "tension": 5,
-        "attraction": 4
+        "closeness": 25,
+        "tension": 6,
+        "attraction": 6
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't."

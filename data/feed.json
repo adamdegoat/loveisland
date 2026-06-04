@@ -189,5 +189,180 @@
       }
     ],
     "timestamp": "2026-06-04T23:19:19.270399"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "He stands at the edge of his tent, looking out toward the water where the sun is already warm.",
+    "thought": "The island's getting small already.",
+    "location": {
+      "x": 78,
+      "y": 38
+    },
+    "shelter": "tent",
+    "mood": "distant",
+    "timestamp": "2026-06-04T23:21:05.017358"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "He's working to reinforce the frame of his shelter, though his mind keeps drifting elsewhere.",
+    "thought": "Can't stop thinking about her voice.",
+    "location": {
+      "x": 50,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "cheerful",
+    "timestamp": "2026-06-04T23:21:05.017358"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "She walks along the shoreline, her feet finding patterns in the sand that lead nowhere particular.",
+    "thought": "He listened like I was the only person alive.",
+    "location": {
+      "x": 32,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "free",
+    "timestamp": "2026-06-04T23:21:05.017358"
+  },
+  {
+    "day": 1,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade"
+    ],
+    "description": "Ryan is working on his shelter when Jade approaches from the path, and they sit together overlooking the water.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You're awake early. Wondered if I'd see you."
+      },
+      {
+        "speaker": "jade",
+        "line": "Couldn't sleep. Too much sky, too many stars."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know exactly what you mean. First night's always strange."
+      },
+      {
+        "speaker": "jade",
+        "line": "Is it strange for you too? You seem... settled."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Settled's a good word for what I'm trying. Not always working."
+      },
+      {
+        "speaker": "jade",
+        "line": "What happens when it doesn't work?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I usually panic a little, then fix it. Build something better."
+      },
+      {
+        "speaker": "jade",
+        "line": "So you're a fixer. That makes sense with the house."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm trying to fix everything. Maybe that's my whole problem."
+      },
+      {
+        "speaker": "jade",
+        "line": "What if some things aren't meant to be fixed?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Like what? Give me an example."
+      },
+      {
+        "speaker": "jade",
+        "line": "Like... meeting someone you weren't planning to meet."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You think I'm trying to fix what's happening with us?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I think you're deciding it's something good before you know it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Isn't that what hope is? Deciding something's good first?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Hope's dangerous. It breaks easy."
+      },
+      {
+        "speaker": "ryan",
+        "line": "So does everything else. Might as well risk it, then."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's one way to live. Bold and reckless."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're living it too, though. On an island with two strangers."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's different. That's just happening. I didn't choose it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "But you could leave. You're choosing to stay."
+      },
+      {
+        "speaker": "jade",
+        "line": "Stay and see what happens. Very different than deciding it's good."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay. I hear the difference. Fair enough."
+      },
+      {
+        "speaker": "jade",
+        "line": "But I'm glad I'm talking to you instead of... not."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's something. That's actually something."
+      },
+      {
+        "speaker": "jade",
+        "line": "Don't make it bigger than it is though."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'll try. No promises though."
+      },
+      {
+        "speaker": "jade",
+        "line": "At least you're honest about it. Marcus doesn't seem honest."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Marcus is... he's got his reasons for being closed off."
+      },
+      {
+        "speaker": "jade",
+        "line": "Do you know his reasons? Does he trust you with them?"
+      }
+    ],
+    "timestamp": "2026-06-04T23:21:05.017358"
   }
 ]
