@@ -56,7 +56,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #char-jade .nametag{color:#fbcfe8}
 
 /* ── SPEECH BUBBLES (always visible) ── */
-.bubble{position:absolute;bottom:76px;left:50%;transform:translateX(-50%);
+.bubble{position:absolute;bottom:92px;left:50%;transform:translateX(-50%);
   background:rgba(0,0,0,.38);color:#f1f5f9;padding:7px 11px;border-radius:12px;
   font-size:10px;font-weight:600;max-width:165px;min-width:105px;text-align:center;
   line-height:1.45;box-shadow:0 4px 18px rgba(0,0,0,.25);pointer-events:none;
@@ -207,13 +207,20 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #oracle-toggle:hover{color:#fbbf24}
 #oracle-badge{font-size:10px;transition:transform .25s}
 #oracle-widget.open #oracle-badge{transform:rotate(180deg)}
-#oracle-body{max-height:0;overflow:hidden;transition:max-height .3s ease;
+#oracle-body{max-height:0;overflow:hidden;transition:max-height .35s ease;
   background:rgba(0,0,0,.82);border-right:1px solid rgba(251,191,36,.12);
   border-top:1px solid rgba(251,191,36,.1);backdrop-filter:blur(10px)}
-#oracle-widget.open #oracle-body{max-height:120px}
-#oracle-label{font-size:11px;color:rgba(251,191,36,.4);letter-spacing:2px;padding:8px 12px 3px}
-#oracle-text{font-size:15px;color:#fde68a;padding:0 12px 4px;line-height:1.35;max-width:240px}
-#oracle-choice{font-size:12px;color:rgba(251,191,36,.4);padding:0 12px 8px;letter-spacing:1px}
+#oracle-widget.open #oracle-body{max-height:180px}
+.oracle-block{padding:8px 12px 6px}
+.oracle-block+.oracle-block{border-top:1px solid rgba(255,255,255,.06)}
+.oracle-state{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:3px}
+.oracle-state.upcoming{color:rgba(251,191,36,.5)}
+.oracle-state.active{color:rgba(244,114,182,.7)}
+.oracle-fate-text{font-size:15px;color:#fde68a;line-height:1.35;max-width:240px}
+.oracle-fate-text.active-text{color:#fbcfe8}
+.oracle-when{font-size:11px;letter-spacing:1px;padding-top:3px;padding-bottom:2px}
+.oracle-when.upcoming{color:rgba(251,191,36,.35)}
+.oracle-when.active{color:rgba(244,114,182,.4)}
 </style>
 </head>
 <body>
@@ -678,12 +685,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 <!-- ══ ORACLE WIDGET ═══════════════════════════════════════ -->
 <div id="oracle-widget">
-  <button id="oracle-toggle" onclick="toggleOracle()"><span id="oracle-badge">▲</span> ORACLE</button>
-  <div id="oracle-body">
-    <div id="oracle-label">TODAY'S FATE</div>
-    <div id="oracle-text">Loading…</div>
-    <div id="oracle-choice"></div>
-  </div>
+  <button id="oracle-toggle" onclick="toggleOracle()"><span id="oracle-badge">▲</span> ISLAND ORACLE</button>
+  <div id="oracle-body" id="oracle-body"></div>
 </div>
 
 <!-- ══ CHAT PANEL ══════════════════════════════════════════ -->
@@ -964,20 +967,78 @@ function renderChat() {
   feed.scrollTop=feed.scrollHeight
 }
 
+function separateChars(positions) {
+  const MIN = 36
+  for(let iter=0; iter<10; iter++) {
+    for(let i=0; i<positions.length; i++) {
+      for(let j=i+1; j<positions.length; j++) {
+        const dx=positions[j].px - positions[i].px
+        const dy=positions[j].py - positions[i].py
+        const dist=Math.sqrt(dx*dx+dy*dy)||0.01
+        if(dist < MIN) {
+          const push=(MIN-dist)/2
+          const nx=dx/dist, ny=dy/dist
+          positions[i].px -= nx*push; positions[i].py -= ny*push
+          positions[j].px += nx*push; positions[j].py += ny*push
+        }
+      }
+    }
+  }
+  // clamp x to safe zone
+  const W=window.innerWidth, safeMaxPx=isMobile()?W*0.88:W-265-30
+  positions.forEach(p=>{
+    p.px=Math.max(W*0.05, Math.min(safeMaxPx, p.px))
+  })
+  return positions
+}
+
+function nudgeBubbles(positions) {
+  const BUBBLE_W = 150
+  for(let i=0; i<positions.length; i++) {
+    document.getElementById('bubble-'+positions[i].id).style.marginLeft='0px'
+  }
+  for(let i=0; i<positions.length; i++) {
+    for(let j=i+1; j<positions.length; j++) {
+      const dx=Math.abs(positions[j].px - positions[i].px)
+      const dy=Math.abs(positions[j].py - positions[i].py)
+      if(dx < BUBBLE_W && dy < 80) {
+        const shift=(BUBBLE_W-dx)/2+8
+        const leftFirst=positions[i].px < positions[j].px
+        document.getElementById('bubble-'+positions[i].id).style.marginLeft=(leftFirst?-shift:shift)+'px'
+        document.getElementById('bubble-'+positions[j].id).style.marginLeft=(leftFirst?shift:-shift)+'px'
+      }
+    }
+  }
+}
+
 function updateWorld() {
   const w=S.world
   document.getElementById('day-label').textContent='Day '+(w.day||1)
   document.getElementById('cycle-label').textContent=cap(w.cycle||'')
   document.getElementById('ds-day').textContent='Day '+(w.day||1)
   document.getElementById('ds-cycle').textContent=cap(w.cycle||'')
-  ;['marcus','ryan','jade'].forEach(cid=>{
-    const c=S.chars[cid]; if(!c) return
-    const el=document.getElementById('char-'+cid)
+
+  const CHARS=['marcus','ryan','jade']
+  const W=window.innerWidth, H=window.innerHeight
+  // compute raw pixel positions
+  const positions=CHARS.map(cid=>{
+    const c=S.chars[cid]||{}
     const {left,top}=toPos(c.location?.x||50,c.location?.y||50)
-    el.style.left=left; el.style.top=top
-    applyFace(cid)
-    updateBubble(cid)
+    const px=parseFloat(left)/100*W
+    const py=parseFloat(top)/100*H
+    return {id:cid, px, py}
   })
+  separateChars(positions)
+
+  positions.forEach(p=>{
+    const el=document.getElementById('char-'+p.id); if(!el) return
+    el.style.left=(p.px/W*100)+'%'
+    el.style.top=(p.py/H*100)+'%'
+    applyFace(p.id)
+    updateBubble(p.id)
+  })
+
+  nudgeBubbles(positions)
   renderChat()
   updateStatusBar()
   updateStatCards()
@@ -1213,23 +1274,46 @@ function toggleOracle() {
   document.getElementById('oracle-widget').classList.toggle('open')
 }
 
+function fmtFateTime(iso) {
+  if(!iso) return ''
+  const d = new Date(iso)
+  const sgt = new Date(d.getTime() + d.getTimezoneOffset()*60000 + 8*3600000)
+  const h=sgt.getHours(), m=String(sgt.getMinutes()).padStart(2,'0')
+  const ap=h>=12?'pm':'am', h12=h%12||12
+  return `${h12}:${m}${ap}`
+}
+
 async function loadOracle() {
+  const body = document.getElementById('oracle-body')
   try {
     const fate = await fetch('data/fate.json?t='+Date.now()).then(r=>r.json())
-    document.getElementById('oracle-text').textContent = fate.text || '—'
-    let timeStr = ''
-    if(fate.revealed_at) {
-      const d = new Date(fate.revealed_at)
-      const sgt = new Date(d.getTime() + d.getTimezoneOffset()*60000 + 8*3600000)
-      const h=sgt.getHours(), m=String(sgt.getMinutes()).padStart(2,'0')
-      const ap=h>=12?'pm':'am', h12=h%12||12
-      timeStr = ` · ${h12}:${m}${ap}`
+    const isActive = fate.status === 'active'
+    const happenTime = fate.happens_at || fmtFateTime(fate.revealed_at) || '—'
+    const activatedTime = fate.activated_at ? fmtFateTime(fate.activated_at) : happenTime
+
+    if(isActive) {
+      body.innerHTML = `
+        <div class="oracle-block">
+          <div class="oracle-state active">⚡ ACTIVE NOW</div>
+          <div class="oracle-fate-text active-text">${fate.text||'—'}</div>
+          <div class="oracle-when active">TRIGGERED AT ${activatedTime} · DAY ${fate.day||1}</div>
+        </div>`
+    } else {
+      body.innerHTML = `
+        <div class="oracle-block">
+          <div class="oracle-state upcoming">✦ TODAY'S FATE</div>
+          <div class="oracle-fate-text">${fate.text||'—'}</div>
+          <div class="oracle-when upcoming">HAPPENS AT ${happenTime} · DAY ${fate.day||1}</div>
+        </div>`
     }
-    document.getElementById('oracle-choice').textContent = `DAY ${fate.day||1}${timeStr}`
     document.getElementById('oracle-widget').classList.add('open')
   } catch {
-    document.getElementById('oracle-text').textContent = 'Fate not yet revealed'
-    document.getElementById('oracle-choice').textContent = 'Sealed until midnight'
+    body.innerHTML = `
+      <div class="oracle-block">
+        <div class="oracle-state upcoming">ORACLE</div>
+        <div class="oracle-fate-text">Fate not yet revealed</div>
+        <div class="oracle-when upcoming">SEALED UNTIL MIDNIGHT</div>
+      </div>`
   }
 }
 
