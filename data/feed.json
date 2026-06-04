@@ -1,243 +1,193 @@
 [
   {
     "day": 1,
-    "cycle": "morning",
+    "cycle": "dawn",
     "character": "marcus",
-    "action": "Climbed to the eastern cliff before sunrise and sat there alone, watching the horizon.",
-    "thought": "Woke at five. Couldn't sleep anyway.",
+    "action": "He wakes before sunrise in his tent, lies still listening to the rhythm of waves and rustling palms.",
+    "thought": "It's quieter here than anywhere else. That might be the point.",
     "location": {
-      "x": 80,
-      "y": 20
+      "x": 78,
+      "y": 45
     },
     "shelter": "tent",
     "mood": "distant",
-    "timestamp": "2026-06-04T07:00:00+08:00"
+    "timestamp": "2026-06-04T23:19:19.270399"
   },
   {
     "day": 1,
-    "cycle": "morning",
+    "cycle": "dawn",
     "character": "ryan",
-    "action": "Started laying the foundation for a second room in his house, just in case.",
-    "thought": "Might as well make room. Someone could use it.",
+    "action": "He moves across the beach in the pre-dawn light, surveying the island with a builder's eye, already planning where things could go.",
+    "thought": "This place has potential. And so do I.",
     "location": {
       "x": 50,
-      "y": 50
+      "y": 22
     },
     "shelter": "house",
     "mood": "cheerful",
-    "timestamp": "2026-06-04T07:00:00+08:00"
+    "timestamp": "2026-06-04T23:19:19.270399"
   },
   {
     "day": 1,
-    "cycle": "morning",
+    "cycle": "dawn",
     "character": "jade",
-    "action": "Slept in until 9am, then walked barefoot down to the shore for a swim.",
-    "thought": "Salt water, quiet beach, no notifications. This is fine.",
+    "action": "She walks barefoot to the water's edge and stands perfectly still, watching the first light touch the horizon.",
+    "thought": "Everything here is honest. No pretense. Just being.",
     "location": {
-      "x": 18,
-      "y": 80
+      "x": 25,
+      "y": 35
     },
     "shelter": "hammock",
     "mood": "free",
-    "timestamp": "2026-06-04T07:00:00+08:00"
+    "timestamp": "2026-06-04T23:19:19.270399"
   },
   {
     "day": 1,
-    "cycle": "morning",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "marcus"
-    ],
-    "description": "Ryan spotted Marcus on the cliff and waved up at him. Marcus gave a single nod and looked back at the sea.",
-    "dialogue": "Come down later — I'm cooking dinner. There's enough for everyone.",
-    "timestamp": "2026-06-04T07:05:00+08:00"
-  },
-  {
-    "day": 1,
-    "cycle": "afternoon",
-    "character": "marcus",
-    "action": "Gathered driftwood pieces and arranged them near his tent, working methodically without hurrying.",
-    "thought": "They're all doing their thing. The work keeps the mind quiet.",
-    "location": {
-      "x": 78,
-      "y": 35
-    },
-    "shelter": "tent",
-    "mood": "guarded",
-    "timestamp": "2026-06-04T15:00:00+08:00"
-  },
-  {
-    "day": 1,
-    "cycle": "afternoon",
-    "character": "ryan",
-    "action": "Walked down to the lagoon searching for fresh water and spotted Jade wading near the shallows.",
-    "thought": "She's over here too. We could actually solve the water problem together.",
-    "location": {
-      "x": 45,
-      "y": 72
-    },
-    "shelter": "house",
-    "mood": "cheerful",
-    "timestamp": "2026-06-04T15:00:00+08:00"
-  },
-  {
-    "day": 1,
-    "cycle": "afternoon",
-    "character": "jade",
-    "action": "Drifted along the lagoon edge, letting the cool water run over her arms and testing the reef beneath.",
-    "thought": "The island doesn't care what we do here. That's what makes it feel clean.",
-    "location": {
-      "x": 42,
-      "y": 75
-    },
-    "shelter": "hammock",
-    "mood": "calm",
-    "timestamp": "2026-06-04T15:00:00+08:00"
-  },
-  {
-    "day": 1,
-    "cycle": "afternoon",
+    "cycle": "dawn",
     "type": "interaction",
     "characters": [
       "ryan",
       "jade"
     ],
-    "description": "Ryan pointed out a freshwater stream trickling down the rocks. Jade smiled and said they should both bring water back together.",
-    "dialogue": "Hey, you see that stream? We're actually pretty well set up on this island.",
-    "timestamp": "2026-06-04T15:05:00+08:00"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "character": "marcus",
-    "action": "Sits at the edge of his tent, listening to the island settle into darkness.",
-    "thought": "The work kept the noise down. Now it's back.",
-    "location": {
-      "x": 82,
-      "y": 28
-    },
-    "shelter": "tent",
-    "mood": "restless",
-    "timestamp": "2026-06-04T23:00:00+08:00"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "character": "ryan",
-    "action": "Lies in his house, turning over the day's moments with Jade, already thinking about tomorrow.",
-    "thought": "She's genuine. Easy to be around. Don't push it.",
-    "location": {
-      "x": 48,
-      "y": 45
-    },
-    "shelter": "house",
-    "mood": "content",
-    "timestamp": "2026-06-04T23:00:00+08:00"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "character": "jade",
-    "action": "Settles into her hammock as the stars appear above the lagoon.",
-    "thought": "No rush, no angle. Just present. That's rare.",
-    "location": {
-      "x": 22,
-      "y": 68
-    },
-    "shelter": "hammock",
-    "mood": "peaceful",
-    "timestamp": "2026-06-04T23:00:00+08:00"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade"
-    ],
-    "description": "As night fell, Ryan walked Jade back toward her hammock and told her they made a solid team on the first day.",
-    "dialogue": "We make a decent team, you know.",
-    "timestamp": "2026-06-04T23:05:00+08:00"
-  },
-  {
-    "day": 2,
-    "cycle": "night",
-    "character": "marcus",
-    "action": "Left his tent and walked to the rocks by the eastern shore, where the water was loudest.",
-    "thought": "The quiet hurts more than I thought.",
-    "location": {
-      "x": 80,
-      "y": 26
-    },
-    "shelter": "tent",
-    "mood": "restless",
-    "timestamp": "2026-06-04T23:01:25.637208"
-  },
-  {
-    "day": 2,
-    "cycle": "night",
-    "character": "ryan",
-    "action": "Lay in the darkness of his house, replaying the day with Jade over and over.",
-    "thought": "I'm already falling for her. That's the problem.",
-    "location": {
-      "x": 45,
-      "y": 50
-    },
-    "shelter": "house",
-    "mood": "hopeful",
-    "timestamp": "2026-06-04T23:01:25.637208"
-  },
-  {
-    "day": 2,
-    "cycle": "night",
-    "character": "jade",
-    "action": "Walked down the beach at midnight, the way she always does when sleep feels too heavy.",
-    "thought": "The dark makes me feel less alone.",
-    "location": {
-      "x": 78,
-      "y": 27
-    },
-    "shelter": "hammock",
-    "mood": "alive",
-    "timestamp": "2026-06-04T23:01:25.637208"
-  },
-  {
-    "day": 2,
-    "cycle": "night",
-    "type": "interaction",
-    "characters": [
-      "marcus",
-      "jade"
-    ],
-    "description": "Marcus and Jade found each other on the dark beach—a moment of unexpected stillness between two people who don't usually stop moving.",
+    "description": "Ryan encounters Jade at the water's edge as the sun rises, and they share their first real conversation of the island.",
     "dialogue": [
       {
-        "speaker": "marcus",
-        "line": "Couldn't sleep either?"
+        "speaker": "ryan",
+        "line": "Hey—oh, sorry. Didn't want to startle you."
       },
       {
         "speaker": "jade",
-        "line": "Never tried. Nights feel better awake."
+        "line": "You didn't. I saw you coming."
       },
       {
-        "speaker": "marcus",
-        "line": "That sounds lonely."
-      },
-      {
-        "speaker": "jade",
-        "line": "It was. Might not be now."
-      },
-      {
-        "speaker": "marcus",
-        "line": "That's something, I guess."
+        "speaker": "ryan",
+        "line": "I'm Ryan. Just exploring. Trying to get the lay of things."
       },
       {
         "speaker": "jade",
-        "line": "Yeah. It really is."
+        "line": "There's not much to sense. Just island."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Fair enough. I'm building a shelter actually. Something solid."
+      },
+      {
+        "speaker": "jade",
+        "line": "Where?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Central. Wanted to be in the middle, in case. You live here?"
+      },
+      {
+        "speaker": "jade",
+        "line": "The hammock's mine."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's very... free."
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't like being tied down."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I just meant the hammock seemed—never mind. I get it."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're easy to read."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Is that bad?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Haven't decided yet."
+      },
+      {
+        "speaker": "ryan",
+        "line": "But you've decided to stay. That means something, right?"
+      },
+      {
+        "speaker": "jade",
+        "line": "This place is different. It's honest."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And we're not?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Are you?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm trying to be. I want to build something real here."
+      },
+      {
+        "speaker": "jade",
+        "line": "A house."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe more than that."
+      },
+      {
+        "speaker": "jade",
+        "line": "You don't know me yet."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know. That's what's interesting."
+      },
+      {
+        "speaker": "jade",
+        "line": "Most people get bored when they realize I'm not mysterious."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm not most people."
+      },
+      {
+        "speaker": "jade",
+        "line": "No. You're not."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Is that good?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't know. Ask me later."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I will. I promise."
+      },
+      {
+        "speaker": "jade",
+        "line": "[silence as the sun breaks the horizon]"
+      },
+      {
+        "speaker": "jade",
+        "line": "My name is Jade."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know. You told me."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm reminding you. In case you forget what this felt like."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I won't forget."
       }
     ],
-    "timestamp": "2026-06-04T23:01:25.637208"
+    "timestamp": "2026-06-04T23:19:19.270399"
   }
 ]
