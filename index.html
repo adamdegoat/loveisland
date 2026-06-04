@@ -49,7 +49,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #char-jade .nametag{color:#fbcfe8}
 
 /* ── SPEECH BUBBLES (always visible) ── */
-.bubble{position:absolute;bottom:158px;left:50%;transform:translateX(-50%);
+.bubble{position:absolute;bottom:216px;left:50%;transform:translateX(-50%);
   background:rgba(0,0,0,.72);color:#f1f5f9;padding:7px 11px;border-radius:12px;
   font-size:10px;font-weight:600;max-width:165px;min-width:105px;text-align:center;
   line-height:1.45;box-shadow:0 4px 18px rgba(0,0,0,.5);pointer-events:none;
@@ -133,6 +133,30 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   #status-strip,#status-info{display:none}
   #run-btn,#story-btn{padding:.24rem .6rem;font-size:10px}
 }
+
+/* ── HOVER STAT CARD ── */
+.stat-card{
+  position:absolute;bottom:110%;pointer-events:none;z-index:80;
+  width:200px;background:rgba(0,0,0,.92);border-radius:12px;
+  padding:11px 13px;opacity:0;transform:translateY(6px);
+  transition:opacity .18s ease,transform .18s ease;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  font-family:'VT323',monospace;line-height:1.4;white-space:nowrap
+}
+.char:hover .stat-card{opacity:1;transform:translateY(0)}
+.stat-card.right{left:90%;transform:translateY(6px)}
+.stat-card.left{right:90%;transform:translateY(6px)}
+.char:hover .stat-card.right{transform:translateY(0)}
+.char:hover .stat-card.left{transform:translateY(0)}
+.sc-name{font-size:17px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
+.sc-mood{font-size:13px;color:rgba(255,255,255,.45);letter-spacing:.5px;margin-bottom:8px;text-transform:uppercase}
+.sc-section{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:2px}
+.sc-row{display:flex;align-items:center;gap:6px;margin-bottom:3px}
+.sc-label{font-size:12px;color:rgba(255,255,255,.4);width:68px;text-transform:uppercase;letter-spacing:.3px;flex-shrink:0}
+.sc-bar{flex:1;height:3px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.sc-fill{height:100%;border-radius:3px}
+.sc-val{font-size:12px;color:rgba(255,255,255,.5);width:22px;text-align:right;flex-shrink:0}
+.sc-bond{font-size:13px;margin-bottom:2px}
 
 /* ── ORACLE WIDGET ── */
 #oracle-widget{position:fixed;bottom:52px;left:0;z-index:50;font-family:'VT323',monospace}
@@ -394,7 +418,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <div class="bubble-name">Marcus</div>
     <span class="bubble-text" id="thought-marcus">…</span>
   </div>
-  <svg class="char-svg" id="svg-marcus" width="80" height="116" viewBox="-20 -76 40 80">
+  <svg class="char-svg" id="svg-marcus" width="80" height="192" viewBox="-20 -92 40 96">
     <ellipse cx="-7" cy="-2" rx="8.5" ry="3.5" fill="#111827"/>
     <ellipse cx="7" cy="-2" rx="8.5" ry="3.5" fill="#111827"/>
     <rect x="-12" y="-28" width="10.5" height="27" rx="3" fill="#1e2d40"/>
@@ -452,6 +476,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <path id="mouth-marcus" d="M -4 -64.5 L 4 -64.5" stroke="#9a6e4a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
   </svg>
   <div class="nametag">Marcus</div>
+  <div class="stat-card right" id="sc-marcus"></div>
 </div>
 
 <!-- ══ RYAN ═══════════════════════════════════════════════ -->
@@ -460,7 +485,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <div class="bubble-name">Ryan</div>
     <span class="bubble-text" id="thought-ryan">…</span>
   </div>
-  <svg class="char-svg" id="svg-ryan" width="80" height="116" viewBox="-20 -76 40 80">
+  <svg class="char-svg" id="svg-ryan" width="80" height="192" viewBox="-20 -92 40 96">
     <ellipse cx="-7" cy="-2" rx="8.5" ry="3.5" fill="#5c3d1e"/>
     <ellipse cx="7" cy="-2" rx="8.5" ry="3.5" fill="#5c3d1e"/>
     <rect x="-12" y="-28" width="10.5" height="27" rx="3" fill="#a08038"/>
@@ -517,6 +542,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <path id="mouth-ryan" d="M -4.5 -64.5 Q 0 -61 4.5 -64.5" stroke="#9a6e4a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
   </svg>
   <div class="nametag">Ryan</div>
+  <div class="stat-card right" id="sc-ryan"></div>
 </div>
 
 <!-- ══ JADE ════════════════════════════════════════════════ -->
@@ -525,7 +551,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <div class="bubble-name">Jade</div>
     <span class="bubble-text" id="thought-jade">…</span>
   </div>
-  <svg class="char-svg" id="svg-jade" width="80" height="120" viewBox="-20 -80 40 84">
+  <svg class="char-svg" id="svg-jade" width="80" height="192" viewBox="-20 -92 40 96">
     <ellipse cx="-6" cy="-2" rx="7.5" ry="3" fill="#8b6914"/>
     <ellipse cx="6" cy="-2" rx="7.5" ry="3" fill="#8b6914"/>
     <path d="M -13 -28 C -16 -10 -12 0 -6 -2 L 6 -2 C 12 0 16 -10 13 -28 Z" fill="#db2777"/>
@@ -582,6 +608,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <path id="mouth-jade" d="M -3.5 -64.5 Q 0 -61.5 3.5 -64.5" stroke="#9a6e4a" stroke-width="1.6" stroke-linecap="round" fill="none"/>
   </svg>
   <div class="nametag">Jade</div>
+  <div class="stat-card left" id="sc-jade"></div>
 </div>
 
 <!-- ══ ORACLE WIDGET ═══════════════════════════════════════ -->
@@ -844,6 +871,7 @@ function updateWorld() {
   })
   renderChat()
   updateStatusBar()
+  updateStatCards()
 }
 
 // ── STARS CANVAS ─────────────────────────────────────────
@@ -1009,6 +1037,66 @@ async function init(){
     console.error(e)
   }
   return true
+}
+
+// ── STAT CARDS ───────────────────────────────────────────
+const SC_COLORS = {marcus:'#93c5fd',ryan:'#fde68a',jade:'#f9a8d4'}
+const SC_FILL   = {marcus:'#60a5fa',ryan:'#fbbf24',jade:'#f472b6'}
+const SC_OTHERS = {marcus:['ryan','jade'],ryan:['marcus','jade'],jade:['marcus','ryan']}
+const SCORE_LABELS = ['trust','openness','loneliness','resilience','ambition']
+
+function buildStatCard(cid) {
+  const el = document.getElementById('sc-'+cid)
+  if(!el || !S.chars[cid]) return
+  const c = S.chars[cid]
+  const col = SC_COLORS[cid]
+  const fill = SC_FILL[cid]
+
+  const scoreRows = SCORE_LABELS.map(k => {
+    const v = c.scores?.[k] ?? 0
+    return `<div class="sc-row">
+      <span class="sc-label">${k}</span>
+      <div class="sc-bar"><div class="sc-fill" style="width:${v}%;background:${fill}88"></div></div>
+      <span class="sc-val">${v}</span>
+    </div>`
+  }).join('')
+
+  const bondRows = SC_OTHERS[cid].map(oid => {
+    const rel = c.relationships?.[oid] || {}
+    const cl = rel.closeness ?? 0
+    const at = rel.attraction ?? 0
+    const heart = at >= 30 ? ' ❤' : at >= 10 ? ' ·' : ''
+    const oName = S.chars[oid]?.name?.split(' ')[0] || cap(oid)
+    const oCol = SC_COLORS[oid]
+    return `<div class="sc-bond" style="color:rgba(255,255,255,.6)">
+      <span style="color:${oCol}">${oName}</span>
+      <span style="color:rgba(255,255,255,.3)"> — closeness </span>
+      <span style="color:${fill}">${cl}</span>${heart ? `<span style="color:#f43f5e;font-size:11px">${heart}</span>` : ''}
+    </div>`
+  }).join('')
+
+  el.style.borderColor = col+'44'
+  el.style.border = `1px solid ${col}33`
+  el.innerHTML = `
+    <div class="sc-name" style="color:${col}">${c.name||cap(cid)}</div>
+    <div class="sc-mood">${c.mood||'—'}</div>
+    <div class="sc-section">Stats</div>
+    ${scoreRows}
+    <div class="sc-section" style="margin-top:7px">Bonds</div>
+    ${bondRows}
+  `
+
+  // auto-flip: if character is on right side, show card to the left
+  const charEl = document.getElementById('char-'+cid)
+  if(charEl) {
+    const xPct = parseFloat(charEl.style.left||'50')
+    el.classList.toggle('left', xPct > 55)
+    el.classList.toggle('right', xPct <= 55)
+  }
+}
+
+function updateStatCards() {
+  ;['marcus','ryan','jade'].forEach(buildStatCard)
 }
 
 // ── ORACLE ────────────────────────────────────────────────
