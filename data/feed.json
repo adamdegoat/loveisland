@@ -568,5 +568,196 @@
       }
     ],
     "timestamp": "2026-06-04T23:31:04.209553"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "He walked to the eastern edge of the island and began cutting firewood with mechanical precision, each swing harder than necessary.",
+    "thought": "I shouldn't have said that much. Now I can't take it back.",
+    "location": {
+      "x": 72,
+      "y": 28
+    },
+    "shelter": "tent",
+    "mood": "withdrawn",
+    "timestamp": "2026-06-04T23:32:19.071339"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "He gathered water from the stream and found himself collecting smooth stones from the beach, arranging them in a small pattern near the rocks.",
+    "thought": "I can't stop thinking about her. The way she looked at me when I was talking.",
+    "location": {
+      "x": 48,
+      "y": 55
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-04T23:32:19.071339"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "She walked the western shore alone, her feet tracing the line where water meets sand, turning over the morning's conversation in her mind.",
+    "thought": "They're both so different. One scares me open. One scares me closed.",
+    "location": {
+      "x": 32,
+      "y": 48
+    },
+    "shelter": "hammock",
+    "mood": "conflicted",
+    "timestamp": "2026-06-04T23:32:19.071339"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade"
+    ],
+    "description": "By the rocks on the southern shore, Ryan encounters Jade as she walks back from her solitary wandering. The afternoon light is golden and soft.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "I was hoping I'd run into you."
+      },
+      {
+        "speaker": "jade",
+        "line": "Were you. Or did you arrange the stones?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Is that weird? I just wanted to do something."
+      },
+      {
+        "speaker": "jade",
+        "line": "They're beautiful. The stones are beautiful."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Sit with me? Just for a bit?"
+      },
+      {
+        "speaker": "jade",
+        "line": "People don't usually ask. They just assume."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I want to ask. I want to know what you want."
+      },
+      {
+        "speaker": "jade",
+        "line": "I want to sit. Yes. Just not too close yet."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay. Not too close."
+      },
+      {
+        "speaker": "jade",
+        "line": "This morning was a lot. You and me and Marcus, all at once."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He was real though. I've never seen him like that."
+      },
+      {
+        "speaker": "jade",
+        "line": "It scared me. How much he meant what he said."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He doesn't talk much. When he does, you listen."
+      },
+      {
+        "speaker": "jade",
+        "line": "He's hurt. I think he's been hurt a long time."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe. Or maybe he's just been alone."
+      },
+      {
+        "speaker": "jade",
+        "line": "Are they the same thing?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I don't think so. Not if you're like us."
+      },
+      {
+        "speaker": "jade",
+        "line": "Can you be alone without being hurt?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "No. Not really. Not if you feel things."
+      },
+      {
+        "speaker": "jade",
+        "line": "How are you so sure about what people feel?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm not. I'm just open. I pay attention."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's a gift. Or a curse. I haven't decided."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It's lonely sometimes. Seeing people and feeling nothing."
+      },
+      {
+        "speaker": "jade",
+        "line": "You feel things."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Around you I do."
+      },
+      {
+        "speaker": "jade",
+        "line": "Don't say that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Why not? It's true."
+      },
+      {
+        "speaker": "jade",
+        "line": "Because I don't know what I feel back. And I don't want to hurt you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "What if I'm okay with not knowing yet?"
+      },
+      {
+        "speaker": "jade",
+        "line": "No one's ever been okay with that. With me."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then I guess I'm not like everyone else."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're not."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Is that good?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Ask me tomorrow."
+      }
+    ],
+    "timestamp": "2026-06-04T23:32:19.071339"
   }
 ]
