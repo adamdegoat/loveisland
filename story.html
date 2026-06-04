@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tropicana — Story</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#070d18;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.07);
   --text:#e2e8f0;--muted:#64748b;--muted2:#475569;
   --marcus:#60a5fa;--ryan:#fbbf24;--jade:#f472b6;--radius:14px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:transparent;color:var(--text);font-size:14px;
+body{font-family:'Plus Jakarta Sans',sans-serif;background:transparent;color:var(--text);font-size:14px;
   -webkit-font-smoothing:antialiased;min-height:100vh;overflow:hidden}
 
 /* World background + overlay */
@@ -77,12 +77,16 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 .cycle-btn{padding:.4rem .85rem;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;
   font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s;border:none;background:none;color:inherit}
 .cycle-btn.active{background:rgba(255,255,255,.08);color:#fff}
+.cycle-btn[data-cycle="morning"].active{color:#93c5fd;box-shadow:inset 0 -2px 0 #93c5fd}
+.cycle-btn[data-cycle="midday"].active{color:#fde68a;box-shadow:inset 0 -2px 0 #fde68a}
+.cycle-btn[data-cycle="evening"].active{color:#fb923c;box-shadow:inset 0 -2px 0 #fb923c}
+.cycle-btn[data-cycle="night"].active{color:#c084fc;box-shadow:inset 0 -2px 0 #c084fc}
 
 /* FEED */
 .today-grid{display:flex;flex-direction:column;gap:.65rem}
 .feed-card{background:var(--card);border-radius:12px;border:1px solid var(--border);
   padding:1rem 1.2rem;display:flex;gap:.85rem;align-items:flex-start;animation:fadeUp .3s ease both}
-.feed-card.interaction{border-style:dashed;opacity:.85}
+.feed-card.interaction{border-left:3px solid rgba(251,191,36,.35);border-style:solid;opacity:.92}
 .feed-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
   font-weight:800;font-size:12px;font-family:'Plus Jakarta Sans',sans-serif;flex-shrink:0}
 .feed-body{flex:1;min-width:0}
@@ -157,7 +161,7 @@ footer span{color:var(--muted);font-weight:600}
   #story-scroll{position:relative;inset:auto;overflow-y:visible}
   #world-bg{display:none}
   #dark-overlay{display:none}
-  body{background:var(--bg)}
+  body{background:linear-gradient(160deg,#0a1628 0%,#070d18 45%,#06100e 100%)}
   .section{padding:1.25rem 1rem}
   .back-bar{padding:.5rem 1rem}
   .back-bar-title{font-size:14px}
@@ -252,10 +256,10 @@ footer span{color:var(--muted);font-weight:600}
   <div class="section reveal">
     <div class="section-title">Today's Pulse</div>
     <div class="cycle-tab">
-      <button class="cycle-btn active" onclick="setCycle('morning')">7am</button>
-      <button class="cycle-btn" onclick="setCycle('midday')">12:30pm</button>
-      <button class="cycle-btn" onclick="setCycle('evening')">6pm</button>
-      <button class="cycle-btn" onclick="setCycle('night')">11pm</button>
+      <button class="cycle-btn active" data-cycle="morning" onclick="setCycle('morning')">7am</button>
+      <button class="cycle-btn" data-cycle="midday" onclick="setCycle('midday')">12:30pm</button>
+      <button class="cycle-btn" data-cycle="evening" onclick="setCycle('evening')">6pm</button>
+      <button class="cycle-btn" data-cycle="night" onclick="setCycle('night')">11pm</button>
     </div>
     <div class="today-grid" id="today-feed"></div>
   </div>
@@ -357,7 +361,7 @@ function renderProfiles() {
 function setCycle(cycle) {
   activeCycle = cycle
   document.querySelectorAll('.cycle-btn').forEach(b => {
-    b.classList.toggle('active', b.textContent.toLowerCase()===cycle)
+    b.classList.toggle('active', b.dataset.cycle===cycle)
   })
   renderToday()
 }
@@ -494,9 +498,10 @@ function renderLog() {
         }).join('') +
         cycles[cyc].filter(e=>e.type==='interaction').map(e => {
           const cTag = CYCLE_HOUR_S[cyc]||cyc
+          const dots = (e.characters||[]).map(cid=>`<div class="log-dot" style="background:${CHARS[cid]||'#475569'}"></div>`).join('')
           return `<div class="log-entry">
             <div class="log-cycle-tag">${cTag}</div>
-            <div class="log-dot" style="background:#475569"></div>
+            <div style="display:flex;gap:3px;flex-shrink:0;align-items:center;margin-top:.3rem">${dots}</div>
             <div style="flex:1;color:var(--muted)">${e.description||''}</div>
           </div>`
         }).join('')

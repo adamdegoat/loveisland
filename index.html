@@ -53,18 +53,22 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes bob-slow{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @keyframes bob-tense{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-3px) rotate(.5deg)}}
-.nametag{text-align:center;font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;margin-top:4px;
-  text-shadow:0 1px 6px rgba(0,0,0,.9),0 0 10px rgba(0,0,0,.7)}
-#char-marcus .nametag{color:#93c5fd}
-#char-ryan .nametag{color:#fde68a}
-#char-jade .nametag{color:#fbcfe8}
+.nametag{font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+  margin:5px auto 0;padding:2px 9px;border-radius:20px;width:fit-content;white-space:nowrap;
+  background:rgba(0,0,0,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+#char-marcus .nametag{color:#93c5fd;border:1px solid rgba(147,197,253,.2)}
+#char-ryan .nametag{color:#fde68a;border:1px solid rgba(253,230,138,.2)}
+#char-jade .nametag{color:#fbcfe8;border:1px solid rgba(249,168,212,.2)}
 
 /* ── SPEECH BUBBLES (always visible) ── */
 .bubble{position:absolute;bottom:92px;left:50%;transform:translateX(-50%);
   background:rgba(0,0,0,.38);color:#f1f5f9;padding:7px 11px;border-radius:12px;
   font-size:10px;font-weight:600;max-width:165px;min-width:105px;text-align:center;
   line-height:1.45;box-shadow:0 4px 18px rgba(0,0,0,.25);pointer-events:none;
-  white-space:normal;z-index:25;border:1px solid rgba(255,255,255,.06)}
+  white-space:normal;z-index:25;border:1px solid rgba(255,255,255,.06);border-top-width:2px}
+#char-marcus .bubble{border-top-color:rgba(147,197,253,.5)}
+#char-ryan .bubble{border-top-color:rgba(253,230,138,.5)}
+#char-jade .bubble{border-top-color:rgba(249,168,212,.5)}
 .bubble::after{content:'';position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);
   border:7px solid transparent;border-top-color:rgba(0,0,0,.38);border-bottom:0}
 .bubble-name{font-size:9px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:3px}
@@ -116,6 +120,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   font-weight:700;letter-spacing:.3px;text-transform:uppercase;transition:all .4s}
 .stp.running{color:#fbbf24;border-color:rgba(251,191,36,.5);background:rgba(251,191,36,.1);animation:spulse 1s ease-in-out infinite}
 .stp.done{color:#4ade80;border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.07)}
+.stp.current{color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.09)}
 @keyframes spulse{0%,100%{opacity:1}50%{opacity:.5}}
 .stp-arr{color:rgba(255,255,255,.12);font-size:9px}
 
@@ -827,7 +832,7 @@ function applySky(sky) {
   document.getElementById('sun-group')?.setAttribute('opacity',isNight?'0':'1')
   document.getElementById('moon-group')?.setAttribute('opacity',isNight?'1':'0')
   document.getElementById('night-stars')?.setAttribute('opacity',isNight?'1':'0')
-  document.getElementById('night-overlay')?.setAttribute('opacity',isNight?'0.32':'0')
+  document.getElementById('night-overlay')?.setAttribute('opacity',isNight?'0.48':'0')
   drawStars(isNight)
   document.getElementById('world').className=isNight?'night':sky
 }
@@ -849,6 +854,8 @@ function updateStatusBar() {
   }
   document.getElementById('status-last').textContent=lastStr
   applySky(skyFromHour(sgt.getHours()))
+  ALL_STEPS.forEach(s=>document.getElementById('stp-'+s)?.classList.remove('current'))
+  if(S.world?.cycle) document.getElementById('stp-'+S.world.cycle)?.classList.add('current')
 }
 
 // ── FACE/CHAR ─────────────────────────────────────────────
@@ -1067,11 +1074,11 @@ function drawStars(active) {
   if(!active){c.style.opacity='0';return}
   c.width=window.innerWidth;c.height=window.innerHeight*.34
   const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height)
-  for(let i=0;i<130;i++){
+  for(let i=0;i<200;i++){
     const x=(Math.sin(i*137.5)*.5+.5)*c.width
     const y=(Math.sin(i*97.3)*.5+.5)*c.height
-    const r=Math.sin(i*43.1)*.5+.8
-    const a=Math.sin(i*61.7)*.3+.7
+    const r=Math.sin(i*43.1)*.4+1.1
+    const a=Math.sin(i*61.7)*.35+.75
     ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2)
     ctx.fillStyle=`rgba(255,255,255,${a})`;ctx.fill()
   }
