@@ -779,7 +779,13 @@ function updateStatusBar() {
 
 // ── FACE/CHAR ─────────────────────────────────────────────
 function toPos(x,y) {
-  return {left:(5+(x/100)*80)+'%', top:(48+(y/100)*32)+'%'}
+  // Keep characters clear of the right-side chat panel
+  const chatW = window.innerWidth <= 600 ? 220 : 265
+  const charHalf = 44 // half character width + small margin
+  const safePx = window.innerWidth - chatW - charHalf
+  const safeMaxPct = Math.min(78, (safePx / window.innerWidth) * 100)
+  const leftPct = 5 + (x / 100) * (safeMaxPct - 5)
+  return {left: leftPct+'%', top:(48+(y/100)*32)+'%'}
 }
 
 function applyFace(cid) {
