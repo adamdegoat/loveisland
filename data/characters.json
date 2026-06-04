@@ -9,7 +9,10 @@
       "openness": 18,
       "ambition": 45,
       "loneliness": 78,
-      "resilience": 84
+      "resilience": 84,
+      "hunger": 65,
+      "thirst": 50,
+      "energy": 70
     },
     "mood": "determined",
     "location": {
@@ -41,7 +44,10 @@
       "openness": 87,
       "ambition": 70,
       "loneliness": 33,
-      "resilience": 39
+      "resilience": 39,
+      "hunger": 75,
+      "thirst": 65,
+      "energy": 80
     },
     "mood": "focused",
     "location": {
@@ -73,7 +79,10 @@
       "openness": 75,
       "ambition": 40,
       "loneliness": 40,
-      "resilience": 60
+      "resilience": 60,
+      "hunger": 60,
+      "thirst": 55,
+      "energy": 65
     },
     "mood": "hopeful",
     "location": {

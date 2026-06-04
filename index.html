@@ -174,6 +174,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
   /* Pulse: below day stamp, readable but compact */
   #pulse{top:78px;font-size:11px;max-width:78vw;color:rgba(255,255,255,.65)}
+  #res-hud{display:none}
 
   /* Stat cards: show on tap, not hover */
   .stat-card{display:none}
@@ -211,6 +212,22 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .sc-val{font-size:12px;color:rgba(255,255,255,.5);width:22px;text-align:right;flex-shrink:0}
 .sc-bond{font-size:13px;margin-bottom:2px}
 
+/* ── STRUCTURES LAYER ── */
+#structures-layer{position:absolute;inset:0;pointer-events:none;z-index:5}
+.struct{position:absolute;transform:translate(-50%,-50%);pointer-events:none;text-align:center;line-height:1}
+.struct-icon{font-size:14px;filter:drop-shadow(0 1px 4px rgba(0,0,0,.7));display:block}
+.struct-label{font-size:7.5px;color:rgba(255,255,255,.42);white-space:nowrap;margin-top:1px;
+  font-family:'Plus Jakarta Sans',sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.9);display:block}
+.struct.discovery .struct-icon{font-size:12px}
+
+/* ── RESOURCES HUD ── */
+#res-hud{position:fixed;top:22px;right:18px;z-index:30;pointer-events:none;display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+.res-pill{display:flex;align-items:center;gap:4px;background:rgba(0,0,0,.35);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  border-radius:20px;padding:2px 8px 2px 6px;border:1px solid rgba(255,255,255,.06)}
+.res-pill-icon{font-size:11px}
+.res-pill-val{font-size:10px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;min-width:16px;text-align:right}
+
 /* ── ORACLE WIDGET ── */
 #oracle-widget{position:fixed;bottom:52px;left:0;z-index:50;font-family:'VT323',monospace}
 #oracle-toggle{display:flex;align-items:center;gap:5px;padding:5px 11px;
@@ -244,6 +261,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <!-- ══ DAY STAMP ══════════════════════════════════════════ -->
 <div id="day-stamp"><div id="ds-day">Day 1</div><div id="ds-cycle">—</div></div>
 <div id="pulse"></div>
+<div id="structures-layer"></div>
+<div id="res-hud"></div>
 
 <!-- ══ WORLD SVG ══════════════════════════════════════════ -->
 <svg id="world-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -1035,6 +1054,42 @@ function nudgeBubbles(positions) {
   }
 }
 
+const STRUCT_ICON = {tent:'⛺',house:'🏠',hammock:'🌴',firepit:'🔥',garden:'🌱',
+  watchtower:'🗼',storage:'📦',raft:'🛶',signal_fire:'🔥',fish_trap:'🎣',
+  cave:'🪨',waterfall:'💧',wreckage:'⚓',spring:'💧',discovery:'✨'}
+
+function renderStructures() {
+  const layer = document.getElementById('structures-layer')
+  if(!layer) return
+  const structs = [...(S.world.structures||[]),
+    ...(S.world.discoveries||[]).map(d=>({...d, _isDisc:true}))]
+  layer.innerHTML = structs.map(s => {
+    const icon = STRUCT_ICON[s.type] || '📍'
+    const label = s.label || s.name || ''
+    return `<div class="struct${s._isDisc?' discovery':''}" style="left:${s.x}%;top:${s.y}%">
+      <span class="struct-icon">${icon}</span>
+      <span class="struct-label">${label}</span>
+    </div>`
+  }).join('')
+}
+
+function renderResHud() {
+  const hud = document.getElementById('res-hud')
+  if(!hud) return
+  const res = S.world.resources || {}
+  const items = [
+    {k:'food', icon:'🍖'},
+    {k:'water', icon:'💧'},
+    {k:'wood', icon:'🪵'},
+    {k:'medicine', icon:'🌿'}
+  ]
+  hud.innerHTML = items.map(({k, icon}) => {
+    const v = res[k] ?? '—'
+    const col = typeof v==='number' ? (v<=20?'#ef4444':v<=40?'#f59e0b':'rgba(255,255,255,.55)') : 'rgba(255,255,255,.3)'
+    return `<div class="res-pill"><span class="res-pill-icon">${icon}</span><span class="res-pill-val" style="color:${col}">${v}</span></div>`
+  }).join('')
+}
+
 function makeGenericCharSVG(cid, color) {
   return `<svg class="char-svg" id="svg-${cid}" viewBox="-20 -92 40 96" width="27" height="64" xmlns="http://www.w3.org/2000/svg">
     <rect x="-8" y="-54" width="16" height="25" rx="4" fill="${color}" opacity=".85"/>
@@ -1103,6 +1158,8 @@ function updateWorld() {
   renderChat()
   updateStatusBar()
   updateStatCards()
+  renderStructures()
+  renderResHud()
 }
 
 // ── STARS CANVAS ─────────────────────────────────────────

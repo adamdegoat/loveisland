@@ -4,5 +4,41 @@
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Marcus found water and Jade was the first person he told \u2014 Ryan noticed."
+  "pulse": "Marcus found water and Jade was the first person he told \u2014 Ryan noticed.",
+  "structures": [
+    {
+      "id": "marcus_tent",
+      "type": "tent",
+      "x": 75,
+      "y": 25,
+      "builder": "marcus",
+      "day": 1,
+      "label": "Marcus\u2019s Tent"
+    },
+    {
+      "id": "ryan_house",
+      "type": "house",
+      "x": 50,
+      "y": 50,
+      "builder": "ryan",
+      "day": 1,
+      "label": "Ryan\u2019s House"
+    },
+    {
+      "id": "jade_hammock",
+      "type": "hammock",
+      "x": 20,
+      "y": 60,
+      "builder": "jade",
+      "day": 1,
+      "label": "Jade\u2019s Hammock"
+    }
+  ],
+  "resources": {
+    "food": 55,
+    "water": 40,
+    "wood": 25,
+    "medicine": 15
+  },
+  "discoveries": []
 }
