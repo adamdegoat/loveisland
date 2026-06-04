@@ -1068,8 +1068,8 @@ function drawStars(active) {
   }
 }
 
-// ── TRIGGER LIMIT (7 per cycle window) ───────────────────
-const MAX_MANUAL = 7
+// ── TRIGGER LIMIT (1 per cycle window) ───────────────────
+const MAX_MANUAL = 1
 
 function currentCycleWindow() {
   const h = getSGT().getHours()
@@ -1118,11 +1118,11 @@ function updateRunBtn() {
   if(rem <= 0) {
     btn.classList.add('maxed')
     btn.disabled = true
-    btn.textContent = `✕ Max · resets ${nextCycleTime()}`
+    btn.textContent = `✕ Run · next ${nextCycleTime()}`
   } else {
     btn.classList.remove('maxed','busy','done')
     btn.disabled = false
-    btn.textContent = `▶ Run (${MAX_MANUAL - rem}/${MAX_MANUAL})`
+    btn.textContent = '▶ Run'
   }
 }
 
@@ -1151,6 +1151,10 @@ async function runCycle() {
   try {
     const r=await fetch('http://localhost:7777/runday',{signal:AbortSignal.timeout(3000)})
     const d=await r.json()
+    if(d.status==='already_run'){
+      incManualCount()
+      showMsg(btn,'maxed',`✕ Run · next ${nextCycleTime()}`,3000);updateRunBtn();return
+    }
     if(d.status!=='started'){
       showMsg(btn,'busy','Busy…',2500);updateRunBtn();return
     }
@@ -1160,11 +1164,11 @@ async function runCycle() {
         const sr=await fetch('http://localhost:7777/status',{signal:AbortSignal.timeout(2000)})
         const s=await sr.json()
         ALL_STEPS.forEach(cyc=>{
-          if(s.cycles_done?.includes(cyc))setStep(cyc,'done')
-          else if(s.current_cycle===cyc)setStep(cyc,'running')
+          if(!s.running && s.cycle===cyc) setStep(cyc,'done')
+          else if(s.running && s.current_cycle===cyc) setStep(cyc,'running')
           else setStep(cyc,'pending')
         })
-        if(s.current_cycle){
+        if(s.running && s.current_cycle){
           msg.textContent=cap(s.current_cycle)+'…'
           btn.textContent='⏳ '+cap(s.current_cycle)
         }
