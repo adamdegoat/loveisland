@@ -8,13 +8,13 @@
       "trust": 21,
       "openness": 17,
       "ambition": 45,
-      "loneliness": 79,
-      "resilience": 82
+      "loneliness": 80,
+      "resilience": 83
     },
-    "mood": "guarded",
+    "mood": "restless",
     "location": {
-      "x": 78,
-      "y": 35
+      "x": 82,
+      "y": 28
     },
     "shelter": "tent",
     "relationships": {
@@ -25,8 +25,8 @@
       },
       "jade": {
         "closeness": 12,
-        "tension": 8,
-        "attraction": 8
+        "tension": 9,
+        "attraction": 9
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing."
@@ -37,16 +37,16 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 75,
-      "openness": 86,
+      "trust": 76,
+      "openness": 87,
       "ambition": 70,
-      "loneliness": 34,
+      "loneliness": 33,
       "resilience": 39
     },
-    "mood": "cheerful",
+    "mood": "content",
     "location": {
-      "x": 45,
-      "y": 72
+      "x": 48,
+      "y": 45
     },
     "shelter": "house",
     "relationships": {
@@ -56,9 +56,9 @@
         "attraction": 0
       },
       "jade": {
-        "closeness": 47,
+        "closeness": 49,
         "tension": 5,
-        "attraction": 22
+        "attraction": 23
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always says 'come lah'. Gets hurt easily but forgives even easier."
@@ -69,28 +69,28 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 56,
-      "openness": 72,
+      "trust": 57,
+      "openness": 73,
       "ambition": 40,
-      "loneliness": 41,
+      "loneliness": 40,
       "resilience": 60
     },
-    "mood": "calm",
+    "mood": "peaceful",
     "location": {
-      "x": 42,
-      "y": 75
+      "x": 22,
+      "y": 68
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
         "closeness": 12,
-        "tension": 8,
-        "attraction": 0
+        "tension": 9,
+        "attraction": 1
       },
       "ryan": {
-        "closeness": 47,
+        "closeness": 49,
         "tension": 5,
-        "attraction": 5
+        "attraction": 6
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't."

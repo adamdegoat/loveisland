@@ -106,5 +106,59 @@
     "description": "Ryan approached Jade at the lagoon and pointed out a freshwater stream trickling down the rocks; Jade smiled and said they should both bring water back.",
     "dialogue": "Eh Jade, you see that stream? This place is sibeh set-up already, can?",
     "timestamp": "2026-06-04T20:16:34.242709"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "Sits at the edge of his tent, listening to the island settle into darkness.",
+    "thought": "The work kept the noise down. Now it's just in the head again. She was smiling at him like that, eh. Not his problem, not his business.",
+    "location": {
+      "x": 82,
+      "y": 28
+    },
+    "shelter": "tent",
+    "mood": "restless",
+    "timestamp": "2026-06-04T20:22:51.834709"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "Lies in his house, turning over the day's moments with Jade, already thinking about tomorrow.",
+    "thought": "She's genuine, that one. Easy to work with. Tomorrow see if can do more together. Steady, don't push it.",
+    "location": {
+      "x": 48,
+      "y": 45
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-04T20:22:51.834709"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "character": "jade",
+    "action": "Settles into her hammock as the stars appear above the lagoon.",
+    "thought": "No rush, no angle. He's just... there. Present. That's rare one, sia. No expectations at all.",
+    "location": {
+      "x": 22,
+      "y": 68
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-04T20:22:51.834709"
+  },
+  {
+    "day": 1,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade"
+    ],
+    "description": "As night fell, Ryan walked Jade back toward her hammock and told her they made a solid team on the first day.",
+    "dialogue": "Ryan: We make a decent team already, la.",
+    "timestamp": "2026-06-04T20:22:51.834709"
   }
 ]
