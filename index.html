@@ -63,10 +63,10 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .bubble-text{font-size:10.5px}
 
 /* ── NEON CHAT PANEL ── */
-#chat-panel{position:fixed;right:0;bottom:52px;width:265px;height:72vh;
+#chat-panel{position:fixed;right:0;top:0;bottom:52px;width:265px;
   background:rgba(0,0,0,.38);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
   z-index:50;display:flex;flex-direction:column;
-  border-left:1px solid rgba(255,255,255,.07);border-top:1px solid rgba(255,255,255,.07)}
+  border-left:1px solid rgba(255,255,255,.07)}
 #chat-header{padding:7px 12px;font-family:'VT323',monospace;font-size:16px;color:#ff2d78;
   border-bottom:1px solid rgba(255,255,255,.07);letter-spacing:2px;display:flex;align-items:center;gap:6px}
 #chat-dot{width:6px;height:6px;border-radius:50%;background:#ff2d78;animation:cdot 2s ease-in-out infinite}
@@ -128,10 +128,42 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   text-transform:uppercase;text-decoration:none;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
 #story-btn:hover{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.85);background:rgba(255,255,255,.09)}
 
-@media(max-width:600px){
-  #chat-panel{width:220px}
-  #status-strip,#status-info{display:none}
-  #run-btn,#story-btn{padding:.24rem .6rem;font-size:10px}
+/* ── MOBILE ── */
+@media(max-width:768px){
+  /* Chat panel becomes a bottom drawer */
+  #chat-panel{
+    top:auto;right:0;left:0;bottom:52px;width:100%;
+    height:44px;border-left:none;border-top:1px solid rgba(255,255,255,.1);
+    transition:height .3s cubic-bezier(.4,0,.2,1);overflow:hidden
+  }
+  #chat-panel.mob-open{height:62vh}
+  #chat-header{cursor:pointer;justify-content:space-between}
+  #chat-chevron{display:inline-block;font-size:11px;transition:transform .3s;color:rgba(255,255,255,.4)}
+  #chat-panel.mob-open #chat-chevron{transform:rotate(180deg)}
+
+  /* Oracle: hide on mobile (fits in feed) */
+  #oracle-widget{display:none}
+
+  /* HUD: slimmer */
+  #status-strip,#status-info,#status-msg{display:none}
+  #hud{padding:0 .75rem;height:52px}
+  #run-btn{padding:.28rem .7rem;font-size:10px}
+  #story-btn{padding:.28rem .55rem;font-size:10px}
+
+  /* Bubbles: slightly smaller */
+  .bubble{max-width:130px;font-size:9.5px;padding:5px 9px}
+  .bubble-text{font-size:9.5px}
+
+  /* Stat cards: show on tap, not hover */
+  .stat-card{display:none}
+  .stat-card.tap-open{display:block;opacity:1;transform:translateY(0)}
+  /* position stat card above character on mobile */
+  .stat-card.right,.stat-card.left{left:50%;transform:translateX(-50%);right:auto}
+  .stat-card.tap-open.right,.stat-card.tap-open.left{transform:translateX(-50%)}
+}
+
+@media(min-width:769px){
+  #chat-chevron{display:none}
 }
 
 /* ── HOVER STAT CARD ── */
@@ -623,7 +655,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 <!-- ══ CHAT PANEL ══════════════════════════════════════════ -->
 <div id="chat-panel">
-  <div id="chat-header"><span id="chat-dot"></span>LOVE ISLAND SG</div>
+  <div id="chat-header" onclick="toggleMobileChat()"><span id="chat-dot"></span>TROPICANA FEED<span id="chat-chevron">▲</span></div>
   <div id="chat-feed"></div>
 </div>
 
@@ -778,14 +810,50 @@ function updateStatusBar() {
 }
 
 // ── FACE/CHAR ─────────────────────────────────────────────
+const isMobile = () => window.innerWidth <= 768
+
 function toPos(x,y) {
-  // Keep characters clear of the right-side chat panel
-  const chatW = window.innerWidth <= 600 ? 220 : 265
-  const charHalf = 44 // half character width + small margin
-  const safePx = window.innerWidth - chatW - charHalf
-  const safeMaxPct = Math.min(78, (safePx / window.innerWidth) * 100)
+  let safeMaxPct
+  if(isMobile()) {
+    // On mobile chat is at bottom — characters use full width
+    safeMaxPct = 88
+  } else {
+    // Desktop: keep characters clear of right-side chat panel (265px)
+    const charHalf = 44
+    const safePx = window.innerWidth - 265 - charHalf
+    safeMaxPct = Math.min(76, (safePx / window.innerWidth) * 100)
+  }
   const leftPct = 5 + (x / 100) * (safeMaxPct - 5)
   return {left: leftPct+'%', top:(48+(y/100)*32)+'%'}
+}
+
+function toggleMobileChat() {
+  if(!isMobile()) return
+  document.getElementById('chat-panel').classList.toggle('mob-open')
+}
+
+// Tap character to show stat card on mobile
+function initTapStats() {
+  ;['marcus','ryan','jade'].forEach(cid => {
+    const el = document.getElementById('char-'+cid)
+    if(!el) return
+    el.addEventListener('click', () => {
+      if(!isMobile()) return
+      const sc = document.getElementById('sc-'+cid)
+      if(!sc) return
+      const wasOpen = sc.classList.contains('tap-open')
+      // close all
+      document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('tap-open'))
+      if(!wasOpen) sc.classList.add('tap-open')
+    })
+  })
+  // tap world to close stat cards
+  document.getElementById('world')?.addEventListener('click', e => {
+    if(!isMobile()) return
+    if(!e.target.closest('.char')) {
+      document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('tap-open'))
+    }
+  })
 }
 
 function applyFace(cid) {
@@ -1124,7 +1192,7 @@ async function loadOracle() {
 
 setInterval(updateStatusBar,60000)
 setInterval(updateRunBtn,60000)
-init().then(()=>{ updateRunBtn(); loadOracle() })
+init().then(()=>{ updateRunBtn(); loadOracle(); initTapStats() })
 </script>
 </body>
 </html>

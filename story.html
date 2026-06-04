@@ -145,6 +145,27 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 footer{text-align:center;padding:3rem 1.5rem;color:var(--muted2);font-size:12px;
   border-top:1px solid var(--border);margin-top:1rem}
 footer span{color:var(--muted);font-weight:600}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  body{overflow-y:auto}
+  #story-scroll{position:relative;inset:auto;overflow-y:visible}
+  #world-bg{display:none}
+  #dark-overlay{display:none}
+  body{background:var(--bg)}
+  .section{padding:1.25rem 1rem}
+  .back-bar{padding:.5rem 1rem}
+  .back-bar-title{font-size:14px}
+  .day-badge{font-size:10px;padding:.2rem .55rem}
+  .cycle-tab{display:flex;flex-wrap:wrap;gap:2px}
+  .cycle-btn{padding:.3rem .55rem;font-size:11px}
+  .profiles-grid{grid-template-columns:1fr}
+  .rel-stats{grid-template-columns:1fr}
+  .feed-card{flex-direction:column;gap:.5rem}
+  .feed-avatar{width:28px;height:28px;font-size:10px}
+  .section-title{font-size:1.1rem}
+  .log-cycle-tag{width:36px;font-size:9px}
+}
 </style>
 </head>
 <body>
