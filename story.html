@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Island — Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070d18;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.07);
+  --text:#e2e8f0;--muted:#64748b;--muted2:#475569;
+  --marcus:#60a5fa;--ryan:#fbbf24;--jade:#f472b6;--radius:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:14px;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(ellipse at 80% 0%,rgba(96,165,250,.07) 0%,transparent 50%),
+  radial-gradient(ellipse at 20% 100%,rgba(244,114,182,.06) 0%,transparent 50%);min-height:100vh}
+.hidden{display:none!important}
+h1,h2,h3{font-family:'Playfair Display',serif}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.15)}}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* LOADING */
+#loading{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.spinner{width:36px;height:36px;border:3px solid rgba(255,255,255,.1);border-top-color:#60a5fa;border-radius:50%;animation:spin .8s linear infinite}
+#loading p{color:var(--muted);font-size:13px}
+
+/* BACK BAR */
+.back-bar{position:sticky;top:0;z-index:50;background:rgba(7,13,24,.92);backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);
+  padding:.65rem 1.25rem;display:flex;align-items:center;gap:.75rem}
+.back-btn{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .75rem;
+  border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);
+  color:rgba(255,255,255,.6);font-size:11px;font-weight:700;text-decoration:none;
+  font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:.3px;text-transform:uppercase;transition:all .2s}
+.back-btn:hover{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.9)}
+.back-bar-title{font-family:'Playfair Display',serif;font-style:italic;font-size:16px;
+  background:linear-gradient(135deg,#fff 0%,#f472b6 40%,#fbbf24 70%,#60a5fa 100%);
+  background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;animation:shimmer 6s linear infinite}
+.day-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:.25rem .75rem;
+  font-size:11px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;
+  letter-spacing:.5px;margin-left:auto}
+.day-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+
+/* SECTIONS */
+.section{padding:2rem 1.5rem;max-width:860px;margin:0 auto}
+.section-title{font-size:1.4rem;font-weight:700;font-style:italic;margin-bottom:1.25rem;
+  background:linear-gradient(135deg,#fff,rgba(255,255,255,.5));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);margin:0 1.5rem}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* CYCLE TABS */
+.cycle-tab{display:inline-flex;background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;margin-bottom:1rem}
+.cycle-btn{padding:.4rem .85rem;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;
+  font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s;border:none;background:none;color:inherit}
+.cycle-btn.active{background:rgba(255,255,255,.08);color:#fff}
+
+/* FEED */
+.today-grid{display:flex;flex-direction:column;gap:.65rem}
+.feed-card{background:var(--card);border-radius:12px;border:1px solid var(--border);
+  padding:1rem 1.2rem;display:flex;gap:.85rem;align-items:flex-start;animation:fadeUp .3s ease both}
+.feed-card.interaction{border-style:dashed;opacity:.85}
+.feed-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:12px;font-family:'Plus Jakarta Sans',sans-serif;flex-shrink:0}
+.feed-body{flex:1;min-width:0}
+.feed-name{font-size:12px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:2px}
+.feed-action{font-size:12px;color:var(--muted);margin-bottom:.35rem;font-style:italic}
+.feed-thought{font-size:13px;color:var(--text);line-height:1.55}
+.feed-dialogue{font-size:13px;color:var(--text);line-height:1.55;font-style:italic}
+
+/* CHARACTER CARDS */
+.profiles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:640px){.profiles-grid{grid-template-columns:1fr}}
+.char-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);
+  padding:1.25rem;transition:all .25s;position:relative;overflow:hidden}
+.char-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.char-card.marcus::before{background:linear-gradient(90deg,transparent,var(--marcus),transparent)}
+.char-card.ryan::before{background:linear-gradient(90deg,transparent,var(--ryan),transparent)}
+.char-card.jade::before{background:linear-gradient(90deg,transparent,var(--jade),transparent)}
+.char-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.12)}
+.char-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:16px;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:.85rem}
+.char-name{font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:2px}
+.char-archetype{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:.85rem}
+.char-bio{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+.char-mood{display:inline-flex;align-items:center;gap:.35rem;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:10px;
+  background:rgba(255,255,255,.06);margin-bottom:1rem;font-family:'Plus Jakarta Sans',sans-serif}
+.score-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.45rem}
+.score-label{font-size:11px;color:var(--muted);width:75px;text-transform:capitalize}
+.score-track{flex:1;height:4px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin:0 .6rem}
+.score-fill{height:100%;border-radius:4px;transition:width .8s cubic-bezier(.4,0,.2,1)}
+.score-val{font-size:11px;font-weight:700;width:22px;text-align:right;font-family:'Plus Jakarta Sans',sans-serif}
+.shelter-tag{display:inline-flex;align-items:center;gap:.3rem;font-size:11px;color:var(--muted);
+  background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:2px 8px;margin-top:.75rem}
+
+/* RELATIONSHIP */
+.rel-wrap{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+#rel-svg{width:100%;max-width:380px}
+.rel-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;width:100%}
+.rel-card{background:var(--card);border-radius:10px;border:1px solid var(--border);padding:.85rem;text-align:center}
+.rel-pair{font-size:12px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:.5rem}
+.rel-bar-row{display:flex;align-items:center;gap:.4rem;margin-bottom:.25rem}
+.rel-bar-label{font-size:10px;color:var(--muted);width:52px;text-align:right;text-transform:capitalize}
+.rel-bar-track{flex:1;height:3px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.rel-bar-fill{height:100%;border-radius:3px;transition:width .8s}
+@media(max-width:480px){.rel-stats{grid-template-columns:1fr}}
+
+/* LOG */
+.log-day{margin-bottom:1.5rem}
+.log-day-header{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  color:var(--muted2);margin-bottom:.65rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);
+  font-family:'Plus Jakarta Sans',sans-serif}
+.log-entry{font-size:13px;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.04);
+  display:flex;gap:.6rem;align-items:flex-start;line-height:1.5}
+.log-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:.35rem}
+.log-cycle-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+  color:var(--muted2);flex-shrink:0;width:52px;margin-top:1px;font-family:'Plus Jakarta Sans',sans-serif}
+
+/* FOOTER */
+footer{text-align:center;padding:3rem 1.5rem;color:var(--muted2);font-size:12px;
+  border-top:1px solid var(--border);margin-top:1rem}
+footer span{color:var(--muted);font-weight:600}
+</style>
+</head>
+<body>
+
+<div id="loading"><div class="spinner"></div><p>Loading the story…</p></div>
+
+<div id="app" class="hidden">
+
+  <!-- Back bar -->
+  <div class="back-bar">
+    <a class="back-btn" href="index.html">← World</a>
+    <span class="back-bar-title">Love Island</span>
+    <div class="day-badge">
+      <span class="day-dot"></span>
+      <span id="day-label">Day 1</span>
+      &nbsp;·&nbsp;<span id="cycle-label">—</span>
+      &nbsp;·&nbsp;<span id="weather-label">☀️</span>
+    </div>
+  </div>
+
+  <!-- Today's Pulse -->
+  <div class="section reveal">
+    <div class="section-title">Today's Pulse</div>
+    <div class="cycle-tab">
+      <button class="cycle-btn active" onclick="setCycle('morning')">Morning</button>
+      <button class="cycle-btn" onclick="setCycle('afternoon')">Afternoon</button>
+      <button class="cycle-btn" onclick="setCycle('night')">Night</button>
+    </div>
+    <div class="today-grid" id="today-feed"></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Character Profiles -->
+  <div class="section reveal">
+    <div class="section-title">The Islanders</div>
+    <div class="profiles-grid" id="profiles-grid"></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Relationship Web -->
+  <div class="section reveal">
+    <div class="section-title">The Bonds</div>
+    <div class="rel-wrap">
+      <svg id="rel-svg" viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg">
+        <line id="rw-mr" x1="170" y1="40" x2="300" y2="230" stroke="#60a5fa" stroke-width="2" opacity="0.3"/>
+        <line id="rw-mj" x1="170" y1="40" x2="40"  y2="230" stroke="#f472b6" stroke-width="2" opacity="0.3"/>
+        <line id="rw-rj" x1="300" y1="230" x2="40" y2="230" stroke="#fbbf24" stroke-width="2" opacity="0.3"/>
+        <circle cx="170" cy="40"  r="20" fill="#60a5fa22" stroke="#60a5fa" stroke-width="1.5"/>
+        <circle cx="300" cy="230" r="20" fill="#fbbf2422" stroke="#fbbf24" stroke-width="1.5"/>
+        <circle cx="40"  cy="230" r="20" fill="#f472b622" stroke="#f472b6" stroke-width="1.5"/>
+        <text x="170" y="45" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="700" font-family="Plus Jakarta Sans">M</text>
+        <text x="300" y="235" text-anchor="middle" fill="#fde68a" font-size="11" font-weight="700" font-family="Plus Jakarta Sans">R</text>
+        <text x="40"  y="235" text-anchor="middle" fill="#fbcfe8" font-size="11" font-weight="700" font-family="Plus Jakarta Sans">J</text>
+        <text id="rw-label-mr" x="240" y="138" text-anchor="middle" font-size="11" fill="#64748b" font-family="Inter">—</text>
+        <text id="rw-label-mj" x="100" y="138" text-anchor="middle" font-size="11" fill="#64748b" font-family="Inter">—</text>
+        <text id="rw-label-rj" x="170" y="248" text-anchor="middle" font-size="11" fill="#64748b" font-family="Inter">—</text>
+      </svg>
+      <div class="rel-stats" id="rel-stats"></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Island Log -->
+  <div class="section reveal">
+    <div class="section-title">Island Log</div>
+    <div id="full-log"></div>
+  </div>
+
+  <footer>
+    <p>Love Island · Updated by pressing <span>▶ Run Day</span> on the world page</p>
+    <p style="margin-top:.4rem">Built with <span>Claude Haiku</span> · Running since Day 1</p>
+  </footer>
+
+</div><!-- #app -->
+
+<script>
+const CHARS = {marcus:'#60a5fa',ryan:'#fbbf24',jade:'#f472b6'}
+const CHAR_NAMES = {marcus:'Marcus',ryan:'Ryan',jade:'Jade'}
+const CYCLE_ORDER = ['morning','afternoon','night']
+const WX = {clear:'☀️',rain:'🌧️',storm:'⛈️',overcast:'☁️',foggy:'🌫️'}
+const MOOD_EMOJI = {happy:'😊',cheerful:'😊',free:'😌',calm:'😌',content:'🙂',peaceful:'😌',neutral:'😐',
+  guarded:'😶',distant:'😶',sad:'😔',lonely:'😔',angry:'😤',frustrated:'😤',restless:'😕',hopeful:'🙂',warm:'🙂'}
+let S = {chars:{},feed:[],world:{}}
+let activeCycle = null
+
+function cap(s){return s?s[0].toUpperCase()+s.slice(1):''}
+
+function render() {
+  const w = S.world
+  document.getElementById('day-label').textContent = 'Day ' + w.day
+  document.getElementById('cycle-label').textContent = cap(w.cycle||'')
+  document.getElementById('weather-label').textContent = WX[w.weather]||'☀️'
+  renderProfiles()
+  renderToday()
+  renderRelStats()
+  renderLog()
+}
+
+function renderProfiles() {
+  document.getElementById('profiles-grid').innerHTML = Object.entries(S.chars).map(([cid,c]) => {
+    const color = c.color || CHARS[cid]
+    const initials = c.name.split(' ').map(w=>w[0]).join('')
+    const moodEmoji = MOOD_EMOJI[(c.mood||'').toLowerCase()] || '😐'
+    const shelter = {tent:'⛺',house:'🏠',hammock:'🌴',beach:'🏖️',forest:'🌲'}
+    return `<div class="char-card ${cid}" style="box-shadow:0 0 30px ${color}12">
+      <div class="char-avatar" style="background:${color}18;border:2px solid ${color}40;color:${color}">${initials}</div>
+      <div class="char-name" style="color:${color}">${c.name}</div>
+      <div class="char-archetype">The ${cap(c.archetype)}</div>
+      <div class="char-bio">${c.bio}</div>
+      <div class="char-mood" style="color:${color}">${moodEmoji} ${cap(c.mood||'')}</div>
+      ${Object.entries(c.scores).map(([k,v])=>`
+        <div class="score-row">
+          <span class="score-label">${k}</span>
+          <div class="score-track"><div class="score-fill" style="width:${v}%;background:linear-gradient(90deg,${color}88,${color})"></div></div>
+          <span class="score-val" style="color:${color}">${v}</span>
+        </div>`).join('')}
+      <div class="shelter-tag">${shelter[c.shelter]||'📍'} ${cap(c.shelter)}</div>
+    </div>`
+  }).join('')
+}
+
+function setCycle(cycle) {
+  activeCycle = cycle
+  document.querySelectorAll('.cycle-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.toLowerCase()===cycle)
+  })
+  renderToday()
+}
+
+function renderToday() {
+  const w = S.world
+  const day = w.day
+  const cycle = activeCycle || w.cycle || 'morning'
+  const entries = S.feed.filter(e => e.day===day && e.cycle===cycle)
+  const el = document.getElementById('today-feed')
+  if(!entries.length) {
+    el.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:1rem 0;text-align:center">No updates for this cycle yet.</div>`
+    return
+  }
+  el.innerHTML = entries.map((e,idx) => {
+    const color = e.character ? (CHARS[e.character]||'#fff') : '#475569'
+    const name = e.character ? (S.chars[e.character]?.name || CHAR_NAMES[e.character]||e.character) : 'Interaction'
+    const initials = name.split(' ').map(w=>w[0]).join('')
+    const isInt = e.type==='interaction'
+    return `<div class="feed-card${isInt?' interaction':''}" style="animation-delay:${idx*55}ms;border-color:${color}22">
+      <div class="feed-avatar" style="background:${color}18;border:2px solid ${color}40;color:${color}">${initials}</div>
+      <div class="feed-body">
+        <div class="feed-name" style="color:${color}">${isInt?'💬 '+(e.characters||[]).map(c=>CHAR_NAMES[c]||c).join(' & '):name}</div>
+        ${e.action?`<div class="feed-action">${e.action}</div>`:''}
+        ${e.thought?`<div class="feed-thought">"${e.thought}"</div>`:''}
+        ${e.description?`<div class="feed-action">${e.description}</div>`:''}
+        ${e.dialogue?`<div class="feed-dialogue">"${e.dialogue}"</div>`:''}
+      </div></div>`
+  }).join('')
+}
+
+function getCloseness(a,b){return S.chars[a]?.relationships?.[b]?.closeness||0}
+function getTension(a,b){return S.chars[a]?.relationships?.[b]?.tension||0}
+function getAttr(a,b){return S.chars[a]?.relationships?.[b]?.attraction||0}
+
+function renderRelStats() {
+  const pairs = [
+    {a:'marcus',b:'ryan',label:'Marcus & Ryan',color:'#60a5fa'},
+    {a:'marcus',b:'jade',label:'Marcus & Jade',color:'#f472b6'},
+    {a:'ryan',b:'jade',label:'Ryan & Jade',color:'#fbbf24'}
+  ]
+  document.getElementById('rel-stats').innerHTML = pairs.map(p => {
+    const cl=getCloseness(p.a,p.b), tn=getTension(p.a,p.b)
+    const atA=getAttr(p.a,p.b), atB=getAttr(p.b,p.a)
+    const atAvg=Math.round((atA+atB)/2)
+    const total=atA+atB
+    const status=total>=60?'💞 In love':total>=30?'💛 Feelings forming':total>=10?'👀 Something there':tn>50?'⚡ Volatile':'—'
+    return `<div class="rel-card">
+      <div class="rel-pair" style="color:${p.color}">${p.label} <span style="font-size:10px;opacity:.6;font-weight:400">${status}</span></div>
+      <div class="rel-bar-row">
+        <span class="rel-bar-label">closeness</span>
+        <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${cl}%;background:${p.color}"></div></div>
+        <span style="font-size:10px;font-weight:700;color:${p.color};width:22px;text-align:right">${cl}</span>
+      </div>
+      <div class="rel-bar-row">
+        <span class="rel-bar-label">tension</span>
+        <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${tn}%;background:#ef4444"></div></div>
+        <span style="font-size:10px;font-weight:700;color:#ef4444;width:22px;text-align:right">${tn}</span>
+      </div>
+      ${atAvg>0?`<div class="rel-bar-row">
+        <span class="rel-bar-label">attraction</span>
+        <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${Math.min(100,atAvg)}%;background:linear-gradient(90deg,#ec4899,#f43f5e)"></div></div>
+        <span style="font-size:10px;font-weight:700;color:#ec4899;width:22px;text-align:right">${atAvg}</span>
+      </div>`:''}
+    </div>`
+  }).join('')
+  // update relationship web
+  const relMap = {mr:{a:'marcus',b:'ryan',color:'#60a5fa',lbl:'rw-label-mr'},
+                  mj:{a:'marcus',b:'jade',color:'#f472b6',lbl:'rw-label-mj'},
+                  rj:{a:'ryan',b:'jade',color:'#fbbf24',lbl:'rw-label-rj'}}
+  Object.entries(relMap).forEach(([key,p]) => {
+    const cl=getCloseness(p.a,p.b), tn=getTension(p.a,p.b)
+    const ln=document.getElementById('rw-'+key)
+    const lb=document.getElementById(p.lbl)
+    if(ln){ln.setAttribute('stroke-width',cl>60?3:cl>30?1.8:.7);ln.setAttribute('opacity',(cl/100*.6+.1).toFixed(2));ln.setAttribute('stroke',tn>50?'#ef4444':p.color)}
+    if(lb){const t=getAttr(p.a,p.b)+getAttr(p.b,p.a);lb.textContent=t>=20?'❤️':tn>40?'⚡':'—'}
+  })
+}
+
+function renderLog() {
+  const byDay = {}
+  S.feed.forEach(e => {
+    if(!byDay[e.day]) byDay[e.day] = {}
+    if(!byDay[e.day][e.cycle]) byDay[e.day][e.cycle] = []
+    byDay[e.day][e.cycle].push(e)
+  })
+  const days = Object.keys(byDay).sort((a,b)=>b-a)
+  document.getElementById('full-log').innerHTML = days.map(day => {
+    const cycles = byDay[day]
+    return `<div class="log-day">
+      <div class="log-day-header">Day ${day}</div>
+      ${CYCLE_ORDER.filter(c=>cycles[c]).map(cyc =>
+        cycles[cyc].filter(e=>!e.type).map(e => {
+          const color = CHARS[e.character]||'#fff'
+          const name = S.chars[e.character]?.name || CHAR_NAMES[e.character] || e.character
+          return `<div class="log-entry">
+            <div class="log-cycle-tag">${cyc}</div>
+            <div class="log-dot" style="background:${color}"></div>
+            <div style="flex:1"><span style="color:${color};font-weight:600">${name}</span> — ${e.thought||e.action||''}</div>
+          </div>`
+        }).join('') +
+        cycles[cyc].filter(e=>e.type==='interaction').map(e =>
+          `<div class="log-entry">
+            <div class="log-cycle-tag">${cyc}</div>
+            <div class="log-dot" style="background:#475569"></div>
+            <div style="flex:1;color:var(--muted)"><em>${e.description}</em>${e.dialogue?` "${e.dialogue}"`:''}</div>
+          </div>`).join('')
+      ).join('')}
+    </div>`
+  }).join('')
+}
+
+async function init() {
+  try {
+    const [c,f,w] = await Promise.all([
+      fetch('data/characters.json').then(r=>r.json()),
+      fetch('data/feed.json').then(r=>r.json()),
+      fetch('data/world.json').then(r=>r.json())
+    ])
+    S.chars=c; S.feed=f; S.world=w
+    render()
+    document.getElementById('loading').classList.add('hidden')
+    document.getElementById('app').classList.remove('hidden')
+    const obs = new IntersectionObserver(entries => entries.forEach(e => {
+      if(e.isIntersecting) e.target.classList.add('visible')
+    }), {threshold:.1})
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el))
+  } catch(e) {
+    document.getElementById('loading').innerHTML = '<p style="color:#ef4444">Could not load story data.</p>'
+  }
+}
+init()
+</script>
+</body>
+</html>
