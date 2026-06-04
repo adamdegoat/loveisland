@@ -1225,7 +1225,7 @@ async function loadOracle() {
       const ap=h>=12?'pm':'am', h12=h%12||12
       timeStr = ` · ${h12}:${m}${ap}`
     }
-    document.getElementById('oracle-choice').textContent = `FATE ${fate.chosen||'?'} · DAY ${fate.day||1}${timeStr}`
+    document.getElementById('oracle-choice').textContent = `DAY ${fate.day||1}${timeStr}`
     document.getElementById('oracle-widget').classList.add('open')
   } catch {
     document.getElementById('oracle-text').textContent = 'Fate not yet revealed'
