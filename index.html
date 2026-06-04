@@ -369,7 +369,6 @@ function render() {
   document.getElementById('weather-label').textContent = wx[w.weather]||'☀️ Clear'
 
   positionDots()
-  renderRelLines()
   renderProfiles()
   renderToday()
   renderRelStats()
@@ -484,8 +483,11 @@ function renderRelStats() {
   el.innerHTML = pairs.map(p=>{
     const cl = getCloseness(p.a,p.b)
     const tn = getTension(p.a,p.b)
+    const atA = S.chars[p.a]?.relationships?.[p.b]?.attraction || 0
+    const atB = S.chars[p.b]?.relationships?.[p.a]?.attraction || 0
+    const heartStatus = (atA+atB)>=60?'💞 In love':(atA+atB)>=30?'💛 Feelings forming':(atA+atB)>=10?'👀 Something there':tn>50?'⚡ Volatile':'—'
     return `<div class="rel-card">
-      <div class="rel-pair" style="color:${p.color}">${p.label}</div>
+      <div class="rel-pair" style="color:${p.color}">${p.label} <span style="font-size:10px;opacity:.7;font-weight:400">${heartStatus}</span></div>
       <div class="rel-bar-row">
         <span class="rel-bar-label">closeness</span>
         <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${cl}%;background:${p.color}"></div></div>
@@ -496,6 +498,11 @@ function renderRelStats() {
         <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${tn}%;background:#ef4444"></div></div>
         <span style="font-size:10px;font-weight:700;color:#ef4444;width:20px;text-align:right">${tn}</span>
       </div>
+      ${(atA>0||atB>0)?`<div class="rel-bar-row">
+        <span class="rel-bar-label">attraction</span>
+        <div class="rel-bar-track"><div class="rel-bar-fill" style="width:${Math.min(100,(atA+atB)/2)}%;background:linear-gradient(90deg,#ec4899,#f43f5e)"></div></div>
+        <span style="font-size:10px;font-weight:700;color:#ec4899;width:20px;text-align:right">${Math.round((atA+atB)/2)}</span>
+      </div>`:''}
     </div>`
   }).join('')
 

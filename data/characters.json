@@ -20,11 +20,13 @@
     "relationships": {
       "ryan": {
         "closeness": 25,
-        "tension": 15
+        "tension": 15,
+        "attraction": 0
       },
       "jade": {
         "closeness": 12,
-        "tension": 8
+        "tension": 8,
+        "attraction": 8
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing."
@@ -50,11 +52,13 @@
     "relationships": {
       "marcus": {
         "closeness": 25,
-        "tension": 10
+        "tension": 10,
+        "attraction": 0
       },
       "jade": {
         "closeness": 47,
-        "tension": 5
+        "tension": 5,
+        "attraction": 22
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always says 'come lah'. Gets hurt easily but forgives even easier."
@@ -80,11 +84,13 @@
     "relationships": {
       "marcus": {
         "closeness": 12,
-        "tension": 8
+        "tension": 8,
+        "attraction": 0
       },
       "ryan": {
         "closeness": 47,
-        "tension": 5
+        "tension": 5,
+        "attraction": 5
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't."
