@@ -759,5 +759,228 @@
       }
     ],
     "timestamp": "2026-06-04T23:32:19.071339"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "He sits on a rock overlooking the darkening water, arms crossed, replaying words from the stream.",
+    "thought": "I said too much. Shouldn't have.",
+    "location": {
+      "x": 78,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "withdrawn",
+    "timestamp": "2026-06-04T23:34:10.445624"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "He arranges stones in a circle for a fire, working steadily, not quite focused on the task.",
+    "thought": "She felt it too. I'm sure.",
+    "location": {
+      "x": 48,
+      "y": 50
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-04T23:34:10.445624"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "She gathers driftwood slowly, moving through the beach as light turns golden, lost in thought.",
+    "thought": "Being seen. Being wanted. It's too much.",
+    "location": {
+      "x": 35,
+      "y": 45
+    },
+    "shelter": "hammock",
+    "mood": "conflicted",
+    "timestamp": "2026-06-04T23:34:10.445624"
+  },
+  {
+    "day": 1,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade"
+    ],
+    "description": "By a clearing near the freshwater stream, as evening settles into dusk, Ryan and Jade find themselves together, and the careful distance between them collapses.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Hey. You okay? Big day."
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah. Just processing."
+      },
+      {
+        "speaker": "ryan",
+        "line": "What happened at the rocks? You went quiet."
+      },
+      {
+        "speaker": "jade",
+        "line": "Wasn't quiet. Thinking. Different thing."
+      },
+      {
+        "speaker": "ryan",
+        "line": "About?"
+      },
+      {
+        "speaker": "jade",
+        "line": "You. Him. What we are."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't know yet."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Fair. I keep replaying everything from the stream."
+      },
+      {
+        "speaker": "jade",
+        "line": "Marcus was so exposed today."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. He doesn't usually do that."
+      },
+      {
+        "speaker": "jade",
+        "line": "You can feel how much it costs him."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe that's why it matters when he does."
+      },
+      {
+        "speaker": "jade",
+        "line": "He seems so alone though. Even with us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe he likes it that way."
+      },
+      {
+        "speaker": "jade",
+        "line": "Nobody likes being alone."
+      },
+      {
+        "speaker": "ryan",
+        "line": "No. They don't."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Jade. Can I be honest with you?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Please."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Today changed something for me. Seeing you."
+      },
+      {
+        "speaker": "jade",
+        "line": "Ryan..."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm not asking for anything. You should know."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's a lot for one day."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know."
+      },
+      {
+        "speaker": "jade",
+        "line": "Do you though?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I do. And I'm fine with slow."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm not used to being wanted. By more than one person."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Are you wanted by Marcus too?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Not like that. But he looks confused by me."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You confuse everyone. Me too, honestly."
+      },
+      {
+        "speaker": "jade",
+        "line": "Good confused or bad?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Good. Really good."
+      },
+      {
+        "speaker": "jade",
+        "line": "Ryan, I don't want to hurt anyone."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You won't."
+      },
+      {
+        "speaker": "jade",
+        "line": "You can't know that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "No. But we're here for a while. We have time."
+      },
+      {
+        "speaker": "jade",
+        "line": "What if I hurt myself?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's the real risk. And it's honest."
+      },
+      {
+        "speaker": "jade",
+        "line": "I need to sit with this. Not think. Just sit."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I can sit with you if you want."
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. Right here."
+      }
+    ],
+    "timestamp": "2026-06-04T23:34:10.445624"
   }
 ]
