@@ -560,5 +560,201 @@
       }
     ],
     "timestamp": "2026-06-04T23:22:34.358946"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "He wades into the deeper water despite the warning pull of the current, testing his limits as he always does.",
+    "thought": "I'm deeper than I should be. This current.",
+    "location": {
+      "x": 75,
+      "y": 45
+    },
+    "shelter": "tent",
+    "mood": "reckless",
+    "timestamp": "2026-06-04T23:23:48.890331"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "He's gathering coconuts at the tree line, oblivious to the danger unfolding at the water's edge.",
+    "thought": "I keep watching her. I can't look away.",
+    "location": {
+      "x": 55,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "distracted",
+    "timestamp": "2026-06-04T23:23:48.890331"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "She's swimming in the shallows when she spots Marcus caught in the riptide, his body suddenly fighting against the current.",
+    "thought": "He's going down. I'm the only one here.",
+    "location": {
+      "x": 70,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "alert",
+    "timestamp": "2026-06-04T23:23:48.890331"
+  },
+  {
+    "day": 1,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade"
+    ],
+    "description": "At the water's edge, Marcus gets caught in a riptide while swimming. Jade sees him struggling and instinctively dives in. Ryan watches in horror as it unfolds.",
+    "dialogue": [
+      {
+        "speaker": "marcus",
+        "line": "The current... stronger than expected."
+      },
+      {
+        "speaker": "jade",
+        "line": "Marcus! Stay calm, I'm coming!"
+      },
+      {
+        "speaker": "ryan",
+        "line": "What's happening? Marcus!"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I can... I've got this."
+      },
+      {
+        "speaker": "jade",
+        "line": "You don't. Stop fighting it, lean into the current."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Jade, be careful! The riptide pulls hard!"
+      },
+      {
+        "speaker": "jade",
+        "line": "I know what I'm doing. Just help when we reach shore."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You shouldn't have come in."
+      },
+      {
+        "speaker": "jade",
+        "line": "Quiet. Breathe. I've got you now."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Come on, come on. You can make it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Okay. Okay, I trust you."
+      },
+      {
+        "speaker": "jade",
+        "line": "Push toward shore, angled. We're almost out."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I've got your hand! Come on!"
+      },
+      {
+        "speaker": "marcus",
+        "line": "That was... stupid of me."
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah. It was. But you're out now."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That was the bravest thing I've ever seen, Jade."
+      },
+      {
+        "speaker": "jade",
+        "line": "It wasn't brave. It was just... I couldn't not."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You saved my life. I don't forget that."
+      },
+      {
+        "speaker": "jade",
+        "line": "You would have done the same for me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I don't know if I would have been fast enough."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We're all here now. That's what matters."
+      },
+      {
+        "speaker": "jade",
+        "line": "Marcus, you need to rest. Get warm and dry."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I feel like I owe you everything now."
+      },
+      {
+        "speaker": "jade",
+        "line": "You don't owe me anything. This is what people do."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Jade, seriously. That was incredible. You didn't hesitate."
+      },
+      {
+        "speaker": "jade",
+        "line": "You have to act when someone's drowning. Think about it after."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not many people would do that. You're different."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're being modest. I've never seen anything like that."
+      },
+      {
+        "speaker": "jade",
+        "line": "Everyone would. You would. It's just instinct."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I need to sit. My legs are... shaking."
+      },
+      {
+        "speaker": "jade",
+        "line": "Adrenaline. It'll pass. Come up to the shade."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'll get something warm. Marcus, you okay?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. Just processing that I almost... didn't get out."
+      },
+      {
+        "speaker": "jade",
+        "line": "But you did. And now you know the current. Respect it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I respect you. That's what I know right now."
+      }
+    ],
+    "timestamp": "2026-06-04T23:23:48.890331"
   }
 ]
