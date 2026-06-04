@@ -364,5 +364,201 @@
       }
     ],
     "timestamp": "2026-06-04T23:21:05.017358"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "He arrives at the freshwater stream to collect water, finding Ryan and Jade already there in conversation.",
+    "thought": "They move through here like they own it.",
+    "location": {
+      "x": 68,
+      "y": 48
+    },
+    "shelter": "tent",
+    "mood": "guarded",
+    "timestamp": "2026-06-04T23:22:34.358946"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "He's showing Jade how to filter water through cloth, leaning close enough that their shoulders almost touch.",
+    "thought": "She makes everything simple. He ruins it.",
+    "location": {
+      "x": 50,
+      "y": 50
+    },
+    "shelter": "house",
+    "mood": "tense",
+    "timestamp": "2026-06-04T23:22:34.358946"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "She sits by the water's edge, listening intently to Ryan, unaware of the weight shifting in the air.",
+    "thought": "Something shifted when he arrived. Everything stopped.",
+    "location": {
+      "x": 45,
+      "y": 52
+    },
+    "shelter": "hammock",
+    "mood": "unsettled",
+    "timestamp": "2026-06-04T23:22:34.358946"
+  },
+  {
+    "day": 1,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "marcus"
+    ],
+    "description": "At the water source, Marcus arrives to find Ryan and Jade in an easy conversation, creating an uncomfortable triangle.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "The water here is cleaner than yesterday. Less sandy."
+      },
+      {
+        "speaker": "jade",
+        "line": "Everything tastes different when you gather it yourself."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Right? Like we're actually part of the place. Not just passing through."
+      },
+      {
+        "speaker": "jade",
+        "line": "I think I understand why people live simply. It's... honest."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Water's water. Necessary."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Marcus. Come fill up. We were just talking about—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I can see what you were doing."
+      },
+      {
+        "speaker": "jade",
+        "line": "We're just talking. There's no one else here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's the problem, isn't it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "What's the problem? We're all getting water. No conflict."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I didn't say conflict. I said it's a problem."
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't understand what the problem is."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You wouldn't."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's not fair. She's trying to be nice."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She doesn't know what you're trying."
+      },
+      {
+        "speaker": "jade",
+        "line": "What is he talking about?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "He's just in a mood. Don't listen to him."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You want my respect more than you want honesty."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's not true. I just wanted you here."
+      },
+      {
+        "speaker": "jade",
+        "line": "Can't you two just... exist near each other?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "We're existing. Peacefully."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's not peaceful. That's tense."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Same thing out here."
+      },
+      {
+        "speaker": "jade",
+        "line": "It doesn't have to be."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I agree with her. We're all new to this."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Some of us more than others."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're always alone though. Even when we're together."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's by design."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We could help each other."
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. You help each other. I'll manage."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're not managing. You're just waiting."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What's the difference."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We'll figure it out. All three of us."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You can try."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's something, at least."
+      }
+    ],
+    "timestamp": "2026-06-04T23:22:34.358946"
   }
 ]
