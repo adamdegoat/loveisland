@@ -1,9 +1,9 @@
 {
   "day": 1,
-  "text": "Jade wakes screaming from nightmares; Marcus silently holds her hand until dawn",
+  "text": "Marcus finds fresh water; Jade's quiet gratitude breaks his silence",
   "cycle": "night",
   "happens_at": "11pm",
-  "status": "activated",
-  "revealed_at": "2026-06-04T23:25:39.651283",
-  "activated_at": "2026-06-04T23:34:12.553929"
+  "status": "upcoming",
+  "revealed_at": "2026-06-04T23:52:51.817551",
+  "activated_at": null
 }
