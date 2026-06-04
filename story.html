@@ -252,12 +252,10 @@ footer span{color:var(--muted);font-weight:600}
   <div class="section reveal">
     <div class="section-title">Today's Pulse</div>
     <div class="cycle-tab">
-      <button class="cycle-btn" onclick="setCycle('dawn')">Dawn</button>
-      <button class="cycle-btn active" onclick="setCycle('morning')">Morning</button>
-      <button class="cycle-btn" onclick="setCycle('midday')">Midday</button>
-      <button class="cycle-btn" onclick="setCycle('afternoon')">Afternoon</button>
-      <button class="cycle-btn" onclick="setCycle('evening')">Evening</button>
-      <button class="cycle-btn" onclick="setCycle('night')">Night</button>
+      <button class="cycle-btn active" onclick="setCycle('morning')">7am</button>
+      <button class="cycle-btn" onclick="setCycle('midday')">12:30pm</button>
+      <button class="cycle-btn" onclick="setCycle('evening')">6pm</button>
+      <button class="cycle-btn" onclick="setCycle('night')">11pm</button>
     </div>
     <div class="today-grid" id="today-feed"></div>
   </div>
@@ -364,7 +362,7 @@ function setCycle(cycle) {
   renderToday()
 }
 
-const CYCLE_HOUR_S = {dawn:'3am',morning:'7am',midday:'11am',afternoon:'3pm',evening:'7pm',night:'11pm'}
+const CYCLE_HOUR_S = {morning:'7am',midday:'12:30pm',evening:'6pm',night:'11pm'}
 
 function cycleLabelS(e) {
   return `Day ${e.day||1} · ${CYCLE_HOUR_S[e.cycle]||e.cycle||''}`
@@ -524,7 +522,7 @@ async function init() {
     // Sync sky to real SGT time
     const sgt=new Date(Date.now()+new Date().getTimezoneOffset()*60000+8*3600000)
     const h=sgt.getHours()
-    const sky=h>=23||h<3?'night':h<7?'dawn':h<11?'morning':h<15?'midday':h<19?'afternoon':'evening'
+    const sky=h>=23||h<7?'night':h<12?'morning':h<18?'midday':'evening'
     document.getElementById('sky-bg')?.setAttribute('fill',`url(#sky-${sky})`)
     const isNight=sky==='night'||sky==='dawn'
     document.getElementById('sun-group')?.setAttribute('opacity',isNight?'0':'1')

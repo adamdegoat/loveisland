@@ -705,17 +705,13 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   <span class="hud-sep">·</span>
 
   <div id="status-strip">
-    <div class="stp" id="stp-morning">🌅 Morn</div>
+    <div class="stp" id="stp-morning">🌅 7am</div>
     <span class="stp-arr">›</span>
-    <div class="stp" id="stp-midday">☀️ Mid</div>
+    <div class="stp" id="stp-midday">☀️ 12:30pm</div>
     <span class="stp-arr">›</span>
-    <div class="stp" id="stp-afternoon">🌤 Aft</div>
+    <div class="stp" id="stp-evening">🌆 6pm</div>
     <span class="stp-arr">›</span>
-    <div class="stp" id="stp-evening">🌆 Eve</div>
-    <span class="stp-arr">›</span>
-    <div class="stp" id="stp-night">🌙 Night</div>
-    <span class="stp-arr">›</span>
-    <div class="stp" id="stp-dawn">🌌 Dawn</div>
+    <div class="stp" id="stp-night">🌙 11pm</div>
   </div>
 
   <div id="status-info">
@@ -785,8 +781,8 @@ const MOOD_MAP = {
 }
 
 // ── SGT TIME ─────────────────────────────────────────────
-const RUN_HOURS = [3,7,11,15,19,23]
-const CYCLE_NAMES = {3:'dawn',7:'morning',11:'midday',15:'afternoon',19:'evening',23:'night'}
+const RUN_HOURS = [7,12,18,23]
+const CYCLE_NAMES = {7:'morning',12:'midday',18:'evening',23:'night'}
 
 function getSGT() {
   const now = new Date()
@@ -794,11 +790,9 @@ function getSGT() {
 }
 
 function skyFromHour(h) {
-  if(h>=23||h<3) return 'night'
-  if(h<7) return 'dawn'
-  if(h<11) return 'morning'
-  if(h<15) return 'midday'
-  if(h<19) return 'afternoon'
+  if(h>=23||h<7)  return 'night'
+  if(h<12) return 'morning'
+  if(h<18) return 'midday'
   return 'evening'
 }
 
@@ -808,13 +802,15 @@ function fmtTime(sgt) {
   return `${dh}:${m}${ap}`
 }
 
+const RUN_MINUTES = [{h:7,m:0},{h:12,m:30},{h:18,m:0},{h:23,m:0}]
 function nextRun(sgt) {
   const total=sgt.getHours()*60+sgt.getMinutes()
-  let nh=RUN_HOURS.find(r=>r*60>total)
-  if(nh===undefined) nh=RUN_HOURS[0]+24
-  const diff=nh*60-total, dh=Math.floor(diff/60), dm=diff%60
-  const h24=nh%24, ap=h24>=12?'pm':'am', dh12=h24%12||12
-  return { time:`${dh12}:00${ap}`, cd:dh>0?`${dh}h ${dm}m`:`${dm}m` }
+  let nr=RUN_MINUTES.find(r=>r.h*60+r.m>total)
+  if(!nr) nr={h:RUN_MINUTES[0].h+24,m:RUN_MINUTES[0].m}
+  const diff=nr.h*60+nr.m-total, dh=Math.floor(diff/60), dm=diff%60
+  const h24=nr.h%24, ap=h24>=12?'pm':'am', h12=h24%12||12
+  const mStr=nr.m>0?`:${String(nr.m).padStart(2,'0')}`:':00'
+  return { time:`${h12}${mStr}${ap}`, cd:dh>0?`${dh}h ${dm}m`:`${dm}m` }
 }
 
 function applySky(sky) {
@@ -931,7 +927,7 @@ function updateBubble(cid) {
   }
 }
 
-const CYCLE_HOUR = {dawn:'3am',morning:'7am',midday:'11am',afternoon:'3pm',evening:'7pm',night:'11pm'}
+const CYCLE_HOUR = {morning:'7am',midday:'12:30pm',evening:'6pm',night:'11pm'}
 const CHAR_COLOR = {marcus:'#c084fc',ryan:'#fb923c',jade:'#f472b6'}
 
 function cycleLabel(e) {
@@ -1077,12 +1073,10 @@ const MAX_MANUAL = 7
 
 function currentCycleWindow() {
   const h = getSGT().getHours()
-  if(h>=23||h<3) return 'night'
-  if(h<7) return 'dawn'
-  if(h<11) return 'morning'
-  if(h<15) return 'midday'
-  if(h<19) return 'afternoon'
-  return 'evening'
+  if(h >= 7 && h < 12)  return 'morning'
+  if(h >= 12 && h < 18) return 'midday'
+  if(h >= 18 && h < 23) return 'evening'
+  return 'night'
 }
 
 function getManualCount() {
@@ -1110,10 +1104,11 @@ function manualRemaining() {
 function nextCycleTime() {
   const sgt = getSGT()
   const total = sgt.getHours()*60 + sgt.getMinutes()
-  let nh = RUN_HOURS.find(r => r*60 > total)
-  if(nh===undefined) nh = RUN_HOURS[0]+24
-  const h24 = nh%24, ap = h24>=12?'pm':'am', h12 = h24%12||12
-  return `${h12}:00${ap}`
+  let nr = RUN_MINUTES.find(r => r.h*60+r.m > total)
+  if(!nr) nr = {h:RUN_MINUTES[0].h+24, m:RUN_MINUTES[0].m}
+  const h24 = nr.h%24, ap = h24>=12?'pm':'am', h12 = h24%12||12
+  const mStr = nr.m>0?`:${String(nr.m).padStart(2,'0')}`:':00'
+  return `${h12}${mStr}${ap}`
 }
 
 function updateRunBtn() {
@@ -1132,7 +1127,7 @@ function updateRunBtn() {
 }
 
 // ── RUN CYCLE ─────────────────────────────────────────────
-const ALL_STEPS=['morning','midday','afternoon','evening','night','dawn']
+const ALL_STEPS=['morning','midday','evening','night']
 
 function setStep(s,state){
   const el=document.getElementById('stp-'+s);if(!el)return
