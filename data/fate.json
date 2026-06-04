@@ -1,9 +1,9 @@
 {
-  "day": 1,
-  "text": "Marcus finds fresh water; Jade's quiet gratitude breaks his silence",
-  "cycle": "night",
-  "happens_at": "11pm",
-  "status": "activated",
-  "revealed_at": "2026-06-04T23:52:51.817551",
-  "activated_at": "2026-06-04T23:52:53.940237"
+  "day": 2,
+  "text": "Ryan and Jade find food Marcus stashed away — he breaks down crying",
+  "cycle": "evening",
+  "happens_at": "7pm",
+  "status": "upcoming",
+  "revealed_at": "2026-06-05T00:00:50.066267",
+  "activated_at": null
 }
