@@ -143,9 +143,42 @@ footer span{color:var(--muted);font-weight:600}
 /* SCROLL FADE WRAPPER */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
 .reveal.visible{opacity:1;transform:translateY(0)}
+
+/* STATUS BAR */
+.status-bar{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.75rem;
+  padding:.6rem 1.5rem;background:rgba(255,255,255,.03);border-bottom:1px solid var(--border);
+  font-size:11px;font-family:'Plus Jakarta Sans',sans-serif}
+.status-item{display:flex;align-items:center;gap:.35rem;color:var(--muted)}
+.status-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;
+  box-shadow:0 0 6px #22c55e;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.status-dot.offline{background:#475569;box-shadow:none;animation:none}
+.run-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .85rem;
+  border-radius:20px;border:1px solid rgba(244,114,182,.3);
+  background:rgba(244,114,182,.08);color:#f472b6;
+  font-size:11px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;
+  cursor:pointer;transition:all .2s;letter-spacing:.3px;text-transform:uppercase}
+.run-btn:hover:not(:disabled){background:rgba(244,114,182,.16);border-color:rgba(244,114,182,.5);transform:translateY(-1px)}
+.run-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.run-btn.running{color:#fbbf24;border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.08)}
+.run-btn.done{color:#22c55e;border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.08)}
 </style>
 </head>
 <body>
+
+<div class="status-bar">
+  <div class="status-item">
+    <div class="status-dot offline" id="server-dot"></div>
+    <span id="server-label">checking...</span>
+  </div>
+  <div class="status-item" id="last-updated-wrap" style="display:none">
+    · <span id="last-updated-label"></span>
+  </div>
+  <div class="status-item" id="next-update-wrap">
+    · <span id="next-update-label"></span>
+  </div>
+  <button class="run-btn" id="run-btn" onclick="runCycle()" disabled>▶ Run Now</button>
+</div>
 
 <div id="loading">
   <div class="spinner"></div>
@@ -356,6 +389,15 @@ async function init() {
     document.getElementById('loading').classList.add('hidden')
     document.getElementById('app').classList.remove('hidden')
     revealOnScroll()
+    checkServer()
+    setInterval(checkServer, 10000)
+    setInterval(() => {
+      const lbl = document.getElementById('last-updated-label')
+      const lastTs = getLastTimestamp()
+      if(lbl && lastTs) lbl.textContent = 'Updated ' + formatTimeAgo(lastTs)
+      const nextLbl = document.getElementById('next-update-label')
+      if(nextLbl) nextLbl.textContent = getNextUpdate()
+    }, 30000)
   } catch(e) {
     document.getElementById('loading').innerHTML = '<p style="color:#ef4444">Could not load island data.</p>'
   }
@@ -581,6 +623,138 @@ function shelterToEmoji(s) {
 }
 
 function capitalize(s) { return s ? s.charAt(0).toUpperCase()+s.slice(1) : '' }
+
+// ── STATUS BAR ──────────────────────────────────────────────
+
+const SCHEDULE = [
+  {label:'Morning', hour:7,  minute:0},
+  {label:'Afternoon',hour:13, minute:0},
+  {label:'Night',   hour:21, minute:0}
+]
+
+function getLastTimestamp() {
+  if(!S.feed.length) return null
+  const ts = S.feed.filter(e=>e.timestamp).map(e=>e.timestamp).sort().pop()
+  return ts ? new Date(ts) : null
+}
+
+function formatTimeAgo(date) {
+  const mins = Math.floor((Date.now() - date.getTime()) / 60000)
+  if(mins < 1) return 'just now'
+  if(mins < 60) return `${mins}m ago`
+  const h = Math.floor(mins/60)
+  if(h < 24) return `${h}h ${mins%60}m ago`
+  return `${Math.floor(h/24)}d ago`
+}
+
+function getNextUpdate() {
+  const now = new Date()
+  const sgOffset = 8 * 60
+  const utcMins = now.getUTCHours()*60 + now.getUTCMinutes()
+  const sgMins = (utcMins + sgOffset) % 1440
+  for(const s of SCHEDULE) {
+    const sMins = s.hour*60 + s.minute
+    if(sgMins < sMins) {
+      const diff = sMins - sgMins
+      return `Next: ${s.label} in ${Math.floor(diff/60)}h ${diff%60}m`
+    }
+  }
+  const first = SCHEDULE[0]
+  const diff = (1440 - sgMins) + first.hour*60 + first.minute
+  return `Next: ${first.label} in ${Math.floor(diff/60)}h ${diff%60}m`
+}
+
+function updateStatusBar(serverOnline, running) {
+  const dot = document.getElementById('server-dot')
+  const lbl = document.getElementById('server-label')
+  const btn = document.getElementById('run-btn')
+  const lastWrap = document.getElementById('last-updated-wrap')
+  const lastLbl = document.getElementById('last-updated-label')
+  const nextLbl = document.getElementById('next-update-label')
+
+  if(serverOnline) {
+    dot.classList.remove('offline')
+    lbl.textContent = running ? 'Running cycle…' : 'Live'
+    btn.disabled = running
+  } else {
+    dot.classList.add('offline')
+    lbl.textContent = 'Offline (Mac only)'
+    btn.disabled = true
+  }
+
+  const lastTs = getLastTimestamp()
+  if(lastTs) {
+    lastWrap.style.display = ''
+    lastLbl.textContent = 'Updated ' + formatTimeAgo(lastTs)
+  }
+
+  nextLbl.textContent = getNextUpdate()
+}
+
+async function checkServer() {
+  try {
+    const r = await fetch('http://localhost:7777/status', {signal: AbortSignal.timeout(1500)})
+    const d = await r.json()
+    updateStatusBar(true, d.running)
+    return true
+  } catch {
+    updateStatusBar(false, false)
+    return false
+  }
+}
+
+async function runCycle() {
+  const btn = document.getElementById('run-btn')
+  btn.disabled = true
+  btn.classList.add('running')
+  btn.textContent = '⏳ Running…'
+  try {
+    const r = await fetch('http://localhost:7777/run', {signal: AbortSignal.timeout(3000)})
+    if(r.ok) {
+      let elapsed = 0
+      const interval = setInterval(async () => {
+        elapsed++
+        btn.textContent = `⏳ ${elapsed}s…`
+        try {
+          const s = await fetch('http://localhost:7777/status', {signal: AbortSignal.timeout(1000)})
+          const d = await s.json()
+          if(!d.running) {
+            clearInterval(interval)
+            btn.classList.remove('running')
+            btn.classList.add('done')
+            btn.textContent = '✓ Done'
+            await reloadData()
+            setTimeout(() => {
+              btn.classList.remove('done')
+              btn.textContent = '▶ Run Now'
+              btn.disabled = false
+            }, 2000)
+          }
+        } catch {}
+      }, 1000)
+      setTimeout(() => clearInterval(interval), 90000)
+    } else {
+      btn.textContent = 'Busy — try again'
+      setTimeout(() => { btn.textContent = '▶ Run Now'; btn.disabled = false; btn.classList.remove('running') }, 2500)
+    }
+  } catch {
+    btn.classList.remove('running')
+    btn.textContent = 'Start Mac server first'
+    setTimeout(() => { btn.textContent = '▶ Run Now'; btn.disabled = false }, 3000)
+  }
+}
+
+async function reloadData() {
+  try {
+    const [c,f,w] = await Promise.all([
+      fetch('data/characters.json?t='+Date.now()).then(r=>r.json()),
+      fetch('data/feed.json?t='+Date.now()).then(r=>r.json()),
+      fetch('data/world.json?t='+Date.now()).then(r=>r.json())
+    ])
+    S.chars = c; S.feed = f; S.world = w
+    render()
+  } catch(e) {}
+}
 
 function revealOnScroll() {
   const obs = new IntersectionObserver(entries => {
