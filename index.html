@@ -35,6 +35,10 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 /* ── DAY STAMP ── */
 #day-stamp{position:fixed;top:22px;left:18px;z-index:30;pointer-events:none;line-height:1.15}
+#pulse{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:30;pointer-events:none;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-style:italic;font-weight:500;
+  color:rgba(255,255,255,.55);letter-spacing:.2px;text-align:center;max-width:340px;line-height:1.4;
+  text-shadow:0 1px 8px rgba(0,0,0,.4)}
 #ds-day{font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;
   color:rgba(255,255,255,.1);letter-spacing:-1px}
 #ds-cycle{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;
@@ -231,6 +235,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 <!-- ══ DAY STAMP ══════════════════════════════════════════ -->
 <div id="day-stamp"><div id="ds-day">Day 1</div><div id="ds-cycle">—</div></div>
+<div id="pulse"></div>
 
 <!-- ══ WORLD SVG ══════════════════════════════════════════ -->
 <svg id="world-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -1025,6 +1030,7 @@ function updateWorld() {
   document.getElementById('cycle-label').textContent=cap(w.cycle||'')
   document.getElementById('ds-day').textContent='Day '+(w.day||1)
   document.getElementById('ds-cycle').textContent=cap(w.cycle||'')
+  if(w.pulse) document.getElementById('pulse').textContent=w.pulse
 
   const CHARS=['marcus','ryan','jade']
   const W=window.innerWidth, H=window.innerHeight
