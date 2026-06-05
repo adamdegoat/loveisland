@@ -1394,8 +1394,10 @@ function separateChars(positions) {
 
 function nudgeBubbles(positions) {
   const BUBBLE_W = 110
+  const BODY_CLEAR = 67  // bubble half-width(55) + char body half-width(12)
   const offsets = {}
   positions.forEach(p=>{ offsets[p.id] = 0 })
+  // Pass 1: bubble-vs-bubble horizontal separation
   for(let i=0; i<positions.length; i++) {
     for(let j=i+1; j<positions.length; j++) {
       const dx = positions[j].px - positions[i].px
@@ -1406,6 +1408,19 @@ function nudgeBubbles(positions) {
         const leftFirst = positions[i].px <= positions[j].px
         offsets[positions[i].id] += leftFirst ? -shift : shift
         offsets[positions[j].id] += leftFirst ? shift : -shift
+      }
+    }
+  }
+  // Pass 2 (3 iterations): push each bubble clear of every other character's body
+  for(let iter=0; iter<3; iter++) {
+    for(let i=0; i<positions.length; i++) {
+      const bx = positions[i].px + offsets[positions[i].id]
+      for(let j=0; j<positions.length; j++) {
+        if(i===j) continue
+        const dist = bx - positions[j].px
+        if(Math.abs(dist) < BODY_CLEAR) {
+          offsets[positions[i].id] += dist >= 0 ? (BODY_CLEAR - dist) : -(BODY_CLEAR + dist)
+        }
       }
     }
   }
