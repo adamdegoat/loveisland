@@ -1086,7 +1086,7 @@ const MOOD_MAP = {
   sad:'sad',lonely:'sad',melancholy:'sad',down:'sad',gloomy:'sad',
   heartbroken:'heartbroken',devastated:'heartbroken',grieving:'heartbroken',hurt:'heartbroken',
   angry:'angry',frustrated:'angry',irritated:'angry',furious:'angry',annoyed:'angry',
-  shocked:'shocked',surprised:'shocked',stunned:'shocked',
+  shocked:'shocked',surprised:'shocked',stunned:'shocked',shaken:'shocked',overwhelmed:'shocked',terrified:'shocked',
   flirtatious:'flirtatious',playful:'flirtatious',teasing:'flirtatious',
   smitten:'smitten',lovestruck:'smitten',infatuated:'smitten',
   jealous:'jealous',envious:'jealous',
@@ -1146,7 +1146,8 @@ function updateStatusBar() {
 
   let lastStr='—'
   if(S.feed&&S.feed.length>0) {
-    const ts=S.feed[S.feed.length-1].timestamp
+    const lastRun=[...S.feed].reverse().find(e=>e.type!=='birth')
+    const ts=lastRun?.timestamp
     if(ts) {
       const d=new Date(ts)
       const sgtD=new Date(d.getTime()+d.getTimezoneOffset()*60000+8*3600000)
