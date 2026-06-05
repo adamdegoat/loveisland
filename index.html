@@ -191,7 +191,10 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   .bubble{max-width:130px;font-size:9.5px;padding:5px 9px}
   .bubble-text{font-size:9.5px}
   #pulse{top:78px;font-size:11px;max-width:78vw;color:rgba(255,255,255,.65)}
-  #res-hud{display:none}
+  #res-hud{top:14px;right:12px}
+  .res-pill{padding:3px 8px 3px 7px;min-height:30px}
+  .res-pill-icon{font-size:13px}
+  .res-pill-val{font-size:11px}
   .stat-card{display:none}
   .stat-card.tap-open{display:block;opacity:1;transform:translateY(0)}
   .stat-card.right,.stat-card.left{left:50%;transform:translateX(-50%);right:auto}
@@ -237,12 +240,38 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .struct.discovery .struct-svg{filter:drop-shadow(0 0 6px rgba(251,191,36,.6)) drop-shadow(0 3px 8px rgba(0,0,0,.5))}
 
 /* ── RESOURCES HUD ── */
-#res-hud{position:fixed;top:22px;right:18px;z-index:30;pointer-events:none;display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+#res-hud{position:fixed;top:22px;right:18px;z-index:30;pointer-events:auto;display:flex;flex-direction:column;gap:4px;align-items:flex-end}
 .res-pill{display:flex;align-items:center;gap:4px;background:rgba(0,0,0,.35);
   backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
-  border-radius:20px;padding:2px 8px 2px 6px;border:1px solid rgba(255,255,255,.06)}
-.res-pill-icon{font-size:11px}
-.res-pill-val{font-size:10px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;min-width:16px;text-align:right}
+  border-radius:20px;padding:4px 10px 4px 8px;border:1px solid rgba(255,255,255,.06);
+  cursor:pointer;user-select:none;min-height:26px;
+  transition:background .15s,border-color .15s}
+.res-pill:hover,.res-pill.rp-active{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18)}
+.res-pill-icon{font-size:12px}
+.res-pill-val{font-size:11px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;min-width:18px;text-align:right}
+/* Resource detail card */
+#res-card{
+  width:min(220px,calc(100vw - 36px));
+  background:rgba(4,8,22,.92);border:1px solid rgba(255,255,255,.1);border-radius:12px;
+  overflow:hidden;max-height:0;opacity:0;pointer-events:none;
+  transition:max-height .32s cubic-bezier(.4,0,.2,1),opacity .22s ease;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  box-shadow:0 8px 28px rgba(0,0,0,.6)}
+#res-card.open{max-height:240px;opacity:1;pointer-events:auto}
+.rc-inner{padding:13px 14px}
+.rc-header{display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.rc-icon{font-size:18px}
+.rc-name{flex:1;font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.rc-val{font-size:16px;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif}
+.rc-trend{font-size:14px;font-weight:700;margin-left:1px}
+.rc-bar-wrap{height:3px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;margin-bottom:10px}
+.rc-bar-fill{height:100%;border-radius:3px}
+.rc-status{font-size:11px;color:rgba(255,255,255,.62);line-height:1.55;margin-bottom:7px}
+.rc-mention{font-size:10px;color:rgba(255,255,255,.36);line-height:1.5;font-style:italic;
+  border-top:1px solid rgba(255,255,255,.06);padding-top:7px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rc-who{display:block;margin-top:3px;font-style:normal;font-size:9px;
+  letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.22)}
 
 /* ── ORACLE WIDGET ── */
 #oracle-widget{position:fixed;bottom:52px;left:0;z-index:50;font-family:'VT323',monospace}
@@ -1035,6 +1064,12 @@ function initTapStats() {
     if(!e.target.closest('.char')) {
       document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('tap-open'))
     }
+    if(!e.target.closest('#res-hud')) {
+      const card = document.getElementById('res-card')
+      if(card) card.classList.remove('open')
+      document.querySelectorAll('.res-pill').forEach(p=>p.classList.remove('rp-active'))
+      _activeRes = null
+    }
   })
 }
 
@@ -1452,6 +1487,74 @@ function renderStructures() {
   }).join('')
 }
 
+let _activeRes = null
+
+function buildResCardContent(k) {
+  const res  = S.world?.resources      || {}
+  const prev = S.world?.resources_prev || {}
+  const val  = typeof res[k]==='number' ? res[k] : 0
+  const prevVal = typeof prev[k]==='number' ? prev[k] : val
+
+  const STATUS = {
+    food:     ['Critically low — someone needs to hunt urgently.',   'Getting scarce. Finding food should be a priority.',  'Enough to keep everyone fed for now.'],
+    water:    ['Dangerously low. Dehydration is a real risk.',       'Running short. Fresh water needs to be found soon.',  'Enough fresh water for now.'],
+    wood:     ['Almost none left. No building until more is found.', 'Low supply. One build would nearly exhaust it.',      'Enough wood to build something if needed.'],
+    medicine: ['Critically low. One illness could be very serious.', 'Very little left. Use it carefully.',                'Enough to handle minor injuries for now.'],
+  }
+  const tier = val<=20 ? 0 : val<=40 ? 1 : 2
+  const statusLine = (STATUS[k]||['','Low.','Sufficient.'])[tier]
+
+  const diff = val - prevVal
+  const trend = diff>0 ? '↑' : diff<0 ? '↓' : '→'
+  const trendCol = diff>0 ? '#4ade80' : diff<0 ? '#f87171' : 'rgba(255,255,255,.28)'
+
+  const KEYS = {
+    food:['food','eat','hunt','fish','fruit','hungry','starv','meal'],
+    water:['water','drink','thirst','well','spring','rain','dehydr'],
+    wood:['wood','timber','build','chop','tree','log','plank'],
+    medicine:['medicine','heal','herb','sick','injur','hurt','wound'],
+  }
+  const kws = KEYS[k]||[]
+  const mention = [...(S.feed||[])].reverse().find(e=>{
+    const t=((e.thought||'')+(e.action||'')+(e.description||'')).toLowerCase()
+    return kws.some(w=>t.includes(w))
+  })
+  const mentionHtml = mention
+    ? `<div class="rc-mention">"${(mention.thought||mention.action||mention.description||'').slice(0,80)}"<span class="rc-who">${(mention.character||'someone')[0].toUpperCase()+(mention.character||'someone').slice(1)} · Day ${mention.day} ${mention.cycle||''}</span></div>`
+    : ''
+
+  const ICONS = {food:'🍖',water:'💧',wood:'🪵',medicine:'🌿'}
+  const NAMES = {food:'Food',water:'Water',wood:'Wood',medicine:'Medicine'}
+  const col = val<=20?'#ef4444':val<=40?'#f59e0b':'#4ade80'
+
+  return `<div class="rc-inner">
+    <div class="rc-header">
+      <span class="rc-icon">${ICONS[k]}</span>
+      <span class="rc-name">${NAMES[k]}</span>
+      <span class="rc-val" style="color:${col}">${val}</span>
+      <span class="rc-trend" style="color:${trendCol}">${trend}</span>
+    </div>
+    <div class="rc-bar-wrap"><div class="rc-bar-fill" style="width:${val}%;background:${col}"></div></div>
+    <div class="rc-status">${statusLine}</div>
+    ${mentionHtml}
+  </div>`
+}
+
+function toggleResCard(k) {
+  const card = document.getElementById('res-card')
+  if (!card) return
+  document.querySelectorAll('.res-pill').forEach(p=>p.classList.remove('rp-active'))
+  if (_activeRes === k) {
+    card.classList.remove('open')
+    _activeRes = null
+    return
+  }
+  _activeRes = k
+  document.querySelector(`.res-pill[data-key="${k}"]`)?.classList.add('rp-active')
+  card.innerHTML = buildResCardContent(k)
+  card.classList.add('open')
+}
+
 function renderResHud() {
   const hud = document.getElementById('res-hud')
   if(!hud) return
@@ -1465,8 +1568,14 @@ function renderResHud() {
   hud.innerHTML = items.map(({k, icon}) => {
     const v = res[k] ?? '—'
     const col = typeof v==='number' ? (v<=20?'#ef4444':v<=40?'#f59e0b':'rgba(255,255,255,.55)') : 'rgba(255,255,255,.3)'
-    return `<div class="res-pill"><span class="res-pill-icon">${icon}</span><span class="res-pill-val" style="color:${col}">${v}</span></div>`
-  }).join('')
+    return `<div class="res-pill" data-key="${k}" onclick="toggleResCard('${k}')"><span class="res-pill-icon">${icon}</span><span class="res-pill-val" style="color:${col}">${v}</span></div>`
+  }).join('') + `<div id="res-card"></div>`
+  // Re-open active card if it was open before re-render
+  if (_activeRes) {
+    const card = document.getElementById('res-card')
+    if (card) { card.innerHTML = buildResCardContent(_activeRes); card.classList.add('open') }
+    document.querySelector(`.res-pill[data-key="${_activeRes}"]`)?.classList.add('rp-active')
+  }
 }
 
 function makeGenericCharSVG(cid, color) {

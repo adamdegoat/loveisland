@@ -57,5 +57,11 @@
     "wood": 33,
     "medicine": 15
   },
+  "resources_prev": {
+    "food": 58,
+    "water": 35,
+    "wood": 33,
+    "medicine": 15
+  },
   "discoveries": []
 }
