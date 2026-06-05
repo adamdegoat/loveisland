@@ -8,7 +8,7 @@
 <style>
 :root{--bg:#070d18;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.07);
   --text:#e2e8f0;--muted:#64748b;--muted2:#475569;
-  --marcus:#60a5fa;--ryan:#fbbf24;--jade:#f472b6;--radius:14px}
+  --marcus:#60a5fa;--ryan:#fbbf24;--jade:#f472b6;--judy:#2dd4bf;--radius:14px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:transparent;color:var(--text);font-size:14px;
@@ -172,6 +172,7 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 .char-card.marcus::before{background:linear-gradient(90deg,transparent,var(--marcus),transparent)}
 .char-card.ryan::before{background:linear-gradient(90deg,transparent,var(--ryan),transparent)}
 .char-card.jade::before{background:linear-gradient(90deg,transparent,var(--jade),transparent)}
+.char-card.judy::before{background:linear-gradient(90deg,transparent,var(--judy),transparent)}
 .char-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.12)}
 .char-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;
   font-weight:800;font-size:16px;font-family:'Plus Jakarta Sans',sans-serif;margin-bottom:.85rem}
@@ -438,10 +439,11 @@ function buildDaySummary(day) {
   // Highlights — one notable thought per character from their last cycle of the day
   const seen = new Set()
   const highlights = []
+  const maxHighlights = Object.keys(S.chars).length || 4
   ;['night','evening','midday','morning'].forEach(cyc => {
     entries.filter(e => e.cycle===cyc && e.character && !seen.has(e.character) && (e.thought||e.action))
       .forEach(e => {
-        if (highlights.length >= 3) return
+        if (highlights.length >= maxHighlights) return
         const nm = S.chars[e.character]?.name?.split(' ')[0] || cap(e.character)
         const col = CHARS[e.character] || '#e2e8f0'
         highlights.push({nm, col, text:(e.thought||e.action||'').slice(0,72)})
@@ -449,21 +451,25 @@ function buildDaySummary(day) {
       })
   })
 
-  // Relationship snapshot (current day only — historical data not stored yet)
+  // Relationship snapshot — all pairs, built dynamically from current chars
   let relHtml = ''
   if (day === S.world.day) {
-    const pairs = [
-      {a:'ryan',b:'jade',label:'Ryan & Jade',col:'#fbbf24'},
-      {a:'marcus',b:'jade',label:'Marcus & Jade',col:'#f472b6'},
-      {a:'marcus',b:'ryan',label:'Marcus & Ryan',col:'#60a5fa'},
-    ]
-    relHtml = '<div class="dsb-rel">' + pairs.map(p => {
-      const cl = S.chars[p.a]?.relationships?.[p.b]?.closeness || 0
-      const tn = S.chars[p.a]?.relationships?.[p.b]?.tension   || 0
-      const at = (S.chars[p.a]?.relationships?.[p.b]?.attraction||0)
-               + (S.chars[p.b]?.relationships?.[p.a]?.attraction||0)
+    const cids = Object.keys(S.chars)
+    const dynPairs = []
+    for (let i = 0; i < cids.length; i++)
+      for (let j = i + 1; j < cids.length; j++)
+        dynPairs.push({a: cids[i], b: cids[j]})
+    relHtml = '<div class="dsb-rel">' + dynPairs.map(p => {
+      const aC = S.chars[p.a], bC = S.chars[p.b]
+      if (!aC || !bC) return ''
+      const aName = aC.name?.split(' ')[0] || cap(p.a)
+      const bName = bC.name?.split(' ')[0] || cap(p.b)
+      const col   = aC.color || '#e2e8f0'
+      const cl = aC.relationships?.[p.b]?.closeness || 0
+      const tn = aC.relationships?.[p.b]?.tension   || 0
+      const at = (aC.relationships?.[p.b]?.attraction||0) + (bC.relationships?.[p.a]?.attraction||0)
       const icon = at>=20?'💞':tn>40?'⚡':cl>50?'💛':'·'
-      return `<div class="dsb-rel-item"><span style="color:${p.col}">${icon} ${p.label}</span><span class="dsb-rel-vals">closeness ${cl} · tension ${tn}</span></div>`
+      return `<div class="dsb-rel-item"><span style="color:${col}">${icon} ${aName} & ${bName}</span><span class="dsb-rel-vals">closeness ${cl} · tension ${tn}</span></div>`
     }).join('') + '</div>'
   }
 
