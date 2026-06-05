@@ -149,8 +149,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* ── MOBILE ── */
 @media(max-width:768px){
   /* Full island — horizontal pan */
-  #world{width:max-content;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
-  #world-svg{height:100dvh;width:auto}
+  html,body{overflow-x:auto;overflow-y:hidden}
+  #world{width:calc(100dvh * 10 / 6);height:100dvh}
 
   /* Chat panel becomes a bottom drawer */
   #chat-panel{
@@ -1172,9 +1172,8 @@ function updateWorld() {
 
   if(isMobile() && !mobileScrollInited) {
     mobileScrollInited = true
-    const worldEl = document.getElementById('world')
     requestAnimationFrame(() => {
-      worldEl.scrollLeft = (worldEl.scrollWidth - window.innerWidth) * 0.5
+      window.scrollTo(Math.round((getWorldWidth() - window.innerWidth) * 0.5), 0)
     })
   }
 }
