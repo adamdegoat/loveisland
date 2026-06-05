@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=VT323&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--above-hud:62px;--stage-bottom:96px}
+:root{--above-hud:62px;--stage-bottom:96px;--oracle-bottom:52px}
 html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans',sans-serif;background:#020617}
 /* World renders ABOVE the fixed bottom bars (HUD + collapsed feed drawer) so the
    beach + ocean band are never hidden behind them. --stage-bottom is measured live. */
@@ -259,9 +259,11 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   #status-info{display:block;flex-basis:100%;order:11}
   .stp{font-size:8px;padding:.1rem .3rem}
   .stp-arr{font-size:8px}
-  /* Push chat panel + oracle above the now-taller HUD */
+  /* Push chat panel above the now-taller HUD; STACK the oracle one row higher
+     (above the feed bar, 44px tall) so its toggle stays visible/tappable and its
+     body expands upward instead of into the HUD or over the centered feed label. */
   #chat-panel{bottom:var(--above-hud)}
-  #oracle-widget{bottom:var(--above-hud)}
+  :root{--oracle-bottom:calc(var(--above-hud) + 44px)}
   #story-btn{padding:.28rem .55rem;font-size:10px}
   .bubble{max-width:82px;padding:3px 6px}
   .bubble-text{font-size:7.5px}
@@ -359,7 +361,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 
 /* ── ORACLE WIDGET ── */
-#oracle-widget{position:fixed;bottom:52px;left:0;z-index:52;font-family:'VT323',monospace}
+#oracle-widget{position:fixed;bottom:var(--oracle-bottom,52px);left:0;z-index:52;font-family:'VT323',monospace}
 #oracle-toggle{display:flex;align-items:center;gap:5px;padding:5px 11px;
   background:rgba(0,0,0,.7);border:none;border-top:1px solid rgba(251,191,36,.25);
   border-right:1px solid rgba(251,191,36,.15);color:rgba(251,191,36,.6);
