@@ -1307,9 +1307,10 @@ function getCharColor(cid){return CHAR_COLOR[cid]||S.chars[cid]?.color||'#e2e8f0
 
 function fmtSGT(ts) {
   if(!ts) return ''
-  const d = new Date((ts.includes('Z')||ts.includes('+')) ? ts : ts+'Z')
-  const sgt = new Date(d.getTime() + 8*3600000)
-  let h = sgt.getUTCHours(), m = sgt.getUTCMinutes()
+  const t = ts.split('T')[1]
+  if(!t) return ''
+  const [hStr, mStr] = t.split(':')
+  let h = parseInt(hStr), m = parseInt(mStr)
   const ap = h >= 12 ? 'PM' : 'AM'
   h = h % 12 || 12
   return `${h}:${String(m).padStart(2,'0')} ${ap}`
