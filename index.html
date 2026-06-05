@@ -35,6 +35,12 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 @keyframes wv{from{transform:translateX(0)}to{transform:translateX(500px)}}
 .wa{animation:wv 13s linear infinite}
 .wb{animation:wv 19s linear infinite reverse}
+/* Gentle palm sway — pivots at each palm's crown (origin set inline, in viewBox units) */
+@keyframes palmsway{0%,100%{transform:rotate(-1.4deg)}50%{transform:rotate(1.4deg)}}
+.palm-sway{transform-box:view-box;animation:palmsway 5.5s ease-in-out infinite}
+/* Ambient birds drift slowly across the sky */
+@keyframes birddrift{0%{transform:translate(0,0)}50%{transform:translate(46px,-9px)}100%{transform:translate(0,0)}}
+.birds-drift{transform-box:view-box;animation:birddrift 24s ease-in-out infinite}
 
 /* SVG transitions */
 #sky-bg,#sun-group,#moon-group,#night-stars,#night-overlay,#sun-reflection{transition:opacity 2.5s ease}
@@ -601,21 +607,25 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <!-- Palm 1 -->
 <path d="M 194 398 Q 186 365 183 328 Q 181 302 172 280" stroke="#a16207" stroke-width="12" fill="none" stroke-linecap="round"/>
 <path d="M 194 398 Q 186 365 183 328 Q 181 302 172 280" stroke="#ca8a04" stroke-width="4" fill="none" stroke-linecap="round" opacity=".35"/>
+<g class="palm-sway" style="transform-origin:172px 280px">
 <path d="M 172 280 Q 135 264 115 254" stroke="#15803d" stroke-width="6" fill="none" stroke-linecap="round"/>
 <path d="M 172 280 Q 155 260 148 243" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
 <path d="M 172 280 Q 179 258 181 242" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
 <path d="M 172 280 Q 193 262 207 250" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
 <path d="M 172 280 Q 202 270 218 262" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
 <circle cx="165" cy="285" r="8" fill="#92400e"/><circle cx="177" cy="281" r="7" fill="#a16207"/>
+</g>
 <!-- Palm 2 -->
 <path d="M 268 398 Q 276 365 279 328 Q 281 302 290 280" stroke="#a16207" stroke-width="12" fill="none" stroke-linecap="round"/>
 <path d="M 268 398 Q 276 365 279 328 Q 281 302 290 280" stroke="#ca8a04" stroke-width="4" fill="none" stroke-linecap="round" opacity=".35"/>
+<g class="palm-sway" style="transform-origin:290px 280px;animation-delay:-2.1s">
 <path d="M 290 280 Q 325 264 345 254" stroke="#15803d" stroke-width="6" fill="none" stroke-linecap="round"/>
 <path d="M 290 280 Q 307 260 314 243" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
 <path d="M 290 280 Q 283 258 281 242" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
 <path d="M 290 280 Q 269 262 256 250" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
 <path d="M 290 280 Q 260 270 244 262" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
 <circle cx="297" cy="285" r="8" fill="#92400e"/>
+</g>
 <!-- Hammock -->
 <path d="M 185 342 Q 232 365 279 342" fill="#be185d" opacity=".88"/>
 <path d="M 185 342 Q 232 362 279 342" fill="none" stroke="#9d174d" stroke-width="2"/>
@@ -663,7 +673,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 </g>
 
 <!-- ══ AMBIENT BIRDS ══ -->
-<g opacity=".55" fill="#1e293b">
+<g class="birds-drift" opacity=".55" fill="#1e293b">
   <path d="M 180 95 Q 185 90 190 95 Q 195 90 200 95"/>
   <path d="M 280 68 Q 286 62 292 68 Q 298 62 304 68"/>
   <path d="M 440 112 Q 445 107 450 112 Q 455 107 460 112"/>
@@ -701,10 +711,12 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 <!-- ══ EXTRA PALM (east-central) ══ -->
 <path d="M 692 460 Q 688 430 685 400 Q 683 378 680 355" stroke="#a16207" stroke-width="10" fill="none" stroke-linecap="round"/>
+<g class="palm-sway" style="transform-origin:680px 355px;animation-delay:-3.6s">
 <path d="M 680 355 Q 648 340 630 330" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
 <path d="M 680 355 Q 660 334 652 318" stroke="#166534" stroke-width="4" fill="none" stroke-linecap="round"/>
 <path d="M 680 355 Q 686 333 688 318" stroke="#15803d" stroke-width="4" fill="none" stroke-linecap="round"/>
 <path d="M 680 355 Q 700 338 712 328" stroke="#166534" stroke-width="4" fill="none" stroke-linecap="round"/>
+</g>
 <circle cx="674" cy="360" r="7" fill="#92400e"/>
 
 <!-- ══ DISTANT WRECK ON HORIZON ══ -->
