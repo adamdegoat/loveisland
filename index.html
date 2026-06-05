@@ -176,6 +176,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #chat-panel.feed-open #chat-header{border-bottom-color:rgba(255,255,255,.07)}
 #chat-dot{width:6px;height:6px;border-radius:50%;background:#ff2d78;animation:cdot 2s ease-in-out infinite;flex-shrink:0}
 @keyframes cdot{0%,100%{opacity:1}50%{opacity:.2}}
+#feed-label{display:inline-flex;align-items:center;gap:7px}
 #chat-chevron{
   margin-left:auto;font-size:11px;color:rgba(255,255,255,.35);
   transition:transform .35s cubic-bezier(.4,0,.2,1),color .2s
@@ -258,6 +259,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   .stat-card.tap-open.below{transform:translateX(-50%)}
   /* Feed drawer taller on mobile */
   #chat-panel.feed-open{height:62vh}
+  /* Absolutely center ISLAND FEED label so oracle on the left can't cover it */
+  #chat-header{position:relative}
+  #feed-label{position:absolute;left:50%;transform:translateX(-50%);pointer-events:none}
 }
 
 /* ── HOVER STAT CARD ── */
@@ -983,7 +987,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <div id="chat-panel">
   <div id="feed-pill"></div>
   <div id="chat-header" onclick="toggleFeed()">
-    <span id="chat-dot"></span>🌴 ISLAND FEED
+    <span id="feed-label"><span id="chat-dot"></span>🌴 ISLAND FEED</span>
     <span id="chat-chevron">▲</span>
   </div>
   <div id="chat-feed"></div>
