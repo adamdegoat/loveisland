@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=VT323&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+:root{--above-hud:62px}
 html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans',sans-serif;background:#020617}
 #world{position:relative;width:100vw;height:100vh;overflow:hidden}
 #world-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0}
@@ -105,7 +106,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* ── CHARACTERS ── */
 .char{position:absolute;z-index:20;transform:translate(-50%,-100%);
   transition:left 2.8s cubic-bezier(.4,0,.2,1),top 2.8s cubic-bezier(.4,0,.2,1)}
-.char-svg{display:block;filter:drop-shadow(0 6px 14px rgba(0,0,0,.65));animation:bob 2.4s ease-in-out infinite}
+.char-svg{display:block;margin:0 auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.65));animation:bob 2.4s ease-in-out infinite}
 .char-svg.sad{animation:bob-slow 3.5s ease-in-out infinite}
 .char-svg.angry{animation:bob-tense .9s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -114,8 +115,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* ── INTERACTION OVERLAYS ── */
 .interact-overlay{position:absolute;z-index:19;transform:translate(-50%,-50%);pointer-events:none;transition:opacity .4s}
 .char.sitting{margin-top:10px}
-.nametag{font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
-  margin:5px auto 0;padding:2px 9px;border-radius:20px;width:fit-content;white-space:nowrap;
+.nametag{font-size:7.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;
+  margin:4px auto 0;padding:2px 6px;border-radius:20px;width:fit-content;white-space:nowrap;
   background:rgba(0,0,0,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
 #char-marcus .nametag{color:#93c5fd;border:1px solid rgba(147,197,253,.2)}
 #char-ryan .nametag{color:#fde68a;border:1px solid rgba(253,230,138,.2)}
@@ -125,8 +126,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* ── SPEECH BUBBLES ── */
 .bubble{position:absolute;bottom:70px;left:50%;transform:translateX(-50%);
   background:rgba(0,0,0,.08);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
-  color:#f1f5f9;padding:4px 8px;border-radius:9px;
-  font-size:8px;font-weight:600;max-width:100px;min-width:60px;text-align:center;
+  color:#f1f5f9;padding:3px 6px;border-radius:7px;
+  font-size:6.5px;font-weight:600;max-width:80px;min-width:48px;text-align:center;
   line-height:1.4;pointer-events:none;white-space:normal;z-index:25;
   border:1px solid rgba(255,255,255,.06);border-top-width:2px}
 #char-marcus .bubble{border-top-color:rgba(147,197,253,.6);border-left:2px solid rgba(147,197,253,.25)}
@@ -137,14 +138,14 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #char-ryan:hover{filter:drop-shadow(0 0 14px rgba(251,146,60,.55))}
 #char-jade:hover{filter:drop-shadow(0 0 14px rgba(244,114,182,.55))}
 #char-judy:hover{filter:drop-shadow(0 0 14px rgba(45,212,191,.55))}
-.bubble::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);
-  border:5px solid transparent;border-top-color:rgba(0,0,0,.08);border-bottom:0}
-.bubble-name{font-size:7px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:2px}
+.bubble::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);
+  border:4px solid transparent;border-top-color:rgba(0,0,0,.08);border-bottom:0}
+.bubble-name{font-size:6px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:2px}
 #char-marcus .bubble-name{color:#93c5fd}
 #char-ryan .bubble-name{color:#fde68a}
 #char-jade .bubble-name{color:#f9a8d4}
 #char-judy .bubble-name{color:#99f6e4}
-.bubble-text{font-size:8px}
+.bubble-text{font-size:6.5px}
 
 /* ── BOTTOM FEED DRAWER ── */
 #chat-panel{
@@ -253,8 +254,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   .stp{font-size:8px;padding:.1rem .3rem}
   .stp-arr{font-size:8px}
   /* Push chat panel + oracle above the now-taller HUD */
-  #chat-panel{bottom:92px}
-  #oracle-widget{bottom:92px}
+  #chat-panel{bottom:var(--above-hud)}
+  #oracle-widget{bottom:var(--above-hud)}
   #story-btn{padding:.28rem .55rem;font-size:10px}
   .bubble{max-width:82px;padding:3px 6px}
   .bubble-text{font-size:7.5px}
@@ -1396,8 +1397,8 @@ function separateChars(positions) {
 }
 
 function nudgeBubbles(positions) {
-  const BUBBLE_W = 110
-  const BODY_CLEAR = 67  // bubble half-width(55) + char body half-width(12)
+  const BUBBLE_W = 90   // matches new 80px max-width + margin
+  const BODY_CLEAR = 52  // bubble half(40) + body half(10) + 2px gap
   const offsets = {}
   positions.forEach(p=>{ offsets[p.id] = 0 })
   // Pass 1: bubble-vs-bubble horizontal separation
@@ -1414,16 +1415,14 @@ function nudgeBubbles(positions) {
       }
     }
   }
-  // Pass 2 (3 iterations): push each bubble clear of every other character's body
-  for(let iter=0; iter<3; iter++) {
-    for(let i=0; i<positions.length; i++) {
+  // Pass 2: single pass — push each bubble clear of every other character's body
+  for(let i=0; i<positions.length; i++) {
+    for(let j=0; j<positions.length; j++) {
+      if(i===j) continue
       const bx = positions[i].px + offsets[positions[i].id]
-      for(let j=0; j<positions.length; j++) {
-        if(i===j) continue
-        const dist = bx - positions[j].px
-        if(Math.abs(dist) < BODY_CLEAR) {
-          offsets[positions[i].id] += dist >= 0 ? (BODY_CLEAR - dist) : -(BODY_CLEAR + dist)
-        }
+      const dist = bx - positions[j].px
+      if(Math.abs(dist) < BODY_CLEAR) {
+        offsets[positions[i].id] += dist >= 0 ? (BODY_CLEAR - dist) : -(BODY_CLEAR + dist)
       }
     }
   }
@@ -2103,8 +2102,14 @@ async function loadOracle() {
   }
 }
 
+function setHudVar(){
+  const h = document.getElementById('hud')?.getBoundingClientRect().height
+  if(h) document.documentElement.style.setProperty('--above-hud', (Math.ceil(h)+10)+'px')
+}
+window.addEventListener('resize', setHudVar)
+
 setInterval(updateStatusBar,60000)
-init().then(()=>{ loadOracle(); initTapStats() })
+init().then(()=>{ loadOracle(); initTapStats(); setHudVar() })
 </script>
 </body>
 </html>
