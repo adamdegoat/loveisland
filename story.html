@@ -354,6 +354,14 @@ footer span{color:var(--muted);font-weight:600}
 
   <div class="divider"></div>
 
+  <!-- Key Moments -->
+  <div class="section reveal">
+    <div class="section-title">Key Moments</div>
+    <div id="full-log"></div>
+  </div>
+
+  <div class="divider"></div>
+
   <!-- Today's Pulse -->
   <div class="section reveal">
     <div class="section-title">Today's Pulse</div>
@@ -385,14 +393,6 @@ footer span{color:var(--muted);font-weight:600}
     <div id="structures-list"></div>
     <div class="ws-block-title" style="margin-top:1.25rem">Discoveries</div>
     <div id="discoveries-list"></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- Key Moments -->
-  <div class="section reveal">
-    <div class="section-title">Key Moments</div>
-    <div id="full-log"></div>
   </div>
 
   <footer>
@@ -690,8 +690,7 @@ function renderToday() {
         ${e.action?`<div class="feed-action">${e.action}</div>`:''}
         ${e.thought?`<div class="feed-thought">"${e.thought}"</div>`:''}
         ${e.description?`<div class="feed-action">${e.description}</div>`:''}
-        ${isInt?absentCtxHtml(e,entries):''}
-        ${isInt?renderDialogue(e.dialogue,e.characters):''}
+        ${isInt?`<div style="font-size:11px;color:rgba(255,255,255,.25);margin-top:.35rem;font-style:italic">Full conversation on the world page ›</div>`:''}
       </div></div>`
   }).join('')
 }
