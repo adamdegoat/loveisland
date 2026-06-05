@@ -1427,22 +1427,25 @@ async function loadOracle() {
   try {
     const fate = await fetch('data/fate.json?t='+Date.now()).then(r=>r.json())
     const isActive = fate.status === 'active'
-    const happenTime = fate.happens_at || fmtFateTime(fate.revealed_at) || '—'
-    const activatedTime = fate.activated_at ? fmtFateTime(fate.activated_at) : happenTime
+    const CYCLE_TIME = {morning:'7am',midday:'12:30pm',evening:'6pm',night:'11pm'}
+    const cycleTime = CYCLE_TIME[fate.cycle] || fate.happens_at || '—'
+    const wd = S.world?.day || 1
+    const fd = fate.day || 1
+    const dayWord = fd === wd ? 'TODAY' : fd === wd+1 ? 'TOMORROW' : `DAY ${fd}`
 
     if(isActive) {
       body.innerHTML = `
         <div class="oracle-block">
           <div class="oracle-state active">⚡ ACTIVE NOW</div>
           <div class="oracle-fate-text active-text">${fate.text||'—'}</div>
-          <div class="oracle-when active">TRIGGERED AT ${activatedTime} · DAY ${fate.day||1}</div>
+          <div class="oracle-when active">TRIGGERED TODAY · ${cycleTime}</div>
         </div>`
     } else {
       body.innerHTML = `
         <div class="oracle-block">
-          <div class="oracle-state upcoming">✦ TODAY'S FATE</div>
+          <div class="oracle-state upcoming">✦ FATE INCOMING</div>
           <div class="oracle-fate-text">${fate.text||'—'}</div>
-          <div class="oracle-when upcoming">HAPPENS AT ${happenTime} · DAY ${fate.day||1}</div>
+          <div class="oracle-when upcoming">HAPPENS ${dayWord} · ${cycleTime}</div>
         </div>`
     }
     document.getElementById('oracle-widget').classList.add('open')
