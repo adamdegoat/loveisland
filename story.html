@@ -469,7 +469,7 @@ function buildDaySummary(day) {
 
   // Cycles covered
   const CICONS = {morning:'🌅',midday:'☀️',evening:'🌆',night:'🌙'}
-  const cyclesDone = [...new Set(entries.map(e=>e.cycle).filter(Boolean))]
+  const cyclesDone = [...new Set(entries.filter(e=>e.type!=='birth').map(e=>e.cycle).filter(Boolean))]
     .sort((a,b) => CYCLE_ORDER.indexOf(a)-CYCLE_ORDER.indexOf(b))
   const cycleRow = '<div class="dsb-cycles">' + cyclesDone.map(c=>`<span class="dsb-cycle-tag">${CICONS[c]||'·'} ${cap(c)}</span>`).join('') + '</div>'
 
