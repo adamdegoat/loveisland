@@ -41,6 +41,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* Ambient birds drift slowly across the sky */
 @keyframes birddrift{0%{transform:translate(0,0)}50%{transform:translate(46px,-9px)}100%{transform:translate(0,0)}}
 .birds-drift{transform-box:view-box;animation:birddrift 24s ease-in-out infinite}
+/* Fireflies near the firepit (parent group's opacity gates night-only visibility) */
+@keyframes firefly{0%,100%{opacity:0;transform:translate(0,0)}25%{opacity:.95}50%{opacity:.35;transform:translate(7px,-9px)}75%{opacity:.85}}
+.firefly{transform-box:view-box;animation:firefly 4.2s ease-in-out infinite}
 
 /* SVG transitions */
 #sky-bg,#sun-group,#moon-group,#night-stars,#night-overlay,#sun-reflection{transition:opacity 2.5s ease}
@@ -466,6 +469,15 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <stop offset="0%" stop-color="#fde68a" stop-opacity=".55"/>
     <stop offset="100%" stop-color="#fde68a" stop-opacity="0"/>
   </linearGradient>
+  <radialGradient id="fire-glow-g" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#fb923c" stop-opacity=".5"/>
+    <stop offset="45%" stop-color="#f97316" stop-opacity=".16"/>
+    <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="moon-halo" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#e2e8f0" stop-opacity=".35"/>
+    <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0"/>
+  </radialGradient>
 </defs>
 
 <!-- SKY -->
@@ -480,6 +492,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   <circle cx="810" cy="88" r="26" fill="#fef3c7"/>
 </g>
 <!-- MOON -->
+<circle id="moon-halo-c" cx="810" cy="88" r="90" fill="url(#moon-halo)" opacity="0"/>
 <g id="moon-group" opacity="0" filter="url(#glow)">
   <circle cx="810" cy="88" r="30" fill="#e2e8f0"/>
   <circle cx="824" cy="80" r="24" fill="#0f172a"/>
@@ -644,6 +657,16 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <path class="fb" d="M 485 426 Q 483 413 487 403 Q 489 395 492 388 Q 495 395 497 403 Q 501 413 499 426 Q 495 417 492 422 Q 489 417 485 426" fill="#f97316"/>
 <path class="fc" d="M 487 424 Q 486 413 488 405 Q 490 399 492 394 Q 494 399 496 405 Q 498 413 497 424 Q 494 416 492 421 Q 490 416 487 424" fill="#fbbf24"/>
 <ellipse cx="492" cy="428" rx="9" ry="4" fill="#f97316" opacity=".25"/>
+<!-- Firepit night glow + fireflies (shown only at night) -->
+<circle id="fire-glow" cx="492" cy="424" r="78" fill="url(#fire-glow-g)" opacity="0"/>
+<g id="fireflies" opacity="0" fill="#fde68a">
+  <circle class="firefly" cx="455" cy="412" r="1.6"/>
+  <circle class="firefly" cx="524" cy="404" r="1.4" style="animation-delay:-1.3s"/>
+  <circle class="firefly" cx="470" cy="392" r="1.5" style="animation-delay:-2.6s"/>
+  <circle class="firefly" cx="512" cy="432" r="1.3" style="animation-delay:-0.7s"/>
+  <circle class="firefly" cx="488" cy="380" r="1.5" style="animation-delay:-3.4s"/>
+  <circle class="firefly" cx="440" cy="438" r="1.4" style="animation-delay:-1.9s"/>
+</g>
 
 <!-- ══ BEACH ══ -->
 <path d="M 0 492 Q 200 480 400 488 Q 600 478 800 486 Q 900 483 1000 490 L 1000 525 L 0 525 Z" fill="#fef9c3"/>
@@ -1179,7 +1202,10 @@ function applySky(sky) {
   document.getElementById('sun-group')?.setAttribute('opacity',isNight?'0':'1')
   document.getElementById('sun-reflection')?.setAttribute('opacity',isNight?'0':'.85')
   document.getElementById('moon-group')?.setAttribute('opacity',isNight?'1':'0')
+  document.getElementById('moon-halo-c')?.setAttribute('opacity',isNight?'1':'0')
   document.getElementById('night-stars')?.setAttribute('opacity',isNight?'1':'0')
+  document.getElementById('fire-glow')?.setAttribute('opacity',isNight?'1':'0')
+  document.getElementById('fireflies')?.setAttribute('opacity',isNight?'1':'0')
   document.getElementById('night-overlay')?.setAttribute('opacity',isNight?'0.48':'0')
   drawStars(isNight)
   document.getElementById('world').className=isNight?'night':sky
