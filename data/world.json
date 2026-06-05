@@ -1,12 +1,10 @@
 {
-  "day": 2,
-  "cycle": "evening",
+  "day": 3,
+  "cycle": "night",
   "weather": "clear",
-  "pending_events": [
-    "A soaked, trembling brown Great Dane puppy creeps to the edge of the firelight — the group notices the stray for the first time tonight. It is starving and terrified but drawn to the warmth. Introduce its arrival naturally this cycle."
-  ],
+  "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Ryan is becoming Judy's lifeline, and she's holding on tight; Marcus watches with quiet tension; Jade is thinking about tomorrow.",
+  "pulse": "Ryan's gentleness with the stray moves Jade and brings even Marcus to help, while Judy finds in the lost puppy a mirror of her own survival.",
   "structures": [
     {
       "id": "marcus_tent",
@@ -54,17 +52,17 @@
     }
   ],
   "resources": {
+    "food": 37,
+    "water": 21,
+    "wood": 33,
+    "medicine": 15
+  },
+  "resources_prev": {
     "food": 41,
     "water": 24,
     "wood": 33,
     "medicine": 15
   },
-  "resources_prev": {
-    "food": 56,
-    "water": 33,
-    "wood": 33,
-    "medicine": 15
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-05:evening"
+  "last_cycle_key": "2026-06-05:night"
 }

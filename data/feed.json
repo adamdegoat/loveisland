@@ -989,5 +989,203 @@
       }
     ],
     "timestamp": "2026-06-05T18:09:32.447584"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "Returns to the firepit after dark and settles back, arms crossed, watching the stray and the others with careful eyes.",
+    "thought": "What is it doing here? Why now?",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "cautious",
+    "timestamp": "2026-06-05T23:02:50.114830"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "Kneels gently before the stray, offering food and water with hands that shake slightly from emotion and determination.",
+    "thought": "Something needs me. I can help it.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "gentle",
+    "timestamp": "2026-06-05T23:02:50.114830"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "jade",
+    "action": "Sits near Ryan and the stray, speaking in soft tones, her expression softened by the firelight and empathy.",
+    "thought": "It's like us—alone, terrified, needing home.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "empathetic",
+    "timestamp": "2026-06-05T23:02:50.114830"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "judy",
+    "action": "Watches the stray with intense protectiveness, tears streaming quietly, one hand resting on her belly, seeing her own survival in the lost puppy.",
+    "thought": "We're both broken. We're both surviving somehow.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "protective",
+    "timestamp": "2026-06-05T23:02:50.114830"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "character": "stray",
+    "action": "Creeps from the darkness of the beach toward the firelight, trembling and soaked, drawn by warmth and the desperate hope of salvation.",
+    "thought": "Warm. Safe. Is it safe? Please.",
+    "location": {
+      "waypoint": "beach_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "wary",
+    "timestamp": "2026-06-05T23:02:50.114830"
+  },
+  {
+    "day": 2,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "judy",
+      "stray"
+    ],
+    "description": "At the firepit on night of Day 2, as darkness falls, a soaked brown puppy emerges from the beach toward the warmth of the fire. Ryan, Jade, and Judy encounter the stray in a moment that will change everything. Marcus watches from the edge, skeptical and calculating.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Is that... is that a dog at the edge of the fire?"
+      },
+      {
+        "speaker": "stray",
+        "line": "[shivering, wet fur matted, creeping closer to the warmth]"
+      },
+      {
+        "speaker": "jade",
+        "line": "Oh god. Look at it. It's so thin. So scared."
+      },
+      {
+        "speaker": "judy",
+        "line": "It's just a puppy. Just a scared little puppy."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It's starving. Look at its ribs. We have food, right?"
+      },
+      {
+        "speaker": "stray",
+        "line": "[whimpers, ears back, stopping ten feet away]"
+      },
+      {
+        "speaker": "jade",
+        "line": "Let it come to us. Slow movements. It's terrified."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Hey, buddy. It's okay. You're safe here now."
+      },
+      {
+        "speaker": "judy",
+        "line": "Oh sweetheart. Oh god, you poor thing. We'll take care of you."
+      },
+      {
+        "speaker": "stray",
+        "line": "[nose twitching, approaching Ryan's outstretched hand]"
+      },
+      {
+        "speaker": "jade",
+        "line": "Look at him. He's desperate for help but so afraid."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Here. Just some fish. Small pieces. That's okay, buddy."
+      },
+      {
+        "speaker": "stray",
+        "line": "[eats tentatively from Ryan's palm, trembling, eyes wet]"
+      },
+      {
+        "speaker": "judy",
+        "line": "Look at how hungry it is. How did it survive alone out there?"
+      },
+      {
+        "speaker": "jade",
+        "line": "It didn't. It found us. That's what matters now."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It needs water more than food. Let me get a bowl."
+      },
+      {
+        "speaker": "stray",
+        "line": "[whines softly, tail moving slightly, watching Ryan leave]"
+      },
+      {
+        "speaker": "judy",
+        "line": "He's coming back. Stay with us. You're not alone."
+      },
+      {
+        "speaker": "jade",
+        "line": "We're going to get you through this. All of us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "[returns with water] Here. Drink, little one. Easy."
+      },
+      {
+        "speaker": "stray",
+        "line": "[drinks deeply from the bowl, eyes closing, finally believing]"
+      },
+      {
+        "speaker": "judy",
+        "line": "Can it stay? Can it sleep by the fire with us?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Of course it stays. It's ours now. We're its family."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Tomorrow we'll build it a shelter. For now, by the fire is good."
+      },
+      {
+        "speaker": "stray",
+        "line": "[curls up slowly beside the fire, head dropping, safe at last]"
+      },
+      {
+        "speaker": "jade",
+        "line": "Look. It's actually sleeping. It trusts us."
+      },
+      {
+        "speaker": "judy",
+        "line": "We'll keep you safe. I promise. You're not alone anymore."
+      }
+    ],
+    "timestamp": "2026-06-05T23:02:50.114830"
   }
 ]
