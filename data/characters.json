@@ -16,6 +16,7 @@
     },
     "mood": "quiet",
     "location": {
+      "waypoint": "tent_front",
       "x": 75,
       "y": 25
     },
@@ -51,6 +52,7 @@
     },
     "mood": "eager",
     "location": {
+      "waypoint": "house_door",
       "x": 42,
       "y": 48
     },
@@ -86,6 +88,7 @@
     },
     "mood": "thoughtful",
     "location": {
+      "waypoint": "hammock_beside",
       "x": 40,
       "y": 50
     },

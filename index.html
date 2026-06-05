@@ -53,6 +53,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes bob-slow{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @keyframes bob-tense{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-3px) rotate(.5deg)}}
+/* ── INTERACTION OVERLAYS ── */
+.interact-overlay{position:absolute;z-index:19;transform:translate(-50%,-50%);pointer-events:none;transition:opacity .4s}
+.char.sitting{margin-top:10px}
 .nametag{font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
   margin:5px auto 0;padding:2px 9px;border-radius:20px;width:fit-content;white-space:nowrap;
   background:rgba(0,0,0,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
@@ -960,7 +963,48 @@ function getWorldWidth() {
 }
 let mobileScrollInited = false
 
-function toPos(x,y) {
+// ── WAYPOINTS (SVG native coords — feet anchor point) ─────────
+const WAYPOINTS = {
+  jungle_path:    {sx:155,sy:365}, jungle_edge:   {sx:240,sy:348},
+  hammock_beside: {sx:232,sy:370}, palm_shade:    {sx:210,sy:395},
+  meadow_left:    {sx:370,sy:385}, rock_cluster:  {sx:345,sy:410},
+  firepit_left:   {sx:460,sy:445}, firepit_right: {sx:524,sy:445},
+  firepit_front:  {sx:492,sy:460},
+  house_door:     {sx:533,sy:374}, house_porch:   {sx:575,sy:382},
+  house_garden:   {sx:484,sy:382}, path_mid:      {sx:517,sy:415},
+  meadow_right:   {sx:640,sy:405}, boulder_watch: {sx:645,sy:415},
+  east_palm:      {sx:692,sy:465},
+  beach_umbrella: {sx:118,sy:500}, beach_left:    {sx:210,sy:500},
+  beach_mid:      {sx:480,sy:500}, beach_right:   {sx:760,sy:502},
+  cliff_base:     {sx:828,sy:355}, cliff_path:    {sx:850,sy:285},
+  cliff_lookout:  {sx:875,sy:225}, tent_front:    {sx:878,sy:216},
+  tide_pool:      {sx:735,sy:505},
+}
+
+// Waypoints that count as "physically together" for interaction rendering
+const WP_ADJACENT = {
+  firepit_left:['firepit_right','firepit_front'], firepit_right:['firepit_left','firepit_front'],
+  firepit_front:['firepit_left','firepit_right'],
+  house_door:['house_porch','house_garden'],      house_porch:['house_door','house_garden'],
+  house_garden:['house_door','house_porch'],
+  hammock_beside:['palm_shade'],                  palm_shade:['hammock_beside'],
+  cliff_lookout:['tent_front'],                   tent_front:['cliff_lookout'],
+  beach_umbrella:['beach_left'],                  beach_left:['beach_umbrella','beach_mid'],
+  beach_mid:['beach_left','beach_right'],         beach_right:['beach_mid','tide_pool'],
+}
+
+function svgToViewport(sx, sy) {
+  const vw=window.innerWidth, vh=window.innerHeight
+  const scale=Math.max(vw/1000, vh/600)
+  const offX=(vw-1000*scale)/2, offY=(vh-600*scale)/2
+  return {left:((offX+sx*scale)/vw*100)+'%', top:((offY+sy*scale)/vh*100)+'%'}
+}
+
+function toPos(x, y, waypoint) {
+  if (waypoint && WAYPOINTS[waypoint]) {
+    const {sx,sy}=WAYPOINTS[waypoint]
+    return svgToViewport(sx, sy)
+  }
   const safeMaxPct = 90
   const leftPct = 5 + (x / 100) * (safeMaxPct - 5)
   return {left: leftPct+'%', top:(48+(y/100)*32)+'%'}
@@ -1082,9 +1126,16 @@ function renderChat() {
 
 function separateChars(positions) {
   const MIN = 36
+  // Don't push apart pairs that have an active interaction
+  const interacting = new Set()
+  Object.keys(S.chars).forEach(cid=>{
+    const iw = S.chars[cid]?.interaction?.with
+    if (iw) interacting.add([cid,iw].sort().join('_'))
+  })
   for(let iter=0; iter<10; iter++) {
     for(let i=0; i<positions.length; i++) {
       for(let j=i+1; j<positions.length; j++) {
+        if (interacting.has([positions[i].id,positions[j].id].sort().join('_'))) continue
         const dx=positions[j].px - positions[i].px
         const dy=positions[j].py - positions[i].py
         const dist=Math.sqrt(dx*dx+dy*dy)||0.01
@@ -1122,6 +1173,72 @@ function nudgeBubbles(positions) {
       }
     }
   }
+}
+
+// ── INTERACTION RENDERING ────────────────────────────────────
+function renderInteractions(positions) {
+  document.querySelectorAll('.interact-overlay').forEach(e=>e.remove())
+  const world = document.getElementById('world')
+  const processed = new Set()
+
+  Object.keys(S.chars).forEach(cid=>{
+    const c = S.chars[cid]
+    const el = document.getElementById('char-'+cid)
+    if (!el) return
+
+    // Reset state classes and inline transforms
+    el.classList.remove('sitting')
+    el.querySelector('.char-svg')?.style.removeProperty('transform')
+
+    const intr = c.interaction
+    if (!intr?.with || !intr?.state) return
+    const other = intr.with, state = intr.state
+    if (!S.chars[other]) return
+
+    const myPos  = positions.find(p=>p.id===cid)
+    const othPos = positions.find(p=>p.id===other)
+    if (!myPos || !othPos) return
+
+    const iAmLeft = myPos.px <= othPos.px
+
+    if (state === 'back_to_back') {
+      const svg = el.querySelector('.char-svg')
+      if (svg && iAmLeft) svg.style.transform = 'scaleX(-1)'
+    }
+    if (state === 'sitting_together') el.classList.add('sitting')
+    if (state === 'comforting') {
+      const svg = el.querySelector('.char-svg')
+      if (svg) svg.style.transform = iAmLeft ? 'rotate(7deg)' : 'rotate(-7deg)'
+    }
+
+    const pairKey = [cid,other].sort().join('_')
+    if (processed.has(pairKey)) return
+    processed.add(pairKey)
+
+    const W=window.innerWidth, H=window.innerHeight
+    const midX=(myPos.px+othPos.px)/2
+    const midY=(myPos.py+othPos.py)/2 - 34
+
+    let inner = ''
+    if (state === 'holding_hands') {
+      inner = `<svg width="22" height="20" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 16Q2 11 2 6Q2 2.5 5.5 2.5Q7.5 2.5 10 5.5Q12.5 2.5 14.5 2.5Q18 2.5 18 6Q18 11 10 16Z" fill="rgba(249,168,212,.92)"/>
+      </svg>`
+    } else if (state === 'sitting_together') {
+      inner = `<svg width="30" height="10" viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="2" width="28" height="6" rx="3" fill="rgba(146,64,14,.55)"/>
+        <ellipse cx="15" cy="8" rx="13" ry="3" fill="rgba(120,53,15,.35)"/>
+      </svg>`
+    }
+    if (inner) {
+      const div = document.createElement('div')
+      div.className = 'interact-overlay'
+      div.style.left = (midX/W*100)+'%'
+      div.style.top  = (midY/H*100)+'%'
+      div.innerHTML  = inner
+      world.appendChild(div)
+    }
+  })
 }
 
 // ── SVG TILE LIBRARY ──────────────────────────────────────
@@ -1401,7 +1518,7 @@ function updateWorld() {
   // compute raw pixel positions
   const positions=CHARS.map(cid=>{
     const c=S.chars[cid]||{}
-    const {left,top}=toPos(c.location?.x||50,c.location?.y||50)
+    const {left,top}=toPos(c.location?.x||50,c.location?.y||50,c.location?.waypoint)
     const px=parseFloat(left)/100*W
     const py=parseFloat(top)/100*H
     return {id:cid, px, py}
@@ -1417,6 +1534,7 @@ function updateWorld() {
   })
 
   nudgeBubbles(positions)
+  renderInteractions(positions)
   renderChat()
   updateStatusBar()
   updateStatCards()
