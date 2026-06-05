@@ -6,17 +6,17 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 23,
-      "openness": 20,
+      "openness": 21,
       "ambition": 45,
-      "loneliness": 77,
+      "loneliness": 78,
       "resilience": 84,
-      "hunger": 34,
+      "hunger": 18,
       "thirst": 0,
-      "energy": 11
+      "energy": 25
     },
-    "mood": "withdrawn",
+    "mood": "wary",
     "location": {
-      "waypoint": "tent_front",
+      "waypoint": "firepit_left",
       "x": 75,
       "y": 25
     },
@@ -24,7 +24,7 @@
     "relationships": {
       "ryan": {
         "closeness": 20,
-        "tension": 17,
+        "tension": 18,
         "attraction": 0
       },
       "jade": {
@@ -33,7 +33,7 @@
         "attraction": 3
       },
       "judy": {
-        "closeness": 0,
+        "closeness": 1,
         "tension": 0,
         "attraction": 0
       }
@@ -47,18 +47,18 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 78,
-      "openness": 89,
-      "ambition": 72,
-      "loneliness": 30,
+      "trust": 79,
+      "openness": 91,
+      "ambition": 73,
+      "loneliness": 29,
       "resilience": 40,
-      "hunger": 46,
-      "thirst": 10,
-      "energy": 21
+      "hunger": 31,
+      "thirst": 0,
+      "energy": 23
     },
-    "mood": "alert",
+    "mood": "determined",
     "location": {
-      "waypoint": "beach_mid",
+      "waypoint": "house_door",
       "x": 42,
       "y": 48
     },
@@ -66,16 +66,16 @@
     "relationships": {
       "marcus": {
         "closeness": 20,
-        "tension": 12,
+        "tension": 13,
         "attraction": 0
       },
       "jade": {
-        "closeness": 24,
+        "closeness": 25,
         "tension": 5,
         "attraction": 10
       },
       "judy": {
-        "closeness": 2,
+        "closeness": 5,
         "tension": 0,
         "attraction": 0
       }
@@ -83,7 +83,7 @@
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
       "with": "judy",
-      "state": "talking"
+      "state": "comforting"
     }
   },
   "jade": {
@@ -92,18 +92,18 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 63,
-      "openness": 78,
+      "trust": 64,
+      "openness": 79,
       "ambition": 39,
-      "loneliness": 39,
+      "loneliness": 38,
       "resilience": 60,
-      "hunger": 28,
-      "thirst": 2,
-      "energy": 7
+      "hunger": 13,
+      "thirst": 0,
+      "energy": 35
     },
     "mood": "concerned",
     "location": {
-      "waypoint": "beach_mid",
+      "waypoint": "firepit_right",
       "x": 40,
       "y": 50
     },
@@ -115,21 +115,18 @@
         "attraction": 3
       },
       "ryan": {
-        "closeness": 24,
+        "closeness": 25,
         "tension": 5,
         "attraction": 5
       },
       "judy": {
-        "closeness": 2,
+        "closeness": 4,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": {
-      "with": "judy",
-      "state": "talking"
-    }
+    "interaction": null
   },
   "judy": {
     "name": "Judy Chen",
@@ -137,38 +134,38 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 57,
-      "openness": 80,
+      "trust": 60,
+      "openness": 81,
       "ambition": 34,
-      "loneliness": 82,
-      "resilience": 63,
-      "hunger": 29,
-      "thirst": 11,
-      "energy": 0
+      "loneliness": 79,
+      "resilience": 64,
+      "hunger": 12,
+      "thirst": 0,
+      "energy": 50
     },
-    "mood": "terrified",
+    "mood": "grateful",
     "location": {
-      "waypoint": "beach_mid",
+      "waypoint": "firepit_right",
       "x": 50,
       "y": 82
     },
-    "shelter": "none",
+    "shelter": "house",
     "pregnant": true,
     "pregnancy_weeks": 35,
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 0,
+        "closeness": 1,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 2,
+        "closeness": 5,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 2,
+        "closeness": 4,
         "tension": 0,
         "attraction": 0
       }
@@ -176,7 +173,7 @@
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
     "interaction": {
       "with": "ryan",
-      "state": "talking"
+      "state": "comforting"
     }
   }
 }

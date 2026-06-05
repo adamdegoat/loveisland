@@ -762,5 +762,232 @@
       }
     ],
     "timestamp": "2026-06-05T17:39:52.071843"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "He gathered firewood as dusk fell, then positioned himself at the edge of the firepit, watching the group settle.",
+    "thought": "I can't look away from this.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "wary",
+    "timestamp": "2026-06-05T18:09:32.447584"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "He brought Judy from the beach to the firepit, realized she had nowhere safe to sleep, and offered her his house without hesitation.",
+    "thought": "She's trusting me with everything right now.",
+    "location": {
+      "waypoint": "house_door",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "determined",
+    "timestamp": "2026-06-05T18:09:32.447584"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "She watched the group gather as evening deepened and began helping gather what food and water they had to share with Judy.",
+    "thought": "He's going to break his heart, I think.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "concerned",
+    "timestamp": "2026-06-05T18:09:32.447584"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "She was brought from the beach to the firepit, and then Ryan offered her shelter in his house for the night—the first real roof over her head since the crash.",
+    "thought": "Safe. Finally. The baby is safe.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "grateful",
+    "timestamp": "2026-06-05T18:09:32.447584"
+  },
+  {
+    "day": 2,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "judy",
+      "jade"
+    ],
+    "description": "Evening at the firepit and near the house: Ryan brings Judy from the beach and realizes she has nowhere safe to sleep. A conversation unfolds about shelter, food, trust, and belonging.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Judy, come sit by the fire a minute. You look completely drained."
+      },
+      {
+        "speaker": "judy",
+        "line": "I'm okay. Really. I don't want to be any trouble."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're not trouble. You're hungry and exhausted."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And you can't stay on the beach tonight. It gets cold, and you need shelter."
+      },
+      {
+        "speaker": "jade",
+        "line": "He's right. You need a real place to sleep."
+      },
+      {
+        "speaker": "judy",
+        "line": "I've managed before. I can—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not tonight you can't. Look at yourself."
+      },
+      {
+        "speaker": "ryan",
+        "line": "My house has room. You're staying there. End of discussion."
+      },
+      {
+        "speaker": "judy",
+        "line": "But where will you sleep?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Don't worry about that. My place is yours tonight."
+      },
+      {
+        "speaker": "jade",
+        "line": "Exactly. We figure out the rest in the morning."
+      },
+      {
+        "speaker": "jade",
+        "line": "And I can help you get comfortable. We'll make it nice."
+      },
+      {
+        "speaker": "judy",
+        "line": "I'm eight months pregnant. I just swam to an island. I don't..."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You did more than enough to survive. Now you rest."
+      },
+      {
+        "speaker": "ryan",
+        "line": "How long has it been since you've eaten?"
+      },
+      {
+        "speaker": "judy",
+        "line": "I don't remember. Maybe this morning? I forgot after..."
+      },
+      {
+        "speaker": "jade",
+        "line": "Okay, we're feeding you first. Then sleep."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Water too. You need water."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Let's go inside. I'll get you some fruit and coconut."
+      },
+      {
+        "speaker": "judy",
+        "line": "I don't want to take your things. You need them."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We have enough. Don't worry about that."
+      },
+      {
+        "speaker": "jade",
+        "line": "And you're not just our responsibility—you're one of us now. That's how this works."
+      },
+      {
+        "speaker": "judy",
+        "line": "One of us?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. You're one of us. You got here. You're alive. You're in."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Come on. Stop arguing and let us help."
+      },
+      {
+        "speaker": "jade",
+        "line": "We'll get you settled, and tomorrow we figure out something more permanent."
+      },
+      {
+        "speaker": "judy",
+        "line": "Thank you. I don't know how to say thank you enough."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You don't need to say anything. Just get some rest."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're one of four people now, on an island, who all need each other. That changes things."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'll keep the fire going. You two get her inside."
+      },
+      {
+        "speaker": "jade",
+        "line": "And we'll make sure she's warm. That's what matters."
+      },
+      {
+        "speaker": "judy",
+        "line": "Will you be okay out here? It's cold."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I've got my tent. I'm fine."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Come on, Judy. Let's go."
+      },
+      {
+        "speaker": "jade",
+        "line": "We've got you."
+      },
+      {
+        "speaker": "jade",
+        "line": "Tomorrow, when you've rested, you'll feel different. I promise."
+      },
+      {
+        "speaker": "judy",
+        "line": "Okay. Yes. I can do this."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You already did the hard part."
+      }
+    ],
+    "timestamp": "2026-06-05T18:09:32.447584"
   }
 ]

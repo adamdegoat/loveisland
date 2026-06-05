@@ -1,10 +1,10 @@
 {
   "day": 2,
-  "cycle": "midday",
+  "cycle": "evening",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Ryan rescues Judy exhausted on the beach and brings her into the group with Jade's immediate care, forging instant trust and connection—while Marcus works alone on the east side, unaware that a fourth person has just arrived.",
+  "pulse": "Ryan is becoming Judy's lifeline, and she's holding on tight; Marcus watches with quiet tension; Jade is thinking about tomorrow.",
   "structures": [
     {
       "id": "marcus_tent",
@@ -52,14 +52,14 @@
     }
   ],
   "resources": {
-    "food": 56,
-    "water": 33,
+    "food": 41,
+    "water": 24,
     "wood": 33,
     "medicine": 15
   },
   "resources_prev": {
-    "food": 58,
-    "water": 35,
+    "food": 56,
+    "water": 33,
     "wood": 33,
     "medicine": 15
   },
