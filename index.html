@@ -35,16 +35,23 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 /* ── DAY STAMP ── */
 /* ── DAY HISTORY ── */
-#ds-log-btn{
-  pointer-events:auto;display:block;background:none;border:none;padding:4px 0 0;
-  font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;font-weight:800;
-  letter-spacing:2.5px;text-transform:uppercase;
-  color:rgba(255,255,255,.1);cursor:pointer;line-height:1;
-  transition:color .2s;
+#day-hist-btn{
+  position:fixed;top:22px;right:18px;z-index:35;
+  display:flex;align-items:center;gap:6px;
+  padding:7px 13px;border-radius:20px;
+  background:rgba(255,255,255,.09);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.2);
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;
+  color:rgba(255,255,255,.72);letter-spacing:.3px;
+  cursor:pointer;white-space:nowrap;
+  transition:background .2s,border-color .2s,color .2s,box-shadow .2s;
+  box-shadow:0 2px 12px rgba(0,0,0,.35);
 }
-#ds-log-btn:hover{color:rgba(255,255,255,.32)}
+#day-hist-btn:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.38);color:#fff;box-shadow:0 2px 18px rgba(0,0,0,.45)}
+#day-hist-btn.active{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.35);color:#fff}
 #day-history-panel{
-  position:fixed;top:112px;left:18px;z-index:40;width:244px;
+  position:fixed;top:66px;right:18px;left:auto;z-index:40;width:244px;
   background:rgba(4,8,22,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,.08);border-radius:14px;
   max-height:0;overflow:hidden;opacity:0;pointer-events:none;
@@ -240,7 +247,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   .bubble{max-width:130px;font-size:9.5px;padding:5px 9px}
   .bubble-text{font-size:9.5px}
   #pulse{top:78px;font-size:11px;max-width:78vw;color:rgba(255,255,255,.65)}
-  #res-hud{top:14px;right:12px}
+  #day-hist-btn{top:14px;right:12px;padding:5px 10px;font-size:10px}
+  #day-history-panel{top:52px;right:12px;width:220px}
+  #res-hud{top:54px;right:12px}
   .res-pill{padding:3px 8px 3px 7px;min-height:30px}
   .res-pill-icon{font-size:13px}
   .res-pill-val{font-size:11px}
@@ -296,7 +305,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .struct.discovery .struct-svg{filter:drop-shadow(0 0 6px rgba(251,191,36,.6)) drop-shadow(0 3px 8px rgba(0,0,0,.5))}
 
 /* ── RESOURCES HUD ── */
-#res-hud{position:fixed;top:22px;right:18px;z-index:30;pointer-events:auto;display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+#res-hud{position:fixed;top:66px;right:18px;z-index:30;pointer-events:auto;display:flex;flex-direction:column;gap:4px;align-items:flex-end}
 .res-pill{display:flex;align-items:center;gap:4px;background:rgba(0,0,0,.35);
   backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
   border-radius:20px;padding:4px 10px 4px 8px;border:1px solid rgba(255,255,255,.06);
@@ -378,9 +387,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <div id="day-stamp">
   <div id="ds-day">Day 1</div>
   <div id="ds-cycle">—</div>
-  <button id="ds-log-btn" onclick="toggleDayHistory()">▾ days</button>
 </div>
-<div id="day-history-panel"><div id="dhp-inner"></div></div>
+<button id="day-hist-btn" onclick="toggleDayHistory()">📅 Days</button>
+<div id="day-history-panel" onclick="event.stopPropagation()"><div id="dhp-inner"></div></div>
 <div id="pulse"></div>
 <div id="structures-layer"></div>
 <div id="res-hud"></div>
@@ -1153,9 +1162,10 @@ function initTapStats() {
       document.querySelectorAll('.res-pill').forEach(p=>p.classList.remove('rp-active'))
       _activeRes = null
     }
-    if(_dhpOpen && !e.target.closest('#day-history-panel') && !e.target.closest('#ds-log-btn')) {
+    if(_dhpOpen && !e.target.closest('#day-history-panel') && !e.target.closest('#day-hist-btn')) {
       _dhpOpen = false
       document.getElementById('day-history-panel')?.classList.remove('open')
+      document.getElementById('day-hist-btn')?.classList.remove('active')
     }
   })
 }
@@ -1984,9 +1994,11 @@ let _dhpOpen = false
 function toggleDayHistory() {
   _dhpOpen = !_dhpOpen
   const panel = document.getElementById('day-history-panel')
+  const btn = document.getElementById('day-hist-btn')
   if(!panel) return
   if(_dhpOpen) { showDayHistoryChips(); panel.classList.add('open') }
   else panel.classList.remove('open')
+  if(btn) btn.classList.toggle('active', _dhpOpen)
 }
 
 function showDayHistoryChips() {
