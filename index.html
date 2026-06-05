@@ -1441,7 +1441,7 @@ function nudgeBubbles(positions) {
       clear = true
       for(const q of placed) {
         // horizontal overlap + vertical overlap (rectangle test)
-        if(Math.abs(bx - q.bx) < BW && !(bot >= q.bot + q.h || bot + ph <= q.bot)) {
+        if(Math.abs(bx - q.bx) < BUBBLE_W && !(bot >= q.bot + q.h || bot + ph <= q.bot)) {
           bot = q.bot + q.h   // jump directly above q
           clear = false; break
         }
