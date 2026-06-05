@@ -1155,7 +1155,7 @@ function updateStatusBar() {
   }
   document.getElementById('status-last').textContent=lastStr
   applySky(skyFromHour(sgt.getHours()))
-  const completedToday = new Set(S.feed.filter(e=>e.day===(S.world?.day||1)).map(e=>e.cycle))
+  const completedToday = new Set(S.feed.filter(e=>e.day===(S.world?.day||1)&&e.type!=='birth').map(e=>e.cycle))
   ALL_STEPS.forEach(s=>{
     const el=document.getElementById('stp-'+s); if(!el) return
     el.classList.remove('current','done')
