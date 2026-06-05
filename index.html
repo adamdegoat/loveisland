@@ -1442,6 +1442,11 @@ function nudgeBubbles(positions) {
   // Vertical stagger: 2D collision avoidance using each bubble's real measured size.
   // Horizontal overlap is a true rectangle test on measured widths, so two bubbles
   // can never visually overlap regardless of where characters move next cycle.
+  // CRITICAL: each bubble's CSS bottom is relative to its OWN character's feet (py),
+  // so two characters at different py have different screen baselines. We must run the
+  // collision test in absolute SCREEN space — otherwise a stack offset can be cancelled
+  // out by the characters' py difference and the bubbles land at the same height.
+  const H = window.innerHeight
   const sorted = [...positions].sort((a,b) => (a.px+offsets[a.id]) - (b.px+offsets[b.id]))
   const placed = []
   sorted.forEach(p => {
@@ -1449,12 +1454,13 @@ function nudgeBubbles(positions) {
     const el = document.getElementById('bubble-'+p.id)
     const w = dim[p.id].w
     const ph = dim[p.id].h + GAP
-    let bot = 70, clear = false
+    const ground = H - p.py          // char feet, measured from viewport bottom (screen space)
+    let bot = ground + 70, clear = false  // bubble baseline in screen space
     while(!clear) {
       clear = true
       for(const q of placed) {
         const xOverlap = Math.abs(bx - q.bx) < (w + q.w) / 2 + GAP
-        // horizontal overlap + vertical overlap (rectangle test)
+        // horizontal overlap + vertical overlap (rectangle test, screen space)
         if(xOverlap && !(bot >= q.bot + q.h || bot + ph <= q.bot)) {
           bot = q.bot + q.h   // jump directly above q
           clear = false; break
@@ -1462,7 +1468,7 @@ function nudgeBubbles(positions) {
       }
     }
     placed.push({bx, bot, h: ph, w})
-    el.style.bottom = bot + 'px'
+    el.style.bottom = (bot - ground) + 'px'  // convert screen baseline back to per-character CSS bottom
   })
 }
 
