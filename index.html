@@ -223,15 +223,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 /* Buttons */
 .hud-actions{display:flex;align-items:center;gap:.45rem;margin-left:auto;flex-shrink:0}
-#run-btn{display:inline-flex;align-items:center;gap:.25rem;padding:.28rem .8rem;
   border-radius:18px;border:1px solid rgba(244,114,182,.4);background:rgba(244,114,182,.12);
-  color:#f472b6;font-size:11px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;
-  cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
-#run-btn:hover:not(:disabled){background:rgba(244,114,182,.22);transform:translateY(-1px);box-shadow:0 4px 16px rgba(244,114,182,.3)}
-#run-btn:disabled{opacity:.35;cursor:not-allowed}
-#run-btn.busy{color:#fbbf24;border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.1)}
-#run-btn.done{color:#4ade80;border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.08)}
-#run-btn.maxed{color:#94a3b8;border-color:rgba(148,163,184,.3);background:rgba(148,163,184,.06);cursor:not-allowed}
 #story-btn{display:inline-flex;align-items:center;gap:.2rem;padding:.28rem .7rem;
   border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);
   color:rgba(255,255,255,.5);font-size:11px;font-weight:700;letter-spacing:.3px;
@@ -245,7 +237,6 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   #oracle-widget{display:none}
   #status-strip,#status-info,#status-msg{display:none}
   #hud{padding:0 .75rem;height:52px}
-  #run-btn{padding:.28rem .7rem;font-size:10px}
   #story-btn{padding:.28rem .55rem;font-size:10px}
   .bubble{max-width:130px;font-size:9.5px;padding:5px 9px}
   .bubble-text{font-size:9.5px}
@@ -1034,7 +1025,6 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   <span id="status-msg"></span>
 
   <div class="hud-actions">
-    <button id="run-btn" onclick="runCycle()">▶ Run</button>
     <a id="story-btn" href="story.html">📖 Story</a>
   </div>
 </div>
@@ -1877,132 +1867,10 @@ function drawStars(active) {
   }
 }
 
-// ── TRIGGER LIMIT (1 per cycle window) ───────────────────
-const MAX_MANUAL = 1
-
-function currentCycleWindow() {
-  const h = getSGT().getHours()
-  if(h >= 7 && h < 12)  return 'morning'
-  if(h >= 12 && h < 18) return 'midday'
-  if(h >= 18 && h < 23) return 'evening'
-  return 'night'
-}
-
-function getManualCount() {
-  try {
-    const raw = localStorage.getItem('li_manual')
-    if(!raw) return {window:'',count:0}
-    return JSON.parse(raw)
-  } catch { return {window:'',count:0} }
-}
-
-function incManualCount() {
-  const win = currentCycleWindow()
-  const cur = getManualCount()
-  const count = cur.window === win ? cur.count + 1 : 1
-  localStorage.setItem('li_manual', JSON.stringify({window:win, count}))
-  return count
-}
-
-function manualRemaining() {
-  const win = currentCycleWindow()
-  const {window:w, count} = getManualCount()
-  return w === win ? Math.max(0, MAX_MANUAL - count) : MAX_MANUAL
-}
-
-function nextCycleTime() {
-  const sgt = getSGT()
-  const total = sgt.getHours()*60 + sgt.getMinutes()
-  let nr = RUN_MINUTES.find(r => r.h*60+r.m > total)
-  if(!nr) nr = {h:RUN_MINUTES[0].h+24, m:RUN_MINUTES[0].m}
-  const h24 = nr.h%24, ap = h24>=12?'pm':'am', h12 = h24%12||12
-  const mStr = nr.m>0?`:${String(nr.m).padStart(2,'0')}`:':00'
-  return `${h12}${mStr}${ap}`
-}
-
-function updateRunBtn() {
-  const rem = manualRemaining()
-  const btn = document.getElementById('run-btn')
-  if(!btn) return
-  if(rem <= 0) {
-    btn.classList.add('maxed')
-    btn.disabled = true
-    btn.textContent = `✕ Run · next ${nextCycleTime()}`
-  } else {
-    btn.classList.remove('maxed','busy','done')
-    btn.disabled = false
-    btn.textContent = '▶ Run'
-  }
-}
-
-// ── RUN CYCLE ─────────────────────────────────────────────
-const ALL_STEPS=['morning','midday','evening','night']
-
-function setStep(s,state){
-  const el=document.getElementById('stp-'+s);if(!el)return
-  el.classList.remove('running','done')
-  if(state==='running')el.classList.add('running')
-  if(state==='done')el.classList.add('done')
-}
-function resetSteps(){ALL_STEPS.forEach(s=>setStep(s,'pending'))}
 
 function cap(s){return s?s[0].toUpperCase()+s.slice(1):''}
 
 let S={chars:{},feed:[],world:{}}
-
-async function runCycle() {
-  if(manualRemaining() <= 0) return
-  const btn=document.getElementById('run-btn')
-  const msg=document.getElementById('status-msg')
-  incManualCount()
-  btn.disabled=true;btn.classList.add('busy');btn.textContent='⏳…'
-  resetSteps();msg.textContent='Contacting server…'
-  try {
-    const r=await fetch('http://localhost:7777/runday',{signal:AbortSignal.timeout(3000)})
-    const d=await r.json()
-    if(d.status==='already_run'){
-      incManualCount()
-      showMsg(btn,'maxed',`✕ Run · next ${nextCycleTime()}`,3000);updateRunBtn();return
-    }
-    if(d.status!=='started'){
-      showMsg(btn,'busy','Busy…',2500);updateRunBtn();return
-    }
-    msg.textContent='Running…'
-    const timer=setInterval(async()=>{
-      try{
-        const sr=await fetch('http://localhost:7777/status',{signal:AbortSignal.timeout(2000)})
-        const s=await sr.json()
-        ALL_STEPS.forEach(cyc=>{
-          if(!s.running && s.cycle===cyc) setStep(cyc,'done')
-          else if(s.running && s.current_cycle===cyc) setStep(cyc,'running')
-          else setStep(cyc,'pending')
-        })
-        if(s.running && s.current_cycle){
-          msg.textContent=cap(s.current_cycle)+'…'
-          btn.textContent='⏳ '+cap(s.current_cycle)
-        }
-        if(!s.running){
-          clearInterval(timer)
-          ALL_STEPS.forEach(s=>setStep(s,'done'))
-          msg.textContent='Done!'
-          btn.classList.remove('busy');btn.classList.add('done');btn.textContent='✓ Done'
-          await reloadData()
-          setTimeout(()=>{btn.classList.remove('done');msg.textContent='';updateRunBtn()},2200)
-        }
-      }catch{}
-    },1500)
-    setTimeout(()=>clearInterval(timer),120000)
-  }catch{
-    btn.classList.remove('busy')
-    msg.textContent='Start trigger server'
-    setTimeout(()=>{msg.textContent='';updateRunBtn()},3500)
-  }
-}
-
-function showMsg(btn,cls,text,delay){
-  btn.textContent=text
-  setTimeout(()=>{btn.classList.remove(cls);btn.textContent='▶ Run';btn.disabled=false},delay)
-}
 
 async function reloadData(){
   const t=Date.now()
@@ -2221,8 +2089,7 @@ async function loadOracle() {
 }
 
 setInterval(updateStatusBar,60000)
-setInterval(updateRunBtn,60000)
-init().then(()=>{ updateRunBtn(); loadOracle(); initTapStats() })
+init().then(()=>{ loadOracle(); initTapStats() })
 </script>
 </body>
 </html>
