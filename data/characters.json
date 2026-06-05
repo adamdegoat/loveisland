@@ -31,6 +31,11 @@
         "closeness": 17,
         "tension": 5,
         "attraction": 3
+      },
+      "judy": {
+        "closeness": 0,
+        "tension": 0,
+        "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing."
@@ -67,6 +72,11 @@
         "closeness": 23,
         "tension": 5,
         "attraction": 9
+      },
+      "judy": {
+        "closeness": 0,
+        "tension": 0,
+        "attraction": 0
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier."
@@ -103,8 +113,57 @@
         "closeness": 23,
         "tension": 5,
         "attraction": 4
+      },
+      "judy": {
+        "closeness": 0,
+        "tension": 0,
+        "attraction": 0
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't."
+  },
+  "judy": {
+    "name": "Judy Chen",
+    "age": 33,
+    "archetype": "clinger",
+    "color": "#2dd4bf",
+    "scores": {
+      "trust": 55,
+      "openness": 78,
+      "ambition": 35,
+      "loneliness": 85,
+      "resilience": 62,
+      "hunger": 45,
+      "thirst": 30,
+      "energy": 20
+    },
+    "mood": "shaken",
+    "location": {
+      "waypoint": "beach_mid",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "none",
+    "pregnant": true,
+    "pregnancy_weeks": 35,
+    "joined_day": 2,
+    "relationships": {
+      "marcus": {
+        "closeness": 0,
+        "tension": 0,
+        "attraction": 0
+      },
+      "ryan": {
+        "closeness": 0,
+        "tension": 0,
+        "attraction": 0
+      },
+      "jade": {
+        "closeness": 0,
+        "tension": 0,
+        "attraction": 0
+      }
+    },
+    "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her."
   }
 }
