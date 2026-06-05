@@ -15,7 +15,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* World renders ABOVE the fixed bottom bars (HUD + collapsed feed drawer) so the
    beach + ocean band are never hidden behind them. --stage-bottom is measured live. */
 #world{position:relative;width:100vw;height:calc(100vh - var(--stage-bottom));overflow:hidden}
-#world-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+#world-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;transform:translateY(calc(-1 * var(--world-shift,0px)))}
 #stars{position:absolute;inset:0;width:100%;height:34%;pointer-events:none;z-index:2;opacity:0;transition:opacity 3s}
 #world.night #stars,#world.dawn #stars{opacity:1}
 
@@ -312,7 +312,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .sc-bond{font-size:13px;margin-bottom:2px}
 
 /* ── STRUCTURES LAYER ── */
-#structures-layer{position:absolute;inset:0;pointer-events:none;z-index:5}
+#structures-layer{position:absolute;inset:0;pointer-events:none;z-index:5;transform:translateY(calc(-1 * var(--world-shift,0px)))}
 .struct{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;text-align:center;line-height:1;cursor:default}
 .struct-svg{display:block;filter:drop-shadow(0 3px 8px rgba(0,0,0,.6));transition:transform .2s ease}
 .struct:hover .struct-svg{transform:scale(1.12)}
@@ -400,7 +400,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <div id="res-hud"></div>
 
 <!-- ══ WORLD SVG ══════════════════════════════════════════ -->
-<svg id="world-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+<svg id="world-svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg">
 <defs>
   <linearGradient id="sky-morning" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0%" stop-color="#c2410c"/><stop offset="20%" stop-color="#ea580c"/>
@@ -1209,12 +1209,20 @@ const WP_ADJACENT = {
   beach_mid:['beach_left','beach_right'],         beach_right:['beach_mid','tide_pool'],
 }
 
+// Vertical placement of the sliced world art. The art is wider-than-tall (10:6), so on
+// wide screens it overflows vertically and must be cropped. We push it UP to reveal the
+// beach/ocean at the bottom, but CAP the top crop at MOUNTAIN_SAFE (just above the NE
+// cliff peak at viewBox y≈160) so the mountain is never sliced off. Any leftover overflow
+// then trims a little ocean instead. Returns the screen-px offset of viewBox y=0.
+const MOUNTAIN_SAFE = 150
+function worldYOffset(vh, scale) {
+  const cropVB = Math.max(0, 600 - vh/scale)      // total vertical overflow, in viewBox units
+  return -Math.min(cropVB, MOUNTAIN_SAFE) * scale  // shift up, but never past the mountain peak
+}
 function svgToViewport(sx, sy) {
   const vw=window.innerWidth, vh=stageH()
   const scale=Math.max(vw/1000, vh/600)
-  // Y is bottom-anchored (preserveAspectRatio xMidYMax) so the beach/ocean is never
-  // cropped on wide screens — only extra sky is trimmed at the top.
-  const offX=(vw-1000*scale)/2, offY=(vh-600*scale)
+  const offX=(vw-1000*scale)/2, offY=worldYOffset(vh, scale)
   return {left:((offX+sx*scale)/vw*100)+'%', top:((offY+sy*scale)/vh*100)+'%'}
 }
 
@@ -1898,6 +1906,13 @@ function updateWorld() {
   const CHARS=Object.keys(S.chars)
   CHARS.forEach(cid=>ensureCharDom(cid))
   setHudVar()  // refresh --stage-bottom BEFORE laying out, so positions use the correct stage height
+  // Keep the background SVG + structures shifted in lock-step with the character math.
+  // The SVG element is sized to the FULL scaled art height (not just the stage) so its own
+  // viewport never clips the ocean; --world-shift then slides it up under #world's clip.
+  const _scale=Math.max(window.innerWidth/1000, stageH()/600)
+  const _svg=document.getElementById('world-svg')
+  if(_svg) _svg.style.height=(600*_scale)+'px'
+  document.documentElement.style.setProperty('--world-shift', (-worldYOffset(stageH(), _scale))+'px')
   const W=isMobile()?getWorldWidth():window.innerWidth, H=stageH()
   // compute raw pixel positions
   const positions=CHARS.map(cid=>{
