@@ -1585,7 +1585,9 @@ function renderChat() {
 
 function separateChars(positions) {
   const MIN = 65
-  // Don't push apart pairs that have an active interaction
+  const SEAT = 28   // interacting couples stay intimate, but never perfectly stacked — seat them side-by-side
+  // Pairs with an active interaction are kept close (SEAT gap) instead of pushed fully apart (MIN).
+  // Without this they'd stack exactly when the narrator puts both at the same waypoint.
   const interacting = new Set()
   Object.keys(S.chars).forEach(cid=>{
     const iw = S.chars[cid]?.interaction?.with
@@ -1594,14 +1596,17 @@ function separateChars(positions) {
   for(let iter=0; iter<25; iter++) {
     for(let i=0; i<positions.length; i++) {
       for(let j=i+1; j<positions.length; j++) {
-        if (interacting.has([positions[i].id,positions[j].id].sort().join('_'))) continue
+        const isPair = interacting.has([positions[i].id,positions[j].id].sort().join('_'))
+        const minDist = isPair ? SEAT : MIN
         const dx=positions[j].px - positions[i].px
         const dy=positions[j].py - positions[i].py
         const dist=Math.sqrt(dx*dx+dy*dy)
-        if(dist < MIN) {
-          const push=(MIN-(dist||0))/2
-          const nx=dist>0.5?dx/dist:Math.cos(i*2.4)
-          const ny=dist>0.5?dy/dist:Math.sin(i*2.4)
+        if(dist < minDist) {
+          const push=(minDist-(dist||0))/2
+          // on a near-identical point, seat couples horizontally (side-by-side on the log);
+          // everyone else scatters on a deterministic angle
+          const nx=dist>0.5?dx/dist:(isPair?1:Math.cos(i*2.4))
+          const ny=dist>0.5?dy/dist:(isPair?0:Math.sin(i*2.4))
           positions[i].px -= nx*push; positions[i].py -= ny*push
           positions[j].px += nx*push; positions[j].py += ny*push
         }
