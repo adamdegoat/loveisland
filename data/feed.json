@@ -564,5 +564,203 @@
       }
     ],
     "timestamp": "2026-06-05T12:31:47.221379"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "Marcus reinforces his tent frame with salvaged driftwood, working methodically as the midday sun beats down.",
+    "thought": "She keeps finding reasons to be near him.",
+    "location": {
+      "waypoint": "tent_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "withdrawn",
+    "timestamp": "2026-06-05T17:39:52.071843"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "Ryan hears a sound from the beach while gathering branches and hurries to find Judy collapsed on the sand, barely conscious.",
+    "thought": "Someone's in real trouble. I can help.",
+    "location": {
+      "waypoint": "beach_mid",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "alert",
+    "timestamp": "2026-06-05T17:39:52.071843"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "Jade works on gathering coconuts when she hears Ryan's voice calling from the beach; she abandons her task and moves toward him.",
+    "thought": "Something has changed. I feel it.",
+    "location": {
+      "waypoint": "beach_mid",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "concerned",
+    "timestamp": "2026-06-05T17:39:52.071843"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "judy",
+    "action": "Judy washes up on the sand after hours of swimming, her body shutting down from exhaustion and dehydration until she hears voices approaching.",
+    "thought": "Please let them be real. Please.",
+    "location": {
+      "waypoint": "beach_mid",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "none",
+    "mood": "terrified",
+    "timestamp": "2026-06-05T17:39:52.071843"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "judy"
+    ],
+    "description": "Ryan finds Judy collapsed on the beach after swimming from a plane crash offshore and brings her to Jade at the water source; the three meet for the first time as Judy slowly realizes she's found other people.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Hey—are you alright? Where did you come from?"
+      },
+      {
+        "speaker": "judy",
+        "line": "I swam. The plane went down and I just... I couldn't stop swimming."
+      },
+      {
+        "speaker": "ryan",
+        "line": "A plane crash? When was this? How long were you in the water?"
+      },
+      {
+        "speaker": "judy",
+        "line": "I don't know. Hours and hours and I lost count of everything."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay, okay. You're safe now. What's your name?"
+      },
+      {
+        "speaker": "judy",
+        "line": "Judy. Judy Chen. There was someone with me but the current was too strong and he didn't make it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm deeply sorry about that. But you did. You survived, Judy. That's extraordinary."
+      },
+      {
+        "speaker": "jade",
+        "line": "Ryan, who's this? Is everything okay?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Jade, this is Judy. She was in a plane crash offshore and managed to swim here."
+      },
+      {
+        "speaker": "jade",
+        "line": "Judy, come sit down. You look exhausted. Here, take my hand."
+      },
+      {
+        "speaker": "judy",
+        "line": "I'm sorry to just appear here like this. I'm so sorry."
+      },
+      {
+        "speaker": "jade",
+        "line": "Don't be sorry. You're here now. That's what matters."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We found a fresh water source this morning. And we have shelter and food."
+      },
+      {
+        "speaker": "judy",
+        "line": "You're just... helping me? Both of you, without even knowing me?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Of course we are. Why would we not?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Because it's who we are. Because you need help. That's the only reason we need."
+      },
+      {
+        "speaker": "judy",
+        "line": "I thought I was going to die out there. I really thought I wasn't going to make it."
+      },
+      {
+        "speaker": "jade",
+        "line": "You didn't die, though. You're here and you're alive."
+      },
+      {
+        "speaker": "ryan",
+        "line": "How far along are you? Is that okay to ask?"
+      },
+      {
+        "speaker": "judy",
+        "line": "Eight months. Nearly there. The baby kept moving while I was swimming and that's what kept me going."
+      },
+      {
+        "speaker": "jade",
+        "line": "The baby is safe now. You both are."
+      },
+      {
+        "speaker": "ryan",
+        "line": "There's another person here too. Marcus. He's staying on the east side but he's capable and good. He'll want to help."
+      },
+      {
+        "speaker": "judy",
+        "line": "So there are... four of us now? Four people?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Yes. Four of us on this island. That's not nothing."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Let's get you to the firepit where it's warm and we can tend to you properly."
+      },
+      {
+        "speaker": "judy",
+        "line": "I don't want to just take. I need to contribute somehow. I need to pull my weight."
+      },
+      {
+        "speaker": "jade",
+        "line": "First, you rest. You eat, you drink, you sleep. Everything else comes after."
+      },
+      {
+        "speaker": "judy",
+        "line": "I'm alive. I really made it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You did. Come on."
+      },
+      {
+        "speaker": "jade",
+        "line": "We'll get you some water first, then food. Just small amounts at first, okay?"
+      },
+      {
+        "speaker": "judy",
+        "line": "Okay. Yes. I can do that."
+      }
+    ],
+    "timestamp": "2026-06-05T17:39:52.071843"
   }
 ]
