@@ -1,10 +1,10 @@
 {
   "day": 2,
-  "cycle": "night",
+  "cycle": "morning",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Marcus found water and Jade was the first person he told \u2014 Ryan noticed.",
+  "pulse": "Jade thinks about Marcus because of last night—and Ryan is warm but hasn't realized something shifted.",
   "structures": [
     {
       "id": "marcus_tent",
@@ -13,7 +13,7 @@
       "y": 25,
       "builder": "marcus",
       "day": 1,
-      "label": "Marcus\u2019s Tent"
+      "label": "Marcus’s Tent"
     },
     {
       "id": "ryan_house",
@@ -22,7 +22,7 @@
       "y": 50,
       "builder": "ryan",
       "day": 1,
-      "label": "Ryan\u2019s House"
+      "label": "Ryan’s House"
     },
     {
       "id": "jade_hammock",
@@ -31,7 +31,7 @@
       "y": 60,
       "builder": "jade",
       "day": 1,
-      "label": "Jade\u2019s Hammock"
+      "label": "Jade’s Hammock"
     }
   ],
   "resources": {

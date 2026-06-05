@@ -181,5 +181,193 @@
       }
     ],
     "timestamp": "2026-06-04T23:54:29.825879"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "He wakes before dawn and walks to the water source, moving through the semi-darkness with practiced ease.",
+    "thought": "She said the water helped. That matters.",
+    "location": {
+      "x": 35,
+      "y": 55
+    },
+    "shelter": "tent",
+    "mood": "watchful",
+    "timestamp": "2026-06-05T08:52:12.100314"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "He emerges from his house as the light rises, stretching and already thinking about what he can build.",
+    "thought": "I feel something good is building today.",
+    "location": {
+      "x": 50,
+      "y": 50
+    },
+    "shelter": "house",
+    "mood": "energetic",
+    "timestamp": "2026-06-05T08:52:12.100314"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "She wakes in her hammock to sunlight filtering through the canopy, thinking of Marcus and how he brought her water.",
+    "thought": "He brought water. I can't get past him.",
+    "location": {
+      "x": 20,
+      "y": 60
+    },
+    "shelter": "hammock",
+    "mood": "thoughtful",
+    "timestamp": "2026-06-05T08:52:12.100314"
+  },
+  {
+    "day": 2,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade"
+    ],
+    "description": "All three arrive at the water source in the cool morning, and a conversation unfolds about gathering, trust, and what comes next.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Morning! Good to see the sun coming up properly."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Water's good today."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah, was just thinking about that. We're going to need a lot more if we want to—"
+      },
+      {
+        "speaker": "jade",
+        "line": "Hi. Sorry, am I interrupting something?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "No, no, of course not. Come on, fill up while it's cool."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's cold this morning."
+      },
+      {
+        "speaker": "jade",
+        "line": "It is. I was thinking... about something you said last night, Marcus."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What?"
+      },
+      {
+        "speaker": "jade",
+        "line": "That water's everything. You were right. I didn't sleep properly until I drank."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He's good like that. Marcus knows what matters."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Just observation."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Well, I want to set up a better system for collection. Maybe a trap, or—"
+      },
+      {
+        "speaker": "jade",
+        "line": "A trap sounds smart. There was rain yesterday, so—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "North side. More runoff."
+      },
+      {
+        "speaker": "ryan",
+        "line": "North side, yeah okay. Marcus, you want to help me scout?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "After water."
+      },
+      {
+        "speaker": "jade",
+        "line": "I could help too, if you want."
+      },
+      {
+        "speaker": "ryan",
+        "line": "The more the better. It's going to be a lot of work."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're quiet this morning."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Always quiet."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He's reflective. I think that's good. Better than me running my mouth all the time."
+      },
+      {
+        "speaker": "jade",
+        "line": "No, I like it. It feels... honest."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Mm."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We should get going soon though. We're burning daylight."
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah, yeah, I'm ready."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Ready."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Great. Let's head north then. Jade, you'll see the valley I was talking about?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Okay. I'm excited to see what you're building."
+      },
+      {
+        "speaker": "ryan",
+        "line": "This is good. All three of us working together, it feels—"
+      },
+      {
+        "speaker": "jade",
+        "line": "Like we might actually make it?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "One day at a time."
+      },
+      {
+        "speaker": "ryan",
+        "line": "One day at a time. I'll take it."
+      },
+      {
+        "speaker": "jade",
+        "line": "Come on then."
+      }
+    ],
+    "timestamp": "2026-06-05T08:52:12.100314"
   }
 ]

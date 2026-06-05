@@ -5,19 +5,19 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 22,
-      "openness": 18,
+      "trust": 23,
+      "openness": 19,
       "ambition": 45,
-      "loneliness": 78,
+      "loneliness": 77,
       "resilience": 84,
-      "hunger": 65,
-      "thirst": 50,
-      "energy": 70
+      "hunger": 55,
+      "thirst": 36,
+      "energy": 54
     },
-    "mood": "determined",
+    "mood": "watchful",
     "location": {
-      "x": 72,
-      "y": 50
+      "x": 35,
+      "y": 55
     },
     "shelter": "tent",
     "relationships": {
@@ -27,9 +27,9 @@
         "attraction": 0
       },
       "jade": {
-        "closeness": 13,
+        "closeness": 15,
         "tension": 6,
-        "attraction": 1
+        "attraction": 2
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing."
@@ -41,17 +41,17 @@
     "color": "#fbbf24",
     "scores": {
       "trust": 76,
-      "openness": 87,
-      "ambition": 70,
+      "openness": 88,
+      "ambition": 71,
       "loneliness": 33,
       "resilience": 39,
-      "hunger": 75,
-      "thirst": 65,
-      "energy": 80
+      "hunger": 65,
+      "thirst": 51,
+      "energy": 65
     },
-    "mood": "focused",
+    "mood": "energetic",
     "location": {
-      "x": 48,
+      "x": 50,
       "y": 50
     },
     "shelter": "house",
@@ -62,7 +62,7 @@
         "attraction": 0
       },
       "jade": {
-        "closeness": 20,
+        "closeness": 21,
         "tension": 5,
         "attraction": 8
       }
@@ -75,29 +75,29 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 59,
-      "openness": 75,
+      "trust": 61,
+      "openness": 76,
       "ambition": 40,
-      "loneliness": 40,
+      "loneliness": 39,
       "resilience": 60,
-      "hunger": 60,
-      "thirst": 55,
-      "energy": 65
+      "hunger": 50,
+      "thirst": 41,
+      "energy": 49
     },
-    "mood": "hopeful",
+    "mood": "thoughtful",
     "location": {
-      "x": 25,
+      "x": 20,
       "y": 60
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 13,
+        "closeness": 15,
         "tension": 6,
-        "attraction": 1
+        "attraction": 2
       },
       "ryan": {
-        "closeness": 20,
+        "closeness": 21,
         "tension": 5,
         "attraction": 3
       }
