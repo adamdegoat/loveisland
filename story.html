@@ -46,7 +46,8 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 /* BACK BAR */
 .back-bar{position:sticky;top:0;z-index:50;background:rgba(7,13,24,.92);backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);
-  padding:.65rem 1.25rem;display:flex;align-items:center;gap:.75rem}
+  padding:.65rem 1.25rem;display:flex;align-items:center;gap:.75rem;
+  /* bubble anchors to this */}
 .back-btn{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .75rem;
   border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);
   color:rgba(255,255,255,.6);font-size:11px;font-weight:700;text-decoration:none;
@@ -56,11 +57,50 @@ h1,h2,h3{font-family:'Playfair Display',serif}
   background:linear-gradient(135deg,#fff 0%,#f472b6 40%,#fbbf24 70%,#60a5fa 100%);
   background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;animation:shimmer 6s linear infinite}
-.day-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:.25rem .75rem;
-  font-size:11px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;
-  letter-spacing:.5px;margin-left:auto}
-.day-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+.day-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:pulse 2s infinite}
+
+/* DAY CHIPS */
+#day-chips{display:flex;align-items:center;gap:.35rem;margin-left:auto;
+  overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;padding-bottom:1px}
+#day-chips::-webkit-scrollbar{display:none}
+.day-chip{display:inline-flex;align-items:center;gap:.35rem;flex-shrink:0;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:14px;padding:.25rem .7rem;min-height:28px;
+  font-size:11px;font-weight:700;letter-spacing:.4px;white-space:nowrap;
+  cursor:pointer;user-select:none;font-family:'Plus Jakarta Sans',sans-serif;
+  transition:background .15s,border-color .15s}
+.day-chip:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18)}
+.day-chip.current{border-color:rgba(34,197,94,.3)}
+.day-chip.chip-active{background:rgba(255,255,255,.1)!important;border-color:rgba(255,46,120,.45)!important}
+.day-chip-meta{font-size:10px;color:rgba(255,255,255,.38);font-weight:500;letter-spacing:0}
+
+/* DAY SUMMARY BUBBLE */
+#day-summary-bubble{
+  position:absolute;top:calc(100% + 8px);right:0;z-index:200;
+  width:min(310px,calc(100vw - 24px));
+  background:rgba(4,8,22,.95);border:1px solid rgba(255,255,255,.11);border-radius:14px;
+  overflow:hidden;max-height:0;opacity:0;pointer-events:none;
+  transition:max-height .34s cubic-bezier(.4,0,.2,1),opacity .22s ease;
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 14px 40px rgba(0,0,0,.7)}
+#day-summary-bubble.open{max-height:420px;opacity:1;pointer-events:auto}
+.dsb-header{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;
+  color:rgba(255,255,255,.28);padding:13px 15px 0}
+.dsb-drama{font-size:13px;color:rgba(255,255,255,.82);line-height:1.58;font-style:italic;
+  padding:8px 15px 11px;border-bottom:1px solid rgba(255,255,255,.06)}
+.dsb-bullets{padding:10px 15px 6px;display:flex;flex-direction:column;gap:6px}
+.dsb-bullet{font-size:12px;color:rgba(255,255,255,.58);line-height:1.5;
+  padding-left:10px;position:relative}
+.dsb-bullet::before{content:'·';position:absolute;left:0;color:rgba(255,255,255,.2)}
+.dsb-rel{padding:8px 15px 8px;border-top:1px solid rgba(255,255,255,.05);
+  display:flex;flex-direction:column;gap:5px}
+.dsb-rel-item{font-size:11px;display:flex;align-items:baseline;justify-content:space-between;gap:.5rem}
+.dsb-rel-vals{font-size:10px;color:rgba(255,255,255,.28);flex-shrink:0}
+.dsb-cycles{padding:7px 15px 13px;display:flex;gap:.35rem;flex-wrap:wrap}
+.dsb-cycle-tag{font-size:10px;font-weight:700;text-transform:capitalize;letter-spacing:.3px;
+  color:rgba(255,255,255,.3);background:rgba(255,255,255,.05);
+  border-radius:7px;padding:2px 8px;font-family:'Plus Jakarta Sans',sans-serif}
+.dsb-empty{font-size:13px;color:var(--muted);padding:16px 15px;text-align:center}
 
 /* SECTIONS */
 .section{padding:2rem 1.5rem;max-width:860px;margin:0 auto}
@@ -183,7 +223,9 @@ footer span{color:var(--muted);font-weight:600}
   .section{padding:1.25rem 1rem}
   .back-bar{padding:.5rem 1rem}
   .back-bar-title{font-size:14px}
-  .day-badge{font-size:10px;padding:.2rem .55rem}
+  .day-chip{font-size:10px;padding:.2rem .6rem;min-height:30px}
+  .day-chip-meta{display:none}
+  #day-summary-bubble{right:0;left:auto}
   .cycle-tab{display:flex;flex-wrap:wrap;gap:2px}
   .cycle-btn{padding:.3rem .55rem;font-size:11px}
   .profiles-grid{grid-template-columns:1fr}
@@ -262,12 +304,11 @@ footer span{color:var(--muted);font-weight:600}
   <div class="back-bar">
     <a class="back-btn" href="index.html">← World</a>
     <span class="back-bar-title">Tropicana</span>
-    <div class="day-badge">
-      <span class="day-dot"></span>
-      <span id="day-label">Day 1</span>
-      &nbsp;·&nbsp;<span id="cycle-label">—</span>
-      &nbsp;·&nbsp;<span id="weather-label">☀️</span>
-    </div>
+    <span id="day-label" style="display:none">Day 1</span>
+    <span id="cycle-label" style="display:none">—</span>
+    <span id="weather-label" style="display:none">☀️</span>
+    <div id="day-chips"></div>
+    <div id="day-summary-bubble"></div>
   </div>
 
   <!-- Today's Pulse -->
@@ -361,11 +402,100 @@ let activeCycle = null
 
 function cap(s){return s?s[0].toUpperCase()+s.slice(1):''}
 
+// ── DAY CHIPS + SUMMARY BUBBLE ────────────────────────────
+let _activeSummaryDay = null
+
+function buildDaySummary(day) {
+  const entries = S.feed.filter(e => e.day === day)
+  if (!entries.length) return '<div class="dsb-empty">No story data for this day yet.</div>'
+
+  // Drama hook — last interaction description, fallback to last thought
+  const interactions = entries.filter(e => e.type === 'interaction')
+  const lastIntr = interactions[interactions.length - 1]
+  const dramaLine = lastIntr?.description
+    || [...entries].reverse().find(e => e.thought)?.thought
+    || '—'
+
+  // Highlights — one notable thought per character from their last cycle of the day
+  const seen = new Set()
+  const highlights = []
+  ;['night','evening','midday','morning'].forEach(cyc => {
+    entries.filter(e => e.cycle===cyc && e.character && !seen.has(e.character) && (e.thought||e.action))
+      .forEach(e => {
+        if (highlights.length >= 3) return
+        const nm = S.chars[e.character]?.name?.split(' ')[0] || cap(e.character)
+        const col = CHARS[e.character] || '#e2e8f0'
+        highlights.push({nm, col, text:(e.thought||e.action||'').slice(0,72)})
+        seen.add(e.character)
+      })
+  })
+
+  // Relationship snapshot (current day only — historical data not stored yet)
+  let relHtml = ''
+  if (day === S.world.day) {
+    const pairs = [
+      {a:'ryan',b:'jade',label:'Ryan & Jade',col:'#fbbf24'},
+      {a:'marcus',b:'jade',label:'Marcus & Jade',col:'#f472b6'},
+      {a:'marcus',b:'ryan',label:'Marcus & Ryan',col:'#60a5fa'},
+    ]
+    relHtml = '<div class="dsb-rel">' + pairs.map(p => {
+      const cl = S.chars[p.a]?.relationships?.[p.b]?.closeness || 0
+      const tn = S.chars[p.a]?.relationships?.[p.b]?.tension   || 0
+      const at = (S.chars[p.a]?.relationships?.[p.b]?.attraction||0)
+               + (S.chars[p.b]?.relationships?.[p.a]?.attraction||0)
+      const icon = at>=20?'💞':tn>40?'⚡':cl>50?'💛':'·'
+      return `<div class="dsb-rel-item"><span style="color:${p.col}">${icon} ${p.label}</span><span class="dsb-rel-vals">closeness ${cl} · tension ${tn}</span></div>`
+    }).join('') + '</div>'
+  }
+
+  // Cycles covered
+  const CICONS = {morning:'🌅',midday:'☀️',evening:'🌆',night:'🌙'}
+  const cyclesDone = [...new Set(entries.map(e=>e.cycle).filter(Boolean))]
+    .sort((a,b) => CYCLE_ORDER.indexOf(a)-CYCLE_ORDER.indexOf(b))
+  const cycleRow = '<div class="dsb-cycles">' + cyclesDone.map(c=>`<span class="dsb-cycle-tag">${CICONS[c]||'·'} ${cap(c)}</span>`).join('') + '</div>'
+
+  return `<div class="dsb-drama">"${dramaLine}"</div>
+    <div class="dsb-bullets">${highlights.map(h=>`<div class="dsb-bullet"><span style="color:${h.col};font-weight:700">${h.nm}</span> — ${h.text}${h.text.length>=72?'…':''}</div>`).join('')}</div>
+    ${relHtml}${cycleRow}`
+}
+
+function renderDayChips() {
+  const container = document.getElementById('day-chips')
+  if (!container) return
+  const w = S.world
+  const currentDay = w.day
+  const allDays = [...new Set(S.feed.map(e=>e.day))].sort((a,b)=>a-b)
+  if (!allDays.includes(currentDay)) allDays.push(currentDay)
+  container.innerHTML = allDays.map(d => {
+    const cur = d === currentDay
+    return `<div class="day-chip${cur?' current':''}" onclick="toggleDaySummary(${d},this)">
+      ${cur?'<span class="day-dot"></span>':''}<span>Day ${d}</span>
+      ${cur?`<span class="day-chip-meta">${cap(w.cycle||'')} ${WX[w.weather]||'☀️'}</span>`:''}
+    </div>`
+  }).join('')
+}
+
+function toggleDaySummary(day, chipEl) {
+  const bubble = document.getElementById('day-summary-bubble')
+  if (!bubble) return
+  document.querySelectorAll('.day-chip').forEach(c=>c.classList.remove('chip-active'))
+  if (_activeSummaryDay === day) {
+    bubble.classList.remove('open')
+    _activeSummaryDay = null
+    return
+  }
+  _activeSummaryDay = day
+  chipEl.classList.add('chip-active')
+  bubble.innerHTML = `<div class="dsb-header">Day ${day} — What happened</div>${buildDaySummary(day)}`
+  bubble.classList.add('open')
+}
+
 function render() {
   const w = S.world
   document.getElementById('day-label').textContent = 'Day ' + w.day
   document.getElementById('cycle-label').textContent = cap(w.cycle||'')
   document.getElementById('weather-label').textContent = WX[w.weather]||'☀️'
+  renderDayChips()
   renderProfiles()
   renderRelStats()
   renderWorldState()
@@ -643,6 +773,14 @@ async function init() {
     document.getElementById('night-overlay')?.setAttribute('opacity',isNight?'0.28':'0')
     document.getElementById('loading').classList.add('hidden')
     document.getElementById('app').classList.remove('hidden')
+    // Close summary bubble when clicking outside chips area
+    document.addEventListener('click', ev => {
+      if (!ev.target.closest('#day-chips') && !ev.target.closest('#day-summary-bubble')) {
+        document.getElementById('day-summary-bubble')?.classList.remove('open')
+        document.querySelectorAll('.day-chip').forEach(c=>c.classList.remove('chip-active'))
+        _activeSummaryDay = null
+      }
+    })
     const obs = new IntersectionObserver(entries => entries.forEach(e => {
       if(e.isIntersecting) e.target.classList.add('visible')
     }), {threshold:.1})
