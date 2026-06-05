@@ -1358,14 +1358,14 @@ function renderChat() {
 }
 
 function separateChars(positions) {
-  const MIN = 36
+  const MIN = 65
   // Don't push apart pairs that have an active interaction
   const interacting = new Set()
   Object.keys(S.chars).forEach(cid=>{
     const iw = S.chars[cid]?.interaction?.with
     if (iw) interacting.add([cid,iw].sort().join('_'))
   })
-  for(let iter=0; iter<10; iter++) {
+  for(let iter=0; iter<25; iter++) {
     for(let i=0; i<positions.length; i++) {
       for(let j=i+1; j<positions.length; j++) {
         if (interacting.has([positions[i].id,positions[j].id].sort().join('_'))) continue
@@ -1382,10 +1382,11 @@ function separateChars(positions) {
       }
     }
   }
-  // clamp x to safe zone — full island width
-  const W=getWorldWidth()
+  // clamp to safe zone — x across island, y to ground band only
+  const W=getWorldWidth(), H=window.innerHeight
   positions.forEach(p=>{
     p.px=Math.max(W*0.05, Math.min(W*0.90, p.px))
+    p.py=Math.max(H*0.40, Math.min(H*0.90, p.py))
   })
   return positions
 }
