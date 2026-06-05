@@ -138,8 +138,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #char-ryan:hover{filter:drop-shadow(0 0 14px rgba(251,146,60,.55))}
 #char-jade:hover{filter:drop-shadow(0 0 14px rgba(244,114,182,.55))}
 #char-judy:hover{filter:drop-shadow(0 0 14px rgba(45,212,191,.55))}
-.bubble::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);
-  border:4px solid transparent;border-top-color:rgba(0,0,0,.08);border-bottom:0}
+.bubble::after{display:none}
 .bubble-name{font-size:6px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:2px}
 #char-marcus .bubble-name{color:#93c5fd}
 #char-ryan .bubble-name{color:#fde68a}
@@ -1428,6 +1427,15 @@ function nudgeBubbles(positions) {
   }
   positions.forEach(p=>{
     document.getElementById('bubble-'+p.id).style.marginLeft = offsets[p.id] + 'px'
+  })
+  // Vertical stagger: sort by final bx, step up 28px for each bubble still within BUBBLE_W of the previous
+  const sorted = [...positions].sort((a,b) => (a.px+offsets[a.id]) - (b.px+offsets[b.id]))
+  let lastBx = -999, level = 0
+  sorted.forEach(p => {
+    const bx = p.px + offsets[p.id]
+    level = (bx - lastBx < BUBBLE_W) ? level + 1 : 0
+    lastBx = bx
+    document.getElementById('bubble-'+p.id).style.bottom = (70 + level * 28) + 'px'
   })
 }
 
