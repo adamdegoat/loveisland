@@ -9,29 +9,46 @@
     {
       "id": "marcus_tent",
       "type": "tent",
+      "level": 1,
+      "baked": true,
       "x": 75,
       "y": 25,
       "builder": "marcus",
       "day": 1,
-      "label": "Marcus’s Tent"
+      "label": "Marcus's Tent"
     },
     {
       "id": "ryan_house",
       "type": "house",
+      "level": 1,
+      "baked": true,
       "x": 50,
       "y": 50,
       "builder": "ryan",
       "day": 1,
-      "label": "Ryan’s House"
+      "label": "Ryan's House"
     },
     {
       "id": "jade_hammock",
       "type": "hammock",
+      "level": 1,
+      "baked": true,
       "x": 20,
       "y": 60,
       "builder": "jade",
       "day": 1,
-      "label": "Jade’s Hammock"
+      "label": "Jade's Hammock"
+    },
+    {
+      "id": "shared_firepit",
+      "type": "firepit",
+      "level": 1,
+      "baked": true,
+      "x": 50,
+      "y": 72,
+      "builder": "ryan",
+      "day": 1,
+      "label": "Fire Pit"
     }
   ],
   "resources": {
