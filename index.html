@@ -1199,11 +1199,49 @@ const MOOD_MAP = {
   heartbroken:'heartbroken',devastated:'heartbroken',grieving:'heartbroken',hurt:'heartbroken',
   angry:'angry',frustrated:'angry',irritated:'angry',furious:'angry',annoyed:'angry',
   shocked:'shocked',surprised:'shocked',stunned:'shocked',shaken:'shocked',overwhelmed:'shocked',terrified:'shocked',
-  flirtatious:'flirtatious',playful:'flirtatious',teasing:'flirtatious',
-  smitten:'smitten',lovestruck:'smitten',infatuated:'smitten',
-  jealous:'jealous',envious:'jealous',
-  embarrassed:'embarrassed',flustered:'embarrassed',shy:'embarrassed',
+  flirtatious:'flirtatious',playful:'flirtatious',teasing:'flirtatious',coy:'flirtatious',mischievous:'flirtatious',
+  smitten:'smitten',lovestruck:'smitten',infatuated:'smitten',adoring:'smitten',tender:'smitten',
+  jealous:'jealous',envious:'jealous',possessive:'jealous',insecure:'jealous',
+  embarrassed:'embarrassed',flustered:'embarrassed',shy:'embarrassed',bashful:'embarrassed',sheepish:'embarrassed',
   lustful:'lustful',seductive:'lustful',longing:'lustful',yearning:'lustful',
+  // ── extra vocabulary the narrator actually produces ──
+  grateful:'happy',thankful:'happy',eager:'happy',energetic:'happy',lively:'happy',delighted:'happy',
+  proud:'happy',relieved:'happy',upbeat:'happy',gleeful:'happy',
+  quiet:'calm',reserved:'calm',mellow:'calm',soothed:'calm',gentle:'calm',tranquil:'calm',
+  inspired:'hopeful',encouraged:'hopeful',expectant:'hopeful',
+  wary:'guarded',watchful:'guarded',alert:'guarded',vigilant:'guarded',cautious:'guarded',
+  determined:'guarded',focused:'guarded',resolute:'guarded',intent:'guarded',suspicious:'guarded',
+  defensive:'guarded',tense:'guarded',uneasy:'guarded',apprehensive:'guarded',nervous:'guarded',
+  concerned:'sad',worried:'sad',anxious:'sad',troubled:'sad',withdrawn:'sad',disheartened:'sad',
+  somber:'sad',wistful:'sad',forlorn:'sad',dejected:'sad',
+  scared:'shocked',afraid:'shocked',frightened:'shocked',alarmed:'shocked',startled:'shocked',panicked:'shocked',
+}
+
+// Fallback: map ANY unknown mood word to the closest expression by keyword stems,
+// so the AI's open-ended mood vocabulary always produces a real face (not blank neutral).
+const MOOD_KEYWORDS = [
+  [['terr','scare','afraid','fright','panic','horrif','alarm','startl'],'shocked'],
+  [['shock','stun','surpris','astonish'],'shocked'],
+  [['heartbr','devastat','griev','crush','anguish','despair','sorrow'],'heartbroken'],
+  [['angr','furious','rage','irrita','frustrat','annoy','resent','bitter','indignant','agitat'],'angry'],
+  [['jealous','envious','possess','insecur'],'jealous'],
+  [['lust','desire','yearn','crav'],'lustful'],
+  [['smitten','adore','infatuat','enamor','tender','lovestruck'],'smitten'],
+  [['flirt','tease','playful','coy','mischiev','flirta'],'flirtatious'],
+  [['embarrass','flus','bashful','sheepish','self-consc'],'embarrassed'],
+  [['worri','concern','anxious','nervous','troubl','uneas','apprehens','distress','dread'],'sad'],
+  [['sad','lonel','melanch','gloom','withdraw','somber','forlorn','wistful','deject','down','blue','heavy','exhaust','weary','tired','drain','spent','fatigu','numb','defeat','hopeless','vulnerable'],'sad'],
+  [['happy','joy','glad','cheer','eager','excit','elat','giddy','deligh','glee','energ','lively','upbeat','grate','thank','proud','reliev','content','warm'],'happy'],
+  [['calm','peace','seren','relax','quiet','mellow','tranquil','soothe','gentle','reserv','soft'],'calm'],
+  [['hope','optimis','curious','inspir','encourag','expect','wishful'],'hopeful'],
+  [['guard','wary','watch','caut','distant','cold','suspic','defensiv','vigil','tense','alert','determin','focus','resolv','intent','restless','closed','steel','firm','stoic','protect','steadfast','brace','grim','serious','reluctant'],'guarded'],
+  [['smug','smirk','cocky','sly','confiden','proud'],'flirtatious'],
+  [['shy','timid'],'embarrassed'],
+  [['thought','reflect','pensiv','contempl','wonder'],'neutral'],
+]
+function moodKeywordFace(mk){
+  for(const [stems,face] of MOOD_KEYWORDS){ if(stems.some(s=>mk.includes(s))) return face }
+  return null
 }
 
 // ── SGT TIME ─────────────────────────────────────────────
@@ -1398,7 +1436,7 @@ function initTapStats() {
 function applyFace(cid) {
   const c=S.chars[cid]; if(!c) return
   const mk=(c.mood||'neutral').toLowerCase()
-  const fk=MOOD_MAP[mk]||'neutral'
+  const fk=MOOD_MAP[mk]||moodKeywordFace(mk)||'neutral'
   const f=FACES[fk]||FACES.neutral
 
   const bl=document.getElementById('brow-l-'+cid)
