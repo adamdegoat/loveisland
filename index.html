@@ -1540,11 +1540,8 @@ function renderChat() {
         const col=getCharColor(spk)
         html+=`<div class="cl-msg${lc}"><span class="cl-spk" style="color:${col}">${cap(spk)}</span> <span class="cl-line">${d.line||''}</span></div>`
       })
-    } else {
-      const ch=e.character||''
-      const t=e.thought||e.action||''
-      html+=`<div class="cl ${ch}${lc}">${timeTag}<span class="cl-label">${ch.toUpperCase()}·</span> ${t}</div>`
     }
+    // standalone character thought lines are intentionally not shown in the feed
   })
   feed.innerHTML=html
   feed.scrollTop=feed.scrollHeight
