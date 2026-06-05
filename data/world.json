@@ -1,10 +1,10 @@
 {
   "day": 3,
-  "cycle": "night",
+  "cycle": "morning",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Ryan's gentleness with the stray moves Jade and brings even Marcus to help, while Judy finds in the lost puppy a mirror of her own survival.",
+  "pulse": "Marcus let his guard down with Jade and held her hand, and now he can't stop thinking about her—while Ryan is too exhausted to notice what's happening between them.",
   "structures": [
     {
       "id": "marcus_tent",
@@ -52,17 +52,17 @@
     }
   ],
   "resources": {
+    "food": 21,
+    "water": 10,
+    "wood": 32,
+    "medicine": 15
+  },
+  "resources_prev": {
     "food": 37,
     "water": 21,
     "wood": 33,
     "medicine": 15
   },
-  "resources_prev": {
-    "food": 41,
-    "water": 24,
-    "wood": 33,
-    "medicine": 15
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-05:night"
+  "last_cycle_key": "2026-06-06:morning"
 }
