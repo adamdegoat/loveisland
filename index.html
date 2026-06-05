@@ -84,11 +84,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .dhp-dot{width:5px;height:5px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:cdot 2s ease-in-out infinite}
 .dhp-chip-meta{font-size:10px;color:rgba(255,255,255,.28);font-weight:500;margin-left:auto;white-space:nowrap}
 .dhp-drama{font-size:13px;color:rgba(255,255,255,.7);line-height:1.57;font-style:italic;
-  padding:12px 14px 10px;border-bottom:1px solid rgba(255,255,255,.05)}
-.dhp-bullets{padding:9px 14px 12px;display:flex;flex-direction:column;gap:6px}
-.dhp-bullet{font-size:11px;color:rgba(255,255,255,.48);line-height:1.5;
-  padding-left:10px;position:relative}
-.dhp-bullet::before{content:'·';position:absolute;left:0;color:rgba(255,255,255,.18)}
+  padding:12px 14px 14px}
 
 #day-stamp{position:fixed;top:22px;left:18px;z-index:30;pointer-events:none;line-height:1.15}
 #pulse{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:30;pointer-events:none;
@@ -202,6 +198,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .cl-line{color:#e2e8f0;opacity:.9}
 .cl-absent{font-family:'VT323',monospace;font-size:12px;padding:2px 4px;opacity:.55;font-style:italic;border-left:2px solid rgba(255,255,255,.08);margin:3px 0 4px;padding-left:7px}
 .cl-absent-txt{color:#94a3b8}
+.cl-time{font-family:'VT323',monospace;font-size:11px;color:rgba(255,255,255,.28);letter-spacing:.6px;float:right;margin-left:6px;white-space:nowrap}
+.cl-latest{background:rgba(255,45,120,.06);border-left:2px solid rgba(255,45,120,.32);padding-left:5px;margin-left:-2px;border-radius:0 4px 4px 0}
+.cl-ts-latest{background:rgba(255,45,120,.11)!important;color:rgba(255,160,200,.85)!important;border:1px solid rgba(255,45,120,.22);border-radius:5px;padding-left:8px;padding-right:8px}
 
 /* ── HUD ── */
 #hud{position:fixed;bottom:0;left:0;right:0;z-index:100;
@@ -1301,16 +1300,23 @@ function renderChat() {
   const feed=document.getElementById('chat-feed')
   if(!feed||!S.feed) return
   const entries=S.feed.slice(-45)
+  // Find the latest cycle label so we can highlight it
+  let latestLbl=''
+  entries.forEach(e=>{ latestLbl=cycleLabel(e) })
   let html=''
   let lastLabel=''
   entries.forEach(e=>{
     const lbl=cycleLabel(e)
+    const isLatest = lbl===latestLbl
+    const lc = isLatest ? ' cl-latest' : ''
+    const msgTime = fmtSGT(e.timestamp) || CYCLE_HOUR[e.cycle] || ''
+    const timeTag = msgTime ? `<span class="cl-time">D${e.day||1}·${msgTime.replace(' ','')}</span>` : ''
     if(lbl!==lastLabel){
-      html+=`<div class="cl-ts">${lbl}</div>`
+      html+=`<div class="cl-ts${isLatest?' cl-ts-latest':''}">${lbl}</div>`
       lastLabel=lbl
     }
     if(e.type==='interaction'){
-      html+=`<div class="cl interaction"><span class="cl-label">${e.description||''}</span></div>`
+      html+=`<div class="cl interaction${lc}">${timeTag}<span class="cl-label">${e.description||''}</span></div>`
       // absent character context
       const present=(e.characters||[]).map(c=>c.toLowerCase())
       const absent=Object.keys(S.chars).filter(c=>!present.includes(c))
@@ -1318,7 +1324,7 @@ function renderChat() {
         const ctx=entries.find(x=>x.character===cid&&x.cycle===e.cycle&&x.day===e.day)
         if(ctx&&(ctx.action||ctx.thought)){
           const col=getCharColor(cid)
-          html+=`<div class="cl-absent"><span style="color:${col};opacity:.6">${cap(cid)}</span><span class="cl-absent-txt"> — ${ctx.action||ctx.thought}</span></div>`
+          html+=`<div class="cl-absent${lc}"><span style="color:${col};opacity:.6">${cap(cid)}</span><span class="cl-absent-txt"> — ${ctx.action||ctx.thought}</span></div>`
         }
       })
       const dlg=e.dialogue||[]
@@ -1326,12 +1332,12 @@ function renderChat() {
       arr.forEach(d=>{
         const spk=(d.speaker||'').toLowerCase()
         const col=getCharColor(spk)
-        html+=`<div class="cl-msg"><span class="cl-spk" style="color:${col}">${cap(spk)}</span> <span class="cl-line">${d.line||''}</span></div>`
+        html+=`<div class="cl-msg${lc}"><span class="cl-spk" style="color:${col}">${cap(spk)}</span> <span class="cl-line">${d.line||''}</span></div>`
       })
     } else {
       const ch=e.character||''
       const t=e.thought||e.action||''
-      html+=`<div class="cl ${ch}"><span class="cl-label">${ch.toUpperCase()}·</span> ${t}</div>`
+      html+=`<div class="cl ${ch}${lc}">${timeTag}<span class="cl-label">${ch.toUpperCase()}·</span> ${t}</div>`
     }
   })
   feed.innerHTML=html
@@ -1373,21 +1379,24 @@ function separateChars(positions) {
 
 function nudgeBubbles(positions) {
   const BUBBLE_W = 150
-  for(let i=0; i<positions.length; i++) {
-    document.getElementById('bubble-'+positions[i].id).style.marginLeft='0px'
-  }
+  const offsets = {}
+  positions.forEach(p=>{ offsets[p.id] = 0 })
   for(let i=0; i<positions.length; i++) {
     for(let j=i+1; j<positions.length; j++) {
-      const dx=Math.abs(positions[j].px - positions[i].px)
-      const dy=Math.abs(positions[j].py - positions[i].py)
-      if(dx < BUBBLE_W && dy < 80) {
-        const shift=(BUBBLE_W-dx)/2+8
-        const leftFirst=positions[i].px < positions[j].px
-        document.getElementById('bubble-'+positions[i].id).style.marginLeft=(leftFirst?-shift:shift)+'px'
-        document.getElementById('bubble-'+positions[j].id).style.marginLeft=(leftFirst?shift:-shift)+'px'
+      const dx = positions[j].px - positions[i].px
+      const absDx = Math.abs(dx)
+      const dy = Math.abs(positions[j].py - positions[i].py)
+      if(absDx < BUBBLE_W && dy < 80) {
+        const shift = (BUBBLE_W - absDx) / 2 + 8
+        const leftFirst = positions[i].px <= positions[j].px
+        offsets[positions[i].id] += leftFirst ? -shift : shift
+        offsets[positions[j].id] += leftFirst ? shift : -shift
       }
     }
   }
+  positions.forEach(p=>{
+    document.getElementById('bubble-'+p.id).style.marginLeft = offsets[p.id] + 'px'
+  })
 }
 
 // ── INTERACTION RENDERING ────────────────────────────────────
@@ -1994,19 +2003,6 @@ function showDayHistorySummary(day) {
   const lastIntr = interactions[interactions.length-1]
   const dramaLine = lastIntr?.description
     || [...entries].reverse().find(e=>e.thought)?.thought || '—'
-  const seen = new Set()
-  const highlights = []
-  ;['night','evening','midday','morning'].forEach(cyc=>{
-    entries.filter(e=>e.cycle===cyc && e.character && !seen.has(e.character) && (e.thought||e.action))
-      .forEach(e=>{
-        if(highlights.length>=3) return
-        const nm = S.chars[e.character]?.name?.split(' ')[0] || cap(e.character)
-        const col = S.chars[e.character]?.color || '#e2e8f0'
-        highlights.push({nm,col,text:(e.thought||e.action||'').slice(0,72)})
-        seen.add(e.character)
-      })
-  })
-  const bulletHtml = highlights.map(h=>`<div class="dhp-bullet"><span style="color:${h.col};font-weight:700">${h.nm}</span> — ${h.text}${h.text.length>=72?'…':''}</div>`).join('')
   inner.innerHTML = `
     <div class="dhp-head">
       <span>Day ${day}</span>
@@ -2014,7 +2010,6 @@ function showDayHistorySummary(day) {
     </div>
     <div class="dhp-scroll">
       <div class="dhp-drama">"${dramaLine}"</div>
-      ${bulletHtml ? `<div class="dhp-bullets">${bulletHtml}</div>` : '<div style="font-size:11px;color:rgba(255,255,255,.3);padding:10px 14px">No story data yet.</div>'}
     </div>`
 }
 
