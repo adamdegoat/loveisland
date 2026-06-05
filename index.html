@@ -44,6 +44,12 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* Fireflies near the firepit (parent group's opacity gates night-only visibility) */
 @keyframes firefly{0%,100%{opacity:0;transform:translate(0,0)}25%{opacity:.95}50%{opacity:.35;transform:translate(7px,-9px)}75%{opacity:.85}}
 .firefly{transform-box:view-box;animation:firefly 4.2s ease-in-out infinite}
+/* Dog (puppy) ears + tail — driven by applyDogExtras; smooth transitions + tail wag */
+.dog-ear{transform-box:view-box;transition:transform .45s ease}
+.dog-tail{transform-box:view-box;transition:transform .45s ease}
+@keyframes tailwag{0%,100%{transform:rotate(-20deg)}50%{transform:rotate(20deg)}}
+.dog-tail.wag{animation:tailwag .45s ease-in-out infinite}
+.dog-tail.slow{animation:tailwag 1.5s ease-in-out infinite}
 
 /* SVG transitions */
 #sky-bg,#sun-group,#moon-group,#night-stars,#night-overlay,#sun-reflection{transition:opacity 2.5s ease}
@@ -142,6 +148,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .nametag{font-size:7.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;
   margin:4px auto 0;padding:2px 6px;border-radius:20px;width:fit-content;white-space:nowrap;
   background:rgba(0,0,0,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.nametag:empty{display:none}  /* unnamed stray: hide tag until it's named */
 #char-marcus .nametag{color:#93c5fd;border:1px solid rgba(147,197,253,.2)}
 #char-ryan .nametag{color:#fde68a;border:1px solid rgba(253,230,138,.2)}
 #char-jade .nametag{color:#fbcfe8;border:1px solid rgba(249,168,212,.2)}
@@ -1459,6 +1466,9 @@ function applyFace(cid) {
     if(['sad','lonely','heartbroken','melancholy'].includes(mk)) svg.classList.add('sad')
     if(['angry','frustrated','furious'].includes(mk)) svg.classList.add('angry')
   }
+
+  // Dogs: translate the expression into puppy body language (ears + tail)
+  if(c.species==='dog') applyDogExtras(cid, fk)
 }
 
 function updateBubble(cid) {
@@ -2081,19 +2091,120 @@ function makeGenericCharSVG(cid, color, skin) {
   </svg>`
 }
 
+// ── DOG MODEL (brown Great Dane puppy) ──────────────────────
+// A sitting puppy whose face uses the SAME rig geometry (eyes ~-72, mouth -64.5,
+// brows) so applyFace drives eyes/brows/mouth/blush unchanged. Dog-specific parts
+// (floppy ears + tail) are animated by applyDogExtras based on the mood's expression.
+function makeDogSVG(cid){
+  const coat='#9c6b43', dark='#5e3a22', light='#caa078', nose='#2b2118'
+  return `<svg class="char-svg dog-svg" id="svg-${cid}" width="30" height="46" viewBox="-20 -92 40 96" xmlns="http://www.w3.org/2000/svg">
+    <g id="tail-${cid}" class="dog-tail" style="transform-box:view-box;transform-origin:13px -24px">
+      <path d="M 12 -24 Q 21 -28 23 -39 Q 24 -45 21 -50" stroke="${coat}" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    <ellipse cx="-13" cy="-2" rx="6" ry="3.5" fill="${dark}"/>
+    <ellipse cx="13" cy="-2" rx="6" ry="3.5" fill="${dark}"/>
+    <path d="M -13 -10 C -15 -27 -10 -45 0 -45 C 10 -45 15 -27 13 -10 C 12 -3 8 -2 0 -2 C -8 -2 -12 -3 -13 -10 Z" fill="${coat}"/>
+    <ellipse cx="0" cy="-22" rx="8" ry="13" fill="${light}" opacity=".5"/>
+    <rect x="-7" y="-26" width="6" height="25" rx="3" fill="${coat}"/>
+    <rect x="1" y="-26" width="6" height="25" rx="3" fill="${coat}"/>
+    <ellipse cx="-4" cy="-1" rx="5" ry="3" fill="${light}"/>
+    <ellipse cx="4" cy="-1" rx="5" ry="3" fill="${light}"/>
+    <ellipse cx="0" cy="-70" rx="14" ry="13" fill="${coat}"/>
+    <g id="ear-l-${cid}" class="dog-ear" style="transform-box:view-box;transform-origin:-11px -79px">
+      <path d="M -11 -79 C -22 -77 -25 -64 -20 -53 C -17 -48 -12 -49 -11 -55 C -11 -64 -11 -73 -11 -79 Z" fill="${dark}"/>
+    </g>
+    <g id="ear-r-${cid}" class="dog-ear" style="transform-box:view-box;transform-origin:11px -79px">
+      <path d="M 11 -79 C 22 -77 25 -64 20 -53 C 17 -48 12 -49 11 -55 C 11 -64 11 -73 11 -79 Z" fill="${dark}"/>
+    </g>
+    <ellipse cx="0" cy="-61" rx="8.5" ry="6.5" fill="${light}"/>
+    <ellipse cx="0" cy="-66" rx="3" ry="2.2" fill="${nose}"/>
+    <path id="brow-l-${cid}" d="M -9 -77.5 L -3 -76" stroke="${dark}" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path id="brow-r-${cid}" d="M 3 -76 L 9 -77.5" stroke="${dark}" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <g id="eyes-normal-${cid}">
+      <ellipse cx="-4.5" cy="-72.5" rx="3" ry="2.7" fill="white"/><ellipse cx="4.5" cy="-72.5" rx="3" ry="2.7" fill="white"/>
+      <circle cx="-4.5" cy="-72.5" r="2" fill="#1a1a1a"/><circle cx="4.5" cy="-72.5" r="2" fill="#1a1a1a"/>
+    </g>
+    <g id="eyes-wide-${cid}" display="none">
+      <ellipse cx="-4.5" cy="-72.5" rx="3.7" ry="3.5" fill="white"/><ellipse cx="4.5" cy="-72.5" rx="3.7" ry="3.5" fill="white"/>
+      <circle cx="-4.5" cy="-72" r="2.4" fill="#1a1a1a"/><circle cx="4.5" cy="-72" r="2.4" fill="#1a1a1a"/>
+      <circle cx="-3.3" cy="-73.6" r=".8" fill="white"/><circle cx="5.7" cy="-73.6" r=".8" fill="white"/>
+    </g>
+    <g id="eyes-narrow-${cid}" display="none">
+      <path d="M -7.5 -72.5 Q -4.5 -70.5 -1.5 -72.5" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <path d="M 1.5 -72.5 Q 4.5 -70.5 7.5 -72.5" stroke="#1a1a1a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    </g>
+    <g id="eyes-happy-${cid}" display="none">
+      <path d="M -7.5 -72.5 Q -4.5 -69.5 -1.5 -72.5" stroke="#1a1a1a" stroke-width="2.5" fill="${coat}" stroke-linecap="round"/>
+      <path d="M 1.5 -72.5 Q 4.5 -69.5 7.5 -72.5" stroke="#1a1a1a" stroke-width="2.5" fill="${coat}" stroke-linecap="round"/>
+    </g>
+    <g id="eyes-bedroom-${cid}" display="none">
+      <ellipse cx="-4.5" cy="-71.5" rx="3" ry="1.8" fill="white"/><ellipse cx="4.5" cy="-71.5" rx="3" ry="1.8" fill="white"/>
+      <circle cx="-4.5" cy="-71.5" r="1.5" fill="#1a1a1a"/><circle cx="4.5" cy="-71.5" r="1.5" fill="#1a1a1a"/>
+    </g>
+    <g id="eyes-heart-${cid}" display="none">
+      <path d="M -6.5 -73.5 Q -6.5 -76.5 -4.5 -75 Q -2.5 -76.5 -2.5 -73.5 Q -2.5 -71 -4.5 -69.5 Q -6.5 -71 -6.5 -73.5Z" fill="#f472b6"/>
+      <path d="M 2.5 -73.5 Q 2.5 -76.5 4.5 -75 Q 6.5 -76.5 6.5 -73.5 Q 6.5 -71 4.5 -69.5 Q 2.5 -71 2.5 -73.5Z" fill="#f472b6"/>
+    </g>
+    <g id="eyes-teary-${cid}" display="none">
+      <ellipse cx="-4.5" cy="-72.5" rx="3" ry="2.7" fill="white"/><ellipse cx="4.5" cy="-72.5" rx="3" ry="2.7" fill="white"/>
+      <circle cx="-4.5" cy="-72.5" r="2" fill="#1a1a1a"/><circle cx="4.5" cy="-72.5" r="2" fill="#1a1a1a"/>
+      <ellipse cx="-4.5" cy="-69" rx="1.2" ry="1.9" fill="#93c5fd" opacity=".88"/>
+      <ellipse cx="4.5" cy="-69" rx="1.2" ry="1.9" fill="#93c5fd" opacity=".88"/>
+    </g>
+    <g id="blush-${cid}" display="none">
+      <ellipse cx="-9" cy="-63" rx="4" ry="2.4" fill="#fda4af" opacity=".45"/>
+      <ellipse cx="9" cy="-63" rx="4" ry="2.4" fill="#fda4af" opacity=".45"/>
+    </g>
+    <path id="mouth-${cid}" d="M -4 -64.5 Q 0 -62 4 -64.5" stroke="${nose}" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+  </svg>`
+}
+// Map each expression bucket -> puppy body language (ear rotation, tail behaviour)
+const DOG_POSE = {
+  happy:      {l:-22,r:22, tail:'wag'},
+  smitten:    {l:-22,r:22, tail:'wag'},
+  flirtatious:{l:-18,r:18, tail:'wag'},
+  hopeful:    {l:-20,r:20, tail:'slow'},
+  calm:       {l:-6, r:6,  tail:'slow'},
+  neutral:    {l:0,  r:0,  tail:'none'},
+  guarded:    {l:16, r:-16,tail:'none'},
+  jealous:    {l:16, r:-16,tail:'none'},
+  embarrassed:{l:10, r:-10,tail:'low'},
+  sad:        {l:22, r:-22,tail:'tuck'},
+  heartbroken:{l:26, r:-26,tail:'tuck'},
+  angry:      {l:30, r:-30,tail:'none'},
+  shocked:    {l:34, r:-34,tail:'tuck'},
+  lustful:    {l:-10,r:10, tail:'slow'},
+}
+function applyDogExtras(cid, fk){
+  const p = DOG_POSE[fk] || DOG_POSE.neutral
+  const el = document.getElementById('ear-l-'+cid); const er = document.getElementById('ear-r-'+cid)
+  if(el) el.style.transform = `rotate(${p.l}deg)`
+  if(er) er.style.transform = `rotate(${p.r}deg)`
+  const tail = document.getElementById('tail-'+cid)
+  if(tail){
+    tail.classList.remove('wag','slow')
+    tail.style.transform = ''
+    if(p.tail==='wag') tail.classList.add('wag')
+    else if(p.tail==='slow') tail.classList.add('slow')
+    else if(p.tail==='tuck') tail.style.transform = 'rotate(58deg)'
+    else if(p.tail==='low') tail.style.transform = 'rotate(28deg)'
+  }
+}
+
 function ensureCharDom(cid) {
   if(document.getElementById('char-'+cid)) return
   const c = S.chars[cid] || {}
   const color = c.color || '#a78bfa'
-  const firstName = (c.name||cid).split(' ')[0].toUpperCase()
+  const isDog = c.species === 'dog'
+  const firstName = c.name ? c.name.split(' ')[0].toUpperCase() : ''
   const div = document.createElement('div')
   div.className = 'char'
   div.id = 'char-' + cid
   div.innerHTML =
-    makeGenericCharSVG(cid, color) +
-    `<div class="nametag" style="color:${color};border:1px solid ${color}33">${firstName}</div>` +
+    (isDog ? makeDogSVG(cid) : makeGenericCharSVG(cid, color)) +
+    `<div class="nametag" id="nametag-${cid}" style="color:${color};border:1px solid ${color}33">${firstName}</div>` +
     `<div class="bubble" id="bubble-${cid}" style="border-top:2px solid ${color}80">` +
-      `<div class="bubble-name" style="color:${color}">${firstName}</div>` +
+      (firstName ? `<div class="bubble-name" id="bubblename-${cid}" style="color:${color}">${firstName}</div>` : `<div class="bubble-name" id="bubblename-${cid}" style="color:${color}"></div>`) +
       `<div class="bubble-text" id="thought-${cid}"></div>` +
     `</div>`
   document.getElementById('world').appendChild(div)
@@ -2138,6 +2249,10 @@ function updateWorld() {
     el.style.top=(p.py/H*100)+'%'
     applyFace(p.id)
     updateBubble(p.id)
+    // keep nametag/bubble label in sync (so an unnamed stray's tag appears once it's named)
+    const nm = S.chars[p.id]?.name ? S.chars[p.id].name.split(' ')[0].toUpperCase() : ''
+    const ntag = document.getElementById('nametag-'+p.id); if(ntag && ntag.textContent!==nm) ntag.textContent = nm
+    const blab = document.getElementById('bubblename-'+p.id); if(blab && blab.textContent!==nm) blab.textContent = nm
   })
 
   nudgeBubbles(positions)
