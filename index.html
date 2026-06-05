@@ -1158,6 +1158,7 @@ function updateStatusBar() {
   })
   if(S.world?.cycle && !completedToday.has(S.world.cycle))
     document.getElementById('stp-'+S.world.cycle)?.classList.add('current')
+  if(typeof setHudVar==='function') setHudVar()  // HUD content just changed → re-measure clearance
 }
 
 // ── FACE/CHAR ─────────────────────────────────────────────
@@ -1396,21 +1397,30 @@ function separateChars(positions) {
 }
 
 function nudgeBubbles(positions) {
-  const BUBBLE_W = 90   // matches new 80px max-width + margin
-  const BODY_CLEAR = 52  // bubble half(40) + body half(10) + 2px gap
+  const GAP = 8           // min clear space between any two bubbles
+  const BODY_HALF = 10    // half-width of a character body
+  // Measure each bubble's REAL rendered size from the DOM (never guess a constant —
+  // the rendered width varies with text length and breakpoint, so a fixed value
+  // misses near-miss overlaps). Fall back only if the element isn't laid out yet.
+  const dim = {}
+  positions.forEach(p=>{
+    const el = document.getElementById('bubble-'+p.id)
+    dim[p.id] = { w: (el && el.offsetWidth) || 90, h: (el && el.offsetHeight) || 50 }
+  })
   const offsets = {}
   positions.forEach(p=>{ offsets[p.id] = 0 })
-  // Pass 1: bubble-vs-bubble horizontal separation
+  // Pass 1: bubble-vs-bubble horizontal separation, using each pair's true widths
   for(let i=0; i<positions.length; i++) {
     for(let j=i+1; j<positions.length; j++) {
-      const dx = positions[j].px - positions[i].px
-      const absDx = Math.abs(dx)
-      const dy = Math.abs(positions[j].py - positions[i].py)
-      if(absDx < BUBBLE_W && dy < 80) {
-        const shift = (BUBBLE_W - absDx) / 2 + 8
-        const leftFirst = positions[i].px <= positions[j].px
-        offsets[positions[i].id] += leftFirst ? -shift : shift
-        offsets[positions[j].id] += leftFirst ? shift : -shift
+      const a = positions[i], b = positions[j]
+      const absDx = Math.abs(b.px - a.px)
+      const dy = Math.abs(b.py - a.py)
+      const needed = (dim[a.id].w + dim[b.id].w) / 2 + GAP
+      if(absDx < needed && dy < 80) {
+        const shift = (needed - absDx) / 2
+        const leftFirst = a.px <= b.px
+        offsets[a.id] += leftFirst ? -shift : shift
+        offsets[b.id] += leftFirst ? shift : -shift
       }
     }
   }
@@ -1418,36 +1428,40 @@ function nudgeBubbles(positions) {
   for(let i=0; i<positions.length; i++) {
     for(let j=0; j<positions.length; j++) {
       if(i===j) continue
+      const clear = dim[positions[i].id].w / 2 + BODY_HALF + 2  // bubble half + body half + gap
       const bx = positions[i].px + offsets[positions[i].id]
       const dist = bx - positions[j].px
-      if(Math.abs(dist) < BODY_CLEAR) {
-        offsets[positions[i].id] += dist >= 0 ? (BODY_CLEAR - dist) : -(BODY_CLEAR + dist)
+      if(Math.abs(dist) < clear) {
+        offsets[positions[i].id] += dist >= 0 ? (clear - dist) : -(clear + dist)
       }
     }
   }
   positions.forEach(p=>{
     document.getElementById('bubble-'+p.id).style.marginLeft = offsets[p.id] + 'px'
   })
-  // Vertical stagger: 2D collision avoidance using actual measured bubble height
-  const GAP = 8
+  // Vertical stagger: 2D collision avoidance using each bubble's real measured size.
+  // Horizontal overlap is a true rectangle test on measured widths, so two bubbles
+  // can never visually overlap regardless of where characters move next cycle.
   const sorted = [...positions].sort((a,b) => (a.px+offsets[a.id]) - (b.px+offsets[b.id]))
   const placed = []
   sorted.forEach(p => {
     const bx = p.px + offsets[p.id]
     const el = document.getElementById('bubble-'+p.id)
-    const ph = (el.offsetHeight || 50) + GAP
+    const w = dim[p.id].w
+    const ph = dim[p.id].h + GAP
     let bot = 70, clear = false
     while(!clear) {
       clear = true
       for(const q of placed) {
+        const xOverlap = Math.abs(bx - q.bx) < (w + q.w) / 2 + GAP
         // horizontal overlap + vertical overlap (rectangle test)
-        if(Math.abs(bx - q.bx) < BUBBLE_W && !(bot >= q.bot + q.h || bot + ph <= q.bot)) {
+        if(xOverlap && !(bot >= q.bot + q.h || bot + ph <= q.bot)) {
           bot = q.bot + q.h   // jump directly above q
           clear = false; break
         }
       }
     }
-    placed.push({bx, bot, h: ph})
+    placed.push({bx, bot, h: ph, w})
     el.style.bottom = bot + 'px'
   })
 }
@@ -2125,9 +2139,17 @@ async function loadOracle() {
 
 function setHudVar(){
   const h = document.getElementById('hud')?.getBoundingClientRect().height
-  if(h) document.documentElement.style.setProperty('--above-hud', (Math.ceil(h)+10)+'px')
+  if(h) document.documentElement.style.setProperty('--above-hud', (Math.ceil(h)+12)+'px')
 }
 window.addEventListener('resize', setHudVar)
+// Keep --above-hud in sync with the HUD's REAL height at all times. On mobile the
+// HUD wraps to extra rows (and grows as status text / fonts change), so a one-time
+// measure goes stale and the Oracle button (z-index 52) ends up under the HUD
+// (z-index 100). A ResizeObserver re-measures on every HUD size change.
+const _hudEl = document.getElementById('hud')
+if(_hudEl && window.ResizeObserver){
+  new ResizeObserver(setHudVar).observe(_hudEl)
+}
 
 setInterval(updateStatusBar,60000)
 init().then(()=>{ loadOracle(); initTapStats(); setHudVar() })
