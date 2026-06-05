@@ -173,6 +173,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #chat-panel:hover #feed-pill,
 #chat-panel.feed-open #feed-pill{background:rgba(255,46,120,.5)}
 #chat-header{
+  position:relative;
   padding:5px 14px 5px;font-family:'VT323',monospace;font-size:16px;color:#ff2d78;
   letter-spacing:2.5px;display:flex;align-items:center;justify-content:center;gap:7px;
   cursor:pointer;flex-shrink:0;user-select:none;
@@ -182,7 +183,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #chat-panel.feed-open #chat-header{border-bottom-color:rgba(255,255,255,.07)}
 #chat-dot{width:6px;height:6px;border-radius:50%;background:#ff2d78;animation:cdot 2s ease-in-out infinite;flex-shrink:0}
 @keyframes cdot{0%,100%{opacity:1}50%{opacity:.2}}
-#feed-label{display:inline-flex;align-items:center;gap:7px}
+/* Absolutely center the ISLAND FEED label (on all widths) so the chevron's
+   margin-left:auto can't push it left under the Island Oracle widget. */
+#feed-label{display:inline-flex;align-items:center;gap:7px;position:absolute;left:50%;transform:translateX(-50%);pointer-events:none}
 #chat-chevron{
   margin-left:auto;font-size:11px;color:rgba(255,255,255,.35);
   transition:transform .35s cubic-bezier(.4,0,.2,1),color .2s
@@ -276,9 +279,6 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   .stat-card.tap-open.below{transform:translateX(-50%)}
   /* Feed drawer taller on mobile */
   #chat-panel.feed-open{height:62vh}
-  /* Absolutely center ISLAND FEED label so oracle on the left can't cover it */
-  #chat-header{position:relative}
-  #feed-label{position:absolute;left:50%;transform:translateX(-50%);pointer-events:none}
 }
 
 /* ── HOVER STAT CARD ── */
