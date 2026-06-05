@@ -34,6 +34,55 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #sky-bg,#sun-group,#moon-group,#night-stars,#night-overlay{transition:opacity 2.5s ease}
 
 /* ── DAY STAMP ── */
+/* ── DAY HISTORY ── */
+#ds-log-btn{
+  pointer-events:auto;display:block;background:none;border:none;padding:4px 0 0;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;font-weight:800;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.1);cursor:pointer;line-height:1;
+  transition:color .2s;
+}
+#ds-log-btn:hover{color:rgba(255,255,255,.32)}
+#day-history-panel{
+  position:fixed;top:112px;left:18px;z-index:40;width:244px;
+  background:rgba(4,8,22,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.08);border-radius:14px;
+  max-height:0;overflow:hidden;opacity:0;pointer-events:none;
+  transition:max-height .32s cubic-bezier(.4,0,.2,1),opacity .2s ease;
+}
+#day-history-panel.open{max-height:400px;opacity:1;pointer-events:auto}
+.dhp-head{
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;font-weight:800;
+  letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25);
+  padding:11px 14px 9px;border-bottom:1px solid rgba(255,255,255,.05);
+  display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
+}
+.dhp-back{
+  background:none;border:none;font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:9px;font-weight:700;color:rgba(255,255,255,.25);
+  cursor:pointer;letter-spacing:.5px;padding:0;transition:color .15s;
+}
+.dhp-back:hover{color:rgba(255,255,255,.6)}
+.dhp-scroll{overflow-y:auto;max-height:350px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.06) transparent}
+.dhp-chips{padding:8px 10px 10px;display:flex;flex-direction:column;gap:5px}
+.dhp-chip{
+  display:flex;align-items:center;gap:7px;padding:7px 10px;border-radius:9px;
+  border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;
+  color:rgba(255,255,255,.5);cursor:pointer;
+  transition:background .15s,border-color .15s;
+}
+.dhp-chip:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14);color:rgba(255,255,255,.8)}
+.dhp-chip.cur{border-color:rgba(34,197,94,.3);color:rgba(255,255,255,.75)}
+.dhp-dot{width:5px;height:5px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:cdot 2s ease-in-out infinite}
+.dhp-chip-meta{font-size:10px;color:rgba(255,255,255,.28);font-weight:500;margin-left:auto;white-space:nowrap}
+.dhp-drama{font-size:13px;color:rgba(255,255,255,.7);line-height:1.57;font-style:italic;
+  padding:12px 14px 10px;border-bottom:1px solid rgba(255,255,255,.05)}
+.dhp-bullets{padding:9px 14px 12px;display:flex;flex-direction:column;gap:6px}
+.dhp-bullet{font-size:11px;color:rgba(255,255,255,.48);line-height:1.5;
+  padding-left:10px;position:relative}
+.dhp-bullet::before{content:'·';position:absolute;left:0;color:rgba(255,255,255,.18)}
+
 #day-stamp{position:fixed;top:22px;left:18px;z-index:30;pointer-events:none;line-height:1.15}
 #pulse{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:30;pointer-events:none;
   font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-style:italic;font-weight:500;
@@ -199,6 +248,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   .stat-card.tap-open{display:block;opacity:1;transform:translateY(0)}
   .stat-card.right,.stat-card.left{left:50%;transform:translateX(-50%);right:auto}
   .stat-card.tap-open.right,.stat-card.tap-open.left{transform:translateX(-50%)}
+  .stat-card.tap-open.below{transform:translateX(-50%)}
   /* Feed drawer taller on mobile */
   #chat-panel.feed-open{height:62vh}
 }
@@ -217,6 +267,12 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .stat-card.left{right:90%;transform:translateY(6px)}
 .char:hover .stat-card.right{transform:translateY(0)}
 .char:hover .stat-card.left{transform:translateY(0)}
+/* below variant — card drops down when character is near top of screen */
+.stat-card.below{bottom:auto;top:105%;transform:translateY(-6px)}
+.char:hover .stat-card.below{transform:translateY(0)}
+.stat-card.below.right{transform:translateY(-6px)}
+.stat-card.below.left{transform:translateY(-6px)}
+.char:hover .stat-card.below.right,.char:hover .stat-card.below.left{transform:translateY(0)}
 .sc-name{font-size:17px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
 .sc-mood{font-size:13px;color:rgba(255,255,255,.45);letter-spacing:.5px;margin-bottom:8px;text-transform:uppercase}
 .sc-section{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:2px}
@@ -319,7 +375,12 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <canvas id="stars"></canvas>
 
 <!-- ══ DAY STAMP ══════════════════════════════════════════ -->
-<div id="day-stamp"><div id="ds-day">Day 1</div><div id="ds-cycle">—</div></div>
+<div id="day-stamp">
+  <div id="ds-day">Day 1</div>
+  <div id="ds-cycle">—</div>
+  <button id="ds-log-btn" onclick="toggleDayHistory()">▾ days</button>
+</div>
+<div id="day-history-panel"><div id="dhp-inner"></div></div>
 <div id="pulse"></div>
 <div id="structures-layer"></div>
 <div id="res-hud"></div>
@@ -1091,6 +1152,10 @@ function initTapStats() {
       if(card) card.classList.remove('open')
       document.querySelectorAll('.res-pill').forEach(p=>p.classList.remove('rp-active'))
       _activeRes = null
+    }
+    if(_dhpOpen && !e.target.closest('#day-history-panel') && !e.target.closest('#ds-log-btn')) {
+      _dhpOpen = false
+      document.getElementById('day-history-panel')?.classList.remove('open')
     }
   })
 }
@@ -1898,17 +1963,84 @@ function buildStatCard(cid) {
     ${bondRows}
   `
 
-  // auto-flip: if character is on right side, show card to the left
+  // auto-flip horizontal + vertical based on character screen position
   const charEl = document.getElementById('char-'+cid)
   if(charEl) {
     const xPct = parseFloat(charEl.style.left||'50')
+    const yPct = parseFloat(charEl.style.top||'50')
     el.classList.toggle('left', xPct > 55)
     el.classList.toggle('right', xPct <= 55)
+    el.classList.toggle('below', yPct < 40)
   }
 }
 
 function updateStatCards() {
   Object.keys(S.chars).forEach(buildStatCard)
+}
+
+// ── DAY HISTORY ───────────────────────────────────────────
+let _dhpOpen = false
+
+function toggleDayHistory() {
+  _dhpOpen = !_dhpOpen
+  const panel = document.getElementById('day-history-panel')
+  if(!panel) return
+  if(_dhpOpen) { showDayHistoryChips(); panel.classList.add('open') }
+  else panel.classList.remove('open')
+}
+
+function showDayHistoryChips() {
+  const inner = document.getElementById('dhp-inner')
+  if(!inner || !S.world) return
+  const w = S.world
+  const WX = {clear:'☀️',rain:'🌧️',storm:'⛈️',overcast:'☁️',foggy:'🌫️'}
+  const CYNAME = {morning:'Morning',midday:'Midday',evening:'Evening',night:'Night'}
+  const allDays = [...new Set((S.feed||[]).map(e=>e.day))].sort((a,b)=>b-a)
+  if(!allDays.includes(w.day)) allDays.unshift(w.day)
+  inner.innerHTML = `
+    <div class="dhp-head">Island History</div>
+    <div class="dhp-scroll"><div class="dhp-chips">
+      ${allDays.map(d => {
+        const isCur = d === w.day
+        const meta = isCur ? `${CYNAME[w.cycle]||''} ${WX[w.weather]||''}`.trim() : ''
+        return `<div class="dhp-chip${isCur?' cur':''}" onclick="showDayHistorySummary(${d})">
+          ${isCur?'<span class="dhp-dot"></span>':''}<span>Day ${d}</span>
+          ${meta?`<span class="dhp-chip-meta">${meta}</span>`:''}
+        </div>`
+      }).join('')}
+    </div></div>`
+}
+
+function showDayHistorySummary(day) {
+  const inner = document.getElementById('dhp-inner')
+  if(!inner) return
+  const entries = (S.feed||[]).filter(e=>e.day===day)
+  const interactions = entries.filter(e=>e.type==='interaction')
+  const lastIntr = interactions[interactions.length-1]
+  const dramaLine = lastIntr?.description
+    || [...entries].reverse().find(e=>e.thought)?.thought || '—'
+  const seen = new Set()
+  const highlights = []
+  ;['night','evening','midday','morning'].forEach(cyc=>{
+    entries.filter(e=>e.cycle===cyc && e.character && !seen.has(e.character) && (e.thought||e.action))
+      .forEach(e=>{
+        if(highlights.length>=3) return
+        const nm = S.chars[e.character]?.name?.split(' ')[0] || cap(e.character)
+        const col = S.chars[e.character]?.color || '#e2e8f0'
+        highlights.push({nm,col,text:(e.thought||e.action||'').slice(0,72)})
+        seen.add(e.character)
+      })
+  })
+  const bulletHtml = highlights.map(h=>`<div class="dhp-bullet"><span style="color:${h.col};font-weight:700">${h.nm}</span> — ${h.text}${h.text.length>=72?'…':''}</div>`).join('')
+  inner.innerHTML = `
+    <div class="dhp-head">
+      <span>Day ${day}</span>
+      <button class="dhp-back" onclick="showDayHistoryChips()">← all days</button>
+    </div>
+    <div class="dhp-scroll">
+      <div class="dhp-drama">"${dramaLine}"</div>
+      ${bulletHtml ? `<div class="dhp-bullets">${bulletHtml}</div>` : '<div style="font-size:11px;color:rgba(255,255,255,.3);padding:10px 14px">No story data yet.</div>'}
+    </div>`
 }
 
 // ── ORACLE ────────────────────────────────────────────────
