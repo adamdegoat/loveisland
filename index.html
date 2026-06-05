@@ -877,8 +877,14 @@ function updateStatusBar() {
   }
   document.getElementById('status-last').textContent=lastStr
   applySky(skyFromHour(sgt.getHours()))
-  ALL_STEPS.forEach(s=>document.getElementById('stp-'+s)?.classList.remove('current'))
-  if(S.world?.cycle) document.getElementById('stp-'+S.world.cycle)?.classList.add('current')
+  const completedToday = new Set(S.feed.filter(e=>e.day===(S.world?.day||1)).map(e=>e.cycle))
+  ALL_STEPS.forEach(s=>{
+    const el=document.getElementById('stp-'+s); if(!el) return
+    el.classList.remove('current','done')
+    if(completedToday.has(s)) el.classList.add('done')
+  })
+  if(S.world?.cycle && !completedToday.has(S.world.cycle))
+    document.getElementById('stp-'+S.world.cycle)?.classList.add('current')
 }
 
 // ── FACE/CHAR ─────────────────────────────────────────────

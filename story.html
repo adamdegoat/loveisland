@@ -367,10 +367,26 @@ function render() {
   document.getElementById('cycle-label').textContent = cap(w.cycle||'')
   document.getElementById('weather-label').textContent = WX[w.weather]||'☀️'
   renderProfiles()
-  renderToday()
   renderRelStats()
   renderWorldState()
   renderLog()
+  updateCycleTabs()
+  setCycle(w.cycle || 'morning')
+}
+
+function updateCycleTabs() {
+  const day = S.world.day
+  const hasCycle = c => S.feed.some(e => e.day===day && e.cycle===c)
+  document.querySelectorAll('.cycle-btn').forEach(b => {
+    const c = b.dataset.cycle
+    b.querySelector('.tab-dot')?.remove()
+    if(hasCycle(c)) {
+      const dot = document.createElement('span')
+      dot.className = 'tab-dot'
+      dot.style.cssText = 'display:inline-block;width:5px;height:5px;border-radius:50%;background:currentColor;margin-left:5px;opacity:.6;vertical-align:middle'
+      b.appendChild(dot)
+    }
+  })
 }
 
 const STRUCT_EMOJI = {tent:'⛺',house:'🏠',hammock:'🌴',firepit:'🔥',garden:'🌱',
