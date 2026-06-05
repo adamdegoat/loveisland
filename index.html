@@ -390,7 +390,10 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 
 /* ── ORACLE WIDGET ── */
-#oracle-widget{position:fixed;bottom:var(--oracle-bottom,52px);left:0;z-index:52;font-family:'VT323',monospace}
+#oracle-widget{position:fixed;bottom:var(--oracle-bottom,52px);left:0;z-index:52;font-family:'VT323',monospace;transition:opacity .25s ease}
+/* Hide the Oracle while the feed drawer is open so it can't float over the chat */
+#world:has(#chat-panel.feed-open) #oracle-widget,
+#oracle-widget.feed-hidden{opacity:0;pointer-events:none}
 #oracle-toggle{display:flex;align-items:center;gap:5px;padding:5px 11px;
   background:rgba(0,0,0,.7);border:none;border-top:1px solid rgba(251,191,36,.25);
   border-right:1px solid rgba(251,191,36,.15);color:rgba(251,191,36,.6);
@@ -1403,6 +1406,8 @@ function toggleFeed() {
   const panel = document.getElementById('chat-panel')
   panel.classList.toggle('feed-open')
   const isOpen = panel.classList.contains('feed-open')
+  // hide the Oracle while the feed is open (fallback for browsers without :has())
+  document.getElementById('oracle-widget').classList.toggle('feed-hidden', isOpen)
   if(isOpen) {
     document.getElementById('oracle-widget').classList.remove('open')
     setTimeout(()=>{ const f=document.getElementById('chat-feed'); if(f) f.scrollTop=f.scrollHeight }, 380)
@@ -2442,6 +2447,7 @@ function toggleOracle() {
   if(isOpening) {
     const panel = document.getElementById('chat-panel')
     panel.classList.remove('feed-open')
+    widget.classList.remove('feed-hidden')
   }
 }
 
