@@ -2326,6 +2326,9 @@ async function init(){
 const SC_COLORS = {marcus:'#93c5fd',ryan:'#fde68a',jade:'#f9a8d4',judy:'#99f6e4'}
 const SC_FILL   = {marcus:'#60a5fa',ryan:'#fbbf24',jade:'#f472b6',judy:'#2dd4bf'}
 const SCORE_LABELS = ['trust','openness','loneliness','resilience','ambition']
+const SURVIVAL_LABELS = ['hunger','thirst','energy','health']
+// survival bars are colour-coded by level: green (ok) / amber (low) / red (critical)
+function survColor(v){ return v>=60?'#4ade80' : v>=30?'#fbbf24' : '#f87171' }
 function getScColor(cid){return SC_COLORS[cid]||(S.chars[cid]?.color||'#94a3b8')}
 function getScFill(cid){return SC_FILL[cid]||S.chars[cid]?.color||'#94a3b8'}
 
@@ -2342,6 +2345,16 @@ function buildStatCard(cid) {
       <span class="sc-label">${k}</span>
       <div class="sc-bar"><div class="sc-fill" style="width:${v}%;background:${fill}88"></div></div>
       <span class="sc-val">${v}</span>
+    </div>`
+  }).join('')
+
+  const survRows = SURVIVAL_LABELS.map(k => {
+    const v = c.scores?.[k] ?? (k==='health' ? 100 : 0)
+    const sc = survColor(v)
+    return `<div class="sc-row">
+      <span class="sc-label">${k}</span>
+      <div class="sc-bar"><div class="sc-fill" style="width:${v}%;background:${sc}"></div></div>
+      <span class="sc-val" style="color:${sc}">${v}</span>
     </div>`
   }).join('')
 
@@ -2367,6 +2380,8 @@ function buildStatCard(cid) {
     <div class="sc-mood">${c.mood||'—'}</div>
     <div class="sc-section">Stats</div>
     ${scoreRows}
+    <div class="sc-section" style="margin-top:7px">Survival</div>
+    ${survRows}
     <div class="sc-section" style="margin-top:7px">Bonds</div>
     ${bondRows}
   `
