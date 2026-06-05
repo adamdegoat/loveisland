@@ -37,7 +37,20 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .wb{animation:wv 19s linear infinite reverse}
 
 /* SVG transitions */
-#sky-bg,#sun-group,#moon-group,#night-stars,#night-overlay{transition:opacity 2.5s ease}
+#sky-bg,#sun-group,#moon-group,#night-stars,#night-overlay,#sun-reflection{transition:opacity 2.5s ease}
+
+/* ── ATMOSPHERE OVERLAYS (pure CSS, no JS/engine) ── */
+/* Vignette: darken the corners to draw the eye to the centre of the island */
+#vignette{position:absolute;inset:0;z-index:6;pointer-events:none;
+  background:radial-gradient(120% 95% at 50% 42%,transparent 58%,rgba(2,6,23,.16) 84%,rgba(2,6,23,.42) 100%)}
+/* Time-of-day colour wash: a soft tint that shifts with the cycle for cohesion */
+#color-wash{position:absolute;inset:0;z-index:7;pointer-events:none;opacity:0;
+  mix-blend-mode:soft-light;transition:background 2.5s ease,opacity 2.5s ease}
+#world.evening #color-wash{background:#fb923c;opacity:.5}
+#world.morning #color-wash{background:#fdba74;opacity:.4}
+#world.dawn    #color-wash{background:#f9a8d4;opacity:.45}
+#world.night   #color-wash{background:#1e1b4b;opacity:.35}
+#world.midday  #color-wash,#world.afternoon #color-wash{opacity:0}
 
 /* ── DAY STAMP ── */
 /* ── DAY HISTORY ── */
@@ -399,6 +412,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <div id="day-history-panel" onclick="event.stopPropagation()"><div id="dhp-inner"></div></div>
 <div id="pulse"></div>
 <div id="structures-layer"></div>
+<div id="vignette"></div>
+<div id="color-wash"></div>
 <div id="res-hud"></div>
 
 <!-- ══ WORLD SVG ══════════════════════════════════════════ -->
@@ -436,6 +451,15 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <stop offset="100%" stop-color="#0c4a6e"/>
   </linearGradient>
   <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <radialGradient id="sun-halo" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#fde68a" stop-opacity=".55"/>
+    <stop offset="35%" stop-color="#fcd34d" stop-opacity=".28"/>
+    <stop offset="100%" stop-color="#fcd34d" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="sun-glint" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#fde68a" stop-opacity=".55"/>
+    <stop offset="100%" stop-color="#fde68a" stop-opacity="0"/>
+  </linearGradient>
 </defs>
 
 <!-- SKY -->
@@ -443,6 +467,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 <!-- SUN -->
 <g id="sun-group">
+  <circle cx="810" cy="88" r="155" fill="url(#sun-halo)"/>
   <circle cx="810" cy="88" r="70" fill="#fbbf24" opacity=".1"/>
   <circle cx="810" cy="88" r="48" fill="#fcd34d" opacity=".18"/>
   <circle cx="810" cy="88" r="32" fill="#fde68a"/>
@@ -627,6 +652,15 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <path class="wa" d="M -500 534 Q -375 524 -250 534 Q -125 544 0 534 Q 125 524 250 534 Q 375 544 500 534 Q 625 524 750 534 Q 875 544 1000 534 Q 1125 524 1250 534 Q 1375 544 1500 534 L 1500 600 L -500 600 Z" fill="#0284c7" opacity=".45"/>
 <path class="wb" d="M -300 546 Q -175 537 -50 546 Q 75 555 200 546 Q 325 537 450 546 Q 575 555 700 546 Q 825 537 950 546 Q 1075 555 1200 546 Q 1325 537 1450 546 L 1450 600 L -300 600 Z" fill="#075985" opacity=".5"/>
 <path class="wa" d="M -500 528 Q -375 522 -250 528 Q -125 534 0 528 Q 125 522 250 528 Q 375 534 500 528 Q 625 522 750 528 Q 875 534 1000 528 Q 1125 522 1250 528 Q 1375 534 1500 528" fill="none" stroke="white" stroke-width="1.8" opacity=".28"/>
+
+<!-- ══ SUN REFLECTION ON WATER ══ -->
+<g id="sun-reflection" opacity=".85">
+  <polygon points="800,518 820,518 858,600 762,600" fill="url(#sun-glint)" opacity=".7"/>
+  <ellipse cx="810" cy="532" rx="14" ry="2.2" fill="#fef3c7" opacity=".55"/>
+  <ellipse cx="810" cy="548" rx="20" ry="2.6" fill="#fde68a" opacity=".4"/>
+  <ellipse cx="810" cy="566" rx="27" ry="3" fill="#fde68a" opacity=".28"/>
+  <ellipse cx="810" cy="585" rx="34" ry="3.4" fill="#fcd34d" opacity=".2"/>
+</g>
 
 <!-- ══ AMBIENT BIRDS ══ -->
 <g opacity=".55" fill="#1e293b">
@@ -1131,6 +1165,7 @@ function applySky(sky) {
   document.getElementById('sky-bg')?.setAttribute('fill',`url(#sky-${sky})`)
   const isNight=sky==='night'||sky==='dawn'
   document.getElementById('sun-group')?.setAttribute('opacity',isNight?'0':'1')
+  document.getElementById('sun-reflection')?.setAttribute('opacity',isNight?'0':'.85')
   document.getElementById('moon-group')?.setAttribute('opacity',isNight?'1':'0')
   document.getElementById('night-stars')?.setAttribute('opacity',isNight?'1':'0')
   document.getElementById('night-overlay')?.setAttribute('opacity',isNight?'0.48':'0')
