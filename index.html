@@ -120,10 +120,10 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #char-judy .nametag{color:#99f6e4;border:1px solid rgba(153,246,228,.2)}
 
 /* ── SPEECH BUBBLES (always visible) ── */
-.bubble{position:absolute;bottom:92px;left:50%;transform:translateX(-50%);
-  background:rgba(0,0,0,.38);color:#f1f5f9;padding:7px 11px;border-radius:12px;
-  font-size:10px;font-weight:600;max-width:165px;min-width:105px;text-align:center;
-  line-height:1.45;box-shadow:0 4px 18px rgba(0,0,0,.25);pointer-events:none;
+.bubble{position:absolute;bottom:52px;left:50%;transform:translateX(-50%);
+  background:rgba(0,0,0,.38);color:#f1f5f9;padding:5px 9px;border-radius:10px;
+  font-size:9px;font-weight:600;max-width:120px;min-width:70px;text-align:center;
+  line-height:1.4;box-shadow:0 3px 14px rgba(0,0,0,.25);pointer-events:none;
   white-space:normal;z-index:25;border:1px solid rgba(255,255,255,.06);border-top-width:2px}
 #char-marcus .bubble{border-top-color:rgba(147,197,253,.9);border-left:2px solid rgba(147,197,253,.4)}
 #char-ryan .bubble{border-top-color:rgba(253,230,138,.9);border-left:2px solid rgba(253,230,138,.4)}
@@ -133,14 +133,14 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #char-ryan:hover{filter:drop-shadow(0 0 14px rgba(251,146,60,.55))}
 #char-jade:hover{filter:drop-shadow(0 0 14px rgba(244,114,182,.55))}
 #char-judy:hover{filter:drop-shadow(0 0 14px rgba(45,212,191,.55))}
-.bubble::after{content:'';position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);
-  border:7px solid transparent;border-top-color:rgba(0,0,0,.38);border-bottom:0}
-.bubble-name{font-size:9px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:3px}
+.bubble::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:rgba(0,0,0,.38);border-bottom:0}
+.bubble-name{font-size:8px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:2px}
 #char-marcus .bubble-name{color:#93c5fd}
 #char-ryan .bubble-name{color:#fde68a}
 #char-jade .bubble-name{color:#f9a8d4}
 #char-judy .bubble-name{color:#99f6e4}
-.bubble-text{font-size:10.5px}
+.bubble-text{font-size:9px}
 
 /* ── BOTTOM FEED DRAWER ── */
 #chat-panel{
@@ -252,8 +252,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   #chat-panel{bottom:72px}
   #oracle-widget{bottom:72px}
   #story-btn{padding:.28rem .55rem;font-size:10px}
-  .bubble{max-width:130px;font-size:9.5px;padding:5px 9px}
-  .bubble-text{font-size:9.5px}
+  .bubble{max-width:100px;font-size:8.5px;padding:4px 7px}
+  .bubble-text{font-size:8.5px}
   #pulse{top:78px;font-size:11px;max-width:78vw;color:rgba(255,255,255,.65)}
   #day-hist-btn{top:14px;right:12px;padding:5px 10px;font-size:10px}
   #day-history-panel{top:52px;right:12px;width:220px}
@@ -680,7 +680,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <div class="bubble-name">Marcus</div>
     <span class="bubble-text" id="thought-marcus">…</span>
   </div>
-  <svg class="char-svg" id="svg-marcus" width="27" height="64" viewBox="-20 -92 40 96">
+  <svg class="char-svg" id="svg-marcus" width="19" height="45" viewBox="-20 -92 40 96">
     <ellipse cx="-7" cy="-2" rx="8.5" ry="3.5" fill="#111827"/>
     <ellipse cx="7" cy="-2" rx="8.5" ry="3.5" fill="#111827"/>
     <rect x="-12" y="-28" width="10.5" height="27" rx="3" fill="#1e2d40"/>
@@ -747,7 +747,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <div class="bubble-name">Ryan</div>
     <span class="bubble-text" id="thought-ryan">…</span>
   </div>
-  <svg class="char-svg" id="svg-ryan" width="27" height="64" viewBox="-20 -92 40 96">
+  <svg class="char-svg" id="svg-ryan" width="19" height="45" viewBox="-20 -92 40 96">
     <ellipse cx="-7" cy="-2" rx="8.5" ry="3.5" fill="#5c3d1e"/>
     <ellipse cx="7" cy="-2" rx="8.5" ry="3.5" fill="#5c3d1e"/>
     <rect x="-12" y="-28" width="10.5" height="27" rx="3" fill="#a08038"/>
@@ -813,7 +813,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <div class="bubble-name">Jade</div>
     <span class="bubble-text" id="thought-jade">…</span>
   </div>
-  <svg class="char-svg" id="svg-jade" width="27" height="64" viewBox="-20 -92 40 96">
+  <svg class="char-svg" id="svg-jade" width="19" height="45" viewBox="-20 -92 40 96">
     <!-- Back hair curls (behind body) -->
     <path d="M -11 -74 C -18 -64 -20 -54 -18 -43 C -16 -33 -20 -25 -18 -14 C -16 -5 -19 1 -17 6" stroke="#1a0804" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M 11 -74 C 18 -64 20 -54 18 -43 C 16 -33 20 -25 18 -14 C 16 -5 19 1 17 6" stroke="#1a0804" stroke-width="9" fill="none" stroke-linecap="round"/>
@@ -902,7 +902,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <div class="bubble-name">Judy</div>
     <span class="bubble-text" id="thought-judy">…</span>
   </div>
-  <svg class="char-svg" id="svg-judy" width="27" height="64" viewBox="-20 -92 40 96">
+  <svg class="char-svg" id="svg-judy" width="19" height="45" viewBox="-20 -92 40 96">
     <!-- Back wet hair — straight, plastered down -->
     <path d="M -10 -74 C -14 -63 -15 -51 -14 -38 C -13 -24 -14 -12 -13 -1" stroke="#0d0d0d" stroke-width="10" fill="none" stroke-linecap="round"/>
     <path d="M 10 -74 C 14 -63 15 -51 14 -38 C 13 -24 14 -12 13 -1" stroke="#0d0d0d" stroke-width="10" fill="none" stroke-linecap="round"/>
@@ -1392,7 +1392,7 @@ function separateChars(positions) {
 }
 
 function nudgeBubbles(positions) {
-  const BUBBLE_W = 150
+  const BUBBLE_W = 110
   const offsets = {}
   positions.forEach(p=>{ offsets[p.id] = 0 })
   for(let i=0; i<positions.length; i++) {
