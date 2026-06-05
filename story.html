@@ -751,7 +751,7 @@ function renderLog() {
     if(!byDay[e.day][e.cycle]) byDay[e.day][e.cycle] = []
     byDay[e.day][e.cycle].push(e)
   })
-  const days = Object.keys(byDay).sort((a,b)=>b-a)
+  const days = Object.keys(byDay).sort((a,b)=>a-b)
   if(!days.length) {
     document.getElementById('full-log').innerHTML = '<div style="font-size:13px;color:var(--muted);padding:1rem 0;text-align:center">No key moments yet — check back after the next cycle.</div>'
     return
