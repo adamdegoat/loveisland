@@ -70,7 +70,8 @@ h1,h2,h3{font-family:'Playfair Display',serif}
   cursor:pointer;user-select:none;font-family:'Plus Jakarta Sans',sans-serif;
   transition:background .15s,border-color .15s}
 .day-chip:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18)}
-.day-chip.current{border-color:rgba(34,197,94,.3)}
+@keyframes chipGlow{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}50%{box-shadow:0 0 0 5px rgba(34,197,94,.18)}}
+.day-chip.current{border-color:rgba(34,197,94,.35);animation:chipGlow 2.5s ease-in-out infinite}
 .day-chip.chip-active{background:rgba(255,255,255,.1)!important;border-color:rgba(255,46,120,.45)!important}
 .day-chip-meta{font-size:10px;color:rgba(255,255,255,.38);font-weight:500;letter-spacing:0}
 
@@ -101,6 +102,32 @@ h1,h2,h3{font-family:'Playfair Display',serif}
   color:rgba(255,255,255,.3);background:rgba(255,255,255,.05);
   border-radius:7px;padding:2px 8px;font-family:'Plus Jakarta Sans',sans-serif}
 .dsb-empty{font-size:13px;color:var(--muted);padding:16px 15px;text-align:center}
+
+/* HERO INTRO */
+.hero-intro{padding:2.5rem 1.5rem 1.25rem;max-width:860px;margin:0 auto}
+.hero-tagline{font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(1.45rem,4vw,2.1rem);font-weight:700;
+  background:linear-gradient(135deg,#fff 0%,#f472b6 45%,#fbbf24 80%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1.2;margin-bottom:.9rem}
+.hero-body{color:rgba(226,232,240,.6);font-size:13.5px;line-height:1.75;
+  max-width:520px;margin-bottom:1.25rem}
+.hero-stats{display:flex;gap:.6rem;flex-wrap:wrap}
+.hero-stat-chip{display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .85rem;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.2px;
+  color:rgba(255,255,255,.65)}
+.hero-stat-chip strong{color:#fff;font-weight:700}
+
+/* DAY HINT */
+#day-hint{
+  padding:.35rem 1.25rem;text-align:right;
+  font-size:11px;color:rgba(34,197,94,.6);letter-spacing:.5px;
+  background:rgba(34,197,94,.05);border-bottom:1px solid rgba(34,197,94,.1);
+  transition:opacity .5s ease,max-height .5s ease,padding .5s ease;
+  overflow:hidden;max-height:36px
+}
+#day-hint.hint-faded{opacity:0;max-height:0;padding-top:0;padding-bottom:0}
 
 /* SECTIONS */
 .section{padding:2rem 1.5rem;max-width:860px;margin:0 auto}
@@ -311,6 +338,22 @@ footer span{color:var(--muted);font-weight:600}
     <div id="day-summary-bubble"></div>
   </div>
 
+  <!-- Day hint -->
+  <div id="day-hint">✦ Tap a day chip to see what happened</div>
+
+  <!-- Hero Intro -->
+  <div class="hero-intro reveal">
+    <div class="hero-tagline">Three people. One island. No script.</div>
+    <div class="hero-body">Tropicana is a living simulation — three strangers cast onto a deserted island with no rules, no crew, and no exit. Every day at sunrise, midday, sunset, and midnight, they act on their own. They build, they drift, they fall for each other or don't. Nobody controls them.</div>
+    <div class="hero-stats">
+      <div class="hero-stat-chip">Day <strong id="hsc-day">—</strong></div>
+      <div class="hero-stat-chip">Updated <strong>4×</strong> a day</div>
+      <div class="hero-stat-chip">Zero human input</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
   <!-- Today's Pulse -->
   <div class="section reveal">
     <div class="section-title">Today's Pulse</div>
@@ -333,30 +376,6 @@ footer span{color:var(--muted);font-weight:600}
 
   <div class="divider"></div>
 
-  <!-- Relationship Web -->
-  <div class="section reveal">
-    <div class="section-title">The Bonds</div>
-    <div class="rel-wrap">
-      <svg id="rel-svg" viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg">
-        <line id="rw-mr" x1="170" y1="40" x2="300" y2="230" stroke="#60a5fa" stroke-width="2" opacity="0.3"/>
-        <line id="rw-mj" x1="170" y1="40" x2="40"  y2="230" stroke="#f472b6" stroke-width="2" opacity="0.3"/>
-        <line id="rw-rj" x1="300" y1="230" x2="40" y2="230" stroke="#fbbf24" stroke-width="2" opacity="0.3"/>
-        <circle cx="170" cy="40"  r="20" fill="#60a5fa22" stroke="#60a5fa" stroke-width="1.5"/>
-        <circle cx="300" cy="230" r="20" fill="#fbbf2422" stroke="#fbbf24" stroke-width="1.5"/>
-        <circle cx="40"  cy="230" r="20" fill="#f472b622" stroke="#f472b6" stroke-width="1.5"/>
-        <text x="170" y="45" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="700" font-family="Plus Jakarta Sans">M</text>
-        <text x="300" y="235" text-anchor="middle" fill="#fde68a" font-size="11" font-weight="700" font-family="Plus Jakarta Sans">R</text>
-        <text x="40"  y="235" text-anchor="middle" fill="#fbcfe8" font-size="11" font-weight="700" font-family="Plus Jakarta Sans">J</text>
-        <text id="rw-label-mr" x="240" y="138" text-anchor="middle" font-size="11" fill="#64748b" font-family="Inter">—</text>
-        <text id="rw-label-mj" x="100" y="138" text-anchor="middle" font-size="11" fill="#64748b" font-family="Inter">—</text>
-        <text id="rw-label-rj" x="170" y="248" text-anchor="middle" font-size="11" fill="#64748b" font-family="Inter">—</text>
-      </svg>
-      <div class="rel-stats" id="rel-stats"></div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
   <!-- World State -->
   <div class="section reveal">
     <div class="section-title">World State</div>
@@ -370,9 +389,9 @@ footer span{color:var(--muted);font-weight:600}
 
   <div class="divider"></div>
 
-  <!-- Island Log -->
+  <!-- Key Moments -->
   <div class="section reveal">
-    <div class="section-title">Island Log</div>
+    <div class="section-title">Key Moments</div>
     <div id="full-log"></div>
   </div>
 
@@ -478,6 +497,9 @@ function renderDayChips() {
 function toggleDaySummary(day, chipEl) {
   const bubble = document.getElementById('day-summary-bubble')
   if (!bubble) return
+  // Mark hint as seen
+  localStorage.setItem('tropicana_chipHintSeen','1')
+  document.getElementById('day-hint')?.classList.add('hint-faded')
   document.querySelectorAll('.day-chip').forEach(c=>c.classList.remove('chip-active'))
   if (_activeSummaryDay === day) {
     bubble.classList.remove('open')
@@ -495,9 +517,10 @@ function render() {
   document.getElementById('day-label').textContent = 'Day ' + w.day
   document.getElementById('cycle-label').textContent = cap(w.cycle||'')
   document.getElementById('weather-label').textContent = WX[w.weather]||'☀️'
+  const hscDay = document.getElementById('hsc-day')
+  if(hscDay) hscDay.textContent = w.day
   renderDayChips()
   renderProfiles()
-  renderRelStats()
   renderWorldState()
   renderLog()
   updateCycleTabs()
@@ -718,38 +741,45 @@ function renderRelStats() {
 function renderLog() {
   const byDay = {}
   S.feed.forEach(e => {
+    // Key Moments: only interactions and births
+    if(e.type !== 'interaction' && e.type !== 'birth') return
     if(!byDay[e.day]) byDay[e.day] = {}
     if(!byDay[e.day][e.cycle]) byDay[e.day][e.cycle] = []
     byDay[e.day][e.cycle].push(e)
   })
   const days = Object.keys(byDay).sort((a,b)=>b-a)
+  if(!days.length) {
+    document.getElementById('full-log').innerHTML = '<div style="font-size:13px;color:var(--muted);padding:1rem 0;text-align:center">No key moments yet — check back after the next cycle.</div>'
+    return
+  }
   document.getElementById('full-log').innerHTML = days.map(day => {
     const cycles = byDay[day]
-    return `<div class="log-day">
-      <div class="log-day-header">Day ${day}</div>
-      ${CYCLE_ORDER.filter(c=>cycles[c]).map(cyc =>
-        cycles[cyc].filter(e=>!e.type).map(e => {
-          const color = CHARS[e.character]||'#fff'
-          const name = S.chars[e.character]?.name || CHAR_NAMES[e.character] || e.character
-          const cTag = CYCLE_HOUR_S[cyc]||cyc
-          return `<div class="log-entry">
-            <div class="log-cycle-tag">${cTag}</div>
-            <div class="log-dot" style="background:${color}"></div>
-            <div style="flex:1"><span style="color:${color};font-weight:600">${name}</span> — ${e.thought||e.action||''}</div>
-          </div>`
-        }).join('') +
-        cycles[cyc].filter(e=>e.type==='interaction').map(e => {
-          const cTag = CYCLE_HOUR_S[cyc]||cyc
+    const entries = CYCLE_ORDER.filter(c=>cycles[c]).map(cyc =>
+      cycles[cyc].map(e => {
+        const cTag = CYCLE_HOUR_S[cyc]||cyc
+        if(e.type === 'interaction') {
           const dots = (e.characters||[]).map(cid=>`<div class="log-dot" style="background:${CHARS[cid]||'#475569'}"></div>`).join('')
           return `<div class="log-entry">
             <div class="log-cycle-tag">${cTag}</div>
             <div style="display:flex;gap:3px;flex-shrink:0;align-items:center;margin-top:.3rem">${dots}</div>
-            <div style="flex:1;color:var(--muted)">${e.description||''}</div>
+            <div style="flex:1;color:var(--text)">${e.description||''}</div>
           </div>`
-        }).join('')
-      ).join('')}
-    </div>`
-  }).join('')
+        }
+        if(e.type === 'birth') {
+          return `<div class="log-entry">
+            <div class="log-cycle-tag">${cTag}</div>
+            <div class="log-dot" style="background:#22c55e"></div>
+            <div style="flex:1;color:#86efac">${e.description||'New arrival'}</div>
+          </div>`
+        }
+        return ''
+      }).join('')
+    ).join('')
+    return entries ? `<div class="log-day">
+      <div class="log-day-header">Day ${day}</div>
+      ${entries}
+    </div>` : ''
+  }).filter(Boolean).join('')
 }
 
 async function init() {
@@ -773,6 +803,10 @@ async function init() {
     document.getElementById('night-overlay')?.setAttribute('opacity',isNight?'0.28':'0')
     document.getElementById('loading').classList.add('hidden')
     document.getElementById('app').classList.remove('hidden')
+    // Day hint — fade once user has tapped a chip
+    if(localStorage.getItem('tropicana_chipHintSeen')) {
+      document.getElementById('day-hint')?.classList.add('hint-faded')
+    }
     // Close summary bubble when clicking outside chips area
     document.addEventListener('click', ev => {
       if (!ev.target.closest('#day-chips') && !ev.target.closest('#day-summary-bubble')) {
