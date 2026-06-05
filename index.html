@@ -1352,10 +1352,11 @@ function separateChars(positions) {
         if (interacting.has([positions[i].id,positions[j].id].sort().join('_'))) continue
         const dx=positions[j].px - positions[i].px
         const dy=positions[j].py - positions[i].py
-        const dist=Math.sqrt(dx*dx+dy*dy)||0.01
+        const dist=Math.sqrt(dx*dx+dy*dy)
         if(dist < MIN) {
-          const push=(MIN-dist)/2
-          const nx=dx/dist, ny=dy/dist
+          const push=(MIN-(dist||0))/2
+          const nx=dist>0.5?dx/dist:Math.cos(i*2.4)
+          const ny=dist>0.5?dy/dist:Math.sin(i*2.4)
           positions[i].px -= nx*push; positions[i].py -= ny*push
           positions[j].px += nx*push; positions[j].py += ny*push
         }
