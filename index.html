@@ -126,10 +126,14 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   font-size:10px;font-weight:600;max-width:165px;min-width:105px;text-align:center;
   line-height:1.45;box-shadow:0 4px 18px rgba(0,0,0,.25);pointer-events:none;
   white-space:normal;z-index:25;border:1px solid rgba(255,255,255,.06);border-top-width:2px}
-#char-marcus .bubble{border-top-color:rgba(147,197,253,.5)}
-#char-ryan .bubble{border-top-color:rgba(253,230,138,.5)}
-#char-jade .bubble{border-top-color:rgba(249,168,212,.5)}
-#char-judy .bubble{border-top-color:rgba(45,212,191,.5)}
+#char-marcus .bubble{border-top-color:rgba(147,197,253,.9);border-left:2px solid rgba(147,197,253,.4)}
+#char-ryan .bubble{border-top-color:rgba(253,230,138,.9);border-left:2px solid rgba(253,230,138,.4)}
+#char-jade .bubble{border-top-color:rgba(249,168,212,.9);border-left:2px solid rgba(249,168,212,.4)}
+#char-judy .bubble{border-top-color:rgba(45,212,191,.9);border-left:2px solid rgba(45,212,191,.4)}
+#char-marcus:hover{filter:drop-shadow(0 0 14px rgba(192,132,252,.55))}
+#char-ryan:hover{filter:drop-shadow(0 0 14px rgba(251,146,60,.55))}
+#char-jade:hover{filter:drop-shadow(0 0 14px rgba(244,114,182,.55))}
+#char-judy:hover{filter:drop-shadow(0 0 14px rgba(45,212,191,.55))}
 .bubble::after{content:'';position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);
   border:7px solid transparent;border-top-color:rgba(0,0,0,.38);border-bottom:0}
 .bubble-name{font-size:9px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:3px}
@@ -189,7 +193,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .cl.interaction{color:#fbbf24}
 .cl-label{font-size:11px;letter-spacing:.8px;opacity:.6;text-transform:uppercase}
 .cl-dialogue{color:#e2e8f0;font-size:13px;opacity:.9}
-.cl-ts{font-family:'VT323',monospace;font-size:12px;color:rgba(255,255,255,.22);letter-spacing:1.2px;text-align:center;padding:4px 0 2px;text-transform:uppercase}
+.cl-ts{font-family:'VT323',monospace;font-size:12px;color:rgba(255,255,255,.45);letter-spacing:1.2px;text-align:center;padding:4px 0 2px;text-transform:uppercase;background:rgba(255,255,255,.03);border-radius:4px;margin:2px 0}
 .cl-msg{font-family:'VT323',monospace;font-size:14px;line-height:1.3;padding:1px 4px;word-break:break-word}
 .cl-spk{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
 .cl-line{color:#e2e8f0;opacity:.9}
@@ -217,8 +221,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .stp-arr{color:rgba(255,255,255,.12);font-size:9px}
 
 /* Tiny status info */
-#status-info{font-size:9px;color:rgba(255,255,255,.28);white-space:nowrap;flex-shrink:0;line-height:1.3;letter-spacing:.2px}
-#status-info span{color:rgba(255,255,255,.45)}
+#status-info{font-size:9px;color:rgba(255,255,255,.6);white-space:nowrap;flex-shrink:0;line-height:1.3;letter-spacing:.2px}
+#status-info span{color:rgba(255,255,255,.85)}
 #status-msg{font-size:9px;color:rgba(255,255,255,.3);font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}
 
 /* Buttons */

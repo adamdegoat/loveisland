@@ -17,7 +17,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:transparent;color:var
 /* World background + overlay */
 #world-bg{position:fixed;inset:0;z-index:0;overflow:hidden}
 #world-bg svg{width:100%;height:100%;object-fit:cover}
-#dark-overlay{position:fixed;inset:0;z-index:1;background:rgba(2,6,23,.68);pointer-events:none}
+#dark-overlay{position:fixed;inset:0;z-index:1;background:rgba(2,6,23,.58);pointer-events:none}
 #story-scroll{position:fixed;inset:0;z-index:2;overflow-y:auto}
 
 /* Cloud/wave animations (mirrored from world page) */
@@ -132,7 +132,7 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 /* SECTIONS */
 .section{padding:2rem 1.5rem;max-width:860px;margin:0 auto}
 .section-title{font-size:1.4rem;font-weight:700;font-style:italic;margin-bottom:1.25rem;
-  background:linear-gradient(135deg,#fff,rgba(255,255,255,.5));
+  background:linear-gradient(135deg,#fff 0%,#f472b6 55%,#fbbf24 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);margin:0 1.5rem}
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
@@ -345,7 +345,7 @@ footer span{color:var(--muted);font-weight:600}
   <!-- Hero Intro -->
   <div class="hero-intro reveal">
     <div class="hero-tagline" id="hero-tagline">Three people. One island. No script.</div>
-    <div class="hero-body" id="hero-body">Tropicana is a living simulation — strangers cast onto a deserted island with no script, no crew, and no exit. An AI engine runs four times a day, writing each character's actions, thoughts, and conversations in real time. At midnight, the Island Oracle drops a fate event that changes everything.</div>
+    <div class="hero-body" id="hero-body">Tropicana is a living simulation — strangers cast onto a deserted island with no script, no crew, and no exit. The story unfolds four times a day — no writers, no producers, just life happening. At midnight, the Island Oracle drops a fate event that changes everything. Free to follow, always unscripted.</div>
     <div class="hero-stats">
       <div class="hero-stat-chip">Day <strong id="hsc-day">—</strong></div>
       <div class="hero-stat-chip">Updated <strong>4×</strong> a day</div>
@@ -514,7 +514,7 @@ function render() {
   const tagline = document.getElementById('hero-tagline')
   if(tagline) tagline.textContent = `${NUM_WORDS[n]||n} ${n===1?'person':'people'}. One island. No script.`
   const hbody = document.getElementById('hero-body')
-  if(hbody) hbody.innerHTML = `Tropicana is a living simulation — ${NUM_WORDS[n]||n} ${n===1?'stranger':'strangers'} cast onto a deserted island with no script, no crew, and no exit. An AI engine runs four times a day (7 AM · 12:30 PM · 6 PM · 11 PM SGT), writing each character's actions, thoughts, and conversations in real time — zero human input. At midnight, the <strong style="color:#f472b6">Island Oracle</strong> stirs: it drops a fate event — a storm, a stranger washing ashore, a secret revealed — that the islanders must live through. ✦ <em>Scroll down for Key Moments (story highlights), The Islanders (character profiles &amp; relationships), and World State (survival resources &amp; structures).</em>`
+  if(hbody) hbody.innerHTML = `Tropicana is a living simulation — ${NUM_WORDS[n]||n} ${n===1?'stranger':'strangers'} cast onto a deserted island with no script, no crew, and no exit. The story unfolds four times a day (7 AM · 12:30 PM · 6 PM · 11 PM SGT) — no writers, no producers, just life happening in real time. At midnight, the <strong style="color:#f472b6">Island Oracle</strong> stirs: it drops a fate event — a storm, a stranger washing ashore, a secret revealed — that the islanders must live through. Free to follow, always unscripted. ✦ <em>Scroll down for Key Moments (story highlights), The Islanders (character profiles &amp; relationships), and World State (survival resources &amp; structures).</em>`
   renderDayChips()
   renderProfiles()
   renderWorldState()
