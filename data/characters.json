@@ -5,31 +5,31 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 23,
-      "openness": 19,
+      "trust": 24,
+      "openness": 20,
       "ambition": 45,
-      "loneliness": 77,
+      "loneliness": 75,
       "resilience": 84,
-      "hunger": 55,
-      "thirst": 36,
-      "energy": 54
+      "hunger": 48,
+      "thirst": 13,
+      "energy": 32
     },
-    "mood": "watchful",
+    "mood": "quiet",
     "location": {
-      "x": 35,
-      "y": 55
+      "x": 75,
+      "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
         "closeness": 20,
-        "tension": 15,
+        "tension": 16,
         "attraction": 0
       },
       "jade": {
-        "closeness": 15,
-        "tension": 6,
-        "attraction": 2
+        "closeness": 17,
+        "tension": 5,
+        "attraction": 3
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing."
@@ -40,31 +40,31 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 76,
+      "trust": 77,
       "openness": 88,
-      "ambition": 71,
-      "loneliness": 33,
+      "ambition": 72,
+      "loneliness": 31,
       "resilience": 39,
-      "hunger": 65,
-      "thirst": 51,
-      "energy": 65
+      "hunger": 60,
+      "thirst": 26,
+      "energy": 42
     },
-    "mood": "energetic",
+    "mood": "eager",
     "location": {
-      "x": 50,
-      "y": 50
+      "x": 42,
+      "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
         "closeness": 20,
-        "tension": 10,
+        "tension": 11,
         "attraction": 0
       },
       "jade": {
-        "closeness": 21,
+        "closeness": 23,
         "tension": 5,
-        "attraction": 8
+        "attraction": 9
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier."
@@ -75,31 +75,31 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 61,
-      "openness": 76,
+      "trust": 62,
+      "openness": 77,
       "ambition": 40,
-      "loneliness": 39,
+      "loneliness": 40,
       "resilience": 60,
-      "hunger": 50,
-      "thirst": 41,
-      "energy": 49
+      "hunger": 42,
+      "thirst": 18,
+      "energy": 28
     },
     "mood": "thoughtful",
     "location": {
-      "x": 20,
-      "y": 60
+      "x": 40,
+      "y": 50
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 15,
-        "tension": 6,
-        "attraction": 2
-      },
-      "ryan": {
-        "closeness": 21,
+        "closeness": 17,
         "tension": 5,
         "attraction": 3
+      },
+      "ryan": {
+        "closeness": 23,
+        "tension": 5,
+        "attraction": 4
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't."

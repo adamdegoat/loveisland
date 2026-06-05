@@ -369,5 +369,200 @@
       }
     ],
     "timestamp": "2026-06-05T08:52:12.100314"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "Repairs the frame of his tent with branches gathered from the island, working methodically in the midday heat.",
+    "thought": "She was at the water source with Ryan. Again. Not that I'm counting.",
+    "location": {
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "quiet",
+    "timestamp": "2026-06-05T12:31:47.221379"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "Approaches Jade at the water source with a warm greeting, already thinking of reasons to work beside her.",
+    "thought": "She's genuinely happy to see me. That has to mean something, doesn't it?",
+    "location": {
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "eager",
+    "timestamp": "2026-06-05T12:31:47.221379"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "Sits by the water collecting some for storage, her attention drifting between the work and the presence of both men.",
+    "thought": "Everyone is building something. Building meaning, building shelter, building plans. I'm just here.",
+    "location": {
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "thoughtful",
+    "timestamp": "2026-06-05T12:31:47.221379"
+  },
+  {
+    "day": 2,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade"
+    ],
+    "description": "Ryan finds Jade at the water source midday, and they fall into easy conversation while gathering water and fallen branches. Marcus works quietly on his tent nearby, within sight but not part of their exchange.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Hey. You've been up long?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Not really, just thinking. About all this."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Thinking good or thinking hard?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Too early to tell. Maybe both."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Fair. Listen, I was going to gather more wood before it gets too hot. Want to help?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Why are you asking me?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Why not? You're good company. And honestly, I like talking to you."
+      },
+      {
+        "speaker": "jade",
+        "line": "Do you?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. You actually listen. Most people just wait for their turn to talk."
+      },
+      {
+        "speaker": "jade",
+        "line": "Is that rare?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "More than it should be. Come on, there's a good spot near the clearing. Not far."
+      },
+      {
+        "speaker": "jade",
+        "line": "Marcus mentioned a clearing."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He did?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Yesterday when we all talked. This is it, right?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah, he's got good instincts for where things are. For people too, I think."
+      },
+      {
+        "speaker": "jade",
+        "line": "What do you mean?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I don't know. He notices things. You can feel it."
+      },
+      {
+        "speaker": "jade",
+        "line": "You like him."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I do, actually. He's solid. The kind of person you want nearby when something goes wrong."
+      },
+      {
+        "speaker": "jade",
+        "line": "He brought us water. That mattered."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It did. More than solving a problem, I think. It showed something."
+      },
+      {
+        "speaker": "jade",
+        "line": "Showed what?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "That he cares. Even if he doesn't know how to say it."
+      },
+      {
+        "speaker": "jade",
+        "line": "I can feel that in him. It's strange."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Strange how?"
+      },
+      {
+        "speaker": "jade",
+        "line": "A man like that, so closed off, but you can still feel the care. It's there underneath."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You really see him, don't you?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Do I? I don't know. Maybe I'm just paying attention."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's seeing. Come on, let's grab some wood. I'll help with the bigger pieces."
+      },
+      {
+        "speaker": "jade",
+        "line": "Okay. Lead the way."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We'll come back before it gets dark. That way everyone knows where we are."
+      },
+      {
+        "speaker": "jade",
+        "line": "Does that matter?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I think so. We're three people on an island. Right now, knowing where everyone is matters."
+      },
+      {
+        "speaker": "jade",
+        "line": "Is that about safety or something else?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe both."
+      }
+    ],
+    "timestamp": "2026-06-05T12:31:47.221379"
   }
 ]
