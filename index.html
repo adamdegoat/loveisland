@@ -148,6 +148,10 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 /* ── MOBILE ── */
 @media(max-width:768px){
+  /* Full island — horizontal pan */
+  #world{width:max-content;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+  #world-svg{height:100dvh;width:auto}
+
   /* Chat panel becomes a bottom drawer */
   #chat-panel{
     top:auto;right:0;left:0;bottom:52px;width:100%;
@@ -879,6 +883,11 @@ function updateStatusBar() {
 
 // ── FACE/CHAR ─────────────────────────────────────────────
 const isMobile = () => window.innerWidth <= 768
+function getWorldWidth() {
+  if(!isMobile()) return window.innerWidth
+  return Math.round(window.innerHeight * (1000/600))
+}
+let mobileScrollInited = false
 
 function toPos(x,y) {
   let safeMaxPct
@@ -1028,7 +1037,7 @@ function separateChars(positions) {
     }
   }
   // clamp x to safe zone
-  const W=window.innerWidth, safeMaxPx=isMobile()?W*0.88:W-265-30
+  const W=isMobile()?getWorldWidth():window.innerWidth, safeMaxPx=isMobile()?W*0.88:W-265-30
   positions.forEach(p=>{
     p.px=Math.max(W*0.05, Math.min(safeMaxPx, p.px))
   })
@@ -1135,7 +1144,7 @@ function updateWorld() {
 
   const CHARS=Object.keys(S.chars)
   CHARS.forEach(cid=>ensureCharDom(cid))
-  const W=window.innerWidth, H=window.innerHeight
+  const W=isMobile()?getWorldWidth():window.innerWidth, H=window.innerHeight
   // compute raw pixel positions
   const positions=CHARS.map(cid=>{
     const c=S.chars[cid]||{}
@@ -1160,13 +1169,21 @@ function updateWorld() {
   updateStatCards()
   renderStructures()
   renderResHud()
+
+  if(isMobile() && !mobileScrollInited) {
+    mobileScrollInited = true
+    const worldEl = document.getElementById('world')
+    requestAnimationFrame(() => {
+      worldEl.scrollLeft = (worldEl.scrollWidth - window.innerWidth) * 0.5
+    })
+  }
 }
 
 // ── STARS CANVAS ─────────────────────────────────────────
 function drawStars(active) {
   const c=document.getElementById('stars')
   if(!active){c.style.opacity='0';return}
-  c.width=window.innerWidth;c.height=window.innerHeight*.34
+  c.width=getWorldWidth();c.height=window.innerHeight*.34
   const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height)
   for(let i=0;i<200;i++){
     const x=(Math.sin(i*137.5)*.5+.5)*c.width
