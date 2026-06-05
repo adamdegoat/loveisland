@@ -2052,7 +2052,7 @@ async function loadOracle() {
   const body = document.getElementById('oracle-body')
   try {
     const fate = await fetch('data/fate.json?t='+Date.now()).then(r=>r.json())
-    const isActive = fate.status === 'active'
+    const isActive = fate.status === 'activated' || fate.status === 'active'
     const CYCLE_TIME = {morning:'7am',midday:'12:30pm',evening:'6pm',night:'11pm'}
     const cycleTime = CYCLE_TIME[fate.cycle] || fate.happens_at || '—'
     const wd = S.world?.day || 1
