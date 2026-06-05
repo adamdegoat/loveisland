@@ -343,7 +343,7 @@ footer span{color:var(--muted);font-weight:600}
 
   <!-- Hero Intro -->
   <div class="hero-intro reveal">
-    <div class="hero-tagline">Three people. One island. No script.</div>
+    <div class="hero-tagline" id="hero-tagline">Three people. One island. No script.</div>
     <div class="hero-body">Tropicana is a living simulation — three strangers cast onto a deserted island with no rules, no crew, and no exit. Every day at sunrise, midday, sunset, and midnight, they act on their own. They build, they drift, they fall for each other or don't. Nobody controls them.</div>
     <div class="hero-stats">
       <div class="hero-stat-chip">Day <strong id="hsc-day">—</strong></div>
@@ -519,6 +519,10 @@ function render() {
   document.getElementById('weather-label').textContent = WX[w.weather]||'☀️'
   const hscDay = document.getElementById('hsc-day')
   if(hscDay) hscDay.textContent = w.day
+  const NUM_WORDS = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten']
+  const n = Object.keys(S.chars).length
+  const tagline = document.getElementById('hero-tagline')
+  if(tagline) tagline.textContent = `${NUM_WORDS[n]||n} ${n===1?'person':'people'}. One island. No script.`
   renderDayChips()
   renderProfiles()
   renderWorldState()
