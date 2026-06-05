@@ -1305,8 +1305,19 @@ const CYCLE_HOUR = {morning:'7am',midday:'12:30pm',evening:'6pm',night:'11pm'}
 const CHAR_COLOR = {marcus:'#c084fc',ryan:'#fb923c',jade:'#f472b6',judy:'#2dd4bf'}
 function getCharColor(cid){return CHAR_COLOR[cid]||S.chars[cid]?.color||'#e2e8f0'}
 
+function fmtSGT(ts) {
+  if(!ts) return ''
+  const d = new Date((ts.includes('Z')||ts.includes('+')) ? ts : ts+'Z')
+  const sgt = new Date(d.getTime() + 8*3600000)
+  let h = sgt.getUTCHours(), m = sgt.getUTCMinutes()
+  const ap = h >= 12 ? 'PM' : 'AM'
+  h = h % 12 || 12
+  return `${h}:${String(m).padStart(2,'0')} ${ap}`
+}
+
 function cycleLabel(e) {
-  return `Day ${e.day||1} · ${CYCLE_HOUR[e.cycle]||e.cycle||''}`
+  const time = fmtSGT(e.timestamp)
+  return `Day ${e.day||1} · ${time || CYCLE_HOUR[e.cycle]||e.cycle||''}`
 }
 
 function renderChat() {

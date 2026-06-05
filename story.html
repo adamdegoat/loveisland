@@ -645,8 +645,19 @@ function setCycle(cycle) {
 
 const CYCLE_HOUR_S = {morning:'7am',midday:'12:30pm',evening:'6pm',night:'11pm'}
 
+function fmtSGTS(ts) {
+  if(!ts) return ''
+  const d = new Date((ts.includes('Z')||ts.includes('+')) ? ts : ts+'Z')
+  const sgt = new Date(d.getTime() + 8*3600000)
+  let h = sgt.getUTCHours(), m = sgt.getUTCMinutes()
+  const ap = h >= 12 ? 'PM' : 'AM'
+  h = h % 12 || 12
+  return `${h}:${String(m).padStart(2,'0')} ${ap}`
+}
+
 function cycleLabelS(e) {
-  return `Day ${e.day||1} · ${CYCLE_HOUR_S[e.cycle]||e.cycle||''}`
+  const time = fmtSGTS(e.timestamp)
+  return `Day ${e.day||1} · ${time || CYCLE_HOUR_S[e.cycle]||e.cycle||''}`
 }
 
 function renderDialogue(dlg, chars) {
@@ -758,16 +769,29 @@ function renderLog() {
     if(!byDay[e.day][e.cycle]) byDay[e.day][e.cycle] = []
     byDay[e.day][e.cycle].push(e)
   })
+
+  // Prologue — founding characters (no joined_day means original cast)
+  const pChars = Object.keys(S.chars).filter(c => !S.chars[c].joined_day || S.chars[c].joined_day <= 1)
+  const pDots = pChars.map(cid => `<div class="log-dot" style="background:${CHARS[cid]||'#475569'}"></div>`).join('')
+  const prologueHtml = `<div class="log-day">
+    <div class="log-day-header" style="font-size:10px;letter-spacing:1.5px;color:var(--muted2)">PROLOGUE</div>
+    <div class="log-entry">
+      <div class="log-cycle-tag">Day 1</div>
+      <div style="display:flex;gap:3px;flex-shrink:0;align-items:center;margin-top:.3rem">${pDots}</div>
+      <div style="flex:1;color:var(--text)">Three strangers wash ashore with nothing but the clothes on their backs. Marcus, Ryan, and Jade — no plan, no rules, no way home. The story begins here.</div>
+    </div>
+  </div>`
+
   const days = Object.keys(byDay).sort((a,b)=>a-b)
   if(!days.length) {
-    document.getElementById('full-log').innerHTML = '<div style="font-size:13px;color:var(--muted);padding:1rem 0;text-align:center">No key moments yet — check back after the next cycle.</div>'
+    document.getElementById('full-log').innerHTML = prologueHtml + '<div style="font-size:13px;color:var(--muted);padding:1rem 0;text-align:center">No key moments yet — check back after the next cycle.</div>'
     return
   }
-  document.getElementById('full-log').innerHTML = days.map(day => {
+  document.getElementById('full-log').innerHTML = prologueHtml + days.map(day => {
     const cycles = byDay[day]
     const entries = CYCLE_ORDER.filter(c=>cycles[c]).map(cyc =>
       cycles[cyc].map(e => {
-        const cTag = CYCLE_HOUR_S[cyc]||cyc
+        const cTag = fmtSGTS(e.timestamp) || CYCLE_HOUR_S[cyc]||cyc
         if(e.type === 'interaction') {
           const dots = (e.characters||[]).map(cid=>`<div class="log-dot" style="background:${CHARS[cid]||'#475569'}"></div>`).join('')
           return `<div class="log-entry">
