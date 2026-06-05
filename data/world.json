@@ -2,7 +2,9 @@
   "day": 2,
   "cycle": "evening",
   "weather": "clear",
-  "pending_events": [],
+  "pending_events": [
+    "A soaked, trembling brown Great Dane puppy creeps to the edge of the firelight — the group notices the stray for the first time tonight. It is starving and terrified but drawn to the warmth. Introduce its arrival naturally this cycle."
+  ],
   "started": "2026-06-04",
   "pulse": "Ryan is becoming Judy's lifeline, and she's holding on tight; Marcus watches with quiet tension; Jade is thinking about tomorrow.",
   "structures": [

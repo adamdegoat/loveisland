@@ -36,6 +36,11 @@
         "closeness": 1,
         "tension": 0,
         "attraction": 0
+      },
+      "stray": {
+        "closeness": 5,
+        "tension": 0,
+        "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
@@ -75,6 +80,11 @@
         "attraction": 10
       },
       "judy": {
+        "closeness": 5,
+        "tension": 0,
+        "attraction": 0
+      },
+      "stray": {
         "closeness": 5,
         "tension": 0,
         "attraction": 0
@@ -123,6 +133,11 @@
         "closeness": 4,
         "tension": 0,
         "attraction": 0
+      },
+      "stray": {
+        "closeness": 5,
+        "tension": 0,
+        "attraction": 0
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
@@ -168,6 +183,11 @@
         "closeness": 4,
         "tension": 0,
         "attraction": 0
+      },
+      "stray": {
+        "closeness": 5,
+        "tension": 0,
+        "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
@@ -175,5 +195,53 @@
       "with": "ryan",
       "state": "comforting"
     }
+  },
+  "stray": {
+    "name": "",
+    "species": "dog",
+    "age": 0,
+    "archetype": "stray pup",
+    "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
+    "color": "#9c6b43",
+    "interaction": null,
+    "location": {
+      "waypoint": "beach_left",
+      "x": 20,
+      "y": 88
+    },
+    "mood": "wary",
+    "relationships": {
+      "marcus": {
+        "closeness": 0,
+        "tension": 0,
+        "attraction": 0
+      },
+      "ryan": {
+        "closeness": 0,
+        "tension": 0,
+        "attraction": 0
+      },
+      "jade": {
+        "closeness": 0,
+        "tension": 0,
+        "attraction": 0
+      },
+      "judy": {
+        "closeness": 0,
+        "tension": 0,
+        "attraction": 0
+      }
+    },
+    "scores": {
+      "trust": 12,
+      "openness": 25,
+      "ambition": 0,
+      "loneliness": 80,
+      "resilience": 75,
+      "hunger": 80,
+      "thirst": 60,
+      "energy": 50
+    },
+    "shelter": "under the palms"
   }
 }
