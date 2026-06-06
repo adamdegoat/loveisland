@@ -1,10 +1,10 @@
 {
   "day": 3,
-  "cycle": "morning",
+  "cycle": "midday",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "After last night, Marcus can't get Jade out of his head — and Ryan's too wrapped up in Judy to notice.",
+  "pulse": "Ryan and the stray are bonding, drawing Judy closer—but Marcus is at the cliff alone, waiting for dusk, waiting for Jade.",
   "structures": [
     {
       "id": "marcus_tent",
@@ -52,22 +52,23 @@
     }
   ],
   "resources": {
+    "food": 5,
+    "water": 0,
+    "wood": 32,
+    "medicine": 15
+  },
+  "resources_prev": {
     "food": 21,
     "water": 10,
     "wood": 32,
     "medicine": 15
   },
-  "resources_prev": {
-    "food": 37,
-    "water": 21,
-    "wood": 33,
-    "medicine": 15
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-06:morning",
-  "scene": "They held hands at the cliff in the dark; by morning they'd pulled apart — Marcus to his tent, Jade to the firewood — while Ryan and Judy grow closer on the porch.",
+  "last_cycle_key": "2026-06-06:midday",
+  "scene": "The stray naps on Ryan's leg by the firepit, finally trusting; Jade gathers nearby while Judy keeps watch from the porch—but Marcus is at the cliff, alone, thinking only of evening.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name."
-  }
+  },
+  "last_run_date": "2026-06-06"
 }

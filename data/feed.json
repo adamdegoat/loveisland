@@ -1391,5 +1391,223 @@
       }
     ],
     "timestamp": "2026-06-06T07:02:19.930190"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "He sits at the cliff lookout, throwing stones into the ocean one by one, each one an attempt to settle something restless.",
+    "thought": "Tonight. What do I say tonight?",
+    "location": {
+      "waypoint": "cliff_lookout",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "restless",
+    "timestamp": "2026-06-06T12:32:10.072762"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "He sits near the firepit with the stray's head resting against his leg, slowly hand-feeding it scraps of dried fish, watching its shoulders relax.",
+    "thought": "It's starting to trust me. That matters.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-06T12:32:10.072762"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "She approaches from the jungle path carrying an armful of coconuts and fresh palm fronds, moving with the ease of someone who belongs everywhere and nowhere.",
+    "thought": "The light is perfect right now. Golden.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-06T12:32:10.072762"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "judy",
+    "action": "She emerges from the house door, one hand pressed to the small of her back, drawn by the sound of voices and the sight of Ryan tending something gentle.",
+    "thought": "He feeds it so gently. Like he cares.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-06T12:32:10.072762"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "character": "stray",
+    "action": "The puppy leans fully into Ryan's leg, its tail lifting slightly, testing whether the warmth and kindness are real or another false safety that might vanish.",
+    "thought": "His hand is warm. Is this staying?",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "cautious",
+    "timestamp": "2026-06-06T12:32:10.072762"
+  },
+  {
+    "day": 3,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "judy",
+      "stray"
+    ],
+    "description": "At the firepit during midday, Ryan hand-feeds the recovering stray while Jade arrives with gathered coconuts and Judy watches from the porch, uncertain whether to join or stay apart.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Here, slow. You're safe. Just take it easy."
+      },
+      {
+        "speaker": "stray",
+        "line": "[soft whimper, sniffs the fish, takes it gently]"
+      },
+      {
+        "speaker": "jade",
+        "line": "How much is it eating now? It looks less scared than yesterday."
+      },
+      {
+        "speaker": "ryan",
+        "line": "A little more each time. I think it's starting to understand we're not going to hurt it."
+      },
+      {
+        "speaker": "judy",
+        "line": "Can I... do you want help? I could sit with it?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah, you can. Just keep your movements slow. It spooks easy."
+      },
+      {
+        "speaker": "stray",
+        "line": "[ears perk up, glances at Judy but stays against Ryan's leg]"
+      },
+      {
+        "speaker": "jade",
+        "line": "It bonded with you first because you weren't afraid. Animals know that stuff."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm not sure what I was afraid of. Still am, kind of. Like if I stop moving, I'll just disappear."
+      },
+      {
+        "speaker": "judy",
+        "line": "You won't. You're here. You're real."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's why it trusts him. He actually shows up."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah well, showing up is the easy part. Staying—that's what matters, right?"
+      },
+      {
+        "speaker": "stray",
+        "line": "[tail wags once, then settles]"
+      },
+      {
+        "speaker": "judy",
+        "line": "I've been thinking about what you said last night. About how something needs you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I don't remember saying that exactly, but... yeah. It matters to be needed."
+      },
+      {
+        "speaker": "jade",
+        "line": "Everyone here needs something. That's kind of why we're here, isn't it?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe. Or maybe we're all just people who don't fit anywhere else, so the island fits us somehow."
+      },
+      {
+        "speaker": "judy",
+        "line": "Do you think we'll ever leave?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I think we'll stay as long as we need to. Then we'll know when to go."
+      },
+      {
+        "speaker": "stray",
+        "line": "[rests head fully on Ryan's thigh, a small sigh]"
+      },
+      {
+        "speaker": "jade",
+        "line": "You know, Judy—the puppy came here because it was desperate, and it found the warmest place. That's what we're all doing."
+      },
+      {
+        "speaker": "judy",
+        "line": "I wasn't that brave. I didn't choose this."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Neither did it. But you both survived. That's the same thing, kind of."
+      },
+      {
+        "speaker": "jade",
+        "line": "The island doesn't care how you got here. Just that you did."
+      },
+      {
+        "speaker": "stray",
+        "line": "[tail thumps against the ground, eyes drifting closed]"
+      },
+      {
+        "speaker": "judy",
+        "line": "It's falling asleep. It really does feel safe with you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We're not safe. None of us are. But we're together. Maybe that's the same thing."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's sweet, Ryan. And probably true."
+      },
+      {
+        "speaker": "stray",
+        "line": "[soft snore, paws twitch in dream]"
+      },
+      {
+        "speaker": "judy",
+        "line": "I hope Marcus sees this. Maybe he'd understand why we're keeping it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Marcus doesn't need to understand. He just needs to let us try."
+      },
+      {
+        "speaker": "jade",
+        "line": "He will. Marcus is harder on himself than anyone else. The rest of us he just watches."
+      }
+    ],
+    "timestamp": "2026-06-06T12:32:10.072762"
   }
 ]
