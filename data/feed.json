@@ -1818,5 +1818,254 @@
       }
     ],
     "timestamp": "2026-06-06T18:10:32.240184"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "Walks down from his tent just as Jade and Ryan settle by the fire, staying at the edge of the light.",
+    "thought": "She picked him. Again. I watch from the edges.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "withdrawn",
+    "timestamp": "2026-06-06T19:54:22.330317"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "Sits by the fire with the stray dozing against his knee, watching the embers glow steady and warm.",
+    "thought": "I want to hold this moment. All of it.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "tender",
+    "timestamp": "2026-06-06T19:54:22.330317"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "Arrives with an armful of firewood, settles beside Ryan without hesitation, and feeds the fire a piece at a time.",
+    "thought": "This feels right. Him, the fire, this peace.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-06T19:54:22.330317"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "Steps out onto the porch as the sun sets, watches the three of them by the fire from the shadows, then turns back inside.",
+    "thought": "They don't need me there. They have each other.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-06T19:54:22.330317"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "Curls tight against Ryan's leg by the fire, its breathing deep and even, finally resting without flinching.",
+    "thought": "Safe. He keeps me safe.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-06T19:54:22.330317"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "marcus"
+    ],
+    "description": "By the firepit in the fading light, Ryan and Jade settle into warmth while Marcus arrives and the truth spills out—three people caught in a moment neither can hold and none will release.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You came back. I wasn't sure you would after the firewood run."
+      },
+      {
+        "speaker": "jade",
+        "line": "The light was still beautiful. I couldn't miss it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It's better now that you're here. Both of you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Fire won't tend itself. Someone should split the wood for tonight."
+      },
+      {
+        "speaker": "jade",
+        "line": "I brought enough. It's stacked by the pit."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I saw. Just saying, it runs low fast."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We can gather more tomorrow. Tonight I want to sit with this."
+      },
+      {
+        "speaker": "jade",
+        "line": "With what?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "With knowing they're okay. Both of them."
+      },
+      {
+        "speaker": "marcus",
+        "line": "The pup's okay because you fed it. That's not the same as everything being okay."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know that. But it matters."
+      },
+      {
+        "speaker": "jade",
+        "line": "It does matter. He's right."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Of course it matters. I just don't know how long we can afford to care."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's exactly when we can't afford not to."
+      },
+      {
+        "speaker": "jade",
+        "line": "We're not running out yet. Are we?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You haven't been tracking the stores."
+      },
+      {
+        "speaker": "jade",
+        "line": "Then I will."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I will too. We can figure it out together."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're by the fire every night now. Both of you. Together."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We're keeping the fire alive. That's the job."
+      },
+      {
+        "speaker": "jade",
+        "line": "You could join us."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not built for sitting around."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're built for keeping watch. But you're not meant to be alone."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I've been alone my whole life, Ryan. I'm fine with it."
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't think you are."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You don't know me."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm starting to."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Then you know I don't do this. I don't sit and talk about feelings."
+      },
+      {
+        "speaker": "ryan",
+        "line": "This isn't about feelings. It's about dinner. We're all tired."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Exactly. We should be splitting wood, not having a moment."
+      },
+      {
+        "speaker": "jade",
+        "line": "We can do both."
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. You can't. One of you has to give."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm not stepping back, if that's what you're saying."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not asking you to. I'm just saying I see what's happening."
+      },
+      {
+        "speaker": "jade",
+        "line": "And what is that?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "That you're falling in. Both of you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And if we are?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Then at least one of us is still thinking clearly."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're jealous."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm practical."
+      }
+    ],
+    "timestamp": "2026-06-06T19:54:22.330317"
   }
 ]
