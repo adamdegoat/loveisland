@@ -52,8 +52,8 @@
     }
   ],
   "resources": {
-    "food": 0,
-    "water": 0,
+    "food": 50,
+    "water": 50,
     "wood": 32,
     "medicine": 15
   },
