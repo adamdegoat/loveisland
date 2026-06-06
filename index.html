@@ -308,10 +308,10 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   #day-hist-btn{top:14px;right:12px;padding:5px 10px;font-size:10px}
   #day-stamp{left:13px;top:50px}
   #day-history-panel{top:52px;right:12px;width:220px}
-  #res-hud{top:54px;right:12px}
-  .res-pill{padding:3px 8px 3px 7px;min-height:30px}
-  .res-pill-icon{font-size:13px}
-  .res-pill-val{font-size:11px}
+  #res-hud{top:54px;right:10px;gap:3px}
+  .res-pill{padding:2px 7px 2px 6px;min-height:22px;gap:3px}
+  .res-pill-icon{font-size:11px}
+  .res-pill-val{font-size:10px;min-width:15px}
   .stat-card{display:none}
   .stat-card.tap-open{display:block;opacity:1;transform:translateY(0)}
   .stat-card.right,.stat-card.left{left:50%;transform:translateX(-50%);right:auto}
@@ -2575,16 +2575,26 @@ async function loadOracle() {
 // Position is MEASURED from the headline's real rendered bottom (never hardcoded) so it
 // stays glued under it on every screen size and however many lines the headline wraps to.
 function positionSceneLine(){
-  const el = document.getElementById('scene-line')
-  if(!el) return
-  const txt = (S && S.world && S.world.scene) || ''
-  el.textContent = txt
-  if(!txt){ el.style.display='none'; return }
-  el.style.display=''
   const pulse = document.getElementById('pulse')
   const pr = pulse?.getBoundingClientRect()
-  // sit just below the headline; fall back to a sane top if the headline isn't laid out yet
-  el.style.top = ((pr && pr.bottom ? pr.bottom : 32) + 6) + 'px'
+  let blockBottom = (pr && pr.bottom) ? pr.bottom : 32
+  const el = document.getElementById('scene-line')
+  if(el){
+    const txt = (S && S.world && S.world.scene) || ''
+    el.textContent = txt
+    if(!txt){ el.style.display='none' }
+    else {
+      el.style.display=''
+      // sit just below the headline; fall back to a sane top if it isn't laid out yet
+      el.style.top = (blockBottom + 6) + 'px'
+      blockBottom = el.getBoundingClientRect().bottom
+    }
+  }
+  // On mobile, drop the resource pills just under the whole headline block so they never
+  // cover the words (measured, so it adapts to however many lines the text wraps to).
+  // On desktop there's room, so revert to the CSS position.
+  const hud = document.getElementById('res-hud')
+  if(hud) hud.style.top = isMobile() ? (Math.round(blockBottom) + 10) + 'px' : ''
 }
 
 function setHudVar(){
