@@ -6,36 +6,36 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 24,
-      "openness": 22,
+      "openness": 23,
       "ambition": 45,
-      "loneliness": 76,
+      "loneliness": 80,
       "resilience": 86,
-      "hunger": 26,
-      "thirst": 25,
+      "hunger": 23,
+      "thirst": 18,
       "energy": 0,
-      "health": 84
+      "health": 76
     },
     "mood": "restless",
     "location": {
-      "waypoint": "tent_front",
+      "waypoint": "cliff_base",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 21,
-        "tension": 17,
+        "closeness": 20,
+        "tension": 20,
         "attraction": 0
       },
       "jade": {
-        "closeness": 22,
-        "tension": 2,
+        "closeness": 21,
+        "tension": 6,
         "attraction": 5
       },
       "judy": {
-        "closeness": 2,
-        "tension": 0,
+        "closeness": 1,
+        "tension": 3,
         "attraction": 0
       },
       "stray": {
@@ -45,7 +45,14 @@
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
-    "interaction": null
+    "interaction": null,
+    "memories": [
+      {
+        "day": 3,
+        "text": "At the cliff, I watched her choose him at the fire instead of me",
+        "weight": 1
+      }
+    ]
   },
   "ryan": {
     "name": "Ryan Lim",
@@ -53,17 +60,17 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 81,
-      "openness": 93,
+      "trust": 82,
+      "openness": 94,
       "ambition": 74,
-      "loneliness": 25,
-      "resilience": 43,
-      "hunger": 31,
-      "thirst": 25,
+      "loneliness": 22,
+      "resilience": 44,
+      "hunger": 28,
+      "thirst": 18,
       "energy": 0,
-      "health": 84
+      "health": 76
     },
-    "mood": "content",
+    "mood": "relieved",
     "location": {
       "waypoint": "firepit_left",
       "x": 42,
@@ -72,31 +79,38 @@
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 21,
-        "tension": 12,
+        "closeness": 20,
+        "tension": 15,
         "attraction": 0
       },
       "jade": {
-        "closeness": 29,
-        "tension": 5,
-        "attraction": 12
+        "closeness": 30,
+        "tension": 8,
+        "attraction": 13
       },
       "judy": {
-        "closeness": 10,
-        "tension": 0,
+        "closeness": 8,
+        "tension": 4,
         "attraction": 0
       },
       "stray": {
-        "closeness": 13,
+        "closeness": 15,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
-      "with": "stray",
-      "state": "comforting"
-    }
+      "with": "jade",
+      "state": "sitting_together"
+    },
+    "memories": [
+      {
+        "day": 3,
+        "text": "Jade saw my exhaustion and offered to watch the fire — said I matter",
+        "weight": 2
+      }
+    ]
   },
   "jade": {
     "name": "Jade Ng",
@@ -104,15 +118,15 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 66,
-      "openness": 81,
+      "trust": 67,
+      "openness": 82,
       "ambition": 39,
-      "loneliness": 34,
-      "resilience": 60,
-      "hunger": 26,
-      "thirst": 25,
+      "loneliness": 32,
+      "resilience": 61,
+      "hunger": 23,
+      "thirst": 18,
       "energy": 0,
-      "health": 84
+      "health": 76
     },
     "mood": "peaceful",
     "location": {
@@ -123,28 +137,38 @@
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 22,
-        "tension": 2,
+        "closeness": 21,
+        "tension": 6,
         "attraction": 5
       },
       "ryan": {
-        "closeness": 29,
-        "tension": 5,
-        "attraction": 7
+        "closeness": 30,
+        "tension": 8,
+        "attraction": 8
       },
       "judy": {
-        "closeness": 7,
-        "tension": 0,
+        "closeness": 6,
+        "tension": 4,
         "attraction": 0
       },
       "stray": {
-        "closeness": 10,
+        "closeness": 11,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": null
+    "interaction": {
+      "with": "ryan",
+      "state": "sitting_together"
+    },
+    "memories": [
+      {
+        "day": 3,
+        "text": "Ryan admitted he's burning out, and I could offer him rest and hope",
+        "weight": 2
+      }
+    ]
   },
   "judy": {
     "name": "Judy Chen",
@@ -152,15 +176,15 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 63,
+      "trust": 62,
       "openness": 82,
       "ambition": 34,
-      "loneliness": 73,
+      "loneliness": 77,
       "resilience": 65,
-      "hunger": 26,
-      "thirst": 25,
-      "energy": 12,
-      "health": 84
+      "hunger": 23,
+      "thirst": 18,
+      "energy": 0,
+      "health": 76
     },
     "mood": "anxious",
     "location": {
@@ -174,18 +198,18 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 2,
-        "tension": 0,
+        "closeness": 1,
+        "tension": 3,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 10,
-        "tension": 0,
+        "closeness": 8,
+        "tension": 4,
         "attraction": 0
       },
       "jade": {
-        "closeness": 7,
-        "tension": 0,
+        "closeness": 6,
+        "tension": 4,
         "attraction": 0
       },
       "stray": {
@@ -195,7 +219,14 @@
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": null
+    "interaction": null,
+    "memories": [
+      {
+        "day": 3,
+        "text": "Jade and Ryan sat by the fire while I watched from the porch — he's turning toward her",
+        "weight": 2
+      }
+    ]
   },
   "stray": {
     "name": "",
@@ -206,47 +237,54 @@
     "color": "#9c6b43",
     "interaction": {
       "with": "ryan",
-      "state": "comforting"
+      "state": "sitting_together"
     },
     "location": {
       "waypoint": "firepit_left",
       "x": 20,
       "y": 88
     },
-    "mood": "cautious",
+    "mood": "hopeful",
     "relationships": {
       "marcus": {
-        "closeness": 3,
-        "tension": 0,
+        "closeness": 2,
+        "tension": 3,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 8,
-        "tension": 0,
+        "closeness": 9,
+        "tension": 3,
         "attraction": 0
       },
       "jade": {
         "closeness": 5,
-        "tension": 0,
+        "tension": 3,
         "attraction": 0
       },
       "judy": {
-        "closeness": 5,
-        "tension": 0,
+        "closeness": 4,
+        "tension": 3,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 18,
-      "openness": 28,
+      "trust": 20,
+      "openness": 29,
       "ambition": 0,
-      "loneliness": 72,
+      "loneliness": 68,
       "resilience": 76,
-      "hunger": 74,
-      "thirst": 41,
-      "energy": 23,
+      "hunger": 71,
+      "thirst": 34,
+      "energy": 17,
       "health": 100
     },
-    "shelter": "under the palms"
+    "shelter": "under the palms",
+    "memories": [
+      {
+        "day": 3,
+        "text": "Ryan's warmth and his hand keep me safe — I sleep without fear now",
+        "weight": 2
+      }
+    ]
   }
 }

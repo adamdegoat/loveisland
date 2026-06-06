@@ -1609,5 +1609,214 @@
       }
     ],
     "timestamp": "2026-06-06T12:32:10.072762"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "He remains at the cliff edge as twilight deepens, watching the firelight flicker across the water, words unsaid building in his chest.",
+    "thought": "She's with him at the fire.",
+    "location": {
+      "waypoint": "cliff_base",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "restless",
+    "timestamp": "2026-06-06T18:10:32.240184"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "He sits by the fire with the stray against his leg, his exhaustion easing as Jade settles beside him with fresh kindling.",
+    "thought": "Maybe I can keep going if I'm not alone.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "relieved",
+    "timestamp": "2026-06-06T18:10:32.240184"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "She arrives with an armload of dry wood and settles by the firepit, offering Ryan what he doesn't ask for but desperately needs.",
+    "thought": "He's carrying too much on his own.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-06T18:10:32.240184"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "She sits alone on the house porch, watching Ryan and Jade by the firelight, her hand on her belly, her chest tight with something she can't name.",
+    "thought": "He's different when she's near him.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-06T18:10:32.240184"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "The puppy eats from Ryan's hand and settles against his leg, tail slow and steady, the terror of the past days finally giving way to trust and sleep.",
+    "thought": "Safe. This is safe now.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "hopeful",
+    "timestamp": "2026-06-06T18:10:32.240184"
+  },
+  {
+    "day": 3,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "stray"
+    ],
+    "description": "By the firepit at evening, Ryan feeds the recovering stray while Jade arrives with firewood, and they settle into a quiet conversation about rest, resources, and what Ryan truly needs.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Hey, buddy. There's a bit of fish left from lunch if you want it. Easy now."
+      },
+      {
+        "speaker": "stray",
+        "line": "The puppy whimpers, tail tentative, approaches Ryan's outstretched hand."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're so patient with it. I've never seen you sit still this long, just... being quiet with something that's scared."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah, well... this one's scared. Don't think it's been treated well before. You can see it in how it moves."
+      },
+      {
+        "speaker": "stray",
+        "line": "Takes the fish gently from Ryan's hand, presses against his leg with quiet hunger."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's why, then. You make it safe. That's a gift."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I don't know how long I can keep this up, honestly. The food supply is getting thin, and we haven't found fresh water in two days."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're doing more than anyone here. Look at it — it already trusts you completely. That takes time to build."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It's not about what I want, though. It's just about... keeping things together. All of it. The supplies, the morale, this... situation."
+      },
+      {
+        "speaker": "stray",
+        "line": "Finishes eating, curls closer to Ryan's leg, ears relaxing for the first time all day."
+      },
+      {
+        "speaker": "jade",
+        "line": "That matters more than you know. You matter, Ryan. More than you think."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Does it? Some days I feel like I'm just... burning through everything. My energy, the food, the will to keep pretending it's going to be okay."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're not burning out. You're building something. There's a real difference, and I can see it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You think so?"
+      },
+      {
+        "speaker": "stray",
+        "line": "Licks his hand slowly, tail moving steady now, the fear draining away with each moment of safety."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know so. I can see it clearly."
+      },
+      {
+        "speaker": "ryan",
+        "line": "The water's gone, by the way. We finished the last of it this morning. And there's maybe a week of food left at this rate."
+      },
+      {
+        "speaker": "jade",
+        "line": "There has to be a spring somewhere on this island. Fresh water always finds a way, and so will we."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Have you looked for it yet?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Not yet. But tomorrow, first light, I will find it. I promise."
+      },
+      {
+        "speaker": "stray",
+        "line": "Yawns, head heavy against Ryan's leg, trusting enough now to let sleep take him."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Tomorrow. I can believe in that."
+      },
+      {
+        "speaker": "jade",
+        "line": "You should rest tonight. Let someone else watch the fire for once. You're burning yourself out."
+      },
+      {
+        "speaker": "ryan",
+        "line": "The stray won't sleep if I leave it."
+      },
+      {
+        "speaker": "jade",
+        "line": "So let me stay, then. I'll keep the fire, I'll keep watch. You rest and actually recover."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You'd do that? Really, you'd sit here all night?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Of course I would. That's what you do for people who matter to you."
+      },
+      {
+        "speaker": "stray",
+        "line": "Breathing deep and steady, fully asleep now, the last of the wildness gone, safe in Ryan's presence."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Thank you. I really... thank you, Jade. I didn't know I needed this."
+      },
+      {
+        "speaker": "jade",
+        "line": "Rest now. Tomorrow we find water, and you're going to be okay."
+      }
+    ],
+    "timestamp": "2026-06-06T18:10:32.240184"
   }
 ]
