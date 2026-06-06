@@ -1373,19 +1373,18 @@ let mobileScrollInited = false
 
 // ── WAYPOINTS (SVG native coords — feet anchor point) ─────────
 const WAYPOINTS = {
-  jungle_path:    {sx:155,sy:365}, jungle_edge:   {sx:240,sy:348},
+  jungle_path:    {sx:155,sy:365}, jungle_edge:   {sx:266,sy:372},
   hammock_beside: {sx:232,sy:370}, palm_shade:    {sx:210,sy:395},
   meadow_left:    {sx:370,sy:385}, rock_cluster:  {sx:345,sy:410},
   firepit_left:   {sx:460,sy:445}, firepit_right: {sx:524,sy:445},
   firepit_front:  {sx:492,sy:460},
-  house_door:     {sx:533,sy:374}, house_porch:   {sx:575,sy:382},
-  house_garden:   {sx:484,sy:382}, path_mid:      {sx:517,sy:415},
+  house_door:     {sx:560,sy:402}, house_porch:   {sx:575,sy:382},
+  house_garden:   {sx:620,sy:400}, path_mid:      {sx:517,sy:415},
   meadow_right:   {sx:640,sy:405}, boulder_watch: {sx:645,sy:415},
   east_palm:      {sx:692,sy:465},
   beach_umbrella: {sx:118,sy:500}, beach_left:    {sx:210,sy:500},
   beach_mid:      {sx:480,sy:500}, beach_right:   {sx:760,sy:502},
-  cliff_base:     {sx:828,sy:355}, cliff_path:    {sx:850,sy:285},
-  cliff_lookout:  {sx:875,sy:225}, tent_front:    {sx:878,sy:216},
+  cliff_base:     {sx:828,sy:355}, tent_front:    {sx:870,sy:250},
   tide_pool:      {sx:735,sy:505},
 }
 
@@ -1396,7 +1395,6 @@ const WP_ADJACENT = {
   house_door:['house_porch','house_garden'],      house_porch:['house_door','house_garden'],
   house_garden:['house_door','house_porch'],
   hammock_beside:['palm_shade'],                  palm_shade:['hammock_beside'],
-  cliff_lookout:['tent_front'],                   tent_front:['cliff_lookout'],
   beach_umbrella:['beach_left'],                  beach_left:['beach_umbrella','beach_mid'],
   beach_mid:['beach_left','beach_right'],         beach_right:['beach_mid','tide_pool'],
 }
