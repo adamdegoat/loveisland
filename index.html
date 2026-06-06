@@ -82,6 +82,44 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 /* ── DAY STAMP ── */
 /* ── DAY HISTORY ── */
+/* ── AUDIENCE VOTE PILL + PANEL ("sway, don't script") ── */
+#vote-pill{position:fixed;top:22px;right:108px;z-index:35;display:flex;align-items:center;gap:6px;
+  padding:7px 14px;border-radius:20px;cursor:pointer;white-space:nowrap;
+  background:linear-gradient(135deg,rgba(251,191,36,.24),rgba(244,114,182,.2));
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(251,191,36,.5);
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:800;letter-spacing:.4px;color:#fde68a;
+  box-shadow:0 2px 14px rgba(0,0,0,.4);animation:votePulse 2.6s ease-in-out infinite;
+  transition:transform .15s,border-color .2s}
+#vote-pill:hover{transform:translateY(-1px);border-color:rgba(251,191,36,.85)}
+@keyframes votePulse{0%,100%{box-shadow:0 2px 14px rgba(0,0,0,.4),0 0 0 0 rgba(251,191,36,.45)}
+  50%{box-shadow:0 2px 14px rgba(0,0,0,.4),0 0 0 5px rgba(251,191,36,0)}}
+#vote-pill .vp-dot{width:6px;height:6px;border-radius:50%;background:#fde68a;box-shadow:0 0 7px #fde68a}
+#vote-overlay{position:fixed;inset:0;z-index:60;background:rgba(4,8,18,.55);backdrop-filter:blur(3px);
+  display:none;align-items:center;justify-content:center;padding:18px}
+#vote-overlay.open{display:flex}
+#vote-panel{width:340px;max-width:94vw;max-height:84vh;overflow-y:auto;
+  background:linear-gradient(180deg,rgba(18,24,42,.98),rgba(10,14,28,.98));
+  border:1px solid rgba(251,191,36,.3);border-radius:18px;padding:18px 18px 16px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+.vp-head{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;color:#fde68a}
+.vp-tag{font-size:11px;color:rgba(255,255,255,.5);font-style:italic;margin:3px 0 14px;line-height:1.4}
+.vp-q{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:9px}
+.vp-opt{position:relative;display:block;width:100%;text-align:left;margin-bottom:8px;padding:10px 12px;border-radius:11px;
+  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);cursor:pointer;overflow:hidden;color:#fff;
+  transition:border-color .15s,background .15s}
+.vp-opt:hover{border-color:rgba(251,191,36,.5)}
+.vp-opt:disabled{cursor:default}
+.vp-opt.picked{border-color:rgba(251,191,36,.9);background:rgba(251,191,36,.1)}
+.vp-bar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;transition:width .5s ease;
+  background:linear-gradient(90deg,rgba(251,191,36,.18),rgba(244,114,182,.12))}
+.vp-opt-label{position:relative;z-index:1;font-weight:800;font-size:12.5px}
+.vp-opt-desc{position:relative;z-index:1;font-size:10.5px;color:rgba(255,255,255,.55);margin-top:2px}
+.vp-opt-pct{position:absolute;right:11px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:800;color:#fde68a;z-index:2}
+.vp-voted{font-size:10.5px;color:rgba(74,222,128,.9);margin-top:3px;letter-spacing:.2px}
+.vp-hint{font-size:10.5px;color:rgba(255,255,255,.4);margin-top:3px}
+.vp-inplay{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.5}
+.vp-inplay b{color:#fde68a;font-weight:800}
+.vp-close{margin-top:14px;width:100%;padding:9px;border-radius:10px;border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);color:rgba(255,255,255,.7);font-weight:700;font-size:12px;cursor:pointer}
 #day-hist-btn{
   position:fixed;top:22px;right:18px;z-index:35;
   display:flex;align-items:center;gap:6px;
@@ -319,6 +357,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   /* no hover on touch — show structure names faintly so they're not invisible */
   .struct-label{color:rgba(255,255,255,.6)}
   #day-hist-btn{top:14px;right:12px;padding:5px 10px;font-size:10px}
+  #vote-pill{top:14px;right:88px;padding:5px 11px;font-size:10px}
   #day-stamp{left:13px;top:50px}
   #day-history-panel{top:52px;right:12px;width:220px}
   /* res-hud now anchors bottom-right via the base rule on all sizes */
@@ -452,6 +491,15 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 </div>
 <button id="day-hist-btn" onclick="toggleDayHistory()">📅 Days</button>
 <div id="day-history-panel" onclick="event.stopPropagation()"><div id="dhp-inner"></div></div>
+<div id="vote-pill" onclick="openVote()"><span class="vp-dot"></span> Vote</div>
+<div id="vote-overlay" onclick="if(event.target.id==='vote-overlay')closeVote()">
+  <div id="vote-panel">
+    <div class="vp-head">Sway the island</div>
+    <div class="vp-tag">You nudge how they lean — you never script them.</div>
+    <div id="vp-body">Loading the vote…</div>
+    <button class="vp-close" onclick="closeVote()">Close</button>
+  </div>
+</div>
 <div id="pulse"></div>
 <div id="scene-line"></div>
 <div id="structures-layer"></div>
@@ -2610,6 +2658,46 @@ if(_hudEl && window.ResizeObserver){
 
 setInterval(updateStatusBar,60000)
 init().then(()=>{ initTapStats(); setHudVar() })
+
+// ── AUDIENCE VOTING ("sway, don't script") ──────────────────────────────────
+const VOTE_URL='https://wuorljdhcucldqqeqlvy.supabase.co';
+const VOTE_KEY='sb_publishable_fUl9AURQ3Mp0OblCKoFkWQ_8qLW-UiA';
+const VOTE_WORLD='tropicana';
+let _vote=null;
+function voterId(){let v=localStorage.getItem('trop_voter');if(!v){v='v'+Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem('trop_voter',v);}return v;}
+async function loadVote(){ try{_vote=await fetch('data/vote.json?t='+Date.now()).then(r=>r.json());}catch{_vote=null;} renderVote(); }
+async function renderVote(){
+  const body=document.getElementById('vp-body'); if(!body) return;
+  if(!_vote||!_vote.poll){ body.innerHTML='<div style="color:rgba(255,255,255,.5);font-size:12px">No vote open right now — check back soon.</div>'; return; }
+  const poll=_vote.poll, opts=poll.options||[];
+  const myPick=localStorage.getItem('trop_voted_'+poll.id);
+  let tally={};
+  try{ const rows=await fetch(VOTE_URL+'/rest/v1/rpc/tally',{method:'POST',headers:{apikey:VOTE_KEY,Authorization:'Bearer '+VOTE_KEY,'Content-Type':'application/json'},body:JSON.stringify({w:VOTE_WORLD,p:poll.id})}).then(r=>r.json()); rows.forEach(r=>tally[r.choice]=r.n); }catch{}
+  const total=Object.values(tally).reduce((a,b)=>a+(+b||0),0);
+  let html=`<div class="vp-q">${poll.question||'Which way should the island lean?'}</div>`;
+  opts.forEach(o=>{
+    const n=+tally[o.id]||0, pct=total?Math.round(n/total*100):0, picked=myPick===o.id;
+    html+=`<button class="vp-opt${picked?' picked':''}" ${myPick?'disabled':''} onclick="castVote('${o.id}')">
+      <div class="vp-bar" style="width:${myPick?pct:0}%"></div>
+      <div class="vp-opt-label">${o.label}</div><div class="vp-opt-desc">${o.desc||''}</div>
+      ${myPick?`<div class="vp-opt-pct">${pct}%</div>`:''}</button>`;
+  });
+  html+= myPick
+    ? `<div class="vp-voted">✓ You leaned toward ${(opts.find(o=>o.id===myPick)||{}).label||myPick} · ${total} ${total===1?'voice':'voices'} so far</div>`
+    : `<div class="vp-hint">Tap to cast your one vote — it closes tonight.</div>`;
+  const ip=_vote.in_play;
+  if(ip) html+=`<div class="vp-inplay">In play now · <b>${ip.label}</b> — ${ip.desc}.${ip.votes?` Chosen by ${ip.votes} ${ip.votes===1?'watcher':'watchers'}.`:''} The island leans this way today.</div>`;
+  body.innerHTML=html;
+}
+async function castVote(choice){
+  const poll=_vote&&_vote.poll; if(!poll||localStorage.getItem('trop_voted_'+poll.id)) return;
+  try{ const res=await fetch(VOTE_URL+'/rest/v1/votes',{method:'POST',headers:{apikey:VOTE_KEY,Authorization:'Bearer '+VOTE_KEY,'Content-Type':'application/json'},body:JSON.stringify({world:VOTE_WORLD,poll_id:poll.id,choice,voter:voterId()})});
+    if(res.ok||res.status===409) localStorage.setItem('trop_voted_'+poll.id,choice); }catch{}
+  renderVote();
+}
+function openVote(){ document.getElementById('vote-overlay').classList.add('open'); loadVote(); }
+function closeVote(){ document.getElementById('vote-overlay').classList.remove('open'); }
+loadVote();
 </script>
 </body>
 </html>
