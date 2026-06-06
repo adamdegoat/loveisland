@@ -2,23 +2,23 @@
   "world": "tropicana",
   "poll": {
     "id": "2026-06-07",
-    "question": "Which way should the island lean tomorrow?",
     "closes": "tonight",
+    "question": "After her confession, should Jade pursue Ryan—or trust Marcus?",
     "options": [
       {
-        "id": "longing",
-        "label": "Longing",
-        "desc": "let quiet yearning and the unsaid ache through"
+        "id": "pursue_ryan",
+        "label": "Follow her heart",
+        "desc": "Be honest with Ryan—let the spark grow"
       },
       {
-        "id": "reflection",
-        "label": "Reflection",
-        "desc": "a slower, inward day of memory and what-ifs"
+        "id": "trust_marcus",
+        "label": "Hold the anchor",
+        "desc": "Reassure Marcus—lean on his steady presence"
       },
       {
-        "id": "warmth",
-        "label": "Warmth",
-        "desc": "let tenderness and small kindnesses lead"
+        "id": "take_time",
+        "label": "Take time alone",
+        "desc": "Ask them both for space to understand herself"
       }
     ]
   },
