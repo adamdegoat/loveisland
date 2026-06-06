@@ -1,9 +1,10 @@
 {
   "day": 3,
-  "text": "Jade hears Marcus crying in the dark and holds his hand",
-  "cycle": "morning",
-  "happens_at": "7am",
-  "status": "activated",
-  "revealed_at": "2026-06-06T00:00:36.837953",
-  "activated_at": "2026-06-06T07:00:00.103585"
+  "text": "Ryan discovers Jade broke their agreement and confided his fears in Marcus.",
+  "flavor": "broken trust",
+  "cycle": "night",
+  "happens_at": "11pm",
+  "status": "upcoming",
+  "revealed_at": "2026-06-07T00:00:24.729744",
+  "activated_at": null
 }
