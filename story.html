@@ -2,8 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tropicana — Story</title>
+<title>Tropicana — the story so far</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%F0%9F%8F%9D%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<meta name="description" content="The story so far on Tropicana — a never-ending island drama. Day-by-day recaps, the full Island Log, and every character's relationships, told four times a day with no script.">
+<meta name="theme-color" content="#070d18">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Never Ending Story Project">
+<meta property="og:title" content="Tropicana — the story so far">
+<meta property="og:description" content="Day-by-day recaps and the full Island Log of a never-ending island drama. No script, no crew, no exit.">
+<meta property="og:url" content="https://adamdegoat.github.io/loveisland/story.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tropicana — the story so far">
+<meta name="twitter:description" content="Day-by-day recaps and the full Island Log of a never-ending island drama.">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#070d18;--card:rgba(255,255,255,.04);--border:rgba(255,255,255,.07);
@@ -441,6 +456,8 @@ function renderDayChips() {
       ${cur?`<span class="day-chip-meta">${cap(w.cycle||'')} ${WX[w.weather]||'☀️'}</span>`:''}
     </div>`
   }).join('')
+  // Once the chips overflow, the default scroll sits on Day 1 — jump to the newest day.
+  requestAnimationFrame(() => { container.scrollLeft = container.scrollWidth })
 }
 
 function toggleDaySummary(day, chipEl) {
@@ -530,9 +547,13 @@ function renderWorldState() {
 }
 
 function renderProfiles() {
-  document.getElementById('profiles-grid').innerHTML = Object.entries(S.chars).map(([cid,c]) => {
+  // "The Islanders" = named people only. Pets (e.g. the stray dog, species!=human) and
+  // any not-yet-named/dormant character are excluded so they can't render a blank card.
+  document.getElementById('profiles-grid').innerHTML = Object.entries(S.chars)
+    .filter(([cid,c]) => (!c.species || c.species==='human') && c.name && c.name.trim())
+    .map(([cid,c]) => {
     const color = c.color || CHARS[cid]
-    const initials = c.name.split(' ').map(w=>w[0]).join('')
+    const initials = (c.name||'').split(' ').map(w=>w[0]).join('')
     const moodEmoji = MOOD_EMOJI[(c.mood||'').toLowerCase()] || '😐'
     const shelter = {tent:'⛺',house:'🏠',hammock:'🌴',beach:'🏖️',forest:'🌲'}
     return `<div class="char-card ${cid}" style="box-shadow:0 0 30px ${color}12">
@@ -541,7 +562,7 @@ function renderProfiles() {
       <div class="char-archetype">The ${cap(c.archetype)}</div>
       <div class="char-bio">${c.bio}</div>
       <div class="char-mood" style="color:${color}">${moodEmoji} ${cap(c.mood||'')}</div>
-      ${Object.entries(c.scores).filter(([k])=>!['hunger','thirst','energy'].includes(k)).map(([k,v])=>`
+      ${Object.entries(c.scores||{}).filter(([k])=>!['hunger','thirst','energy'].includes(k)).map(([k,v])=>`
         <div class="score-row">
           <span class="score-label">${k}</span>
           <div class="score-track"><div class="score-fill" style="width:${v}%;background:linear-gradient(90deg,${color}88,${color})"></div></div>
@@ -660,15 +681,24 @@ function renderLog() {
     byDay[e.day][e.cycle].push(e)
   })
 
-  // Prologue — founding characters (no joined_day means original cast)
-  const pChars = Object.keys(S.chars).filter(c => !S.chars[c].joined_day || S.chars[c].joined_day <= 1)
+  // Prologue — founding cast: named PEOPLE who were here from the start (no late joined_day,
+  // not a pet). Derived dynamically so the dots AND the sentence stay correct on any cast.
+  const pChars = Object.keys(S.chars).filter(c => {
+    const ch = S.chars[c]
+    return (!ch.species || ch.species==='human') && ch.name && ch.name.trim() && (!ch.joined_day || ch.joined_day <= 1)
+  })
   const pDots = pChars.map(cid => `<div class="log-dot" style="background:${CHARS[cid]||'#475569'}"></div>`).join('')
+  const NUMW = ['','One','Two','Three','Four','Five','Six','Seven','Eight']
+  const pNames = pChars.map(cid => (S.chars[cid].name||'').split(' ')[0])
+  const nameList = pNames.length>1 ? pNames.slice(0,-1).join(', ')+' and '+pNames.slice(-1) : (pNames[0]||'')
+  const pn = pChars.length
+  const prologueText = `${NUMW[pn]||pn} stranger${pn===1?'':'s'} wash ashore with nothing but the clothes on their backs. ${nameList} — no plan, no rules, no way home. The story begins here.`
   const prologueHtml = `<div class="log-day">
     <div class="log-day-header" style="font-size:10px;letter-spacing:1.5px;color:var(--muted2)">PROLOGUE</div>
     <div class="log-entry">
       <div class="log-cycle-tag">Day 1</div>
       <div style="display:flex;gap:3px;flex-shrink:0;align-items:center;margin-top:.3rem">${pDots}</div>
-      <div style="flex:1;color:var(--text)">Three strangers wash ashore with nothing but the clothes on their backs. Marcus, Ryan, and Jade — no plan, no rules, no way home. The story begins here.</div>
+      <div style="flex:1;color:var(--text)">${prologueText}</div>
     </div>
   </div>`
 

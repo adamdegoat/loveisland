@@ -6,11 +6,24 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Tropicana</title>
+<title>Tropicana — a never-ending story</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%F0%9F%8F%9D%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Tropicana is a never-ending story — strangers stranded on a deserted island, living and falling for each other four times a day. No script, no crew, no exit. The characters grow and surprise you on their own.">
+<meta name="theme-color" content="#0b1220">
+<!-- Social share preview -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Never Ending Story Project">
+<meta property="og:title" content="Tropicana — a never-ending story">
+<meta property="og:description" content="Strangers stranded on a deserted island, living and falling for each other four times a day. No script, no crew, no exit.">
+<meta property="og:url" content="https://adamdegoat.github.io/loveisland/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tropicana — a never-ending story">
+<meta name="twitter:description" content="Strangers stranded on a deserted island, living and falling for each other four times a day.">
+
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=VT323&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--above-hud:62px;--stage-bottom:96px;--oracle-bottom:52px}
+:root{--above-hud:62px;--stage-bottom:96px}
 html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans',sans-serif;background:#020617}
 /* World renders ABOVE the fixed bottom bars (HUD + collapsed feed drawer) so the
    beach + ocean band are never hidden behind them. --stage-bottom is measured live. */
@@ -125,16 +138,16 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #day-stamp{position:fixed;top:58px;left:16px;z-index:30;pointer-events:none;line-height:1.15}
 #pulse{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:30;pointer-events:none;
   font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-style:italic;font-weight:500;
-  color:rgba(255,255,255,.55);letter-spacing:.2px;text-align:center;max-width:340px;line-height:1.4;
-  text-shadow:0 1px 8px rgba(0,0,0,.4)}
+  color:rgba(255,255,255,.78);letter-spacing:.2px;text-align:center;max-width:340px;line-height:1.4;
+  text-shadow:0 1px 3px rgba(0,0,0,.75),0 1px 10px rgba(0,0,0,.4)}
 #pulse:not(:empty)::before{content:'✦ LATEST FROM TROPICANA';display:block;
   font-family:'VT323',monospace;font-size:10px;font-style:normal;font-weight:400;
-  letter-spacing:2px;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:3px}
+  letter-spacing:2px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:3px}
 #scene-line{position:fixed;left:50%;transform:translateX(-50%);z-index:30;pointer-events:none;
   width:380px;max-width:88vw;
   font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px;font-weight:500;
-  color:rgba(255,255,255,.6);letter-spacing:.2px;text-align:center;line-height:1.5;
-  text-shadow:0 1px 8px rgba(0,0,0,.45)}
+  color:rgba(255,255,255,.82);letter-spacing:.2px;text-align:center;line-height:1.5;
+  text-shadow:0 1px 3px rgba(0,0,0,.8),0 1px 10px rgba(0,0,0,.45)}
 #ds-day{font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;
   color:rgba(255,255,255,.1);letter-spacing:-1px}
 #ds-cycle{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;
@@ -295,16 +308,15 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   #status-info{display:block;flex-basis:100%;order:11}
   .stp{font-size:8px;padding:.1rem .3rem}
   .stp-arr{font-size:8px}
-  /* Push chat panel above the now-taller HUD; STACK the oracle one row higher
-     (above the feed bar, 44px tall) so its toggle stays visible/tappable and its
-     body expands upward instead of into the HUD or over the centered feed label. */
+  /* Push chat panel above the now-taller HUD. */
   #chat-panel{bottom:var(--above-hud)}
-  :root{--oracle-bottom:calc(var(--above-hud) + 44px)}
   #story-btn{padding:.28rem .55rem;font-size:10px}
   .bubble{max-width:82px;padding:3px 6px}
   .bubble-text{font-size:7.5px}
-  #pulse{top:78px;font-size:11px;max-width:78vw;color:rgba(255,255,255,.65)}
-  #scene-line{font-size:10.5px;width:78vw;color:rgba(255,255,255,.66)}
+  #pulse{top:78px;font-size:11px;max-width:78vw;color:rgba(255,255,255,.85)}
+  #scene-line{font-size:10.5px;width:78vw;color:rgba(255,255,255,.85)}
+  /* no hover on touch — show structure names faintly so they're not invisible */
+  .struct-label{color:rgba(255,255,255,.6)}
   #day-hist-btn{top:14px;right:12px;padding:5px 10px;font-size:10px}
   #day-stamp{left:13px;top:50px}
   #day-history-panel{top:52px;right:12px;width:220px}
@@ -398,33 +410,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.22)}
 
 
-/* ── ORACLE WIDGET ── */
-#oracle-widget{position:fixed;bottom:var(--oracle-bottom,52px);left:0;z-index:52;font-family:'VT323',monospace;transition:opacity .25s ease}
-/* Hide the Oracle while the feed drawer is open so it can't float over the chat */
-#world:has(#chat-panel.feed-open) #oracle-widget,
-#oracle-widget.feed-hidden{opacity:0;pointer-events:none}
-#oracle-toggle{display:flex;align-items:center;gap:5px;padding:5px 11px;
-  background:rgba(0,0,0,.7);border:none;border-top:1px solid rgba(251,191,36,.25);
-  border-right:1px solid rgba(251,191,36,.15);color:rgba(251,191,36,.6);
-  font-family:'VT323',monospace;font-size:13px;letter-spacing:2px;cursor:pointer;
-  transition:color .2s;width:auto}
-#oracle-toggle:hover{color:#fbbf24}
-#oracle-badge{font-size:10px;transition:transform .25s}
-#oracle-widget.open #oracle-badge{transform:rotate(180deg)}
-#oracle-body{max-height:0;overflow:hidden;transition:max-height .35s ease;
-  background:rgba(0,0,0,.82);border-right:1px solid rgba(251,191,36,.12);
-  border-top:1px solid rgba(251,191,36,.1);backdrop-filter:blur(10px)}
-#oracle-widget.open #oracle-body{max-height:180px}
-.oracle-block{padding:8px 12px 6px}
-.oracle-block+.oracle-block{border-top:1px solid rgba(255,255,255,.06)}
-.oracle-state{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:3px}
-.oracle-state.upcoming{color:rgba(251,191,36,.5)}
-.oracle-state.active{color:rgba(244,114,182,.7)}
-.oracle-fate-text{font-size:15px;color:#fde68a;line-height:1.35;max-width:240px}
-.oracle-fate-text.active-text{color:#fbcfe8}
-.oracle-when{font-size:11px;letter-spacing:1px;padding-top:3px;padding-bottom:2px}
-.oracle-when.upcoming{color:rgba(251,191,36,.35)}
-.oracle-when.active{color:rgba(244,114,182,.4)}
+/* (Island Oracle widget styles removed — the Oracle runs in the engine but is no longer shown on screen.) */
 </style>
 </head>
 <body>
@@ -1446,10 +1432,7 @@ function toggleFeed() {
   const panel = document.getElementById('chat-panel')
   panel.classList.toggle('feed-open')
   const isOpen = panel.classList.contains('feed-open')
-  // (Oracle widget removed — guard refs so nothing errors if it's absent)
-  document.getElementById('oracle-widget')?.classList.toggle('feed-hidden', isOpen)
   if(isOpen) {
-    document.getElementById('oracle-widget')?.classList.remove('open')
     setTimeout(()=>{ const f=document.getElementById('chat-feed'); if(f) f.scrollTop=f.scrollHeight }, 380)
   }
 }
@@ -1672,7 +1655,8 @@ function nudgeBubbles(positions) {
     }
   }
   positions.forEach(p=>{
-    document.getElementById('bubble-'+p.id).style.marginLeft = offsets[p.id] + 'px'
+    const b = document.getElementById('bubble-'+p.id)
+    if(b) b.style.marginLeft = offsets[p.id] + 'px'
   })
   // Vertical stagger: 2D collision avoidance using each bubble's real measured size.
   // Horizontal overlap is a true rectangle test on measured widths, so two bubbles
@@ -1747,7 +1731,10 @@ function renderInteractions(positions) {
     if (processed.has(pairKey)) return
     processed.add(pairKey)
 
-    const W=window.innerWidth, H=window.innerHeight
+    // Use the SAME world dimensions the character px/py were computed against in
+    // updateWorld (mobile world is wider than the viewport, H is the stage height),
+    // otherwise the hand/log overlay drifts off the couple on mobile.
+    const W=isMobile()?getWorldWidth():window.innerWidth, H=stageH()
     const midX=(myPos.px+othPos.px)/2
     const midY=(myPos.py+othPos.py)/2 - 34
 
@@ -2344,13 +2331,22 @@ let S={chars:{},feed:[],world:{}}
 
 async function reloadData(){
   const t=Date.now()
-  const [c,f,w]=await Promise.all([
-    fetch('data/characters.json?t='+t).then(r=>r.json()),
-    fetch('data/feed.json?t='+t).then(r=>r.json()),
-    fetch('data/world.json?t='+t).then(r=>r.json()),
-  ])
-  S.chars=c;S.feed=f;S.world=w;updateWorld()
+  try {
+    const [c,f,w]=await Promise.all([
+      fetch('data/characters.json?t='+t).then(r=>r.json()),
+      fetch('data/feed.json?t='+t).then(r=>r.json()),
+      fetch('data/world.json?t='+t).then(r=>r.json()),
+    ])
+    // Only re-render when a NEW cycle has actually been written — avoids needless
+    // re-layout (and feed-scroll yanks) every poll when nothing changed.
+    const changed = !S.world || w.last_cycle_key !== S.world.last_cycle_key
+      || (f && S.feed && f.length !== S.feed.length)
+    S.chars=c;S.feed=f;S.world=w
+    if(changed) updateWorld()
+  } catch(e){ /* transient fetch error — keep showing current state, try again next poll */ }
 }
+// Pick up new cycles automatically (data changes ~5x/day; poll is cheap and no-op when unchanged)
+setInterval(reloadData, 120000)
 
 async function init(){
   await loadDynamicTiles()
@@ -2514,62 +2510,8 @@ function showDayHistorySummary(day) {
 }
 
 // ── ORACLE ────────────────────────────────────────────────
-function toggleOracle() {
-  const widget = document.getElementById('oracle-widget')
-  const isOpening = !widget.classList.contains('open')
-  widget.classList.toggle('open')
-  if(isOpening) {
-    const panel = document.getElementById('chat-panel')
-    panel.classList.remove('feed-open')
-    widget.classList.remove('feed-hidden')
-  }
-}
-
-function fmtFateTime(iso) {
-  if(!iso) return ''
-  const d = new Date(iso)
-  const sgt = new Date(d.getTime() + d.getTimezoneOffset()*60000 + 8*3600000)
-  const h=sgt.getHours(), m=String(sgt.getMinutes()).padStart(2,'0')
-  const ap=h>=12?'pm':'am', h12=h%12||12
-  return `${h12}:${m}${ap}`
-}
-
-async function loadOracle() {
-  const body = document.getElementById('oracle-body')
-  try {
-    const fate = await fetch('data/fate.json?t='+Date.now()).then(r=>r.json())
-    const isActive = fate.status === 'activated' || fate.status === 'active'
-    const CYCLE_TIME = {morning:'7am',midday:'12:30pm',evening:'6pm',night:'11pm'}
-    const cycleTime = CYCLE_TIME[fate.cycle] || fate.happens_at || '—'
-    const wd = S.world?.day || 1
-    const fd = fate.day || 1
-    const dayWord = fd === wd ? 'TODAY' : fd === wd+1 ? 'TOMORROW' : `DAY ${fd}`
-
-    if(isActive) {
-      body.innerHTML = `
-        <div class="oracle-block">
-          <div class="oracle-state active">⚡ ACTIVE NOW</div>
-          <div class="oracle-fate-text active-text">${fate.text||'—'}</div>
-          <div class="oracle-when active">TRIGGERED TODAY · ${cycleTime}</div>
-        </div>`
-    } else {
-      body.innerHTML = `
-        <div class="oracle-block">
-          <div class="oracle-state upcoming">✦ FATE INCOMING</div>
-          <div class="oracle-fate-text">${fate.text||'—'}</div>
-          <div class="oracle-when upcoming">HAPPENS ${dayWord} · ${cycleTime}</div>
-        </div>`
-    }
-    document.getElementById('oracle-widget').classList.add('open')
-  } catch {
-    body.innerHTML = `
-      <div class="oracle-block">
-        <div class="oracle-state upcoming">ORACLE</div>
-        <div class="oracle-fate-text">Fate not yet revealed</div>
-        <div class="oracle-when upcoming">SEALED UNTIL MIDNIGHT</div>
-      </div>`
-  }
-}
+// (Island Oracle UI functions removed — the Oracle still runs in the engine and shapes
+//  the story; we just no longer reveal the upcoming/active fate on screen.)
 
 // Scene line: the "overnight → now" recap that sits directly under the LATEST headline.
 // Position is MEASURED from the headline's real rendered bottom (never hardcoded) so it
