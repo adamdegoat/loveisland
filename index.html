@@ -2697,6 +2697,7 @@ async function renderVote(){
     : `<div class="vp-hint">Tap to cast your one vote — it closes tonight.</div>`;
   const ip=_vote.in_play;
   if(ip) html+=`<div class="vp-inplay">In play now · <b>${ip.label}</b> — ${ip.desc}.${ip.votes?` Chosen by ${ip.votes} ${ip.votes===1?'watcher':'watchers'}.`:''} The island leans this way today.</div>`;
+  else html+=`<div class="vp-inplay">No lean is in play yet — <b>tonight's vote sets tomorrow's mood.</b></div>`;
   body.innerHTML=html;
 }
 async function castVote(choice){
