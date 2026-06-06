@@ -1,10 +1,10 @@
 {
   "day": 3,
-  "text": "Ryan discovers Jade broke their agreement and confided his fears in Marcus.",
-  "flavor": "broken trust",
+  "text": "The group secretly divides: Jade with Ryan, Marcus with Judy.",
+  "flavor": "a shift in the group",
   "cycle": "night",
   "happens_at": "11pm",
   "status": "upcoming",
-  "revealed_at": "2026-06-07T00:00:24.729744",
+  "revealed_at": "2026-06-07T00:00:37.854001",
   "activated_at": null
 }
