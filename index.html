@@ -21,6 +21,7 @@
 <meta name="twitter:description" content="Strangers stranded on a deserted island, living and falling for each other four times a day.">
 
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css"><!-- shared Never Ending Story house-style tokens -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--above-hud:62px;--stage-bottom:96px}
@@ -402,6 +403,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .char:hover .stat-card.below.right,.char:hover .stat-card.below.left{transform:translateY(0)}
 .sc-name{font-size:17px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
 .sc-mood{font-size:13px;color:rgba(255,255,255,.45);letter-spacing:.5px;margin-bottom:8px;text-transform:uppercase}
+.sc-cond{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.4px;padding:2px 7px;border-radius:7px;margin-bottom:8px}
+.sc-cond-injured{background:rgba(248,113,113,.16);color:#fca5a5;border:1px solid rgba(248,113,113,.35)}
+.sc-cond-sick{background:rgba(192,132,252,.16);color:#d8b4fe;border:1px solid rgba(192,132,252,.35)}
 .sc-section{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:2px}
 .sc-row{display:flex;align-items:center;gap:6px;margin-bottom:3px}
 .sc-label{font-size:12px;color:rgba(255,255,255,.4);width:68px;text-transform:uppercase;letter-spacing:.3px;flex-shrink:0}
@@ -420,10 +424,16 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   text-shadow:0 1px 4px rgba(0,0,0,1);display:block;transition:color .18s ease;
   background:rgba(0,0,0,.45);padding:1px 5px;border-radius:4px;backdrop-filter:blur(3px)}
 .struct:hover .struct-label{color:rgba(255,255,255,.75)}
+.struct-cond{width:30px;height:3px;border-radius:2px;background:rgba(0,0,0,.45);margin:1px auto 0;overflow:hidden}
+.struct-cond-fill{height:100%;border-radius:2px}
 .struct.discovery .struct-svg{filter:drop-shadow(0 0 6px rgba(251,191,36,.6)) drop-shadow(0 3px 8px rgba(0,0,0,.5))}
 
 /* ── RESOURCES HUD ── */
 #res-hud{position:fixed;bottom:calc(var(--stage-bottom) + 8px);right:12px;z-index:30;pointer-events:auto;display:flex;flex-direction:column;gap:3px;align-items:flex-end}
+#fire-chip{position:fixed;bottom:calc(var(--stage-bottom) + 118px);right:12px;z-index:30;pointer-events:none;display:none;align-items:center;gap:4px;
+  background:rgba(0,0,0,.38);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:3px 7px;font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;font-weight:700;letter-spacing:.4px}
+#fire-chip.lit{color:#fbbf24;border-color:rgba(251,191,36,.35)}
+#fire-chip.out{color:#93a3b8}
 .res-pill{display:flex;align-items:center;gap:3px;background:rgba(0,0,0,.35);
   backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
   border-radius:14px;padding:3px 7px 3px 6px;border:1px solid rgba(255,255,255,.06);
@@ -515,6 +525,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <div id="structures-layer"></div>
 <div id="vignette"></div>
 <div id="color-wash"></div>
+<div id="fire-chip"></div>
 <div id="res-hud"></div>
 
 <!-- ══ WORLD SVG ══════════════════════════════════════════ -->
@@ -2027,6 +2038,16 @@ function getTile(type) {
   return SEED_TILES['default']
 }
 
+function updateFireChip() {
+  const el = document.getElementById('fire-chip'); if(!el) return
+  const fire = S.world?.fire
+  if(!fire){ el.style.display='none'; return }
+  const lit = !!fire.lit
+  el.style.display = 'flex'
+  el.className = lit ? 'lit' : 'out'
+  el.innerHTML = lit ? '🔥 FIRE LIT' : '🌑 FIRE OUT'
+}
+
 function renderStructures() {
   const layer = document.getElementById('structures-layer')
   if(!layer) return
@@ -2038,8 +2059,13 @@ function renderStructures() {
     const tileKey = s._isDisc ? 'discovery' : s.type
     const tile    = getTile(tileKey)
     const label   = s.label || s.name || ''
-    return `<div class="struct${s._isDisc?' discovery':''}" style="left:${s.x}%;top:${s.y}%">
+    const cond = (!s._isDisc && typeof s.condition==='number') ? s.condition : null
+    const condBar = (cond!==null && cond < 95)
+      ? `<div class="struct-cond"><div class="struct-cond-fill" style="width:${Math.max(0,cond)}%;background:${cond>=60?'#4ade80':cond>=30?'#fbbf24':'#f87171'}"></div></div>`
+      : ''
+    return `<div class="struct${s._isDisc?' discovery':''}" style="left:${s.x}%;top:${s.y}%${cond!==null&&cond<40?';opacity:.7':''}">
       <svg class="struct-svg" viewBox="0 0 60 60" width="44" height="44" xmlns="http://www.w3.org/2000/svg">${tile}</svg>
+      ${condBar}
       <span class="struct-label">${label}</span>
     </div>`
   }).join('')
@@ -2371,6 +2397,7 @@ function updateWorld() {
   updateStatCards()
   renderStructures()
   renderResHud()
+  updateFireChip()
 
   if(isMobile() && !mobileScrollInited) {
     mobileScrollInited = true
@@ -2492,9 +2519,12 @@ function buildStatCard(cid) {
 
   el.style.borderColor = col+'44'
   el.style.border = `1px solid ${col}33`
+  const condBadge = (c.condition && c.condition!=='healthy')
+    ? `<div class="sc-cond sc-cond-${c.condition}">${c.condition==='injured'?'🤕 INJURED':'🤒 SICK'}</div>` : ''
   el.innerHTML = `
     <div class="sc-name" style="color:${col}">${c.name||cap(cid)}</div>
     <div class="sc-mood">${c.mood||'—'}</div>
+    ${condBadge}
     <div class="sc-section">Stats</div>
     ${scoreRows}
     <div class="sc-section" style="margin-top:7px">Survival</div>

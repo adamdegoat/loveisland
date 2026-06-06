@@ -1,0 +1,43 @@
+/* ============================================================================
+   THE NEVER ENDING STORY PROJECT — shared house-style tokens
+   ----------------------------------------------------------------------------
+   This file is the canonical aesthetic spec every world inherits. It is what
+   keeps Tropicana, a snow world, a stranded ship, etc. feeling like ONE
+   universe. Copy this file into every new world's repo.
+
+   CONSTANT (never change per world): typography + craft tokens below.
+   PER-WORLD (override in each world): the --w-* palette block at the bottom.
+   The "one universe" feeling comes from shared CRAFT, not a shared climate —
+   so swap the palette freely, but keep the fonts and craft identical.
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=VT323&display=swap');
+
+:root{
+  /* ── Typography — CONSTANT across all worlds ───────────────────────────── */
+  --nes-font-display:'Cinzel',serif;            /* world / title signature      */
+  --nes-font-body:'Plus Jakarta Sans',sans-serif;
+  --nes-font-mono:'VT323',monospace;            /* stats / labels accent        */
+
+  /* ── Craft tokens — CONSTANT (the premium feel) ────────────────────────── */
+  --nes-blur:10px;                              /* glassmorphism blur amount    */
+  --nes-glass:rgba(20,20,20,.55);               /* frosted panel fill           */
+  --nes-glass-border:rgba(255,255,255,.12);     /* hairline panel border        */
+  --nes-vignette:rgba(2,6,23,.5);               /* scene edge darkening         */
+
+  /* ── Palette — PER-WORLD (override these in each new world) ─────────────── */
+  /* Tropicana / World 01 — warm sunset archipelago */
+  --w-gold:#fbbf24;
+  --w-gold-soft:#fde68a;
+  --w-cream:#fef3c7;
+  --w-sand:#c8a47a;
+  --w-amber:#a16207;
+  --w-amber-deep:#92400e;
+  --w-brown:#78350f;
+  --w-ink:#1a1a1a;
+  --w-night:#16233a;
+  --w-night-deep:#0c4a6e;
+  --w-green:#15803d;
+  --w-accent-blue:#93c5fd;
+  --w-accent-pink:#f472b6;
+}
