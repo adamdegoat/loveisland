@@ -1858,5 +1858,214 @@
       }
     ],
     "timestamp": "2026-06-06T19:54:22.330317"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "He leaves his tent in the dark and walks to the firepit, unable to bear another night alone with his jealousy.",
+    "thought": "I told him the truth. Now I don't know what to do with it.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "withdrawn",
+    "timestamp": "2026-06-06T23:03:27.434600"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He sits by the fire with the restless stray pup, offering quiet company as the night deepens.",
+    "thought": "I want to understand what's broken between us.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "tender",
+    "timestamp": "2026-06-06T23:03:27.434600"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She lies in her hammock, replaying the evening's moments and wondering what her closeness with Ryan has cost.",
+    "thought": "Did I hurt someone I didn't mean to hurt?",
+    "location": {
+      "waypoint": "hammock_beside",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "uncertain",
+    "timestamp": "2026-06-06T23:03:27.434600"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "judy",
+    "action": "She stands at the house door, listening to the low voices by the fire, watching the pup settle between the two men.",
+    "thought": "They have each other. Where do I belong here?",
+    "location": {
+      "waypoint": "house_door",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-06T23:03:27.434600"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "character": "stray",
+    "action": "It paces between Ryan and the fire, whining softly, until Marcus arrives and the two men find their quiet.",
+    "thought": "The kind man's friend came. The air softens now.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "wary",
+    "timestamp": "2026-06-06T23:03:27.434600"
+  },
+  {
+    "day": 3,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "stray"
+    ],
+    "description": "Late at night by the firepit, Marcus arrives to find Ryan sitting with the restless stray pup. The fire is low. As they talk, tension crackles between the two men while the frightened pup senses the charged air, then slowly settles as their words find honesty.",
+    "dialogue": [
+      {
+        "speaker": "marcus",
+        "line": "Can't sleep either."
+      },
+      {
+        "speaker": "ryan",
+        "line": "No. The pup's been pacing. Seems anxious about something."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It picked the right person then."
+      },
+      {
+        "speaker": "ryan",
+        "line": "What's that supposed to mean?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're good at making people feel like they matter. At being needed."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Is this about Jade? Because it's not like that. She was kind to me when I was falling apart."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not accusing you. I'm just saying what I see."
+      },
+      {
+        "speaker": "ryan",
+        "line": "But you're angry. I can feel it. What did I do wrong?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Nothing. You did nothing wrong. That's almost worse."
+      },
+      {
+        "speaker": "stray",
+        "line": "[whimpers, presses against Ryan's leg, sensing the sharp words between them]"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Marcus, I care about you. That hasn't changed."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know. But you look at her differently than you look at me."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's not true. You're just hard to read. I never know where I stand with you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I stand at the edges and I watch everything."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then why don't you just talk to me instead of suffering alone in the dark?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Because talking doesn't change how things are."
+      },
+      {
+        "speaker": "stray",
+        "line": "[ears flatten, trembles, shifts away from the tension towards the fire]"
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're shutting me out again, like you do with everyone."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Maybe I'm just protecting myself."
+      },
+      {
+        "speaker": "ryan",
+        "line": "From what? From me? I've never given you reason not to trust me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. You haven't. And that's the problem. You're too good, and I don't know how to be with that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then let me help you figure it out. You don't have to be alone in this."
+      },
+      {
+        "speaker": "stray",
+        "line": "[cautiously returns, sniffs Marcus's hand, tail tentative and hopeful]"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Maybe you're right. I'm sorry, Ryan."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Don't apologize. Just stay. Sit with us for a bit."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I should go. It's late."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Please. Stay. The pup needs you to stop being afraid."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's not the pup I'm afraid of."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know. But maybe tonight you can let someone in."
+      },
+      {
+        "speaker": "stray",
+        "line": "[settles between them, still wary but willing, breath slowing to match the moment]"
+      }
+    ],
+    "timestamp": "2026-06-06T23:03:27.434600"
   }
 ]
