@@ -91,35 +91,44 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   box-shadow:0 2px 14px rgba(0,0,0,.4);animation:votePulse 2.6s ease-in-out infinite;
   transition:transform .15s,border-color .2s}
 #vote-pill:hover{transform:translateY(-1px);border-color:rgba(251,191,36,.85)}
+#vote-pill.active{animation:none;background:linear-gradient(135deg,rgba(251,191,36,.42),rgba(244,114,182,.34));border-color:rgba(251,191,36,.9)}
 @keyframes votePulse{0%,100%{box-shadow:0 2px 14px rgba(0,0,0,.4),0 0 0 0 rgba(251,191,36,.45)}
   50%{box-shadow:0 2px 14px rgba(0,0,0,.4),0 0 0 5px rgba(251,191,36,0)}}
 #vote-pill .vp-dot{width:6px;height:6px;border-radius:50%;background:#fde68a;box-shadow:0 0 7px #fde68a}
-#vote-overlay{position:fixed;inset:0;z-index:60;background:rgba(4,8,18,.55);backdrop-filter:blur(3px);
-  display:none;align-items:center;justify-content:center;padding:18px}
-#vote-overlay.open{display:flex}
-#vote-panel{width:340px;max-width:94vw;max-height:84vh;overflow-y:auto;
-  background:linear-gradient(180deg,rgba(18,24,42,.98),rgba(10,14,28,.98));
-  border:1px solid rgba(251,191,36,.3);border-radius:18px;padding:18px 18px 16px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
-.vp-head{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;color:#fde68a}
-.vp-tag{font-size:11px;color:rgba(255,255,255,.5);font-style:italic;margin:3px 0 14px;line-height:1.4}
-.vp-q{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:9px}
-.vp-opt{position:relative;display:block;width:100%;text-align:left;margin-bottom:8px;padding:10px 12px;border-radius:11px;
-  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);cursor:pointer;overflow:hidden;color:#fff;
-  transition:border-color .15s,background .15s}
-.vp-opt:hover{border-color:rgba(251,191,36,.5)}
-.vp-opt:disabled{cursor:default}
-.vp-opt.picked{border-color:rgba(251,191,36,.9);background:rgba(251,191,36,.1)}
-.vp-bar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;transition:width .5s ease;
-  background:linear-gradient(90deg,rgba(251,191,36,.18),rgba(244,114,182,.12))}
-.vp-opt-label{position:relative;z-index:1;font-weight:800;font-size:12.5px}
-.vp-opt-desc{position:relative;z-index:1;font-size:10.5px;color:rgba(255,255,255,.55);margin-top:2px}
-.vp-opt-pct{position:absolute;right:11px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:800;color:#fde68a;z-index:2}
-.vp-voted{font-size:10.5px;color:rgba(74,222,128,.9);margin-top:3px;letter-spacing:.2px}
-.vp-hint{font-size:10.5px;color:rgba(255,255,255,.4);margin-top:3px}
-.vp-inplay{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.5}
+/* dropdown panel — anchored under the pill (like the Days panel), warm gold "sway the island" palette */
+#vote-panel{position:fixed;top:60px;right:108px;z-index:41;width:300px;max-width:calc(100vw - 24px);
+  background:linear-gradient(180deg,rgba(26,16,34,.96),rgba(12,9,22,.97));
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(251,191,36,.34);border-radius:16px;
+  box-shadow:0 20px 54px rgba(0,0,0,.6),0 0 26px rgba(251,191,36,.08);
+  max-height:0;overflow:hidden;opacity:0;pointer-events:none;
+  transition:max-height .34s cubic-bezier(.4,0,.2,1),opacity .22s ease}
+#vote-panel::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;z-index:3;
+  background:linear-gradient(90deg,transparent,rgba(251,191,36,.7),rgba(244,114,182,.5),transparent)}
+#vote-panel.open{max-height:80vh;opacity:1;pointer-events:auto;overflow-y:auto}
+.vp-inner{padding:15px 16px 15px}
+.vp-eyebrow{font-family:'VT323',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(251,191,36,.62);margin-bottom:3px}
+.vp-head{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;letter-spacing:.01em;line-height:1.1;
+  background:linear-gradient(180deg,#fff8ea 0%,#fde68a 58%,#f59e0b 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.vp-tag{font-size:10.5px;color:rgba(255,255,255,.5);font-style:italic;margin:3px 0 13px;line-height:1.45}
+.vp-q{font-size:12px;font-weight:700;color:rgba(255,255,255,.92);margin-bottom:9px;letter-spacing:.01em}
+.vp-opt{position:relative;display:block;width:100%;text-align:left;margin-bottom:8px;padding:10px 12px;border-radius:12px;
+  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.035);cursor:pointer;overflow:hidden;color:#fff;
+  transition:border-color .15s,background .15s,transform .12s}
+.vp-opt:hover{border-color:rgba(251,191,36,.55);transform:translateY(-1px)}
+.vp-opt:disabled{cursor:default;transform:none}
+.vp-opt.picked{border-color:rgba(251,191,36,.9);background:rgba(251,191,36,.09)}
+.vp-bar{position:absolute;left:0;top:0;bottom:0;width:0;z-index:0;transition:width .55s cubic-bezier(.4,0,.2,1);
+  background:linear-gradient(90deg,rgba(251,191,36,.22),rgba(244,114,182,.14))}
+.vp-opt-label{position:relative;z-index:1;font-weight:800;font-size:12.5px;color:#fff7e6}
+.vp-opt-desc{position:relative;z-index:1;font-size:10.5px;color:rgba(255,255,255,.55);margin-top:2px;line-height:1.35}
+.vp-opt-pct{position:absolute;right:11px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:800;color:#fde68a;z-index:2}
+.vp-voted{font-size:10.5px;color:rgba(110,231,160,.92);margin-top:4px;letter-spacing:.2px;font-weight:600}
+.vp-hint{font-size:10.5px;color:rgba(255,255,255,.42);margin-top:4px}
+.vp-inplay{margin-top:13px;padding:11px 12px;border-radius:11px;background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.18);
+  font-size:11px;color:rgba(255,255,255,.8);line-height:1.5}
+.vp-ip-eyebrow{font-family:'VT323',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(251,191,36,.6);display:block;margin-bottom:3px}
 .vp-inplay b{color:#fde68a;font-weight:800}
-.vp-close{margin-top:14px;width:100%;padding:9px;border-radius:10px;border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.05);color:rgba(255,255,255,.7);font-weight:700;font-size:12px;cursor:pointer}
 #day-hist-btn{
   position:fixed;top:22px;right:18px;z-index:35;
   display:flex;align-items:center;gap:6px;
@@ -358,6 +367,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   .struct-label{color:rgba(255,255,255,.6)}
   #day-hist-btn{top:14px;right:12px;padding:5px 10px;font-size:10px}
   #vote-pill{top:14px;right:88px;padding:5px 11px;font-size:10px}
+  #vote-panel{top:48px;left:12px;right:12px;width:auto;max-width:none}
   #day-stamp{left:13px;top:50px}
   #day-history-panel{top:52px;right:12px;width:220px}
   /* res-hud now anchors bottom-right via the base rule on all sizes */
@@ -491,13 +501,13 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 </div>
 <button id="day-hist-btn" onclick="toggleDayHistory()">📅 Days</button>
 <div id="day-history-panel" onclick="event.stopPropagation()"><div id="dhp-inner"></div></div>
-<div id="vote-pill" onclick="openVote()"><span class="vp-dot"></span> Vote</div>
-<div id="vote-overlay" onclick="if(event.target.id==='vote-overlay')closeVote()">
-  <div id="vote-panel">
+<div id="vote-pill" onclick="toggleVote()"><span class="vp-dot"></span> Vote</div>
+<div id="vote-panel" onclick="event.stopPropagation()">
+  <div class="vp-inner">
+    <div class="vp-eyebrow">✦ Cast your voice</div>
     <div class="vp-head">Sway the island</div>
     <div class="vp-tag">You nudge how they lean — you never script them.</div>
     <div id="vp-body">Loading the vote…</div>
-    <button class="vp-close" onclick="closeVote()">Close</button>
   </div>
 </div>
 <div id="pulse"></div>
@@ -2695,8 +2705,25 @@ async function castVote(choice){
     if(res.ok||res.status===409) localStorage.setItem('trop_voted_'+poll.id,choice); }catch{}
   renderVote();
 }
-function openVote(){ document.getElementById('vote-overlay').classList.add('open'); loadVote(); }
-function closeVote(){ document.getElementById('vote-overlay').classList.remove('open'); }
+function toggleVote(){
+  const panel=document.getElementById('vote-panel'), pill=document.getElementById('vote-pill');
+  const willOpen=!panel.classList.contains('open');
+  // one corner-panel at a time: close the Days dropdown if it's open
+  if(willOpen && typeof _dhpOpen!=='undefined' && _dhpOpen){
+    _dhpOpen=false; document.getElementById('day-history-panel')?.classList.remove('open');
+    document.getElementById('day-hist-btn')?.classList.remove('active');
+  }
+  panel.classList.toggle('open', willOpen);
+  pill.classList.toggle('active', willOpen);
+  if(willOpen) loadVote();
+}
+// tap anywhere outside the dropdown (or the pill) closes it
+document.addEventListener('click', e=>{
+  const panel=document.getElementById('vote-panel');
+  if(panel && panel.classList.contains('open') && !e.target.closest('#vote-panel') && !e.target.closest('#vote-pill')){
+    panel.classList.remove('open'); document.getElementById('vote-pill')?.classList.remove('active');
+  }
+});
 loadVote();
 </script>
 </body>
