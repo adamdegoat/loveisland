@@ -1,15 +1,10 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-06",
+    "id": "2026-06-07",
     "question": "Which way should the island lean tomorrow?",
     "closes": "tonight",
     "options": [
-      {
-        "id": "mischief",
-        "label": "Mischief",
-        "desc": "let teasing, play and lightness in"
-      },
       {
         "id": "longing",
         "label": "Longing",
@@ -19,7 +14,22 @@
         "id": "reflection",
         "label": "Reflection",
         "desc": "a slower, inward day of memory and what-ifs"
+      },
+      {
+        "id": "warmth",
+        "label": "Warmth",
+        "desc": "let tenderness and small kindnesses lead"
       }
     ]
+  },
+  "in_play": {
+    "id": "mischief",
+    "label": "Mischief",
+    "desc": "let teasing, play and lightness in",
+    "decided": "2026-06-07",
+    "votes": 4,
+    "tally": {
+      "mischief": 4
+    }
   }
 }

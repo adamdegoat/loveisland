@@ -2067,5 +2067,273 @@
       }
     ],
     "timestamp": "2026-06-06T23:03:27.434600"
+  },
+  {
+    "day": 4,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "He wakes before the sun fully rises, restless from the night, and makes his way down to the firepit for water.",
+    "thought": "He heard me break. I can't unknow that.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "guarded",
+    "timestamp": "2026-06-07T07:02:52.907254"
+  },
+  {
+    "day": 4,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "He wakes early in the house and finds the stray pup waiting by the garden gate; he offers it fresh water and the last of yesterday's fish.",
+    "thought": "They both need me. I don't know if I'm enough.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "tender",
+    "timestamp": "2026-06-07T07:02:52.907254"
+  },
+  {
+    "day": 4,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "She wakes uncertain, washes quickly by her hammock, then drifts toward the firepit where Marcus is collecting water.",
+    "thought": "Did I hurt him? Does he hate me now?",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "uncertain",
+    "timestamp": "2026-06-07T07:02:52.907254"
+  },
+  {
+    "day": 4,
+    "cycle": "morning",
+    "character": "judy",
+    "action": "She wakes alone in the house and stands in the doorway, watching the camp scatter to their separate rituals, watching them find each other.",
+    "thought": "I don't fit anywhere. I don't know how.",
+    "location": {
+      "waypoint": "house_door",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-07T07:02:52.907254"
+  },
+  {
+    "day": 4,
+    "cycle": "morning",
+    "character": "stray",
+    "action": "It wakes under the palms with memory of warmth and pads toward the house, seeking the kind one who keeps fear at a distance.",
+    "thought": "He's there. I'm safe if he's there.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "hopeful",
+    "timestamp": "2026-06-07T07:02:52.907254"
+  },
+  {
+    "day": 4,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "jade",
+      "marcus"
+    ],
+    "description": "By the firepit in early morning light, Jade finds Marcus collecting water and asks the question that's haunted her all night—did she hurt him? A conversation neither quite prepared for, but both needed.",
+    "dialogue": [
+      {
+        "speaker": "jade",
+        "line": "Morning."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Hey."
+      },
+      {
+        "speaker": "jade",
+        "line": "You were here early."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Couldn't sleep."
+      },
+      {
+        "speaker": "jade",
+        "line": "Because of last night?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah."
+      },
+      {
+        "speaker": "jade",
+        "line": "I've been thinking about it. About you watching me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I wasn't hiding it well."
+      },
+      {
+        "speaker": "jade",
+        "line": "I liked that you watched. But I didn't like hurting you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You didn't mean to."
+      },
+      {
+        "speaker": "jade",
+        "line": "Does that matter? Intent or impact?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Impact matters more."
+      },
+      {
+        "speaker": "jade",
+        "line": "Then I hurt you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm sorry."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Don't be."
+      },
+      {
+        "speaker": "jade",
+        "line": "Why shouldn't I be?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Because you didn't owe me anything."
+      },
+      {
+        "speaker": "jade",
+        "line": "But I hurt you. That's on me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're very determined to take the blame."
+      },
+      {
+        "speaker": "jade",
+        "line": "I prefer to face things."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah, I've noticed."
+      },
+      {
+        "speaker": "jade",
+        "line": "Is that good or bad?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's dangerous."
+      },
+      {
+        "speaker": "jade",
+        "line": "For me, or for you?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "For both of us."
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't want to hurt you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know."
+      },
+      {
+        "speaker": "jade",
+        "line": "But I probably will again."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah."
+      },
+      {
+        "speaker": "jade",
+        "line": "How do we do this, then?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "We don't have to do anything."
+      },
+      {
+        "speaker": "jade",
+        "line": "But something's there."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. Something's there."
+      },
+      {
+        "speaker": "jade",
+        "line": "Are you going to run away?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Probably."
+      },
+      {
+        "speaker": "jade",
+        "line": "At least you're honest about it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's new."
+      },
+      {
+        "speaker": "jade",
+        "line": "What? Being honest?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Me being honest."
+      },
+      {
+        "speaker": "jade",
+        "line": "Ryan said you came to him last night."
+      },
+      {
+        "speaker": "marcus",
+        "line": "He talk a lot?"
+      },
+      {
+        "speaker": "jade",
+        "line": "He said you trusted him. That matters."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. It does."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm glad."
+      }
+    ],
+    "timestamp": "2026-06-07T07:02:52.907254"
   }
 ]

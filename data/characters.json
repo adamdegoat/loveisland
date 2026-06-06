@@ -5,17 +5,17 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 24,
-      "openness": 24,
+      "trust": 25,
+      "openness": 26,
       "ambition": 45,
-      "loneliness": 72,
+      "loneliness": 67,
       "resilience": 84,
-      "hunger": 52,
-      "thirst": 48,
-      "energy": 100,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
-    "mood": "withdrawn",
+    "mood": "guarded",
     "location": {
       "waypoint": "firepit_right",
       "x": 75,
@@ -24,18 +24,18 @@
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 23,
-        "tension": 19,
+        "closeness": 27,
+        "tension": 17,
         "attraction": 0
       },
       "jade": {
-        "closeness": 22,
-        "tension": 7,
-        "attraction": 5
+        "closeness": 26,
+        "tension": 5,
+        "attraction": 6
       },
       "judy": {
-        "closeness": 3,
-        "tension": 2,
+        "closeness": 5,
+        "tension": 1,
         "attraction": 0
       },
       "stray": {
@@ -46,8 +46,8 @@
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "ryan",
-      "state": "sitting_together"
+      "with": "jade",
+      "state": "talking"
     },
     "memories": [
       {
@@ -64,6 +64,11 @@
         "day": 3,
         "text": "I told Ryan I'm afraid. He didn't push me away.",
         "weight": 3
+      },
+      {
+        "day": 4,
+        "text": "She asked directly if she hurt me. I couldn't lie to her.",
+        "weight": 2
       }
     ]
   },
@@ -73,48 +78,48 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 84,
+      "trust": 85,
       "openness": 96,
       "ambition": 74,
-      "loneliness": 15,
-      "resilience": 44,
-      "hunger": 52,
-      "thirst": 48,
-      "energy": 100,
+      "loneliness": 11,
+      "resilience": 42,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "tender",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_garden",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 23,
-        "tension": 14,
+        "closeness": 27,
+        "tension": 12,
         "attraction": 0
       },
       "jade": {
-        "closeness": 36,
-        "tension": 5,
+        "closeness": 38,
+        "tension": 4,
         "attraction": 16
       },
       "judy": {
-        "closeness": 11,
-        "tension": 3,
+        "closeness": 13,
+        "tension": 2,
         "attraction": 0
       },
       "stray": {
-        "closeness": 20,
+        "closeness": 22,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
-      "with": "marcus",
+      "with": "stray",
       "state": "sitting_together"
     },
     "memories": [
@@ -141,37 +146,37 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 68,
+      "trust": 69,
       "openness": 84,
       "ambition": 39,
-      "loneliness": 31,
-      "resilience": 62,
-      "hunger": 52,
-      "thirst": 48,
-      "energy": 100,
+      "loneliness": 29,
+      "resilience": 63,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "uncertain",
     "location": {
-      "waypoint": "hammock_beside",
+      "waypoint": "firepit_right",
       "x": 40,
       "y": 50
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 22,
-        "tension": 7,
-        "attraction": 5
+        "closeness": 26,
+        "tension": 5,
+        "attraction": 6
       },
       "ryan": {
-        "closeness": 36,
-        "tension": 5,
+        "closeness": 38,
+        "tension": 4,
         "attraction": 11
       },
       "judy": {
-        "closeness": 8,
-        "tension": 3,
+        "closeness": 10,
+        "tension": 2,
         "attraction": 0
       },
       "stray": {
@@ -181,7 +186,10 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "talking"
+    },
     "memories": [
       {
         "day": 3,
@@ -197,6 +205,11 @@
         "day": 3,
         "text": "Ryan chose me at the fire. What's it costing him?",
         "weight": 1
+      },
+      {
+        "day": 4,
+        "text": "I hurt him without meaning to. He showed me that truth, then hid.",
+        "weight": 2
       }
     ]
   },
@@ -206,14 +219,14 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 61,
+      "trust": 59,
       "openness": 82,
       "ambition": 34,
-      "loneliness": 87,
+      "loneliness": 93,
       "resilience": 64,
-      "hunger": 52,
-      "thirst": 48,
-      "energy": 100,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "anxious",
@@ -228,18 +241,18 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 3,
-        "tension": 2,
+        "closeness": 5,
+        "tension": 1,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 11,
-        "tension": 3,
+        "closeness": 13,
+        "tension": 2,
         "attraction": 0
       },
       "jade": {
-        "closeness": 8,
-        "tension": 3,
+        "closeness": 10,
+        "tension": 2,
         "attraction": 0
       },
       "stray": {
@@ -277,45 +290,45 @@
     "color": "#9c6b43",
     "interaction": {
       "with": "ryan",
-      "state": "comforting"
+      "state": "sitting_together"
     },
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_garden",
       "x": 20,
       "y": 88
     },
-    "mood": "wary",
+    "mood": "hopeful",
     "relationships": {
       "marcus": {
-        "closeness": 5,
-        "tension": 1,
+        "closeness": 7,
+        "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 16,
-        "tension": 1,
+        "closeness": 20,
+        "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 7,
-        "tension": 2,
+        "closeness": 9,
+        "tension": 1,
         "attraction": 0
       },
       "judy": {
-        "closeness": 6,
-        "tension": 2,
+        "closeness": 8,
+        "tension": 1,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 24,
-      "openness": 31,
+      "trust": 25,
+      "openness": 32,
       "ambition": 0,
-      "loneliness": 61,
+      "loneliness": 57,
       "resilience": 78,
-      "hunger": 52,
-      "thirst": 48,
-      "energy": 100,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "shelter": "under the palms",
