@@ -2572,6 +2572,32 @@ function setHudVar(){
   if(sb) document.documentElement.style.setProperty('--stage-bottom', sb+'px')
 }
 window.addEventListener('resize', ()=>{ setHudVar(); if(S && Object.keys(S.chars||{}).length) updateWorld() })
+
+// ── ZOOM-AWARE RE-SYNC (mobile pinch-zoom) ──────────────────────────────────
+// Mobile browsers (esp. iOS Safari) let users pinch-zoom even though our viewport asks them
+// not to. The fixed UI + horizontal map-scroll were built assuming no zoom, so after a zoom
+// in/out things could be left "stuck" (stale layout, scroll jammed past the world edge).
+// When a zoom settles (scale returns toward 1) — or on any visual-viewport change — we
+// re-measure + re-lay-out (same path as a resize) and clamp the map-scroll back into bounds,
+// so nothing stays stuck once the gesture ends. (Additive: only runs on visualViewport
+// events, so the normal no-zoom layout is untouched.)
+if (window.visualViewport) {
+  const vv = window.visualViewport
+  let vvRaf = null
+  const syncViewport = () => {
+    vvRaf = null
+    setHudVar()
+    if (S && Object.keys(S.chars||{}).length) updateWorld()
+    if (isMobile()) {
+      const maxX = Math.max(0, getWorldWidth() - window.innerWidth)
+      const x = Math.min(maxX, Math.max(0, window.scrollX))
+      if (x !== window.scrollX) window.scrollTo(x, window.scrollY)
+    }
+  }
+  const onVV = () => { if (!vvRaf) vvRaf = requestAnimationFrame(syncViewport) }
+  vv.addEventListener('resize', onVV)
+  vv.addEventListener('scroll', onVV)
+}
 // Keep --above-hud and --stage-bottom in sync with the HUD's REAL height at all times.
 // On mobile the HUD wraps to extra rows (and grows as status text / fonts change), so a
 // one-time measure goes stale: the Oracle button (z-index 52) ends up under the HUD
