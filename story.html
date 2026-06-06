@@ -550,8 +550,9 @@ function renderProfiles() {
   // "The Islanders" = named people only. Pets (e.g. the stray dog, species!=human) and
   // any not-yet-named/dormant character are excluded so they can't render a blank card.
   document.getElementById('profiles-grid').innerHTML = Object.entries(S.chars)
-    .filter(([cid,c]) => (!c.species || c.species==='human') && c.name && c.name.trim())
+    .filter(([cid,c]) => (c.species==='dog') || ((!c.species || c.species==='human') && c.name && c.name.trim()))
     .map(([cid,c]) => {
+    if(c.species==='dog') return dogProfileCard(cid,c)   // pets get their own card, not trait bars
     const color = c.color || CHARS[cid]
     const initials = (c.name||'').split(' ').map(w=>w[0]).join('')
     const moodEmoji = MOOD_EMOJI[(c.mood||'').toLowerCase()] || '😐'
@@ -580,6 +581,31 @@ function renderProfiles() {
       <div class="shelter-tag">${shelter[c.shelter]||'📍'} ${cap(c.shelter)}</div>
     </div>`
   }).join('')
+}
+
+// A dog isn't an "islander" with traits — it gets its own card that says what it is.
+function dogProfileCard(cid, c){
+  const color = c.color || '#b5793f'
+  const named = c.name && c.name.trim()
+  const displayName = named ? c.name : 'Unnamed stray'
+  const moodEmoji = MOOD_EMOJI[(c.mood||'').toLowerCase()] || '🐾'
+  const bio = c.bio || 'A stray pup that crept in from the dark one night, drawn to the firelight — wary, but hoping to be wanted.'
+  const tag = named ? '🐕 The camp dog' : '🐾 Stray · not yet named'
+  const shelter = {tent:'⛺',house:'🏠',hammock:'🌴',beach:'🏖️',forest:'🌲'}
+  return `<div class="char-card dog-card" style="box-shadow:0 0 30px ${color}12">
+    <div class="char-avatar" style="background:${color}18;border:2px solid ${color}40;font-size:24px">🐾</div>
+    <div class="char-name" style="color:${color}">${displayName}</div>
+    <div class="char-archetype">The ${cap(c.archetype||'stray pup')}</div>
+    <div class="char-bio">${bio}</div>
+    <div class="char-mood" style="color:${color}">${moodEmoji} ${cap(c.mood||'')}</div>
+    <div class="dog-status" style="font-size:11px;color:var(--muted2);margin-top:.5rem;letter-spacing:.3px">${tag}</div>
+    ${['hunger','thirst','energy'].some(k=>c.scores?.[k]!=null)?`
+      <div class="survival-divider">Survival</div>
+      ${['hunger','thirst','energy'].filter(k=>c.scores?.[k]!=null).map(k=>{
+        const v=c.scores[k]; const sc=v<=20?'#ef4444':v<=40?'#f59e0b':color
+        return `<div class="score-row"><span class="score-label">${k}</span><div class="score-track"><div class="score-fill" style="width:${v}%;background:${sc}"></div></div><span class="score-val" style="color:${sc}">${v}</span></div>`}).join('')}`:''}
+    <div class="shelter-tag">${shelter[c.shelter]||'📍'} ${cap(c.shelter||'outdoors')}</div>
+  </div>`
 }
 
 const CYCLE_HOUR_S = {morning:'7am',midday:'12:30pm',evening:'6pm',night:'11pm'}
