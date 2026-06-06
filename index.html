@@ -119,6 +119,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .dhp-chip-meta{font-size:10px;color:rgba(255,255,255,.28);font-weight:500;margin-left:auto;white-space:nowrap}
 .dhp-drama{font-size:13px;color:rgba(255,255,255,.7);line-height:1.57;font-style:italic;
   padding:12px 14px 14px}
+.dhp-ongoing{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.55;font-style:italic;
+  padding:12px 14px 14px}
 
 #day-stamp{position:fixed;top:58px;left:16px;z-index:30;pointer-events:none;line-height:1.15}
 #pulse{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:30;pointer-events:none;
@@ -1156,10 +1158,10 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 </div>
 
 <!-- ══ ORACLE WIDGET ═══════════════════════════════════════ -->
-<div id="oracle-widget">
-  <button id="oracle-toggle" onclick="toggleOracle()"><span id="oracle-badge">▲</span> ISLAND ORACLE</button>
-  <div id="oracle-body" id="oracle-body"></div>
-</div>
+<!-- Island Oracle widget removed from the UI on purpose — the Oracle still runs every
+     midnight in the engine and its fate still shapes the story; we just no longer reveal
+     the upcoming/active fate on screen, to keep the suspense for readers. -->
+
 
 <!-- ══ CHAT PANEL ══════════════════════════════════════════ -->
 <div id="chat-panel">
@@ -1443,10 +1445,10 @@ function toggleFeed() {
   const panel = document.getElementById('chat-panel')
   panel.classList.toggle('feed-open')
   const isOpen = panel.classList.contains('feed-open')
-  // hide the Oracle while the feed is open (fallback for browsers without :has())
-  document.getElementById('oracle-widget').classList.toggle('feed-hidden', isOpen)
+  // (Oracle widget removed — guard refs so nothing errors if it's absent)
+  document.getElementById('oracle-widget')?.classList.toggle('feed-hidden', isOpen)
   if(isOpen) {
-    document.getElementById('oracle-widget').classList.remove('open')
+    document.getElementById('oracle-widget')?.classList.remove('open')
     setTimeout(()=>{ const f=document.getElementById('chat-feed'); if(f) f.scrollTop=f.scrollHeight }, 380)
   }
 }
@@ -2352,10 +2354,11 @@ async function reloadData(){
 async function init(){
   await loadDynamicTiles()
   try{
+    const t=Date.now()
     const [c,f,w]=await Promise.all([
-      fetch('data/characters.json').then(r=>r.json()),
-      fetch('data/feed.json').then(r=>r.json()),
-      fetch('data/world.json').then(r=>r.json()),
+      fetch('data/characters.json?t='+t).then(r=>r.json()),
+      fetch('data/feed.json?t='+t).then(r=>r.json()),
+      fetch('data/world.json?t='+t).then(r=>r.json()),
     ])
     S.chars=c;S.feed=f;S.world=w;updateWorld()
   }catch(e){
@@ -2482,18 +2485,30 @@ function showDayHistoryChips() {
 function showDayHistorySummary(day) {
   const inner = document.getElementById('dhp-inner')
   if(!inner) return
-  const entries = (S.feed||[]).filter(e=>e.day===day)
-  const interactions = entries.filter(e=>e.type==='interaction')
-  const lastIntr = interactions[interactions.length-1]
-  const dramaLine = lastIntr?.description
-    || [...entries].reverse().find(e=>e.thought)?.thought || '—'
+  // Prefer the whole-day recap (written at the night cycle). If the day is still in
+  // progress, say so. Older days from before this feature fall back to the last event.
+  const summ = S.world?.day_summaries?.[day]
+  const isCurrent = day === (S.world?.day)
+  let bodyHtml
+  if (summ) {
+    bodyHtml = `<div class="dhp-drama">${summ}</div>`
+  } else if (isCurrent) {
+    bodyHtml = `<div class="dhp-ongoing">Day ${day} is still unfolding — the full recap arrives at day's end.</div>`
+  } else {
+    const entries = (S.feed||[]).filter(e=>e.day===day)
+    const interactions = entries.filter(e=>e.type==='interaction')
+    const lastIntr = interactions[interactions.length-1]
+    const dramaLine = lastIntr?.description
+      || [...entries].reverse().find(e=>e.thought)?.thought || '—'
+    bodyHtml = `<div class="dhp-drama">"${dramaLine}"</div>`
+  }
   inner.innerHTML = `
     <div class="dhp-head">
       <span>Day ${day}</span>
       <button class="dhp-back" onclick="showDayHistoryChips()">← all days</button>
     </div>
     <div class="dhp-scroll">
-      <div class="dhp-drama">"${dramaLine}"</div>
+      ${bodyHtml}
     </div>`
 }
 
@@ -2604,7 +2619,7 @@ if(_hudEl && window.ResizeObserver){
 }
 
 setInterval(updateStatusBar,60000)
-init().then(()=>{ loadOracle(); initTapStats(); setHudVar() })
+init().then(()=>{ initTapStats(); setHudVar() })
 </script>
 </body>
 </html>
