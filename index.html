@@ -2435,14 +2435,30 @@ function applyDogExtras(cid, fk){
 }
 
 function ensureCharDom(cid) {
-  if(document.getElementById('char-'+cid)) return
   const c = S.chars[cid] || {}
   const color = c.color || '#a78bfa'
   const isDog = c.species === 'dog'
+  // Signature of everything that affects the drawn art. If the avatar already exists
+  // but its look changed — or `appearance` only arrived AFTER the first build (a
+  // load-order / CDN race meant the first render had no appearance) — rebuild just
+  // the SVG art in place. Without this, the art is frozen at first creation and a
+  // later data update (e.g. Judy's beanie) never shows. updateWorld re-applies
+  // face/pose immediately after, so the rebuilt avatar picks those back up.
+  const sig = JSON.stringify(c.appearance || {}) + '|' + (isDog ? 'dog' : 'human')
+  const existing = document.getElementById('char-'+cid)
+  if(existing){
+    if(existing.dataset.appSig === sig) return
+    const art = existing.querySelector('svg.char-svg')
+    const fresh = isDog ? makeDogSVG(cid) : makeGenericCharSVG(cid, color)
+    if(art) art.outerHTML = fresh
+    existing.dataset.appSig = sig
+    return
+  }
   const firstName = c.name ? c.name.split(' ')[0].toUpperCase() : ''
   const div = document.createElement('div')
   div.className = 'char'
   div.id = 'char-' + cid
+  div.dataset.appSig = sig
   div.innerHTML =
     (isDog ? makeDogSVG(cid) : makeGenericCharSVG(cid, color)) +
     `<div class="nametag" id="nametag-${cid}" style="color:${color};border:1px solid ${color}33">${firstName}</div>` +
@@ -2553,10 +2569,31 @@ async function reloadData(){
       || (f && S.feed && f.length !== S.feed.length)
     S.chars=c;S.feed=f;S.world=w
     if(changed) updateWorld()
+    // Even when no new cycle, pick up any changed character looks (cheap: ensureCharDom
+    // no-ops when the appearance signature is unchanged). Heals a first-render that
+    // happened before appearance data was available.
+    else Object.keys(S.chars).forEach(ensureCharDom)
   } catch(e){ /* transient fetch error — keep showing current state, try again next poll */ }
 }
 // Pick up new cycles automatically (data changes ~5x/day; poll is cheap and no-op when unchanged)
 setInterval(reloadData, 120000)
+
+// Auto-update when a NEW build of this page is deployed. GitHub Pages caches the HTML
+// (max-age=600) so code/art changes (e.g. character looks) can otherwise sit behind a
+// stale tab until a manual hard-refresh. This records the served Last-Modified of the
+// page on load and reloads once if a newer build appears — no manual refresh needed.
+let _buildStamp = null
+async function checkForNewBuild(){
+  try{
+    const r = await fetch(location.pathname + '?_b=' + Date.now(), {method:'HEAD', cache:'no-store'})
+    const stamp = r.headers.get('last-modified') || r.headers.get('etag')
+    if(!stamp) return
+    if(_buildStamp && stamp !== _buildStamp){ location.reload() }
+    _buildStamp = _buildStamp || stamp
+  }catch(e){ /* offline / transient — try again next tick */ }
+}
+checkForNewBuild()
+setInterval(checkForNewBuild, 120000)
 
 async function init(){
   await loadDynamicTiles()
