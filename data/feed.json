@@ -2838,5 +2838,203 @@
       }
     ],
     "timestamp": "2026-06-07T18:02:42.914905"
+  },
+  {
+    "day": 4,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "He settles by the firepit left side, teasing Jade with a dry edge that surprises even himself; a real smile lingers after, unguarded.",
+    "thought": "Laughing with her feels right now.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "lighter",
+    "timestamp": "2026-06-07T23:02:17.517752"
+  },
+  {
+    "day": 4,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He welcomes Judy to the fire with genuine warmth, stroking the stray pup's ear while tending the flames—holding space for everyone, comfortable being the warmth.",
+    "thought": "This is what it feels like to matter.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-07T23:02:17.517752"
+  },
+  {
+    "day": 4,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She sits at the fire, teasing Marcus while welcoming Judy—the bridge between all of them, easy and radiant, her own lightness generous.",
+    "thought": "Everyone's here and safe. That matters.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "warm",
+    "timestamp": "2026-06-07T23:02:17.517752"
+  },
+  {
+    "day": 4,
+    "cycle": "night",
+    "character": "judy",
+    "action": "She settles trembling at the fire, her hand finally steady enough to stroke the pup who chose her, tears that don't fall just behind her eyes.",
+    "thought": "They wanted me here. They still do.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-07T23:02:17.517752"
+  },
+  {
+    "day": 4,
+    "cycle": "night",
+    "character": "stray",
+    "action": "The pup curls against Judy's hip, sensing her fear and answering with quiet presence—safe now, trusted, the warmth of belonging at last.",
+    "thought": "She's scared but safe. I'll stay here.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-07T23:02:17.517752"
+  },
+  {
+    "day": 4,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade",
+      "judy"
+    ],
+    "description": "At the firepit at night, Marcus, Ryan, and Jade fall into easy teasing; Judy approaches hesitantly and all three pull her in without question; the stray settles against her, a silent affirmation.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "I'm just saying, for someone who claims to hate mornings, you sure wake up early to complain about them."
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't hate mornings. I hate Ryan loudly making fire at dawn."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Every stick. Narrated individually."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's not fair. I'm methodical, not loud."
+      },
+      {
+        "speaker": "jade",
+        "line": "You announced each piece of kindling like it was a prize."
+      },
+      {
+        "speaker": "marcus",
+        "line": "With commentary."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You know what? Fine. But someone has to tend the fire, and clearly the two of you are content to sit in darkness."
+      },
+      {
+        "speaker": "jade",
+        "line": "We're not content. We're just quiet."
+      },
+      {
+        "speaker": "marcus",
+        "line": "There's a difference."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Even the pup understands my value."
+      },
+      {
+        "speaker": "jade",
+        "line": "The pup tolerates you. Barely."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Still learning who's safe."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah? Well, you both smiled today. I saw real smiles."
+      },
+      {
+        "speaker": "jade",
+        "line": "Marcus smiled?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not by choice."
+      },
+      {
+        "speaker": "jade",
+        "line": "That makes it matter more."
+      },
+      {
+        "speaker": "judy",
+        "line": "I'm sorry. I don't want to interrupt. I just... can I sit?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Come here. Sit with us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yes. Please. We want you here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You do belong here."
+      },
+      {
+        "speaker": "judy",
+        "line": "Oh... you want me too."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He knows who's good."
+      },
+      {
+        "speaker": "jade",
+        "line": "We all know."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Stop waiting for us to change our minds. We won't."
+      },
+      {
+        "speaker": "judy",
+        "line": "Okay. I'm trying to believe that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You can. And we're here."
+      },
+      {
+        "speaker": "jade",
+        "line": "We're staying."
+      }
+    ],
+    "timestamp": "2026-06-07T23:02:17.517752"
   }
 ]

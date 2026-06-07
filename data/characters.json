@@ -5,41 +5,41 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 27,
-      "openness": 30,
+      "trust": 28,
+      "openness": 32,
       "ambition": 45,
-      "loneliness": 60,
+      "loneliness": 57,
       "resilience": 84,
       "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 100,
       "health": 100
     },
     "mood": "lighter",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "firepit_left",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 33,
-        "tension": 13,
+        "closeness": 35,
+        "tension": 11,
         "attraction": 0
       },
       "jade": {
-        "closeness": 34,
+        "closeness": 38,
         "tension": 0,
-        "attraction": 8
+        "attraction": 9
       },
       "judy": {
-        "closeness": 11,
+        "closeness": 14,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 11,
+        "closeness": 12,
         "tension": 0,
         "attraction": 0
       }
@@ -79,6 +79,11 @@
         "day": 4,
         "text": "She flinched like she expected to be rejected. I couldn't do that.",
         "weight": 2
+      },
+      {
+        "day": 4,
+        "text": "Teasing her at the fire felt like something I didn't know I needed.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -98,40 +103,40 @@
     "color": "#fbbf24",
     "scores": {
       "trust": 85,
-      "openness": 98,
+      "openness": 99,
       "ambition": 74,
-      "loneliness": 7,
+      "loneliness": 5,
       "resilience": 43,
       "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 100,
       "health": 100
     },
-    "mood": "tender",
+    "mood": "content",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_front",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 33,
-        "tension": 8,
+        "closeness": 35,
+        "tension": 6,
         "attraction": 0
       },
       "jade": {
-        "closeness": 44,
-        "tension": 2,
+        "closeness": 47,
+        "tension": 1,
         "attraction": 18
       },
       "judy": {
-        "closeness": 20,
+        "closeness": 24,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 24,
+        "closeness": 25,
         "tension": 0,
         "attraction": 0
       }
@@ -180,41 +185,41 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 70,
-      "openness": 86,
+      "trust": 71,
+      "openness": 87,
       "ambition": 39,
-      "loneliness": 23,
+      "loneliness": 20,
       "resilience": 63,
       "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 100,
       "health": 100
     },
-    "mood": "lighter",
+    "mood": "warm",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "firepit_front",
       "x": 40,
       "y": 50
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 34,
+        "closeness": 38,
         "tension": 0,
-        "attraction": 8
+        "attraction": 9
       },
       "ryan": {
-        "closeness": 44,
-        "tension": 2,
+        "closeness": 47,
+        "tension": 1,
         "attraction": 13
       },
       "judy": {
-        "closeness": 16,
+        "closeness": 20,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 13,
+        "closeness": 14,
         "tension": 0,
         "attraction": 0
       }
@@ -272,19 +277,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 61,
-      "openness": 84,
+      "trust": 63,
+      "openness": 86,
       "ambition": 34,
-      "loneliness": 88,
-      "resilience": 65,
+      "loneliness": 84,
+      "resilience": 66,
       "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 100,
       "health": 100
     },
     "mood": "hopeful",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_right",
       "x": 50,
       "y": 82
     },
@@ -294,29 +299,29 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 11,
+        "closeness": 14,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 20,
+        "closeness": 24,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 16,
+        "closeness": 20,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 13,
+        "closeness": 16,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
     "interaction": {
-      "with": "ryan",
+      "with": "stray",
       "state": "sitting_together"
     },
     "memories": [
@@ -344,6 +349,11 @@
         "day": 4,
         "text": "The pup pressed against me like I mattered. Like I was safe too.",
         "weight": 2
+      },
+      {
+        "day": 4,
+        "text": "They wanted me here. All of them. Even the pup chose me.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -369,42 +379,42 @@
       "state": "sitting_together"
     },
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_right",
       "x": 20,
       "y": 88
     },
     "mood": "content",
     "relationships": {
       "marcus": {
-        "closeness": 13,
+        "closeness": 16,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 26,
+        "closeness": 29,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 15,
+        "closeness": 18,
         "tension": 0,
         "attraction": 0
       },
       "judy": {
-        "closeness": 15,
+        "closeness": 20,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 28,
-      "openness": 34,
+      "trust": 30,
+      "openness": 35,
       "ambition": 0,
-      "loneliness": 50,
-      "resilience": 79,
+      "loneliness": 46,
+      "resilience": 80,
       "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 100,
       "health": 100
     },
     "shelter": "under the palms",
