@@ -3036,5 +3036,213 @@
       }
     ],
     "timestamp": "2026-06-07T23:02:17.517752"
+  },
+  {
+    "day": 5,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "Emerges from his tent as the sun breaks over the eastern ridge, stretching and pausing to listen to the camp stirring awake.",
+    "thought": "She laughs at my jokes. Still surprising.",
+    "location": {
+      "waypoint": "tent_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "lighter",
+    "timestamp": "2026-06-08T07:03:05.126486"
+  },
+  {
+    "day": 5,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "Crouches by the fire pit with fresh wood, watching the flames catch and strengthen in the early morning light.",
+    "thought": "She should be awake soon. Wanting her to be.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-08T07:03:05.126486"
+  },
+  {
+    "day": 5,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "Wakes in her hammock to golden light filtering through the palms, lies still for a moment listening to the camp, then pushes herself up.",
+    "thought": "I want to know what I'm actually feeling.",
+    "location": {
+      "waypoint": "hammock_beside",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-08T07:03:05.126486"
+  },
+  {
+    "day": 5,
+    "cycle": "morning",
+    "character": "judy",
+    "action": "Steps out onto the house porch into the early light, one hand on the wooden post, breathing in the salt air with something like peace.",
+    "thought": "They chose me. They want me here.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-08T07:03:05.126486"
+  },
+  {
+    "day": 5,
+    "cycle": "morning",
+    "character": "stray",
+    "action": "Stretches from its sleeping spot in the shade near the palms, tail lifting as it scents the morning breeze and hears the camp waking.",
+    "thought": "Ryan's here. Safe here. Everything safe.",
+    "location": {
+      "waypoint": "under the palms",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-08T07:03:05.126486"
+  },
+  {
+    "day": 5,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade"
+    ],
+    "description": "At the firepit in the early morning, Ryan tends the fire as Jade approaches and sits beside him, and they fall into easy conversation as the sun breaks over the island.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You're up early."
+      },
+      {
+        "speaker": "jade",
+        "line": "Hammock gets too hot once the sun hits it. You sleep at all?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Not much. I was up thinking."
+      },
+      {
+        "speaker": "jade",
+        "line": "About what?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "About yesterday. About all of us actually fitting together like this."
+      },
+      {
+        "speaker": "jade",
+        "line": "We do fit now. That part changed."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. I felt lighter. Did you feel it too?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Something shifted, yeah. Everything felt different."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I think it's because I stopped pretending I don't care about... about certain people."
+      },
+      {
+        "speaker": "jade",
+        "line": "Certain people. That's one way to put it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Specific people. You know who I mean."
+      },
+      {
+        "speaker": "jade",
+        "line": "I think I do. I've been thinking about you too, by the way."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah. And about Marcus, but it's different. He makes me laugh—that's new."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That is new. He's been different since you got here."
+      },
+      {
+        "speaker": "jade",
+        "line": "He has. But you were different from the start."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Different how?"
+      },
+      {
+        "speaker": "jade",
+        "line": "You looked at me like I mattered. Like I wasn't just passing through."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You do matter. You're not passing through."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know that now. I was drifting before. Didn't know what I wanted."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And now?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Now I want to stay. Want to be here with all of you. Especially with you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That means a lot to me."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know it does. That's why I'm saying it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I was afraid you might leave."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm not leaving. Not unless you want me to."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I don't want that. I really don't."
+      },
+      {
+        "speaker": "jade",
+        "line": "What are you thinking?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "That I'm glad. That this is real. That you're choosing to be here."
+      },
+      {
+        "speaker": "jade",
+        "line": "I am choosing. I'm choosing this. I'm choosing you."
+      }
+    ],
+    "timestamp": "2026-06-08T07:03:05.126486"
   }
 ]
