@@ -74,10 +74,10 @@
     "appearance": {
       "skin": "#cf9d72",
       "hair": {
-        "style": "short",
+        "style": "buzz",
         "color": "#2a1a12"
       },
-      "accessory": "none",
+      "accessory": "sunglasses",
       "outfit": "#1e3a5f"
     }
   },
@@ -154,8 +154,9 @@
         "style": "short",
         "color": "#6b4423"
       },
-      "accessory": "none",
-      "outfit": "#b45309"
+      "accessory": "cap",
+      "outfit": "#b45309",
+      "accColor": "#dc2626"
     }
   },
   "jade": {
@@ -236,7 +237,7 @@
         "style": "wavy",
         "color": "#3a2418"
       },
-      "accessory": "none",
+      "accessory": "earrings",
       "outfit": "#f472b6"
     }
   },
@@ -310,11 +311,12 @@
     "appearance": {
       "skin": "#d9a878",
       "hair": {
-        "style": "bun",
+        "style": "long",
         "color": "#2a1a12"
       },
-      "accessory": "none",
-      "outfit": "#14b8a6"
+      "accessory": "beanie",
+      "outfit": "#14b8a6",
+      "accColor": "#fb7185"
     }
   },
   "stray": {
