@@ -2335,5 +2335,250 @@
       }
     ],
     "timestamp": "2026-06-07T07:02:52.907254"
+  },
+  {
+    "day": 4,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "Emerges from the tent area toward the firepit, drawn by voices and laughter.",
+    "thought": "She's laughing. That's not from before.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "wry",
+    "timestamp": "2026-06-07T12:32:45.941116"
+  },
+  {
+    "day": 4,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "Tends the fire at midday, warm and present as Marcus and Jade arrive at the firepit.",
+    "thought": "They're both here, both okay. That's enough.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "tender",
+    "timestamp": "2026-06-07T12:32:45.941116"
+  },
+  {
+    "day": 4,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "Drifts to the firepit and settles beside Marcus, visibly relaxing as the morning's weight dissolves.",
+    "thought": "He's okay. We're okay. I can feel it.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "lighter",
+    "timestamp": "2026-06-07T12:32:45.941116"
+  },
+  {
+    "day": 4,
+    "cycle": "midday",
+    "character": "judy",
+    "action": "Sits at the beach edge, watching the distant firepit and trying to fill the void of time.",
+    "thought": "They're together. I don't belong there.",
+    "location": {
+      "waypoint": "beach_left",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-07T12:32:45.941116"
+  },
+  {
+    "day": 4,
+    "cycle": "midday",
+    "character": "stray",
+    "action": "Drifts closer to the firepit, drawn by the warmth and the ease in human voices.",
+    "thought": "They're calm now. I can rest here.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "hopeful",
+    "timestamp": "2026-06-07T12:32:45.941116"
+  },
+  {
+    "day": 4,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "marcus"
+    ],
+    "description": "At the firepit at midday, Marcus, Jade, and Ryan find unexpected lightness; teasing breaks through the weight from the previous night, and even the stray pup drifts closer, sensing the warmth.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Hey, you're up. How's the tent treating you?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Fine."
+      },
+      {
+        "speaker": "jade",
+        "line": "He says fine about everything."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You do, actually. You feeling okay?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Why would I not be?"
+      },
+      {
+        "speaker": "jade",
+        "line": "After last night... and this morning..."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What about it?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Come on. You two had this whole thing."
+      },
+      {
+        "speaker": "jade",
+        "line": "I asked him if I hurt him, and—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You did."
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah."
+      },
+      {
+        "speaker": "ryan",
+        "line": "But you're fine now, right?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Obviously."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're not fine. Your voice gets like that."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Like what?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Closed. You sound closed off."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not intentional."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know. That's why I noticed."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Well, we're here now. All three of us."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Is that what was supposed to happen?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't know what's supposed to happen."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe nothing dramatic. Maybe we just sit."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Sitting. How ambitious."
+      },
+      {
+        "speaker": "jade",
+        "line": "Did you just make a joke?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Apparently."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Should we document this? Marcus being funny?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Better things to do."
+      },
+      {
+        "speaker": "jade",
+        "line": "Like what?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Sitting. Not talking if possible."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's exactly what I'm doing."
+      },
+      {
+        "speaker": "jade",
+        "line": "Then we're doing it together."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Okay."
+      },
+      {
+        "speaker": "ryan",
+        "line": "The pup's come closer. He's less scared now."
+      },
+      {
+        "speaker": "jade",
+        "line": "He can feel when things shift in us."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're better. We're better."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We are."
+      },
+      {
+        "speaker": "jade",
+        "line": "This is good."
+      },
+      {
+        "speaker": "marcus",
+        "line": "For now."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'll take it."
+      }
+    ],
+    "timestamp": "2026-06-07T12:32:45.941116"
   }
 ]
