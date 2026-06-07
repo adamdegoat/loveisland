@@ -70,7 +70,16 @@
         "text": "She asked directly if she hurt me. I couldn't lie to her.",
         "weight": 2
       }
-    ]
+    ],
+    "appearance": {
+      "skin": "#cf9d72",
+      "hair": {
+        "style": "short",
+        "color": "#2a1a12"
+      },
+      "accessory": "none",
+      "outfit": "#1e3a5f"
+    }
   },
   "ryan": {
     "name": "Ryan Lim",
@@ -138,7 +147,16 @@
         "text": "Marcus came to me broken and honest tonight.",
         "weight": 2
       }
-    ]
+    ],
+    "appearance": {
+      "skin": "#e8c9a8",
+      "hair": {
+        "style": "short",
+        "color": "#6b4423"
+      },
+      "accessory": "none",
+      "outfit": "#b45309"
+    }
   },
   "jade": {
     "name": "Jade Ng",
@@ -211,7 +229,16 @@
         "text": "I hurt him without meaning to. He showed me that truth, then hid.",
         "weight": 2
       }
-    ]
+    ],
+    "appearance": {
+      "skin": "#e0b890",
+      "hair": {
+        "style": "wavy",
+        "color": "#3a2418"
+      },
+      "accessory": "none",
+      "outfit": "#f472b6"
+    }
   },
   "judy": {
     "name": "Judy Chen",
@@ -279,7 +306,16 @@
         "text": "I heard them talking through the night. Still alone.",
         "weight": 1
       }
-    ]
+    ],
+    "appearance": {
+      "skin": "#d9a878",
+      "hair": {
+        "style": "bun",
+        "color": "#2a1a12"
+      },
+      "accessory": "none",
+      "outfit": "#14b8a6"
+    }
   },
   "stray": {
     "name": "",
