@@ -5,17 +5,17 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 26,
-      "openness": 28,
+      "trust": 27,
+      "openness": 30,
       "ambition": 45,
-      "loneliness": 64,
+      "loneliness": 60,
       "resilience": 84,
       "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "wry",
+    "mood": "lighter",
     "location": {
       "waypoint": "firepit_right",
       "x": 75,
@@ -24,22 +24,22 @@
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 30,
-        "tension": 15,
+        "closeness": 33,
+        "tension": 13,
         "attraction": 0
       },
       "jade": {
-        "closeness": 30,
-        "tension": 2,
-        "attraction": 7
+        "closeness": 34,
+        "tension": 0,
+        "attraction": 8
       },
       "judy": {
-        "closeness": 7,
+        "closeness": 11,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 10,
+        "closeness": 11,
         "tension": 0,
         "attraction": 0
       }
@@ -74,6 +74,11 @@
         "day": 4,
         "text": "Made her laugh at the fire. First time that happened.",
         "weight": 1
+      },
+      {
+        "day": 4,
+        "text": "She flinched like she expected to be rejected. I couldn't do that.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -93,13 +98,13 @@
     "color": "#fbbf24",
     "scores": {
       "trust": 85,
-      "openness": 97,
+      "openness": 98,
       "ambition": 74,
-      "loneliness": 9,
+      "loneliness": 7,
       "resilience": 43,
       "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "mood": "tender",
@@ -111,30 +116,30 @@
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 30,
-        "tension": 10,
+        "closeness": 33,
+        "tension": 8,
         "attraction": 0
       },
       "jade": {
-        "closeness": 41,
-        "tension": 3,
-        "attraction": 17
+        "closeness": 44,
+        "tension": 2,
+        "attraction": 18
       },
       "judy": {
-        "closeness": 15,
-        "tension": 1,
+        "closeness": 20,
+        "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 23,
+        "closeness": 24,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
-      "with": "jade",
-      "state": "talking"
+      "with": "judy",
+      "state": "comforting"
     },
     "memories": [
       {
@@ -150,6 +155,11 @@
       {
         "day": 3,
         "text": "Marcus came to me broken and honest tonight.",
+        "weight": 2
+      },
+      {
+        "day": 4,
+        "text": "Judy asked if she belonged. I made sure she knew she absolutely did.",
         "weight": 2
       }
     ],
@@ -170,14 +180,14 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 69,
-      "openness": 85,
+      "trust": 70,
+      "openness": 86,
       "ambition": 39,
-      "loneliness": 26,
+      "loneliness": 23,
       "resilience": 63,
       "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "mood": "lighter",
@@ -189,22 +199,22 @@
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 30,
-        "tension": 2,
-        "attraction": 7
+        "closeness": 34,
+        "tension": 0,
+        "attraction": 8
       },
       "ryan": {
-        "closeness": 41,
-        "tension": 3,
-        "attraction": 12
+        "closeness": 44,
+        "tension": 2,
+        "attraction": 13
       },
       "judy": {
-        "closeness": 12,
-        "tension": 1,
+        "closeness": 16,
+        "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 12,
+        "closeness": 13,
         "tension": 0,
         "attraction": 0
       }
@@ -239,6 +249,11 @@
         "day": 4,
         "text": "Marcus joked and teased. The morning didn't ruin us.",
         "weight": 2
+      },
+      {
+        "day": 4,
+        "text": "She didn't know we wanted her. I'm going to make sure she does.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -257,19 +272,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 58,
-      "openness": 82,
+      "trust": 61,
+      "openness": 84,
       "ambition": 34,
-      "loneliness": 94,
-      "resilience": 64,
+      "loneliness": 88,
+      "resilience": 65,
       "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "anxious",
+    "mood": "hopeful",
     "location": {
-      "waypoint": "beach_left",
+      "waypoint": "firepit_left",
       "x": 50,
       "y": 82
     },
@@ -279,28 +294,31 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 7,
+        "closeness": 11,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 15,
-        "tension": 1,
+        "closeness": 20,
+        "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 12,
-        "tension": 1,
+        "closeness": 16,
+        "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 10,
+        "closeness": 13,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": null,
+    "interaction": {
+      "with": "ryan",
+      "state": "sitting_together"
+    },
     "memories": [
       {
         "day": 3,
@@ -316,6 +334,16 @@
         "day": 3,
         "text": "I heard them talking through the night. Still alone.",
         "weight": 1
+      },
+      {
+        "day": 4,
+        "text": "They all said I belong. Ryan, Marcus, even Jade. I want to believe them.",
+        "weight": 3
+      },
+      {
+        "day": 4,
+        "text": "The pup pressed against me like I mattered. Like I was safe too.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -337,46 +365,46 @@
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
     "interaction": {
-      "with": "ryan",
+      "with": "judy",
       "state": "sitting_together"
     },
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "firepit_left",
       "x": 20,
       "y": 88
     },
-    "mood": "hopeful",
+    "mood": "content",
     "relationships": {
       "marcus": {
-        "closeness": 10,
+        "closeness": 13,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 23,
+        "closeness": 26,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 12,
+        "closeness": 15,
         "tension": 0,
         "attraction": 0
       },
       "judy": {
-        "closeness": 10,
+        "closeness": 15,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 26,
-      "openness": 33,
+      "trust": 28,
+      "openness": 34,
       "ambition": 0,
-      "loneliness": 54,
-      "resilience": 78,
+      "loneliness": 50,
+      "resilience": 79,
       "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "shelter": "under the palms",

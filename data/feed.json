@@ -2580,5 +2580,263 @@
       }
     ],
     "timestamp": "2026-06-07T12:32:45.941116"
+  },
+  {
+    "day": 4,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "Sits by the fire with the group, trading dry barbs with Ryan while watching Jade laugh.",
+    "thought": "She laughs at my jokes. That's still surprising.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "lighter",
+    "timestamp": "2026-06-07T18:02:42.914905"
+  },
+  {
+    "day": 4,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "Settles by the fire with everyone gathered, warm and present, welcoming Judy into the circle.",
+    "thought": "Everyone's here. This is what matters.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "tender",
+    "timestamp": "2026-06-07T18:02:42.914905"
+  },
+  {
+    "day": 4,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "Laughs and teases between Marcus and Ryan, fully at ease, lighter than she's been in days.",
+    "thought": "Both of them, easy together. It's good.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "lighter",
+    "timestamp": "2026-06-07T18:02:42.914905"
+  },
+  {
+    "day": 4,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "Steps out of the shadows and finally sits with the group at the fire, hesitant but present.",
+    "thought": "They want me here. Actually want me.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-07T18:02:42.914905"
+  },
+  {
+    "day": 4,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "Leans against Ryan by the fire, then walks slowly over to Judy and presses against her leg.",
+    "thought": "She's safe. They're all safe.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-07T18:02:42.914905"
+  },
+  {
+    "day": 4,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade",
+      "judy"
+    ],
+    "description": "Evening at the firepit: the group gathers and Marcus, Ryan, and Jade trade teasing remarks while the stray pup settles nearby. Judy steps out of the darkness and asks to join; each of them welcomes her with genuine warmth.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Marcus, I've been thinking about your tent."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Don't."
+      },
+      {
+        "speaker": "ryan",
+        "line": "There's room in the house. You'd have actual walls."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Tent's fine."
+      },
+      {
+        "speaker": "jade",
+        "line": "He'll never leave that tent, Ryan. You know that by now."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Why not give it a try?"
+      },
+      {
+        "speaker": "jade",
+        "line": "You're so persistent about building things."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's what happens when you can't let anything be."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I built us shelter. Real shelter. I'm proud of it."
+      },
+      {
+        "speaker": "jade",
+        "line": "You did great. But maybe you love the building more than the houses."
+      },
+      {
+        "speaker": "marcus",
+        "line": "He likes being in control."
+      },
+      {
+        "speaker": "ryan",
+        "line": "There's nothing wrong with wanting things solid."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Nothing. Except you can't stop."
+      },
+      {
+        "speaker": "jade",
+        "line": "He has a point though. You're always tense."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Someone has to be."
+      },
+      {
+        "speaker": "stray",
+        "line": "[wanders over and leans against Ryan's leg, seeking warmth]"
+      },
+      {
+        "speaker": "jade",
+        "line": "Look. Even the pup knows where safety is."
+      },
+      {
+        "speaker": "marcus",
+        "line": "The pup is just hungry."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Aren't we all looking for something?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Some more than others."
+      },
+      {
+        "speaker": "judy",
+        "line": "Is it... can I sit with you all? I don't want to intrude."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Judy, yes. Come sit."
+      },
+      {
+        "speaker": "jade",
+        "line": "Please. We want you here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Sit."
+      },
+      {
+        "speaker": "judy",
+        "line": "I like being with you all. More than anything."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You belong here. You know that?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You do."
+      },
+      {
+        "speaker": "jade",
+        "line": "More than you think."
+      },
+      {
+        "speaker": "judy",
+        "line": "Even when I'm just quiet and scared?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Especially then."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're not a burden."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're part of this. Of us."
+      },
+      {
+        "speaker": "judy",
+        "line": "I don't always feel like I am."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then we're not saying it enough."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We're saying it now."
+      },
+      {
+        "speaker": "stray",
+        "line": "[stands and walks to Judy, pressing against her leg with gentle trust]"
+      },
+      {
+        "speaker": "jade",
+        "line": "Look. The pup is voting."
+      },
+      {
+        "speaker": "judy",
+        "line": "Really?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's his yes."
+      },
+      {
+        "speaker": "marcus",
+        "line": "He knows."
+      },
+      {
+        "speaker": "jade",
+        "line": "This is good. All of us, like this."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Really good."
+      }
+    ],
+    "timestamp": "2026-06-07T18:02:42.914905"
   }
 ]
