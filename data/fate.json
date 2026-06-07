@@ -1,10 +1,10 @@
 {
   "day": 4,
-  "text": "Marcus tells Jade about his mother, and she listens without trying to fix him.",
-  "flavor": "quiet tenderness",
-  "cycle": "night",
-  "happens_at": "11pm",
+  "text": "Marcus catches Ryan making a promise to Jade he doesn't plan to keep.",
+  "flavor": "broken trust",
+  "cycle": "morning",
+  "happens_at": "7am",
   "status": "upcoming",
-  "revealed_at": "2026-06-08T00:00:18.512843",
+  "revealed_at": "2026-06-08T00:00:23.620280",
   "activated_at": null
 }
