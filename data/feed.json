@@ -3452,5 +3452,241 @@
       }
     ],
     "timestamp": "2026-06-08T12:31:32.349098"
+  },
+  {
+    "day": 5,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "Stands at the tent edge as evening falls, watching the firelight glow in the distance where they sit together.",
+    "thought": "She's choosing him. Still choosing him.",
+    "location": {
+      "waypoint": "tent_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "withdrawn",
+    "timestamp": "2026-06-08T18:02:28.490646"
+  },
+  {
+    "day": 5,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "Tends the fire in the gathering darkness, the flames painting his face warm as he waits for her.",
+    "thought": "She'll come back. She always does.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-08T18:02:28.490646"
+  },
+  {
+    "day": 5,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "Walks slowly down from the path toward the fire, settling close beside Ryan as evening gathers.",
+    "thought": "I can do this. I can stay.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "vulnerable",
+    "timestamp": "2026-06-08T18:02:28.490646"
+  },
+  {
+    "day": 5,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "Sits on the house porch in the growing darkness, watching the two figures by the fire with longing.",
+    "thought": "They have something. They found something.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "wistful",
+    "timestamp": "2026-06-08T18:02:28.490646"
+  },
+  {
+    "day": 5,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "Settles between Ryan and Jade by the fire, belly warm, ears relaxed, completely at peace.",
+    "thought": "Safe. Everyone safe here now.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-08T18:02:28.490646"
+  },
+  {
+    "day": 5,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade"
+    ],
+    "description": "By the fire in the gathering darkness, Ryan and Jade sit close together in soft conversation as the stray pup settles between them; Marcus watches from his tent edge and Judy looks on from the porch.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You're quiet tonight."
+      },
+      {
+        "speaker": "jade",
+        "line": "Just thinking. About you. About us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "What did you decide?"
+      },
+      {
+        "speaker": "jade",
+        "line": "That I'm terrified. And that I want to stay anyway."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then stay. Please."
+      },
+      {
+        "speaker": "jade",
+        "line": "It's not that simple."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Why isn't it?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Because I'm the person who runs. What if I do that to you?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "You won't."
+      },
+      {
+        "speaker": "jade",
+        "line": "How can you be so sure?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Because I know myself, and I know that if you're here, I'm not going anywhere."
+      },
+      {
+        "speaker": "jade",
+        "line": "Even when I'm hard to be around?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Especially then."
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't want to hurt you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're not hurting me by being here. You could only hurt me by leaving."
+      },
+      {
+        "speaker": "jade",
+        "line": "But what if that's what happens?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then it happens. And I'll have loved you anyway."
+      },
+      {
+        "speaker": "jade",
+        "line": "That seems reckless."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe it is. But I don't want to be careful with you anymore."
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't know if I can give you what you need."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You already are. You're here. That's everything."
+      },
+      {
+        "speaker": "jade",
+        "line": "How are you this sure?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Because I see you. The real you, not who you think you should be."
+      },
+      {
+        "speaker": "jade",
+        "line": "That terrifies me more than anything."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know. But you don't have to be scared alone now."
+      },
+      {
+        "speaker": "jade",
+        "line": "You promise?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Every single day if you need me to."
+      },
+      {
+        "speaker": "jade",
+        "line": "What if I wake up panicked?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then I'll be there."
+      },
+      {
+        "speaker": "jade",
+        "line": "Okay. Okay, I believe you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah. I'm choosing this. Choosing you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's all I needed to hear."
+      },
+      {
+        "speaker": "jade",
+        "line": "Thank you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "For what?"
+      },
+      {
+        "speaker": "jade",
+        "line": "For being patient. For staying."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Always."
+      }
+    ],
+    "timestamp": "2026-06-08T18:02:28.490646"
   }
 ]
