@@ -55,6 +55,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* Ambient birds drift slowly across the sky */
 @keyframes birddrift{0%{transform:translate(0,0)}50%{transform:translate(46px,-9px)}100%{transform:translate(0,0)}}
 .birds-drift{transform-box:view-box;animation:birddrift 24s ease-in-out infinite}
+/* A lone sailboat drifts slowly across the horizon */
+@keyframes boatdrift{from{transform:translateX(-70px)}to{transform:translateX(1070px)}}
+.boat-drift{transform-box:view-box;animation:boatdrift 78s linear infinite}
 /* Fireflies near the firepit (parent group's opacity gates night-only visibility) */
 @keyframes firefly{0%,100%{opacity:0;transform:translate(0,0)}25%{opacity:.95}50%{opacity:.35;transform:translate(7px,-9px)}75%{opacity:.85}}
 .firefly{transform-box:view-box;animation:firefly 4.2s ease-in-out infinite}
@@ -871,23 +874,29 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <path d="M 194 398 Q 186 365 183 328 Q 181 302 172 280" stroke="#a16207" stroke-width="12" fill="none" stroke-linecap="round"/>
 <path d="M 194 398 Q 186 365 183 328 Q 181 302 172 280" stroke="#ca8a04" stroke-width="4" fill="none" stroke-linecap="round" opacity=".35"/>
 <g class="palm-sway" style="transform-origin:172px 280px">
-<path d="M 172 280 Q 135 264 115 254" stroke="#15803d" stroke-width="6" fill="none" stroke-linecap="round"/>
-<path d="M 172 280 Q 155 260 148 243" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
-<path d="M 172 280 Q 179 258 181 242" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
-<path d="M 172 280 Q 193 262 207 250" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
-<path d="M 172 280 Q 202 270 218 262" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
-<circle cx="165" cy="285" r="8" fill="#92400e"/><circle cx="177" cy="281" r="7" fill="#a16207"/>
+<path d="M 172 280 Q 128 262 106 256" stroke="#166534" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 132 272 110 274" stroke="#15803d" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 152 256 144 238" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 177 253 179 236" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 196 257 214 247" stroke="#15803d" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 205 268 226 264" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 200 278 222 282" stroke="#15803d" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+<path d="M 172 280 Q 152 256 144 238 M 172 280 Q 196 257 214 247" stroke="#4ade80" stroke-width="1.3" fill="none" opacity=".4"/>
+<circle cx="171" cy="287" r="5" fill="#6b4423"/><circle cx="178" cy="289" r="4.5" fill="#5c3a1c"/><circle cx="164" cy="289" r="4.5" fill="#7c5224"/><circle cx="170" cy="286" r="1.6" fill="#8a5a2b" opacity=".7"/>
 </g>
 <!-- Palm 2 -->
 <path d="M 268 398 Q 276 365 279 328 Q 281 302 290 280" stroke="#a16207" stroke-width="12" fill="none" stroke-linecap="round"/>
 <path d="M 268 398 Q 276 365 279 328 Q 281 302 290 280" stroke="#ca8a04" stroke-width="4" fill="none" stroke-linecap="round" opacity=".35"/>
 <g class="palm-sway" style="transform-origin:290px 280px;animation-delay:-2.1s">
-<path d="M 290 280 Q 325 264 345 254" stroke="#15803d" stroke-width="6" fill="none" stroke-linecap="round"/>
-<path d="M 290 280 Q 307 260 314 243" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
-<path d="M 290 280 Q 283 258 281 242" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
-<path d="M 290 280 Q 269 262 256 250" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
-<path d="M 290 280 Q 260 270 244 262" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
-<circle cx="297" cy="285" r="8" fill="#92400e"/>
+<path d="M 290 280 Q 332 262 354 256" stroke="#166534" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 328 272 350 274" stroke="#15803d" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 308 256 316 238" stroke="#15803d" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 285 253 283 236" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 266 257 248 247" stroke="#15803d" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 257 268 236 264" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 262 278 240 282" stroke="#15803d" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+<path d="M 290 280 Q 308 256 316 238 M 290 280 Q 266 257 248 247" stroke="#4ade80" stroke-width="1.3" fill="none" opacity=".4"/>
+<circle cx="291" cy="287" r="5" fill="#6b4423"/><circle cx="298" cy="289" r="4.5" fill="#5c3a1c"/><circle cx="284" cy="289" r="4.5" fill="#7c5224"/><circle cx="290" cy="286" r="1.6" fill="#8a5a2b" opacity=".7"/>
 </g>
 <!-- Hammock -->
 <path d="M 185 342 Q 232 365 279 342" fill="#be185d" opacity=".88"/>
@@ -967,6 +976,32 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <path class="wa" d="M -500 534 Q -375 524 -250 534 Q -125 544 0 534 Q 125 524 250 534 Q 375 544 500 534 Q 625 524 750 534 Q 875 544 1000 534 Q 1125 524 1250 534 Q 1375 544 1500 534 L 1500 600 L -500 600 Z" fill="#0284c7" opacity=".45"/>
 <path class="wb" d="M -300 546 Q -175 537 -50 546 Q 75 555 200 546 Q 325 537 450 546 Q 575 555 700 546 Q 825 537 950 546 Q 1075 555 1200 546 Q 1325 537 1450 546 L 1450 600 L -300 600 Z" fill="#075985" opacity=".5"/>
 <path class="wa" d="M -500 528 Q -375 522 -250 528 Q -125 534 0 528 Q 125 522 250 528 Q 375 534 500 528 Q 625 522 750 528 Q 875 534 1000 528 Q 1125 522 1250 528 Q 1375 534 1500 528" fill="none" stroke="white" stroke-width="1.8" opacity=".28"/>
+
+<!-- distant island on the horizon (hazy, far away) -->
+<g opacity=".5">
+  <ellipse cx="876" cy="522" rx="48" ry="6" fill="#1e4d3a"/>
+  <ellipse cx="876" cy="519" rx="34" ry="6" fill="#2f6b4e"/>
+  <ellipse cx="858" cy="518" rx="9" ry="5" fill="#256044"/>
+  <line x1="861" y1="515" x2="862" y2="509" stroke="#3a2a18" stroke-width="1.3"/>
+  <path d="M 861 510 q -6 -3 -10 -1 M 861 510 q 0 -5 1 -8 M 861 510 q 6 -3 10 -1" stroke="#1e4d3a" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+</g>
+<!-- a lone sailboat drifting across the horizon -->
+<g class="boat-drift">
+  <ellipse cx="0" cy="536" rx="14" ry="2.2" fill="#ffffff" opacity=".3"/>
+  <path d="M -11 530 L 11 530 L 8 536 L -8 536 Z" fill="#6b4423"/>
+  <path d="M -11 530 L 11 530 L 9 532 L -9 532 Z" fill="#8a5a2b"/>
+  <line x1="0" y1="531" x2="0" y2="510" stroke="#3a2a18" stroke-width="1.4"/>
+  <path d="M 1 510 L 1 528 L 12 528 Z" fill="#f1f5f9"/>
+  <path d="M -1 512 L -8 528 L -1 528 Z" fill="#dbe3ea"/>
+</g>
+<!-- moonlight shimmer on the water (night only; gated in applySky) -->
+<g id="moon-water" opacity="0">
+  <polygon points="792,520 828,520 850,600 770,600" fill="#cbd5e1" opacity=".12"/>
+  <ellipse cx="810" cy="532" rx="12" ry="2" fill="#e2e8f0" opacity=".5"/>
+  <ellipse cx="810" cy="548" rx="17" ry="2.4" fill="#cbd5e1" opacity=".42"/>
+  <ellipse cx="810" cy="566" rx="22" ry="2.8" fill="#e2e8f0" opacity=".34"/>
+  <ellipse cx="810" cy="584" rx="27" ry="3" fill="#cbd5e1" opacity=".24"/>
+</g>
 
 <!-- foam crests scattered on the water -->
 <g class="wa" fill="#ffffff" opacity=".32"><ellipse cx="160" cy="540" rx="11" ry="2"/><ellipse cx="640" cy="548" rx="13" ry="2.2"/><ellipse cx="900" cy="536" rx="9" ry="1.8"/><ellipse cx="380" cy="556" rx="10" ry="1.9"/></g>
@@ -1598,6 +1633,8 @@ function applySky(sky) {
   // Bungalow window + lantern glow warmer at night
   document.getElementById('house-glow')?.setAttribute('opacity',isNight?'0.95':'0.38')
   document.getElementById('lantern-glow')?.setAttribute('opacity',isNight?'1':'0.6')
+  // Moonlight shimmer on the sea at night
+  document.getElementById('moon-water')?.setAttribute('opacity',isNight?'0.7':'0')
   // Dawn sea-fog: strong at dawn, a touch at morning, gone otherwise
   const df=document.getElementById('dawn-fog')
   if(df) df.setAttribute('opacity', sky==='dawn'?'0.6':sky==='morning'?'0.32':'0')
