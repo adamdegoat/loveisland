@@ -72,6 +72,15 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 .gull-glide{transform-box:view-box;animation:gullglide 34s linear infinite}
 /* Strung palm lanterns glow at night (#world gets .night from applySky) */
 #world.night #palm-lanterns{filter:drop-shadow(0 0 3px rgba(255,200,110,.85))}
+/* Parrot gentle head bob */
+@keyframes parrotbob{0%,100%{transform:rotate(0)}50%{transform:rotate(-4deg)}}
+.parrot-bob{transform-box:view-box;animation:parrotbob 3.6s ease-in-out infinite}
+/* Embers drift up from the fire */
+@keyframes emberrise{0%{opacity:0;transform:translate(0,0)}18%{opacity:1}100%{opacity:0;transform:translate(-7px,-36px)}}
+.ember{transform-box:view-box;animation:emberrise 2.8s ease-out infinite}
+/* A pair of dolphins arc from the sea now and then */
+@keyframes dolphinarc{0%,72%,100%{opacity:0;transform:translate(0,18px)}76%{opacity:1;transform:translate(10px,-10px) rotate(-14deg)}82%{transform:translate(26px,-18px) rotate(0deg)}88%{opacity:1;transform:translate(42px,-8px) rotate(16deg)}94%{opacity:0;transform:translate(54px,14px) rotate(28deg)}}
+.dolphin-arc{transform-box:view-box;animation:dolphinarc 17s ease-in-out infinite}
 /* Fireflies near the firepit (parent group's opacity gates night-only visibility) */
 @keyframes firefly{0%,100%{opacity:0;transform:translate(0,0)}25%{opacity:.95}50%{opacity:.35;transform:translate(7px,-9px)}75%{opacity:.85}}
 .firefly{transform-box:view-box;animation:firefly 4.2s ease-in-out infinite}
@@ -951,6 +960,17 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <path d="M 290 280 Q 308 256 316 238 M 290 280 Q 266 257 248 247" stroke="#4ade80" stroke-width="1.3" fill="none" opacity=".4"/>
 <circle cx="291" cy="287" r="5" fill="#6b4423"/><circle cx="298" cy="289" r="4.5" fill="#5c3a1c"/><circle cx="284" cy="289" r="4.5" fill="#7c5224"/><circle cx="290" cy="286" r="1.6" fill="#8a5a2b" opacity=".7"/>
 </g>
+<!-- a colourful parrot perched in the palm crown -->
+<g class="parrot-bob" style="transform-origin:296px 288px">
+  <path d="M 297 290 Q 307 289 309 300 Q 310 312 302 318 Q 299 308 297 290 Z" fill="#0ea5e9"/>
+  <ellipse cx="294" cy="291" rx="6" ry="8.5" fill="#dc2626"/>
+  <ellipse cx="292" cy="290" rx="3.4" ry="5" fill="#facc15"/>
+  <path d="M 290 288 Q 297 292 300 302 Q 295 299 290 295 Z" fill="#1d4ed8"/>
+  <circle cx="290" cy="281" r="4.2" fill="#dc2626"/>
+  <circle cx="291" cy="280" r="1.8" fill="#fafaf9" opacity=".5"/>
+  <circle cx="288.6" cy="280.4" r="1" fill="#1c1c1f"/>
+  <path d="M 286 281 Q 281 280 284 284 Q 287 284 287 282 Z" fill="#1c1c1f"/>
+</g>
 <!-- Hammock (gently sways) -->
 <line x1="185" y1="342" x2="184" y2="323" stroke="#a16207" stroke-width="2.5"/>
 <line x1="279" y1="342" x2="280" y2="323" stroke="#a16207" stroke-width="2.5"/>
@@ -992,6 +1012,14 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <ellipse cx="492" cy="406" rx="12.5" ry="2.8" fill="#52525b"/>
 <ellipse cx="492" cy="406" rx="9" ry="1.8" fill="#18181b"/>
 <rect x="478" y="411" width="28" height="2.4" rx="1.2" fill="#27272a"/>
+<!-- embers drifting up from the fire (shown only when lit; toggled in updateFireChip) -->
+<g id="fire-embers" display="none" fill="#fb923c">
+  <circle class="ember" cx="486" cy="422" r="1.2"/>
+  <circle class="ember" cx="496" cy="424" r="1" style="animation-delay:-0.9s"/>
+  <circle class="ember" cx="490" cy="420" r="1.3" style="animation-delay:-1.7s"/>
+  <circle class="ember" cx="500" cy="422" r="1" style="animation-delay:-2.4s" fill="#fcd34d"/>
+  <circle class="ember" cx="484" cy="424" r="1.1" style="animation-delay:-3.1s" fill="#fcd34d"/>
+</g>
 <!-- Firepit night glow + fireflies (shown only at night) -->
 <circle id="fire-glow" cx="492" cy="424" r="78" fill="url(#fire-glow-g)" opacity="0"/>
 <g id="fireflies" opacity="0" fill="#fde68a">
@@ -1127,6 +1155,20 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   <ellipse cx="-1" cy="-1" rx="4" ry="1.6" fill="#aeb9c2" opacity=".7"/>
   <path d="M 5 0 L 11 -4 L 10 0 L 11 4 Z" fill="#5c6b75"/>
   <circle cx="-3.5" cy="-0.8" r="0.9" fill="#1c1c1f"/>
+</g></g>
+<!-- a pair of dolphins arcing out of the sea now and then -->
+<g class="dolphin-arc"><g transform="translate(720 552)">
+  <g>
+    <path d="M -13 6 Q -10 -8 0 -11 Q 11 -11 15 1 Q 9 -4 3 -3 Q -6 -1 -10 8 Z" fill="#64748b"/>
+    <path d="M -1 -10 Q 3 -16 6 -11 Z" fill="#475569"/>
+    <path d="M 12 1 L 18 -2 L 17 2 Z" fill="#475569"/>
+    <circle cx="-7" cy="-2" r="0.9" fill="#1c1c1f"/>
+  </g>
+  <g transform="translate(20 7) scale(.8)">
+    <path d="M -13 6 Q -10 -8 0 -11 Q 11 -11 15 1 Q 9 -4 3 -3 Q -6 -1 -10 8 Z" fill="#5a6776"/>
+    <path d="M -1 -10 Q 3 -16 6 -11 Z" fill="#475569"/>
+    <circle cx="-7" cy="-2" r="0.9" fill="#1c1c1f"/>
+  </g>
 </g></g>
 <!-- a lone gull gliding over the water -->
 <g class="gull-glide"><g transform="translate(0 498)">
@@ -2436,8 +2478,9 @@ function updateFireChip() {
   el.style.display = 'flex'
   el.className = lit ? 'lit' : 'out'
   el.innerHTML = lit ? '🔥 FIRE LIT' : '🌑 FIRE OUT'
-  // Campfire smoke rises only while the fire is lit
+  // Campfire smoke + embers rise only while the fire is lit
   document.getElementById('fire-smoke')?.setAttribute('display', lit ? '' : 'none')
+  document.getElementById('fire-embers')?.setAttribute('display', lit ? '' : 'none')
 }
 
 function renderStructures() {
