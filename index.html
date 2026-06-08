@@ -1017,10 +1017,14 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <ellipse cx="492" cy="434" rx="30" ry="12" fill="none" stroke="#b45309" stroke-width="3" opacity=".35"/>
 <line x1="469" y1="438" x2="514" y2="427" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
 <line x1="513" y1="438" x2="468" y2="427" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
+<g id="campfire-flames" style="transform-box:view-box;transform-origin:492px 428px">
 <path class="fa" d="M 483 428 Q 480 414 484 403 Q 488 393 492 384 Q 496 393 500 403 Q 504 414 501 428 Q 496 418 492 424 Q 488 418 483 428" fill="#dc2626"/>
 <path class="fb" d="M 485 426 Q 483 413 487 403 Q 489 395 492 388 Q 495 395 497 403 Q 501 413 499 426 Q 495 417 492 422 Q 489 417 485 426" fill="#f97316"/>
 <path class="fc" d="M 487 424 Q 486 413 488 405 Q 490 399 492 394 Q 494 399 496 405 Q 498 413 497 424 Q 494 416 492 421 Q 490 416 487 424" fill="#fbbf24"/>
+</g>
 <ellipse cx="492" cy="428" rx="9" ry="4" fill="#f97316" opacity=".25"/>
+<!-- woodpile by the camp — size reflects the real wood supply (renderWoodpile) -->
+<g id="woodpile"></g>
 <!-- cooking tripod + pot over the fire -->
 <line x1="470" y1="442" x2="492" y2="390" stroke="#3a2a18" stroke-width="2"/>
 <line x1="514" y1="442" x2="492" y2="390" stroke="#3a2a18" stroke-width="2"/>
@@ -2511,6 +2515,27 @@ function updateFireChip() {
   // Campfire smoke + embers rise only while the fire is lit
   document.getElementById('fire-smoke')?.setAttribute('display', lit ? '' : 'none')
   document.getElementById('fire-embers')?.setAttribute('display', lit ? '' : 'none')
+  // Realism: the flames reflect the REAL fuel — roaring when well-fed, dying to embers as it runs low
+  const fuel = (typeof fire.fuel === 'number') ? fire.fuel : 8
+  const fScale = lit ? Math.max(0.4, Math.min(1.25, 0.42 + fuel / 14)) : 0
+  const cf = document.getElementById('campfire-flames')
+  if(cf) cf.style.transform = `scale(${fScale.toFixed(2)})`
+}
+
+// Realism: a woodpile by the camp whose size reflects the REAL wood supply.
+function renderWoodpile() {
+  const g = document.getElementById('woodpile'); if(!g) return
+  const wood = Math.max(0, S.world?.resources?.wood ?? 0)
+  const n = Math.round(Math.min(6, wood / 10))   // 0..6 logs
+  const bx = 432, by = 462
+  const pos = [[0,0],[15,0],[30,0],[7,-7],[22,-7],[15,-14]]
+  let s = ''
+  for(let i=0;i<n;i++){
+    const [dx,dy] = pos[i]
+    s += `<g transform="translate(${bx+dx} ${by+dy})"><ellipse rx="8" ry="3.6" fill="#8a5a2b"/><ellipse rx="8" ry="3.6" fill="none" stroke="#5c3a1c" stroke-width="1"/><ellipse cx="-7" cy="0" rx="2.2" ry="3" fill="#a3895f"/><path d="M -7 -1.4 a 1 1.4 0 0 1 0 2.8 M -7 0 h .1" stroke="#7c6440" stroke-width=".6" fill="none"/></g>`
+  }
+  if(n===0) s = `<ellipse cx="${bx+14}" cy="${by+2}" rx="16" ry="3.4" fill="#3a2a18" opacity=".22"/>`
+  g.innerHTML = s
 }
 
 function renderStructures() {
@@ -3043,6 +3068,7 @@ function updateWorld() {
   updateStatusBar()
   updateStatCards()
   renderStructures()
+  renderWoodpile()
   renderResHud()
   updateFireChip()
 
