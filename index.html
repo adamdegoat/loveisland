@@ -1078,11 +1078,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <ellipse cx="492" cy="434" rx="30" ry="12" fill="none" stroke="#b45309" stroke-width="3" opacity=".35"/>
 <line x1="469" y1="438" x2="514" y2="427" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
 <line x1="513" y1="438" x2="468" y2="427" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
-<g id="campfire-flames" style="transform-box:view-box;transform-origin:492px 428px">
-<path class="fa" d="M 483 428 Q 480 414 484 403 Q 488 393 492 384 Q 496 393 500 403 Q 504 414 501 428 Q 496 418 492 424 Q 488 418 483 428" fill="#dc2626"/>
-<path class="fb" d="M 485 426 Q 483 413 487 403 Q 489 395 492 388 Q 495 395 497 403 Q 501 413 499 426 Q 495 417 492 422 Q 489 417 485 426" fill="#f97316"/>
-<path class="fc" d="M 487 424 Q 486 413 488 405 Q 490 399 492 394 Q 494 399 496 405 Q 498 413 497 424 Q 494 416 492 421 Q 490 416 487 424" fill="#fbbf24"/>
-</g>
+<!-- campfire flames are rendered ABOVE the night overlay now (see CAMPFIRE LIGHT, end of SVG) -->
 <ellipse cx="492" cy="428" rx="9" ry="4" fill="#f97316" opacity=".25"/>
 <!-- woodpile by the camp — size reflects the real wood supply (renderWoodpile) -->
 <g id="woodpile"></g>
@@ -1105,8 +1101,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   <circle class="ember" cx="500" cy="422" r="1" style="animation-delay:-2.4s" fill="#fcd34d"/>
   <circle class="ember" cx="484" cy="424" r="1.1" style="animation-delay:-3.1s" fill="#fcd34d"/>
 </g>
-<!-- Firepit night glow + fireflies (shown only at night) -->
-<circle id="fire-glow" cx="492" cy="424" r="78" fill="url(#fire-glow-g)" opacity="0"/>
+<!-- Firepit glow rendered above the night overlay now (see CAMPFIRE LIGHT, end of SVG) -->
+<g id="fireflies-anchor"></g>
 <g id="fireflies" opacity="0" fill="#fde68a">
   <circle class="firefly" cx="455" cy="412" r="1.6"/>
   <circle class="firefly" cx="524" cy="404" r="1.4" style="animation-delay:-1.3s"/>
@@ -1419,6 +1415,20 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 <!-- NIGHT OVERLAY -->
 <rect id="night-overlay" width="1000" height="600" fill="#020617" opacity="0"/>
+
+<!-- ══ CAMPFIRE LIGHT — rendered ABOVE the night overlay so the fire glows warm at night instead
+     of being dimmed by it; screen-blends so it reads as real, vibrant firelight. ══ -->
+<circle id="fire-glow" cx="492" cy="424" r="100" fill="url(#fire-glow-g)" opacity="0" style="mix-blend-mode:screen"/>
+<g id="campfire-flames" style="transform-box:view-box;transform-origin:492px 428px;mix-blend-mode:screen">
+  <!-- warm halo so the firelight bleeds out -->
+  <ellipse cx="492" cy="414" rx="34" ry="28" fill="#fb7a1e" opacity=".55" filter="url(#soft-blur)"/>
+  <ellipse cx="492" cy="418" rx="18" ry="17" fill="#fde047" opacity=".55" filter="url(#soft-blur)"/>
+  <!-- bigger, brighter flames -->
+  <path class="fa" d="M 479 430 Q 473 407 482 389 Q 488 376 492 363 Q 496 376 502 389 Q 511 407 505 430 Q 497 415 492 423 Q 487 415 479 430" fill="#f4571f"/>
+  <path class="fb" d="M 483 428 Q 478 408 485 391 Q 489 380 492 369 Q 495 380 499 391 Q 506 408 501 428 Q 496 416 492 423 Q 488 416 483 428" fill="#fb923c"/>
+  <path class="fc" d="M 486 426 Q 482 410 487 396 Q 490 387 492 378 Q 494 387 497 396 Q 502 410 498 426 Q 495 415 492 422 Q 489 415 486 426" fill="#fde047"/>
+  <ellipse cx="492" cy="429" rx="11" ry="5" fill="#fff3c4" opacity=".7"/>
+</g>
 </svg>
 
 <!-- ══ MARCUS ══════════════════════════════════════════════ -->
@@ -1940,7 +1950,7 @@ function applySky(sky) {
   document.getElementById('moon-group')?.setAttribute('opacity',isNight?'1':'0')
   document.getElementById('moon-halo-c')?.setAttribute('opacity',isNight?'1':'0')
   document.getElementById('night-stars')?.setAttribute('opacity',isNight?'1':'0')
-  document.getElementById('fire-glow')?.setAttribute('opacity',isNight?'1':'0')
+  document.getElementById('fire-glow')?.setAttribute('opacity', (S.world?.fire?.lit!==false) ? (isNight?'1':'0.4') : '0')
   document.getElementById('fireflies')?.setAttribute('opacity',isNight?'1':'0')
   document.getElementById('night-overlay')?.setAttribute('opacity',isNight?'0.48':'0')
   // Beach polish day-only atmosphere
