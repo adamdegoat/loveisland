@@ -61,6 +61,17 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* A little crab scuttles back and forth on the sand */
 @keyframes crabscuttle{0%{transform:translateX(0)}42%{transform:translateX(34px)}58%{transform:translateX(34px)}100%{transform:translateX(0)}}
 .crab-scuttle{transform-box:view-box;animation:crabscuttle 16s ease-in-out infinite}
+/* Hammock gently sways */
+@keyframes hammocksway{0%,100%{transform:rotate(-1.3deg)}50%{transform:rotate(1.3deg)}}
+.hammock-sway{transform-box:view-box;transform-origin:232px 326px;animation:hammocksway 6s ease-in-out infinite}
+/* A fish leaps from the water now and then */
+@keyframes fishjump{0%,80%,100%{opacity:0;transform:translate(0,14px) rotate(-35deg)}84%{opacity:1;transform:translate(7px,-8px) rotate(-12deg)}88%{transform:translate(15px,-15px) rotate(8deg)}93%{opacity:1;transform:translate(23px,-7px) rotate(32deg)}97%{opacity:0;transform:translate(29px,10px) rotate(50deg)}}
+.fish-jump{transform-box:view-box;animation:fishjump 13s ease-in-out infinite}
+/* A gull glides slowly across over the water */
+@keyframes gullglide{0%{transform:translate(-40px,0)}50%{transform:translate(520px,-16px)}100%{transform:translate(1080px,0)}}
+.gull-glide{transform-box:view-box;animation:gullglide 34s linear infinite}
+/* Strung palm lanterns glow at night (#world gets .night from applySky) */
+#world.night #palm-lanterns{filter:drop-shadow(0 0 3px rgba(255,200,110,.85))}
 /* Fireflies near the firepit (parent group's opacity gates night-only visibility) */
 @keyframes firefly{0%,100%{opacity:0;transform:translate(0,0)}25%{opacity:.95}50%{opacity:.35;transform:translate(7px,-9px)}75%{opacity:.85}}
 .firefly{transform-box:view-box;animation:firefly 4.2s ease-in-out infinite}
@@ -940,13 +951,25 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <path d="M 290 280 Q 308 256 316 238 M 290 280 Q 266 257 248 247" stroke="#4ade80" stroke-width="1.3" fill="none" opacity=".4"/>
 <circle cx="291" cy="287" r="5" fill="#6b4423"/><circle cx="298" cy="289" r="4.5" fill="#5c3a1c"/><circle cx="284" cy="289" r="4.5" fill="#7c5224"/><circle cx="290" cy="286" r="1.6" fill="#8a5a2b" opacity=".7"/>
 </g>
-<!-- Hammock -->
-<path d="M 185 342 Q 232 365 279 342" fill="#be185d" opacity=".88"/>
-<path d="M 185 342 Q 232 362 279 342" fill="none" stroke="#9d174d" stroke-width="2"/>
-<path d="M 188 343 Q 232 360 278 343" fill="none" stroke="white" stroke-width="1.5" opacity=".3"/>
-<path d="M 191 344 Q 232 358 277 344" fill="none" stroke="#f9a8d4" stroke-width="1" opacity=".45"/>
+<!-- Hammock (gently sways) -->
 <line x1="185" y1="342" x2="184" y2="323" stroke="#a16207" stroke-width="2.5"/>
 <line x1="279" y1="342" x2="280" y2="323" stroke="#a16207" stroke-width="2.5"/>
+<g class="hammock-sway">
+  <path d="M 185 342 Q 232 365 279 342" fill="#be185d" opacity=".88"/>
+  <path d="M 185 342 Q 232 362 279 342" fill="none" stroke="#9d174d" stroke-width="2"/>
+  <path d="M 188 343 Q 232 360 278 343" fill="none" stroke="white" stroke-width="1.5" opacity=".3"/>
+  <path d="M 191 344 Q 232 358 277 344" fill="none" stroke="#f9a8d4" stroke-width="1" opacity=".45"/>
+</g>
+
+<!-- string lanterns draped between the two palms (glow at night) -->
+<path d="M 174 282 Q 232 304 288 282" fill="none" stroke="#3a2a18" stroke-width="1.2" opacity=".55"/>
+<g id="palm-lanterns">
+  <g><line x1="197" y1="288" x2="197" y2="293" stroke="#3a2a18" stroke-width=".8"/><circle cx="197" cy="295" r="2.4" fill="#fbbf24"/></g>
+  <g><line x1="214" y1="291" x2="214" y2="296" stroke="#3a2a18" stroke-width=".8"/><circle cx="214" cy="298" r="2.4" fill="#fb7185"/></g>
+  <g><line x1="231" y1="292" x2="231" y2="297" stroke="#3a2a18" stroke-width=".8"/><circle cx="231" cy="299" r="2.6" fill="#fde68a"/></g>
+  <g><line x1="249" y1="291" x2="249" y2="296" stroke="#3a2a18" stroke-width=".8"/><circle cx="249" cy="298" r="2.4" fill="#5eead4"/></g>
+  <g><line x1="265" y1="288" x2="265" y2="293" stroke="#3a2a18" stroke-width=".8"/><circle cx="265" cy="295" r="2.4" fill="#fbbf24"/></g>
+</g>
 
 <!-- ══ FIRE PIT ══ -->
 <ellipse cx="492" cy="438" rx="34" ry="14" fill="#1c0a00"/>
@@ -958,6 +981,17 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <path class="fb" d="M 485 426 Q 483 413 487 403 Q 489 395 492 388 Q 495 395 497 403 Q 501 413 499 426 Q 495 417 492 422 Q 489 417 485 426" fill="#f97316"/>
 <path class="fc" d="M 487 424 Q 486 413 488 405 Q 490 399 492 394 Q 494 399 496 405 Q 498 413 497 424 Q 494 416 492 421 Q 490 416 487 424" fill="#fbbf24"/>
 <ellipse cx="492" cy="428" rx="9" ry="4" fill="#f97316" opacity=".25"/>
+<!-- cooking tripod + pot over the fire -->
+<line x1="470" y1="442" x2="492" y2="390" stroke="#3a2a18" stroke-width="2"/>
+<line x1="514" y1="442" x2="492" y2="390" stroke="#3a2a18" stroke-width="2"/>
+<line x1="500" y1="446" x2="492" y2="390" stroke="#2a1d10" stroke-width="1.6"/>
+<line x1="492" y1="392" x2="492" y2="406" stroke="#1c1c1f" stroke-width="1"/>
+<path class="smoke-puff" d="M 487 404 Q 484 397 487 391 Q 490 385 488 380" stroke="#cbd5e1" stroke-width="1.6" fill="none" opacity=".4" stroke-linecap="round"/>
+<path d="M 480 406 Q 480 421 492 422 Q 504 421 504 406 Z" fill="#3f3f46"/>
+<path d="M 480 406 Q 480 421 492 422 Q 504 421 504 406 Z" fill="#000000" opacity=".18"/>
+<ellipse cx="492" cy="406" rx="12.5" ry="2.8" fill="#52525b"/>
+<ellipse cx="492" cy="406" rx="9" ry="1.8" fill="#18181b"/>
+<rect x="478" y="411" width="28" height="2.4" rx="1.2" fill="#27272a"/>
 <!-- Firepit night glow + fireflies (shown only at night) -->
 <circle id="fire-glow" cx="492" cy="424" r="78" fill="url(#fire-glow-g)" opacity="0"/>
 <g id="fireflies" opacity="0" fill="#fde68a">
@@ -1087,6 +1121,18 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   <path d="M 80 556 Q 88 540 96 556 Q 90 552 80 556 Z" fill="#475569"/>
   <ellipse cx="88" cy="558" rx="13" ry="2.4" fill="#e0f2fe" opacity=".4"/>
 </g>
+<!-- a fish leaping out of the water now and then -->
+<g class="fish-jump"><g transform="translate(560 548)">
+  <ellipse cx="0" cy="0" rx="6" ry="3" fill="#7c8b96"/>
+  <ellipse cx="-1" cy="-1" rx="4" ry="1.6" fill="#aeb9c2" opacity=".7"/>
+  <path d="M 5 0 L 11 -4 L 10 0 L 11 4 Z" fill="#5c6b75"/>
+  <circle cx="-3.5" cy="-0.8" r="0.9" fill="#1c1c1f"/>
+</g></g>
+<!-- a lone gull gliding over the water -->
+<g class="gull-glide"><g transform="translate(0 498)">
+  <path d="M -9 0 Q -4 -6 0 -1 Q 4 -6 9 0" fill="none" stroke="#e7edf2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M -9 0 Q -4 -6 0 -1 Q 4 -6 9 0" fill="none" stroke="#9aa7b2" stroke-width="1" stroke-linecap="round" opacity=".5"/>
+</g></g>
 
 <!-- ══ SEA STORM (rougher, choppier water — storm only) ══ -->
 <g id="sea-storm" display="none">
