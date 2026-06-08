@@ -280,7 +280,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* ── CHARACTERS ── */
 .char{position:absolute;z-index:20;transform:translate(-50%,-100%);
   transition:left 2.8s cubic-bezier(.4,0,.2,1),top 2.8s cubic-bezier(.4,0,.2,1)}
-.char-svg{display:block;margin:0 auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.65));animation:bob 2.4s ease-in-out infinite}
+.char-svg{display:block;margin:0 auto;filter:var(--cast-shadow,drop-shadow(0 6px 14px rgba(0,0,0,.65)));animation:bob 2.4s ease-in-out infinite}
 .char-svg.sad{animation:bob-slow 3.5s ease-in-out infinite}
 .char-svg.angry{animation:bob-tense .9s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -495,7 +495,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* ── STRUCTURES LAYER ── */
 #structures-layer{position:absolute;inset:0;pointer-events:none;z-index:5;transform:translateY(calc(-1 * var(--world-shift,0px)))}
 .struct{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;text-align:center;line-height:1;cursor:default}
-.struct-svg{display:block;filter:drop-shadow(0 3px 8px rgba(0,0,0,.6));transition:transform .2s ease}
+.struct-svg{display:block;filter:var(--struct-shadow,drop-shadow(0 3px 8px rgba(0,0,0,.6)));transition:transform .2s ease}
+#tide-line{transition:transform 6s ease-in-out}
 .struct:hover .struct-svg{transform:scale(1.12)}
 .struct-label{font-size:8px;color:rgba(255,255,255,.0);white-space:nowrap;margin-top:2px;
   font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;letter-spacing:.3px;
@@ -1127,12 +1128,17 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   <circle cx="247.5" cy="502.5" r="1" fill="#1c0a00"/><circle cx="252.5" cy="502.5" r="1" fill="#1c0a00"/>
 </g>
 
+<!-- ══ TIDE LINE — the whole waterline rises/falls on the daily rhythm (translateY in JS) ══ -->
+<g id="tide-line" style="transform-box:view-box">
+<!-- leading shallow-water edge: when the tide climbs it paints sea over the sand (matches ocean-g top) -->
+<path d="M 0 513 Q 250 506 500 513 Q 750 506 1000 512 L 1000 530 L 0 530 Z" fill="#0369a1"/>
 <!-- Wet-sand sheen where the water meets the beach -->
 <path d="M 0 511 Q 250 503 500 511 Q 750 503 1000 510 L 1000 520 L 0 520 Z" fill="#e0f2fe" opacity=".22"/>
 <path d="M 0 516 Q 200 509 400 515 Q 600 508 800 514 Q 900 512 1000 515" fill="none" stroke="#f0f9ff" stroke-width="2.4" opacity=".4"/>
 <!-- soft tide foam washing the shore (drifts with the waves) -->
 <path class="wb" d="M -200 517 Q -75 513 50 517 Q 175 521 300 517 Q 425 513 550 517 Q 675 521 800 517 Q 925 513 1050 517" fill="none" stroke="#f8fcff" stroke-width="3" opacity=".5" stroke-linecap="round"/>
 <g class="wa" fill="#ffffff" opacity=".4"><ellipse cx="220" cy="517" rx="15" ry="2"/><ellipse cx="520" cy="518" rx="19" ry="2.3"/><ellipse cx="820" cy="517" rx="16" ry="2"/></g>
+</g>
 <!-- Wet-sand dark sheen during any rain (toggled in applyWeather) -->
 <rect id="wet-sand" x="0" y="480" width="1000" height="42" fill="#1e293b" opacity="0"/>
 
@@ -1810,6 +1816,36 @@ function nextRun(sgt) {
   return { time:`${h12}${mStr}${ap}`, cd:dh>0?`${dh}h ${dm}m`:`${dm}m` }
 }
 
+// ── Directional sun-shadows + a daily tide (light/physics realism, zero engine cost) ──
+// Light source is on the RIGHT (matches the #color-wash warm source at ~80% x), so cast
+// shadows fall LEFT and stretch long at golden hour, shrink to a tight pool at midday,
+// and soften to a faint straight-down ambient at night. The whole waterline rises/falls
+// on a gentle semidiurnal (two-highs-a-day) rhythm.
+function applySunShadowAndTide(sgt) {
+  const world = document.getElementById('world'); if (!world) return
+  const h = sgt.getHours() + sgt.getMinutes() / 60
+  const noon = 13, halfDay = 6.5
+  const isDay = h > 6.3 && h < 19.7
+  if (isDay) {
+    const alt = Math.max(0, 1 - Math.abs(h - noon) / halfDay)   // 0 at horizon → 1 at noon
+    const low = 1 - alt                                          // 0 at noon → 1 near sunrise/sunset
+    const warm = (h < 8.6 || h > 16.8) ? '34,20,46' : '0,0,0'   // golden-hour casts tint cool-violet
+    const cdx = -(2 + low * 26), cdy = 4 + low * 3, cbl = 7 + low * 13, ca = (0.5 - low * 0.12).toFixed(2)
+    world.style.setProperty('--cast-shadow',
+      `drop-shadow(0 5px 5px rgba(0,0,0,.42)) drop-shadow(${cdx.toFixed(1)}px ${cdy.toFixed(1)}px ${cbl.toFixed(1)}px rgba(${warm},${ca}))`)
+    const sdx = -(1 + low * 22), sdy = 3 + low * 3, sbl = 6 + low * 12, sa = (0.5 - low * 0.10).toFixed(2)
+    world.style.setProperty('--struct-shadow',
+      `drop-shadow(${sdx.toFixed(1)}px ${sdy.toFixed(1)}px ${sbl.toFixed(1)}px rgba(0,0,0,${sa}))`)
+  } else {
+    world.style.setProperty('--cast-shadow', 'drop-shadow(0 5px 7px rgba(0,0,0,.5)) drop-shadow(0 3px 10px rgba(2,6,23,.34))')
+    world.style.setProperty('--struct-shadow', 'drop-shadow(0 3px 9px rgba(2,6,23,.5))')
+  }
+  // tide — semidiurnal sine (12h period → two highs/day); high tide climbs the beach (−y)
+  const tide = Math.sin((h / 12) * Math.PI * 2 - Math.PI / 2)
+  const tl = document.getElementById('tide-line')
+  if (tl) tl.style.transform = `translateY(${(-tide * 7).toFixed(1)}px)`
+}
+
 function applySky(sky) {
   document.getElementById('sky-bg')?.setAttribute('fill',`url(#sky-${sky})`)
   const isNight=sky==='night'||sky==='dawn'
@@ -1871,6 +1907,7 @@ function updateStatusBar() {
   }
   document.getElementById('status-last').textContent=lastStr
   applySky(skyFromHour(sgt.getHours()))
+  applySunShadowAndTide(sgt)
   applyWeather(S.world && S.world.weather)
   const completedToday = new Set(S.feed.filter(e=>e.day===(S.world?.day||1)&&e.type!=='birth').map(e=>e.cycle))
   ALL_STEPS.forEach(s=>{
