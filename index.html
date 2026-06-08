@@ -2000,8 +2000,13 @@ function renderInteractions(positions) {
     const midX=(myPos.px+othPos.px)/2
     const midY=(myPos.py+othPos.py)/2 - 34
 
-    let inner = ''
+    let inner = '', ox = midX, oy = midY
     if (state === 'holding_hands') {
+      // Float the heart beside the couple — just above the left partner's head —
+      // instead of dead-centre, so it doesn't sit in the fire when they're at the firepit.
+      const lp = iAmLeft ? myPos : othPos
+      ox = lp.px - 3
+      oy = Math.min(myPos.py, othPos.py) - 50
       inner = `<svg width="22" height="20" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 16Q2 11 2 6Q2 2.5 5.5 2.5Q7.5 2.5 10 5.5Q12.5 2.5 14.5 2.5Q18 2.5 18 6Q18 11 10 16Z" fill="rgba(249,168,212,.92)"/>
       </svg>`
@@ -2014,8 +2019,8 @@ function renderInteractions(positions) {
     if (inner) {
       const div = document.createElement('div')
       div.className = 'interact-overlay'
-      div.style.left = (midX/W*100)+'%'
-      div.style.top  = (midY/H*100)+'%'
+      div.style.left = (ox/W*100)+'%'
+      div.style.top  = (oy/H*100)+'%'
       div.innerHTML  = inner
       world.appendChild(div)
     }
