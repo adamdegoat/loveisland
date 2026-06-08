@@ -95,7 +95,9 @@
         "color": "#2a1a12"
       },
       "accessory": "sunglasses",
-      "outfit": "#1e3a5f"
+      "outfit": "#1e3a5f",
+      "pants": "#3a4a55",
+      "beard": true
     }
   },
   "ryan": {
@@ -188,7 +190,9 @@
       },
       "accessory": "cap",
       "outfit": "#b45309",
-      "accColor": "#dc2626"
+      "accColor": "#dc2626",
+      "pants": "#2e6b6b",
+      "beard": true
     }
   },
   "jade": {
@@ -290,7 +294,8 @@
         "color": "#3a2418"
       },
       "accessory": "earrings",
-      "outfit": "#f472b6"
+      "outfit": "#f472b6",
+      "pants": "#c64a85"
     }
   },
   "judy": {
@@ -383,7 +388,8 @@
       },
       "accessory": "beanie",
       "outfit": "#14b8a6",
-      "accColor": "#fb7185"
+      "accColor": "#fb7185",
+      "pants": "#0e8a7e"
     }
   },
   "stray": {
