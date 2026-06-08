@@ -81,6 +81,12 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 /* A pair of dolphins arc from the sea now and then */
 @keyframes dolphinarc{0%,72%,100%{opacity:0;transform:translate(0,18px)}76%{opacity:1;transform:translate(10px,-10px) rotate(-14deg)}82%{transform:translate(26px,-18px) rotate(0deg)}88%{opacity:1;transform:translate(42px,-8px) rotate(16deg)}94%{opacity:0;transform:translate(54px,14px) rotate(28deg)}}
 .dolphin-arc{transform-box:view-box;animation:dolphinarc 17s ease-in-out infinite}
+/* A shooting star streaks occasionally (night-only via the night-stars group) */
+@keyframes shootingstar{0%,92%,100%{opacity:0;transform:translate(820px,46px)}92.5%{opacity:1;transform:translate(816px,48px)}98%{opacity:0;transform:translate(636px,138px)}}
+.shooting-star{transform-box:view-box;animation:shootingstar 15s linear infinite}
+/* Soft cloud shadows drift slowly across the ground */
+@keyframes shadowdrift{from{transform:translateX(-260px)}to{transform:translateX(1260px)}}
+.cloud-shadow{transform-box:view-box;animation:shadowdrift 95s linear infinite}
 /* Fireflies near the firepit (parent group's opacity gates night-only visibility) */
 @keyframes firefly{0%,100%{opacity:0;transform:translate(0,0)}25%{opacity:.95}50%{opacity:.35;transform:translate(7px,-9px)}75%{opacity:.85}}
 .firefly{transform-box:view-box;animation:firefly 4.2s ease-in-out infinite}
@@ -682,6 +688,10 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <stop offset="0%" stop-color="#cbd5e1" stop-opacity=".5"/>
     <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0"/>
   </radialGradient>
+  <linearGradient id="streak-g" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#ffffff" stop-opacity=".95"/>
+  </linearGradient>
 </defs>
 
 <!-- SKY -->
@@ -721,6 +731,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   <circle cx="465" cy="78" r="1" fill="white" opacity=".65"/><circle cx="655" cy="85" r="1.3" fill="white" opacity=".6"/>
   <circle cx="828" cy="70" r="1.1" fill="white" opacity=".75"/><circle cx="178" cy="96" r="1" fill="white" opacity=".5"/>
   <circle cx="362" cy="94" r="1.2" fill="white" opacity=".6"/><circle cx="562" cy="100" r="1" fill="white" opacity=".55"/>
+  <!-- a shooting star streaks now and then (inside night-stars, so night-only) -->
+  <g class="shooting-star"><line x1="0" y1="0" x2="26" y2="-13" stroke="url(#streak-g)" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="0" r="1.8" fill="#ffffff"/></g>
 </g>
 
 <!-- CLOUDS -->
@@ -757,6 +769,12 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <rect x="0" y="305" width="1000" height="210" fill="#4ade80" opacity=".15"/>
 <rect x="0" y="310" width="1000" height="200" fill="#16a34a"/>
 <path d="M 0 310 Q 250 302 500 312 Q 750 302 1000 308" stroke="#15803d" stroke-width="4" fill="none" opacity=".6"/>
+<!-- soft cloud shadows drifting across the island -->
+<g fill="#0b3a1e">
+  <ellipse class="cloud-shadow" cx="180" cy="360" rx="120" ry="26" opacity=".09"/>
+  <ellipse class="cloud-shadow" cx="640" cy="420" rx="150" ry="30" opacity=".08" style="animation-delay:-40s"/>
+  <ellipse class="cloud-shadow" cx="400" cy="470" rx="110" ry="24" opacity=".07" style="animation-delay:-70s"/>
+</g>
 <!-- Ground depth patches -->
 <ellipse cx="120" cy="335" rx="55" ry="10" fill="#15803d" opacity=".4"/>
 <ellipse cx="420" cy="328" rx="70" ry="8" fill="#15803d" opacity=".3"/>
@@ -1112,6 +1130,16 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 <!-- ══ OCEAN ══ -->
 <rect x="0" y="518" width="1000" height="82" fill="url(#ocean-g)"/>
+<!-- colourful coral reef glimpsed through the clear shallows -->
+<g opacity=".5">
+  <g fill="#fb7185"><ellipse cx="296" cy="529" rx="11" ry="4"/><ellipse cx="288" cy="527" rx="6" ry="3"/></g>
+  <path d="M 306 531 q 2 -8 0 -12 M 311 531 q 0 -7 2 -11 M 301 531 q -2 -6 -4 -9" stroke="#fb923c" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <g fill="#a78bfa"><ellipse cx="324" cy="530" rx="7" ry="3"/></g>
+  <g fill="#f472b6"><ellipse cx="648" cy="525" rx="10" ry="3.6"/><ellipse cx="656" cy="523" rx="5" ry="2.6"/></g>
+  <path d="M 636 527 q -2 -7 0 -11 M 631 527 q 0 -6 -2 -10 M 641 527 q 2 -6 4 -9" stroke="#fbbf24" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <g fill="#5eead4"><ellipse cx="666" cy="526" rx="6" ry="2.6"/></g>
+  <ellipse cx="470" cy="532" rx="8" ry="3" fill="#fb923c"/><ellipse cx="478" cy="530" rx="4" ry="2" fill="#fdba74"/>
+</g>
 <path class="wa" d="M -500 534 Q -375 524 -250 534 Q -125 544 0 534 Q 125 524 250 534 Q 375 544 500 534 Q 625 524 750 534 Q 875 544 1000 534 Q 1125 524 1250 534 Q 1375 544 1500 534 L 1500 600 L -500 600 Z" fill="#0284c7" opacity=".45"/>
 <path class="wb" d="M -300 546 Q -175 537 -50 546 Q 75 555 200 546 Q 325 537 450 546 Q 575 555 700 546 Q 825 537 950 546 Q 1075 555 1200 546 Q 1325 537 1450 546 L 1450 600 L -300 600 Z" fill="#075985" opacity=".5"/>
 <path class="wa" d="M -500 528 Q -375 522 -250 528 Q -125 534 0 528 Q 125 522 250 528 Q 375 534 500 528 Q 625 522 750 528 Q 875 534 1000 528 Q 1125 522 1250 528 Q 1375 534 1500 528" fill="none" stroke="white" stroke-width="1.8" opacity=".28"/>
