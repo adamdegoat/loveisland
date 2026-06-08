@@ -1085,9 +1085,11 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
   <line x1="16" y1="2" x2="12" y2="-26" stroke="#6b4423" stroke-width="2.5" stroke-linecap="round"/>
   <line x1="-13" y1="-25" x2="13" y2="-25" stroke="#6b4423" stroke-width="2"/>
   <line x1="-12" y1="-16" x2="12" y2="-16" stroke="#8a6a3a" stroke-width="1.3"/>
-  <g fill="#b5793f"><ellipse cx="-7" cy="-19" rx="3" ry="5"/><ellipse cx="0" cy="-19" rx="3" ry="5"/><ellipse cx="7" cy="-19" rx="3" ry="5"/></g>
-  <g fill="#d8c08e" opacity=".55"><ellipse cx="-7.6" cy="-20" rx="1.2" ry="2.4"/><ellipse cx="-0.6" cy="-20" rx="1.2" ry="2.4"/><ellipse cx="6.4" cy="-20" rx="1.2" ry="2.4"/></g>
+  <!-- fish reflect the real food supply (renderRackFish) -->
+  <g id="rack-fish"></g>
 </g>
+<!-- water barrel by the camp — level reflects the real water supply (renderWaterBarrel) -->
+<g id="water-barrel"></g>
 
 <!-- ══ BEACH ══ -->
 <path d="M 0 492 Q 200 480 400 488 Q 600 478 800 486 Q 900 483 1000 490 L 1000 525 L 0 525 Z" fill="#fef9c3"/>
@@ -2263,9 +2265,11 @@ function renderInteractions(positions) {
       if (svg && iAmLeft) svg.style.transform = 'scaleX(-1)'
     }
     if (state === 'sitting_together') el.classList.add('sitting')
-    if (state === 'comforting') {
+    // Facing/engagement: turn toward the partner when sharing a moment (feet stay planted)
+    const LEAN = { holding_hands: 9, sitting_together: 6, talking: 5, comforting: 9 }
+    if (LEAN[state] != null) {
       const svg = el.querySelector('.char-svg')
-      if (svg) svg.style.transform = iAmLeft ? 'rotate(7deg)' : 'rotate(-7deg)'
+      if (svg) { svg.style.transformOrigin = '50% 100%'; svg.style.transform = `rotate(${iAmLeft ? LEAN[state] : -LEAN[state]}deg)` }
     }
 
     const pairKey = [cid,other].sort().join('_')
@@ -2536,6 +2540,36 @@ function renderWoodpile() {
   }
   if(n===0) s = `<ellipse cx="${bx+14}" cy="${by+2}" rx="16" ry="3.4" fill="#3a2a18" opacity=".22"/>`
   g.innerHTML = s
+}
+
+// Realism: fish on the drying rack reflect the real food supply.
+function renderRackFish() {
+  const g = document.getElementById('rack-fish'); if(!g) return
+  const food = Math.max(0, S.world?.resources?.food ?? 0)
+  const n = Math.round(Math.min(4, food / 14))   // 0..4 fish
+  const xs = [-9,-3,3,9]
+  let s = ''
+  for(let i=0;i<n;i++){ const x = xs[i]
+    s += `<line x1="${x}" y1="-24" x2="${x}" y2="-25.5" stroke="#6b4423" stroke-width=".7"/><ellipse cx="${x}" cy="-19" rx="3" ry="5" fill="#b5793f"/><ellipse cx="${x-0.6}" cy="-20" rx="1.2" ry="2.4" fill="#d8c08e" opacity=".55"/>`
+  }
+  g.innerHTML = s
+}
+
+// Realism: a water barrel whose level reflects the real water supply.
+function renderWaterBarrel() {
+  const g = document.getElementById('water-barrel'); if(!g) return
+  const water = Math.max(0, Math.min(100, S.world?.resources?.water ?? 0))
+  const bx = 598, by = 452, bw = 18, bh = 22
+  const fillH = (water/100) * (bh - 5)
+  const fy = by + bh - 2 - fillH
+  g.innerHTML =
+    `<ellipse cx="${bx}" cy="${by+bh}" rx="${bw/2+2}" ry="3" fill="#3a2a18" opacity=".25"/>` +
+    `<rect x="${bx-bw/2}" y="${by}" width="${bw}" height="${bh}" rx="3" fill="#6b4423"/>` +
+    `<rect x="${bx-bw/2}" y="${by}" width="${bw/2}" height="${bh}" rx="3" fill="#7c5224" opacity=".5"/>` +
+    (water>2 ? `<rect x="${bx-bw/2+2}" y="${fy}" width="${bw-4}" height="${fillH}" rx="1.5" fill="#38bdf8" opacity=".8"/><ellipse cx="${bx}" cy="${fy}" rx="${(bw-4)/2}" ry="1.5" fill="#7dd3fc" opacity=".8"/>` : '') +
+    `<rect x="${bx-bw/2}" y="${by+5}" width="${bw}" height="2" fill="#3a2a18" opacity=".4"/>` +
+    `<rect x="${bx-bw/2}" y="${by+bh-6}" width="${bw}" height="2" fill="#3a2a18" opacity=".4"/>` +
+    `<ellipse cx="${bx}" cy="${by}" rx="${bw/2}" ry="2.6" fill="#5c3a1c"/>`
 }
 
 function renderStructures() {
@@ -3069,6 +3103,8 @@ function updateWorld() {
   updateStatCards()
   renderStructures()
   renderWoodpile()
+  renderRackFish()
+  renderWaterBarrel()
   renderResHud()
   updateFireChip()
 
