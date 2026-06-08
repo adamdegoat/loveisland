@@ -2008,12 +2008,12 @@ function renderInteractions(positions) {
       // above the character layer — so you can see WHO is paired, it isn't hidden behind
       // a body, and it stays clear of the firepit between them.
       const mid = (myPos.px + othPos.px) / 2
-      const heartSvg = `<svg width="16" height="15" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg"><path d="M10 16Q2 11 2 6Q2 2.5 5.5 2.5Q7.5 2.5 10 5.5Q12.5 2.5 14.5 2.5Q18 2.5 18 6Q18 11 10 16Z" fill="rgba(255,108,168,.98)" stroke="rgba(255,255,255,.7)" stroke-width="1"/></svg>`
+      const heartSvg = `<svg width="11" height="10" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg"><path d="M10 16Q2 11 2 6Q2 2.5 5.5 2.5Q7.5 2.5 10 5.5Q12.5 2.5 14.5 2.5Q18 2.5 18 6Q18 11 10 16Z" fill="rgba(255,108,168,.98)" stroke="rgba(255,255,255,.7)" stroke-width="1"/></svg>`
       ;[myPos, othPos].forEach(p => {
         const d = document.createElement('div')
         d.className = 'interact-overlay heart'
-        d.style.left = ((p.px + (p.px <= mid ? -9 : 9)) / W * 100) + '%'
-        d.style.top  = ((p.py - 54) / H * 100) + '%'
+        d.style.left = ((p.px + (p.px <= mid ? -15 : 15)) / W * 100) + '%'
+        d.style.top  = ((p.py - 58) / H * 100) + '%'
         d.innerHTML  = heartSvg
         world.appendChild(d)
       })
