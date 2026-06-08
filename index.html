@@ -105,13 +105,15 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 #vignette{position:absolute;inset:0;z-index:6;pointer-events:none;
   background:radial-gradient(120% 95% at 50% 42%,transparent 58%,rgba(2,6,23,.16) 84%,rgba(2,6,23,.42) 100%)}
 /* Time-of-day colour wash: a soft tint that shifts with the cycle for cohesion */
-#color-wash{position:absolute;inset:0;z-index:7;pointer-events:none;opacity:0;
+#color-wash{position:absolute;inset:0;z-index:22;pointer-events:none;opacity:0;
   mix-blend-mode:soft-light;transition:background 2.5s ease,opacity 2.5s ease}
-#world.evening #color-wash{background:#fb923c;opacity:.5}
-#world.morning #color-wash{background:#fdba74;opacity:.4}
-#world.dawn    #color-wash{background:#f9a8d4;opacity:.45}
-#world.night   #color-wash{background:#1e1b4b;opacity:.35}
-#world.midday  #color-wash,#world.afternoon #color-wash{opacity:0}
+/* Directional light: warm/cool radiates from the sun's position (top-right) */
+#world.evening   #color-wash{background:radial-gradient(135% 120% at 80% 14%,#fcd34d,#f97316 38%,#9d4e6e 72%,#4c2a4d);opacity:.5}
+#world.morning   #color-wash{background:radial-gradient(135% 120% at 80% 16%,#fde68a,#fdba74 45%,#a7c4b5 82%);opacity:.42}
+#world.afternoon #color-wash{background:radial-gradient(135% 120% at 80% 14%,#fef3c7,#fde68a 50%,rgba(186,230,253,.4) 86%);opacity:.2}
+#world.midday    #color-wash{background:radial-gradient(135% 120% at 52% 8%,#fffbeb,#e0f2fe 58%,#bae6fd);opacity:.1}
+#world.dawn      #color-wash{background:radial-gradient(135% 120% at 80% 18%,#fcd34d,#c084fc 46%,#4c1d95 84%);opacity:.44}
+#world.night     #color-wash{background:radial-gradient(135% 120% at 80% 18%,#64748b,#1e293b 55%,#0f172a);opacity:.32}
 
 /* ── ENGINE-DRIVEN WEATHER (rain + storm + lightning) ── */
 /* Rain: animated diagonal streaks; .storm adds a darker wash + faster, denser rain */
