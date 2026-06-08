@@ -3244,5 +3244,213 @@
       }
     ],
     "timestamp": "2026-06-08T07:03:05.126486"
+  },
+  {
+    "day": 5,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "Sits at the front of his tent, watching the firepit where Ryan and Jade sit close together, feeling the distance widen.",
+    "thought": "She's choosing him. I already knew.",
+    "location": {
+      "waypoint": "tent_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "distant",
+    "timestamp": "2026-06-08T12:31:32.349098"
+  },
+  {
+    "day": 5,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "Sits by the fire at midday, drawing Jade close and listening as she admits what she fears most, his hand steady in hers.",
+    "thought": "She needs me. She actually needs me.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "protective",
+    "timestamp": "2026-06-08T12:31:32.349098"
+  },
+  {
+    "day": 5,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "Sits close to Ryan by the fire at midday, speaking her fear aloud for the first time and feeling his hand ground her.",
+    "thought": "He's not leaving. He won't leave.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "vulnerable",
+    "timestamp": "2026-06-08T12:31:32.349098"
+  },
+  {
+    "day": 5,
+    "cycle": "midday",
+    "character": "judy",
+    "action": "Gathers firewood from the pile at the camp's edge, working steadily and trying not to watch the three of them at the fire.",
+    "thought": "They have something I need.",
+    "location": {
+      "waypoint": "path_mid",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-08T12:31:32.349098"
+  },
+  {
+    "day": 5,
+    "cycle": "midday",
+    "character": "stray",
+    "action": "Rests against Ryan's leg by the fire, sensing the warmth between them and content to belong to this moment.",
+    "thought": "Safe. All of us safe here.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-08T12:31:32.349098"
+  },
+  {
+    "day": 5,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade"
+    ],
+    "description": "By the fire at midday, Ryan and Jade sit close as she opens up about her deepest fear—and he listens without pushing, his hand steady in hers.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You're quiet. Everything okay?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah. Just thinking. About us. About this."
+      },
+      {
+        "speaker": "ryan",
+        "line": "What about it? You're making me nervous."
+      },
+      {
+        "speaker": "jade",
+        "line": "In a good way or bad way?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Depends on what you're about to tell me, I guess."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm not used to being wanted like this. Not like you want me."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Is that a bad thing?"
+      },
+      {
+        "speaker": "jade",
+        "line": "It's scary. Because I might lose it. Lose you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're not losing me. I'm right here."
+      },
+      {
+        "speaker": "jade",
+        "line": "But you could leave. Get bored. Find someone else."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I won't. I know myself. I don't fall halfway."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's what scares me more. How much you mean it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Why does that scare you?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Because if you leave, it will actually destroy me. Not like before."
+      },
+      {
+        "speaker": "ryan",
+        "line": "So don't think like that. Think like I'm staying."
+      },
+      {
+        "speaker": "jade",
+        "line": "I want to. I really do."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then do. Be here with me like you're choosing me too."
+      },
+      {
+        "speaker": "jade",
+        "line": "I am. I just said that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "No, you're here with me but you're still ready to run. I can feel it."
+      },
+      {
+        "speaker": "jade",
+        "line": "Maybe. That's how I've always survived."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're not surviving anymore. You're living. With me."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know. And it feels real. That's the problem."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Real is good. Real is what I want."
+      },
+      {
+        "speaker": "jade",
+        "line": "Real means I could get hurt."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. But it also means this matters. What we have right now."
+      },
+      {
+        "speaker": "jade",
+        "line": "It does. More than I know what to do with."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then just hold my hand. Don't think about leaving."
+      },
+      {
+        "speaker": "jade",
+        "line": "Okay. I can do that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Promise?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Promise. Right now, I promise."
+      }
+    ],
+    "timestamp": "2026-06-08T12:31:32.349098"
   }
 ]
