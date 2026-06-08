@@ -695,6 +695,33 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
     <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
     <stop offset="100%" stop-color="#ffffff" stop-opacity=".95"/>
   </linearGradient>
+  <!-- ══ TERRAIN REALISM GRADIENTS (depth + form, no new objects) ══ -->
+  <!-- grassy field: sun-warmed lighter green at the treeline → richer, cooler green underfoot -->
+  <linearGradient id="ground-g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#3fae5a"/><stop offset="34%" stop-color="#1fa24a"/>
+    <stop offset="100%" stop-color="#127c39"/>
+  </linearGradient>
+  <!-- aerial haze that lets the distant hills recede (transparent crest → pale base) -->
+  <linearGradient id="hill-haze" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#cfe7d4" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#cfe7d4" stop-opacity=".55"/>
+  </linearGradient>
+  <!-- rock form: sky-lit top face → shadowed base -->
+  <linearGradient id="rock-g" x1="0" y1="0" x2="0.35" y2="1">
+    <stop offset="0%" stop-color="#a39a90"/><stop offset="52%" stop-color="#857c72"/>
+    <stop offset="100%" stop-color="#5f574e"/>
+  </linearGradient>
+  <!-- beach sand: bright dry sand → damp warm sand near the water -->
+  <linearGradient id="sand-g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#fdf6c0"/><stop offset="58%" stop-color="#fbe7a8"/>
+    <stop offset="100%" stop-color="#f1cf8e"/>
+  </linearGradient>
+  <!-- turquoise shallows feathering into the deep ocean -->
+  <linearGradient id="shallow-g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#5fded6" stop-opacity=".85"/>
+    <stop offset="55%" stop-color="#2bb6c4" stop-opacity=".5"/>
+    <stop offset="100%" stop-color="#1693b4" stop-opacity="0"/>
+  </linearGradient>
 </defs>
 
 <!-- SKY -->
@@ -764,13 +791,31 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <!-- a tiny far sailboat drifting the horizon -->
 <g class="boat-drift" opacity=".75"><path d="M -4 244 L 4 244 L 3 247 L -3 247 Z" fill="#5a6b72"/><line x1="0" y1="244" x2="0" y2="236" stroke="#5a6b72" stroke-width=".9"/><path d="M 0.6 236 L 0.6 243 L 4.6 243 Z" fill="#eef3f6"/><path d="M -0.6 237 L -3.6 243 L -0.6 243 Z" fill="#d7e1e8"/></g>
 
-<!-- DISTANT HILLS -->
-<path d="M 0 285 Q 120 248 250 272 Q 390 245 520 265 Q 660 242 790 265 Q 900 248 1000 262 L 1000 315 L 0 315 Z" fill="#166534" opacity=".7"/>
-<path d="M 0 298 Q 180 272 360 290 Q 530 270 700 286 Q 850 270 1000 282 L 1000 315 L 0 315 Z" fill="#15803d" opacity=".55"/>
+<!-- DISTANT HILLS (layered ridges + aerial haze for real depth) -->
+<!-- farthest ridge — hazy blue-green, sits deepest -->
+<path d="M 0 276 Q 160 256 320 270 Q 480 252 640 268 Q 820 250 1000 266 L 1000 315 L 0 315 Z" fill="#5d918a" opacity=".42"/>
+<!-- mid ridge -->
+<path d="M 0 285 Q 120 248 250 272 Q 390 245 520 265 Q 660 242 790 265 Q 900 248 1000 262 L 1000 315 L 0 315 Z" fill="#166534" opacity=".72"/>
+<!-- warm rim-light catching the mid ridge's sunlit crest -->
+<path d="M 0 285 Q 120 248 250 272 Q 390 245 520 265 Q 660 242 790 265 Q 900 248 1000 262" fill="none" stroke="#8fce92" stroke-width="1.4" opacity=".45"/>
+<!-- near ridge -->
+<path d="M 0 298 Q 180 272 360 290 Q 530 270 700 286 Q 850 270 1000 282 L 1000 315 L 0 315 Z" fill="#15803d" opacity=".6"/>
+<!-- faint forest-canopy bumpiness along the near ridgeline -->
+<g fill="#137536" opacity=".5"><ellipse cx="120" cy="289" rx="22" ry="7"/><ellipse cx="300" cy="295" rx="26" ry="8"/><ellipse cx="520" cy="284" rx="22" ry="7"/><ellipse cx="700" cy="290" rx="28" ry="8"/><ellipse cx="880" cy="282" rx="22" ry="7"/></g>
+<!-- aerial haze pooling at the hill base so they recede into distance -->
+<rect x="0" y="272" width="1000" height="43" fill="url(#hill-haze)"/>
 
 <!-- GROUND -->
-<rect x="0" y="305" width="1000" height="210" fill="#4ade80" opacity=".15"/>
-<rect x="0" y="310" width="1000" height="200" fill="#16a34a"/>
+<rect x="0" y="310" width="1000" height="200" fill="url(#ground-g)"/>
+<!-- sun-warmed sheen where the grass meets the treeline -->
+<rect x="0" y="310" width="1000" height="34" fill="#7bd08a" opacity=".22"/>
+<!-- gentle rolling undulation (soft tonal mounds + hollows, not a flat slab) -->
+<g>
+  <ellipse cx="300" cy="356" rx="320" ry="40" fill="#34a653" opacity=".30"/>
+  <ellipse cx="820" cy="372" rx="280" ry="46" fill="#34a653" opacity=".26"/>
+  <ellipse cx="540" cy="446" rx="360" ry="54" fill="#0f7536" opacity=".26"/>
+  <ellipse cx="120" cy="470" rx="240" ry="48" fill="#0f7536" opacity=".22"/>
+</g>
 <path d="M 0 310 Q 250 302 500 312 Q 750 302 1000 308" stroke="#15803d" stroke-width="4" fill="none" opacity=".6"/>
 <!-- soft cloud shadows drifting across the island -->
 <g fill="#0b3a1e">
@@ -872,7 +917,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <ellipse cx="67" cy="297" rx="19" ry="15" fill="#166534" opacity=".85"/>
 
 <!-- ══ ROCKY HEADLAND (NE) ══ -->
-<path d="M 822 318 L 812 258 L 828 202 L 856 168 L 892 160 L 928 180 L 952 222 L 968 272 L 988 308 L 1000 318 L 1000 355 L 822 355 Z" fill="#857c72"/>
+<path d="M 822 318 L 812 258 L 828 202 L 856 168 L 892 160 L 928 180 L 952 222 L 968 272 L 988 308 L 1000 318 L 1000 355 L 822 355 Z" fill="url(#rock-g)"/>
 <!-- sunlit left face -->
 <path d="M 822 318 L 812 258 L 828 202 L 856 168 L 892 160 L 880 176 L 856 214 L 840 266 L 834 318 Z" fill="#9a9087" opacity=".65"/>
 <!-- shadowed right face -->
@@ -887,6 +932,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <!-- a small palm clinging near the top -->
 <path d="M 836 242 Q 832 224 838 208" stroke="#a16207" stroke-width="4" fill="none" stroke-linecap="round"/>
 <g class="palm-sway" style="transform-origin:838px 208px"><path d="M 838 208 Q 821 200 811 198 M 838 208 Q 832 194 832 186 M 838 208 Q 849 196 859 194 M 838 208 Q 851 202 861 202" stroke="#15803d" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
+<!-- soft aerial haze where the headland base meets the shore (seats it in the scene) -->
+<path d="M 822 332 L 1000 320 L 1000 355 L 822 355 Z" fill="url(#hill-haze)" opacity=".7"/>
 <!-- ══ NATURAL GRASSY CLIFFTOP (where Marcus camps) ══ -->
 <path d="M 842 178 Q 856 165 878 161 Q 902 163 918 178 Q 906 186 878 186 Q 854 186 842 178 Z" fill="#16a34a"/>
 <path d="M 842 178 Q 856 165 878 161 Q 902 163 918 178" fill="none" stroke="#22c55e" stroke-width="1.4" opacity=".5"/>
@@ -1093,7 +1140,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 <g id="water-barrel"></g>
 
 <!-- ══ BEACH ══ -->
-<path d="M 0 492 Q 200 480 400 488 Q 600 478 800 486 Q 900 483 1000 490 L 1000 525 L 0 525 Z" fill="#fef9c3"/>
+<path d="M 0 492 Q 200 480 400 488 Q 600 478 800 486 Q 900 483 1000 490 L 1000 525 L 0 525 Z" fill="url(#sand-g)"/>
 <path d="M 0 498 Q 200 490 400 496 Q 600 488 800 494 Q 900 492 1000 498" fill="none" stroke="#fde68a" stroke-width="1.8" opacity=".5"/>
 <ellipse cx="135" cy="510" rx="7" ry="3.5" fill="#fde68a" opacity=".6"/>
 <ellipse cx="325" cy="506" rx="5" ry="2.5" fill="#fcd34d" opacity=".5"/>
@@ -1144,6 +1191,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 
 <!-- ══ OCEAN ══ -->
 <rect x="0" y="518" width="1000" height="82" fill="url(#ocean-g)"/>
+<!-- clear turquoise shallows feathering down into the deep water -->
+<rect x="0" y="518" width="1000" height="46" fill="url(#shallow-g)"/>
 <!-- colourful coral reef glimpsed through the clear shallows -->
 <g opacity=".5">
   <g fill="#fb7185"><ellipse cx="296" cy="529" rx="11" ry="4"/><ellipse cx="288" cy="527" rx="6" ry="3"/></g>
