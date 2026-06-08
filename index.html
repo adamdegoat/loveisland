@@ -254,6 +254,8 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Plus Jakarta Sans'
 @keyframes bob-tense{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-3px) rotate(.5deg)}}
 /* ── INTERACTION OVERLAYS ── */
 .interact-overlay{position:absolute;z-index:19;transform:translate(-50%,-50%);pointer-events:none;transition:opacity .4s}
+.interact-overlay.heart{z-index:22;filter:drop-shadow(0 1px 2px rgba(0,0,0,.45));animation:heartbeat 1.5s ease-in-out infinite}
+@keyframes heartbeat{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.18)}}
 .char.sitting{margin-top:10px}
 .nametag{font-size:7.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;
   margin:4px auto 0;padding:2px 6px;border-radius:20px;width:fit-content;white-space:nowrap;
@@ -2002,14 +2004,19 @@ function renderInteractions(positions) {
 
     let inner = '', ox = midX, oy = midY
     if (state === 'holding_hands') {
-      // Float the heart beside the couple — just above the left partner's head —
-      // instead of dead-centre, so it doesn't sit in the fire when they're at the firepit.
-      const lp = iAmLeft ? myPos : othPos
-      ox = lp.px - 3
-      oy = Math.min(myPos.py, othPos.py) - 50
-      inner = `<svg width="22" height="20" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 16Q2 11 2 6Q2 2.5 5.5 2.5Q7.5 2.5 10 5.5Q12.5 2.5 14.5 2.5Q18 2.5 18 6Q18 11 10 16Z" fill="rgba(249,168,212,.92)"/>
-      </svg>`
+      // A small MATCHING heart above EACH partner's head (flanked outward), rendered
+      // above the character layer — so you can see WHO is paired, it isn't hidden behind
+      // a body, and it stays clear of the firepit between them.
+      const mid = (myPos.px + othPos.px) / 2
+      const heartSvg = `<svg width="16" height="15" viewBox="0 0 20 18" xmlns="http://www.w3.org/2000/svg"><path d="M10 16Q2 11 2 6Q2 2.5 5.5 2.5Q7.5 2.5 10 5.5Q12.5 2.5 14.5 2.5Q18 2.5 18 6Q18 11 10 16Z" fill="rgba(255,108,168,.98)" stroke="rgba(255,255,255,.7)" stroke-width="1"/></svg>`
+      ;[myPos, othPos].forEach(p => {
+        const d = document.createElement('div')
+        d.className = 'interact-overlay heart'
+        d.style.left = ((p.px + (p.px <= mid ? -9 : 9)) / W * 100) + '%'
+        d.style.top  = ((p.py - 54) / H * 100) + '%'
+        d.innerHTML  = heartSvg
+        world.appendChild(d)
+      })
     } else if (state === 'sitting_together') {
       inner = `<svg width="30" height="10" viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
         <rect x="1" y="2" width="28" height="6" rx="3" fill="rgba(146,64,14,.55)"/>
