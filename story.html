@@ -296,6 +296,10 @@ footer span{color:var(--muted);font-weight:600}
   .section-title{font-size:1.1rem}
   .log-cycle-tag{width:36px;font-size:9px}
 }
+.older-toggle{display:block;margin:20px auto 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  color:rgba(255,255,255,.66);font-family:inherit;font-size:12px;letter-spacing:.04em;padding:9px 18px;border-radius:11px;
+  cursor:pointer;transition:background .2s ease,color .2s ease}
+.older-toggle:hover{background:rgba(255,255,255,.1);color:rgba(255,255,255,.85)}
 </style>
 </head>
 <body>
@@ -391,6 +395,7 @@ footer span{color:var(--muted);font-weight:600}
   <!-- Island Log -->
   <div class="section reveal">
     <div class="section-title">Island Log</div>
+    <div class="log-order-cue" style="font-size:11px;color:var(--muted);margin:-2px 0 14px;letter-spacing:.02em">Newest first — scroll down for how it began.</div>
     <div id="full-log"></div>
   </div>
 
@@ -502,11 +507,14 @@ function render() {
   const hscDay = document.getElementById('hsc-day')
   if(hscDay) hscDay.textContent = w.day
   const NUM_WORDS = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten']
-  const n = Object.keys(S.chars).length
+  const allC = Object.values(S.chars)
+  const humans = allC.filter(c=>(!c.species||c.species==='human')).length
+  const animals = allC.filter(c=>c.species&&c.species!=='human').length
+  const strayBit = animals===1 ? ', one stray' : animals>1 ? `, ${(NUM_WORDS[animals]||animals).toLowerCase()} strays` : ''
   const tagline = document.getElementById('hero-tagline')
-  if(tagline) tagline.textContent = `${NUM_WORDS[n]||n} ${n===1?'person':'people'}. One island. No script.`
+  if(tagline) tagline.textContent = `${NUM_WORDS[humans]||humans} ${humans===1?'person':'people'}${strayBit}. One island. No script.`
   const hbody = document.getElementById('hero-body')
-  if(hbody) hbody.innerHTML = `Tropicana is a never-ending story — ${NUM_WORDS[n]||n} ${n===1?'stranger':'strangers'} cast onto a deserted island with no script, no crew, and no exit. The story unfolds four times a day. The characters grow, change, and surprise you as time goes on — no one controls them. At midnight, the <strong style="color:#f472b6">Island Oracle</strong> drops a fate event that can shift the entire storyline. This entire world runs at zero cost. ✦ <em>Scroll down for the Island Log (every cycle, logged), The Islanders (character profiles &amp; relationships), and World State (survival resources &amp; structures).</em>`
+  if(hbody) hbody.innerHTML = `Tropicana is a never-ending story — ${NUM_WORDS[humans]||humans} ${humans===1?'stranger':'strangers'} cast onto a deserted island${animals?` (and ${animals===1?'a stray that wandered in':NUM_WORDS[animals].toLowerCase()+' strays'})`:''} with no script, no crew, and no exit. The story unfolds four times a day. The characters grow, change, and surprise you as time goes on — no one controls them. At midnight, the <strong style="color:#f472b6">Island Oracle</strong> drops a fate event that can shift the entire storyline. This entire world runs at zero cost. ✦ <em>Scroll down for the Island Log (every cycle, logged), The Islanders (character profiles &amp; relationships), and World State (survival resources &amp; structures).</em>`
   renderDayChips()
   renderProfiles()
   renderWorldState()
@@ -704,7 +712,7 @@ function renderLog() {
     return
   }
   let latestMarked = false   // the very first entry rendered = the newest beat -> gets the LATEST badge
-  document.getElementById('full-log').innerHTML = days.map((day, di) => {
+  const __dayHtml = days.map((day, di) => {
     const cycles = byDay[day]
     const dayLatestTs = CYCLE_ORDER.flatMap(c=>cycles[c]||[]).reduce((mx,e)=>(e.timestamp>mx?e.timestamp:mx),'')
     const entries = CYCLE_ORDER.filter(c=>cycles[c]).reverse().map(cyc =>   // latest cycle first within the day (filter() makes a new array, so this never mutates CYCLE_ORDER)
@@ -736,7 +744,21 @@ function renderLog() {
       <div class="log-day-header">Day ${day}${relTag}</div>
       ${entries}
     </div>` : ''
-  }).filter(Boolean).join('') + prologueHtml   // Prologue (the START) goes at the BOTTOM, under the oldest day
+  }).filter(Boolean)
+  // (#5) keep the most recent days open; tuck older days behind a toggle so the log never becomes an endless scroll
+  const RECENT_DAYS = 4
+  const olderCount = Math.max(0, __dayHtml.length - RECENT_DAYS)
+  const olderBlock = olderCount
+    ? `<button id="older-toggle" class="older-toggle" onclick="toggleOlder()">▾ Show earlier days (${olderCount})</button><div id="older-days" hidden>${__dayHtml.slice(RECENT_DAYS).join('')}</div>`
+    : ''
+  document.getElementById('full-log').innerHTML = __dayHtml.slice(0, RECENT_DAYS).join('') + olderBlock + prologueHtml   // Prologue (the START) goes at the BOTTOM
+}
+
+function toggleOlder(){
+  const o=document.getElementById('older-days'), b=document.getElementById('older-toggle')
+  if(!o||!b) return
+  if(o.hasAttribute('hidden')){ o.removeAttribute('hidden'); b.textContent='▴ Hide earlier days' }
+  else { o.setAttribute('hidden',''); b.textContent=`▾ Show earlier days (${o.querySelectorAll('.log-day').length})`; b.scrollIntoView({block:'center'}) }
 }
 
 async function init() {
