@@ -5,50 +5,47 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 31,
-      "openness": 37,
+      "trust": 32,
+      "openness": 38,
       "ambition": 45,
-      "loneliness": 57,
+      "loneliness": 54,
       "resilience": 85,
-      "hunger": 53,
+      "hunger": 52,
       "thirst": 53,
-      "energy": 76,
+      "energy": 100,
       "health": 100
     },
-    "mood": "content",
+    "mood": "calm",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_porch",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 50,
-        "tension": 5,
+        "closeness": 53,
+        "tension": 4,
         "attraction": 0
       },
       "jade": {
-        "closeness": 53,
+        "closeness": 56,
         "tension": 0,
         "attraction": 13
       },
       "judy": {
-        "closeness": 27,
+        "closeness": 31,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 14,
+        "closeness": 15,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
-    "interaction": {
-      "with": "ryan",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 3,
@@ -114,6 +111,11 @@
         "day": 6,
         "text": "Jade saw Judy was alone and moved toward her without hesitation.",
         "weight": 2
+      },
+      {
+        "day": 6,
+        "text": "The circle is real. I'm inside it now, not just watching.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -139,43 +141,43 @@
       "ambition": 75,
       "loneliness": 0,
       "resilience": 46,
-      "hunger": 53,
+      "hunger": 52,
       "thirst": 53,
-      "energy": 76,
+      "energy": 100,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_porch",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 50,
+        "closeness": 53,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 73,
+        "closeness": 77,
         "tension": 0,
-        "attraction": 27
+        "attraction": 28
       },
       "judy": {
-        "closeness": 38,
+        "closeness": 43,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 28,
+        "closeness": 29,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
-      "with": "marcus",
+      "with": "jade",
       "state": "sitting_together"
     },
     "memories": [
@@ -228,6 +230,11 @@
         "day": 6,
         "text": "Watched Jade quietly draw Judy back in, like she belonged there all along.",
         "weight": 2
+      },
+      {
+        "day": 6,
+        "text": "Judy had to learn she was wanted. We had to teach her.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -249,41 +256,41 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 76,
+      "trust": 77,
       "openness": 96,
       "ambition": 39,
       "loneliness": 0,
       "resilience": 64,
-      "hunger": 53,
+      "hunger": 52,
       "thirst": 53,
-      "energy": 76,
+      "energy": 100,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_porch",
       "x": 40,
       "y": 50
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 53,
+        "closeness": 56,
         "tension": 0,
         "attraction": 13
       },
       "ryan": {
-        "closeness": 73,
+        "closeness": 77,
         "tension": 0,
-        "attraction": 22
+        "attraction": 23
       },
       "judy": {
-        "closeness": 37,
+        "closeness": 43,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 17,
+        "closeness": 18,
         "tension": 0,
         "attraction": 0
       }
@@ -353,6 +360,16 @@
         "day": 6,
         "text": "Judy was alone and hurting. I finally saw her. Now I'm choosing her.",
         "weight": 2
+      },
+      {
+        "day": 6,
+        "text": "Judy was losing herself and I finally saw it. I went to her.",
+        "weight": 3
+      },
+      {
+        "day": 6,
+        "text": "She's part of us now. That's not going to change.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -372,19 +389,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 65,
-      "openness": 86,
+      "trust": 68,
+      "openness": 87,
       "ambition": 34,
-      "loneliness": 94,
-      "resilience": 66,
-      "hunger": 53,
+      "loneliness": 88,
+      "resilience": 67,
+      "hunger": 52,
       "thirst": 53,
-      "energy": 76,
+      "energy": 100,
       "health": 100
     },
     "mood": "hopeful",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_porch",
       "x": 50,
       "y": 82
     },
@@ -394,22 +411,22 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 27,
+        "closeness": 31,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 38,
+        "closeness": 43,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 37,
+        "closeness": 43,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 20,
+        "closeness": 23,
         "tension": 0,
         "attraction": 0
       }
@@ -469,6 +486,16 @@
         "day": 6,
         "text": "Jade found me on the porch and stayed. The pup pressed against me.",
         "weight": 3
+      },
+      {
+        "day": 6,
+        "text": "Jade saw I was drowning and wouldn't let me disappear.",
+        "weight": 3
+      },
+      {
+        "day": 6,
+        "text": "They all came. They all stayed. I actually belong here.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -492,45 +519,45 @@
     "color": "#9c6b43",
     "interaction": {
       "with": "judy",
-      "state": "sitting_together"
+      "state": "comforting"
     },
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_porch",
       "x": 20,
       "y": 88
     },
     "mood": "content",
     "relationships": {
       "marcus": {
-        "closeness": 30,
-        "tension": 0,
-        "attraction": 0
-      },
-      "ryan": {
-        "closeness": 44,
-        "tension": 0,
-        "attraction": 0
-      },
-      "jade": {
         "closeness": 33,
         "tension": 0,
         "attraction": 0
       },
-      "judy": {
+      "ryan": {
+        "closeness": 47,
+        "tension": 0,
+        "attraction": 0
+      },
+      "jade": {
         "closeness": 36,
+        "tension": 0,
+        "attraction": 0
+      },
+      "judy": {
+        "closeness": 41,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 38,
-      "openness": 36,
+      "trust": 40,
+      "openness": 37,
       "ambition": 0,
-      "loneliness": 37,
+      "loneliness": 33,
       "resilience": 81,
-      "hunger": 53,
+      "hunger": 52,
       "thirst": 53,
-      "energy": 76,
+      "energy": 100,
       "health": 100
     },
     "shelter": "under the palms",
@@ -558,6 +585,11 @@
       {
         "day": 6,
         "text": "She was alone and sad. I left the fire to be with her.",
+        "weight": 2
+      },
+      {
+        "day": 6,
+        "text": "She was alone. I brought the rest back to her.",
         "weight": 2
       }
     ]

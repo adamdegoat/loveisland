@@ -4520,5 +4520,199 @@
       }
     ],
     "timestamp": "2026-06-09T18:02:58.616972"
+  },
+  {
+    "day": 6,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "He arrives at the porch as darkness settles, his simple presence completing the circle without need for words.",
+    "thought": "The circle's whole. I'm part of it.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "calm",
+    "timestamp": "2026-06-09T23:02:40.356959"
+  },
+  {
+    "day": 6,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He settles beside Jade, making sure everyone is warm, his hand resting near hers on the bench.",
+    "thought": "She's safe. We all are now.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-09T23:02:40.356959"
+  },
+  {
+    "day": 6,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She keeps herself close to Judy, her body angled toward her, one hand on her knee.",
+    "thought": "I see her now. That changes everything.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-09T23:02:40.356959"
+  },
+  {
+    "day": 6,
+    "cycle": "night",
+    "character": "judy",
+    "action": "She leans into the warmth around her, the stray's weight against her leg like an anchor.",
+    "thought": "Maybe I don't have to be alone.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-09T23:02:40.356959"
+  },
+  {
+    "day": 6,
+    "cycle": "night",
+    "character": "stray",
+    "action": "She presses against Judy's leg, sighing with the deep contentment of a pup who found her person.",
+    "thought": "She's safe. The pack is whole.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-09T23:02:40.356959"
+  },
+  {
+    "day": 6,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "judy",
+      "marcus"
+    ],
+    "description": "On the porch as night falls, the group gathers—the stray pressed against Judy, who finally sits in the center, Jade beside her, Ryan and Marcus completing a circle that couldn't hold without her.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Everyone okay? Warm enough?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah, just sitting. It's nice."
+      },
+      {
+        "speaker": "judy",
+        "line": "I... can I stay? Out here with you?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Of course you can. You always could."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She knows that now, I think."
+      },
+      {
+        "speaker": "jade",
+        "line": "The pup knows it. Come here."
+      },
+      {
+        "speaker": "judy",
+        "line": "She really came back to me. I wasn't sure if..."
+      },
+      {
+        "speaker": "ryan",
+        "line": "She knows you're one of us. So do we."
+      },
+      {
+        "speaker": "marcus",
+        "line": "The pup doesn't lie about these things."
+      },
+      {
+        "speaker": "jade",
+        "line": "Neither do we. Not tonight anyway."
+      },
+      {
+        "speaker": "judy",
+        "line": "What changed? This morning I was..."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You were fine. It was us that was wrong."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We saw it too late. But we're seeing it now."
+      },
+      {
+        "speaker": "jade",
+        "line": "And we're not looking away again."
+      },
+      {
+        "speaker": "judy",
+        "line": "I kept waiting for you to forget about me."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Judy, you're not the kind of person we forget."
+      },
+      {
+        "speaker": "jade",
+        "line": "You matter. You're part of this."
+      },
+      {
+        "speaker": "marcus",
+        "line": "The circle doesn't work without you in it."
+      },
+      {
+        "speaker": "judy",
+        "line": "Even though I'm a lot? Even though I'm..."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Even because. You're exactly who we need."
+      },
+      {
+        "speaker": "jade",
+        "line": "Stop questioning it. Just be here."
+      },
+      {
+        "speaker": "judy",
+        "line": "Okay. I can do that."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's all there is."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Should we think about heading in? It's getting late."
+      },
+      {
+        "speaker": "jade",
+        "line": "Not yet. Let's stay like this."
+      },
+      {
+        "speaker": "judy",
+        "line": "Yeah. Like this. Please."
+      }
+    ],
+    "timestamp": "2026-06-09T23:02:40.356959"
   }
 ]
