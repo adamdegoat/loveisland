@@ -4123,5 +4123,190 @@
       }
     ],
     "timestamp": "2026-06-09T07:02:56.922252"
+  },
+  {
+    "day": 6,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "Tends the fire with quiet focus, watching how easily Ryan and Jade fit together while the stray settles between them.",
+    "thought": "I'm still here. That's enough.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "warm",
+    "timestamp": "2026-06-09T12:33:01.856487"
+  },
+  {
+    "day": 6,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "Sits by the fire at midday with Jade beside him, absently petting the stray while Marcus brings firewood and joins the warmth.",
+    "thought": "We have something real here. All of us.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-09T12:33:01.856487"
+  },
+  {
+    "day": 6,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "Settles beside Ryan at the firepit, feeling the easy warmth of his presence and noticing how Marcus and the stray complete the circle.",
+    "thought": "This is peace. Didn't expect it here.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-09T12:33:01.856487"
+  },
+  {
+    "day": 6,
+    "cycle": "midday",
+    "character": "judy",
+    "action": "Sits alone on the house porch, watching the four gathered at the firepit—Ryan, Jade, Marcus, and the stray—finding warmth in a circle she cannot reach.",
+    "thought": "They have each other. I'm still outside.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "wistful",
+    "timestamp": "2026-06-09T12:33:01.856487"
+  },
+  {
+    "day": 6,
+    "cycle": "midday",
+    "character": "stray",
+    "action": "Pads between the three at the firepit, settling against Ryan's warmth, then rises and trots toward the porch to check on Judy before returning to the group.",
+    "thought": "Safe here. All safe. But... she's alone.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-09T12:33:01.856487"
+  },
+  {
+    "day": 6,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade"
+    ],
+    "description": "At the firepit at midday, Ryan and Jade settle close while Marcus tends the flames and the stray settles between them all, the warmth finally easy.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Fire's holding steady. We're good for a few hours."
+      },
+      {
+        "speaker": "jade",
+        "line": "I love mornings like this—everything just... settled."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Better than yesterday's panic."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Look who's braver now. Having a good day, little one?"
+      },
+      {
+        "speaker": "jade",
+        "line": "It's stronger. I can feel it—like it finally believes it's safe here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Still flinches when the wind picks up."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's okay. So do I, sometimes."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We're all learning, I guess."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're doing good with it. The dog, I mean."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah? I was just... there when it needed someone."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's exactly what it needed. That's what we all need—to matter to someone."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Judy's been quiet today."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She's watching. Figuring out where she fits."
+      },
+      {
+        "speaker": "jade",
+        "line": "Do you think she's okay?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I don't know. This morning she seemed... separate. Like she was already gone."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She is separate. But that doesn't mean she'll always be."
+      },
+      {
+        "speaker": "jade",
+        "line": "We should go to her. Show her she belongs with us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You think she'd want that after this morning?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Won't know till you ask. But waiting sure isn't helping."
+      },
+      {
+        "speaker": "jade",
+        "line": "Look, even the dog knows."
+      },
+      {
+        "speaker": "ryan",
+        "line": "At least something's sure of the welcome."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You are too. You just haven't believed it yet."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay. Okay, yeah. After this—we'll go find her."
+      },
+      {
+        "speaker": "jade",
+        "line": "Good. Come on."
+      }
+    ],
+    "timestamp": "2026-06-09T12:33:01.856487"
   }
 ]

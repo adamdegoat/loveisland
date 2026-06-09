@@ -6,16 +6,16 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 30,
-      "openness": 35,
+      "openness": 36,
       "ambition": 45,
-      "loneliness": 63,
+      "loneliness": 60,
       "resilience": 85,
-      "hunger": 53,
+      "hunger": 52,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
-    "mood": "guarded",
+    "mood": "warm",
     "location": {
       "waypoint": "firepit_left",
       "x": 75,
@@ -24,22 +24,22 @@
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 46,
-        "tension": 6,
+        "closeness": 49,
+        "tension": 5,
         "attraction": 0
       },
       "jade": {
-        "closeness": 49,
+        "closeness": 52,
         "tension": 0,
-        "attraction": 11
+        "attraction": 12
       },
       "judy": {
-        "closeness": 24,
+        "closeness": 26,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 13,
+        "closeness": 14,
         "tension": 0,
         "attraction": 0
       }
@@ -47,7 +47,7 @@
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
       "with": "ryan",
-      "state": "talking"
+      "state": "sitting_together"
     },
     "memories": [
       {
@@ -104,6 +104,11 @@
         "day": 6,
         "text": "She thanked me for staying. I was just there, but that was enough.",
         "weight": 2
+      },
+      {
+        "day": 6,
+        "text": "I watched them grow closer and didn't need to leave. That's something.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -128,13 +133,13 @@
       "openness": 100,
       "ambition": 75,
       "loneliness": 0,
-      "resilience": 44,
-      "hunger": 53,
+      "resilience": 45,
+      "hunger": 52,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
-    "mood": "warm",
+    "mood": "content",
     "location": {
       "waypoint": "firepit_left",
       "x": 42,
@@ -143,22 +148,22 @@
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 46,
-        "tension": 1,
+        "closeness": 49,
+        "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 67,
+        "closeness": 71,
         "tension": 0,
-        "attraction": 25
+        "attraction": 26
       },
       "judy": {
-        "closeness": 35,
+        "closeness": 37,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 26,
+        "closeness": 27,
         "tension": 0,
         "attraction": 0
       }
@@ -237,11 +242,11 @@
       "trust": 75,
       "openness": 95,
       "ambition": 39,
-      "loneliness": 4,
+      "loneliness": 2,
       "resilience": 64,
-      "hunger": 53,
+      "hunger": 52,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "peaceful",
@@ -253,22 +258,22 @@
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 49,
+        "closeness": 52,
         "tension": 0,
-        "attraction": 11
+        "attraction": 12
       },
       "ryan": {
-        "closeness": 67,
+        "closeness": 71,
         "tension": 0,
-        "attraction": 20
+        "attraction": 21
       },
       "judy": {
-        "closeness": 31,
+        "closeness": 33,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 15,
+        "closeness": 16,
         "tension": 0,
         "attraction": 0
       }
@@ -352,14 +357,14 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 64,
-      "openness": 86,
+      "trust": 63,
+      "openness": 85,
       "ambition": 34,
       "loneliness": 100,
       "resilience": 65,
-      "hunger": 53,
+      "hunger": 52,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "wistful",
@@ -374,22 +379,22 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 24,
+        "closeness": 26,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 35,
+        "closeness": 37,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 31,
+        "closeness": 33,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 16,
+        "closeness": 17,
         "tension": 0,
         "attraction": 0
       }
@@ -436,6 +441,11 @@
         "day": 6,
         "text": "They're going fishing together. All three. I'm still on the porch.",
         "weight": 1
+      },
+      {
+        "day": 6,
+        "text": "The stray came to me, went back to them. I'm outside.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -469,35 +479,35 @@
     "mood": "content",
     "relationships": {
       "marcus": {
-        "closeness": 27,
+        "closeness": 30,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 40,
+        "closeness": 43,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 29,
+        "closeness": 32,
         "tension": 0,
         "attraction": 0
       },
       "judy": {
-        "closeness": 30,
+        "closeness": 33,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 35,
-      "openness": 35,
+      "trust": 36,
+      "openness": 36,
       "ambition": 0,
-      "loneliness": 43,
+      "loneliness": 40,
       "resilience": 81,
-      "hunger": 53,
+      "hunger": 52,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "shelter": "under the palms",
