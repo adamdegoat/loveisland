@@ -5,17 +5,17 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 30,
-      "openness": 36,
+      "trust": 31,
+      "openness": 37,
       "ambition": 45,
-      "loneliness": 60,
+      "loneliness": 57,
       "resilience": 85,
-      "hunger": 52,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 76,
       "health": 100
     },
-    "mood": "warm",
+    "mood": "content",
     "location": {
       "waypoint": "firepit_left",
       "x": 75,
@@ -24,17 +24,17 @@
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 49,
+        "closeness": 50,
         "tension": 5,
         "attraction": 0
       },
       "jade": {
-        "closeness": 52,
+        "closeness": 53,
         "tension": 0,
-        "attraction": 12
+        "attraction": 13
       },
       "judy": {
-        "closeness": 26,
+        "closeness": 27,
         "tension": 0,
         "attraction": 0
       },
@@ -109,6 +109,11 @@
         "day": 6,
         "text": "I watched them grow closer and didn't need to leave. That's something.",
         "weight": 2
+      },
+      {
+        "day": 6,
+        "text": "Jade saw Judy was alone and moved toward her without hesitation.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -129,14 +134,14 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 85,
+      "trust": 86,
       "openness": 100,
       "ambition": 75,
       "loneliness": 0,
-      "resilience": 45,
-      "hunger": 52,
+      "resilience": 46,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 76,
       "health": 100
     },
     "mood": "content",
@@ -148,29 +153,29 @@
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 49,
+        "closeness": 50,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 71,
+        "closeness": 73,
         "tension": 0,
-        "attraction": 26
+        "attraction": 27
       },
       "judy": {
-        "closeness": 37,
+        "closeness": 38,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 27,
+        "closeness": 28,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
-      "with": "jade",
+      "with": "marcus",
       "state": "sitting_together"
     },
     "memories": [
@@ -218,6 +223,11 @@
         "day": 6,
         "text": "Woke and she was waiting by the fire. She's choosing to stay. Everything.",
         "weight": 2
+      },
+      {
+        "day": 6,
+        "text": "Watched Jade quietly draw Judy back in, like she belonged there all along.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -239,14 +249,14 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 75,
-      "openness": 95,
+      "trust": 76,
+      "openness": 96,
       "ambition": 39,
-      "loneliness": 2,
+      "loneliness": 0,
       "resilience": 64,
-      "hunger": 52,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 76,
       "health": 100
     },
     "mood": "peaceful",
@@ -258,30 +268,30 @@
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 52,
+        "closeness": 53,
         "tension": 0,
-        "attraction": 12
+        "attraction": 13
       },
       "ryan": {
-        "closeness": 71,
+        "closeness": 73,
         "tension": 0,
-        "attraction": 21
+        "attraction": 22
       },
       "judy": {
-        "closeness": 33,
+        "closeness": 37,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 16,
+        "closeness": 17,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
     "interaction": {
-      "with": "ryan",
-      "state": "sitting_together"
+      "with": "judy",
+      "state": "comforting"
     },
     "memories": [
       {
@@ -338,6 +348,11 @@
         "day": 6,
         "text": "Marcus came to the fire this morning. He's still here. That matters more than words.",
         "weight": 2
+      },
+      {
+        "day": 6,
+        "text": "Judy was alone and hurting. I finally saw her. Now I'm choosing her.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -357,19 +372,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 63,
-      "openness": 85,
+      "trust": 65,
+      "openness": 86,
       "ambition": 34,
-      "loneliness": 100,
-      "resilience": 65,
-      "hunger": 52,
+      "loneliness": 94,
+      "resilience": 66,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 76,
       "health": 100
     },
-    "mood": "wistful",
+    "mood": "hopeful",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_right",
       "x": 50,
       "y": 82
     },
@@ -379,28 +394,31 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 26,
+        "closeness": 27,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 37,
+        "closeness": 38,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 33,
+        "closeness": 37,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 17,
+        "closeness": 20,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": null,
+    "interaction": {
+      "with": "jade",
+      "state": "comforting"
+    },
     "memories": [
       {
         "day": 3,
@@ -446,6 +464,11 @@
         "day": 6,
         "text": "The stray came to me, went back to them. I'm outside.",
         "weight": 2
+      },
+      {
+        "day": 6,
+        "text": "Jade found me on the porch and stayed. The pup pressed against me.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -468,11 +491,11 @@
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
     "interaction": {
-      "with": "ryan",
+      "with": "judy",
       "state": "sitting_together"
     },
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_right",
       "x": 20,
       "y": 88
     },
@@ -484,30 +507,30 @@
         "attraction": 0
       },
       "ryan": {
-        "closeness": 43,
+        "closeness": 44,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 32,
+        "closeness": 33,
         "tension": 0,
         "attraction": 0
       },
       "judy": {
-        "closeness": 33,
+        "closeness": 36,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 36,
+      "trust": 38,
       "openness": 36,
       "ambition": 0,
-      "loneliness": 40,
+      "loneliness": 37,
       "resilience": 81,
-      "hunger": 52,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 76,
       "health": 100
     },
     "shelter": "under the palms",
@@ -530,6 +553,11 @@
       {
         "day": 5,
         "text": "All of them together at the fire. All safe. All here.",
+        "weight": 2
+      },
+      {
+        "day": 6,
+        "text": "She was alone and sad. I left the fire to be with her.",
         "weight": 2
       }
     ]
