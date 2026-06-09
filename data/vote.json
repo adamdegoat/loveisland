@@ -1,31 +1,35 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-09",
+    "id": "2026-06-10",
     "closes": "tonight",
-    "question": "Jade has chosen Ryan, found her voice in his presence. Should she lean into this deepening bond—or reach out to Marcus, who's aching on the edges?",
+    "question": "Judy is finally in their circle. Should the group gently ask what hurt her, deepening trust—or protect this fragile peace by asking nothing tonight?",
     "options": [
       {
-        "id": "deepen_bond",
-        "label": "Deepen with Ryan",
-        "desc": "She's earned this moment—let her have what she's found, undivided"
+        "id": "ask_her_story",
+        "label": "Ask what hurt",
+        "desc": "Push gently for vulnerability; know Judy fully"
       },
       {
-        "id": "reach_marcus",
-        "label": "Reach to Marcus",
-        "desc": "Her courage could be contagious—pull him in before the distance hardens"
+        "id": "just_be_together",
+        "label": "Keep it gentle",
+        "desc": "Let presence and safety be enough; protect this peace"
+      },
+      {
+        "id": "make_a_vow",
+        "label": "Make a pact",
+        "desc": "Use this moment to commit—we stay together, no matter what"
       }
     ]
   },
   "in_play": {
-    "id": "keep_unspoken",
-    "label": "Keep it unspoken",
-    "desc": "Let the warmth stay simple; protect what you have",
-    "decided": "2026-06-09",
+    "id": "reach_marcus",
+    "label": "Reach to Marcus",
+    "desc": "Her courage could be contagious—pull him in before the distance hardens",
+    "decided": "2026-06-10",
     "votes": 3,
     "tally": {
-      "confess_jade": 1,
-      "keep_unspoken": 2
+      "reach_marcus": 3
     }
   }
 }
