@@ -5531,5 +5531,211 @@
       }
     ],
     "timestamp": "2026-06-10T18:32:36.408169"
+  },
+  {
+    "day": 7,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "Retreats to his tent without sitting by the fire, afraid of what he's letting himself feel.",
+    "thought": "I let her too close too fast.",
+    "location": {
+      "waypoint": "tent_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "withdrawn",
+    "timestamp": "2026-06-10T22:32:16.178116"
+  },
+  {
+    "day": 7,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "Sits by the dying fire with Jade, watching Marcus pull away and sensing something has shifted between them.",
+    "thought": "Something changed. I felt it today.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "uncertain",
+    "timestamp": "2026-06-10T22:32:16.178116"
+  },
+  {
+    "day": 7,
+    "cycle": "night",
+    "character": "jade",
+    "action": "Sits by the fire beside Ryan, frustrated and confused as Marcus withdraws, trying to understand what scared him.",
+    "thought": "He was open. Why is he running?",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "frustrated",
+    "timestamp": "2026-06-10T22:32:16.178116"
+  },
+  {
+    "day": 7,
+    "cycle": "night",
+    "character": "judy",
+    "action": "Stands on the dark beach, watching the firelit group from a distance, the stray her only companion.",
+    "thought": "They have each other. I'm still alone.",
+    "location": {
+      "waypoint": "beach_left",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "wistful",
+    "timestamp": "2026-06-10T22:32:16.178116"
+  },
+  {
+    "day": 7,
+    "cycle": "night",
+    "character": "stray",
+    "action": "Presses close to Judy on the beach, choosing her over the fire group, whimpering softly as she watches the distant flames.",
+    "thought": "She's hurting. I stay.",
+    "location": {
+      "waypoint": "beach_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "protective",
+    "timestamp": "2026-06-10T22:32:16.178116"
+  },
+  {
+    "day": 7,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "marcus",
+      "judy"
+    ],
+    "description": "At the dying fire, Marcus suddenly retreats to his tent in fear, leaving Jade reaching after him—while Ryan watches the fracture and Judy grieves alone on the beach with the stray.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You were different today. With Marcus at the tide pools."
+      },
+      {
+        "speaker": "jade",
+        "line": "I felt different. Like I could actually reach him."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He doesn't usually let people in like that."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know. He was just... there. Fully there with me."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Does he know what that meant to you?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't think he's thinking that far ahead. He's just scared."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Fire's burning down."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I've got it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's late."
+      },
+      {
+        "speaker": "jade",
+        "line": "You don't have to leave."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm tired."
+      },
+      {
+        "speaker": "jade",
+        "line": "You weren't tired ten minutes ago."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That was different."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It's just the fire getting low. We're all exhausted."
+      },
+      {
+        "speaker": "jade",
+        "line": "Why are you running from this?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not running. I'm going to sleep."
+      },
+      {
+        "speaker": "judy",
+        "line": "Is there fish left?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Plenty. Come sit with us."
+      },
+      {
+        "speaker": "judy",
+        "line": "I don't want to... intrude. On whatever this is."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're not intruding."
+      },
+      {
+        "speaker": "judy",
+        "line": "The stray's the only one who actually chooses to be with me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's not true."
+      },
+      {
+        "speaker": "judy",
+        "line": "Isn't it?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Tomorrow. Talk tomorrow."
+      },
+      {
+        "speaker": "jade",
+        "line": "You can't just shut down every time you feel something."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not shutting down. I'm protecting—"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Protecting what, Marcus?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Us. He's protecting us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Or himself."
+      }
+    ],
+    "timestamp": "2026-06-10T22:32:16.178116"
   }
 ]
