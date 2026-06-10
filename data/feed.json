@@ -5330,5 +5330,206 @@
       }
     ],
     "timestamp": "2026-06-10T15:02:39.508690"
+  },
+  {
+    "day": 7,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "Moves quietly beside Jade at the fire, preparing the fish with practiced hands.",
+    "thought": "She reached me and I didn't pull away.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "calm",
+    "timestamp": "2026-06-10T18:32:36.408169"
+  },
+  {
+    "day": 7,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "Tends the fire and cooks the fish, moving between them with renewed energy.",
+    "thought": "Did she just look at him like that?",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "energized",
+    "timestamp": "2026-06-10T18:32:36.408169"
+  },
+  {
+    "day": 7,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "Moves close to the fire, watching Marcus work, her eyes bright with something she can't quite name.",
+    "thought": "He let me stay beside him. That's everything.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "alive",
+    "timestamp": "2026-06-10T18:32:36.408169"
+  },
+  {
+    "day": 7,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "Sits alone at the shore, watching the three of them work and laugh by the fire, her hand on her belly.",
+    "thought": "They have each other. I have no one.",
+    "location": {
+      "waypoint": "beach_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "wistful",
+    "timestamp": "2026-06-10T18:32:36.408169"
+  },
+  {
+    "day": 7,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "Moves between the fire and Judy's side, the pup's eyes sad, finally settling beside her in the dark.",
+    "thought": "She's alone. But my warmth helps. I stay.",
+    "location": {
+      "waypoint": "beach_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "protective",
+    "timestamp": "2026-06-10T18:32:36.408169"
+  },
+  {
+    "day": 7,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade"
+    ],
+    "description": "Evening finds them cooking fresh fish at the fire—Marcus and Jade glow beside the flames while Ryan tends it, and Judy watches from the shore with the stray at her side.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "We actually pulled it off. Fresh fish—real food."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Better than the stores."
+      },
+      {
+        "speaker": "jade",
+        "line": "So much better. The way you showed us... I felt it click."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He's got a gift for it. Something in his hands just knows the water."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You were quick to learn."
+      },
+      {
+        "speaker": "jade",
+        "line": "Because you taught me. Really taught me. Not just the how—the why."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay, now I'm envious. What'd he teach you that he didn't teach me?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Different things. You think in structures. You'd build something to catch them."
+      },
+      {
+        "speaker": "jade",
+        "line": "He's right. You would. But Marcus—he reads the water like it's talking to him."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That so? That's—that's something."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Everyone has their way. Building's yours. Reading's mine."
+      },
+      {
+        "speaker": "jade",
+        "line": "And mine?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You just... follow the feeling. It works."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It does. Worked today anyway. You two were quiet out there at the pools, yeah?"
+      },
+      {
+        "speaker": "jade",
+        "line": "He was teaching me. Showing me things I never would have seen."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She asked good questions."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Jade's good at that."
+      },
+      {
+        "speaker": "jade",
+        "line": "The stray came with us too. Even the pup wanted to learn."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And Judy?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "She stayed at the shore."
+      },
+      {
+        "speaker": "jade",
+        "line": "She was tired. The pregnancy—it's wearing her down."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. She's been struggling."
+      },
+      {
+        "speaker": "jade",
+        "line": "We should make sure she eats well tonight. Make sure she knows she belongs."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Already thinking about it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We have enough now."
+      },
+      {
+        "speaker": "jade",
+        "line": "For the first time in days. Thank you for this."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're welcome."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Let's eat before it gets cold."
+      }
+    ],
+    "timestamp": "2026-06-10T18:32:36.408169"
   }
 ]
