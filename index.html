@@ -3346,6 +3346,7 @@ function updateWorld() {
       scrollWorldX((getWorldWidth() - window.innerWidth) * 0.5)
     })
   }
+  try{ renderInteriorHotspots() }catch(e){}
 }
 
 // ── STARS CANVAS ─────────────────────────────────────────
@@ -3736,6 +3737,300 @@ document.addEventListener('click', e=>{
   }
 });
 loadVote();
+
+/* ════════════════ TROPICANA INTERIORS — step into the beach house ════════════════
+   Click the house → peek inside: whoever's home, lounging, posed by their real
+   relationship (cuddled / apart), with the live sea + sunset + beach bonfire beyond.
+   Pure front-end over engine data — never affects the story. */
+(function(){
+  const css = `
+  #hotspots{position:absolute;inset:0;z-index:14;pointer-events:none}
+  .hotspot{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;cursor:pointer}
+  .hotspot .hs-glow{position:absolute;left:50%;top:50%;width:70px;height:52px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,170,120,.34),transparent);opacity:0;transition:opacity .35s;pointer-events:none}
+  .hotspot.occupied .hs-glow{opacity:1;animation:hsGlow 3.4s ease-in-out infinite}
+  @keyframes hsGlow{0%,100%{opacity:.6}50%{opacity:1}}
+  .hotspot .hs-badge{position:absolute;left:50%;top:-22px;transform:translateX(-50%);white-space:nowrap;background:rgba(22,14,26,.85);border:1px solid rgba(255,180,205,.46);color:#ffdcea;font:700 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.2px;padding:3px 7px;border-radius:999px;box-shadow:0 2px 7px rgba(0,0,0,.45);display:none;align-items:center;gap:3px}
+  .hotspot .hs-badge .em{font-size:9px}
+  .hotspot.occupied .hs-badge{display:inline-flex}
+  .hotspot.vacant .hs-badge{display:inline-flex;opacity:.62;background:rgba(20,14,22,.66);border-color:rgba(255,255,255,.18);color:#e6dfe8}
+  .hotspot.vacant .hs-badge .em{opacity:.55;filter:grayscale(.5)}
+  .hotspot .hs-tap{position:absolute;left:50%;top:-18px;transform:translateX(-50%);white-space:nowrap;font:800 8px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.55);opacity:0;transition:opacity .2s}
+  .hotspot:hover .hs-tap{opacity:1}
+  @media(max-width:640px){.hotspot .hs-badge{font-size:7.5px;padding:2px 6px;top:-15px;gap:2px;letter-spacing:0}.hotspot .hs-badge .em{font-size:8px}.hotspot .hs-glow{width:54px;height:40px}}
+  #interior{position:fixed;inset:0;z-index:100000;background:#0a0f12;overflow:hidden;opacity:0;visibility:hidden;transform:scale(1.05);pointer-events:none;transition:opacity .42s ease,transform .55s cubic-bezier(.22,.8,.3,1),visibility .42s}
+  #interior.show{opacity:1;visibility:visible;transform:scale(1);pointer-events:auto}
+  #interior-scene{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  #interior-scene::-webkit-scrollbar{display:none}
+  #interior-scene svg{display:block;height:100%;width:auto;max-width:none}
+  #interior-exit{position:fixed;top:12px;left:12px;z-index:100003;background:rgba(14,18,22,.72);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border:1px solid rgba(255,255,255,.22);color:#eef3ff;font:700 13px/1 'Plus Jakarta Sans',sans-serif;padding:9px 15px;border-radius:19px;cursor:pointer}
+  #interior-scrim{position:fixed;left:0;right:0;bottom:0;height:170px;z-index:100002;pointer-events:none;background:linear-gradient(to top,rgba(8,11,14,.8),rgba(8,11,14,.42) 42%,rgba(8,11,14,0))}
+  #interior-cap{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:100003;max-width:88vw;text-align:center;color:#fff1ea;font:600 13px/1.4 'Plus Jakarta Sans',sans-serif;letter-spacing:.2px;text-shadow:0 1px 7px rgba(0,0,0,.95),0 1px 3px rgba(0,0,0,.85)}
+  #interior-title{position:fixed;top:14px;right:14px;z-index:100003;display:flex;align-items:center;gap:8px;background:rgba(22,16,26,.72);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border:1px solid rgba(255,180,205,.36);border-radius:14px;padding:8px 14px;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+  #interior-title .it-ico{font-size:17px;line-height:1}
+  #interior-title .it-main{font:800 13.5px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.4px;color:#ffdcea;text-transform:uppercase}
+  #interior-title .it-sub{font:600 10.5px/1 'Plus Jakarta Sans',sans-serif;color:rgba(255,255,255,.62);margin-top:3px}
+  #interior-hint{position:fixed;left:50%;bottom:78px;transform:translateX(-50%);z-index:100004;pointer-events:none;background:rgba(14,18,22,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.2);color:#fff1ea;font:700 11px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.5px;padding:7px 13px;border-radius:999px;opacity:0;white-space:nowrap}
+  #interior-hint.show{animation:iwHint 3.2s ease-in-out forwards}
+  @keyframes iwHint{0%{opacity:0;transform:translateX(-50%) translateY(6px)}14%{opacity:1;transform:translateX(-50%) translateY(0)}72%{opacity:1}100%{opacity:0;transform:translateX(-50%) translateY(-5px)}}
+  .iw-wave{transform-box:fill-box;animation:iwWave 6s ease-in-out infinite}
+  @keyframes iwWave{0%,100%{transform:translateX(-10px)}50%{transform:translateX(10px)}}
+  .iw-glint{animation:iwGlint 3.4s ease-in-out infinite}
+  @keyframes iwGlint{0%,100%{opacity:.3}50%{opacity:.7}}
+  .iw-sway{transform-box:fill-box;transform-origin:50% 100%;animation:iwSway 7s ease-in-out infinite}
+  .iw-sway2{transform-box:fill-box;transform-origin:50% 100%;animation:iwSway 9s ease-in-out infinite reverse}
+  @keyframes iwSway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+  .iw-fire{transform-box:fill-box;transform-origin:50% 100%;animation:iwFire .42s ease-in-out infinite alternate}
+  @keyframes iwFire{from{transform:scaleY(.9) scaleX(1.04)}to{transform:scaleY(1.1) scaleX(.95)}}
+  .iw-ember{transform-box:fill-box;transform-origin:center;animation:iwEmber 2.4s ease-out infinite}
+  @keyframes iwEmber{0%{opacity:0;transform:translateY(0)}20%{opacity:.9}100%{opacity:0;transform:translateY(-46px)}}
+  .iw-smoke{transform-box:fill-box;transform-origin:50% 100%;animation:iwSmoke 5s ease-in-out infinite}
+  @keyframes iwSmoke{0%{opacity:0;transform:translateY(8px) scaleY(.85)}30%{opacity:.4}100%{opacity:0;transform:translateY(-14px) scaleY(1.18)}}
+  .iw-cloud{animation:iwCloud 70s linear infinite}
+  @keyframes iwCloud{from{transform:translateX(-50px)}to{transform:translateX(60px)}}
+  .iw-bird{animation:iwBird 16s linear infinite}
+  @keyframes iwBird{0%{opacity:0;transform:translate(0,0)}6%{opacity:.55}94%{opacity:.55}100%{opacity:0;transform:translate(240px,-26px)}}
+  .iw-twinkle{animation:iwTwinkle 3.2s ease-in-out infinite}
+  @keyframes iwTwinkle{0%,100%{opacity:.5}50%{opacity:1}}
+  .iw-breathe{transform-box:fill-box;transform-origin:50% 100%;animation:iwBreathe 4.6s ease-in-out infinite}
+  @keyframes iwBreathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.018)}}
+  .iw-glow{animation:iwGlow2 2.6s ease-in-out infinite}
+  @keyframes iwGlow2{0%,100%{opacity:.4}50%{opacity:.74}}
+  .iw-tail{transform-box:fill-box;transform-origin:0% 100%;animation:iwTail 3.6s ease-in-out infinite}
+  @keyframes iwTail{0%,100%{transform:rotate(3deg)}50%{transform:rotate(-8deg)}}
+  .iw-float{transform-box:fill-box;transform-origin:center;animation:iwFloat 3.4s ease-in-out infinite}
+  @keyframes iwFloat{0%{opacity:0;transform:translateY(4px) scale(.7)}25%{opacity:1}100%{opacity:0;transform:translateY(-22px) scale(1)}}
+  `;
+  const st=document.createElement('style'); st.textContent=css; document.head.appendChild(st);
+  const world=document.getElementById('world');
+  if(world){ const h=document.createElement('div'); h.id='hotspots'; world.appendChild(h); }
+  const intr=document.createElement('div'); intr.id='interior';
+  intr.innerHTML=`<div id="interior-scene"></div>
+    <div id="interior-title"><span class="it-ico"></span><div><div class="it-main"></div><div class="it-sub"></div></div></div>
+    <div id="interior-scrim"></div>
+    <button id="interior-exit" onclick="exitInterior()">↩ step out</button><div id="interior-cap"></div>
+    <div id="interior-hint">⟷ drag to look around</div>`;
+  document.body.appendChild(intr);
+})();
+
+const INTERIORS = {
+  house: { shelter:'house', wps:['house_door','house_porch','house_garden'], hx:560, hy:402, name:"beach house", look:"the shore at the door", icon:"🏝️", pov:"Peeking inside the house" },
+};
+function _isDog(cid){ return (S.chars[cid]&&S.chars[cid].species)==='dog'; }
+function _appr(cid){ return (S.chars[cid]&&S.chars[cid].appearance)||{}; }
+function _present(key){ const w=INTERIORS[key].wps; return Object.keys(S.chars||{}).filter(c=>S.chars[c]&&w.indexOf((S.chars[c].location||{}).waypoint)>=0); }
+function _owners(key){ const sh=INTERIORS[key].shelter; return Object.keys(S.chars||{}).filter(c=>S.chars[c]&&S.chars[c].shelter===sh); }
+function _fname(cid){ const n=(S.chars[cid]&&S.chars[cid].name)||cid; return (n+'').trim().split(' ')[0]||cid; }
+function _rel(a,b,k){ const r=(S.chars[a]&&S.chars[a].relationships&&S.chars[a].relationships[b])||{}; return typeof r[k]==='number'?r[k]:0; }
+function _bond(a,b){ return Math.max(_rel(a,b,'attraction'), _rel(b,a,'attraction'))*1.0 + Math.max(_rel(a,b,'closeness'),_rel(b,a,'closeness'))*0.5; }
+function _tense(a,b){ return Math.max(_rel(a,b,'tension'), _rel(b,a,'tension')); }
+function _whereLabel(cid){
+  const wp=((S.chars[cid]&&S.chars[cid].location)||{}).waypoint||'';
+  if(/firepit/.test(wp)) return 'at the fire';
+  if(/house/.test(wp)) return 'at the house';
+  if(/tent/.test(wp)) return 'at the tent';
+  if(/hammock/.test(wp)) return 'in the hammock';
+  if(/beach|tide|cliff|umbrella/.test(wp)) return 'down at the beach';
+  if(/palm|jungle|meadow|rock|boulder/.test(wp)) return 'off in the palms';
+  return 'out on the island';
+}
+function seaSky(){
+  const cyc=((S.world&&S.world.cycle)||'midday').toLowerCase();
+  const wx=((S.world&&S.world.weather)||'').toLowerCase();
+  const rain=/rain|storm|drizzle|shower|downpour|squall|wet/.test(wx);
+  const storm=/storm|thunder|squall|gale|tempest/.test(wx);
+  const M={ morning:{top:'#bfe3f0',bot:'#fdeedd',sea:'#5fb6c8',sea2:'#a6dcd9',sand:'#f1e3bb'},
+            midday: {top:'#4fb2e8',bot:'#cdeef5',sea:'#2a9fc4',sea2:'#86d6d8',sand:'#f6e8b4'},
+            evening:{top:'#f29553',bot:'#ffd9a6',sea:'#cf7d63',sea2:'#f2b878',sand:'#eccf92'},
+            night:  {top:'#0e1d33',bot:'#21405e',sea:'#15324d',sea2:'#27536d',sand:'#4a4a5c'} };
+  const m=M[cyc]||M.midday;
+  const fireLit=!!(S.world&&S.world.fire&&S.world.fire.lit);
+  return {...m, rain, storm, night:cyc==='night', cycle:cyc, day:(S.world&&S.world.day)||1, fireLit};
+}
+// ── the live beach + ocean seen from the house (per-cycle, waves, sun-glint, beach bonfire) ──
+function seaView(x,y,w,h,win){
+  const F=n=>n.toFixed(1), N=win.night;
+  const horizon=y+h*0.42, sx=x+w*(N?0.7:0.3), sy=y+h*0.18;
+  let s=`<defs>
+    <linearGradient id="svsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${win.top}"/><stop offset=".7" stop-color="${win.top}"/><stop offset="1" stop-color="${win.bot}"/></linearGradient>
+    <linearGradient id="svsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${win.sea}"/><stop offset="1" stop-color="${win.sea2}"/></linearGradient>
+    <radialGradient id="svsun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fffae6"/><stop offset=".4" stop-color="#fff1b8" stop-opacity=".85"/><stop offset="1" stop-color="#fff1b8" stop-opacity="0"/></radialGradient>
+    <linearGradient id="svglint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".0"/><stop offset="1" stop-color="${N?'#cfe6ff':'#fff7d6'}" stop-opacity=".7"/></linearGradient></defs>`;
+  s+=`<rect x="${x}" y="${y}" width="${w}" height="${F(horizon-y)}" fill="url(#svsky)"/>`;
+  // celestial
+  if(N){ s+=`<circle cx="${F(sx)}" cy="${F(sy)}" r="48" fill="url(#svsun)" opacity=".5"/><circle cx="${F(sx)}" cy="${F(sy)}" r="22" fill="#eef2ff"/><circle cx="${F(sx+9)}" cy="${F(sy-5)}" r="19" fill="${win.top}"/>`;
+    for(let i=0;i<24;i++) s+=`<circle cx="${F(x+(i*131+30)%w)}" cy="${F(y+(i*61)%(horizon-y-10))}" r="${i%3?'.8':'1.4'}" fill="#fff" opacity="${(.35+(i%4)*.15).toFixed(2)}"/>`;
+  } else { s+=`<circle cx="${F(sx)}" cy="${F(sy)}" r="78" fill="url(#svsun)"/><circle cx="${F(sx)}" cy="${F(sy)}" r="26" fill="#fffdf0"/>`;
+    s+=`<g class="iw-cloud" fill="#fff" opacity=".7"><ellipse cx="${F(x+w*.66)}" cy="${F(y+h*.12)}" rx="46" ry="15"/><ellipse cx="${F(x+w*.58)}" cy="${F(y+h*.14)}" rx="32" ry="12"/></g>`;
+    s+=`<g class="iw-bird" fill="none" stroke="#5a6a72" stroke-width="2" opacity=".5"><path d="M ${F(x+w*.2)} ${F(y+h*.18)} q 7 -6 14 0 q 7 -6 14 0"/></g>`; }
+  // distant headland
+  s+=`<path d="M ${x} ${F(horizon)} Q ${F(x+w*.18)} ${F(horizon-22)} ${F(x+w*.34)} ${F(horizon-4)} L ${F(x+w*.34)} ${F(horizon+6)} L ${x} ${F(horizon+6)} Z" fill="${N?'#22405c':'#7fae9a'}" opacity=".6"/>`;
+  // sea (deeper, richer near the horizon)
+  const seaBot=y+h*0.74;
+  s+=`<rect x="${x}" y="${F(horizon)}" width="${w}" height="${F(seaBot-horizon)}" fill="url(#svsea)"/>`;
+  s+=`<rect x="${x}" y="${F(horizon)}" width="${w}" height="${F((seaBot-horizon)*0.34)}" fill="#00202e" opacity=".12"/>`;
+  // a little sailboat on the horizon (day)
+  if(!N){ const blx=x+w*0.7; s+=`<g opacity=".72"><path d="M ${F(blx)} ${F(horizon+5)} l 14 0 l -3 9 l -8 0 Z" fill="#39474e"/><path d="M ${F(blx+5)} ${F(horizon+5)} l 0 -22 l 13 18 Z" fill="#f4f0e4"/></g>`; }
+  // sun/moon reflection glint trail on the water
+  s+=`<rect class="iw-glint" x="${F(sx-15)}" y="${F(horizon)}" width="30" height="${F(seaBot-horizon)}" fill="url(#svglint)" opacity=".5"/>`;
+  // broken foam crests rolling toward shore (animated, staggered)
+  for(let i=0;i<3;i++){ const wy=horizon+(seaBot-horizon)*(0.34+i*0.22);
+    s+=`<g class="iw-wave" style="animation-delay:${(i*0.7).toFixed(1)}s" opacity="${(.5-i*0.07).toFixed(2)}">${[...Array(5)].map((_,k)=>{const c2=x+w*(0.05+k*0.2+(i%2?0.08:0)); return `<path d="M ${F(c2)} ${F(wy)} q ${F(w*.04)} -4 ${F(w*.085)} 0" stroke="${N?'#a9d2ff':'#f2fbff'}" stroke-width="${(3-i*0.6).toFixed(1)}" fill="none" stroke-linecap="round"/>`;}).join('')}</g>`; }
+  // the shore break — white foam where the waves wash up the sand
+  s+=`<path class="iw-wave" d="M ${x-20} ${F(seaBot)} Q ${F(x+w*.26)} ${F(seaBot-9)} ${F(x+w*.5)} ${F(seaBot-1)} Q ${F(x+w*.74)} ${F(seaBot+8)} ${x+w+20} ${F(seaBot)} L ${x+w+20} ${F(seaBot+15)} L ${x-20} ${F(seaBot+15)} Z" fill="#ffffff" opacity=".42"/>`;
+  if(N) s+=`<path class="iw-glint" d="M ${x} ${F(seaBot-1)} Q ${F(x+w*.5)} ${F(seaBot-7)} ${x+w} ${F(seaBot-1)}" stroke="#5fe6ff" stroke-width="4" fill="none" opacity=".45"/>`;
+  // wet-sand sheen + beach
+  s+=`<rect x="${x}" y="${F(seaBot)}" width="${w}" height="${F(y+h-seaBot)}" fill="${win.sand}"/>`;
+  s+=`<path d="M ${x} ${F(seaBot+2)} Q ${F(x+w*.3)} ${F(seaBot+12)} ${F(x+w*.6)} ${F(seaBot+4)} Q ${F(x+w*.85)} ${F(seaBot+12)} ${x+w} ${F(seaBot+5)} L ${x+w} ${F(seaBot+18)} L ${x} ${F(seaBot+18)} Z" fill="#ffffff" opacity=".22"/>`;
+  // the camp/beach bonfire on the sand — mirrors S.world.fire.lit
+  const bfx=x+w*0.5, bfy=y+h*0.9;
+  if(win.fireLit){ s+=`<ellipse cx="${F(bfx)}" cy="${F(bfy)}" rx="${F(w*0.13)}" ry="${F(h*0.05)}" fill="#ff7a18" opacity="${N?'.5':'.22'}"/>`;
+    s+=`<g transform="translate(${F(bfx)} ${F(bfy)}) scale(.9)"><path d="M -22 5 L 22 -3" stroke="#3a2a18" stroke-width="6" stroke-linecap="round"/><path d="M -22 -3 L 22 5" stroke="#4a3520" stroke-width="6" stroke-linecap="round"/><path class="iw-fire" d="M 0 -3 C -12 -16 -8 -28 0 -38 C 8 -28 12 -18 0 -3 Z" fill="#ff8a2c"/><path class="iw-fire" style="animation-delay:.12s" d="M 0 -5 C -6 -15 -4 -24 0 -31 C 5 -23 8 -15 0 -5 Z" fill="#ffd24a"/></g>`;
+    s+=`<g class="iw-smoke"><path d="M ${F(bfx)} ${F(bfy-30)} q -12 ${F(-h*.1)} 3 ${F(-h*.2)}" stroke="${N?'#5c6b73':'#ccd6cf'}" stroke-width="6" fill="none" opacity=".3" stroke-linecap="round"/></g>`;
+  } else { s+=`<g transform="translate(${F(bfx)} ${F(bfy)}) scale(.9)"><ellipse cx="0" cy="3" rx="20" ry="5" fill="#15110a"/><path d="M -22 5 L 22 -3" stroke="#241910" stroke-width="6" stroke-linecap="round"/><path d="M -22 -3 L 22 5" stroke="#2e2316" stroke-width="6" stroke-linecap="round"/><path class="iw-smoke" d="M 2 -3 q -7 -9 0 -18" stroke="#9aa6a0" stroke-width="2" fill="none" opacity=".28"/></g>`; }
+  // a couple of palms leaning in to frame the shore
+  const palm=(px,base,sc,cls)=>{ let g=`<g class="${cls}"><path d="M ${F(px)} ${F(base)} Q ${F(px+18*sc)} ${F(base-h*.2)} ${F(px+8*sc)} ${F(base-h*.42)}" stroke="${N?'#22332a':'#6b4a2a'}" stroke-width="${F(7*sc)}" fill="none"/>`;
+    const tx=px+8*sc, ty=base-h*.42; for(let k=0;k<6;k++){ const a=(-150+k*40)*Math.PI/180; g+=`<path d="M ${F(tx)} ${F(ty)} q ${F(Math.cos(a)*34*sc)} ${F(Math.sin(a)*20*sc)} ${F(Math.cos(a)*60*sc)} ${F(Math.sin(a)*34*sc+6)}" stroke="${N?'#1c3326':'#2f6b3e'}" stroke-width="${F(7*sc)}" fill="none" stroke-linecap="round"/>`; } return g+'</g>'; };
+  s+=palm(x+w*0.05, y+h, 1, 'iw-sway')+palm(x+w*0.96, y+h, 0.92, 'iw-sway2');
+  return s;
+}
+function F2(n){ return (Math.round(n*10)/10); }
+// ── a lounging person, drawn in their own colours, posed (lean = tilt toward partner) ──
+function _person(cid, cx, by, o){ o=o||{}; const a=_appr(cid);
+  const skin=a.skin||'#d9a877', shirt=a.outfit||'#5b8fb0', pant=a.pants||'#3a4a55', hairc=(a.hair&&a.hair.color)||'#241a12';
+  const sc=o.sc||1, face=o.face||0, lean=o.lean||0, glasses=(a.accessory==='sunglasses'), smitten=o.smitten, beard=a.beard;
+  const buzz=(a.hair&&/buzz|short|crop|bald/.test((a.hair.style||'')));
+  return `<g transform="translate(${cx} ${by}) scale(${sc})">
+    <ellipse cx="0" cy="12" rx="52" ry="13" fill="#000" opacity=".18"/>
+    <!-- crossed legs -->
+    <path d="M -50 8 Q -36 -14 0 -12 Q 36 -14 50 8 Q 32 22 0 20 Q -32 22 -50 8 Z" fill="${pant}"/>
+    <path d="M 0 -12 L 0 18" stroke="#000" stroke-width="2" opacity=".1"/>
+    <!-- torso -->
+    <g class="iw-breathe"><path d="M -25 -4 Q -31 -54 0 -58 Q 31 -54 25 -4 Z" fill="${shirt}"/>
+      <path d="M -9 -55 Q 0 -50 9 -55 L 5 -38 Q 0 -42 -5 -38 Z" fill="#000" opacity=".06"/></g>
+    <!-- arms resting on the knees -->
+    <path d="M -23 -36 Q -44 -20 -34 6" stroke="${shirt}" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M 23 -36 Q 44 -20 34 6" stroke="${shirt}" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-35" cy="8" rx="8" ry="6" fill="${skin}"/><ellipse cx="35" cy="8" rx="8" ry="6" fill="${skin}"/>
+    <!-- neck + head -->
+    <rect x="-6" y="-62" width="12" height="13" fill="${skin}"/>
+    <g transform="rotate(${lean} 0 -58)">
+      <circle cx="0" cy="-74" r="18" fill="${skin}"/>
+      ${beard?`<path d="M -15 -72 Q 0 -54 15 -72 Q 12 -60 0 -60 Q -12 -60 -15 -72 Z" fill="${hairc}" opacity=".5"/>`:''}
+      ${smitten?`<ellipse cx="-11" cy="-69" rx="4" ry="2.6" fill="#ff9bb0" opacity=".6"/><ellipse cx="11" cy="-69" rx="4" ry="2.6" fill="#ff9bb0" opacity=".6"/>`:''}
+      ${buzz?`<path d="M -18 -78 Q 0 -93 18 -78 L 16 -85 Q 0 -90 -16 -85 Z" fill="${hairc}"/>`
+            :`<path d="M -19 -74 Q -23 -97 0 -97 Q 23 -97 19 -74 Q 12 -88 0 -88 Q -12 -88 -19 -74 Z" fill="${hairc}"/>`}
+      ${glasses?`<g><rect x="-15" y="-79" width="12" height="9" rx="3" fill="#1c2228"/><rect x="3" y="-79" width="12" height="9" rx="3" fill="#1c2228"/><line x1="-3" y1="-75" x2="3" y2="-75" stroke="#1c2228" stroke-width="2"/></g>`
+              :`<circle cx="${F2(-6+face*2)}" cy="-75" r="1.9" fill="#241a12"/><circle cx="${F2(6+face*2)}" cy="-75" r="1.9" fill="#241a12"/>`}
+      <path d="M ${F2(-5+face*2)} -66 Q 0 -62 ${F2(5+face*2)} -66" stroke="#a8432f" stroke-width="2" fill="none" opacity=".75"/>
+    </g>
+  </g>`;
+}
+function _dogCurl(a, cx){ const coat=(a&&a.coat)||(a&&a.outfit)||'#7d705f', belly=(a&&a.belly)||'#cdbfa6';
+  return `<g transform="translate(${cx} 524) scale(.82)"><ellipse cx="0" cy="16" rx="62" ry="16" fill="#000" opacity=".18"/>
+    <g class="iw-tail"><path d="M 50 6 Q 86 0 78 -26" stroke="${coat}" stroke-width="13" fill="none" stroke-linecap="round"/></g>
+    <ellipse cx="0" cy="0" rx="58" ry="32" fill="${coat}"/><ellipse cx="-4" cy="10" rx="44" ry="18" fill="${belly}" opacity=".85"/>
+    <circle cx="-46" cy="-4" r="20" fill="${coat}"/><path d="M -64 -14 q -6 16 6 22 q 6 -10 4 -22 Z" fill="${coat}"/>
+    <path d="M -54 -2 q 5 5 11 0" stroke="#241a12" stroke-width="2" fill="none"/><path d="M -42 -2 q 5 5 11 0" stroke="#241a12" stroke-width="2" fill="none"/>
+    <ellipse cx="-58" cy="4" rx="5" ry="4" fill="#241a12"/></g>`;
+}
+function houseSVG(){
+  const win=seaSky(); const present=_present('house');
+  const humans=present.filter(c=>!_isDog(c)); const dog=present.filter(_isDog)[0];
+  // couple posing: bond pulls them together, tension pushes apart
+  let layout='';
+  if(humans.length>=2){ const a=humans[0], b=humans[1], bond=_bond(a,b), tense=_tense(a,b);
+    const close = bond>70 && tense<35;
+    const apart = tense>=45;
+    const gap = close?60 : apart?180 : 120;
+    const lx=500-gap/2, rx=500+gap/2;
+    layout = _person(a, lx, 486, {face:close?0.6:(apart?-1:0), lean:close?7:0, sc:1.02, smitten:close})
+           + _person(b, rx, 486, {face:close?-0.6:(apart?1:0), lean:close?-7:0, sc:1.02, smitten:close})
+           + (close?`<g class="iw-float" style="animation-delay:.4s"><path d="M 0 0 C -8 -10 -19 -2 0 13 C 19 -2 8 -10 0 0 Z" fill="#ff6b8e" transform="translate(500 398) scale(.95)"/></g><g class="iw-float" style="animation-delay:1.9s"><path d="M 0 0 C -6 -8 -14 -1 0 10 C 14 -1 6 -8 0 0 Z" fill="#ff95b0" transform="translate(540 408) scale(.85)"/></g>`:'')
+           + (apart?'':'');
+  } else if(humans.length===1){ layout=_person(humans[0], 500, 486, {face:0.2, sc:1.05}); }
+  return `<svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="hwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a6a44"/><stop offset="1" stop-color="#5a4128"/></linearGradient>
+  <radialGradient id="hwarm" cx="50%" cy="56%" r="90%"><stop offset="0" stop-color="#ffcf86" stop-opacity=".13"/><stop offset="1" stop-color="#ffcf86" stop-opacity="0"/></radialGradient>
+  <clipPath id="hwin"><rect x="150" y="104" width="700" height="286" rx="6"/></clipPath></defs>
+  <rect width="1000" height="600" fill="url(#hwall)"/>
+  <g stroke="#3f2c19" stroke-width="2" opacity=".18">${[...Array(12)].map((_,i)=>`<line x1="0" y1="${i*52}" x2="1000" y2="${i*52}"/>`).join('')}</g>
+  <rect width="160" height="600" fill="#000" opacity=".16"/><rect x="840" width="160" height="600" fill="#000" opacity=".16"/>
+  <!-- the sea through the big window -->
+  <g clip-path="url(#hwin)">${seaView(150,104,700,286,win)}</g>
+  <!-- driftwood window frame + sill -->
+  <rect x="142" y="96" width="716" height="14" fill="#6b4f30"/><rect x="142" y="386" width="716" height="16" fill="#6b4f30"/>
+  <rect x="142" y="96" width="16" height="306" fill="#6b4f30"/><rect x="842" y="96" width="16" height="306" fill="#6b4f30"/>
+  <!-- palm-thatch roof overhead -->
+  <path d="M -20 40 L 1020 -20 L 1020 60 L -20 120 Z" fill="#5a4326"/>
+  <g fill="#3f6b3a">${[...Array(12)].map((_,i)=>`<path d="M${i*92-20} ${96-i*5} q40 -24 80 -2 q-30 14 -80 2 Z" opacity=".9"/>`).join('')}</g>
+  <!-- shell string-lights along the top -->
+  <path d="M 160 70 Q 500 100 840 70" stroke="#5a4326" stroke-width="2" fill="none" opacity=".7"/>
+  ${[...Array(11)].map((_,i)=>{const t=i/10,bx=(160+t*680).toFixed(0),by=(70+30*4*t*(1-t)).toFixed(1);return `<circle class="iw-twinkle" style="animation-delay:${(i*0.22).toFixed(2)}s" cx="${bx}" cy="${(+by+8).toFixed(1)}" r="4" fill="#ffe9ad"/>`;}).join('')}
+  <!-- hung lantern -->
+  <g transform="translate(210 150)"><line x1="0" y1="-54" x2="0" y2="-28" stroke="#2a2012" stroke-width="2"/><ellipse cx="0" cy="-4" rx="30" ry="26" fill="#ffd98a" opacity=".22"/><rect x="-9" y="-28" width="18" height="26" rx="5" fill="#2a2418"/><rect x="-6" y="-24" width="12" height="18" rx="3" fill="#ffe6ad"/></g>
+  <!-- woven rug / bed platform -->
+  <ellipse cx="500" cy="520" rx="430" ry="74" fill="#7a5f3a"/><ellipse cx="500" cy="514" rx="396" ry="62" fill="#8d6f45"/>
+  <g stroke="#6b5230" stroke-width="1.5" opacity=".4">${[...Array(11)].map((_,i)=>`<line x1="${150+i*70}" y1="466" x2="${150+i*70}" y2="566"/>`).join('')}</g>
+  <!-- side crate with coconut cups (two when it's a couple) -->
+  <g transform="translate(842 470)"><rect x="-26" y="0" width="52" height="40" rx="4" fill="#6b4f30"/><ellipse cx="-10" cy="-2" rx="10" ry="6" fill="#6b4632"/>${humans.length>=2?`<ellipse cx="12" cy="-2" rx="10" ry="6" fill="#6b4632"/>`:''}</g>
+  <!-- cozy beach-house touches: sill shells + starfish, potted palm, a straw hat, a hung towel -->
+  <g transform="translate(312 393)"><ellipse cx="0" cy="0" rx="9" ry="6" fill="#f1ddc8"/><g stroke="#d3b298" stroke-width="1" opacity=".6" fill="none"><path d="M 0 -5 L 0 4"/><path d="M -5 -3 L -1 4"/><path d="M 5 -3 L 1 4"/></g></g>
+  <g transform="translate(452 394)"><path d="M 0 -9 L 3 -2 L 10 -2 L 4 2 L 6 9 L 0 5 L -6 9 L -4 2 L -10 -2 L -3 -2 Z" fill="#e8927a" opacity=".92"/></g>
+  <g transform="translate(648 393)"><path d="M -8 2 Q -8 -8 0 -8 Q 8 -8 8 2 Z" fill="#f0d9c0"/><g stroke="#d3b298" stroke-width="1" opacity=".5"><line x1="-4" y1="-4" x2="-4" y2="2"/><line x1="0" y1="-6" x2="0" y2="2"/><line x1="4" y1="-4" x2="4" y2="2"/></g></g>
+  <g transform="translate(894 442)"><path d="M -15 0 L 15 0 L 11 34 L -11 34 Z" fill="#8a5e34"/><path d="M -15 0 L 15 0 L 13 5 L -13 5 Z" fill="#714c29"/><g stroke="#2f6b3e" stroke-width="4" fill="none" stroke-linecap="round" class="iw-sway"><path d="M 0 0 Q -12 -28 -26 -36"/><path d="M 0 0 Q 0 -32 2 -46"/><path d="M 0 0 Q 12 -28 26 -36"/><path d="M 0 0 Q -18 -16 -32 -20"/><path d="M 0 0 Q 18 -16 32 -20"/></g></g>
+  <g transform="translate(110 268)"><ellipse cx="0" cy="2" rx="36" ry="11" fill="#d9b66a"/><ellipse cx="0" cy="-5" rx="19" ry="11" fill="#c9a458"/><path d="M -19 -2 Q 0 4 19 -2" stroke="#b08c40" stroke-width="2" fill="none"/></g>
+  <g transform="translate(890 250) rotate(4)"><rect x="-3" y="0" width="44" height="58" rx="3" fill="#cf5b6e"/><rect x="-3" y="0" width="44" height="20" fill="#e8889a"/><rect x="-3" y="38" width="44" height="20" fill="#e8889a"/></g>
+  <!-- warm wash -->
+  <rect width="1000" height="600" fill="url(#hwarm)" opacity="${win.fireLit?1:0.5}"/>
+  <!-- occupants (posed by relationship) / dog / empty -->
+  ${layout || (dog?'':emptyHouse())}
+  ${dog?_dogCurl(_appr(dog), humans.length?320:500):''}
+  ${win.fireLit?`<ellipse class="iw-glow" cx="500" cy="486" rx="230" ry="76" fill="#ff9a3c" opacity=".06"/>`:''}
+  <rect y="588" width="1000" height="20" fill="#0c0a06"/>
+  </svg>`;
+}
+function emptyHouse(){ return `<g>
+  <ellipse cx="500" cy="520" rx="150" ry="26" fill="#000" opacity=".12"/>
+  <path d="M 420 510 Q 500 492 580 510 L 572 534 Q 500 520 428 534 Z" fill="#caa05e"/><path d="M 420 510 Q 500 492 580 510" stroke="#fff" stroke-width="2" opacity=".14" fill="none"/>
+  <g transform="translate(560 512)"><path d="M 0 -16 q 14 0 14 9 q 0 9 -14 8" stroke="#7a5a3a" stroke-width="3" fill="none"/><rect x="-13" y="-16" width="26" height="18" rx="3" fill="#7a5a3a"/></g>
+  <ellipse cx="430" cy="512" rx="13" ry="7" fill="#e8d8b8"/>
+</g>`; }
+function renderInteriorOccupants(key){ const box=document.getElementById('interior-chars'); if(box) box.innerHTML=''; }
+function enterInterior(key){
+  const I=INTERIORS[key]; if(!I) return;
+  const scene=document.getElementById('interior-scene');
+  scene.innerHTML = houseSVG();
+  requestAnimationFrame(()=>{ try{ scene.scrollLeft=(scene.scrollWidth-scene.clientWidth)/2;
+    const hint=document.getElementById('interior-hint'); if(hint){ hint.classList.remove('show'); void hint.offsetWidth; if(scene.scrollWidth-scene.clientWidth>40) hint.classList.add('show'); } }catch(e){} });
+  document.querySelector('#interior-title .it-ico').textContent=I.icon||'';
+  document.querySelector('#interior-title .it-main').textContent=I.name;
+  document.querySelector('#interior-title .it-sub').textContent=I.pov||'';
+  const present=_present(key).filter(c=>!_isDog(c)), owners=_owners(key);
+  let who;
+  if(present.length>=2){ const ns=present.map(_fname); const tense=_tense(present[0],present[1]); const bond=_bond(present[0],present[1]);
+    who = ns.join(' & ') + (bond>70&&tense<35?' — cosied up' : tense>=45?", but keeping their distance" : ' here'); }
+  else if(present.length===1){ who=_fname(present[0])+' here'; }
+  else if(owners.length){ const ns=owners.map(_fname); who=(ns.length<=2?ns.join(' & '):'they')+(ns.length===1?' lives here':' live here')+' — '+_whereLabel(owners[0])+' right now'; }
+  else who='no one home right now';
+  document.getElementById('interior-cap').textContent=`Inside the ${I.name} — ${I.look}. ${who}.`;
+  document.getElementById('interior').classList.add('show');
+}
+function exitInterior(){ document.getElementById('interior').classList.remove('show'); }
+function renderInteriorHotspots(){
+  const layer=document.getElementById('hotspots'); if(!layer) return; layer.innerHTML='';
+  Object.keys(INTERIORS).forEach(key=>{
+    const I=INTERIORS[key]; const {left,top}=svgToViewport(I.hx,I.hy);
+    const present=_present(key).filter(c=>!_isDog(c)).map(_fname), owners=_owners(key).map(_fname);
+    let txt, cls;
+    if(present.length){ txt=present.length===1?present[0]+' inside':present.length===2?present.join(' & '):present.length+' inside'; cls=' occupied'; }
+    else if(owners.length){ txt=(owners.length<=2?owners.join(' & '):owners.length+' of them')+'’s place'; cls=' vacant'; }
+    else { txt=''; cls=''; }
+    const d=document.createElement('div'); d.className='hotspot'+cls; d.style.left=left; d.style.top=top;
+    d.innerHTML=`<div class="hs-glow"></div><div class="hs-badge"><span class="em">🏠</span>${txt}</div><div class="hs-tap">tap to look inside</div><div style="width:80px;height:64px"></div>`;
+    d.onclick=()=>enterInterior(key);
+    layer.appendChild(d);
+  });
+}
 </script>
 </body>
 </html>
