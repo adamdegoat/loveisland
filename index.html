@@ -4074,7 +4074,7 @@ function houseSVG(){
   <path d="M 160 70 Q 500 100 840 70" stroke="#5a4326" stroke-width="2" fill="none" opacity=".7"/>
   ${[...Array(11)].map((_,i)=>{const t=i/10,bx=(160+t*680).toFixed(0),by=(70+30*4*t*(1-t)).toFixed(1);return `<circle class="iw-twinkle" style="animation-delay:${(i*0.22).toFixed(2)}s" cx="${bx}" cy="${(+by+8).toFixed(1)}" r="4" fill="#ffe9ad"/>`;}).join('')}
   <!-- hung lantern -->
-  <g transform="translate(210 150)"><line x1="0" y1="-54" x2="0" y2="-28" stroke="#2a2012" stroke-width="2"/><ellipse cx="0" cy="-4" rx="30" ry="26" fill="#ffd98a" opacity=".22"/><rect x="-9" y="-28" width="18" height="26" rx="5" fill="#2a2418"/><rect x="-6" y="-24" width="12" height="18" rx="3" fill="#ffe6ad"/></g>
+  <g transform="translate(210 150)"><line x1="0" y1="-54" x2="0" y2="-28" stroke="#2a2012" stroke-width="2"/><ellipse cx="0" cy="-4" rx="96" ry="88" fill="#ffd98a" opacity="${win.night?'.1':'.06'}"/><ellipse cx="0" cy="-4" rx="30" ry="26" fill="#ffd98a" opacity=".24"/><rect x="-9" y="-28" width="18" height="26" rx="5" fill="#2a2418"/><rect x="-6" y="-24" width="12" height="18" rx="3" fill="#ffe6ad"/></g>
   <!-- woven rug / bed platform -->
   <ellipse cx="500" cy="520" rx="430" ry="74" fill="#7a5f3a"/><ellipse cx="500" cy="514" rx="396" ry="62" fill="#8d6f45"/>
   <g stroke="#6b5230" stroke-width="1.5" opacity=".4">${[...Array(11)].map((_,i)=>`<line x1="${150+i*70}" y1="466" x2="${150+i*70}" y2="566"/>`).join('')}</g>
@@ -4117,9 +4117,12 @@ function _grovePalm(px, sc, lean, N){
   g+=`<path d="M ${px-14*sc} 602 Q ${px-4*sc} 360 ${topx} ${topy}" stroke="${barkL}" stroke-width="${9*sc}" fill="none" stroke-linecap="round" opacity=".4"/>`;
   g+=`<g stroke="${N?'#241a10':'#5c3c1c'}" stroke-width="${2.4*sc}" opacity=".4" fill="none">`+[0,1,2,3,4,5,6].map(i=>`<path d="M ${px-20*sc} ${556-i*62} q ${13*sc} 7 ${28*sc} 0"/>`).join('')+`</g>`;
   g+=`<circle cx="${topx-10*sc}" cy="${topy+9}" r="${8*sc}" fill="${N?'#2a1f12':'#4a3318'}"/><circle cx="${topx+7*sc}" cy="${topy+13}" r="${8*sc}" fill="${N?'#2a1f12':'#4a3318'}"/>`;
-  for(let k=0;k<9;k++){ const a=(-150+k*32)*Math.PI/180, ex=topx+Math.cos(a)*150*sc, ey=topy+Math.sin(a)*88*sc+8;
-    g+=`<path d="M ${topx} ${topy} Q ${(topx+Math.cos(a)*70*sc).toFixed(1)} ${(topy+Math.sin(a)*40*sc).toFixed(1)} ${ex.toFixed(1)} ${ey.toFixed(1)}" stroke="${k%2?frondD:frondL}" stroke-width="${6.5*sc}" fill="none" stroke-linecap="round"/>`;
-    g+=`<path d="M ${topx} ${topy} Q ${(topx+Math.cos(a)*58*sc).toFixed(1)} ${(topy+Math.sin(a)*32*sc).toFixed(1)} ${(topx+Math.cos(a)*116*sc).toFixed(1)} ${(topy+Math.sin(a)*70*sc+6).toFixed(1)}" stroke="${frondD}" stroke-width="${2*sc}" fill="none" opacity=".55"/>`; }
+  for(let k=0;k<9;k++){ const a=(-150+k*32)*Math.PI/180, co=Math.cos(a), si=Math.sin(a);
+    // arch outward (control raised), then let the tip droop down — a real palm, not a starburst
+    const cx=topx+co*68*sc, cy=topy+si*34*sc-8*sc, ex=topx+co*132*sc, ey=topy+si*62*sc+42*sc;
+    g+=`<path d="M ${topx} ${topy} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${ex.toFixed(1)} ${ey.toFixed(1)}" stroke="${k%2?frondD:frondL}" stroke-width="${6.5*sc}" fill="none" stroke-linecap="round"/>`;
+    const cx2=topx+co*56*sc, cy2=topy+si*28*sc-6*sc, ex2=topx+co*116*sc, ey2=topy+si*54*sc+36*sc;
+    g+=`<path d="M ${topx} ${topy} Q ${cx2.toFixed(1)} ${cy2.toFixed(1)} ${ex2.toFixed(1)} ${ey2.toFixed(1)}" stroke="${frondD}" stroke-width="${2*sc}" fill="none" opacity=".55"/>`; }
   return g+`</g>`;
 }
 // ── a figure nestled & reclining in the hammock, in their own colours ──
@@ -4240,7 +4243,7 @@ function tentSVG(){
     <linearGradient id="tfloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${N?'#3a3526':'#9a8460'}"/><stop offset="1" stop-color="${N?'#241f17':'#7a674a'}"/></linearGradient>
     <radialGradient id="twarm" cx="50%" cy="60%" r="78%"><stop offset="0" stop-color="#ffcf86" stop-opacity="${N?(lit?'.18':'.11'):'.035'}"/><stop offset=".55" stop-color="#ffcf86" stop-opacity="${N?(lit?'.07':'.04'):'.012'}"/><stop offset="1" stop-color="#ffcf86" stop-opacity="0"/></radialGradient>
     <radialGradient id="tvig" cx="50%" cy="46%" r="74%"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset=".7" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#0a1018" stop-opacity=".4"/></radialGradient>
-    <clipPath id="tflap"><path d="M 500 158 L 366 540 L 634 540 Z"/></clipPath></defs>
+    <clipPath id="tflap"><path d="M 452 206 L 548 206 L 745 546 L 255 546 Z"/></clipPath></defs>
   <rect width="1000" height="600" fill="${N?'#15120c':'#2a2114'}"/>
   <!-- canvas A-frame walls (inside) -->
   <path d="M 500 28 L 70 582 L 930 582 Z" fill="url(#tcanvas)"/>
@@ -4257,17 +4260,18 @@ function tentSVG(){
   <path d="M 70 540 L 930 540 L 930 582 L 70 582 Z" fill="url(#tfloor)"/>
   <path d="M 70 540 L 930 540" stroke="${N?'#4a4330':'#b59a6e'}" stroke-width="2" opacity=".4"/>
   <!-- the open flap: a long view off the clifftop — pure sky, sea & horizon (no beach clutter) -->
-  <g clip-path="url(#tflap)">${seaView(360,176,280,470,{...win,fireX:0.46,fire:false})}
+  <g clip-path="url(#tflap)">${seaView(245,200,510,478,{...win,fireX:0.46,fire:false})}
     <!-- the grassy cliff edge just outside the door -->
-    <path d="M 360 520 Q 500 506 640 520 L 640 545 L 360 545 Z" fill="${N?'#1c3a24':'#2f6b3e'}"/>
-    <path d="M 360 522 Q 500 510 640 522" stroke="${N?'#14301c':'#256033'}" stroke-width="2" fill="none" opacity=".6"/>
-    <g stroke="${N?'#1c3a24':'#3f8a4a'}" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8">${[0,1,2,3,4,5].map(i=>`<path d="M ${410+i*36} 520 q -3 -12 -7 -18 M ${416+i*36} 520 q 1 -13 1 -20"/>`).join('')}</g></g>
-  <!-- driftwood A-frame poles framing the doorway + rolled-back canvas flaps -->
-  <line x1="500" y1="150" x2="362" y2="544" stroke="${N?'#3a2c1c':'#6b4423'}" stroke-width="7" stroke-linecap="round"/>
-  <line x1="500" y1="150" x2="638" y2="544" stroke="${N?'#3a2c1c':'#6b4423'}" stroke-width="7" stroke-linecap="round"/>
-  <path d="M 500 150 L 360 544 L 332 544 L 470 156 Z" fill="url(#tcanvas)"/>
-  <path d="M 500 150 L 640 544 L 668 544 L 530 156 Z" fill="url(#tcanvas)"/>
-  <path d="M 470 156 L 360 544 L 372 544 Z" fill="#000" opacity=".12"/>
+    <path d="M 255 520 Q 500 504 745 520 L 745 548 L 255 548 Z" fill="${N?'#1c3a24':'#2f6b3e'}"/>
+    <path d="M 255 522 Q 500 508 745 522" stroke="${N?'#14301c':'#256033'}" stroke-width="2" fill="none" opacity=".6"/>
+    <g stroke="${N?'#1c3a24':'#3f8a4a'}" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8">${[0,1,2,3,4,5,6,7,8,9].map(i=>`<path d="M ${312+i*48} 520 q -3 -12 -7 -18 M ${318+i*48} 520 q 1 -13 1 -20"/>`).join('')}</g></g>
+  <!-- driftwood A-frame poles + a rolled-back flap top framing the wide doorway -->
+  <line x1="452" y1="206" x2="255" y2="546" stroke="${N?'#3a2c1c':'#6b4423'}" stroke-width="7" stroke-linecap="round"/>
+  <line x1="548" y1="206" x2="745" y2="546" stroke="${N?'#3a2c1c':'#6b4423'}" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 452 206 L 548 206 L 560 196 L 440 196 Z" fill="${N?'#5a4f3a':'#b8a279'}"/>
+  <path d="M 452 206 L 255 546 L 223 546 L 426 212 Z" fill="url(#tcanvas)"/>
+  <path d="M 548 206 L 745 546 L 777 546 L 574 212 Z" fill="url(#tcanvas)"/>
+  <path d="M 426 212 L 255 546 L 269 546 Z" fill="#000" opacity=".12"/>
   <!-- ridge tip + a hung storm lantern (glows at night / when the camp fire's lit) -->
   <line x1="500" y1="40" x2="500" y2="22" stroke="${N?'#3a2c1c':'#6b4423'}" stroke-width="3"/>
   <g transform="translate(500 96)"><line x1="0" y1="-44" x2="0" y2="-20" stroke="#2a2012" stroke-width="2"/><ellipse cx="0" cy="4" rx="30" ry="26" fill="#ffd98a" opacity="${N?(lit?'.34':'.22'):'.12'}"/><rect x="-10" y="-20" width="20" height="28" rx="5" fill="#2a2418"/><rect x="-6" y="-15" width="12" height="20" rx="3" fill="${N&&lit?'#ffe6ad':N?'#caa85e':'#e8d49a'}"/></g>
