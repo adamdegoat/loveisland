@@ -3818,7 +3818,7 @@ loadVote();
 })();
 
 const INTERIORS = {
-  house: { shelter:'house', wps:['house_door','house_porch','house_garden'], hx:506, hy:344, name:"beach house", look:"the shore at the door", icon:"🏝️", pov:"Peeking inside the house" },
+  house: { shelter:'house', wps:['house_door','house_porch','house_garden'], hx:506, hy:344, name:"beach house", look:"the shore at the door", icon:"🏝️", pov:"A peek at who's home" },
 };
 function _isDog(cid){ return (S.chars[cid]&&S.chars[cid].species)==='dog'; }
 function _appr(cid){ return (S.chars[cid]&&S.chars[cid].appearance)||{}; }
@@ -3950,29 +3950,41 @@ function _person(cid, cx, by, o){ o=o||{}; const a=_appr(cid);
     </g>
   </g>`;
 }
-function _dogCurl(a, cx){ const coat=(a&&a.coat)||(a&&a.outfit)||'#7d705f', belly=(a&&a.belly)||'#cdbfa6';
-  return `<g transform="translate(${cx} 524) scale(.82)"><ellipse cx="0" cy="16" rx="62" ry="16" fill="#000" opacity=".18"/>
-    <g class="iw-tail"><path d="M 50 6 Q 86 0 78 -26" stroke="${coat}" stroke-width="13" fill="none" stroke-linecap="round"/></g>
-    <ellipse cx="0" cy="0" rx="58" ry="32" fill="${coat}"/><ellipse cx="-4" cy="10" rx="44" ry="18" fill="${belly}" opacity=".85"/>
-    <circle cx="-46" cy="-4" r="20" fill="${coat}"/><path d="M -64 -14 q -6 16 6 22 q 6 -10 4 -22 Z" fill="${coat}"/>
-    <path d="M -54 -2 q 5 5 11 0" stroke="#241a12" stroke-width="2" fill="none"/><path d="M -42 -2 q 5 5 11 0" stroke="#241a12" stroke-width="2" fill="none"/>
-    <ellipse cx="-58" cy="4" rx="5" ry="4" fill="#241a12"/></g>`;
+// the SAME stray as the camp — a brown Great Dane puppy (palette identical to makeDogSVG), curled up resting
+function _dogCurl(cid, cx){ const coat='#9c6b43', dark='#5e3a22', light='#caa078', nose='#2b2118';
+  return `<g transform="translate(${cx} 522) scale(.92)">
+    <ellipse cx="0" cy="18" rx="64" ry="15" fill="#000" opacity=".18"/>
+    <g class="iw-tail"><path d="M 52 4 Q 90 -2 82 -30 Q 78 -42 60 -34" stroke="${coat}" stroke-width="13" fill="none" stroke-linecap="round"/></g>
+    <ellipse cx="0" cy="0" rx="58" ry="32" fill="${coat}"/>
+    <ellipse cx="-4" cy="13" rx="44" ry="17" fill="${light}" opacity=".55"/>
+    <circle cx="-46" cy="-2" r="21" fill="${coat}"/>
+    <!-- long floppy Great-Dane ears (dark) -->
+    <path d="M -36 -14 C -34 -36 -50 -42 -58 -30 C -60 -20 -50 -14 -42 -16 Z" fill="${dark}"/>
+    <path d="M -56 -16 C -66 -8 -64 10 -55 14 C -52 4 -54 -8 -56 -16 Z" fill="${dark}" opacity=".92"/>
+    <ellipse cx="-52" cy="7" rx="13" ry="9" fill="${light}"/>
+    <ellipse cx="-62" cy="4" rx="3.4" ry="2.6" fill="${nose}"/>
+    <path d="M -52 -5 q 5 4 10 0" stroke="${nose}" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M -40 -5 q 5 4 10 0" stroke="${nose}" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M -54 9 q 5 3 10 0" stroke="${nose}" stroke-width="1.4" fill="none" opacity=".6"/>
+  </g>`;
 }
 function houseSVG(){
   const win=seaSky(); const present=_present('house');
   const humans=present.filter(c=>!_isDog(c)); const dog=present.filter(_isDog)[0];
-  // couple posing: bond pulls them together, tension pushes apart
+  // whoever's actually home (dynamic — not hardcoded to anyone): 1 alone, 2 posed by
+  // their real attraction/tension, 3+ hanging out together.
   let layout='';
-  if(humans.length>=2){ const a=humans[0], b=humans[1], bond=_bond(a,b), tense=_tense(a,b);
+  if(humans.length===2){ const a=humans[0], b=humans[1], bond=_bond(a,b), tense=_tense(a,b);
     const close = bond>70 && tense<35;
     const apart = tense>=45;
     const gap = close?60 : apart?180 : 120;
     const lx=500-gap/2, rx=500+gap/2;
     layout = _person(a, lx, 486, {face:close?0.6:(apart?-1:0), lean:close?7:0, sc:1.02, smitten:close})
            + _person(b, rx, 486, {face:close?-0.6:(apart?1:0), lean:close?-7:0, sc:1.02, smitten:close})
-           + (close?`<g class="iw-float" style="animation-delay:.4s"><path d="M 0 0 C -8 -10 -19 -2 0 13 C 19 -2 8 -10 0 0 Z" fill="#ff6b8e" transform="translate(500 398) scale(.95)"/></g><g class="iw-float" style="animation-delay:1.9s"><path d="M 0 0 C -6 -8 -14 -1 0 10 C 14 -1 6 -8 0 0 Z" fill="#ff95b0" transform="translate(540 408) scale(.85)"/></g>`:'')
-           + (apart?'':'');
+           + (close?`<g class="iw-float" style="animation-delay:.4s"><path d="M 0 0 C -8 -10 -19 -2 0 13 C 19 -2 8 -10 0 0 Z" fill="#ff6b8e" transform="translate(500 398) scale(.95)"/></g><g class="iw-float" style="animation-delay:1.9s"><path d="M 0 0 C -6 -8 -14 -1 0 10 C 14 -1 6 -8 0 0 Z" fill="#ff95b0" transform="translate(540 408) scale(.85)"/></g>`:'');
   } else if(humans.length===1){ layout=_person(humans[0], 500, 486, {face:0.2, sc:1.05}); }
+  else if(humans.length>=3){ const hs=humans.slice(0,3), n=hs.length;
+    layout = hs.map((c,i)=>_person(c, 500+(i-(n-1)/2)*156, 488, {face:i<n/2?0.4:-0.4, sc:0.94})).join(''); }
   return `<svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="hwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a6a44"/><stop offset="1" stop-color="#5a4128"/></linearGradient>
   <radialGradient id="hwarm" cx="50%" cy="56%" r="90%"><stop offset="0" stop-color="#ffcf86" stop-opacity=".13"/><stop offset="1" stop-color="#ffcf86" stop-opacity="0"/></radialGradient>
@@ -4015,7 +4027,7 @@ function houseSVG(){
   <rect width="1000" height="600" fill="url(#hwarm)" opacity="${win.night?(win.fireLit?1:0.55):0.3}"/>
   <!-- occupants (posed by relationship) / dog / empty -->
   ${layout || (dog?'':emptyHouse())}
-  ${dog?_dogCurl(_appr(dog), humans.length?320:500):''}
+  ${dog?_dogCurl(dog, humans.length?322:500):''}
   ${win.fireLit?`<ellipse class="iw-glow" cx="500" cy="486" rx="230" ry="76" fill="#ff9a3c" opacity=".06"/>`:''}
   <rect y="588" width="1000" height="20" fill="#0c0a06"/>
   </svg>`;
@@ -4037,13 +4049,14 @@ function enterInterior(key){
   document.querySelector('#interior-title .it-main').textContent=I.name;
   document.querySelector('#interior-title .it-sub').textContent=I.pov||'';
   const present=_present(key).filter(c=>!_isDog(c)), owners=_owners(key);
-  let who;
-  if(present.length>=2){ const ns=present.map(_fname); const tense=_tense(present[0],present[1]); const bond=_bond(present[0],present[1]);
-    who = ns.join(' & ') + (bond>70&&tense<35?' — cosied up' : tense>=45?", but keeping their distance" : ' here'); }
-  else if(present.length===1){ who=_fname(present[0])+' here'; }
-  else if(owners.length){ const ns=owners.map(_fname); who=(ns.length<=2?ns.join(' & '):'they')+(ns.length===1?' lives here':' live here')+' — '+_whereLabel(owners[0])+' right now'; }
+  const ns=present.map(_fname); let who;
+  if(present.length===2){ const tense=_tense(present[0],present[1]), bond=_bond(present[0],present[1]);
+    who = ns.join(' & ') + (bond>70&&tense<35?' — cosied up' : tense>=45?", but keeping their distance" : ' — home together'); }
+  else if(present.length===1){ who=ns[0]+' is home'; }
+  else if(present.length>=3){ who=ns.slice(0,3).join(', ')+' — a full house'; }
+  else if(owners.length){ const on=owners.map(_fname); who=(on.length<=2?on.join(' & '):'they')+(on.length===1?' lives here':' live here')+' — '+_whereLabel(owners[0])+' right now'; }
   else who='no one home right now';
-  document.getElementById('interior-cap').textContent=`Inside the ${I.name} — ${I.look}. ${who}.`;
+  document.getElementById('interior-cap').textContent=`A peek inside the ${I.name} — ${I.look}. ${who}.`;
   document.getElementById('interior').classList.add('show');
 }
 function exitInterior(){ document.getElementById('interior').classList.remove('show'); }
@@ -4053,7 +4066,7 @@ function renderInteriorHotspots(){
     const I=INTERIORS[key]; const {left,top}=svgToViewport(I.hx,I.hy);
     const present=_present(key).filter(c=>!_isDog(c)).map(_fname), owners=_owners(key).map(_fname);
     let txt, cls;
-    if(present.length){ txt=present.length===1?present[0]+' inside':present.length===2?present.join(' & '):present.length+' inside'; cls=' occupied'; }
+    if(present.length){ txt=present.length===1?present[0]+' home':present.length===2?present.join(' & '):present.length+' home'; cls=' occupied'; }
     else if(owners.length){ txt=(owners.length<=2?owners.join(' & '):owners.length+' of them')+'’s place'; cls=' vacant'; }
     else { txt=''; cls=''; }
     const d=document.createElement('div'); d.className='hotspot'+cls; d.style.left=left; d.style.top=top;
