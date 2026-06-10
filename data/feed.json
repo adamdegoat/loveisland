@@ -4903,5 +4903,235 @@
       }
     ],
     "timestamp": "2026-06-10T07:03:28.177084"
+  },
+  {
+    "day": 7,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "Gathers the fishing net with methodical purpose and heads toward the tide pools without hesitation.",
+    "thought": "They needed me. I'm going.",
+    "location": {
+      "waypoint": "beach_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "determined",
+    "timestamp": "2026-06-10T11:32:25.758344"
+  },
+  {
+    "day": 7,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "Counts the empty food stores and looks up, relief crossing his face as he spots Marcus already heading toward the beach.",
+    "thought": "No food. Marcus knows. We can fix this.",
+    "location": {
+      "waypoint": "beach_mid",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "focused",
+    "timestamp": "2026-06-10T11:32:25.758344"
+  },
+  {
+    "day": 7,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "Drifts toward the shoreline, drawn by a feeling she can't name, and watches the two men prepare.",
+    "thought": "Something's pulling me toward the water.",
+    "location": {
+      "waypoint": "beach_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-10T11:32:25.758344"
+  },
+  {
+    "day": 7,
+    "cycle": "midday",
+    "character": "judy",
+    "action": "Sits on the house porch with a water glass, watching the three of them gather gear and head toward the beach.",
+    "thought": "They're doing something. Should I go?",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "uncertain",
+    "timestamp": "2026-06-10T11:32:25.758344"
+  },
+  {
+    "day": 7,
+    "cycle": "midday",
+    "character": "stray",
+    "action": "Trots after the humans toward the beach with tail raised high, eager to be part of whatever they're doing.",
+    "thought": "They go. I go. We stay together.",
+    "location": {
+      "waypoint": "beach_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-10T11:32:25.758344"
+  },
+  {
+    "day": 7,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade",
+      "stray"
+    ],
+    "description": "At midday, with the stores empty, Marcus and Jade both walk toward the beach at the same moment—drawn by Ryan's quiet crisis and by something neither of them can quite name.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "We have no food. Zero. We need fish, like, immediately."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Already on it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You knew?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I checked this morning. The stores were low."
+      },
+      {
+        "speaker": "jade",
+        "line": "I smell the ocean. Is something happening?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Jade, the ocean's what's happening. We need to fish."
+      },
+      {
+        "speaker": "jade",
+        "line": "Oh. Then I definitely have to come."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's not how it works."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know, but you both look like you need someone to make this fun."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We don't need—okay, actually, yes, come."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You'll slow us down."
+      },
+      {
+        "speaker": "jade",
+        "line": "Definitely. But the pup wants to come too, and I'm the only one he trusts to say yes to."
+      },
+      {
+        "speaker": "ryan",
+        "line": "The pup didn't even—"
+      },
+      {
+        "speaker": "jade",
+        "line": "He did. He just doesn't use words."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Let's go."
+      },
+      {
+        "speaker": "ryan",
+        "line": "This is insane. We're all fishing with the dog?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Only if you want to catch anything."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She's right. Let's go."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He said she was right. Marcus said Jade was *right*."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay, net on that side. Marcus, you take the left cove."
+      },
+      {
+        "speaker": "marcus",
+        "line": "The fish are running here. Morning tide."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'll... create a distraction?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Jade, just stay away from them."
+      },
+      {
+        "speaker": "jade",
+        "line": "That I can do."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We're getting them."
+      },
+      {
+        "speaker": "ryan",
+        "line": "How are you already—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Stop talking. You're scaring them."
+      },
+      {
+        "speaker": "jade",
+        "line": "I think the pup's doing better than me."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Everyone's doing better than you."
+      },
+      {
+        "speaker": "jade",
+        "line": "True. I'm okay with that."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Keep a fire ready. We'll need to preserve these."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Marcus, I know. I built the—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You asked me to come. I'm helping."
+      },
+      {
+        "speaker": "jade",
+        "line": "I brought emotional support."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You actually did, yeah. Both of you. Thank you."
+      }
+    ],
+    "timestamp": "2026-06-10T11:32:25.758344"
   }
 ]
