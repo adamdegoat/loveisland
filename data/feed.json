@@ -5133,5 +5133,202 @@
       }
     ],
     "timestamp": "2026-06-10T11:32:25.758344"
+  },
+  {
+    "day": 7,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "Leads Ryan and Jade to the tide pools at midday, reading the water like it's a book he's memorized, his movements steady and purposeful as hunger becomes a problem to solve.",
+    "thought": "She asked me to teach. I said yes.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "focused",
+    "timestamp": "2026-06-10T15:02:39.508690"
+  },
+  {
+    "day": 7,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "Wades into the shallow water behind Marcus, celebrating when their first fish is caught with breathless relief, his body suddenly warm with purpose after the empty hours.",
+    "thought": "We can solve this. We're solving this.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "energized",
+    "timestamp": "2026-06-10T15:02:39.508690"
+  },
+  {
+    "day": 7,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "Works alongside Marcus in the shallows, copying his stance, asking him to show her how to read water and shadow, her whole body alive and reaching toward him without hesitation.",
+    "thought": "He's letting me reach him. I feel it.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "alive",
+    "timestamp": "2026-06-10T15:02:39.508690"
+  },
+  {
+    "day": 7,
+    "cycle": "afternoon",
+    "character": "judy",
+    "action": "Watches from the dry sand with the stray pressed against her legs, afraid to wade in but proud of them, her hand moving in slow circles on the puppy's head.",
+    "thought": "They found food. I stayed back. Still.",
+    "location": {
+      "waypoint": "beach_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "wistful",
+    "timestamp": "2026-06-10T15:02:39.508690"
+  },
+  {
+    "day": 7,
+    "cycle": "afternoon",
+    "character": "stray",
+    "action": "Stays close to Judy's legs at the water's edge, occasionally wading a few steps and returning to her, sensing her need and choosing to anchor her to the moment.",
+    "thought": "She's sad. I stay here.",
+    "location": {
+      "waypoint": "beach_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "protective",
+    "timestamp": "2026-06-10T15:02:39.508690"
+  },
+  {
+    "day": 7,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade"
+    ],
+    "description": "Hunger drives them to the tide pools, where Marcus teaches Jade and Ryan to fish—and in the working moment, Jade reaches him and he doesn't pull away.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "The tide's right. Food's waiting in these pools if we're quiet."
+      },
+      {
+        "speaker": "marcus",
+        "line": "These pools haven't been touched yet."
+      },
+      {
+        "speaker": "jade",
+        "line": "There—that shadow moving. Is that a fish?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Fish. Definitely fish."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We'll need to move them into the shallows without spooking them."
+      },
+      {
+        "speaker": "jade",
+        "line": "How do we do that without scaring them away?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Stone walls. Corners them slowly, gives them nowhere to go."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You've done this before?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Long time ago. Different island, different water."
+      },
+      {
+        "speaker": "jade",
+        "line": "Different how?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Just—different."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Well, you're here now. Show us how."
+      },
+      {
+        "speaker": "jade",
+        "line": "Like this?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Better than I expected."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I've got one cornered here!"
+      },
+      {
+        "speaker": "jade",
+        "line": "Where? I can't see it from here!"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Just here—can you help me drive it back?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Stay calm. Don't thrash around or you'll spook it."
+      },
+      {
+        "speaker": "jade",
+        "line": "It's working—I can feel it!"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Got it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We just caught food. Real food."
+      },
+      {
+        "speaker": "marcus",
+        "line": "One fish. Not enough for tonight."
+      },
+      {
+        "speaker": "jade",
+        "line": "But we can do this. All of us. Together."
+      },
+      {
+        "speaker": "ryan",
+        "line": "How much longer can we search before the light's gone?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Maybe an hour. Two if we're lucky."
+      },
+      {
+        "speaker": "jade",
+        "line": "Will you show me how you read the water like that?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Come on. I'll show you."
+      }
+    ],
+    "timestamp": "2026-06-10T15:02:39.508690"
   }
 ]

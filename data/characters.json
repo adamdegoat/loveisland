@@ -6,32 +6,32 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 34,
-      "openness": 41,
+      "openness": 43,
       "ambition": 45,
-      "loneliness": 47,
-      "resilience": 85,
+      "loneliness": 43,
+      "resilience": 86,
       "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 70,
       "health": 100
     },
-    "mood": "determined",
+    "mood": "focused",
     "location": {
-      "waypoint": "beach_left",
+      "waypoint": "tide_pool",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 59,
+        "closeness": 60,
         "tension": 2,
         "attraction": 0
       },
       "jade": {
-        "closeness": 63,
+        "closeness": 65,
         "tension": 0,
-        "attraction": 14
+        "attraction": 15
       },
       "judy": {
         "closeness": 35,
@@ -39,14 +39,14 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 16,
+        "closeness": 17,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "ryan",
+      "with": "jade",
       "state": "talking"
     },
     "memories": [
@@ -63,11 +63,6 @@
       {
         "day": 4,
         "text": "She flinched like she expected to be rejected. I couldn't do that.",
-        "weight": 2
-      },
-      {
-        "day": 4,
-        "text": "Teasing her at the fire felt like something I didn't know I needed.",
         "weight": 2
       },
       {
@@ -119,6 +114,11 @@
         "day": 7,
         "text": "Jade trusts me to know things. I do know.",
         "weight": 2
+      },
+      {
+        "day": 7,
+        "text": "She asked me to teach her how to read the water. I said yes.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -139,31 +139,31 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 86,
+      "trust": 87,
       "openness": 100,
-      "ambition": 76,
+      "ambition": 77,
       "loneliness": 0,
-      "resilience": 46,
+      "resilience": 47,
       "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 70,
       "health": 100
     },
-    "mood": "focused",
+    "mood": "energized",
     "location": {
-      "waypoint": "beach_mid",
+      "waypoint": "tide_pool",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 59,
+        "closeness": 60,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 82,
+        "closeness": 83,
         "tension": 0,
         "attraction": 28
       },
@@ -243,6 +243,11 @@
         "day": 7,
         "text": "Marcus trusts Jade without hesitation—he's changing when she's near.",
         "weight": 2
+      },
+      {
+        "day": 7,
+        "text": "Marcus knows how to survive in ways we don't. Today I learned to trust that.",
+        "weight": 1
       }
     ],
     "appearance": {
@@ -264,31 +269,31 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 77,
-      "openness": 97,
+      "trust": 78,
+      "openness": 98,
       "ambition": 39,
       "loneliness": 0,
       "resilience": 64,
       "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 70,
       "health": 100
     },
-    "mood": "peaceful",
+    "mood": "alive",
     "location": {
-      "waypoint": "beach_right",
+      "waypoint": "tide_pool",
       "x": 40,
       "y": 50
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 63,
+        "closeness": 65,
         "tension": 0,
-        "attraction": 14
+        "attraction": 15
       },
       "ryan": {
-        "closeness": 82,
+        "closeness": 83,
         "tension": 0,
         "attraction": 23
       },
@@ -305,15 +310,10 @@
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
     "interaction": {
-      "with": "ryan",
+      "with": "marcus",
       "state": "talking"
     },
     "memories": [
-      {
-        "day": 3,
-        "text": "Ryan admitted he's burning out, and I could offer him rest and hope",
-        "weight": 2
-      },
       {
         "day": 4,
         "text": "I hurt him without meaning to. He showed me that truth, then hid.",
@@ -378,6 +378,11 @@
         "day": 7,
         "text": "Marcus smiled at me. Real smile. First time.",
         "weight": 2
+      },
+      {
+        "day": 7,
+        "text": "Marcus let me reach him at the tide pools. He's showing me his way.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -397,19 +402,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 68,
+      "trust": 69,
       "openness": 87,
       "ambition": 34,
-      "loneliness": 93,
-      "resilience": 68,
+      "loneliness": 90,
+      "resilience": 69,
       "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 70,
       "health": 100
     },
-    "mood": "uncertain",
+    "mood": "wistful",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "beach_right",
       "x": 50,
       "y": 82
     },
@@ -434,13 +439,16 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 23,
+        "closeness": 24,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": null,
+    "interaction": {
+      "with": "stray",
+      "state": "comforting"
+    },
     "memories": [
       {
         "day": 3,
@@ -501,6 +509,11 @@
         "day": 6,
         "text": "They all came. They all stayed. I actually belong here.",
         "weight": 3
+      },
+      {
+        "day": 7,
+        "text": "Watching them fish together—they found food and purpose. The pup and I were on the shore. I want to be with them.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -523,18 +536,18 @@
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
     "interaction": {
-      "with": "marcus",
-      "state": "sitting_together"
+      "with": "judy",
+      "state": "comforting"
     },
     "location": {
-      "waypoint": "beach_left",
+      "waypoint": "beach_right",
       "x": 20,
       "y": 88
     },
-    "mood": "content",
+    "mood": "protective",
     "relationships": {
       "marcus": {
-        "closeness": 38,
+        "closeness": 39,
         "tension": 0,
         "attraction": 0
       },
@@ -549,20 +562,20 @@
         "attraction": 0
       },
       "judy": {
-        "closeness": 45,
+        "closeness": 46,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 41,
+      "trust": 42,
       "openness": 37,
       "ambition": 0,
-      "loneliness": 33,
+      "loneliness": 30,
       "resilience": 81,
       "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 70,
       "health": 100
     },
     "shelter": "under the palms",
