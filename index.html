@@ -3947,6 +3947,7 @@ function seaView(x,y,w,h,win){
     <linearGradient id="svglint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="${N?'#cfe6ff':'#fff7d6'}" stop-opacity=".7"/></linearGradient>
     <radialGradient id="svvig" cx="50%" cy="46%" r="62%"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset=".74" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#0a1420" stop-opacity=".38"/></radialGradient></defs>`;
   s+=`<rect x="${x}" y="${y}" width="${w}" height="${F(horizon-y+2)}" fill="url(#svsky)"/>`;
+  s+='<g class="lkL" data-px=".06">';
   s+=`<circle cx="${F(sx)}" cy="${F(sy+8)}" r="${F(h*0.5)}" fill="url(#svbloom)"/>`;
   // celestial + sky life
   if(N){ s+=`<circle cx="${F(sx)}" cy="${F(sy)}" r="50" fill="url(#svsun)" opacity=".55"/><circle cx="${F(sx)}" cy="${F(sy)}" r="22" fill="#eef2ff"/><circle cx="${F(sx+9)}" cy="${F(sy-5)}" r="19" fill="${win.top}"/>`;
@@ -3957,9 +3958,11 @@ function seaView(x,y,w,h,win){
     s+=`<g class="iw-cloud" style="animation-duration:95s" fill="#fff" opacity=".5"><ellipse cx="${F(x+w*.22)}" cy="${F(y+h*.07)}" rx="34" ry="10"/><ellipse cx="${F(x+w*.3)}" cy="${F(y+h*.085)}" rx="22" ry="8"/></g>`;
     // a flock of gulls drifting across
     s+=`<g class="iw-bird" stroke="#5a6a72" stroke-width="1.8" fill="none" opacity=".5">${[[0,0],[24,8],[46,-4],[16,20],[40,16]].map(([dx,dy])=>`<path d="M ${F(x+w*.16+dx)} ${F(y+h*.2+dy)} q 6 -5 12 0 q 6 -5 12 0"/>`).join('')}</g>`; }
+  s+='</g><g class="lkL" data-px=".12">';
   // two distant islands for depth
   s+=`<path d="M ${x} ${F(horizon)} Q ${F(x+w*.1)} ${F(horizon-30)} ${F(x+w*.22)} ${F(horizon-6)} Q ${F(x+w*.3)} ${F(horizon-18)} ${F(x+w*.38)} ${F(horizon-2)} L ${F(x+w*.38)} ${F(horizon+5)} L ${x} ${F(horizon+5)} Z" fill="${N?'#22405c':'#86b29c'}" opacity=".5"/>`;
   s+=`<path d="M ${F(x+w*.68)} ${F(horizon)} Q ${F(x+w*.8)} ${F(horizon-26)} ${F(x+w*.9)} ${F(horizon-4)} Q ${F(x+w*.96)} ${F(horizon-14)} ${x+w} ${F(horizon-2)} L ${x+w} ${F(horizon+5)} L ${F(x+w*.68)} ${F(horizon+5)} Z" fill="${N?'#1c3850':'#6fa087'}" opacity=".45"/>`;
+  s+='</g><g class="lkL" data-px=".3">';
   // sea + depth banding
   s+=`<rect x="${x}" y="${F(horizon)}" width="${w}" height="${F(seaBot-horizon)}" fill="url(#svsea)"/>`;
   s+=`<rect x="${x}" y="${F(horizon)}" width="${w}" height="${F((seaBot-horizon)*0.32)}" fill="#00202e" opacity=".13"/>`;
@@ -3976,6 +3979,7 @@ function seaView(x,y,w,h,win){
   // shore break — foam washing up the sand, with bubbles
   s+=`<path class="iw-wave" d="M ${x-20} ${F(seaBot)} Q ${F(x+w*.26)} ${F(seaBot-10)} ${F(x+w*.5)} ${F(seaBot-2)} Q ${F(x+w*.74)} ${F(seaBot+8)} ${x+w+20} ${F(seaBot-1)} L ${x+w+20} ${F(seaBot+16)} L ${x-20} ${F(seaBot+16)} Z" fill="#ffffff" opacity=".44"/>`;
   if(N) s+=`<path class="iw-glint" d="M ${x} ${F(seaBot-2)} Q ${F(x+w*.5)} ${F(seaBot-8)} ${x+w} ${F(seaBot-2)}" stroke="#5fe6ff" stroke-width="5" fill="none" opacity=".5"/>`;
+  s+='</g><g class="lkL" data-px=".5">';
   // wet-sand sheen + the beach
   s+=`<rect x="${x}" y="${F(seaBot)}" width="${w}" height="${F(y+h-seaBot)}" fill="${win.sand}"/>`;
   s+=`<path d="M ${x} ${F(seaBot+3)} Q ${F(x+w*.3)} ${F(seaBot+13)} ${F(x+w*.6)} ${F(seaBot+5)} Q ${F(x+w*.85)} ${F(seaBot+13)} ${x+w} ${F(seaBot+6)} L ${x+w} ${F(seaBot+22)} L ${x} ${F(seaBot+22)} Z" fill="${N?'#3a4b6a':'#ffffff'}" opacity="${N?'.18':'.24'}"/>`;
@@ -3995,12 +3999,14 @@ function seaView(x,y,w,h,win){
     s+=`<g class="iw-smoke"><path d="M ${F(bfx)} ${F(bfy-32)} q -13 ${F(-h*.1)} 3 ${F(-h*.2)} q 14 ${F(-h*.1)} -2 ${F(-h*.28)}" stroke="${N?'#5c6b73':'#cdd6cf'}" stroke-width="6" fill="none" opacity=".32" stroke-linecap="round"/></g>`;
   } else { s+=`<g transform="translate(${F(bfx)} ${F(bfy)}) scale(.95)"><ellipse cx="0" cy="2" rx="20" ry="5" fill="#15110a"/><path d="M -22 3 L 22 -5" stroke="#241910" stroke-width="6" stroke-linecap="round"/><path d="M -22 -5 L 22 3" stroke="#2e2316" stroke-width="6" stroke-linecap="round"/><circle cx="-4" cy="0" r="1.6" fill="#6e2a16" opacity=".5"/><path class="iw-smoke" d="M 2 -3 q -7 -9 0 -18" stroke="#9aa6a0" stroke-width="2" fill="none" opacity=".26"/></g>`; }
   }
+  s+='</g><g class="lkL" data-px=".85">';
   // fuller palms leaning in to frame the shore (with coconuts)
   const palm=(px,base,psc,cls)=>{ const tx=px+10*psc, ty=base-h*.46; let g=`<g class="${cls}"><path d="M ${F(px)} ${F(base)} Q ${F(px+22*psc)} ${F(base-h*.22)} ${F(tx)} ${F(ty)}" stroke="${N?'#22332a':'#6b4a2a'}" stroke-width="${F(8*psc)}" fill="none"/>`;
     g+=`<circle cx="${F(tx-4)}" cy="${F(ty+4)}" r="${F(4*psc)}" fill="${N?'#1c3326':'#3a2c18'}"/><circle cx="${F(tx+4)}" cy="${F(ty+5)}" r="${F(4*psc)}" fill="${N?'#1c3326':'#3a2c18'}"/>`;
     for(let k=0;k<7;k++){ const a=(-156+k*36)*Math.PI/180; g+=`<path d="M ${F(tx)} ${F(ty)} q ${F(Math.cos(a)*38*psc)} ${F(Math.sin(a)*22*psc)} ${F(Math.cos(a)*66*psc)} ${F(Math.sin(a)*36*psc+6)}" stroke="${N?'#1c3326':'#2f6b3e'}" stroke-width="${F(7*psc)}" fill="none" stroke-linecap="round"/><path d="M ${F(tx)} ${F(ty)} q ${F(Math.cos(a)*30*psc)} ${F(Math.sin(a)*18*psc)} ${F(Math.cos(a)*54*psc)} ${F(Math.sin(a)*30*psc+5)}" stroke="${N?'#16291d':'#286235'}" stroke-width="${F(2*psc)}" fill="none" stroke-linecap="round"/>`; } return g+'</g>'; };
   s+=palm(x+w*0.04, y+h+6, 1.05, 'iw-sway')+palm(x+w*0.97, y+h+6, 0.95, 'iw-sway2')+palm(x+w*0.86, y+h+10, 0.7, 'iw-sway');
-  // cozy vignette
+  s+='</g>';
+  // cozy vignette (static overlay — sits above the parallax layers)
   s+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#svvig)"/>`;
   return s;
 }
@@ -4318,6 +4324,31 @@ function tentSVG(){
   </svg>`;
 }
 function renderInteriorOccupants(key){ const box=document.getElementById('interior-chars'); if(box) box.innerHTML=''; }
+// ── parallax driver for the interior view-out: layer groups (.lkL, data-px=depth) drift at
+//    different rates from a slow ambient breath + (desktop) the pointer, for a 3D-window feel ──
+let _liRaf=null, _liOff=null;
+function startInteriorParallax(){
+  stopInteriorParallax();
+  const scene=document.getElementById('interior-scene'); if(!scene) return;
+  const layers=[...scene.querySelectorAll('.lkL')]; if(!layers.length) return;
+  let mx=0, my=0;
+  const onMove=(e)=>{ const r=scene.getBoundingClientRect(); if(!r.width) return;
+    mx=((e.clientX-r.left)/r.width-0.5)*2; my=((e.clientY-r.top)/r.height-0.5)*2; };
+  scene.addEventListener('pointermove', onMove);
+  _liOff=()=>scene.removeEventListener('pointermove', onMove);
+  let t0=null;
+  const tick=(ts)=>{ if(t0==null) t0=ts; const t=(ts-t0)/1000; const drift=Math.sin(t*0.45)*0.4, AX=13, AY=5;
+    for(const g of layers){ const px=parseFloat(g.getAttribute('data-px'))||0;
+      g.setAttribute('transform',`translate(${((mx+drift)*AX*px).toFixed(2)} ${(my*AY*px).toFixed(2)})`); }
+    _liRaf=requestAnimationFrame(tick); };
+  _liRaf=requestAnimationFrame(tick);
+}
+function stopInteriorParallax(){
+  if(_liRaf){ cancelAnimationFrame(_liRaf); _liRaf=null; }
+  if(_liOff){ _liOff(); _liOff=null; }
+  const scene=document.getElementById('interior-scene');
+  if(scene) scene.querySelectorAll('.lkL').forEach(g=>g.removeAttribute('transform'));
+}
 function enterInterior(key){
   const I=INTERIORS[key]; if(!I) return;
   const scene=document.getElementById('interior-scene');
@@ -4338,8 +4369,9 @@ function enterInterior(key){
   else who='no one home right now';
   document.getElementById('interior-cap').textContent=`${I.lead||('A peek inside the '+I.name)} — ${I.look}. ${who}.`;
   document.getElementById('interior').classList.add('show');
+  requestAnimationFrame(startInteriorParallax);
 }
-function exitInterior(){ document.getElementById('interior').classList.remove('show'); }
+function exitInterior(){ stopInteriorParallax(); document.getElementById('interior').classList.remove('show'); }
 function renderInteriorHotspots(){
   const layer=document.getElementById('hotspots'); if(!layer) return; layer.innerHTML='';
   const H=stageH();
