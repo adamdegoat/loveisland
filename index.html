@@ -4130,26 +4130,26 @@ function _recline(cid, cx, cy, o){ o=o||{}; const a=_appr(cid);
   const skin=a.skin||'#d9a877', shirt=a.outfit||'#5b8fb0', pant=a.pants||'#3a4a55', hairc=(a.hair&&a.hair.color)||'#241a12';
   const sc=o.sc||1, lean=o.lean||0, glasses=(a.accessory==='sunglasses'), smitten=o.smitten, beard=a.beard;
   const buzz=(a.hair&&/buzz|short|crop|bald/.test((a.hair.style||'')));
-  return `<g transform="translate(${cx} ${cy}) rotate(${(-7+lean).toFixed(1)}) scale(${sc})">
-    <ellipse cx="8" cy="22" rx="76" ry="13" fill="#000" opacity=".16"/>
-    <!-- legs along the sling, ankles crossed -->
-    <path d="M -8 6 Q 56 -2 102 6 Q 108 14 102 20 Q 56 16 -8 16 Z" fill="${pant}"/>
-    <ellipse cx="102" cy="13" rx="11" ry="8" fill="${skin}"/>
-    <path d="M 94 6 l 16 12 M 94 18 l 16 -12" stroke="#000" stroke-width="1.4" opacity=".12"/>
-    <!-- seat / hips -->
-    <path d="M -30 5 Q -34 -13 -8 -15 Q 16 -15 14 7 Q -6 15 -30 5 Z" fill="${pant}"/>
-    <!-- torso leaned back -->
-    <g class="iw-breathe"><path d="M -30 -1 Q -45 -49 -14 -55 Q 13 -51 8 -7 Z" fill="${shirt}"/>
-      <path d="M -22 -50 Q -14 -45 -6 -50 L -9 -36 Q -14 -39 -19 -36 Z" fill="#000" opacity=".05"/></g>
-    <!-- near arm draped over the edge -->
-    <path d="M -8 -38 Q 20 -28 31 -2" stroke="${shirt}" stroke-width="11" fill="none" stroke-linecap="round"/>
-    <ellipse cx="32" cy="0" rx="7" ry="6" fill="${skin}"/>
-    <!-- far arm tucked behind the head -->
-    <path d="M -26 -42 Q -47 -54 -41 -70" stroke="${shirt}" stroke-width="10" fill="none" stroke-linecap="round"/>
-    <!-- neck + head resting back -->
-    <g transform="translate(-30 -56) rotate(-19)">
-      <rect x="-5" y="-2" width="11" height="12" fill="${skin}"/>
-      <circle cx="0" cy="-14" r="17" fill="${skin}"/>
+  return `<g transform="translate(${cx} ${cy}) rotate(${(-5+lean).toFixed(1)}) scale(${sc})">
+    <ellipse cx="6" cy="24" rx="88" ry="12" fill="#000" opacity=".15"/>
+    <!-- legs: thighs rise to soft bent knees, shins down to crossed ankles (follows the rising sling) -->
+    <path d="M -2 8 Q 38 -8 60 -10 Q 84 -12 100 4" stroke="${pant}" stroke-width="27" fill="none" stroke-linecap="round"/>
+    <path d="M 56 -10 Q 80 -8 100 4" stroke="#000" stroke-width="27" fill="none" stroke-linecap="round" opacity=".06"/>
+    <ellipse cx="58" cy="-9" rx="15" ry="10" fill="#fff" opacity=".05"/>
+    <ellipse cx="100" cy="6" rx="11" ry="8" fill="${skin}"/>
+    <path d="M 92 1 l 16 10 M 92 11 l 16 -10" stroke="#000" stroke-width="1.4" opacity=".14"/>
+    <!-- seat / hips (lowest point of the sling) -->
+    <ellipse cx="-6" cy="6" rx="27" ry="17" fill="${pant}"/>
+    <!-- torso reclined back into the sling (a shallow lean, not sitting up) -->
+    <g class="iw-breathe"><path d="M 10 4 Q -12 -6 -36 -14 Q -60 -22 -58 -3 Q -54 13 -24 15 Q 8 17 10 4 Z" fill="${shirt}"/>
+      <ellipse cx="-32" cy="-4" rx="22" ry="9" fill="#fff" opacity=".05"/></g>
+    <!-- near arm relaxed, hand resting on the belly -->
+    <path d="M -44 -10 Q -30 2 -12 0" stroke="${shirt}" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-12" cy="1" rx="7" ry="6" fill="${skin}"/>
+    <!-- neck + head resting back on the raised end -->
+    <g transform="translate(-54 -16) rotate(-31)">
+      <rect x="-5" y="-1" width="11" height="11" fill="${skin}"/>
+      <circle cx="0" cy="-15" r="17" fill="${skin}"/>
       ${beard?`<path d="M -14 -12 Q 0 4 14 -12 Q 11 0 0 0 Q -11 0 -14 -12 Z" fill="${hairc}" opacity=".5"/>`:''}
       ${smitten?`<ellipse cx="-10" cy="-9" rx="4" ry="2.6" fill="#ff9bb0" opacity=".6"/><ellipse cx="10" cy="-9" rx="4" ry="2.6" fill="#ff9bb0" opacity=".6"/>`:''}
       ${buzz?`<path d="M -17 -18 Q 0 -33 17 -18 L 15 -25 Q 0 -30 -15 -25 Z" fill="${hairc}"/>`
