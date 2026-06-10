@@ -3756,6 +3756,11 @@ loadVote();
   .hotspot.vacant .hs-badge .em{opacity:.55;filter:grayscale(.5)}
   .hotspot .hs-tap{position:absolute;left:50%;top:-18px;transform:translateX(-50%);white-space:nowrap;font:800 8px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.55);opacity:0;transition:opacity .2s}
   .hotspot:hover .hs-tap{opacity:1}
+  .hotspot .hs-ripple{position:absolute;left:50%;top:50%;width:36px;height:36px;transform:translate(-50%,-50%);border-radius:50%;border:2px solid rgba(255,205,130,.85);opacity:0;pointer-events:none;animation:hsRipple 2.4s ease-out infinite}
+  @keyframes hsRipple{0%{opacity:.85;transform:translate(-50%,-50%) scale(.4)}65%{opacity:0;transform:translate(-50%,-50%) scale(1.75)}100%{opacity:0}}
+  .hotspot .hs-badge{animation:hsBadgePulse 2.4s ease-in-out infinite}
+  @keyframes hsBadgePulse{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.06)}}
+  #int-coach{position:fixed;left:50%;top:232px;transform:translateX(-50%);z-index:96;background:rgba(20,14,26,.9);color:#ffe6f0;font:700 12.5px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.2px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,180,205,.5);box-shadow:0 6px 20px rgba(0,0,0,.5);opacity:0;transition:opacity .5s;pointer-events:none}
   @media(max-width:640px){.hotspot .hs-badge{font-size:7.5px;padding:2px 6px;top:-15px;gap:2px;letter-spacing:0}.hotspot .hs-badge .em{font-size:8px}.hotspot .hs-glow{width:54px;height:40px}}
   #interior{position:fixed;inset:0;z-index:100000;background:#0a0f12;overflow:hidden;opacity:0;visibility:hidden;transform:scale(1.05);pointer-events:none;transition:opacity .42s ease,transform .55s cubic-bezier(.22,.8,.3,1),visibility .42s}
   #interior.show{opacity:1;visibility:visible;transform:scale(1);pointer-events:auto}
@@ -3813,7 +3818,7 @@ loadVote();
 })();
 
 const INTERIORS = {
-  house: { shelter:'house', wps:['house_door','house_porch','house_garden'], hx:560, hy:402, name:"beach house", look:"the shore at the door", icon:"🏝️", pov:"Peeking inside the house" },
+  house: { shelter:'house', wps:['house_door','house_porch','house_garden'], hx:506, hy:344, name:"beach house", look:"the shore at the door", icon:"🏝️", pov:"Peeking inside the house" },
 };
 function _isDog(cid){ return (S.chars[cid]&&S.chars[cid].species)==='dog'; }
 function _appr(cid){ return (S.chars[cid]&&S.chars[cid].appearance)||{}; }
@@ -3849,48 +3854,68 @@ function seaSky(){
 // ── the live beach + ocean seen from the house (per-cycle, waves, sun-glint, beach bonfire) ──
 function seaView(x,y,w,h,win){
   const F=n=>n.toFixed(1), N=win.night;
-  const horizon=y+h*0.42, sx=x+w*(N?0.7:0.3), sy=y+h*0.18;
+  const horizon=y+h*0.42, sx=x+w*(N?0.68:0.3), sy=y+h*0.17, seaBot=y+h*0.72;
   let s=`<defs>
-    <linearGradient id="svsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${win.top}"/><stop offset=".7" stop-color="${win.top}"/><stop offset="1" stop-color="${win.bot}"/></linearGradient>
+    <linearGradient id="svsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${win.top}"/><stop offset=".45" stop-color="${win.top}"/><stop offset="1" stop-color="${win.bot}"/></linearGradient>
     <linearGradient id="svsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${win.sea}"/><stop offset="1" stop-color="${win.sea2}"/></linearGradient>
     <radialGradient id="svsun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fffae6"/><stop offset=".4" stop-color="#fff1b8" stop-opacity=".85"/><stop offset="1" stop-color="#fff1b8" stop-opacity="0"/></radialGradient>
-    <linearGradient id="svglint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".0"/><stop offset="1" stop-color="${N?'#cfe6ff':'#fff7d6'}" stop-opacity=".7"/></linearGradient></defs>`;
-  s+=`<rect x="${x}" y="${y}" width="${w}" height="${F(horizon-y)}" fill="url(#svsky)"/>`;
-  // celestial
-  if(N){ s+=`<circle cx="${F(sx)}" cy="${F(sy)}" r="48" fill="url(#svsun)" opacity=".5"/><circle cx="${F(sx)}" cy="${F(sy)}" r="22" fill="#eef2ff"/><circle cx="${F(sx+9)}" cy="${F(sy-5)}" r="19" fill="${win.top}"/>`;
-    for(let i=0;i<24;i++) s+=`<circle cx="${F(x+(i*131+30)%w)}" cy="${F(y+(i*61)%(horizon-y-10))}" r="${i%3?'.8':'1.4'}" fill="#fff" opacity="${(.35+(i%4)*.15).toFixed(2)}"/>`;
-  } else { s+=`<circle cx="${F(sx)}" cy="${F(sy)}" r="78" fill="url(#svsun)"/><circle cx="${F(sx)}" cy="${F(sy)}" r="26" fill="#fffdf0"/>`;
-    s+=`<g class="iw-cloud" fill="#fff" opacity=".7"><ellipse cx="${F(x+w*.66)}" cy="${F(y+h*.12)}" rx="46" ry="15"/><ellipse cx="${F(x+w*.58)}" cy="${F(y+h*.14)}" rx="32" ry="12"/></g>`;
-    s+=`<g class="iw-bird" fill="none" stroke="#5a6a72" stroke-width="2" opacity=".5"><path d="M ${F(x+w*.2)} ${F(y+h*.18)} q 7 -6 14 0 q 7 -6 14 0"/></g>`; }
-  // distant headland
-  s+=`<path d="M ${x} ${F(horizon)} Q ${F(x+w*.18)} ${F(horizon-22)} ${F(x+w*.34)} ${F(horizon-4)} L ${F(x+w*.34)} ${F(horizon+6)} L ${x} ${F(horizon+6)} Z" fill="${N?'#22405c':'#7fae9a'}" opacity=".6"/>`;
-  // sea (deeper, richer near the horizon)
-  const seaBot=y+h*0.74;
+    <radialGradient id="svbloom" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="${N?'#9fb6d6':'#fff6da'}" stop-opacity="${N?'.26':'.5'}"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="svglint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="${N?'#cfe6ff':'#fff7d6'}" stop-opacity=".7"/></linearGradient>
+    <radialGradient id="svvig" cx="50%" cy="46%" r="62%"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset=".74" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#0a1420" stop-opacity=".38"/></radialGradient></defs>`;
+  s+=`<rect x="${x}" y="${y}" width="${w}" height="${F(horizon-y+2)}" fill="url(#svsky)"/>`;
+  s+=`<circle cx="${F(sx)}" cy="${F(sy+8)}" r="${F(h*0.5)}" fill="url(#svbloom)"/>`;
+  // celestial + sky life
+  if(N){ s+=`<circle cx="${F(sx)}" cy="${F(sy)}" r="50" fill="url(#svsun)" opacity=".55"/><circle cx="${F(sx)}" cy="${F(sy)}" r="22" fill="#eef2ff"/><circle cx="${F(sx+9)}" cy="${F(sy-5)}" r="19" fill="${win.top}"/>`;
+    for(let i=0;i<30;i++) s+=`<circle cx="${F(x+(i*131+30)%w)}" cy="${F(y+(i*61)%(horizon-y-8))}" r="${i%3?'.8':'1.4'}" fill="#fff" opacity="${(.35+(i%4)*.15).toFixed(2)}"/>`;
+    s+=`<path d="M ${F(sx-30)} ${F(sy+18)} q 6 4 12 0" stroke="#fff" stroke-width="1" opacity=".25" fill="none"/>`;
+  } else { s+=`<circle cx="${F(sx)}" cy="${F(sy)}" r="80" fill="url(#svsun)"/><circle cx="${F(sx)}" cy="${F(sy)}" r="27" fill="#fffdf0"/>`;
+    s+=`<g class="iw-cloud" fill="#fff" opacity=".78"><ellipse cx="${F(x+w*.64)}" cy="${F(y+h*.11)}" rx="50" ry="16"/><ellipse cx="${F(x+w*.55)}" cy="${F(y+h*.135)}" rx="34" ry="12"/><ellipse cx="${F(x+w*.72)}" cy="${F(y+h*.13)}" rx="28" ry="11"/></g>`;
+    s+=`<g class="iw-cloud" style="animation-duration:95s" fill="#fff" opacity=".5"><ellipse cx="${F(x+w*.22)}" cy="${F(y+h*.07)}" rx="34" ry="10"/><ellipse cx="${F(x+w*.3)}" cy="${F(y+h*.085)}" rx="22" ry="8"/></g>`;
+    // a flock of gulls drifting across
+    s+=`<g class="iw-bird" stroke="#5a6a72" stroke-width="1.8" fill="none" opacity=".5">${[[0,0],[24,8],[46,-4],[16,20],[40,16]].map(([dx,dy])=>`<path d="M ${F(x+w*.16+dx)} ${F(y+h*.2+dy)} q 6 -5 12 0 q 6 -5 12 0"/>`).join('')}</g>`; }
+  // two distant islands for depth
+  s+=`<path d="M ${x} ${F(horizon)} Q ${F(x+w*.1)} ${F(horizon-30)} ${F(x+w*.22)} ${F(horizon-6)} Q ${F(x+w*.3)} ${F(horizon-18)} ${F(x+w*.38)} ${F(horizon-2)} L ${F(x+w*.38)} ${F(horizon+5)} L ${x} ${F(horizon+5)} Z" fill="${N?'#22405c':'#86b29c'}" opacity=".5"/>`;
+  s+=`<path d="M ${F(x+w*.68)} ${F(horizon)} Q ${F(x+w*.8)} ${F(horizon-26)} ${F(x+w*.9)} ${F(horizon-4)} Q ${F(x+w*.96)} ${F(horizon-14)} ${x+w} ${F(horizon-2)} L ${x+w} ${F(horizon+5)} L ${F(x+w*.68)} ${F(horizon+5)} Z" fill="${N?'#1c3850':'#6fa087'}" opacity=".45"/>`;
+  // sea + depth banding
   s+=`<rect x="${x}" y="${F(horizon)}" width="${w}" height="${F(seaBot-horizon)}" fill="url(#svsea)"/>`;
-  s+=`<rect x="${x}" y="${F(horizon)}" width="${w}" height="${F((seaBot-horizon)*0.34)}" fill="#00202e" opacity=".12"/>`;
-  // a little sailboat on the horizon (day)
-  if(!N){ const blx=x+w*0.7; s+=`<g opacity=".72"><path d="M ${F(blx)} ${F(horizon+5)} l 14 0 l -3 9 l -8 0 Z" fill="#39474e"/><path d="M ${F(blx+5)} ${F(horizon+5)} l 0 -22 l 13 18 Z" fill="#f4f0e4"/></g>`; }
-  // sun/moon reflection glint trail on the water
-  s+=`<rect class="iw-glint" x="${F(sx-15)}" y="${F(horizon)}" width="30" height="${F(seaBot-horizon)}" fill="url(#svglint)" opacity=".5"/>`;
-  // broken foam crests rolling toward shore (animated, staggered)
-  for(let i=0;i<3;i++){ const wy=horizon+(seaBot-horizon)*(0.34+i*0.22);
-    s+=`<g class="iw-wave" style="animation-delay:${(i*0.7).toFixed(1)}s" opacity="${(.5-i*0.07).toFixed(2)}">${[...Array(5)].map((_,k)=>{const c2=x+w*(0.05+k*0.2+(i%2?0.08:0)); return `<path d="M ${F(c2)} ${F(wy)} q ${F(w*.04)} -4 ${F(w*.085)} 0" stroke="${N?'#a9d2ff':'#f2fbff'}" stroke-width="${(3-i*0.6).toFixed(1)}" fill="none" stroke-linecap="round"/>`;}).join('')}</g>`; }
-  // the shore break — white foam where the waves wash up the sand
-  s+=`<path class="iw-wave" d="M ${x-20} ${F(seaBot)} Q ${F(x+w*.26)} ${F(seaBot-9)} ${F(x+w*.5)} ${F(seaBot-1)} Q ${F(x+w*.74)} ${F(seaBot+8)} ${x+w+20} ${F(seaBot)} L ${x+w+20} ${F(seaBot+15)} L ${x-20} ${F(seaBot+15)} Z" fill="#ffffff" opacity=".42"/>`;
-  if(N) s+=`<path class="iw-glint" d="M ${x} ${F(seaBot-1)} Q ${F(x+w*.5)} ${F(seaBot-7)} ${x+w} ${F(seaBot-1)}" stroke="#5fe6ff" stroke-width="4" fill="none" opacity=".45"/>`;
-  // wet-sand sheen + beach
+  s+=`<rect x="${x}" y="${F(horizon)}" width="${w}" height="${F((seaBot-horizon)*0.32)}" fill="#00202e" opacity=".13"/>`;
+  s+=`<rect x="${x}" y="${F(horizon+(seaBot-horizon)*0.5)}" width="${w}" height="${F((seaBot-horizon)*0.2)}" fill="#00303f" opacity=".06"/>`;
+  // sailboat (day) + a bobbing buoy
+  if(!N){ const blx=x+w*0.72; s+=`<g opacity=".72"><path d="M ${F(blx)} ${F(horizon+5)} l 14 0 l -3 9 l -8 0 Z" fill="#39474e"/><path d="M ${F(blx+5)} ${F(horizon+5)} l 0 -22 l 13 18 Z" fill="#f4f0e4"/></g>`;
+    s+=`<g class="iw-wave" style="animation-duration:4s"><circle cx="${F(x+w*.2)}" cy="${F(horizon+(seaBot-horizon)*0.28)}" r="4" fill="#d94f5c"/><line x1="${F(x+w*.2)}" y1="${F(horizon+(seaBot-horizon)*0.28-4)}" x2="${F(x+w*.2)}" y2="${F(horizon+(seaBot-horizon)*0.28-10)}" stroke="#d94f5c" stroke-width="1.5"/></g>`; }
+  // sun/moon glint trail (shimmering, broken)
+  s+=`<rect class="iw-glint" x="${F(sx-16)}" y="${F(horizon)}" width="32" height="${F(seaBot-horizon)}" fill="url(#svglint)" opacity=".5"/>`;
+  s+=`<g class="iw-glint" style="animation-delay:1.2s" stroke="${N?'#cfe6ff':'#fff7d6'}" stroke-width="2" opacity=".5">${[...Array(5)].map((_,k)=>`<line x1="${F(sx-9)}" y1="${F(horizon+10+k*(seaBot-horizon-10)/5)}" x2="${F(sx+9)}" y2="${F(horizon+10+k*(seaBot-horizon-10)/5)}"/>`).join('')}</g>`;
+  // rows of broken foam crests rolling shoreward
+  for(let i=0;i<4;i++){ const wy=horizon+(seaBot-horizon)*(0.28+i*0.18);
+    s+=`<g class="iw-wave" style="animation-delay:${(i*0.6).toFixed(1)}s" opacity="${(.5-i*0.06).toFixed(2)}">${[...Array(6)].map((_,k)=>{const c2=x+w*(0.02+k*0.17+(i%2?0.07:0)); return `<path d="M ${F(c2)} ${F(wy)} q ${F(w*.035)} -4 ${F(w*.075)} 0" stroke="${N?'#a9d2ff':'#f2fbff'}" stroke-width="${(3-i*0.5).toFixed(1)}" fill="none" stroke-linecap="round"/>`;}).join('')}</g>`; }
+  // shore break — foam washing up the sand, with bubbles
+  s+=`<path class="iw-wave" d="M ${x-20} ${F(seaBot)} Q ${F(x+w*.26)} ${F(seaBot-10)} ${F(x+w*.5)} ${F(seaBot-2)} Q ${F(x+w*.74)} ${F(seaBot+8)} ${x+w+20} ${F(seaBot-1)} L ${x+w+20} ${F(seaBot+16)} L ${x-20} ${F(seaBot+16)} Z" fill="#ffffff" opacity=".44"/>`;
+  if(N) s+=`<path class="iw-glint" d="M ${x} ${F(seaBot-2)} Q ${F(x+w*.5)} ${F(seaBot-8)} ${x+w} ${F(seaBot-2)}" stroke="#5fe6ff" stroke-width="5" fill="none" opacity=".5"/>`;
+  // wet-sand sheen + the beach
   s+=`<rect x="${x}" y="${F(seaBot)}" width="${w}" height="${F(y+h-seaBot)}" fill="${win.sand}"/>`;
-  s+=`<path d="M ${x} ${F(seaBot+2)} Q ${F(x+w*.3)} ${F(seaBot+12)} ${F(x+w*.6)} ${F(seaBot+4)} Q ${F(x+w*.85)} ${F(seaBot+12)} ${x+w} ${F(seaBot+5)} L ${x+w} ${F(seaBot+18)} L ${x} ${F(seaBot+18)} Z" fill="#ffffff" opacity=".22"/>`;
-  // the camp/beach bonfire on the sand — mirrors S.world.fire.lit
+  s+=`<path d="M ${x} ${F(seaBot+3)} Q ${F(x+w*.3)} ${F(seaBot+13)} ${F(x+w*.6)} ${F(seaBot+5)} Q ${F(x+w*.85)} ${F(seaBot+13)} ${x+w} ${F(seaBot+6)} L ${x+w} ${F(seaBot+22)} L ${x} ${F(seaBot+22)} Z" fill="${N?'#3a4b6a':'#ffffff'}" opacity="${N?'.18':'.24'}"/>`;
+  // beach litter: shells, a starfish, pebbles, seaweed, grass tufts, a little crab
+  const sc=N?'#7a7e8c':'#f0e0c8', sc2=N?'#6b6f7e':'#e6cba8';
+  s+=`<g opacity=".9"><ellipse cx="${F(x+w*.2)}" cy="${F(y+h*.82)}" rx="7" ry="5" fill="${sc}"/><path d="M ${F(x+w*.2)} ${F(y+h*.82-4)} L ${F(x+w*.2)} ${F(y+h*.82+3)}" stroke="${sc2}" stroke-width="1"/>
+    <path d="M ${F(x+w*.78)} ${F(y+h*.86)} l 3 6 l 7 0 l -5 4 l 2 7 l -7 -4 l -7 4 l 2 -7 l -5 -4 l 7 0 Z" fill="${N?'#8a6f6a':'#e8927a'}" opacity=".9"/>
+    <circle cx="${F(x+w*.36)}" cy="${F(y+h*.88)}" r="3" fill="${sc2}"/><circle cx="${F(x+w*.4)}" cy="${F(y+h*.9)}" r="2.4" fill="${sc}"/><circle cx="${F(x+w*.62)}" cy="${F(y+h*.83)}" r="2.6" fill="${sc2}"/>
+    <path d="M ${F(x+w*.5)} ${F(y+h*.84)} q 6 -8 2 -14 q 8 6 4 14" stroke="${N?'#2f5a40':'#3f7a4a'}" stroke-width="2" fill="none" opacity=".6"/></g>`;
+  s+=`<g class="iw-wave" style="animation-duration:5s"><ellipse cx="${F(x+w*.3)}" cy="${F(y+h*.92)}" rx="6" ry="4" fill="${N?'#5a4a44':'#c66a5a'}"/><path d="M ${F(x+w*.3-5)} ${F(y+h*.92-3)} l -4 -3 M ${F(x+w*.3+5)} ${F(y+h*.92-3)} l 4 -3" stroke="${N?'#5a4a44':'#c66a5a'}" stroke-width="1.6"/></g>`;
+  // ── THE main camp bonfire on the sand (stone ring), mirrors S.world.fire.lit ──
   const bfx=x+w*0.5, bfy=y+h*0.9;
-  if(win.fireLit){ s+=`<ellipse cx="${F(bfx)}" cy="${F(bfy)}" rx="${F(w*0.13)}" ry="${F(h*0.05)}" fill="#ff7a18" opacity="${N?'.5':'.22'}"/>`;
-    s+=`<g transform="translate(${F(bfx)} ${F(bfy)}) scale(.9)"><path d="M -22 5 L 22 -3" stroke="#3a2a18" stroke-width="6" stroke-linecap="round"/><path d="M -22 -3 L 22 5" stroke="#4a3520" stroke-width="6" stroke-linecap="round"/><path class="iw-fire" d="M 0 -3 C -12 -16 -8 -28 0 -38 C 8 -28 12 -18 0 -3 Z" fill="#ff8a2c"/><path class="iw-fire" style="animation-delay:.12s" d="M 0 -5 C -6 -15 -4 -24 0 -31 C 5 -23 8 -15 0 -5 Z" fill="#ffd24a"/></g>`;
-    s+=`<g class="iw-smoke"><path d="M ${F(bfx)} ${F(bfy-30)} q -12 ${F(-h*.1)} 3 ${F(-h*.2)}" stroke="${N?'#5c6b73':'#ccd6cf'}" stroke-width="6" fill="none" opacity=".3" stroke-linecap="round"/></g>`;
-  } else { s+=`<g transform="translate(${F(bfx)} ${F(bfy)}) scale(.9)"><ellipse cx="0" cy="3" rx="20" ry="5" fill="#15110a"/><path d="M -22 5 L 22 -3" stroke="#241910" stroke-width="6" stroke-linecap="round"/><path d="M -22 -3 L 22 5" stroke="#2e2316" stroke-width="6" stroke-linecap="round"/><path class="iw-smoke" d="M 2 -3 q -7 -9 0 -18" stroke="#9aa6a0" stroke-width="2" fill="none" opacity=".28"/></g>`; }
-  // a couple of palms leaning in to frame the shore
-  const palm=(px,base,sc,cls)=>{ let g=`<g class="${cls}"><path d="M ${F(px)} ${F(base)} Q ${F(px+18*sc)} ${F(base-h*.2)} ${F(px+8*sc)} ${F(base-h*.42)}" stroke="${N?'#22332a':'#6b4a2a'}" stroke-width="${F(7*sc)}" fill="none"/>`;
-    const tx=px+8*sc, ty=base-h*.42; for(let k=0;k<6;k++){ const a=(-150+k*40)*Math.PI/180; g+=`<path d="M ${F(tx)} ${F(ty)} q ${F(Math.cos(a)*34*sc)} ${F(Math.sin(a)*20*sc)} ${F(Math.cos(a)*60*sc)} ${F(Math.sin(a)*34*sc+6)}" stroke="${N?'#1c3326':'#2f6b3e'}" stroke-width="${F(7*sc)}" fill="none" stroke-linecap="round"/>`; } return g+'</g>'; };
-  s+=palm(x+w*0.05, y+h, 1, 'iw-sway')+palm(x+w*0.96, y+h, 0.92, 'iw-sway2');
+  s+=`<g fill="${N?'#3a4250':'#cbb9a0'}">${[[-26,4],[-14,9],[0,11],[14,9],[26,4]].map(([dx,dy])=>`<ellipse cx="${F(bfx+dx)}" cy="${F(bfy+dy)}" rx="7" ry="5"/>`).join('')}</g>`;
+  if(win.fireLit){ s+=`<ellipse cx="${F(bfx)}" cy="${F(bfy)}" rx="${F(w*0.15)}" ry="${F(h*0.06)}" fill="#ff7a18" opacity="${N?'.5':'.2'}"/>`;
+    s+=`<g transform="translate(${F(bfx)} ${F(bfy)}) scale(.95)"><path d="M -22 3 L 22 -5" stroke="#3a2a18" stroke-width="6" stroke-linecap="round"/><path d="M -22 -5 L 22 3" stroke="#4a3520" stroke-width="6" stroke-linecap="round"/><path class="iw-fire" d="M 0 -3 C -13 -17 -8 -30 0 -40 C 8 -30 13 -19 0 -3 Z" fill="#ff8a2c"/><path class="iw-fire" style="animation-delay:.12s" d="M 0 -5 C -6 -16 -4 -26 0 -33 C 5 -25 8 -16 0 -5 Z" fill="#ffd24a"/><circle class="iw-ember" cx="-5" cy="-26" r="1.4" fill="#ffd24a"/><circle class="iw-ember" style="animation-delay:1s" cx="6" cy="-22" r="1.2" fill="#ffb04a"/></g>`;
+    s+=`<g class="iw-smoke"><path d="M ${F(bfx)} ${F(bfy-32)} q -13 ${F(-h*.1)} 3 ${F(-h*.2)} q 14 ${F(-h*.1)} -2 ${F(-h*.28)}" stroke="${N?'#5c6b73':'#cdd6cf'}" stroke-width="6" fill="none" opacity=".32" stroke-linecap="round"/></g>`;
+  } else { s+=`<g transform="translate(${F(bfx)} ${F(bfy)}) scale(.95)"><ellipse cx="0" cy="2" rx="20" ry="5" fill="#15110a"/><path d="M -22 3 L 22 -5" stroke="#241910" stroke-width="6" stroke-linecap="round"/><path d="M -22 -5 L 22 3" stroke="#2e2316" stroke-width="6" stroke-linecap="round"/><circle cx="-4" cy="0" r="1.6" fill="#6e2a16" opacity=".5"/><path class="iw-smoke" d="M 2 -3 q -7 -9 0 -18" stroke="#9aa6a0" stroke-width="2" fill="none" opacity=".26"/></g>`; }
+  // fuller palms leaning in to frame the shore (with coconuts)
+  const palm=(px,base,psc,cls)=>{ const tx=px+10*psc, ty=base-h*.46; let g=`<g class="${cls}"><path d="M ${F(px)} ${F(base)} Q ${F(px+22*psc)} ${F(base-h*.22)} ${F(tx)} ${F(ty)}" stroke="${N?'#22332a':'#6b4a2a'}" stroke-width="${F(8*psc)}" fill="none"/>`;
+    g+=`<circle cx="${F(tx-4)}" cy="${F(ty+4)}" r="${F(4*psc)}" fill="${N?'#1c3326':'#3a2c18'}"/><circle cx="${F(tx+4)}" cy="${F(ty+5)}" r="${F(4*psc)}" fill="${N?'#1c3326':'#3a2c18'}"/>`;
+    for(let k=0;k<7;k++){ const a=(-156+k*36)*Math.PI/180; g+=`<path d="M ${F(tx)} ${F(ty)} q ${F(Math.cos(a)*38*psc)} ${F(Math.sin(a)*22*psc)} ${F(Math.cos(a)*66*psc)} ${F(Math.sin(a)*36*psc+6)}" stroke="${N?'#1c3326':'#2f6b3e'}" stroke-width="${F(7*psc)}" fill="none" stroke-linecap="round"/><path d="M ${F(tx)} ${F(ty)} q ${F(Math.cos(a)*30*psc)} ${F(Math.sin(a)*18*psc)} ${F(Math.cos(a)*54*psc)} ${F(Math.sin(a)*30*psc+5)}" stroke="${N?'#16291d':'#286235'}" stroke-width="${F(2*psc)}" fill="none" stroke-linecap="round"/>`; } return g+'</g>'; };
+  s+=palm(x+w*0.04, y+h+6, 1.05, 'iw-sway')+palm(x+w*0.97, y+h+6, 0.95, 'iw-sway2')+palm(x+w*0.86, y+h+10, 0.7, 'iw-sway');
+  // cozy vignette
+  s+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#svvig)"/>`;
   return s;
 }
 function F2(n){ return (Math.round(n*10)/10); }
@@ -3978,10 +4003,16 @@ function houseSVG(){
   <g transform="translate(452 394)"><path d="M 0 -9 L 3 -2 L 10 -2 L 4 2 L 6 9 L 0 5 L -6 9 L -4 2 L -10 -2 L -3 -2 Z" fill="#e8927a" opacity=".92"/></g>
   <g transform="translate(648 393)"><path d="M -8 2 Q -8 -8 0 -8 Q 8 -8 8 2 Z" fill="#f0d9c0"/><g stroke="#d3b298" stroke-width="1" opacity=".5"><line x1="-4" y1="-4" x2="-4" y2="2"/><line x1="0" y1="-6" x2="0" y2="2"/><line x1="4" y1="-4" x2="4" y2="2"/></g></g>
   <g transform="translate(894 442)"><path d="M -15 0 L 15 0 L 11 34 L -11 34 Z" fill="#8a5e34"/><path d="M -15 0 L 15 0 L 13 5 L -13 5 Z" fill="#714c29"/><g stroke="#2f6b3e" stroke-width="4" fill="none" stroke-linecap="round" class="iw-sway"><path d="M 0 0 Q -12 -28 -26 -36"/><path d="M 0 0 Q 0 -32 2 -46"/><path d="M 0 0 Q 12 -28 26 -36"/><path d="M 0 0 Q -18 -16 -32 -20"/><path d="M 0 0 Q 18 -16 32 -20"/></g></g>
-  <g transform="translate(110 268)"><ellipse cx="0" cy="2" rx="36" ry="11" fill="#d9b66a"/><ellipse cx="0" cy="-5" rx="19" ry="11" fill="#c9a458"/><path d="M -19 -2 Q 0 4 19 -2" stroke="#b08c40" stroke-width="2" fill="none"/></g>
+  <g transform="translate(108 264)"><ellipse cx="0" cy="2" rx="34" ry="10" fill="#d9b66a"/><ellipse cx="0" cy="-5" rx="18" ry="10" fill="#c9a458"/><path d="M -18 -2 Q 0 4 18 -2" stroke="#b08c40" stroke-width="2" fill="none"/></g>
+  <!-- driftwood shelf with beach bottles + a jar of wildflowers (left wall) -->
+  <g transform="translate(70 336)"><rect x="-46" y="0" width="92" height="7" rx="2" fill="#6b4f30"/><rect x="-30" y="-30" width="11" height="30" rx="3" fill="#5b7f6a" opacity=".85"/><rect x="-14" y="-24" width="10" height="24" rx="3" fill="#8a6a4a" opacity=".85"/><rect x="2" y="-20" width="9" height="20" rx="3" fill="#7a6a8a" opacity=".8"/><g transform="translate(28 0)"><rect x="-7" y="-17" width="14" height="17" rx="2" fill="#cdbfa6"/><path d="M 0 -17 q -7 -10 -12 -13 M 0 -17 q 0 -12 2 -17 M 0 -17 q 7 -10 12 -13" stroke="#3f7a4a" stroke-width="2" fill="none"/><circle cx="-10" cy="-30" r="3" fill="#e8889a"/><circle cx="2" cy="-34" r="3" fill="#f2b04a"/><circle cx="12" cy="-30" r="3" fill="#e8889a"/></g></g>
+  <!-- framed shell picture (right wall) -->
+  <g transform="translate(905 190)"><rect x="-24" y="-19" width="48" height="38" rx="2" fill="#7a5a3a"/><rect x="-20" y="-15" width="40" height="30" fill="#bfe0e8"/><path d="M -9 9 Q 0 -11 9 9 Z" fill="#f0d9c0"/><g stroke="#cbb098" stroke-width="1" opacity=".6"><line x1="0" y1="3" x2="0" y2="9"/><line x1="-4" y1="5" x2="-1" y2="9"/><line x1="4" y1="5" x2="1" y2="9"/></g></g>
+  <!-- a hanging macramé plant from the roof (left) -->
+  <g transform="translate(108 122)"><line x1="-9" y1="0" x2="-5" y2="24" stroke="#cdbfa6" stroke-width="1.4"/><line x1="9" y1="0" x2="5" y2="24" stroke="#cdbfa6" stroke-width="1.4"/><path d="M -11 22 q 11 13 22 0 l -2 8 q -9 7 -18 0 Z" fill="#8a5e34"/><g class="iw-sway" stroke="#3f7a4a" stroke-width="2.4" fill="none" stroke-linecap="round"><path d="M -5 28 q -9 15 -5 28"/><path d="M 0 28 q 0 17 2 32"/><path d="M 6 28 q 9 15 5 28"/></g></g>
   <g transform="translate(890 250) rotate(4)"><rect x="-3" y="0" width="44" height="58" rx="3" fill="#cf5b6e"/><rect x="-3" y="0" width="44" height="20" fill="#e8889a"/><rect x="-3" y="38" width="44" height="20" fill="#e8889a"/></g>
-  <!-- warm wash -->
-  <rect width="1000" height="600" fill="url(#hwarm)" opacity="${win.fireLit?1:0.5}"/>
+  <!-- warm interior wash — strong & cozy at night, subtle by day (daylight floods in) -->
+  <rect width="1000" height="600" fill="url(#hwarm)" opacity="${win.night?(win.fireLit?1:0.55):0.3}"/>
   <!-- occupants (posed by relationship) / dog / empty -->
   ${layout || (dog?'':emptyHouse())}
   ${dog?_dogCurl(_appr(dog), humans.length?320:500):''}
@@ -4026,10 +4057,18 @@ function renderInteriorHotspots(){
     else if(owners.length){ txt=(owners.length<=2?owners.join(' & '):owners.length+' of them')+'’s place'; cls=' vacant'; }
     else { txt=''; cls=''; }
     const d=document.createElement('div'); d.className='hotspot'+cls; d.style.left=left; d.style.top=top;
-    d.innerHTML=`<div class="hs-glow"></div><div class="hs-badge"><span class="em">🏠</span>${txt}</div><div class="hs-tap">tap to look inside</div><div style="width:80px;height:64px"></div>`;
+    d.innerHTML=`<div class="hs-ripple"></div><div class="hs-glow"></div><div class="hs-badge"><span class="em">🏠</span>${txt}</div><div class="hs-tap">tap to look inside</div><div style="width:80px;height:64px"></div>`;
     d.onclick=()=>enterInterior(key);
     layer.appendChild(d);
   });
+  if(layer.children.length) _interiorCoach();
+}
+function _interiorCoach(){
+  try{ if(localStorage.getItem('trop_int_hint')||document.getElementById('int-coach')) return; }catch(e){ return; }
+  const t=document.createElement('div'); t.id='int-coach'; t.textContent='👆 Tap a home to step inside';
+  document.body.appendChild(t); requestAnimationFrame(()=>{t.style.opacity='1';});
+  setTimeout(()=>{ t.style.opacity='0'; setTimeout(()=>t.remove(),600); }, 5000);
+  try{ localStorage.setItem('trop_int_hint','1'); }catch(e){}
 }
 </script>
 </body>
