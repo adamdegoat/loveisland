@@ -3819,12 +3819,16 @@ loadVote();
 
 const INTERIORS = {
   house:   { shelter:'house',   wps:['house_door','house_porch','house_garden'], hx:506, hy:344, name:"beach house",       look:"the shore at the door",         icon:"🏝️", badge:"🏠", pov:"A peek at who's home" },
-  hammock: { shelter:'hammock', wps:['hammock_beside','palm_shade'],             hx:232, hy:312, hw:108, hh:118, name:"palm-shade hammock", look:"the palms and the sea beyond",   icon:"🌴", badge:"🌴", pov:"A peek at the hammock", lead:"A peek at the palm-shade hammock", solo:"is curled up in the hammock", crowd:" — all piled in" },
+  hammock: { shelter:'hammock', wps:['hammock_beside','palm_shade'], petWps:['hammock_beside'], hx:232, hy:312, hw:108, hh:118, name:"palm-shade hammock", look:"the palms and the sea beyond",   icon:"🌴", badge:"🌴", pov:"A peek at the hammock", lead:"A peek at the palm-shade hammock", solo:"is curled up in the hammock", crowd:" — all piled in" },
   tent:    { shelter:'tent',    wps:['tent_front','cliff_base'],                 hx:879, hy:196, name:"clifftop shelter",   look:"the cliff edge and open sea",   icon:"⛺", badge:"⛺", pov:"A peek inside", lead:"A peek inside the clifftop shelter", solo:"is up at the tent", crowd:" — all crammed in" },
 };
 function _isDog(cid){ return (S.chars[cid]&&S.chars[cid].species)==='dog'; }
 function _appr(cid){ return (S.chars[cid]&&S.chars[cid].appearance)||{}; }
 function _present(key){ const w=INTERIORS[key].wps; return Object.keys(S.chars||{}).filter(c=>S.chars[c]&&w.indexOf((S.chars[c].location||{}).waypoint)>=0); }
+// A pet shows in an interior ONLY where it genuinely is — its own home waypoint can overlap a
+// shelter's zone (the stray's "under the palms" == palm_shade, which is also Jade's hammock area),
+// so it must NOT be drawn as a hammock guest just for sitting at its own spot. petWps narrows it.
+function _petAt(key, present){ const I=INTERIORS[key], ws=I.petWps||I.wps; return (present||_present(key)).filter(_isDog).filter(d=>ws.indexOf((S.chars[d].location||{}).waypoint)>=0)[0]; }
 function _owners(key){ const sh=INTERIORS[key].shelter; return Object.keys(S.chars||{}).filter(c=>S.chars[c]&&S.chars[c].shelter===sh); }
 function _fname(cid){ const n=(S.chars[cid]&&S.chars[cid].name)||cid; return (n+'').trim().split(' ')[0]||cid; }
 function _rel(a,b,k){ const r=(S.chars[a]&&S.chars[a].relationships&&S.chars[a].relationships[b])||{}; return typeof r[k]==='number'?r[k]:0; }
@@ -3974,7 +3978,7 @@ function _dogCurl(cid, cx, cy){ const coat='#9c6b43', dark='#5e3a22', light='#ca
 }
 function houseSVG(){
   const win=seaSky(); const present=_present('house');
-  const humans=present.filter(c=>!_isDog(c)); const dog=present.filter(_isDog)[0];
+  const humans=present.filter(c=>!_isDog(c)); const dog=_petAt('house', present);
   // whoever's actually home (dynamic — not hardcoded to anyone): 1 alone, 2 posed by
   // their real attraction/tension, 3+ hanging out together.
   let layout='';
@@ -4097,7 +4101,7 @@ function _emptyHammock(N){ return `<g>
 </g>`; }
 function hammockSVG(){
   const win=seaSky(); const present=_present('hammock');
-  const humans=present.filter(c=>!_isDog(c)); const dog=present.filter(_isDog)[0];
+  const humans=present.filter(c=>!_isDog(c)); const dog=_petAt('hammock', present);
   const N=win.night;
   const hearts=(hx,hy)=>`<g class="iw-float"><path d="M 0 0 C -8 -10 -19 -2 0 13 C 19 -2 8 -10 0 0 Z" fill="#ff6b8e" transform="translate(${hx} ${hy}) scale(.92)"/></g><g class="iw-float" style="animation-delay:1.7s"><path d="M 0 0 C -6 -8 -14 -1 0 10 C 14 -1 6 -8 0 0 Z" fill="#ff95b0" transform="translate(${hx+34} ${hy+12}) scale(.8)"/></g>`;
   let layout='';
@@ -4159,7 +4163,7 @@ function _emptyTent(N){ return `<g transform="translate(500 540)">
 </g>`; }
 function tentSVG(){
   const win=seaSky(); const present=_present('tent');
-  const humans=present.filter(c=>!_isDog(c)); const dog=present.filter(_isDog)[0];
+  const humans=present.filter(c=>!_isDog(c)); const dog=_petAt('tent', present);
   const N=win.night;
   let layout='';
   if(humans.length===1){ layout=_person(humans[0],500,498,{face:0.1,sc:1.02}); }
