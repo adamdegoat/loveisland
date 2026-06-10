@@ -1,35 +1,35 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-10",
+    "id": "2026-06-11",
     "closes": "tonight",
-    "question": "Judy is finally in their circle. Should the group gently ask what hurt her, deepening trust—or protect this fragile peace by asking nothing tonight?",
+    "question": "Marcus fled. Should Jade follow him—or should someone finally reach Judy alone?",
     "options": [
       {
-        "id": "ask_her_story",
-        "label": "Ask what hurt",
-        "desc": "Push gently for vulnerability; know Judy fully"
+        "id": "chase_him",
+        "label": "Jade follows Marcus",
+        "desc": "Don't let his fear kill what they felt"
       },
       {
-        "id": "just_be_together",
-        "label": "Keep it gentle",
-        "desc": "Let presence and safety be enough; protect this peace"
+        "id": "reach_judy",
+        "label": "Reach Judy instead",
+        "desc": "The truly alone needs warmth"
       },
       {
-        "id": "make_a_vow",
-        "label": "Make a pact",
-        "desc": "Use this moment to commit—we stay together, no matter what"
+        "id": "ryan_first",
+        "label": "Ryan helps Marcus",
+        "desc": "The steady one speaks first"
       }
     ]
   },
   "in_play": {
-    "id": "reach_marcus",
-    "label": "Reach to Marcus",
-    "desc": "Her courage could be contagious—pull him in before the distance hardens",
-    "decided": "2026-06-10",
-    "votes": 3,
+    "id": "just_be_together",
+    "label": "Keep it gentle",
+    "desc": "Let presence and safety be enough; protect this peace",
+    "decided": "2026-06-11",
+    "votes": 1,
     "tally": {
-      "reach_marcus": 3
+      "just_be_together": 1
     }
   }
 }

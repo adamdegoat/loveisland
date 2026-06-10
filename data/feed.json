@@ -5737,5 +5737,197 @@
       }
     ],
     "timestamp": "2026-06-10T22:32:16.178116"
+  },
+  {
+    "day": 8,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "He walks to the cliff base in the grey dawn light, needing space from what he let happen.",
+    "thought": "She saw me run. Can I face her?",
+    "location": {
+      "waypoint": "cliff_base",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "guarded",
+    "timestamp": "2026-06-11T07:03:25.284374"
+  },
+  {
+    "day": 8,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "He's up early tending the fire, laying out water bowls, watching the east sky lighten.",
+    "thought": "Something shifted last night. I felt it.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "thoughtful",
+    "timestamp": "2026-06-11T07:03:25.284374"
+  },
+  {
+    "day": 8,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "She wakes restless and walks toward the cliffs, drawn by something she can't name.",
+    "thought": "He was there. Where did he go?",
+    "location": {
+      "waypoint": "cliff_base",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "restless",
+    "timestamp": "2026-06-11T07:03:25.284374"
+  },
+  {
+    "day": 8,
+    "cycle": "morning",
+    "character": "judy",
+    "action": "She sits at the beach's edge with the pup, watching the water, feeling the distance from last night.",
+    "thought": "They have each other. I'm still alone.",
+    "location": {
+      "waypoint": "beach_left",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "wistful",
+    "timestamp": "2026-06-11T07:03:25.284374"
+  },
+  {
+    "day": 8,
+    "cycle": "morning",
+    "character": "stray",
+    "action": "The pup presses warm against Judy's leg, sensing her sadness and staying close.",
+    "thought": "She's sad. I stay. I'm here.",
+    "location": {
+      "waypoint": "beach_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "protective",
+    "timestamp": "2026-06-11T07:03:25.284374"
+  },
+  {
+    "day": 8,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "jade"
+    ],
+    "description": "Jade finds Marcus alone at the cliff base at dawn, and they face what shattered between them last night.",
+    "dialogue": [
+      {
+        "speaker": "marcus",
+        "line": "Didn't expect to see you this early."
+      },
+      {
+        "speaker": "jade",
+        "line": "Didn't expect you to run."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I had to."
+      },
+      {
+        "speaker": "jade",
+        "line": "From me?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. From how fast it was happening."
+      },
+      {
+        "speaker": "jade",
+        "line": "We were just cooking fish, Marcus."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know. But you reached for me and I let you. That's when I got scared."
+      },
+      {
+        "speaker": "jade",
+        "line": "Of what?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Of wanting it back."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's not a bad thing."
+      },
+      {
+        "speaker": "marcus",
+        "line": "For me it is. I lose things."
+      },
+      {
+        "speaker": "jade",
+        "line": "Then stop running."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Can't promise that yet."
+      },
+      {
+        "speaker": "jade",
+        "line": "Just promise you'll come back."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. I can do that."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's enough."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm sorry about last night."
+      },
+      {
+        "speaker": "jade",
+        "line": "You don't have to apologize for being scared."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What about leaving?"
+      },
+      {
+        "speaker": "jade",
+        "line": "That I didn't like. But I understand."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm still figuring this out."
+      },
+      {
+        "speaker": "jade",
+        "line": "So am I."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We could figure it out slow."
+      },
+      {
+        "speaker": "jade",
+        "line": "That sounds nice."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Thank you for coming to find me."
+      },
+      {
+        "speaker": "jade",
+        "line": "Where else would I go?"
+      }
+    ],
+    "timestamp": "2026-06-11T07:03:25.284374"
   }
 ]
