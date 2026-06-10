@@ -2131,10 +2131,14 @@ function worldYOffset(vh, scale) {
   return -Math.min(cropVB, MOUNTAIN_SAFE) * scale  // shift up, but never past the mountain peak
 }
 function svgToViewport(sx, sy) {
-  const vw=window.innerWidth, vh=stageH()
-  const scale=Math.max(vw/1000, vh/600)
-  const offX=(vw-1000*scale)/2, offY=worldYOffset(vh, scale)
-  return {left:((offX+sx*scale)/vw*100)+'%', top:((offY+sy*scale)/vh*100)+'%'}
+  const vh=stageH()
+  const scale=Math.max(window.innerWidth/1000, vh/600)
+  const offY=worldYOffset(vh, scale)
+  // LEFT maps straight from the viewBox: world-svg is width:100% of #world with viewBox 1000 wide
+  // and no horizontal letterbox, so sx -> sx/10 % of #world — correct on BOTH desktop (#world=vw)
+  // and mobile (#world=getWorldWidth, the full scrollable map). The old innerWidth-based formula
+  // pushed edge characters (tide pools/hammock) right off the map on phones.
+  return {left:(sx/10)+'%', top:((offY+sy*scale)/vh*100)+'%'}
 }
 
 function toPos(x, y, waypoint) {
@@ -3379,7 +3383,10 @@ function updateWorld() {
   if(isMobile() && !mobileScrollInited) {
     mobileScrollInited = true
     requestAnimationFrame(() => {
-      scrollWorldX((getWorldWidth() - window.innerWidth) * 0.5)
+      // centre the phone view on the CAST (not the map middle), so readers see the characters
+      const avg = positions.length ? positions.reduce((a,p)=>a+p.px,0)/positions.length : getWorldWidth()/2
+      const target = Math.max(0, Math.min(getWorldWidth()-window.innerWidth, avg - window.innerWidth/2))
+      scrollWorldX(target)
     })
   }
   try{ renderInteriorHotspots() }catch(e){}
