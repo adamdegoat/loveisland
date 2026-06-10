@@ -4101,14 +4101,14 @@ function hammockSVG(){
   const N=win.night;
   const hearts=(hx,hy)=>`<g class="iw-float"><path d="M 0 0 C -8 -10 -19 -2 0 13 C 19 -2 8 -10 0 0 Z" fill="#ff6b8e" transform="translate(${hx} ${hy}) scale(.92)"/></g><g class="iw-float" style="animation-delay:1.7s"><path d="M 0 0 C -6 -8 -14 -1 0 10 C 14 -1 6 -8 0 0 Z" fill="#ff95b0" transform="translate(${hx+34} ${hy+12}) scale(.8)"/></g>`;
   let layout='';
-  if(humans.length===1){ layout=_recline(humans[0],500,408,{sc:1.05}); }
+  if(humans.length===1){ layout=_recline(humans[0],500,434,{sc:1.05}); }
   else if(humans.length===2){ const a=humans[0],b=humans[1],bond=_bond(a,b),tense=_tense(a,b);
     const close=bond>70&&tense<35, apart=tense>=45;
-    if(close){ layout=_recline(a,452,412,{sc:.97,smitten:true,lean:3})+_recline(b,556,404,{sc:.97,smitten:true,lean:-4})+hearts(486,352); }
-    else if(apart){ layout=_recline(a,460,410,{sc:.95,lean:-5})+_person(b,706,498,{sc:.86,face:-0.6}); }
-    else { layout=_recline(a,486,408,{sc:1})+_person(b,706,498,{sc:.88,face:-0.5}); }
+    if(close){ layout=_recline(a,452,438,{sc:.97,smitten:true,lean:3})+_recline(b,556,430,{sc:.97,smitten:true,lean:-4})+hearts(486,378); }
+    else if(apart){ layout=_recline(a,460,436,{sc:.95,lean:-5})+_person(b,706,498,{sc:.86,face:-0.6}); }
+    else { layout=_recline(a,486,434,{sc:1})+_person(b,706,498,{sc:.88,face:-0.5}); }
   } else if(humans.length>=3){ const hs=humans.slice(0,3);
-    layout=_recline(hs[0],476,408,{sc:.93})+_person(hs[1],726,500,{sc:.82,face:-0.5})+_person(hs[2],286,504,{sc:.82,face:0.5}); }
+    layout=_recline(hs[0],476,434,{sc:.93})+_person(hs[1],726,500,{sc:.82,face:-0.5})+_person(hs[2],286,504,{sc:.82,face:0.5}); }
   return `<svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="hmground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${N?'#3a3526':'#e7d098'}"/><stop offset="1" stop-color="${N?'#221d15':'#c19f63'}"/></linearGradient>
@@ -4140,8 +4140,10 @@ function hammockSVG(){
   <g stroke="#9d174d" stroke-width="1.6" opacity=".8">${[0,1,2,3].map(k=>`<line x1="${156+k*6}" y1="388" x2="${154+k*6}" y2="404"/>`).join('')}${[0,1,2,3].map(k=>`<line x1="${826+k*6}" y1="388" x2="${824+k*6}" y2="404"/>`).join('')}</g>
   <!-- occupants nestled in / empty -->
   ${layout || (dog?'':_emptyHammock(N))}
-  <!-- the front lip of the sling, over the lower body, so they read as nestled in -->
-  ${layout?`<path d="M 150 392 Q 500 520 850 392 L 850 400 Q 500 528 150 400 Z" fill="${N?'#6b1742':'#a8174f'}" opacity=".85"/>`:''}
+  <!-- the near edge of the sling laps up over their legs/lap, so they sit DOWN IN it -->
+  ${layout?`<path d="M 150 390 Q 500 490 850 390 L 850 416 Q 500 528 150 416 Z" fill="${N?'#7e1d4d':'#be185d'}" opacity=".95"/>
+  <path d="M 150 390 Q 500 490 850 390" stroke="#9d174d" stroke-width="2.5" fill="none" opacity=".8"/>
+  <g stroke="#f9a8d4" stroke-width="1.2" opacity=".45" fill="none">${[0,1,2].map(k=>`<path d="M ${180+k*10} ${396+k*4} Q 500 ${492-k*6} ${820-k*10} ${396+k*4}"/>`).join('')}</g>`:''}
   ${dog?_dogCurl(dog, humans.length?700:500, 556):''}
   <!-- driftwood side-stool with a cool drink -->
   <g transform="translate(816 520)"><ellipse cx="0" cy="30" rx="30" ry="7" fill="#000" opacity=".18"/><rect x="-24" y="0" width="48" height="30" rx="3" fill="${N?'#4a3826':'#7a5a36'}"/><ellipse cx="0" cy="0" rx="24" ry="6.5" fill="${N?'#5a472f':'#8c6a40'}"/><g transform="translate(-2 -2)"><path d="M -8 -22 L 8 -22 L 6 -2 L -6 -2 Z" fill="#bfe6e8" opacity=".82"/><rect x="-8" y="-22" width="16" height="4" fill="#a7d4d6"/><path d="M 5 -30 q 9 4 4 12" stroke="#2f7a3e" stroke-width="2" fill="none"/><circle cx="2" cy="-12" r="3.5" fill="#ff8a5a"/></g></g>
