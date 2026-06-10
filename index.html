@@ -2147,6 +2147,40 @@ function toPos(x, y, waypoint) {
   return {left: leftPct+'%', top:(48+(y/100)*32)+'%'}
 }
 
+// ── Settle home characters INTO their shelter ────────────────────────────────
+// When someone is at the true at-home spot of their OWN shelter, place them AT the
+// structure (on the porch / at the tent mouth / in the hammock) instead of standing
+// out in the open — so the camp agrees with the clickable interior peek. Garden &
+// cliff waypoints are genuinely outside, so they are deliberately NOT settled.
+// sx/sy are camp-svg coords of the FEET; left maps straight from the viewBox (hx/10 %)
+// so it lands on the structure on desktop AND mobile (svgToViewport's top is correct).
+const SETTLE = {
+  house:   { sx:534, sy:360, wps:['house_door','house_porch'], spread:42 },
+  tent:    { sx:879, sy:210, wps:['tent_front'],               spread:26 },
+  hammock: { sx:250, sy:360, wps:['hammock_beside'], recline:-58 },
+}
+function settleHomeChars(positions){
+  const W = isMobile()?getWorldWidth():window.innerWidth, H = stageH()
+  const byShelter = {}
+  positions.forEach(p=>{ const c=S.chars[p.id]; if(!c) return
+    const S2=SETTLE[c.shelter]; if(!S2) return
+    if(S2.wps.indexOf((c.location||{}).waypoint) < 0) return
+    ;(byShelter[c.shelter]=byShelter[c.shelter]||[]).push(p) })
+  Object.keys(byShelter).forEach(sh=>{ const S2=SETTLE[sh], g=byShelter[sh], n=g.length
+    g.forEach((p,i)=>{ const dx = n>1 ? (i-(n-1)/2)*(S2.spread||40) : 0
+      const sx=S2.sx+dx, sy=S2.sy
+      p.px = sx/1000*W
+      p.py = parseFloat(svgToViewport(sx,sy).top)/100*H
+      p.settled = sh; p.recline = S2.recline||0 }) })
+}
+// poses are applied AFTER renderInteractions (which clears char-svg transforms each cycle)
+function applySettlePoses(positions){
+  positions.forEach(p=>{ const el=document.getElementById('char-'+p.id); if(!el) return
+    const svg=el.querySelector('.char-svg'); if(!svg) return
+    if(p.settled && p.recline){ svg.style.animation='none'; svg.style.transformOrigin='50% 100%'; svg.style.transform=`rotate(${p.recline}deg)` }
+    else if(svg.style.animation==='none'){ svg.style.removeProperty('animation') } })
+}
+
 function toggleFeed() {
   const panel = document.getElementById('chat-panel')
   panel.classList.toggle('feed-open')
@@ -3315,6 +3349,7 @@ function updateWorld() {
     return {id:cid, px, py}
   })
   separateChars(positions)
+  settleHomeChars(positions)   // home characters sit AT their shelter, not out in the open
 
   positions.forEach(p=>{
     const el=document.getElementById('char-'+p.id); if(!el) return
@@ -3330,6 +3365,7 @@ function updateWorld() {
 
   nudgeBubbles(positions)
   renderInteractions(positions)
+  applySettlePoses(positions)  // recline a settled hammock-resident (after interactions reset transforms)
   renderChat()
   updateStatusBar()
   updateStatCards()
@@ -3751,6 +3787,8 @@ loadVote();
   @keyframes hsGlow{0%,100%{opacity:.6}50%{opacity:1}}
   .hotspot .hs-badge{position:absolute;left:50%;top:-22px;transform:translateX(-50%);white-space:nowrap;background:rgba(22,14,26,.85);border:1px solid rgba(255,180,205,.46);color:#ffdcea;font:700 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.2px;padding:3px 7px;border-radius:999px;box-shadow:0 2px 7px rgba(0,0,0,.45);display:none;align-items:center;gap:3px}
   .hotspot .hs-badge .em{font-size:9px}
+  .hotspot .hs-badge.struct{display:inline-flex}            /* the place name is always shown */
+  .hotspot:not(.occupied) .hs-badge.struct{opacity:.82;background:rgba(20,14,22,.74);border-color:rgba(255,255,255,.2);color:#efe7ec}
   .hotspot.occupied .hs-badge{display:inline-flex}
   .hotspot.vacant .hs-badge{display:inline-flex;opacity:.62;background:rgba(20,14,22,.66);border-color:rgba(255,255,255,.18);color:#e6dfe8}
   .hotspot.vacant .hs-badge .em{opacity:.55;filter:grayscale(.5)}
@@ -3762,6 +3800,13 @@ loadVote();
   @keyframes hsBadgePulse{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.06)}}
   #int-coach{position:fixed;left:50%;top:232px;transform:translateX(-50%);z-index:96;background:rgba(20,14,26,.9);color:#ffe6f0;font:700 12.5px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.2px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,180,205,.5);box-shadow:0 6px 20px rgba(0,0,0,.5);opacity:0;transition:opacity .5s;pointer-events:none}
   @media(max-width:640px){.hotspot .hs-badge{font-size:7.5px;padding:2px 6px;top:-15px;gap:2px;letter-spacing:0}.hotspot .hs-badge .em{font-size:8px}.hotspot .hs-glow{width:54px;height:40px}}
+  /* small clickable "Name · activity" cue floating over a settled character */
+  .actcue{position:absolute;transform:translate(-50%,-50%);z-index:16;pointer-events:auto;cursor:pointer;white-space:nowrap;
+    background:rgba(12,16,24,.84);border:1px solid rgba(255,255,255,.22);color:#eaf2ff;
+    font:700 8px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.2px;padding:3px 7px;border-radius:999px;box-shadow:0 2px 7px rgba(0,0,0,.45)}
+  .actcue .ac-do{opacity:.62;font-weight:600;font-style:italic}
+  .actcue::after{content:'';position:absolute;left:50%;bottom:100%;transform:translateX(-50%);border:4px solid transparent;border-bottom-color:rgba(12,16,24,.84)}
+  @media(max-width:640px){.actcue{font-size:7px;padding:2px 6px}}
   #interior{position:fixed;inset:0;z-index:100000;background:#0a0f12;overflow:hidden;opacity:0;visibility:hidden;transform:scale(1.05);pointer-events:none;transition:opacity .42s ease,transform .55s cubic-bezier(.22,.8,.3,1),visibility .42s}
   #interior.show{opacity:1;visibility:visible;transform:scale(1);pointer-events:auto}
   #interior-scene{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
@@ -3818,9 +3863,9 @@ loadVote();
 })();
 
 const INTERIORS = {
-  house:   { shelter:'house',   wps:['house_door','house_porch','house_garden'], hx:506, hy:344, name:"beach house",       look:"the shore at the door",         icon:"🏝️", badge:"🏠", pov:"A peek at who's home" },
-  hammock: { shelter:'hammock', wps:['hammock_beside','palm_shade'], petWps:['hammock_beside'], hx:232, hy:312, hw:108, hh:118, name:"palm-shade hammock", look:"the palms and the sea beyond",   icon:"🌴", badge:"🌴", pov:"A peek at the hammock", lead:"A peek at the palm-shade hammock", solo:"is curled up in the hammock", crowd:" — all piled in" },
-  tent:    { shelter:'tent',    wps:['tent_front','cliff_base'],                 hx:879, hy:196, name:"clifftop shelter",   look:"the cliff edge and open sea",   icon:"⛺", badge:"⛺", pov:"A peek inside", lead:"A peek inside the clifftop shelter", solo:"is up at the tent", crowd:" — all crammed in" },
+  house:   { shelter:'house',   wps:['house_door','house_porch','house_garden'], hx:506, hy:344, tag:"Beach House",   name:"beach house",       look:"the shore at the door",         icon:"🏝️", badge:"🏠", pov:"A peek at who's home" },
+  hammock: { shelter:'hammock', wps:['hammock_beside','palm_shade'], petWps:['hammock_beside'], hx:232, hy:312, hw:108, hh:118, tag:"The Hammock", name:"palm-shade hammock", look:"the palms and the sea beyond",   icon:"🌴", badge:"🌴", pov:"A peek at the hammock", lead:"A peek at the palm-shade hammock", solo:"is curled up in the hammock", crowd:" — all piled in" },
+  tent:    { shelter:'tent',    wps:['tent_front','cliff_base'],                 hx:879, hy:196, tag:"Clifftop Tent", name:"clifftop shelter",   look:"the cliff edge and open sea",   icon:"⛺", badge:"⛺", pov:"A peek inside", lead:"A peek inside the clifftop shelter", solo:"is up at the tent", crowd:" — all crammed in" },
 };
 function _isDog(cid){ return (S.chars[cid]&&S.chars[cid].species)==='dog'; }
 function _appr(cid){ return (S.chars[cid]&&S.chars[cid].appearance)||{}; }
@@ -3831,6 +3876,16 @@ function _present(key){ const w=INTERIORS[key].wps; return Object.keys(S.chars||
 function _petAt(key, present){ const I=INTERIORS[key], ws=I.petWps||I.wps; return (present||_present(key)).filter(_isDog).filter(d=>ws.indexOf((S.chars[d].location||{}).waypoint)>=0)[0]; }
 function _owners(key){ const sh=INTERIORS[key].shelter; return Object.keys(S.chars||{}).filter(c=>S.chars[c]&&S.chars[c].shelter===sh); }
 function _fname(cid){ const n=(S.chars[cid]&&S.chars[cid].name)||cid; return (n+'').trim().split(' ')[0]||cid; }
+// a short, honest activity word for the cue near a settled character
+function _activity(cid){
+  const c=S.chars[cid]||{}, cyc=((S.world&&S.world.cycle)||'').toLowerCase();
+  const st=c.interaction&&c.interaction.state;
+  const map={talking:'chatting', sitting_together:'hanging out', holding_hands:'cuddling', comforting:'comforting', back_to_back:'cooling off'};
+  if(st&&map[st]) return map[st];
+  if(cyc==='night') return 'asleep';
+  if((c.shelter)==='hammock') return 'lounging';
+  return cyc==='evening'?'winding down':'resting';
+}
 function _rel(a,b,k){ const r=(S.chars[a]&&S.chars[a].relationships&&S.chars[a].relationships[b])||{}; return typeof r[k]==='number'?r[k]:0; }
 function _bond(a,b){ return Math.max(_rel(a,b,'attraction'), _rel(b,a,'attraction'))*1.0 + Math.max(_rel(a,b,'closeness'),_rel(b,a,'closeness'))*0.5; }
 function _tense(a,b){ return Math.max(_rel(a,b,'tension'), _rel(b,a,'tension')); }
@@ -4260,6 +4315,9 @@ function enterInterior(key){
 function exitInterior(){ document.getElementById('interior').classList.remove('show'); }
 function renderInteriorHotspots(){
   const layer=document.getElementById('hotspots'); if(!layer) return; layer.innerHTML='';
+  const H=stageH();
+  // restore any nametags a previous pass hid (the activity cue replaces the tag when settled)
+  document.querySelectorAll('#world .char .nametag').forEach(n=>n.style.removeProperty('visibility'));
   Object.keys(INTERIORS).forEach(key=>{
     const I=INTERIORS[key]; const {top}=svgToViewport(I.hx,I.hy);
     // svgToViewport's horizontal basis divides by innerWidth, which is wrong on mobile where
@@ -4267,40 +4325,56 @@ function renderInteriorHotspots(){
     // maps viewBox-x linearly, so the correct left is simply hx/10 % of #world (matches structures
     // on BOTH desktop and mobile). Top is already correct.
     const left=(I.hx/10)+'%';
-    const present=_present(key).filter(c=>!_isDog(c)).map(_fname), owners=_owners(key).map(_fname);
-    let txt, cls;
-    if(present.length){ txt=present.length===1?present[0]+' home':present.length===2?present.join(' & '):present.length+' home'; cls=' occupied'; }
-    else if(owners.length){ txt=(owners.length<=2?owners.join(' & '):owners.length+' of them')+'’s place'; cls=' vacant'; }
-    else { txt=''; cls=''; }
-    const d=document.createElement('div'); d.className='hotspot'+cls; d.style.left=left; d.style.top=top;
-    d.innerHTML=`<div class="hs-ripple"></div><div class="hs-glow"></div><div class="hs-badge"><span class="em">${I.badge||'🏠'}</span>${txt}</div><div class="hs-tap">tap to look inside</div><div style="width:${I.hw||80}px;height:${I.hh||64}px"></div>`;
+    const present=_present(key).filter(c=>!_isDog(c));
+    // ── the structure's OWN name (not the owner's) — anyone may use it ──
+    const d=document.createElement('div'); d.className='hotspot'+(present.length?' occupied':''); d.style.left=left; d.style.top=top;
+    d.innerHTML=`<div class="hs-ripple"></div><div class="hs-glow"></div><div class="hs-badge struct" data-base="50%"><span class="em">${I.badge||'🏠'}</span>${I.tag||I.name}</div><div class="hs-tap">tap to look inside</div><div style="width:${I.hw||80}px;height:${I.hh||64}px"></div>`;
     d.onclick=()=>enterInterior(key);
     layer.appendChild(d);
+    // ── a small "<Name> <activity>" cue on whoever is genuinely settled in there ──
+    const inside=(typeof SETTLE!=='undefined'&&SETTLE[key]&&SETTLE[key].wps)||I.wps;
+    present.forEach(cid=>{
+      const wp=((S.chars[cid]||{}).location||{}).waypoint;
+      if(inside.indexOf(wp)<0) return;                 // only those actually AT the structure
+      const cel=document.getElementById('char-'+cid); if(!cel) return;
+      const cl=parseFloat(cel.style.left)||0, ct=parseFloat(cel.style.top)||0;
+      // the cue carries the name + activity, so hide the plain nametag (no double-up)
+      const ntag=cel.querySelector('.nametag'); if(ntag) ntag.style.visibility='hidden';
+      const a=document.createElement('div'); a.className='actcue';
+      const baseLeft=cl+'%'; a.style.left=baseLeft; a.style.top=(ct+(13/H*100))+'%'; a.dataset.base=baseLeft;  // just below the feet, where the tag was
+      a.innerHTML=`<span class="ac-name">${_fname(cid)}</span> <span class="ac-do">${_activity(cid)}</span>`;
+      a.onclick=(e)=>{ e.stopPropagation(); enterInterior(key); };
+      layer.appendChild(a);
+    });
   });
-  // Keep each badge clear of speech bubbles + the narrator strip (they cluster on mobile when
-  // an occupant is home right at the structure). Bubbles are already laid out by updateWorld,
-  // so nudge the badge horizontally away from whatever it overlaps.
-  try{
+  // Keep every label clear of speech bubbles, the narrator strip, and each other (they cluster
+  // when people are settled right at a structure). Deferred a frame so all layout is final.
+  requestAnimationFrame(()=>{ try{
     const obst=[...document.querySelectorAll('#world .bubble')].filter(b=>b.offsetParent!==null && getComputedStyle(b).opacity!=='0');
     const pulse=document.getElementById('pulse'); if(pulse&&pulse.textContent.trim()&&pulse.offsetParent!==null) obst.push(pulse);
-    layer.querySelectorAll('.hotspot .hs-badge').forEach(bd=>{
-      if(getComputedStyle(bd).display==='none') return;
-      let shift=0;
+    // structure badges first, then activity cues avoid bubbles + the badges already placed
+    // cues first (free to move), then structure name badges (clamped so the NAME stays on its
+    // structure — a planted name beats a perfectly-clear one that drifts off the building).
+    const labels=[...layer.querySelectorAll('.actcue'), ...layer.querySelectorAll('.hs-badge.struct')];
+    labels.forEach(el=>{
+      if(getComputedStyle(el).display==='none') return;
+      const base=el.dataset.base||'50%', cap=el.classList.contains('struct')?22:9999; let shift=0;
       for(let pass=0; pass<4; pass++){
-        const br=bd.getBoundingClientRect(); let worst=0;
-        obst.forEach(o=>{ const r=o.getBoundingClientRect();
+        const br=el.getBoundingClientRect(); let worst=0;
+        obst.forEach(o=>{ if(o===el) return; const r=o.getBoundingClientRect();
           const ovX=Math.min(br.right,r.right)-Math.max(br.left,r.left);
           const ovY=Math.min(br.bottom,r.bottom)-Math.max(br.top,r.top);
           if(ovX>0&&ovY>0){ const dir=(br.left+br.right)/2 <= (r.left+r.right)/2 ? -1 : 1; const need=dir*(ovX+8);
             if(Math.abs(need)>Math.abs(worst)) worst=need; }
         });
         if(!worst) break;
-        // nudge via `left` — the badge's transform is owned by the hsBadgePulse animation,
-        // so an inline transform would be ignored. left:50% is the CSS default.
-        shift+=worst; bd.style.left=`calc(50% + ${Math.round(shift)}px)`;
+        // nudge via `left` — a badge's transform is owned by the hsBadgePulse animation.
+        shift=Math.max(-cap,Math.min(cap,shift+worst)); el.style.left=`calc(${base} + ${Math.round(shift)}px)`;
+        if(Math.abs(shift)>=cap) break;
       }
+      obst.push(el);   // later labels avoid this one too
     });
-  }catch(e){}
+  }catch(e){} });
   if(layer.children.length) _interiorCoach();
 }
 function _interiorCoach(){
