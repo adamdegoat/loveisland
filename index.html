@@ -2115,13 +2115,13 @@ const WAYPOINTS = {
   meadow_left:    {sx:370,sy:385}, rock_cluster:  {sx:345,sy:410},
   firepit_left:   {sx:460,sy:445}, firepit_right: {sx:524,sy:445},
   firepit_front:  {sx:492,sy:460},
-  house_door:     {sx:560,sy:402}, house_porch:   {sx:545,sy:418},
+  house_door:     {sx:560,sy:402}, house_porch:   {sx:545,sy:418}, house_inside:  {sx:534,sy:360},
   house_garden:   {sx:620,sy:400}, path_mid:      {sx:517,sy:415},
   meadow_right:   {sx:640,sy:405}, boulder_watch: {sx:645,sy:415},
   east_palm:      {sx:692,sy:465},
   beach_umbrella: {sx:118,sy:500}, beach_left:    {sx:210,sy:500},
   beach_mid:      {sx:480,sy:500}, beach_right:   {sx:760,sy:502},
-  cliff_base:     {sx:828,sy:355}, tent_front:    {sx:870,sy:250},
+  cliff_base:     {sx:828,sy:355}, tent_front:    {sx:870,sy:250}, tent_inside:   {sx:879,sy:210},
   tide_pool:      {sx:735,sy:505},
 }
 
@@ -2175,12 +2175,14 @@ function toPos(x, y, waypoint) {
 // sx/sy are camp-svg coords of the FEET; left maps straight from the viewBox (hx/10 %)
 // so it lands on the structure on desktop AND mobile (svgToViewport's top is correct).
 const SETTLE = {
-  house:   { sx:534, sy:360, wps:['house_door','house_porch'], spread:42, enterable:true },
-  tent:    { sx:879, sy:210, wps:['tent_front'],               spread:26, enterable:true },
+  house:   { sx:534, sy:360, wps:['house_door','house_porch','house_inside'], spread:42, enterable:true },
+  tent:    { sx:879, sy:210, wps:['tent_front','tent_inside'],               spread:26, enterable:true },
   hammock: { sx:250, sy:360, wps:['hammock_beside'], recline:-58 },
 }
-// at NIGHT, anyone tucked into their own enter-able shelter is asleep INSIDE — hidden from the
-// camp, shown as a 💤 + a warm window glow on the structure (they still appear in the interior).
+// Anyone INDOORS (see _isIndoors) is hidden from the camp and shown only in the interior peek —
+// a glow stands in: 💤 when asleep at night, a "X inside" pill by day. Daytime loungers at their
+// OWN shelter still settle (pose) at the structure, visible on the map. The hammock is OPEN, so its
+// occupants are never "indoors" — they stay visible on the map (the peek is just a close-up).
 let _indoorShelters = {}
 function settleHomeChars(positions){
   const W = isMobile()?getWorldWidth():window.innerWidth, H = stageH()
@@ -2192,10 +2194,8 @@ function settleHomeChars(positions){
     // which shelter is this waypoint part of (regardless of whose shelter it is)?
     let atSh=null; for(const sh in SETTLE){ if(SETTLE[sh].wps.indexOf(wp)>=0){ atSh=sh; break } }
     if(!atSh) return
-    const S2=SETTLE[atSh], interacting = c.interaction && c.interaction.with
-    // asleep INSIDE an enter-able shelter at night → hide them (even a guest crashing there)
-    const indoors = !!(S2.enterable && night && !interacting)
-    // settle (pose at the structure) only for one's OWN shelter, or anyone sleeping inside at night;
+    const indoors = !!_isIndoors(p.id)
+    // settle (pose at the structure) only for one's OWN shelter, or anyone indoors;
     // a DAYTIME visitor at someone else's porch is left standing where they are
     if(c.shelter!==atSh && !indoors) return
     p._atSh=atSh; p._indoors=indoors
@@ -2207,7 +2207,7 @@ function settleHomeChars(positions){
       p.py = parseFloat(svgToViewport(sx,sy).top)/100*H
       p.settled = sh; p.recline = S2.recline||0
       if(p._indoors){ p.indoors=true; const c=S.chars[p.id]
-        const e = _indoorShelters[sh] || (_indoorShelters[sh]={sx:S2.sx, sy:S2.sy, names:[]})
+        const e = _indoorShelters[sh] || (_indoorShelters[sh]={sx:S2.sx, sy:S2.sy, names:[], night})
         e.names.push((((c&&c.name)||'').split(' ')[0])) } }) })
 }
 function renderSleepCues(){
@@ -2217,7 +2217,8 @@ function renderSleepCues(){
   Object.keys(_indoorShelters||{}).forEach(sh=>{ const s=_indoorShelters[sh]
     const left=(s.sx/10)+'%', top=svgToViewport(s.sx, s.sy-34).top
     const d=document.createElement('div'); d.className='sleepcue'; d.style.left=left; d.style.top=top
-    d.innerHTML=`<div class="sc-glow"></div><div class="sc-z">💤</div>`
+    const who=(s.names||[]).filter(Boolean); const lbl=who.length<=2?who.join(' & '):who.length+' inside'
+    d.innerHTML=`<div class="sc-glow"></div>`+(s.night?`<div class="sc-z">💤</div>`:(who.length?`<div class="sc-in">🏠 ${lbl}${who.length<=2?' inside':''}</div>`:''))
     layer.appendChild(d) })
 }
 // poses are applied AFTER renderInteractions (which clears char-svg transforms each cycle)
@@ -3721,7 +3722,8 @@ function setHudVar(){
   const sb = Math.max(0, Math.round(window.innerHeight - top))
   if(sb) document.documentElement.style.setProperty('--stage-bottom', sb+'px')
 }
-window.addEventListener('resize', ()=>{ setHudVar(); if(S && Object.keys(S.chars||{}).length) updateWorld() })
+window.addEventListener('resize', ()=>{ setHudVar(); if(S && Object.keys(S.chars||{}).length) updateWorld()
+  const intr=document.getElementById('interior'); if(intr && intr.classList.contains('show')) fitInteriorScene() })
 
 // ── ZOOM-AWARE RE-SYNC (mobile pinch-zoom) ──────────────────────────────────
 // Mobile browsers (esp. iOS Safari) let users pinch-zoom even though our viewport asks them
@@ -3842,6 +3844,8 @@ loadVote();
   .sleepcue .sc-z{position:absolute;left:62%;top:-52px;transform:translateX(-50%);font-size:17px;opacity:.92;
     text-shadow:0 1px 4px rgba(0,0,0,.6);animation:scZ 3.6s ease-in-out infinite}
   @keyframes scZ{0%,100%{opacity:.45;transform:translateX(-50%) translateY(2px)}50%{opacity:1;transform:translateX(-50%) translateY(-5px)}}
+  .sleepcue .sc-in{position:absolute;left:50%;top:-30px;transform:translateX(-50%);white-space:nowrap;background:rgba(22,14,26,.78);border:1px solid rgba(255,206,128,.42);color:#ffe6c2;font:700 9px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.2px;padding:3px 7px;border-radius:999px;box-shadow:0 2px 7px rgba(0,0,0,.4)}
+  @media (max-width:640px){.sleepcue .sc-in{font-size:7.5px;padding:2px 6px;top:-22px}}
   .hotspot{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;cursor:pointer}
   .hotspot .hs-glow{position:absolute;left:50%;top:50%;width:70px;height:52px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,170,120,.34),transparent);opacity:0;transition:opacity .35s;pointer-events:none}
   .hotspot.occupied .hs-glow{opacity:1;animation:hsGlow 3.4s ease-in-out infinite}
@@ -3924,13 +3928,30 @@ loadVote();
 })();
 
 const INTERIORS = {
-  house:   { shelter:'house',   wps:['house_door','house_porch','house_garden'], hx:506, hy:344, tag:"Beach House",   name:"beach house",       look:"the shore at the door",         icon:"🏝️", badge:"🏠", pov:"A peek at who's home" },
-  hammock: { shelter:'hammock', wps:['hammock_beside','palm_shade'], petWps:['hammock_beside'], hx:232, hy:312, hw:108, hh:118, tag:"The Hammock", name:"palm-shade hammock", look:"the palms and the sea beyond",   icon:"🌴", badge:"🌴", pov:"A peek at the hammock", lead:"A peek at the palm-shade hammock", solo:"is curled up in the hammock", crowd:" — all piled in" },
-  tent:    { shelter:'tent',    wps:['tent_front','cliff_base'],                 hx:879, hy:196, tag:"Clifftop Tent", name:"clifftop shelter",   look:"the cliff edge and open sea",   icon:"⛺", badge:"⛺", pov:"A peek inside", lead:"A peek inside the clifftop shelter", solo:"is up at the tent", crowd:" — all crammed in" },
+  house:   { shelter:'house',   wps:['house_door','house_porch','house_garden'], insideWps:['house_inside'], hx:506, hy:344, tag:"Beach House",   name:"beach house",       look:"the shore at the door",         icon:"🏝️", badge:"🏠", pov:"A peek at who's home" },
+  hammock: { shelter:'hammock', open:true, wps:['hammock_beside','palm_shade'], petWps:['hammock_beside'], hx:232, hy:312, hw:108, hh:118, tag:"The Hammock", name:"palm-shade hammock", look:"the palms and the sea beyond",   icon:"🌴", badge:"🌴", pov:"A peek at the hammock", lead:"A peek at the palm-shade hammock", solo:"is curled up in the hammock", crowd:" — all piled in" },
+  tent:    { shelter:'tent',    wps:['tent_front','cliff_base'], insideWps:['tent_inside'],                 hx:879, hy:196, tag:"Clifftop Tent", name:"clifftop shelter",   look:"the cliff edge and open sea",   icon:"⛺", badge:"⛺", pov:"A peek inside", lead:"A peek inside the clifftop shelter", solo:"is up at the tent", crowd:" — all crammed in" },
 };
 function _isDog(cid){ return (S.chars[cid]&&S.chars[cid].species)==='dog'; }
 function _appr(cid){ return (S.chars[cid]&&S.chars[cid].appearance)||{}; }
-function _present(key){ const w=INTERIORS[key].wps; return Object.keys(S.chars||{}).filter(c=>S.chars[c]&&w.indexOf((S.chars[c].location||{}).waypoint)>=0); }
+// SINGLE source of truth for "who is indoors right now" — read by BOTH the camp map (hides the
+// avatar) and the enclosed interior peeks (show them), so a character is NEVER in two places.
+// Indoors = literally inside (an *_inside waypoint, any cycle) OR asleep inside an enter-able
+// shelter at night (at its SETTLE footprint waypoint, not mid-conversation). The hammock is OPEN
+// (its peek is just a close-up of an on-map spot), so its loungers are never "indoors".
+function _isIndoors(cid){
+  const c=S.chars[cid]; if(!c) return null
+  if(typeof _isDog==='function' && _isDog(cid)) return null      // the stray roams, never "inside"
+  const wp=(c.location||{}).waypoint
+  const night=!!(S.world && S.world.cycle==='night')
+  const interacting=!!(c.interaction && c.interaction.with)
+  for(const key in INTERIORS){ const I=INTERIORS[key]; if((I.insideWps||[]).indexOf(wp)>=0) return key }
+  if(night && !interacting){ for(const sh in SETTLE){ const S2=SETTLE[sh]; if(S2.enterable && S2.wps.indexOf(wp)>=0) return sh } }
+  return null
+}
+function _present(key){ const I=INTERIORS[key]; if(!I) return []
+  if(I.open){ const w=I.wps||[]; return Object.keys(S.chars||{}).filter(c=>S.chars[c]&&w.indexOf((S.chars[c].location||{}).waypoint)>=0); }
+  return Object.keys(S.chars||{}).filter(c=>S.chars[c] && _isIndoors(c)===key); }
 // A pet shows in an interior ONLY where it genuinely is — its own home waypoint can overlap a
 // shelter's zone (the stray's "under the palms" == palm_shade, which is also Jade's hammock area),
 // so it must NOT be drawn as a hammock guest just for sitting at its own spot. petWps narrows it.
@@ -4387,12 +4408,27 @@ function stopInteriorParallax(){
   const scene=document.getElementById('interior-scene');
   if(scene) scene.querySelectorAll('.lkL').forEach(g=>g.removeAttribute('transform'));
 }
+// Make the interior panorama always COVER the viewport — no black gaps. Narrow screens fill the
+// height and pan horizontally; wide desktops fill the width (cover) and centre vertically.
+function fitInteriorScene(){
+  const sc=document.getElementById('interior-scene'); if(!sc) return;
+  const svg=sc.querySelector('svg'); if(!svg) return;
+  let aspect=0;
+  try{ const vb=svg.viewBox.baseVal; if(vb&&vb.width&&vb.height) aspect=vb.width/vb.height; }catch(e){}
+  if(!aspect){ const a=(svg.getAttribute('viewBox')||'').split(/[ ,]+/); if(a.length===4&&+a[3]) aspect=(+a[2])/(+a[3]); }
+  if(!aspect) return;
+  const H=sc.clientHeight, W=sc.clientWidth;
+  let w=H*aspect, h=H, mt=0;
+  if(w < W-0.5){ w=W; h=W/aspect; mt=(H-h)/2; }
+  svg.style.width=w+'px'; svg.style.height=h+'px'; svg.style.marginTop=mt+'px';
+}
 function enterInterior(key){
   const I=INTERIORS[key]; if(!I) return;
   const scene=document.getElementById('interior-scene');
   const builders={house:houseSVG, hammock:hammockSVG, tent:tentSVG};
   scene.innerHTML = (builders[key]||houseSVG)();
-  requestAnimationFrame(()=>{ try{ scene.scrollLeft=(scene.scrollWidth-scene.clientWidth)/2;
+  setTimeout(fitInteriorScene, 60);
+  requestAnimationFrame(()=>{ try{ fitInteriorScene(); scene.scrollLeft=(scene.scrollWidth-scene.clientWidth)/2;
     const hint=document.getElementById('interior-hint'); if(hint){ hint.classList.remove('show'); void hint.offsetWidth; if(scene.scrollWidth-scene.clientWidth>40) hint.classList.add('show'); } }catch(e){} });
   document.querySelector('#interior-title .it-ico').textContent=I.icon||'';
   document.querySelector('#interior-title .it-main').textContent=I.name;
