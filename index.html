@@ -3399,6 +3399,20 @@ function updateWorld() {
   separateChars(positions)
   settleHomeChars(positions)   // home characters sit AT their shelter, not out in the open
 
+  // keep characters OFF the lit campfire flames (the fire sits at viewBox x≈492)
+  if(S.world && (!S.world.fire || S.world.fire.lit!==false)){
+    positions.forEach(p=>{
+      if(p.indoors) return
+      const vx = p.px/W*1000
+      if(vx<=474 || vx>=512) return
+      const others = positions.filter(q=>q!==p && !q.indoors).map(q=>q.px/W*1000)
+      let tgt
+      if(vx<492){ const ls=others.filter(x=>x>=380 && x<474); tgt=ls.length?Math.min(...ls)-28:462 }
+      else      { const rs=others.filter(x=>x>512 && x<=600); tgt=rs.length?Math.max(...rs)+28:522 }
+      p.px = tgt/1000*W
+    })
+  }
+
   positions.forEach(p=>{
     const el=document.getElementById('char-'+p.id); if(!el) return
     el.style.left=(p.px/W*100)+'%'
