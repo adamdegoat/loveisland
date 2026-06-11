@@ -1,35 +1,30 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-11",
+    "id": "2026-06-12",
     "closes": "tonight",
-    "question": "Marcus fled. Should Jade follow him—or should someone finally reach Judy alone?",
+    "question": "Marcus finally let Ryan see him—tomorrow, does he keep that softness sacred between them, or does he offer it to the whole group?",
     "options": [
       {
-        "id": "chase_him",
-        "label": "Jade follows Marcus",
-        "desc": "Don't let his fear kill what they felt"
+        "id": "keep_sacred",
+        "label": "Just Ryan",
+        "desc": "Marcus treasures the private bond he found with Ryan"
       },
       {
-        "id": "reach_judy",
-        "label": "Reach Judy instead",
-        "desc": "The truly alone needs warmth"
-      },
-      {
-        "id": "ryan_first",
-        "label": "Ryan helps Marcus",
-        "desc": "The steady one speaks first"
+        "id": "offer_to_all",
+        "label": "All of them",
+        "desc": "Marcus opens completely to the whole group"
       }
     ]
   },
   "in_play": {
-    "id": "just_be_together",
-    "label": "Keep it gentle",
-    "desc": "Let presence and safety be enough; protect this peace",
-    "decided": "2026-06-11",
-    "votes": 1,
+    "id": "ryan_first",
+    "label": "Ryan helps Marcus",
+    "desc": "The steady one speaks first",
+    "decided": "2026-06-12",
+    "votes": 2,
     "tally": {
-      "just_be_together": 1
+      "ryan_first": 2
     }
   }
 }

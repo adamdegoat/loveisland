@@ -6653,5 +6653,189 @@
       }
     ],
     "timestamp": "2026-06-11T22:32:19.492633"
+  },
+  {
+    "day": 9,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "Emerges from his tent as Ryan approaches, moving toward him without the usual hesitation.",
+    "thought": "He makes this easier than I expected.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "settled",
+    "timestamp": "2026-06-12T07:03:19.661481"
+  },
+  {
+    "day": 9,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "Greets Marcus at his tent with quiet warmth and proposes fishing at the tide pools together.",
+    "thought": "He's staying. He's actually choosing this.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-12T07:03:19.661481"
+  },
+  {
+    "day": 9,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "Stretches by her hammock, watches Ryan and Marcus walk toward the water, offers her help.",
+    "thought": "They're finally finding their rhythm.",
+    "location": {
+      "waypoint": "hammock_beside",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-12T07:03:19.661481"
+  },
+  {
+    "day": 9,
+    "cycle": "morning",
+    "character": "judy",
+    "action": "Wakes on the porch as the others move into the day, settling the pup against her.",
+    "thought": "They're all okay. I'm okay too.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-12T07:03:19.661481"
+  },
+  {
+    "day": 9,
+    "cycle": "morning",
+    "character": "stray",
+    "action": "Follows Ryan and Marcus down the path toward the tide pools, tail raised and curious.",
+    "thought": "Where they go, I go now.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "safe",
+    "timestamp": "2026-06-12T07:03:19.661481"
+  },
+  {
+    "day": 9,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus"
+    ],
+    "description": "Early morning: Ryan meets Marcus at his tent with quiet warmth and proposes fishing together—Marcus agrees, and the two head down the path in easy conversation.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Morning. You're up early."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Couldn't sleep much longer."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I was thinking we could fish today, if you wanted. The food's running low."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. Okay."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Tide pools? You're better at finding the shellfish."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I don't mind going."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Good. Let me grab the basket and we can head out."
+      },
+      {
+        "speaker": "jade",
+        "line": "You two are heading out?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Fishing. We should be back by noon."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'll put water on for coffee. Some of those dried leaves from yesterday."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That sounds good."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Perfect. Keep an eye on the fire for us?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Of course. Go on."
+      },
+      {
+        "speaker": "ryan",
+        "line": "How are you feeling this morning?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Lighter than before. Like I can actually breathe."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's good. Really good."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm still scared sometimes. Still not sure I'm doing this right."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You are. You're here, you're staying. That's everything."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You make it easier. I don't know what you're doing, but it's working."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm just being here. Being honest. You're doing the hard part."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Where should we start?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Over there. I saw movement in that crevice yesterday."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'll check the shallow shelf. There's usually something good there."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Sounds like a plan. Let's do this."
+      }
+    ],
+    "timestamp": "2026-06-12T07:03:19.661481"
   }
 ]
