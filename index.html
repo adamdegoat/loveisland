@@ -2175,23 +2175,50 @@ function toPos(x, y, waypoint) {
 // sx/sy are camp-svg coords of the FEET; left maps straight from the viewBox (hx/10 %)
 // so it lands on the structure on desktop AND mobile (svgToViewport's top is correct).
 const SETTLE = {
-  house:   { sx:534, sy:360, wps:['house_door','house_porch'], spread:42 },
-  tent:    { sx:879, sy:210, wps:['tent_front'],               spread:26 },
+  house:   { sx:534, sy:360, wps:['house_door','house_porch'], spread:42, enterable:true },
+  tent:    { sx:879, sy:210, wps:['tent_front'],               spread:26, enterable:true },
   hammock: { sx:250, sy:360, wps:['hammock_beside'], recline:-58 },
 }
+// at NIGHT, anyone tucked into their own enter-able shelter is asleep INSIDE — hidden from the
+// camp, shown as a 💤 + a warm window glow on the structure (they still appear in the interior).
+let _indoorShelters = {}
 function settleHomeChars(positions){
   const W = isMobile()?getWorldWidth():window.innerWidth, H = stageH()
+  const night = !!(S.world && S.world.cycle==='night')
+  _indoorShelters = {}
   const byShelter = {}
   positions.forEach(p=>{ const c=S.chars[p.id]; if(!c) return
-    const S2=SETTLE[c.shelter]; if(!S2) return
-    if(S2.wps.indexOf((c.location||{}).waypoint) < 0) return
-    ;(byShelter[c.shelter]=byShelter[c.shelter]||[]).push(p) })
+    const wp=(c.location||{}).waypoint
+    // which shelter is this waypoint part of (regardless of whose shelter it is)?
+    let atSh=null; for(const sh in SETTLE){ if(SETTLE[sh].wps.indexOf(wp)>=0){ atSh=sh; break } }
+    if(!atSh) return
+    const S2=SETTLE[atSh], interacting = c.interaction && c.interaction.with
+    // asleep INSIDE an enter-able shelter at night → hide them (even a guest crashing there)
+    const indoors = !!(S2.enterable && night && !interacting)
+    // settle (pose at the structure) only for one's OWN shelter, or anyone sleeping inside at night;
+    // a DAYTIME visitor at someone else's porch is left standing where they are
+    if(c.shelter!==atSh && !indoors) return
+    p._atSh=atSh; p._indoors=indoors
+    ;(byShelter[atSh]=byShelter[atSh]||[]).push(p) })
   Object.keys(byShelter).forEach(sh=>{ const S2=SETTLE[sh], g=byShelter[sh], n=g.length
     g.forEach((p,i)=>{ const dx = n>1 ? (i-(n-1)/2)*(S2.spread||40) : 0
       const sx=S2.sx+dx, sy=S2.sy
       p.px = sx/1000*W
       p.py = parseFloat(svgToViewport(sx,sy).top)/100*H
-      p.settled = sh; p.recline = S2.recline||0 }) })
+      p.settled = sh; p.recline = S2.recline||0
+      if(p._indoors){ p.indoors=true; const c=S.chars[p.id]
+        const e = _indoorShelters[sh] || (_indoorShelters[sh]={sx:S2.sx, sy:S2.sy, names:[]})
+        e.names.push((((c&&c.name)||'').split(' ')[0])) } }) })
+}
+function renderSleepCues(){
+  let layer=document.getElementById('sleep-layer')
+  if(!layer){ const w=document.getElementById('world'); if(!w) return; layer=document.createElement('div'); layer.id='sleep-layer'; w.appendChild(layer) }
+  layer.innerHTML=''
+  Object.keys(_indoorShelters||{}).forEach(sh=>{ const s=_indoorShelters[sh]
+    const left=(s.sx/10)+'%', top=svgToViewport(s.sx, s.sy-34).top
+    const d=document.createElement('div'); d.className='sleepcue'; d.style.left=left; d.style.top=top
+    d.innerHTML=`<div class="sc-glow"></div><div class="sc-z">💤</div>`
+    layer.appendChild(d) })
 }
 // poses are applied AFTER renderInteractions (which clears char-svg transforms each cycle)
 function applySettlePoses(positions){
@@ -3375,6 +3402,8 @@ function updateWorld() {
     const el=document.getElementById('char-'+p.id); if(!el) return
     el.style.left=(p.px/W*100)+'%'
     el.style.top=(p.py/H*100)+'%'
+    if(p.indoors){ el.style.display='none'; const _b=document.getElementById('bubble-'+p.id); if(_b)_b.style.display='none'; return }
+    el.style.display=''                                 // asleep inside — avatar+bubble hidden; position stays on the shelter so the "X asleep" label lands there
     applyFace(p.id)
     updateBubble(p.id)
     // keep nametag/bubble label in sync (so an unnamed stray's tag appears once it's named)
@@ -3386,6 +3415,7 @@ function updateWorld() {
   nudgeBubbles(positions)
   renderInteractions(positions)
   applySettlePoses(positions)  // recline a settled hammock-resident (after interactions reset transforms)
+  renderSleepCues()            // 💤 + warm window glow on shelters whose owners are asleep inside
   renderChat()
   updateStatusBar()
   updateStatCards()
@@ -3804,6 +3834,14 @@ loadVote();
 (function(){
   const css = `
   #hotspots{position:absolute;inset:0;z-index:14;pointer-events:none}
+  #sleep-layer{position:absolute;inset:0;z-index:6;pointer-events:none}
+  .sleepcue{position:absolute;transform:translate(-50%,-50%)}
+  .sleepcue .sc-glow{position:absolute;left:50%;top:50%;width:66px;height:48px;transform:translate(-50%,-50%);border-radius:50%;
+    background:radial-gradient(closest-side,rgba(255,206,128,.55),transparent);animation:scGlow 3.2s ease-in-out infinite}
+  @keyframes scGlow{0%,100%{opacity:.45}50%{opacity:.85}}
+  .sleepcue .sc-z{position:absolute;left:62%;top:-52px;transform:translateX(-50%);font-size:17px;opacity:.92;
+    text-shadow:0 1px 4px rgba(0,0,0,.6);animation:scZ 3.6s ease-in-out infinite}
+  @keyframes scZ{0%,100%{opacity:.45;transform:translateX(-50%) translateY(2px)}50%{opacity:1;transform:translateX(-50%) translateY(-5px)}}
   .hotspot{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;cursor:pointer}
   .hotspot .hs-glow{position:absolute;left:50%;top:50%;width:70px;height:52px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,170,120,.34),transparent);opacity:0;transition:opacity .35s;pointer-events:none}
   .hotspot.occupied .hs-glow{opacity:1;animation:hsGlow 3.4s ease-in-out infinite}
