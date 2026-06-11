@@ -1,632 +1,632 @@
 {
-  "marcus": {
-    "name": "Marcus Tan",
-    "age": 32,
-    "archetype": "loner",
-    "color": "#60a5fa",
-    "scores": {
-      "trust": 36,
-      "openness": 49,
-      "ambition": 45,
-      "loneliness": 35,
-      "resilience": 87,
-      "hunger": 53,
-      "thirst": 53,
-      "energy": 88,
-      "health": 100
-    },
-    "mood": "guarded",
-    "location": {
-      "waypoint": "cliff_base",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "relationships": {
-      "ryan": {
-        "closeness": 64,
-        "tension": 1,
-        "attraction": 0
-      },
-      "jade": {
-        "closeness": 80,
-        "tension": 0,
-        "attraction": 21
-      },
-      "judy": {
-        "closeness": 39,
-        "tension": 0,
-        "attraction": 0
-      },
-      "stray": {
-        "closeness": 18,
-        "tension": 0,
-        "attraction": 0
-      }
-    },
-    "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
-    "interaction": {
-      "with": "jade",
-      "state": "talking"
-    },
-    "memories": [
-      {
-        "day": 3,
-        "text": "I told Ryan I'm afraid. He didn't push me away.",
-        "weight": 3
-      },
-      {
-        "day": 5,
-        "text": "Watched her choose him at the fire. She looked safe and afraid at once.",
-        "weight": 2
-      },
-      {
-        "day": 5,
-        "text": "She chose him. I watched from alone.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "She thanked me for staying. I was just there, but that was enough.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "I watched them grow closer and didn't need to leave. That's something.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "Jade saw Judy was alone and moved toward her without hesitation.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "The circle is real. I'm inside it now, not just watching.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "She asked me to fish and I said yes without that wall.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "I came without being asked. They wanted me there.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "Jade trusts me to know things. I do know.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "She asked me to teach her how to read the water. I said yes.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "We cooked the fish together. She stayed beside me the whole time.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "She reached me by the tide pools and I let her. Now I'm terrified.",
-        "weight": 2
-      },
-      {
-        "day": 8,
-        "text": "Jade found me at cliff base and didn't push. I stayed. I'm still staying.",
-        "weight": 2
-      }
-    ],
-    "appearance": {
-      "skin": "#cf9d72",
-      "hair": {
-        "style": "buzz",
-        "color": "#2a1a12"
-      },
-      "accessory": "sunglasses",
-      "outfit": "#1e3a5f",
-      "pants": "#3a4a55",
-      "beard": true
-    }
+ "marcus": {
+  "name": "Marcus Tan",
+  "age": 32,
+  "archetype": "loner",
+  "color": "#60a5fa",
+  "scores": {
+   "trust": 36,
+   "openness": 49,
+   "ambition": 45,
+   "loneliness": 35,
+   "resilience": 87,
+   "hunger": 53,
+   "thirst": 53,
+   "energy": 88,
+   "health": 100
   },
-  "ryan": {
-    "name": "Ryan Lim",
-    "age": 28,
-    "archetype": "builder",
-    "color": "#fbbf24",
-    "scores": {
-      "trust": 88,
-      "openness": 100,
-      "ambition": 79,
-      "loneliness": 3,
-      "resilience": 47,
-      "hunger": 53,
-      "thirst": 53,
-      "energy": 88,
-      "health": 100
-    },
-    "mood": "thoughtful",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "relationships": {
-      "marcus": {
-        "closeness": 64,
-        "tension": 0,
-        "attraction": 0
-      },
-      "jade": {
-        "closeness": 90,
-        "tension": 0,
-        "attraction": 28
-      },
-      "judy": {
-        "closeness": 51,
-        "tension": 0,
-        "attraction": 0
-      },
-      "stray": {
-        "closeness": 29,
-        "tension": 0,
-        "attraction": 0
-      }
-    },
-    "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
-    "interaction": null,
-    "memories": [
-      {
-        "day": 3,
-        "text": "Jade saw my exhaustion and offered to watch the fire — said I matter",
-        "weight": 2
-      },
-      {
-        "day": 3,
-        "text": "Jade rests against me by the fire like I'm solid.",
-        "weight": 2
-      },
-      {
-        "day": 3,
-        "text": "Marcus came to me broken and honest tonight.",
-        "weight": 2
-      },
-      {
-        "day": 4,
-        "text": "Judy asked if she belonged. I made sure she knew she absolutely did.",
-        "weight": 2
-      },
-      {
-        "day": 5,
-        "text": "She said she'd destroy herself losing me. I won't let that happen.",
-        "weight": 3
-      },
-      {
-        "day": 5,
-        "text": "She's choosing me. Really choosing me. Finally.",
-        "weight": 3
-      },
-      {
-        "day": 5,
-        "text": "She asked me to stay and I promised forever. I meant every word.",
-        "weight": 3
-      },
-      {
-        "day": 5,
-        "text": "She leaned close and said she was choosing me. Finally.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "Woke and she was waiting by the fire. She's choosing to stay. Everything.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "Watched Jade quietly draw Judy back in, like she belonged there all along.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "Judy had to learn she was wanted. We had to teach her.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "Marcus trusts Jade without hesitation—he's changing when she's near.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "We caught enough to eat. The three of us solved it together.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "Jade and Marcus glowed tonight. She reached for him and he let her. I wasn't sure how to feel.",
-        "weight": 2
-      }
-    ],
-    "appearance": {
-      "skin": "#e8c9a8",
-      "hair": {
-        "style": "short",
-        "color": "#6b4423"
-      },
-      "accessory": "cap",
-      "outfit": "#b45309",
-      "accColor": "#dc2626",
-      "pants": "#2e6b6b",
-      "beard": true
-    }
+  "mood": "guarded",
+  "location": {
+   "waypoint": "firepit_right",
+   "x": 75,
+   "y": 25
   },
-  "jade": {
-    "name": "Jade Ng",
-    "age": 26,
-    "archetype": "drifter",
-    "color": "#f472b6",
-    "scores": {
-      "trust": 82,
-      "openness": 100,
-      "ambition": 39,
-      "loneliness": 0,
-      "resilience": 64,
-      "hunger": 53,
-      "thirst": 53,
-      "energy": 88,
-      "health": 100
-    },
-    "mood": "restless",
-    "location": {
-      "waypoint": "cliff_base",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "relationships": {
-      "marcus": {
-        "closeness": 80,
-        "tension": 0,
-        "attraction": 21
-      },
-      "ryan": {
-        "closeness": 90,
-        "tension": 0,
-        "attraction": 23
-      },
-      "judy": {
-        "closeness": 50,
-        "tension": 0,
-        "attraction": 0
-      },
-      "stray": {
-        "closeness": 20,
-        "tension": 0,
-        "attraction": 0
-      }
-    },
-    "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": {
-      "with": "marcus",
-      "state": "talking"
-    },
-    "memories": [
-      {
-        "day": 5,
-        "text": "I told him I'm scared. He held my hand and promised to stay.",
-        "weight": 3
-      },
-      {
-        "day": 5,
-        "text": "I told him I'm afraid. He said he'd stay.",
-        "weight": 3
-      },
-      {
-        "day": 5,
-        "text": "I told him what I've been feeling. He listened without asking for more.",
-        "weight": 2
-      },
-      {
-        "day": 5,
-        "text": "I was honest about my fear. He held my hand. Marcus was there too.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "Judy was losing herself and I finally saw it. I went to her.",
-        "weight": 3
-      },
-      {
-        "day": 6,
-        "text": "Marcus came to the fire this morning. He's still here. That matters more than words.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "Judy was alone and hurting. I finally saw her. Now I'm choosing her.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "She's part of us now. That's not going to change.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "Marcus let me reach him. He didn't retreat.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "Marcus smiled at me. Real smile. First time.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "Marcus let me reach him at the tide pools. He's showing me his way.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "He didn't pull away when I stayed near him. All evening.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "Marcus opened to me at the tide pools. But at night he ran. I don't know how to reach him when he's scared.",
-        "weight": 2
-      },
-      {
-        "day": 8,
-        "text": "He was scared, not of me. We're going slow and that's enough.",
-        "weight": 2
-      }
-    ],
-    "appearance": {
-      "skin": "#e0b890",
-      "hair": {
-        "style": "wavy",
-        "color": "#3a2418"
-      },
-      "accessory": "earrings",
-      "outfit": "#f472b6",
-      "pants": "#c64a85"
-    }
+  "shelter": "tent",
+  "relationships": {
+   "ryan": {
+    "closeness": 64,
+    "tension": 1,
+    "attraction": 0
+   },
+   "jade": {
+    "closeness": 80,
+    "tension": 0,
+    "attraction": 21
+   },
+   "judy": {
+    "closeness": 39,
+    "tension": 0,
+    "attraction": 0
+   },
+   "stray": {
+    "closeness": 18,
+    "tension": 0,
+    "attraction": 0
+   }
   },
-  "judy": {
-    "name": "Judy Chen",
-    "age": 33,
-    "archetype": "clinger",
-    "color": "#2dd4bf",
-    "scores": {
-      "trust": 66,
-      "openness": 84,
-      "ambition": 34,
-      "loneliness": 89,
-      "resilience": 67,
-      "hunger": 53,
-      "thirst": 53,
-      "energy": 88,
-      "health": 100
-    },
-    "mood": "wistful",
-    "location": {
-      "waypoint": "beach_left",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "pregnant": true,
-    "pregnancy_weeks": 35,
-    "joined_day": 2,
-    "relationships": {
-      "marcus": {
-        "closeness": 39,
-        "tension": 0,
-        "attraction": 0
-      },
-      "ryan": {
-        "closeness": 51,
-        "tension": 0,
-        "attraction": 0
-      },
-      "jade": {
-        "closeness": 50,
-        "tension": 0,
-        "attraction": 0
-      },
-      "stray": {
-        "closeness": 32,
-        "tension": 0,
-        "attraction": 0
-      }
-    },
-    "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": {
-      "with": "stray",
-      "state": "comforting"
-    },
-    "memories": [
-      {
-        "day": 3,
-        "text": "They're together every night now. I'm not part of this.",
-        "weight": 3
-      },
-      {
-        "day": 3,
-        "text": "Jade and Ryan sat by the fire while I watched from the porch — he's turning toward her",
-        "weight": 2
-      },
-      {
-        "day": 4,
-        "text": "They all said I belong. Ryan, Marcus, even Jade. I want to believe them.",
-        "weight": 3
-      },
-      {
-        "day": 4,
-        "text": "They wanted me here. All of them. Even the pup chose me.",
-        "weight": 3
-      },
-      {
-        "day": 4,
-        "text": "The pup pressed against me like I mattered. Like I was safe too.",
-        "weight": 2
-      },
-      {
-        "day": 5,
-        "text": "The pup left me for them at the fire. I watched from the porch, alone.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "Jade found me on the porch and stayed. The pup pressed against me.",
-        "weight": 3
-      },
-      {
-        "day": 6,
-        "text": "Jade saw I was drowning and wouldn't let me disappear.",
-        "weight": 3
-      },
-      {
-        "day": 6,
-        "text": "They all came. They all stayed. I actually belong here.",
-        "weight": 3
-      },
-      {
-        "day": 6,
-        "text": "The stray came to me, went back to them. I'm outside.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "They're going fishing together. All three. I'm still on the porch.",
-        "weight": 1
-      },
-      {
-        "day": 7,
-        "text": "Watching them fish together—they found food and purpose. The pup and I were on the shore. I want to be with them.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "They cooked and laughed together. I watched from the dark, alone.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "The stray left the fire group to stay with me. It's the only one that truly chooses me.",
-        "weight": 2
-      }
-    ],
-    "appearance": {
-      "skin": "#d9a878",
-      "hair": {
-        "style": "long",
-        "color": "#2a1a12"
-      },
-      "accessory": "beanie",
-      "outfit": "#14b8a6",
-      "accColor": "#fb7185",
-      "pants": "#0e8a7e"
-    }
+  "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
+  "interaction": {
+   "with": "jade",
+   "state": "talking"
   },
-  "stray": {
-    "name": "",
-    "species": "dog",
-    "age": 0,
-    "archetype": "stray pup",
-    "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
-    "color": "#9c6b43",
-    "interaction": {
-      "with": "judy",
-      "state": "comforting"
-    },
-    "location": {
-      "waypoint": "beach_left",
-      "x": 20,
-      "y": 88
-    },
-    "mood": "protective",
-    "relationships": {
-      "marcus": {
-        "closeness": 44,
-        "tension": 0,
-        "attraction": 0
-      },
-      "ryan": {
-        "closeness": 55,
-        "tension": 0,
-        "attraction": 0
-      },
-      "jade": {
-        "closeness": 46,
-        "tension": 0,
-        "attraction": 0
-      },
-      "judy": {
-        "closeness": 58,
-        "tension": 0,
-        "attraction": 0
-      }
-    },
-    "scores": {
-      "trust": 46,
-      "openness": 39,
-      "ambition": 0,
-      "loneliness": 22,
-      "resilience": 82,
-      "hunger": 53,
-      "thirst": 53,
-      "energy": 88,
-      "health": 100
-    },
-    "shelter": "under the palms",
-    "memories": [
-      {
-        "day": 3,
-        "text": "Ryan's warmth and his hand keep me safe — I sleep without fear now",
-        "weight": 2
-      },
-      {
-        "day": 3,
-        "text": "He keeps me safe. I sleep without fearing.",
-        "weight": 2
-      },
-      {
-        "day": 3,
-        "text": "The two men were tense, then quiet. I felt safe between.",
-        "weight": 1
-      },
-      {
-        "day": 5,
-        "text": "All of them together at the fire. All safe. All here.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "She was alone and sad. I left the fire to be with her.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "She was alone. I brought the rest back to her.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "They gathered by the fire warmth. I went to her instead.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "She was alone and hurting. I left the fire group to be with her. She needs me.",
-        "weight": 2
-      }
-    ]
+  "memories": [
+   {
+    "day": 3,
+    "text": "I told Ryan I'm afraid. He didn't push me away.",
+    "weight": 3
+   },
+   {
+    "day": 5,
+    "text": "Watched her choose him at the fire. She looked safe and afraid at once.",
+    "weight": 2
+   },
+   {
+    "day": 5,
+    "text": "She chose him. I watched from alone.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "She thanked me for staying. I was just there, but that was enough.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "I watched them grow closer and didn't need to leave. That's something.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "Jade saw Judy was alone and moved toward her without hesitation.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "The circle is real. I'm inside it now, not just watching.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "She asked me to fish and I said yes without that wall.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "I came without being asked. They wanted me there.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "Jade trusts me to know things. I do know.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "She asked me to teach her how to read the water. I said yes.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "We cooked the fish together. She stayed beside me the whole time.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "She reached me by the tide pools and I let her. Now I'm terrified.",
+    "weight": 2
+   },
+   {
+    "day": 8,
+    "text": "Jade found me at cliff base and didn't push. I stayed. I'm still staying.",
+    "weight": 2
+   }
+  ],
+  "appearance": {
+   "skin": "#cf9d72",
+   "hair": {
+    "style": "buzz",
+    "color": "#2a1a12"
+   },
+   "accessory": "sunglasses",
+   "outfit": "#1e3a5f",
+   "pants": "#3a4a55",
+   "beard": true
   }
+ },
+ "ryan": {
+  "name": "Ryan Lim",
+  "age": 28,
+  "archetype": "builder",
+  "color": "#fbbf24",
+  "scores": {
+   "trust": 88,
+   "openness": 100,
+   "ambition": 79,
+   "loneliness": 3,
+   "resilience": 47,
+   "hunger": 53,
+   "thirst": 53,
+   "energy": 88,
+   "health": 100
+  },
+  "mood": "thoughtful",
+  "location": {
+   "waypoint": "firepit_left",
+   "x": 42,
+   "y": 48
+  },
+  "shelter": "house",
+  "relationships": {
+   "marcus": {
+    "closeness": 64,
+    "tension": 0,
+    "attraction": 0
+   },
+   "jade": {
+    "closeness": 90,
+    "tension": 0,
+    "attraction": 28
+   },
+   "judy": {
+    "closeness": 51,
+    "tension": 0,
+    "attraction": 0
+   },
+   "stray": {
+    "closeness": 29,
+    "tension": 0,
+    "attraction": 0
+   }
+  },
+  "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
+  "interaction": null,
+  "memories": [
+   {
+    "day": 3,
+    "text": "Jade saw my exhaustion and offered to watch the fire — said I matter",
+    "weight": 2
+   },
+   {
+    "day": 3,
+    "text": "Jade rests against me by the fire like I'm solid.",
+    "weight": 2
+   },
+   {
+    "day": 3,
+    "text": "Marcus came to me broken and honest tonight.",
+    "weight": 2
+   },
+   {
+    "day": 4,
+    "text": "Judy asked if she belonged. I made sure she knew she absolutely did.",
+    "weight": 2
+   },
+   {
+    "day": 5,
+    "text": "She said she'd destroy herself losing me. I won't let that happen.",
+    "weight": 3
+   },
+   {
+    "day": 5,
+    "text": "She's choosing me. Really choosing me. Finally.",
+    "weight": 3
+   },
+   {
+    "day": 5,
+    "text": "She asked me to stay and I promised forever. I meant every word.",
+    "weight": 3
+   },
+   {
+    "day": 5,
+    "text": "She leaned close and said she was choosing me. Finally.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "Woke and she was waiting by the fire. She's choosing to stay. Everything.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "Watched Jade quietly draw Judy back in, like she belonged there all along.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "Judy had to learn she was wanted. We had to teach her.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "Marcus trusts Jade without hesitation—he's changing when she's near.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "We caught enough to eat. The three of us solved it together.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "Jade and Marcus glowed tonight. She reached for him and he let her. I wasn't sure how to feel.",
+    "weight": 2
+   }
+  ],
+  "appearance": {
+   "skin": "#e8c9a8",
+   "hair": {
+    "style": "short",
+    "color": "#6b4423"
+   },
+   "accessory": "cap",
+   "outfit": "#b45309",
+   "accColor": "#dc2626",
+   "pants": "#2e6b6b",
+   "beard": true
+  }
+ },
+ "jade": {
+  "name": "Jade Ng",
+  "age": 26,
+  "archetype": "drifter",
+  "color": "#f472b6",
+  "scores": {
+   "trust": 82,
+   "openness": 100,
+   "ambition": 39,
+   "loneliness": 0,
+   "resilience": 64,
+   "hunger": 53,
+   "thirst": 53,
+   "energy": 88,
+   "health": 100
+  },
+  "mood": "restless",
+  "location": {
+   "waypoint": "firepit_front",
+   "x": 40,
+   "y": 50
+  },
+  "shelter": "hammock",
+  "relationships": {
+   "marcus": {
+    "closeness": 80,
+    "tension": 0,
+    "attraction": 21
+   },
+   "ryan": {
+    "closeness": 90,
+    "tension": 0,
+    "attraction": 23
+   },
+   "judy": {
+    "closeness": 50,
+    "tension": 0,
+    "attraction": 0
+   },
+   "stray": {
+    "closeness": 20,
+    "tension": 0,
+    "attraction": 0
+   }
+  },
+  "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
+  "interaction": {
+   "with": "marcus",
+   "state": "talking"
+  },
+  "memories": [
+   {
+    "day": 5,
+    "text": "I told him I'm scared. He held my hand and promised to stay.",
+    "weight": 3
+   },
+   {
+    "day": 5,
+    "text": "I told him I'm afraid. He said he'd stay.",
+    "weight": 3
+   },
+   {
+    "day": 5,
+    "text": "I told him what I've been feeling. He listened without asking for more.",
+    "weight": 2
+   },
+   {
+    "day": 5,
+    "text": "I was honest about my fear. He held my hand. Marcus was there too.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "Judy was losing herself and I finally saw it. I went to her.",
+    "weight": 3
+   },
+   {
+    "day": 6,
+    "text": "Marcus came to the fire this morning. He's still here. That matters more than words.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "Judy was alone and hurting. I finally saw her. Now I'm choosing her.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "She's part of us now. That's not going to change.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "Marcus let me reach him. He didn't retreat.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "Marcus smiled at me. Real smile. First time.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "Marcus let me reach him at the tide pools. He's showing me his way.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "He didn't pull away when I stayed near him. All evening.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "Marcus opened to me at the tide pools. But at night he ran. I don't know how to reach him when he's scared.",
+    "weight": 2
+   },
+   {
+    "day": 8,
+    "text": "He was scared, not of me. We're going slow and that's enough.",
+    "weight": 2
+   }
+  ],
+  "appearance": {
+   "skin": "#e0b890",
+   "hair": {
+    "style": "wavy",
+    "color": "#3a2418"
+   },
+   "accessory": "earrings",
+   "outfit": "#f472b6",
+   "pants": "#c64a85"
+  }
+ },
+ "judy": {
+  "name": "Judy Chen",
+  "age": 33,
+  "archetype": "clinger",
+  "color": "#2dd4bf",
+  "scores": {
+   "trust": 66,
+   "openness": 84,
+   "ambition": 34,
+   "loneliness": 89,
+   "resilience": 67,
+   "hunger": 53,
+   "thirst": 53,
+   "energy": 88,
+   "health": 100
+  },
+  "mood": "wistful",
+  "location": {
+   "waypoint": "beach_left",
+   "x": 50,
+   "y": 82
+  },
+  "shelter": "house",
+  "pregnant": true,
+  "pregnancy_weeks": 35,
+  "joined_day": 2,
+  "relationships": {
+   "marcus": {
+    "closeness": 39,
+    "tension": 0,
+    "attraction": 0
+   },
+   "ryan": {
+    "closeness": 51,
+    "tension": 0,
+    "attraction": 0
+   },
+   "jade": {
+    "closeness": 50,
+    "tension": 0,
+    "attraction": 0
+   },
+   "stray": {
+    "closeness": 32,
+    "tension": 0,
+    "attraction": 0
+   }
+  },
+  "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
+  "interaction": {
+   "with": "stray",
+   "state": "comforting"
+  },
+  "memories": [
+   {
+    "day": 3,
+    "text": "They're together every night now. I'm not part of this.",
+    "weight": 3
+   },
+   {
+    "day": 3,
+    "text": "Jade and Ryan sat by the fire while I watched from the porch — he's turning toward her",
+    "weight": 2
+   },
+   {
+    "day": 4,
+    "text": "They all said I belong. Ryan, Marcus, even Jade. I want to believe them.",
+    "weight": 3
+   },
+   {
+    "day": 4,
+    "text": "They wanted me here. All of them. Even the pup chose me.",
+    "weight": 3
+   },
+   {
+    "day": 4,
+    "text": "The pup pressed against me like I mattered. Like I was safe too.",
+    "weight": 2
+   },
+   {
+    "day": 5,
+    "text": "The pup left me for them at the fire. I watched from the porch, alone.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "Jade found me on the porch and stayed. The pup pressed against me.",
+    "weight": 3
+   },
+   {
+    "day": 6,
+    "text": "Jade saw I was drowning and wouldn't let me disappear.",
+    "weight": 3
+   },
+   {
+    "day": 6,
+    "text": "They all came. They all stayed. I actually belong here.",
+    "weight": 3
+   },
+   {
+    "day": 6,
+    "text": "The stray came to me, went back to them. I'm outside.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "They're going fishing together. All three. I'm still on the porch.",
+    "weight": 1
+   },
+   {
+    "day": 7,
+    "text": "Watching them fish together—they found food and purpose. The pup and I were on the shore. I want to be with them.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "They cooked and laughed together. I watched from the dark, alone.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "The stray left the fire group to stay with me. It's the only one that truly chooses me.",
+    "weight": 2
+   }
+  ],
+  "appearance": {
+   "skin": "#d9a878",
+   "hair": {
+    "style": "long",
+    "color": "#2a1a12"
+   },
+   "accessory": "beanie",
+   "outfit": "#14b8a6",
+   "accColor": "#fb7185",
+   "pants": "#0e8a7e"
+  }
+ },
+ "stray": {
+  "name": "",
+  "species": "dog",
+  "age": 0,
+  "archetype": "stray pup",
+  "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
+  "color": "#9c6b43",
+  "interaction": {
+   "with": "judy",
+   "state": "comforting"
+  },
+  "location": {
+   "waypoint": "beach_left",
+   "x": 20,
+   "y": 88
+  },
+  "mood": "protective",
+  "relationships": {
+   "marcus": {
+    "closeness": 44,
+    "tension": 0,
+    "attraction": 0
+   },
+   "ryan": {
+    "closeness": 55,
+    "tension": 0,
+    "attraction": 0
+   },
+   "jade": {
+    "closeness": 46,
+    "tension": 0,
+    "attraction": 0
+   },
+   "judy": {
+    "closeness": 58,
+    "tension": 0,
+    "attraction": 0
+   }
+  },
+  "scores": {
+   "trust": 46,
+   "openness": 39,
+   "ambition": 0,
+   "loneliness": 22,
+   "resilience": 82,
+   "hunger": 53,
+   "thirst": 53,
+   "energy": 88,
+   "health": 100
+  },
+  "shelter": "under the palms",
+  "memories": [
+   {
+    "day": 3,
+    "text": "Ryan's warmth and his hand keep me safe — I sleep without fear now",
+    "weight": 2
+   },
+   {
+    "day": 3,
+    "text": "He keeps me safe. I sleep without fearing.",
+    "weight": 2
+   },
+   {
+    "day": 3,
+    "text": "The two men were tense, then quiet. I felt safe between.",
+    "weight": 1
+   },
+   {
+    "day": 5,
+    "text": "All of them together at the fire. All safe. All here.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "She was alone and sad. I left the fire to be with her.",
+    "weight": 2
+   },
+   {
+    "day": 6,
+    "text": "She was alone. I brought the rest back to her.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "They gathered by the fire warmth. I went to her instead.",
+    "weight": 2
+   },
+   {
+    "day": 7,
+    "text": "She was alone and hurting. I left the fire group to be with her. She needs me.",
+    "weight": 2
+   }
+  ]
+ }
 }
