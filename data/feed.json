@@ -6285,5 +6285,179 @@
       }
     ],
     "timestamp": "2026-06-11T15:02:28.684612"
+  },
+  {
+    "day": 8,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "He returns from the tide pools with Ryan as the sun lowers, settling by the fire with an ease that wasn't there before.",
+    "thought": "I'm different here now. It feels okay.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "calm",
+    "timestamp": "2026-06-11T18:32:27.825184"
+  },
+  {
+    "day": 8,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "He comes back from gathering mussels with Marcus, moving directly to the firepit as evening deepens, every gesture showing he's exactly where he wants to be.",
+    "thought": "Marcus finally sees me. Really sees me.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-11T18:32:27.825184"
+  },
+  {
+    "day": 8,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "She drifts to the firepit as darkness settles, drawn by the light and the people gathering around it.",
+    "thought": "They're all showing up. Really here together.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "warm",
+    "timestamp": "2026-06-11T18:32:27.825184"
+  },
+  {
+    "day": 8,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "She settles near the warmth of the fire, the stray curled against her side, finally not flinching at the closeness.",
+    "thought": "I'm wanted. They keep coming back.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-11T18:32:27.825184"
+  },
+  {
+    "day": 8,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "The pup presses close to Judy by the fire, her brown fur catching the firelight, protective and finally at rest.",
+    "thought": "She's safe now. I'm here with her.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "calm",
+    "timestamp": "2026-06-11T18:32:27.825184"
+  },
+  {
+    "day": 8,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade",
+      "judy"
+    ],
+    "description": "As evening settles, Ryan and Marcus sit by the fire together, Jade and Judy nearby with the stray; for the first time, there's room to breathe together.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You know, today was different. Working the tide with you—it felt right."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. It did."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's all I'm getting? Just yeah?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "What else is there? You know what I mean."
+      },
+      {
+        "speaker": "jade",
+        "line": "He's saying yes completely. Marcus doesn't waste words on empty things."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I've felt like we were holding our breath around each other. Today we just... didn't."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Wasn't planned. Just happened naturally."
+      },
+      {
+        "speaker": "judy",
+        "line": "Everything felt different today. I'm not afraid anymore. Not like I was before."
+      },
+      {
+        "speaker": "jade",
+        "line": "Because you're safe now. Truly safe."
+      },
+      {
+        "speaker": "judy",
+        "line": "How do you know that though? How can anyone really be sure?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Because we chose this. All of us, choosing it together."
+      },
+      {
+        "speaker": "marcus",
+        "line": "The pup chose you too. Won't leave your side."
+      },
+      {
+        "speaker": "jade",
+        "line": "Animals know the truth before people do. She knows you matter here."
+      },
+      {
+        "speaker": "judy",
+        "line": "No one's ever needed me like this. Not ever."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Well you're needed now. By all of us."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You belong here. It's not a question anymore."
+      },
+      {
+        "speaker": "jade",
+        "line": "It's just fact now."
+      },
+      {
+        "speaker": "judy",
+        "line": "I want to believe that so badly."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then believe it. We're not going anywhere tomorrow or the day after."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not ever."
+      },
+      {
+        "speaker": "judy",
+        "line": "Okay. I'm going to believe it then."
+      }
+    ],
+    "timestamp": "2026-06-11T18:32:27.825184"
   }
 ]

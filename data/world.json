@@ -1,10 +1,10 @@
 {
   "day": 8,
-  "cycle": "afternoon",
+  "cycle": "evening",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Marcus stops guarding his heart; Ryan stops doubting; everyone finally moves as one.",
+  "pulse": "Marcus lets people closer than before, and Judy finally stops waiting for disaster—they're becoming a real family together.",
   "structures": [
     {
       "id": "marcus_tent",
@@ -16,7 +16,7 @@
       "builder": "marcus",
       "day": 1,
       "label": "Marcus's Tent",
-      "condition": 34
+      "condition": 31
     },
     {
       "id": "ryan_house",
@@ -28,7 +28,7 @@
       "builder": "ryan",
       "day": 1,
       "label": "Ryan's House",
-      "condition": 34
+      "condition": 31
     },
     {
       "id": "jade_hammock",
@@ -40,7 +40,7 @@
       "builder": "jade",
       "day": 1,
       "label": "Jade's Hammock",
-      "condition": 34
+      "condition": 31
     },
     {
       "id": "shared_firepit",
@@ -52,24 +52,24 @@
       "builder": "ryan",
       "day": 1,
       "label": "Fire Pit",
-      "condition": 34
+      "condition": 31
     }
   ],
   "resources": {
+    "food": 1,
+    "water": 10,
+    "wood": 78,
+    "medicine": 15
+  },
+  "resources_prev": {
     "food": 3,
     "water": 14,
     "wood": 80,
     "medicine": 15
   },
-  "resources_prev": {
-    "food": 0,
-    "water": 18,
-    "wood": 77,
-    "medicine": 15
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-11:afternoon",
-  "scene": "At the tide pools, Ryan and Marcus gather mussels while Jade works the easy pocket nearby; by late afternoon, they're walking back to camp together, Judy's already at the fire with the stray, preparing dinner.",
+  "last_cycle_key": "2026-06-11:evening",
+  "scene": "By the firepit in the evening, Ryan and Marcus sit together while Jade and Judy listen, the stray pressed against Judy's side; for the first time, Marcus speaks openly about belonging, and Judy believes him.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -83,7 +83,7 @@
   "camp_climate": "steady",
   "fire": {
     "lit": true,
-    "fuel": 2
+    "fuel": 8
   },
   "lean": {
     "id": "just_be_together",
