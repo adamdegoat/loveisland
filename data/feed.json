@@ -6459,5 +6459,199 @@
       }
     ],
     "timestamp": "2026-06-11T18:32:27.825184"
+  },
+  {
+    "day": 8,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "Sits with the group at the fire as it dies, then rises and heads back to his tent, finally at peace.",
+    "thought": "I'm okay. They're okay with me.",
+    "location": {
+      "waypoint": "tent_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "settled",
+    "timestamp": "2026-06-11T22:32:19.492633"
+  },
+  {
+    "day": 8,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "Gathers with everyone at the fire as it dies, then settles on the porch with Judy and the stray for the night.",
+    "thought": "This is what I wanted. All of us together.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-11T22:32:19.492633"
+  },
+  {
+    "day": 8,
+    "cycle": "night",
+    "character": "jade",
+    "action": "Leans into the warmth of the fire and the people around it, then drifts toward her hammock as night deepens.",
+    "thought": "I'm not floating anymore. I've landed.",
+    "location": {
+      "waypoint": "hammock_beside",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-11T22:32:19.492633"
+  },
+  {
+    "day": 8,
+    "cycle": "night",
+    "character": "judy",
+    "action": "Sits with the group at the dying fire, the stray warm against her leg, then stays on the porch with Ryan as sleep comes.",
+    "thought": "They want me here. This is real.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "secure",
+    "timestamp": "2026-06-11T22:32:19.492633"
+  },
+  {
+    "day": 8,
+    "cycle": "night",
+    "character": "stray",
+    "action": "Curls tightly against Judy at the fire, then follows her to the porch where her warmth is the safest place on the island.",
+    "thought": "Home is where she is. Always.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "safe",
+    "timestamp": "2026-06-11T22:32:19.492633"
+  },
+  {
+    "day": 8,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade",
+      "judy"
+    ],
+    "description": "Around the dying firepit, four sit in easy silence as night deepens — Marcus letting go, Ryan finally at rest, Jade found, and Judy no longer trembling.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "It's strange, isn't it? A few days ago we were strangers."
+      },
+      {
+        "speaker": "jade",
+        "line": "We're still kind of strangers. We're just... choosing to know each other now."
+      },
+      {
+        "speaker": "judy",
+        "line": "I was so sure you'd all decide to leave me behind."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We didn't leave you. We went to the tide pools and came back."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And we came back for you. All of us. That matters."
+      },
+      {
+        "speaker": "jade",
+        "line": "What changed? I mean, why now? Why today?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Because nobody pretended anymore. We just... were."
+      },
+      {
+        "speaker": "judy",
+        "line": "I wanted to believe that. That it was real. I wasn't sure."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It is. Look at Marcus. He's sitting here. By choice."
+      },
+      {
+        "speaker": "jade",
+        "line": "And he's not counting down the minutes until he can escape."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not. That part's gone now."
+      },
+      {
+        "speaker": "judy",
+        "line": "Are you saying... you want to stay? With us?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm saying I'm already here. And that feels like enough now."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's all any of us needed to hear."
+      },
+      {
+        "speaker": "jade",
+        "line": "Tomorrow things might be hard again. Someone will be hungry or tired."
+      },
+      {
+        "speaker": "judy",
+        "line": "But tonight we're all together."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's the whole island right there. Tonight."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We should sleep. Let the fire rest."
+      },
+      {
+        "speaker": "jade",
+        "line": "In the morning we'll figure out shelter, and food, and survival stuff again."
+      },
+      {
+        "speaker": "judy",
+        "line": "But for now I get to feel safe."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Go to bed. All of you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You first, actually. You need rest like everyone."
+      },
+      {
+        "speaker": "jade",
+        "line": "Will you be okay? In your tent?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. I think I will be."
+      },
+      {
+        "speaker": "judy",
+        "line": "Goodnight, Marcus. And... thank you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Goodnight, all of you."
+      }
+    ],
+    "timestamp": "2026-06-11T22:32:19.492633"
   }
 ]

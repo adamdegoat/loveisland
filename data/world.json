@@ -1,10 +1,10 @@
 {
   "day": 8,
-  "cycle": "evening",
+  "cycle": "night",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Marcus lets people closer than before, and Judy finally stops waiting for disaster—they're becoming a real family together.",
+  "pulse": "Marcus finally stays, Judy stops fearing abandonment, and the group breathes together as if night has finally made them safe.",
   "structures": [
     {
       "id": "marcus_tent",
@@ -16,7 +16,7 @@
       "builder": "marcus",
       "day": 1,
       "label": "Marcus's Tent",
-      "condition": 31
+      "condition": 28
     },
     {
       "id": "ryan_house",
@@ -28,7 +28,7 @@
       "builder": "ryan",
       "day": 1,
       "label": "Ryan's House",
-      "condition": 31
+      "condition": 28
     },
     {
       "id": "jade_hammock",
@@ -40,7 +40,7 @@
       "builder": "jade",
       "day": 1,
       "label": "Jade's Hammock",
-      "condition": 31
+      "condition": 28
     },
     {
       "id": "shared_firepit",
@@ -52,24 +52,24 @@
       "builder": "ryan",
       "day": 1,
       "label": "Fire Pit",
-      "condition": 31
+      "condition": 28
     }
   ],
   "resources": {
+    "food": 0,
+    "water": 12,
+    "wood": 71,
+    "medicine": 15
+  },
+  "resources_prev": {
     "food": 1,
     "water": 10,
     "wood": 78,
     "medicine": 15
   },
-  "resources_prev": {
-    "food": 3,
-    "water": 14,
-    "wood": 80,
-    "medicine": 15
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-11:evening",
-  "scene": "By the firepit in the evening, Ryan and Marcus sit together while Jade and Judy listen, the stray pressed against Judy's side; for the first time, Marcus speaks openly about belonging, and Judy believes him.",
+  "last_cycle_key": "2026-06-11:night",
+  "scene": "Around the dying fire, they all spoke the truth of it: they were choosing to stay. Now Marcus heads to his tent, Jade to her hammock, Ryan and Judy settle on the porch with the stray.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -77,13 +77,14 @@
     "4": "Day 4 unfolded in warmth and lightness. Marcus joked with Ryan and Jade at the fire, letting walls drop that he didn't know he'd built. When Judy hesitantly approached, all three pulled her in so completely she finally believed she belonged. The stray, sensing safety, bonded with her—a small brown anchor to this new family. By nightfall, the island's isolation had cracked open, replaced by something rarer: five beings held in belonging.",
     "5": "Day 5 was warm, fed, and generous. By midday, Ryan and Jade had begun their tender connection—she opening about her deepest fear, he steady at her side. Marcus struggled from the edges, until nightfall brought them all to the fire: Marcus spoke truth about breaking and belief, Jade found her courage, Ryan held the space, and in that honesty something shifted. Judy remained on the porch, aching for the belonging she couldn't quite reach.",
     "6": "Day 6 broke with the group facing what they'd done to Judy—the hurt, the oversight, the way they'd left her behind. When she pulled away that evening, Jade and the stray went after her. By nightfall, they'd all come back together, and the circle was finally whole.",
-    "7": "Day 7 brought abundance: fresh fish caught, Marcus teaching Jade and letting her reach him—afternoon glowing with fragile new trust. But night fractured it: Marcus pulled back scared, leaving Jade reaching after him while Ryan watched with uncertainty, and Judy grieved alone on the beach with only the stray truly beside her."
+    "7": "Day 7 brought abundance: fresh fish caught, Marcus teaching Jade and letting her reach him—afternoon glowing with fragile new trust. But night fractured it: Marcus pulled back scared, leaving Jade reaching after him while Ryan watched with uncertainty, and Judy grieved alone on the beach with only the stray truly beside her.",
+    "8": "Day 8 brought a shift: Marcus let Ryan in at the tide pools; Judy stopped fearing she didn't belong; the stray's flinching eased. By night they gathered at the fire and spoke the truth that mattered most — they were choosing to stay — before finding sleep deeper and safer than any before."
   },
   "last_run_date": "2026-06-11",
-  "camp_climate": "steady",
+  "camp_climate": "content",
   "fire": {
     "lit": true,
-    "fuel": 8
+    "fuel": 14
   },
   "lean": {
     "id": "just_be_together",
