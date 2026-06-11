@@ -6117,5 +6117,173 @@
       }
     ],
     "timestamp": "2026-06-11T11:33:36.430343"
+  },
+  {
+    "day": 8,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "Moves to the tide pools at low tide and finds an abundance of exposed mussels, gathering with quiet precision.",
+    "thought": "They needed me. I knew what to do.",
+    "location": {
+      "waypoint": "beach_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "focused",
+    "timestamp": "2026-06-11T15:02:28.684612"
+  },
+  {
+    "day": 8,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "Arrives at the tide pools to find Marcus already working and joins him, moving carefully beside him in the shallow water.",
+    "thought": "He's letting me in. We're actually okay.",
+    "location": {
+      "waypoint": "beach_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-11T15:02:28.684612"
+  },
+  {
+    "day": 8,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "Scouts the coves at low tide and discovers an easy pocket of fresh fish, filling her basket methodically and moving toward the group.",
+    "thought": "We're stronger together than we ever were.",
+    "location": {
+      "waypoint": "beach_mid",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "warm",
+    "timestamp": "2026-06-11T15:02:28.684612"
+  },
+  {
+    "day": 8,
+    "cycle": "afternoon",
+    "character": "judy",
+    "action": "Moves to the fire with quiet purpose, preparing cooking stones and clearing space, finding her role in the afternoon's gathering.",
+    "thought": "I can do something useful here.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-11T15:02:28.684612"
+  },
+  {
+    "day": 8,
+    "cycle": "afternoon",
+    "character": "stray",
+    "action": "Pads after Judy to the firepit and settles close, watching her work with steady presence, protective and calm.",
+    "thought": "She's safe. I'm here with her.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "protective",
+    "timestamp": "2026-06-11T15:02:28.684612"
+  },
+  {
+    "day": 8,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus"
+    ],
+    "description": "At the tide pools during low tide, Ryan finds Marcus already gathering mussels; they work side by side in the shallow water, and in the quiet, Marcus finally opens up.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You found them. I wasn't sure where to start."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Low tide. They're exposed for an hour."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Can I help?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Move slow. Don't splash."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Like this?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Better."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Working with you is easier somehow."
+      },
+      {
+        "speaker": "marcus",
+        "line": "How?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're steady. I'm less anxious around you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not steady."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You are. You just hide it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Maybe."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We're good, right?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. We are."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Because you meant what you said about staying?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I did. I still do."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Everyone could be like this if they stopped being afraid."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Jade doesn't fear. And Judy—she reaches out anyway."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You came back from the cliff."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You were here. That mattered."
+      }
+    ],
+    "timestamp": "2026-06-11T15:02:28.684612"
   }
 ]
