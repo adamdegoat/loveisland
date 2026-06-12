@@ -7022,5 +7022,187 @@
       }
     ],
     "timestamp": "2026-06-12T11:32:57.843856"
+  },
+  {
+    "day": 9,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "He returns from the beach with the morning's catch and, in a moment of quiet decision, invites the others to his tide pools for the first time.",
+    "thought": "This is easier than I expected.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "warm",
+    "timestamp": "2026-06-12T15:02:49.556302"
+  },
+  {
+    "day": 9,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "He comes back from fishing with Marcus, energized and already planning how they'll work together to preserve the catch properly.",
+    "thought": "He's really choosing us now, really staying.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-12T15:02:49.556302"
+  },
+  {
+    "day": 9,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "She watches Ryan and Marcus return from fishing, then drifts toward them, drawn by a new openness she senses in Marcus.",
+    "thought": "Something shifted in him; he's letting people in.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-12T15:02:49.556302"
+  },
+  {
+    "day": 9,
+    "cycle": "afternoon",
+    "character": "judy",
+    "action": "She approaches with the pup at her heels, finally brave enough to ask to help with real work rather than hover on the edges.",
+    "thought": "I belong here, they want me here.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-12T15:02:49.556302"
+  },
+  {
+    "day": 9,
+    "cycle": "afternoon",
+    "character": "stray",
+    "action": "It presses close to Judy as they walk toward the tide pools, sensing her newfound confidence and mirroring her ease.",
+    "thought": "She's safe; I'm safe; we're all here.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "happy",
+    "timestamp": "2026-06-12T15:02:49.556302"
+  },
+  {
+    "day": 9,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade",
+      "judy"
+    ],
+    "description": "Marcus brings Ryan, Jade, and Judy to the tide pools to clean the catch—his private place, finally shared, finally not his alone.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "We've got a good catch here. What do you think—cook most of it tonight and preserve the rest?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah, that works. We need the fire hot enough for both."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're better with fire than I am. I always push it too hard."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You don't push. You're just eager. It's different from pushing."
+      },
+      {
+        "speaker": "jade",
+        "line": "There's something different about you two right now."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We had a good morning. Fishing was easy with him."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It was easy because he was there. Because we were working together without the walls between us."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're actually letting him help instead of pushing him away."
+      },
+      {
+        "speaker": "marcus",
+        "line": "He's making it easier to stay. Easier than I thought it could be."
+      },
+      {
+        "speaker": "jade",
+        "line": "I can see that. It's really good."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It is good. I didn't think I could feel like this."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You can. You are. And that matters."
+      },
+      {
+        "speaker": "judy",
+        "line": "What are you three doing? Can I help with the fish? The pup wants to help too."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We're taking them to the tide pools to clean them properly. You should come."
+      },
+      {
+        "speaker": "judy",
+        "line": "I want to. But isn't that your private spot, Marcus?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "It was. But it doesn't have to be just mine anymore."
+      },
+      {
+        "speaker": "jade",
+        "line": "So we're all going? All of us together?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. All of us. That's what I want."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Let's head there before the light changes. We'll make quick work of it."
+      },
+      {
+        "speaker": "judy",
+        "line": "I like being part of this. Being wanted."
+      },
+      {
+        "speaker": "jade",
+        "line": "You are wanted. We all know it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Come on. Let's go."
+      },
+      {
+        "speaker": "judy",
+        "line": "Thank you. For bringing me in."
+      }
+    ],
+    "timestamp": "2026-06-12T15:02:49.556302"
   }
 ]

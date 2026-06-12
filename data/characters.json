@@ -6,35 +6,35 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 43,
-      "openness": 54,
+      "openness": 56,
       "ambition": 45,
-      "loneliness": 22,
+      "loneliness": 18,
       "resilience": 88,
-      "hunger": 52,
+      "hunger": 51,
       "thirst": 53,
-      "energy": 70,
+      "energy": 58,
       "health": 100
     },
     "mood": "warm",
     "location": {
-      "waypoint": "house_door",
+      "waypoint": "tide_pool",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 79,
+        "closeness": 80,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 90,
+        "closeness": 91,
         "tension": 0,
         "attraction": 23
       },
       "judy": {
-        "closeness": 47,
+        "closeness": 48,
         "tension": 0,
         "attraction": 0
       },
@@ -81,11 +81,6 @@
         "weight": 2
       },
       {
-        "day": 7,
-        "text": "She reached me by the tide pools and I let her. Now I'm terrified.",
-        "weight": 2
-      },
-      {
         "day": 8,
         "text": "She found me at the cliff and I stayed. I told her the truth.",
         "weight": 3
@@ -119,6 +114,11 @@
         "day": 9,
         "text": "He was there in the morning and I didn't pull away.",
         "weight": 2
+      },
+      {
+        "day": 9,
+        "text": "I let them into my tide pools today. Shared my quiet place. Felt right.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -144,21 +144,21 @@
       "ambition": 81,
       "loneliness": 0,
       "resilience": 49,
-      "hunger": 52,
+      "hunger": 51,
       "thirst": 53,
-      "energy": 70,
+      "energy": 58,
       "health": 100
     },
     "mood": "warm",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "tide_pool",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 79,
+        "closeness": 80,
         "tension": 0,
         "attraction": 0
       },
@@ -168,7 +168,7 @@
         "attraction": 29
       },
       "judy": {
-        "closeness": 61,
+        "closeness": 62,
         "tension": 0,
         "attraction": 0
       },
@@ -198,11 +198,6 @@
         "day": 5,
         "text": "She asked me to stay and I promised forever. I meant every word.",
         "weight": 3
-      },
-      {
-        "day": 5,
-        "text": "She leaned close and said she was choosing me. Finally.",
-        "weight": 2
       },
       {
         "day": 6,
@@ -253,6 +248,11 @@
         "day": 9,
         "text": "Marcus is finally choosing me. Not running anymore. Staying.",
         "weight": 2
+      },
+      {
+        "day": 9,
+        "text": "Marcus is finally choosing to open, to share his spaces. He's really staying.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -277,23 +277,23 @@
       "trust": 85,
       "openness": 100,
       "ambition": 40,
-      "loneliness": 1,
+      "loneliness": 0,
       "resilience": 66,
-      "hunger": 52,
+      "hunger": 51,
       "thirst": 53,
-      "energy": 70,
+      "energy": 58,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "house_garden",
+      "waypoint": "tide_pool",
       "x": 40,
       "y": 50
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 90,
+        "closeness": 91,
         "tension": 0,
         "attraction": 23
       },
@@ -314,7 +314,10 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "talking"
+    },
     "memories": [
       {
         "day": 5,
@@ -404,19 +407,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 74,
+      "trust": 75,
       "openness": 88,
       "ambition": 34,
-      "loneliness": 69,
-      "resilience": 70,
-      "hunger": 52,
+      "loneliness": 65,
+      "resilience": 71,
+      "hunger": 51,
       "thirst": 53,
-      "energy": 70,
+      "energy": 58,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "tide_pool",
       "x": 50,
       "y": 82
     },
@@ -426,12 +429,12 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 47,
+        "closeness": 48,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 61,
+        "closeness": 62,
         "tension": 0,
         "attraction": 0
       },
@@ -441,15 +444,15 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 40,
+        "closeness": 41,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
     "interaction": {
-      "with": "stray",
-      "state": "sitting_together"
+      "with": "ryan",
+      "state": "talking"
     },
     "memories": [
       {
@@ -481,11 +484,6 @@
         "day": 6,
         "text": "They all came. They all stayed. I actually belong here.",
         "weight": 3
-      },
-      {
-        "day": 6,
-        "text": "The stray came to me, went back to them. I'm outside.",
-        "weight": 2
       },
       {
         "day": 7,
@@ -521,6 +519,11 @@
         "day": 8,
         "text": "I'm cooking for them. I have a purpose here.",
         "weight": 2
+      },
+      {
+        "day": 9,
+        "text": "They brought me to Marcus's private place. I'm part of something real now.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -547,11 +550,11 @@
       "state": "sitting_together"
     },
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "tide_pool",
       "x": 20,
       "y": 88
     },
-    "mood": "safe",
+    "mood": "happy",
     "relationships": {
       "marcus": {
         "closeness": 53,
@@ -569,20 +572,20 @@
         "attraction": 0
       },
       "judy": {
-        "closeness": 72,
+        "closeness": 73,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 54,
+      "trust": 55,
       "openness": 42,
       "ambition": 0,
-      "loneliness": 9,
+      "loneliness": 7,
       "resilience": 83,
-      "hunger": 52,
+      "hunger": 51,
       "thirst": 53,
-      "energy": 70,
+      "energy": 58,
       "health": 100
     },
     "shelter": "under the palms",
