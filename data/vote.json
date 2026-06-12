@@ -1,30 +1,33 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-12",
+    "id": "2026-06-13",
     "closes": "tonight",
-    "question": "Marcus finally let Ryan see him—tomorrow, does he keep that softness sacred between them, or does he offer it to the whole group?",
+    "question": "Marcus brought you into his tide pools. You're staying. Tomorrow, do you talk about what it means—name the shift, make sure everyone's okay—or keep the magic alive by not",
     "options": [
       {
-        "id": "keep_sacred",
-        "label": "Just Ryan",
-        "desc": "Marcus treasures the private bond he found with Ryan"
+        "id": "speak_openly",
+        "label": "Talk about it",
+        "desc": "Words make this real. You've trusted so far by being honest—keep going"
       },
       {
-        "id": "offer_to_all",
-        "label": "All of them",
-        "desc": "Marcus opens completely to the whole group"
+        "id": "keep_silent",
+        "label": "Keep the magic",
+        "desc": "Don't name it. Just stay close and let the moment breathe"
+      },
+      {
+        "id": "follow_marcus",
+        "label": "Follow Marcus's lead",
+        "desc": "He opened his sacred place. Ask him what he needs—silence or truth"
       }
     ]
   },
   "in_play": {
-    "id": "ryan_first",
-    "label": "Ryan helps Marcus",
-    "desc": "The steady one speaks first",
-    "decided": "2026-06-12",
-    "votes": 2,
-    "tally": {
-      "ryan_first": 2
-    }
+    "id": "keep_sacred",
+    "label": "Just Ryan",
+    "desc": "Marcus treasures the private bond he found with Ryan",
+    "decided": "2026-06-13",
+    "votes": 0,
+    "tally": {}
   }
 }

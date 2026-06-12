@@ -5,14 +5,14 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 46,
-      "openness": 58,
+      "trust": 47,
+      "openness": 59,
       "ambition": 45,
-      "loneliness": 10,
+      "loneliness": 7,
       "resilience": 89,
-      "hunger": 49,
-      "thirst": 51,
-      "energy": 88,
+      "hunger": 48,
+      "thirst": 48,
+      "energy": 82,
       "health": 100
     },
     "mood": "settled",
@@ -24,7 +24,7 @@
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 87,
+        "closeness": 89,
         "tension": 0,
         "attraction": 0
       },
@@ -39,7 +39,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 25,
+        "closeness": 26,
         "tension": 0,
         "attraction": 0
       }
@@ -63,11 +63,6 @@
       {
         "day": 7,
         "text": "I came without being asked. They wanted me there.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "Jade trusts me to know things. I do know.",
         "weight": 2
       },
       {
@@ -119,6 +114,11 @@
         "day": 9,
         "text": "Ryan sat with me in the dark and promised to stay. I believe him.",
         "weight": 2
+      },
+      {
+        "day": 10,
+        "text": "I didn't run this morning. He was waiting.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -144,9 +144,9 @@
       "ambition": 81,
       "loneliness": 0,
       "resilience": 49,
-      "hunger": 49,
-      "thirst": 51,
-      "energy": 88,
+      "hunger": 48,
+      "thirst": 48,
+      "energy": 82,
       "health": 100
     },
     "mood": "warm",
@@ -158,7 +158,7 @@
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 87,
+        "closeness": 89,
         "tension": 0,
         "attraction": 0
       },
@@ -198,11 +198,6 @@
         "day": 5,
         "text": "She asked me to stay and I promised forever. I meant every word.",
         "weight": 3
-      },
-      {
-        "day": 6,
-        "text": "Woke and she was waiting by the fire. She's choosing to stay. Everything.",
-        "weight": 2
       },
       {
         "day": 7,
@@ -253,6 +248,11 @@
         "day": 9,
         "text": "Marcus finally let me help him. He admitted his fear. He's really choosing this.",
         "weight": 2
+      },
+      {
+        "day": 10,
+        "text": "He woke beside me and didn't run.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -277,11 +277,11 @@
       "trust": 85,
       "openness": 100,
       "ambition": 40,
-      "loneliness": 3,
+      "loneliness": 6,
       "resilience": 66,
-      "hunger": 49,
-      "thirst": 51,
-      "energy": 88,
+      "hunger": 48,
+      "thirst": 48,
+      "energy": 82,
       "health": 100
     },
     "mood": "serene",
@@ -404,14 +404,14 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 76,
+      "trust": 77,
       "openness": 88,
       "ambition": 34,
-      "loneliness": 64,
+      "loneliness": 66,
       "resilience": 71,
-      "hunger": 49,
-      "thirst": 51,
-      "energy": 88,
+      "hunger": 48,
+      "thirst": 48,
+      "energy": 82,
       "health": 100
     },
     "mood": "content",
@@ -551,7 +551,7 @@
     "mood": "happy",
     "relationships": {
       "marcus": {
-        "closeness": 59,
+        "closeness": 60,
         "tension": 0,
         "attraction": 0
       },
@@ -572,14 +572,14 @@
       }
     },
     "scores": {
-      "trust": 58,
+      "trust": 59,
       "openness": 44,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 83,
-      "hunger": 49,
-      "thirst": 51,
-      "energy": 88,
+      "hunger": 48,
+      "thirst": 48,
+      "energy": 82,
       "health": 100
     },
     "shelter": "under the palms",
