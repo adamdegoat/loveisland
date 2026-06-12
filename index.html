@@ -3996,12 +3996,15 @@ function _whereLabel(cid){
   return 'out on the island';
 }
 function seaSky(){
-  const cyc=((S.world&&S.world.cycle)||'midday').toLowerCase();
+  // Live view follows the REAL clock (like the outdoor scene via applySky), not the story
+  // cycle — so the window/lighting is dark at night even before the night story-run lands.
+  const sgt=getSGT(); const cyc=skyFromHour(sgt.getHours()+sgt.getMinutes()/60);
   const wx=((S.world&&S.world.weather)||'').toLowerCase();
   const rain=/rain|storm|drizzle|shower|downpour|squall|wet/.test(wx);
   const storm=/storm|thunder|squall|gale|tempest/.test(wx);
   const M={ morning:{top:'#bfe3f0',bot:'#fdeedd',sea:'#5fb6c8',sea2:'#a6dcd9',sand:'#f1e3bb'},
             midday: {top:'#4fb2e8',bot:'#cdeef5',sea:'#2a9fc4',sea2:'#86d6d8',sand:'#f6e8b4'},
+            afternoon:{top:'#6fb6e0',bot:'#ffe9c8',sea:'#3f9fc0',sea2:'#9ad3d4',sand:'#f3e2a8'},
             evening:{top:'#f29553',bot:'#ffd9a6',sea:'#cf7d63',sea2:'#f2b878',sand:'#eccf92'},
             night:  {top:'#0e1d33',bot:'#21405e',sea:'#15324d',sea2:'#27536d',sand:'#4a4a5c'} };
   const m=M[cyc]||M.midday;
