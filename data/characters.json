@@ -5,14 +5,14 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 44,
-      "openness": 57,
+      "trust": 46,
+      "openness": 58,
       "ambition": 45,
-      "loneliness": 14,
+      "loneliness": 10,
       "resilience": 89,
-      "hunger": 50,
-      "thirst": 50,
-      "energy": 52,
+      "hunger": 49,
+      "thirst": 51,
+      "energy": 88,
       "health": 100
     },
     "mood": "settled",
@@ -24,22 +24,22 @@
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 83,
+        "closeness": 87,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 92,
+        "closeness": 94,
         "tension": 0,
         "attraction": 23
       },
       "judy": {
-        "closeness": 48,
+        "closeness": 51,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 23,
+        "closeness": 25,
         "tension": 0,
         "attraction": 0
       }
@@ -71,11 +71,6 @@
         "weight": 2
       },
       {
-        "day": 7,
-        "text": "She asked me to teach her how to read the water. I said yes.",
-        "weight": 2
-      },
-      {
         "day": 8,
         "text": "She found me at the cliff and I stayed. I told her the truth.",
         "weight": 3
@@ -104,6 +99,11 @@
         "day": 8,
         "text": "I'm choosing to stay. Not running from this anymore.",
         "weight": 2
+      },
+      {
+        "day": 9,
+        "text": "Ryan stayed when I finally let him in. He's really here.",
+        "weight": 3
       },
       {
         "day": 9,
@@ -144,21 +144,21 @@
       "ambition": 81,
       "loneliness": 0,
       "resilience": 49,
-      "hunger": 50,
-      "thirst": 50,
-      "energy": 52,
+      "hunger": 49,
+      "thirst": 51,
+      "energy": 88,
       "health": 100
     },
     "mood": "warm",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "firepit_left",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 83,
+        "closeness": 87,
         "tension": 0,
         "attraction": 0
       },
@@ -168,12 +168,12 @@
         "attraction": 29
       },
       "judy": {
-        "closeness": 63,
+        "closeness": 65,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 32,
+        "closeness": 33,
         "tension": 0,
         "attraction": 0
       }
@@ -205,11 +205,6 @@
         "weight": 2
       },
       {
-        "day": 6,
-        "text": "Watched Jade quietly draw Judy back in, like she belonged there all along.",
-        "weight": 2
-      },
-      {
         "day": 7,
         "text": "Marcus trusts Jade without hesitation—he's changing when she's near.",
         "weight": 2
@@ -238,6 +233,11 @@
         "day": 8,
         "text": "Marcus opened to me at the tide pools today. We're okay.",
         "weight": 2
+      },
+      {
+        "day": 9,
+        "text": "He finally opened all the way. He's staying. I'm staying with him.",
+        "weight": 3
       },
       {
         "day": 9,
@@ -277,23 +277,23 @@
       "trust": 85,
       "openness": 100,
       "ambition": 40,
-      "loneliness": 0,
+      "loneliness": 3,
       "resilience": 66,
-      "hunger": 50,
-      "thirst": 50,
-      "energy": 52,
+      "hunger": 49,
+      "thirst": 51,
+      "energy": 88,
       "health": 100
     },
     "mood": "serene",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "hammock_beside",
       "x": 40,
       "y": 50
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 92,
+        "closeness": 94,
         "tension": 0,
         "attraction": 23
       },
@@ -303,7 +303,7 @@
         "attraction": 24
       },
       "judy": {
-        "closeness": 60,
+        "closeness": 62,
         "tension": 0,
         "attraction": 0
       },
@@ -404,19 +404,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 75,
+      "trust": 76,
       "openness": 88,
       "ambition": 34,
-      "loneliness": 63,
+      "loneliness": 64,
       "resilience": 71,
-      "hunger": 50,
-      "thirst": 50,
-      "energy": 52,
+      "hunger": 49,
+      "thirst": 51,
+      "energy": 88,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_inside",
       "x": 50,
       "y": 82
     },
@@ -426,22 +426,22 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 48,
+        "closeness": 51,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 63,
+        "closeness": 65,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 60,
+        "closeness": 62,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 41,
+        "closeness": 42,
         "tension": 0,
         "attraction": 0
       }
@@ -551,35 +551,35 @@
     "mood": "happy",
     "relationships": {
       "marcus": {
-        "closeness": 55,
+        "closeness": 59,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 64,
+        "closeness": 67,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 56,
+        "closeness": 58,
         "tension": 0,
         "attraction": 0
       },
       "judy": {
-        "closeness": 73,
+        "closeness": 76,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 56,
-      "openness": 43,
+      "trust": 58,
+      "openness": 44,
       "ambition": 0,
-      "loneliness": 4,
+      "loneliness": 0,
       "resilience": 83,
-      "hunger": 50,
-      "thirst": 50,
-      "energy": 52,
+      "hunger": 49,
+      "thirst": 51,
+      "energy": 88,
       "health": 100
     },
     "shelter": "under the palms",
@@ -633,6 +633,11 @@
         "day": 9,
         "text": "He stays with me by the fire. I stay with him. We're safe together.",
         "weight": 2
+      },
+      {
+        "day": 9,
+        "text": "He holds me close by the fire. I'm his. We're safe.",
+        "weight": 3
       }
     ]
   }

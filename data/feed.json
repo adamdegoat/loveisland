@@ -7402,5 +7402,178 @@
       }
     ],
     "timestamp": "2026-06-12T18:32:25.528833"
+  },
+  {
+    "day": 9,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "He settles by the dying fire, the stray pressed against his chest, finally still.",
+    "thought": "Not running. I'm finally staying.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "settled",
+    "timestamp": "2026-06-12T22:32:13.818422"
+  },
+  {
+    "day": 9,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He sits beside Marcus at the fire's edge, steady and present as the night deepens.",
+    "thought": "He opened. He's choosing me.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-12T22:32:13.818422"
+  },
+  {
+    "day": 9,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She climbs into her hammock as the fire fades, watching the stars settle into quiet.",
+    "thought": "Everyone feels safe. I feel right.",
+    "location": {
+      "waypoint": "hammock_beside",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "serene",
+    "timestamp": "2026-06-12T22:32:13.818422"
+  },
+  {
+    "day": 9,
+    "cycle": "night",
+    "character": "judy",
+    "action": "She rests in the house, listening to the murmur of voices outside, finally at peace.",
+    "thought": "They want me here. I'm safe.",
+    "location": {
+      "waypoint": "house_inside",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-12T22:32:13.818422"
+  },
+  {
+    "day": 9,
+    "cycle": "night",
+    "character": "stray",
+    "action": "It drifts into sleep against Marcus's chest, safe and wanted, no longer wandering the dark.",
+    "thought": "He's my safe place now. Forever.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "happy",
+    "timestamp": "2026-06-12T22:32:13.818422"
+  },
+  {
+    "day": 9,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "stray"
+    ],
+    "description": "By the dying fire, Marcus finally lets Ryan stay—and the stray settles between them, asking nothing but presence.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You brought us to your place. I've never seen you do that—open like that."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You were already there. I couldn't send you away."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You could have. You've sent me away before."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not this time."
+      },
+      {
+        "speaker": "ryan",
+        "line": "No. Not this time."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's getting cold."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We could go inside. There's room in the house if you want to keep it warm."
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. Here's fine. This is where I want to be."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay. Then I'll stay too."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know you will."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're sure about that?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. You're steady. You don't leave."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I won't. Not unless you tell me to."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I won't."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You don't have to do this alone anymore, you know."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not. You're here."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I am. And I'm staying."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Do you? Do you really?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I do, Ryan. I'm here too."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's all I needed."
+      }
+    ],
+    "timestamp": "2026-06-12T22:32:13.818422"
   }
 ]
