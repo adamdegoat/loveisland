@@ -6837,5 +6837,190 @@
       }
     ],
     "timestamp": "2026-06-12T07:03:19.661481"
+  },
+  {
+    "day": 9,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "Marcus returns from fishing with Ryan, his walls lower, moving among the group with less distance than before.",
+    "thought": "He didn't push. Staying is easier than running.",
+    "location": {
+      "waypoint": "house_door",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "warm",
+    "timestamp": "2026-06-12T11:32:57.843856"
+  },
+  {
+    "day": 9,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "Ryan guides everyone toward the catch, steady and warm, drawing all of them into the shared work.",
+    "thought": "He's choosing to stay. I can see it.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-12T11:32:57.843856"
+  },
+  {
+    "day": 9,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "Jade watches the change in Marcus with sudden fascination, kneeling to greet the stray while noticing his openness.",
+    "thought": "Something shifted in him this morning. He's different.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-12T11:32:57.843856"
+  },
+  {
+    "day": 9,
+    "cycle": "midday",
+    "character": "judy",
+    "action": "Judy steadies on the porch with her hand on her belly, reaching to help as the group gathers.",
+    "thought": "They want me here. That's real. I'm staying.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-12T11:32:57.843856"
+  },
+  {
+    "day": 9,
+    "cycle": "midday",
+    "character": "stray",
+    "action": "The stray moves between them all with certainty, pressing closest to Judy as her loyal constant.",
+    "thought": "She's my safe place. Always.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "safe",
+    "timestamp": "2026-06-12T11:32:57.843856"
+  },
+  {
+    "day": 9,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade"
+    ],
+    "description": "Back from fishing with Ryan, Marcus is visibly warmer and less guarded; Jade watches the shift in him with sudden, knowing fascination.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Three good ones. Marcus spotted them in the pool—he's got a real eye."
+      },
+      {
+        "speaker": "marcus",
+        "line": "The tide was right."
+      },
+      {
+        "speaker": "jade",
+        "line": "You two look different. Closer, somehow."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He's staying, Jade. Really staying this time."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Easier than I thought it would be."
+      },
+      {
+        "speaker": "jade",
+        "line": "I can feel it in you. The change."
+      },
+      {
+        "speaker": "judy",
+        "line": "I'm glad. Truly. It makes me feel safer somehow."
+      },
+      {
+        "speaker": "stray",
+        "line": "pads closer, tail low but present, pressing soft against Jade's leg"
+      },
+      {
+        "speaker": "jade",
+        "line": "You feel it too, don't you?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I want to cook them right. Help me take these somewhere quiet?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "The drying rack is falling apart. We could gather wood, smoke what we catch."
+      },
+      {
+        "speaker": "ryan",
+        "line": "A few days ago you wouldn't have planned that far. You're thinking about us now."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Still planning. Just differently. Not just running anymore."
+      },
+      {
+        "speaker": "jade",
+        "line": "What changed, Marcus? Tell me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "He didn't push me away when I let the wall down."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You met me halfway. That's all I wanted."
+      },
+      {
+        "speaker": "judy",
+        "line": "I can help gather wood. Tell me what you need."
+      },
+      {
+        "speaker": "stray",
+        "line": "rises, moves to Judy's side, tail steady, eyes on her face"
+      },
+      {
+        "speaker": "marcus",
+        "line": "He knows she's struggling."
+      },
+      {
+        "speaker": "jade",
+        "line": "He knows what it feels like to be on the edge."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We all do. That's why we're still here. That's why this island isn't empty."
+      },
+      {
+        "speaker": "jade",
+        "line": "And you, Marcus? Why are you still here?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Because staying turned out to be simpler than running."
+      },
+      {
+        "speaker": "stray",
+        "line": "tail wags, rests head against Judy's leg"
+      }
+    ],
+    "timestamp": "2026-06-12T11:32:57.843856"
   }
 ]

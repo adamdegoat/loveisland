@@ -6,32 +6,32 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 43,
-      "openness": 53,
+      "openness": 54,
       "ambition": 45,
-      "loneliness": 25,
+      "loneliness": 22,
       "resilience": 88,
       "hunger": 52,
       "thirst": 53,
-      "energy": 82,
+      "energy": 70,
       "health": 100
     },
-    "mood": "settled",
+    "mood": "warm",
     "location": {
-      "waypoint": "tide_pool",
+      "waypoint": "house_door",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 78,
+        "closeness": 79,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
         "closeness": 90,
         "tension": 0,
-        "attraction": 22
+        "attraction": 23
       },
       "judy": {
         "closeness": 47,
@@ -146,19 +146,19 @@
       "resilience": 49,
       "hunger": 52,
       "thirst": 53,
-      "energy": 82,
+      "energy": 70,
       "health": 100
     },
     "mood": "warm",
     "location": {
-      "waypoint": "tide_pool",
+      "waypoint": "house_porch",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 78,
+        "closeness": 79,
         "tension": 0,
         "attraction": 0
       },
@@ -168,7 +168,7 @@
         "attraction": 29
       },
       "judy": {
-        "closeness": 60,
+        "closeness": 61,
         "tension": 0,
         "attraction": 0
       },
@@ -274,19 +274,19 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 84,
+      "trust": 85,
       "openness": 100,
       "ambition": 40,
-      "loneliness": 3,
+      "loneliness": 1,
       "resilience": 66,
       "hunger": 52,
       "thirst": 53,
-      "energy": 82,
+      "energy": 70,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "hammock_beside",
+      "waypoint": "house_garden",
       "x": 40,
       "y": 50
     },
@@ -295,7 +295,7 @@
       "marcus": {
         "closeness": 90,
         "tension": 0,
-        "attraction": 22
+        "attraction": 23
       },
       "ryan": {
         "closeness": 100,
@@ -308,7 +308,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 23,
+        "closeness": 24,
         "tension": 0,
         "attraction": 0
       }
@@ -404,14 +404,14 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 73,
+      "trust": 74,
       "openness": 88,
       "ambition": 34,
-      "loneliness": 72,
+      "loneliness": 69,
       "resilience": 70,
       "hunger": 52,
       "thirst": 53,
-      "energy": 82,
+      "energy": 70,
       "health": 100
     },
     "mood": "content",
@@ -431,7 +431,7 @@
         "attraction": 0
       },
       "ryan": {
-        "closeness": 60,
+        "closeness": 61,
         "tension": 0,
         "attraction": 0
       },
@@ -441,13 +441,16 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 39,
+        "closeness": 40,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": null,
+    "interaction": {
+      "with": "stray",
+      "state": "sitting_together"
+    },
     "memories": [
       {
         "day": 3,
@@ -539,9 +542,12 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": null,
+    "interaction": {
+      "with": "judy",
+      "state": "sitting_together"
+    },
     "location": {
-      "waypoint": "tide_pool",
+      "waypoint": "house_porch",
       "x": 20,
       "y": 88
     },
@@ -558,25 +564,25 @@
         "attraction": 0
       },
       "jade": {
-        "closeness": 55,
+        "closeness": 56,
         "tension": 0,
         "attraction": 0
       },
       "judy": {
-        "closeness": 71,
+        "closeness": 72,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 53,
-      "openness": 41,
+      "trust": 54,
+      "openness": 42,
       "ambition": 0,
-      "loneliness": 11,
+      "loneliness": 9,
       "resilience": 83,
       "hunger": 52,
       "thirst": 53,
-      "energy": 82,
+      "energy": 70,
       "health": 100
     },
     "shelter": "under the palms",
