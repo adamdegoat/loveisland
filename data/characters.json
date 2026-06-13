@@ -5,26 +5,26 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 49,
-      "openness": 60,
+      "trust": 51,
+      "openness": 61,
       "ambition": 45,
-      "loneliness": 3,
-      "resilience": 90,
+      "loneliness": 0,
+      "resilience": 91,
       "hunger": 48,
-      "thirst": 45,
-      "energy": 70,
+      "thirst": 43,
+      "energy": 58,
       "health": 100
     },
-    "mood": "settled",
+    "mood": "focused",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "beach_mid",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 91,
+        "closeness": 93,
         "tension": 0,
         "attraction": 0
       },
@@ -58,11 +58,6 @@
       {
         "day": 7,
         "text": "She asked me to fish and I said yes without that wall.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "I came without being asked. They wanted me there.",
         "weight": 2
       },
       {
@@ -119,6 +114,11 @@
         "day": 10,
         "text": "I didn't run this morning. He was waiting.",
         "weight": 3
+      },
+      {
+        "day": 10,
+        "text": "He believes in me with the island and I'm letting him in.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -139,26 +139,26 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 93,
+      "trust": 94,
       "openness": 100,
-      "ambition": 82,
+      "ambition": 83,
       "loneliness": 0,
-      "resilience": 50,
+      "resilience": 52,
       "hunger": 48,
-      "thirst": 45,
-      "energy": 70,
+      "thirst": 43,
+      "energy": 58,
       "health": 100
     },
-    "mood": "warm",
+    "mood": "determined",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "beach_mid",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 91,
+        "closeness": 93,
         "tension": 0,
         "attraction": 0
       },
@@ -173,7 +173,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 35,
+        "closeness": 36,
         "tension": 0,
         "attraction": 0
       }
@@ -202,11 +202,6 @@
       {
         "day": 7,
         "text": "Marcus trusts Jade without hesitation—he's changing when she's near.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "We caught enough to eat. The three of us solved it together.",
         "weight": 2
       },
       {
@@ -253,6 +248,11 @@
         "day": 10,
         "text": "He said I can ask him anytime. He promised.",
         "weight": 2
+      },
+      {
+        "day": 10,
+        "text": "Marcus trusts me to understand the island and build with him.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -277,16 +277,16 @@
       "trust": 85,
       "openness": 100,
       "ambition": 40,
-      "loneliness": 9,
-      "resilience": 66,
+      "loneliness": 11,
+      "resilience": 67,
       "hunger": 48,
-      "thirst": 45,
-      "energy": 70,
+      "thirst": 43,
+      "energy": 58,
       "health": 100
     },
-    "mood": "serene",
+    "mood": "restless",
     "location": {
-      "waypoint": "tide_pool",
+      "waypoint": "jungle_edge",
       "x": 40,
       "y": 50
     },
@@ -404,19 +404,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 78,
+      "trust": 79,
       "openness": 88,
       "ambition": 34,
-      "loneliness": 68,
+      "loneliness": 65,
       "resilience": 71,
       "hunger": 48,
-      "thirst": 45,
-      "energy": 70,
+      "thirst": 43,
+      "energy": 58,
       "health": 100
     },
-    "mood": "content",
+    "mood": "tired",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_left",
       "x": 50,
       "y": 82
     },
@@ -441,13 +441,16 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 42,
+        "closeness": 43,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": null,
+    "interaction": {
+      "with": "stray",
+      "state": "comforting"
+    },
     "memories": [
       {
         "day": 3,
@@ -540,15 +543,15 @@
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
     "interaction": {
-      "with": "ryan",
-      "state": "sitting_together"
+      "with": "judy",
+      "state": "comforting"
     },
     "location": {
       "waypoint": "firepit_right",
       "x": 20,
       "y": 88
     },
-    "mood": "hopeful",
+    "mood": "anxious",
     "relationships": {
       "marcus": {
         "closeness": 61,
@@ -556,7 +559,7 @@
         "attraction": 0
       },
       "ryan": {
-        "closeness": 69,
+        "closeness": 70,
         "tension": 0,
         "attraction": 0
       },
@@ -566,20 +569,20 @@
         "attraction": 0
       },
       "judy": {
-        "closeness": 76,
+        "closeness": 77,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 61,
+      "trust": 62,
       "openness": 45,
       "ambition": 0,
       "loneliness": 0,
-      "resilience": 83,
+      "resilience": 84,
       "hunger": 48,
-      "thirst": 45,
-      "energy": 70,
+      "thirst": 43,
+      "energy": 58,
       "health": 100
     },
     "shelter": "under the palms",
