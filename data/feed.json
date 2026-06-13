@@ -8087,5 +8087,197 @@
       }
     ],
     "timestamp": "2026-06-13T15:02:37.899519"
+  },
+  {
+    "day": 10,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "Returned from the beach with Ryan and settled by the fire, choosing not to pull away from his closeness.",
+    "thought": "He stays, and so do I.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "settled",
+    "timestamp": "2026-06-13T18:32:36.854348"
+  },
+  {
+    "day": 10,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "Spent the afternoon building a fish trap with Marcus on the beach, then brought water back to share as evening fell.",
+    "thought": "He finally believes we're worth staying for.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-13T18:32:36.854348"
+  },
+  {
+    "day": 10,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "Foraged through inland palm groves all day, returning with palm heart, clams, and coconuts to feed the group.",
+    "thought": "The island gives, and we all eat.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "satisfied",
+    "timestamp": "2026-06-13T18:32:36.854348"
+  },
+  {
+    "day": 10,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "Rested by the firepit, caring for the stray, and was waiting with peace when everyone gathered for the evening meal.",
+    "thought": "They want me here. The baby's safe.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-13T18:32:36.854348"
+  },
+  {
+    "day": 10,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "Waited anxiously with Judy at the fire, whimpered for food, and settled close to her when the meal was shared.",
+    "thought": "She's warm, and food is coming soon.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "hopeful",
+    "timestamp": "2026-06-13T18:32:36.854348"
+  },
+  {
+    "day": 10,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus"
+    ],
+    "description": "By evening's fire, Marcus called them family—truly meaning it—while Ryan brought back the trap frame and Jade her foraged palm and clams.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "I am absolutely dying of thirst. Please tell me there's water."
+      },
+      {
+        "speaker": "marcus",
+        "line": "There should be in the barrel from yesterday."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Come help me get it before dark?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That was good work today. The trap frame is really solid."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I was just... staying. Doing what needed to be done."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. That's the whole thing, though. You stayed. You're staying."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I am."
+      },
+      {
+        "speaker": "jade",
+        "line": "Look what I found—palm, clams, some green coconuts."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Jade, you're amazing. Seriously."
+      },
+      {
+        "speaker": "judy",
+        "line": "Thank god. I was so worried about food."
+      },
+      {
+        "speaker": "marcus",
+        "line": "The trap will be ready soon. Maybe tomorrow."
+      },
+      {
+        "speaker": "jade",
+        "line": "How soon until we have fish?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Day or two. Once it's set and the fish find it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Here, drink this. You worked hardest today."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Thanks."
+      },
+      {
+        "speaker": "judy",
+        "line": "Here, sweet thing. You're safe. You're home."
+      },
+      {
+        "speaker": "jade",
+        "line": "It's like the pup chose us somehow."
+      },
+      {
+        "speaker": "judy",
+        "line": "We all chose each other. That's what matters."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's what we're building here. A real family."
+      },
+      {
+        "speaker": "marcus",
+        "line": "A real one."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. A real one."
+      },
+      {
+        "speaker": "jade",
+        "line": "Tomorrow the trap works. Tomorrow things shift."
+      },
+      {
+        "speaker": "judy",
+        "line": "We're going to be okay. I feel it now."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We will be."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We will."
+      }
+    ],
+    "timestamp": "2026-06-13T18:32:36.854348"
   }
 ]

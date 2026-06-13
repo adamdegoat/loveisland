@@ -5,26 +5,26 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 51,
-      "openness": 61,
+      "trust": 52,
+      "openness": 62,
       "ambition": 45,
       "loneliness": 0,
       "resilience": 91,
       "hunger": 48,
-      "thirst": 43,
-      "energy": 58,
+      "thirst": 42,
+      "energy": 46,
       "health": 100
     },
-    "mood": "focused",
+    "mood": "settled",
     "location": {
-      "waypoint": "beach_mid",
+      "waypoint": "firepit_left",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 93,
+        "closeness": 94,
         "tension": 0,
         "attraction": 0
       },
@@ -47,18 +47,13 @@
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
       "with": "ryan",
-      "state": "talking"
+      "state": "sitting_together"
     },
     "memories": [
       {
         "day": 3,
         "text": "I told Ryan I'm afraid. He didn't push me away.",
         "weight": 3
-      },
-      {
-        "day": 7,
-        "text": "She asked me to fish and I said yes without that wall.",
-        "weight": 2
       },
       {
         "day": 8,
@@ -119,6 +114,11 @@
         "day": 10,
         "text": "He believes in me with the island and I'm letting him in.",
         "weight": 2
+      },
+      {
+        "day": 10,
+        "text": "I said it out loud by the fire—we're a family. I meant it.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -143,22 +143,22 @@
       "openness": 100,
       "ambition": 83,
       "loneliness": 0,
-      "resilience": 52,
+      "resilience": 53,
       "hunger": 48,
-      "thirst": 43,
-      "energy": 58,
+      "thirst": 42,
+      "energy": 46,
       "health": 100
     },
-    "mood": "determined",
+    "mood": "content",
     "location": {
-      "waypoint": "beach_mid",
+      "waypoint": "firepit_left",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 93,
+        "closeness": 94,
         "tension": 0,
         "attraction": 0
       },
@@ -181,7 +181,7 @@
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
       "with": "marcus",
-      "state": "talking"
+      "state": "sitting_together"
     },
     "memories": [
       {
@@ -198,11 +198,6 @@
         "day": 5,
         "text": "She asked me to stay and I promised forever. I meant every word.",
         "weight": 3
-      },
-      {
-        "day": 7,
-        "text": "Marcus trusts Jade without hesitation—he's changing when she's near.",
-        "weight": 2
       },
       {
         "day": 8,
@@ -253,6 +248,11 @@
         "day": 10,
         "text": "Marcus trusts me to understand the island and build with him.",
         "weight": 2
+      },
+      {
+        "day": 10,
+        "text": "He called us family like he meant it. Like he finally believes it.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -277,16 +277,16 @@
       "trust": 85,
       "openness": 100,
       "ambition": 40,
-      "loneliness": 11,
-      "resilience": 67,
+      "loneliness": 13,
+      "resilience": 68,
       "hunger": 48,
-      "thirst": 43,
-      "energy": 58,
+      "thirst": 42,
+      "energy": 46,
       "health": 100
     },
-    "mood": "restless",
+    "mood": "satisfied",
     "location": {
-      "waypoint": "jungle_edge",
+      "waypoint": "firepit_front",
       "x": 40,
       "y": 50
     },
@@ -407,16 +407,16 @@
       "trust": 79,
       "openness": 88,
       "ambition": 34,
-      "loneliness": 65,
+      "loneliness": 63,
       "resilience": 71,
       "hunger": 48,
-      "thirst": 43,
-      "energy": 58,
+      "thirst": 42,
+      "energy": 46,
       "health": 100
     },
-    "mood": "tired",
+    "mood": "peaceful",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_right",
       "x": 50,
       "y": 82
     },
@@ -441,7 +441,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 43,
+        "closeness": 44,
         "tension": 0,
         "attraction": 0
       }
@@ -551,7 +551,7 @@
       "x": 20,
       "y": 88
     },
-    "mood": "anxious",
+    "mood": "hopeful",
     "relationships": {
       "marcus": {
         "closeness": 61,
@@ -569,20 +569,20 @@
         "attraction": 0
       },
       "judy": {
-        "closeness": 77,
+        "closeness": 78,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 62,
+      "trust": 63,
       "openness": 45,
       "ambition": 0,
       "loneliness": 0,
-      "resilience": 84,
+      "resilience": 85,
       "hunger": 48,
-      "thirst": 43,
-      "energy": 58,
+      "thirst": 42,
+      "energy": 46,
       "health": 100
     },
     "shelter": "under the palms",
