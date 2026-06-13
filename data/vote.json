@@ -1,32 +1,32 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-13",
+    "id": "2026-06-14",
     "closes": "tonight",
-    "question": "Marcus brought you into his tide pools. You're staying. Tomorrow, do you talk about what it means—name the shift, make sure everyone's okay—or keep the magic alive by not",
+    "question": "They're trusting each other now. Should they talk about their fears tonight—or protect one more night of peace?",
     "options": [
       {
-        "id": "speak_openly",
-        "label": "Talk about it",
-        "desc": "Words make this real. You've trusted so far by being honest—keep going"
+        "id": "name_fears",
+        "label": "Talk tonight",
+        "desc": "Honesty now, before doubt takes root."
       },
       {
-        "id": "keep_silent",
-        "label": "Keep the magic",
-        "desc": "Don't name it. Just stay close and let the moment breathe"
+        "id": "hold_peace",
+        "label": "Hold the peace",
+        "desc": "One more night of safety. Let hope breathe."
       },
       {
-        "id": "follow_marcus",
-        "label": "Follow Marcus's lead",
-        "desc": "He opened his sacred place. Ask him what he needs—silence or truth"
+        "id": "judy_first",
+        "label": "Judy confides first",
+        "desc": "She opens up to Marcus alone first."
       }
     ]
   },
   "in_play": {
-    "id": "keep_sacred",
-    "label": "Just Ryan",
-    "desc": "Marcus treasures the private bond he found with Ryan",
-    "decided": "2026-06-13",
+    "id": "speak_openly",
+    "label": "Talk about it",
+    "desc": "Words make this real. You've trusted so far by being honest—keep going",
+    "decided": "2026-06-14",
     "votes": 0,
     "tally": {}
   }

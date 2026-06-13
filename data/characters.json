@@ -5,17 +5,17 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 53,
-      "openness": 64,
-      "ambition": 45,
+      "trust": 54,
+      "openness": 65,
+      "ambition": 46,
       "loneliness": 0,
       "resilience": 91,
-      "hunger": 45,
-      "thirst": 43,
-      "energy": 82,
+      "hunger": 44,
+      "thirst": 40,
+      "energy": 76,
       "health": 100
     },
-    "mood": "peaceful",
+    "mood": "resolute",
     "location": {
       "waypoint": "firepit_left",
       "x": 75,
@@ -24,7 +24,7 @@
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 95,
+        "closeness": 96,
         "tension": 0,
         "attraction": 0
       },
@@ -47,7 +47,7 @@
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
       "with": "ryan",
-      "state": "sitting_together"
+      "state": "talking"
     },
     "memories": [
       {
@@ -73,11 +73,6 @@
       {
         "day": 8,
         "text": "I told her she belongs here. I meant it completely.",
-        "weight": 2
-      },
-      {
-        "day": 8,
-        "text": "Today I worked beside Ryan without any walls. That's everything.",
         "weight": 2
       },
       {
@@ -119,6 +114,11 @@
         "day": 10,
         "text": "I said it out loud by the fire—we're a family. I meant it.",
         "weight": 2
+      },
+      {
+        "day": 11,
+        "text": "She was terrified they'd leave. I promised I wouldn't.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -144,21 +144,21 @@
       "ambition": 83,
       "loneliness": 0,
       "resilience": 53,
-      "hunger": 45,
-      "thirst": 43,
-      "energy": 82,
+      "hunger": 44,
+      "thirst": 40,
+      "energy": 76,
       "health": 100
     },
-    "mood": "content",
+    "mood": "determined",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_right",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 95,
+        "closeness": 96,
         "tension": 0,
         "attraction": 0
       },
@@ -168,20 +168,20 @@
         "attraction": 29
       },
       "judy": {
-        "closeness": 66,
+        "closeness": 67,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 36,
+        "closeness": 37,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
-      "with": "marcus",
-      "state": "sitting_together"
+      "with": "judy",
+      "state": "comforting"
     },
     "memories": [
       {
@@ -202,11 +202,6 @@
       {
         "day": 8,
         "text": "Marcus gathered the mussels. He's changing when we need him.",
-        "weight": 2
-      },
-      {
-        "day": 8,
-        "text": "Marcus and I worked side by side without the wall.",
         "weight": 2
       },
       {
@@ -253,6 +248,11 @@
         "day": 10,
         "text": "He called us family like he meant it. Like he finally believes it.",
         "weight": 2
+      },
+      {
+        "day": 11,
+        "text": "Judy thought we'd abandon her. I promised we'd stay.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -274,17 +274,17 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 85,
+      "trust": 86,
       "openness": 100,
       "ambition": 40,
-      "loneliness": 11,
+      "loneliness": 9,
       "resilience": 68,
-      "hunger": 45,
-      "thirst": 43,
-      "energy": 82,
+      "hunger": 44,
+      "thirst": 40,
+      "energy": 76,
       "health": 100
     },
-    "mood": "satisfied",
+    "mood": "unsettled",
     "location": {
       "waypoint": "firepit_front",
       "x": 40,
@@ -303,7 +303,7 @@
         "attraction": 24
       },
       "judy": {
-        "closeness": 62,
+        "closeness": 63,
         "tension": 0,
         "attraction": 0
       },
@@ -334,11 +334,6 @@
       {
         "day": 6,
         "text": "Marcus came to the fire this morning. He's still here. That matters more than words.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "Judy was alone and hurting. I finally saw her. Now I'm choosing her.",
         "weight": 2
       },
       {
@@ -385,6 +380,11 @@
         "day": 8,
         "text": "I finally feel wanted exactly as I am. No pretending.",
         "weight": 2
+      },
+      {
+        "day": 11,
+        "text": "When Judy broke, both men promised not to leave. It shifted something I can't explain.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -404,17 +404,17 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 79,
-      "openness": 88,
+      "trust": 81,
+      "openness": 89,
       "ambition": 34,
-      "loneliness": 61,
-      "resilience": 71,
-      "hunger": 45,
-      "thirst": 43,
-      "energy": 82,
+      "loneliness": 57,
+      "resilience": 70,
+      "hunger": 44,
+      "thirst": 40,
+      "energy": 76,
       "health": 100
     },
-    "mood": "peaceful",
+    "mood": "anxious",
     "location": {
       "waypoint": "firepit_right",
       "x": 50,
@@ -431,25 +431,25 @@
         "attraction": 0
       },
       "ryan": {
-        "closeness": 66,
+        "closeness": 67,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 62,
+        "closeness": 63,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 45,
+        "closeness": 46,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
     "interaction": {
-      "with": "stray",
-      "state": "sitting_together"
+      "with": "ryan",
+      "state": "comforting"
     },
     "memories": [
       {
@@ -488,11 +488,6 @@
         "weight": 2
       },
       {
-        "day": 7,
-        "text": "They cooked and laughed together. I watched from the dark, alone.",
-        "weight": 2
-      },
-      {
         "day": 8,
         "text": "Jade came looking for me. She held my hand and said I belong.",
         "weight": 3
@@ -521,6 +516,11 @@
         "day": 10,
         "text": "Marcus told me to rest. Trusting the baby and me both.",
         "weight": 2
+      },
+      {
+        "day": 11,
+        "text": "I asked if they'd stay. All three promised me.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -544,14 +544,14 @@
     "color": "#9c6b43",
     "interaction": {
       "with": "judy",
-      "state": "sitting_together"
+      "state": "comforting"
     },
     "location": {
       "waypoint": "firepit_right",
       "x": 20,
       "y": 88
     },
-    "mood": "peaceful",
+    "mood": "protective",
     "relationships": {
       "marcus": {
         "closeness": 61,
@@ -559,7 +559,7 @@
         "attraction": 0
       },
       "ryan": {
-        "closeness": 70,
+        "closeness": 71,
         "tension": 0,
         "attraction": 0
       },
@@ -569,20 +569,20 @@
         "attraction": 0
       },
       "judy": {
-        "closeness": 79,
+        "closeness": 80,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 64,
+      "trust": 65,
       "openness": 45,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 85,
-      "hunger": 45,
-      "thirst": 43,
-      "energy": 82,
+      "hunger": 44,
+      "thirst": 40,
+      "energy": 76,
       "health": 100
     },
     "shelter": "under the palms",
@@ -641,6 +641,11 @@
         "day": 9,
         "text": "He holds me close by the fire. I'm his. We're safe.",
         "weight": 3
+      },
+      {
+        "day": 11,
+        "text": "Everyone promised. The family stayed together. We're safe.",
+        "weight": 2
       }
     ]
   }

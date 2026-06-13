@@ -8472,5 +8472,187 @@
       }
     ],
     "timestamp": "2026-06-13T22:32:09.056259"
+  },
+  {
+    "day": 11,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "He walked from the wreckage of his tent to the firepit, where the others were gathering, and took stock of what remained.",
+    "thought": "Everything's gone. I'm not going anywhere.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "resolute",
+    "timestamp": "2026-06-14T07:04:08.587786"
+  },
+  {
+    "day": 11,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "He emerged from the collapsed house, quickly checked on Judy, then gathered everyone at the firepit to assess the damage and plan.",
+    "thought": "We're going to rebuild everything. Better.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "determined",
+    "timestamp": "2026-06-14T07:04:08.587786"
+  },
+  {
+    "day": 11,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "She came running from the palms when she realized something was wrong, and by the time she reached the firepit, she understood the scope of the disaster.",
+    "thought": "Something about watching them promise unsettled her.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "unsettled",
+    "timestamp": "2026-06-14T07:04:08.587786"
+  },
+  {
+    "day": 11,
+    "cycle": "morning",
+    "character": "judy",
+    "action": "She scrambled out of the collapsed house in the gray light, shaken and confused, and found the others gathered at the firepit where they promised not to leave.",
+    "thought": "They promised. They're staying. I'm safe.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-14T07:04:08.587786"
+  },
+  {
+    "day": 11,
+    "cycle": "morning",
+    "character": "stray",
+    "action": "Sensing the chaos and distress, the pup emerged from shelter and padded to Judy's side, pressing close and whimpering as the group gathered.",
+    "thought": "The family stayed together. We're safe.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "protective",
+    "timestamp": "2026-06-14T07:04:08.587786"
+  },
+  {
+    "day": 11,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade",
+      "judy"
+    ],
+    "description": "All four structures collapsed in the night; by morning they gathered at the firepit—wet, shaken, taking stock—to face what came next together.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "The posts gave way. How much wood did we lose?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Some. But water's the real problem. The barrel's gone."
+      },
+      {
+        "speaker": "jade",
+        "line": "Where's everything? What happened?"
+      },
+      {
+        "speaker": "judy",
+        "line": "I was in the house when it fell. I didn't understand..."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're okay now. We're all okay. We rebuild."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Water first. We can build anything, but we need water today."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'll get water from the stream if someone can start on shelter tonight."
+      },
+      {
+        "speaker": "judy",
+        "line": "I want to help. I'm not useless."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You rest. The baby needs you calm. Let us handle this."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Hers first anyway. Non-negotiable."
+      },
+      {
+        "speaker": "jade",
+        "line": "So we build hers tonight, then ours after?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "All three. I want all three standing by tomorrow night."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's tight. We'd need to go straight through."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We've got sixty-seven wood and four hands. It's possible."
+      },
+      {
+        "speaker": "judy",
+        "line": "What if you can't? What if you get tired and leave me?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "We don't leave. Judy, we don't leave you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not going anywhere."
+      },
+      {
+        "speaker": "jade",
+        "line": "So are we talking or working?"
+      },
+      {
+        "speaker": "judy",
+        "line": "Promise? All of you?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I promise. Judy, I promise."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Let's build."
+      },
+      {
+        "speaker": "jade",
+        "line": "Let's start with hers."
+      },
+      {
+        "speaker": "judy",
+        "line": "Thank you. All of you."
+      }
+    ],
+    "timestamp": "2026-06-14T07:04:08.587786"
   }
 ]
