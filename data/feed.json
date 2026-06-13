@@ -8279,5 +8279,198 @@
       }
     ],
     "timestamp": "2026-06-13T18:32:36.854348"
+  },
+  {
+    "day": 10,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "He settled by the fire as the sun set, letting Ryan sit close without pulling away, finally at ease in the warmth.",
+    "thought": "He chose me. He's staying. I believe that now.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "peaceful",
+    "timestamp": "2026-06-13T22:32:09.056259"
+  },
+  {
+    "day": 10,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He stayed by the fire beside Marcus, feeding small wood to the coals, content in the quiet and the nearness of him.",
+    "thought": "He's finally letting me in all the way. This is enough.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-13T22:32:09.056259"
+  },
+  {
+    "day": 10,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She tended the fire from the other side, watching Marcus finally settle into trust, a quiet satisfaction settling in her chest.",
+    "thought": "He stopped running. Ryan found something real there.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "satisfied",
+    "timestamp": "2026-06-13T22:32:09.056259"
+  },
+  {
+    "day": 10,
+    "cycle": "night",
+    "character": "judy",
+    "action": "She curled up by the fire with the pup nestled against her legs, the day's work forgotten, the night a gift of warmth and safety.",
+    "thought": "We're all here. We're all safe. They want us.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-13T22:32:09.056259"
+  },
+  {
+    "day": 10,
+    "cycle": "night",
+    "character": "stray",
+    "action": "The pup pressed close to Judy, its brown fur warm against her leg, watching the fire's glow dance, breathing deeply and slow.",
+    "thought": "She's my safe place. I'm hers. Everything is good.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "peaceful",
+    "timestamp": "2026-06-13T22:32:09.056259"
+  },
+  {
+    "day": 10,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade"
+    ],
+    "description": "By the fire at night, Marcus finally told Ryan what he'd been keeping back—that he chose him, and meant every word of it.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You were different today, out there with the trap. Like you actually wanted to be there."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It felt different. Easier, maybe. With you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I felt that. I was watching you the whole time."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I keep thinking about what you said. The day you promised forever."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That wasn't empty words. You know that, right?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I didn't believe it then. But you stayed. You're still here."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm always going to be here. As long as you want me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's just it. I do want you. I didn't think I could need someone like that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You don't have to be alone anymore. You're choosing that now."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm choosing you. I wanted to say that out loud finally."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then say it. As many times as you need to."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I choose you, Ryan. I'm staying because of you."
+      },
+      {
+        "speaker": "jade",
+        "line": "You two are going soft by the fire. And it looks right on you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Jade—that means something, coming from you."
+      },
+      {
+        "speaker": "jade",
+        "line": "I see people who've stopped running. That's rare on an island."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not running anymore."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Not even a little bit?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Especially not from you. Not now."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Good. That's all I needed to know."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Can I ask you something? Stay close to me. Always."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Every single night. Right here beside you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Then I'm going to be okay. I think I finally believe that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're already okay. You're going to be so much more than okay."
+      },
+      {
+        "speaker": "jade",
+        "line": "The fire's burning bright because you two stopped being so afraid."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's not how fire works."
+      },
+      {
+        "speaker": "jade",
+        "line": "Isn't it though?"
+      }
+    ],
+    "timestamp": "2026-06-13T22:32:09.056259"
   }
 ]

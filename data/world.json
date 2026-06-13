@@ -1,75 +1,44 @@
 {
   "day": 10,
-  "cycle": "evening",
+  "cycle": "night",
   "weather": "clear",
-  "pending_events": [],
+  "pending_events": [
+    "Marcus's Tent collapsed from neglect/weather.",
+    "Ryan's House collapsed from neglect/weather.",
+    "Jade's Hammock collapsed from neglect/weather.",
+    "Fire Pit collapsed from neglect/weather."
+  ],
   "started": "2026-06-04",
-  "pulse": "Ryan watches Marcus finally accept him by the fire—not running, but choosing to sit close, choosing family, choosing him.",
+  "pulse": "Marcus finally chose Ryan out loud—and Ryan understood that he'd been chosen since the very first day they met.",
   "structures": [
     {
-      "id": "marcus_tent",
-      "type": "tent",
-      "level": 1,
-      "baked": true,
-      "x": 75,
-      "y": 25,
-      "builder": "marcus",
-      "day": 1,
-      "label": "Marcus's Tent",
-      "condition": 1
-    },
-    {
-      "id": "ryan_house",
-      "type": "house",
-      "level": 1,
-      "baked": true,
-      "x": 50,
-      "y": 50,
-      "builder": "ryan",
-      "day": 1,
-      "label": "Ryan's House",
-      "condition": 1
-    },
-    {
-      "id": "jade_hammock",
-      "type": "hammock",
-      "level": 1,
-      "baked": true,
-      "x": 20,
-      "y": 60,
-      "builder": "jade",
-      "day": 1,
-      "label": "Jade's Hammock",
-      "condition": 1
-    },
-    {
-      "id": "shared_firepit",
+      "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "baked": true,
+      "condition": 100,
       "x": 50,
-      "y": 72,
-      "builder": "ryan",
-      "day": 1,
-      "label": "Fire Pit",
-      "condition": 1
+      "y": 55,
+      "builder": null,
+      "day": 10,
+      "label": "Firepit",
+      "baked": true
     }
   ],
   "resources": {
     "food": 0,
     "water": 0,
-    "wood": 81,
+    "wood": 67,
     "medicine": 15
   },
   "resources_prev": {
     "food": 0,
     "water": 0,
-    "wood": 84,
+    "wood": 81,
     "medicine": 15
   },
   "discoveries": [],
-  "last_cycle_key": "2026-06-13:evening",
-  "scene": "They gathered at the firepit as darkness fell: Ryan and Marcus sat close on a log, Jade arrived with foraged palm and clams, Judy rested by the fire with the stray—the day's work done, a meal shared, the fire warm.",
+  "last_cycle_key": "2026-06-13:night",
+  "scene": "By the fire at night, Marcus told Ryan he stayed because of him—that he chose him completely. Judy and the pup curled together nearby, Jade tending the flames, all five held in firelight and quiet.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -79,13 +48,14 @@
     "6": "Day 6 broke with the group facing what they'd done to Judy—the hurt, the oversight, the way they'd left her behind. When she pulled away that evening, Jade and the stray went after her. By nightfall, they'd all come back together, and the circle was finally whole.",
     "7": "Day 7 brought abundance: fresh fish caught, Marcus teaching Jade and letting her reach him—afternoon glowing with fragile new trust. But night fractured it: Marcus pulled back scared, leaving Jade reaching after him while Ryan watched with uncertainty, and Judy grieved alone on the beach with only the stray truly beside her.",
     "8": "Day 8 brought a shift: Marcus let Ryan in at the tide pools; Judy stopped fearing she didn't belong; the stray's flinching eased. By night they gathered at the fire and spoke the truth that mattered most — they were choosing to stay — before finding sleep deeper and safer than any before.",
-    "9": "Day 9 brought the turn: Marcus finally opened, sharing his tide pool place with everyone. By afternoon he'd stopped running, just staying. At nightfall, all four and the stray sat by the fire together—no longer fragile, but a unit."
+    "9": "Day 9 brought the turn: Marcus finally opened, sharing his tide pool place with everyone. By afternoon he'd stopped running, just staying. At nightfall, all four and the stray sat by the fire together—no longer fragile, but a unit.",
+    "10": "Day 10 brought the group's survival into focus—Ryan and Marcus built the fish trap frame on the beach while Jade foraged palm and clams inland, Judy rested by the fire with the pup beside her. By evening they'd eaten together, the work finally yielding food, and when night came Marcus opened up to Ryan about why he was staying, the anchor he'd needed all along."
   },
   "last_run_date": "2026-06-13",
   "camp_climate": "steady",
   "fire": {
     "lit": true,
-    "fuel": 14
+    "fuel": 30
   },
   "lean": {
     "id": "keep_sacred",
