@@ -5,14 +5,14 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 47,
-      "openness": 59,
+      "trust": 49,
+      "openness": 60,
       "ambition": 45,
-      "loneliness": 7,
-      "resilience": 89,
+      "loneliness": 3,
+      "resilience": 90,
       "hunger": 48,
-      "thirst": 48,
-      "energy": 82,
+      "thirst": 45,
+      "energy": 70,
       "health": 100
     },
     "mood": "settled",
@@ -24,12 +24,12 @@
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 89,
+        "closeness": 91,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 94,
+        "closeness": 95,
         "tension": 0,
         "attraction": 23
       },
@@ -39,7 +39,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 26,
+        "closeness": 27,
         "tension": 0,
         "attraction": 0
       }
@@ -139,14 +139,14 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 92,
+      "trust": 93,
       "openness": 100,
-      "ambition": 81,
+      "ambition": 82,
       "loneliness": 0,
-      "resilience": 49,
+      "resilience": 50,
       "hunger": 48,
-      "thirst": 48,
-      "energy": 82,
+      "thirst": 45,
+      "energy": 70,
       "health": 100
     },
     "mood": "warm",
@@ -158,7 +158,7 @@
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 89,
+        "closeness": 91,
         "tension": 0,
         "attraction": 0
       },
@@ -168,12 +168,12 @@
         "attraction": 29
       },
       "judy": {
-        "closeness": 65,
+        "closeness": 66,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 33,
+        "closeness": 35,
         "tension": 0,
         "attraction": 0
       }
@@ -207,11 +207,6 @@
       {
         "day": 7,
         "text": "We caught enough to eat. The three of us solved it together.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "Jade and Marcus glowed tonight. She reached for him and he let her. I wasn't sure how to feel.",
         "weight": 2
       },
       {
@@ -253,6 +248,11 @@
         "day": 10,
         "text": "He woke beside me and didn't run.",
         "weight": 2
+      },
+      {
+        "day": 10,
+        "text": "He said I can ask him anytime. He promised.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -277,23 +277,23 @@
       "trust": 85,
       "openness": 100,
       "ambition": 40,
-      "loneliness": 6,
+      "loneliness": 9,
       "resilience": 66,
       "hunger": 48,
-      "thirst": 48,
-      "energy": 82,
+      "thirst": 45,
+      "energy": 70,
       "health": 100
     },
     "mood": "serene",
     "location": {
-      "waypoint": "hammock_beside",
+      "waypoint": "tide_pool",
       "x": 40,
       "y": 50
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 94,
+        "closeness": 95,
         "tension": 0,
         "attraction": 23
       },
@@ -308,7 +308,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 24,
+        "closeness": 25,
         "tension": 0,
         "attraction": 0
       }
@@ -404,19 +404,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 77,
+      "trust": 78,
       "openness": 88,
       "ambition": 34,
-      "loneliness": 66,
+      "loneliness": 68,
       "resilience": 71,
       "hunger": 48,
-      "thirst": 48,
-      "energy": 82,
+      "thirst": 45,
+      "energy": 70,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "house_inside",
+      "waypoint": "house_porch",
       "x": 50,
       "y": 82
     },
@@ -431,7 +431,7 @@
         "attraction": 0
       },
       "ryan": {
-        "closeness": 65,
+        "closeness": 66,
         "tension": 0,
         "attraction": 0
       },
@@ -490,11 +490,6 @@
         "weight": 2
       },
       {
-        "day": 7,
-        "text": "The stray left the fire group to stay with me. It's the only one that truly chooses me.",
-        "weight": 2
-      },
-      {
         "day": 8,
         "text": "Jade came looking for me. She held my hand and said I belong.",
         "weight": 3
@@ -518,6 +513,11 @@
         "day": 9,
         "text": "They brought me to Marcus's private place. I'm part of something real now.",
         "weight": 2
+      },
+      {
+        "day": 10,
+        "text": "Marcus told me to rest. Trusting the baby and me both.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -540,7 +540,7 @@
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
     "interaction": {
-      "with": "marcus",
+      "with": "ryan",
       "state": "sitting_together"
     },
     "location": {
@@ -548,20 +548,20 @@
       "x": 20,
       "y": 88
     },
-    "mood": "happy",
+    "mood": "hopeful",
     "relationships": {
       "marcus": {
-        "closeness": 60,
+        "closeness": 61,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 67,
+        "closeness": 69,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 58,
+        "closeness": 59,
         "tension": 0,
         "attraction": 0
       },
@@ -572,14 +572,14 @@
       }
     },
     "scores": {
-      "trust": 59,
-      "openness": 44,
+      "trust": 61,
+      "openness": 45,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 83,
       "hunger": 48,
-      "thirst": 48,
-      "energy": 82,
+      "thirst": 45,
+      "energy": 70,
       "health": 100
     },
     "shelter": "under the palms",
