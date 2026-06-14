@@ -6,13 +6,13 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 54,
-      "openness": 65,
+      "openness": 66,
       "ambition": 46,
       "loneliness": 0,
       "resilience": 91,
-      "hunger": 44,
-      "thirst": 40,
-      "energy": 76,
+      "hunger": 43,
+      "thirst": 37,
+      "energy": 70,
       "health": 100
     },
     "mood": "resolute",
@@ -24,22 +24,22 @@
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 96,
+        "closeness": 97,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 95,
+        "closeness": 96,
         "tension": 0,
         "attraction": 23
       },
       "judy": {
-        "closeness": 51,
+        "closeness": 54,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 27,
+        "closeness": 28,
         "tension": 0,
         "attraction": 0
       }
@@ -68,11 +68,6 @@
       {
         "day": 8,
         "text": "Ryan asked if we were okay. I said yes and meant it.",
-        "weight": 2
-      },
-      {
-        "day": 8,
-        "text": "I told her she belongs here. I meant it completely.",
         "weight": 2
       },
       {
@@ -119,6 +114,11 @@
         "day": 11,
         "text": "She was terrified they'd leave. I promised I wouldn't.",
         "weight": 3
+      },
+      {
+        "day": 11,
+        "text": "I left the pup with her. So she knows I'm coming back.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -141,12 +141,12 @@
     "scores": {
       "trust": 95,
       "openness": 100,
-      "ambition": 83,
+      "ambition": 84,
       "loneliness": 0,
       "resilience": 53,
-      "hunger": 44,
-      "thirst": 40,
-      "energy": 76,
+      "hunger": 43,
+      "thirst": 37,
+      "energy": 70,
       "health": 100
     },
     "mood": "determined",
@@ -158,7 +158,7 @@
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 96,
+        "closeness": 97,
         "tension": 0,
         "attraction": 0
       },
@@ -168,7 +168,7 @@
         "attraction": 29
       },
       "judy": {
-        "closeness": 67,
+        "closeness": 68,
         "tension": 0,
         "attraction": 0
       },
@@ -180,8 +180,8 @@
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
-      "with": "judy",
-      "state": "comforting"
+      "with": "marcus",
+      "state": "talking"
     },
     "memories": [
       {
@@ -277,11 +277,11 @@
       "trust": 86,
       "openness": 100,
       "ambition": 40,
-      "loneliness": 9,
-      "resilience": 68,
-      "hunger": 44,
-      "thirst": 40,
-      "energy": 76,
+      "loneliness": 7,
+      "resilience": 67,
+      "hunger": 43,
+      "thirst": 37,
+      "energy": 70,
       "health": 100
     },
     "mood": "unsettled",
@@ -293,7 +293,7 @@
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 95,
+        "closeness": 96,
         "tension": 0,
         "attraction": 23
       },
@@ -303,7 +303,7 @@
         "attraction": 24
       },
       "judy": {
-        "closeness": 63,
+        "closeness": 64,
         "tension": 0,
         "attraction": 0
       },
@@ -314,7 +314,10 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": null,
+    "interaction": {
+      "with": "ryan",
+      "state": "talking"
+    },
     "memories": [
       {
         "day": 5,
@@ -404,19 +407,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 81,
+      "trust": 82,
       "openness": 89,
       "ambition": 34,
-      "loneliness": 57,
+      "loneliness": 55,
       "resilience": 70,
-      "hunger": 44,
-      "thirst": 40,
-      "energy": 76,
+      "hunger": 43,
+      "thirst": 37,
+      "energy": 70,
       "health": 100
     },
     "mood": "anxious",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_porch",
       "x": 50,
       "y": 82
     },
@@ -426,29 +429,29 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 51,
+        "closeness": 54,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 67,
+        "closeness": 68,
         "tension": 0,
         "attraction": 0
       },
       "jade": {
-        "closeness": 63,
+        "closeness": 64,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 46,
+        "closeness": 47,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
     "interaction": {
-      "with": "ryan",
+      "with": "stray",
       "state": "comforting"
     },
     "memories": [
@@ -481,11 +484,6 @@
         "day": 6,
         "text": "They all came. They all stayed. I actually belong here.",
         "weight": 3
-      },
-      {
-        "day": 7,
-        "text": "Watching them fish together—they found food and purpose. The pup and I were on the shore. I want to be with them.",
-        "weight": 2
       },
       {
         "day": 8,
@@ -521,6 +519,11 @@
         "day": 11,
         "text": "I asked if they'd stay. All three promised me.",
         "weight": 3
+      },
+      {
+        "day": 11,
+        "text": "He left the pup with me. Like I'm not going to be alone.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -547,14 +550,14 @@
       "state": "comforting"
     },
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_porch",
       "x": 20,
       "y": 88
     },
     "mood": "protective",
     "relationships": {
       "marcus": {
-        "closeness": 61,
+        "closeness": 62,
         "tension": 0,
         "attraction": 0
       },
@@ -569,7 +572,7 @@
         "attraction": 0
       },
       "judy": {
-        "closeness": 80,
+        "closeness": 81,
         "tension": 0,
         "attraction": 0
       }
@@ -580,9 +583,9 @@
       "ambition": 0,
       "loneliness": 0,
       "resilience": 85,
-      "hunger": 44,
-      "thirst": 40,
-      "energy": 76,
+      "hunger": 43,
+      "thirst": 37,
+      "energy": 70,
       "health": 100
     },
     "shelter": "under the palms",
