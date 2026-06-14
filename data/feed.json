@@ -9010,5 +9010,192 @@
       }
     ],
     "timestamp": "2026-06-14T15:02:45.446481"
+  },
+  {
+    "day": 11,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "Settles by the firepit with Ryan, watching the flames and planning tomorrow.",
+    "thought": "She keeps choosing. That's what real looks like.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "steady",
+    "timestamp": "2026-06-14T18:42:23.753647"
+  },
+  {
+    "day": 11,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "Sits beside Marcus, warm and attentive, listening to Jade and Judy unfold by the fire.",
+    "thought": "They needed to hear each other. We all did.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-14T18:42:23.753647"
+  },
+  {
+    "day": 11,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "Holds Judy's hand as the evening deepens, their voices quiet but real in the firelight.",
+    "thought": "I can choose again tomorrow. Just like they said.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "thoughtful",
+    "timestamp": "2026-06-14T18:42:23.753647"
+  },
+  {
+    "day": 11,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "Lets the stray's weight anchor her as words finally, finally become believable.",
+    "thought": "I'm choosing to stay. Every day. Maybe I'm safe.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-14T18:42:23.753647"
+  },
+  {
+    "day": 11,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "Rests against Judy's leg, ears fully relaxed, a small brown anchor in the evening firelight.",
+    "thought": "She is safe now. I keep her safe.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "protective",
+    "timestamp": "2026-06-14T18:42:23.753647"
+  },
+  {
+    "day": 11,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade",
+      "judy",
+      "stray"
+    ],
+    "description": "They've moved through the hard talk and settled into something quieter: Marcus and Ryan planning fishing, Jade holding Judy's hand, the stray's calm presence keeping them all anchored.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Those berries won't last. Water's the problem—we need to figure that out."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Fish trap. We have the wood."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're planning what's next. Even after all of that?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "After what? What are you thinking?"
+      },
+      {
+        "speaker": "jade",
+        "line": "You promised not to leave, and now you're just moving forward?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "It did. Tomorrow we move. That's what it means."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We stay because we choose to. Every day. Jade, it's real."
+      },
+      {
+        "speaker": "judy",
+        "line": "But will you stay tomorrow? And the next day?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yes. I promised. All of us did."
+      },
+      {
+        "speaker": "judy",
+        "line": "I keep waiting for it to be a lie. For you to leave and—"
+      },
+      {
+        "speaker": "jade",
+        "line": "We're here. Look at the pup."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She's not afraid anymore. That's how you know it's real."
+      },
+      {
+        "speaker": "ryan",
+        "line": "The dog knows what we're still learning."
+      },
+      {
+        "speaker": "jade",
+        "line": "She really does."
+      },
+      {
+        "speaker": "judy",
+        "line": "I choose to stay—tomorrow and the next day and every day after."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's all any of us can do, Judy."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'll check the trap in the morning. Food by midday."
+      },
+      {
+        "speaker": "jade",
+        "line": "How is he always this steady?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Because you remind him he doesn't carry it alone."
+      },
+      {
+        "speaker": "jade",
+        "line": "How do I do that? Just by being here?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Exactly. By choosing. By staying. He needs to know."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It is real. You're choosing. I see it."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm only just learning what real is."
+      },
+      {
+        "speaker": "judy",
+        "line": "The pup taught me. She doesn't wonder if I'll leave. She just stays."
+      }
+    ],
+    "timestamp": "2026-06-14T18:42:23.753647"
   }
 ]
