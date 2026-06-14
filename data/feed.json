@@ -8823,5 +8823,192 @@
       }
     ],
     "timestamp": "2026-06-14T11:33:10.404795"
+  },
+  {
+    "day": 11,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "He returned from scouting with Ryan, water-heavy, and settled by the fire as Jade began to speak her mind.",
+    "thought": "She needs to choose. I finally understand.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "listening",
+    "timestamp": "2026-06-14T15:02:45.446481"
+  },
+  {
+    "day": 11,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "He carried branches laden with fruit back to camp, set them down, and listened as Jade voiced her unsettledness.",
+    "thought": "She felt trapped by our promises.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "attentive",
+    "timestamp": "2026-06-14T15:02:45.446481"
+  },
+  {
+    "day": 11,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "She waited with Judy by the fire all morning, and when the men returned, she finally let out what had been bothering her since dawn.",
+    "thought": "I can choose to stay. That changes everything.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "relieved",
+    "timestamp": "2026-06-14T15:02:45.446481"
+  },
+  {
+    "day": 11,
+    "cycle": "afternoon",
+    "character": "judy",
+    "action": "She sat by the fire with the pup, anxious, then grateful, then defensive, then understanding as Jade spoke.",
+    "thought": "She's not leaving. She's choosing us. Oh god.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-14T15:02:45.446481"
+  },
+  {
+    "day": 11,
+    "cycle": "afternoon",
+    "character": "stray",
+    "action": "The pup stayed pressed against Judy's side throughout, sensing her fear and relief, whimpering once when the conversation grew tense.",
+    "thought": "She is safe. I keep her safe.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "protective",
+    "timestamp": "2026-06-14T15:02:45.446481"
+  },
+  {
+    "day": 11,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade",
+      "judy",
+      "stray"
+    ],
+    "description": "They gathered at the firepit as Ryan and Marcus returned with water and fruit, but Jade's unsettledness pulled the group into an honest conversation about choice, safety, and staying together.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "We found a spring about a hundred yards east. And some fruit trees."
+      },
+      {
+        "speaker": "judy",
+        "line": "You found water? Thank god. How are you both?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Fine. The path is clear."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's... really good. We needed that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You okay? You've been quiet since we got back."
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah. Just thinking about this morning."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What about it?"
+      },
+      {
+        "speaker": "jade",
+        "line": "The way you both promised Judy you'd stay. It was right, she needed that. But it unsettled me."
+      },
+      {
+        "speaker": "judy",
+        "line": "Unsettled? Are you... are you leaving?"
+      },
+      {
+        "speaker": "jade",
+        "line": "No. But you decided I was staying before asking me. Like you'd already settled it for all of us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We were talking to Judy, not deciding for you. You were right there."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know. But it felt like the choice was made and I just... had to go along."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You want to leave?"
+      },
+      {
+        "speaker": "jade",
+        "line": "No. I want to stay. But I need it to be my choice, not something decided for me."
+      },
+      {
+        "speaker": "judy",
+        "line": "I'm sorry. I was so scared you'd all disappear. I didn't think about how that felt to you."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're safe. You know that, right? That's separate from me choosing to stay."
+      },
+      {
+        "speaker": "ryan",
+        "line": "So what would choosing look like? For you?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I don't know yet. I feel wanted, which is... new. But I need to feel like I could leave if I wanted. Even if I don't."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Then choose us. Every day."
+      },
+      {
+        "speaker": "jade",
+        "line": "Every day sounds permanent. Can I just choose today?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Today is enough. What about tomorrow?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I'll decide tomorrow. But for today, I'm choosing you."
+      },
+      {
+        "speaker": "judy",
+        "line": "Even one day at a time means you'll still be here. Right?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah. I'll still be here."
+      }
+    ],
+    "timestamp": "2026-06-14T15:02:45.446481"
   }
 ]
