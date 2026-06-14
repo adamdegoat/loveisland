@@ -1,32 +1,27 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-14",
+    "id": "2026-06-15",
     "closes": "tonight",
-    "question": "They're trusting each other now. Should they talk about their fears tonight—or protect one more night of peace?",
+    "question": "Marcus and Jade sit close as night settles. Does Marcus finally voice what's building between them—risking true vulnerability—or does he hold it unspoken, protecting this",
     "options": [
       {
-        "id": "name_fears",
-        "label": "Talk tonight",
-        "desc": "Honesty now, before doubt takes root."
+        "id": "speak_truth",
+        "label": "Say what he feels",
+        "desc": "Marcus speaks, trusting Jade enough to be fully seen."
       },
       {
-        "id": "hold_peace",
-        "label": "Hold the peace",
-        "desc": "One more night of safety. Let hope breathe."
-      },
-      {
-        "id": "judy_first",
-        "label": "Judy confides first",
-        "desc": "She opens up to Marcus alone first."
+        "id": "silent_hold",
+        "label": "Keep it unspoken",
+        "desc": "Marcus lets the closeness speak for itself, protecting the new equilibrium."
       }
     ]
   },
   "in_play": {
-    "id": "speak_openly",
-    "label": "Talk about it",
-    "desc": "Words make this real. You've trusted so far by being honest—keep going",
-    "decided": "2026-06-14",
+    "id": "name_fears",
+    "label": "Talk tonight",
+    "desc": "Honesty now, before doubt takes root.",
+    "decided": "2026-06-15",
     "votes": 0,
     "tally": {}
   }
