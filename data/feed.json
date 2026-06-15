@@ -1,188 +1,5 @@
 [
   {
-    "day": 1,
-    "cycle": "night",
-    "character": "marcus",
-    "action": "He returns from the east in darkness, soaked through, carrying a waterskin heavy with fresh water.",
-    "thought": "She looked at me like I mattered.",
-    "location": {
-      "x": 72,
-      "y": 50
-    },
-    "shelter": "tent",
-    "mood": "determined",
-    "timestamp": "2026-06-04T23:54:29.825879"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "character": "ryan",
-    "action": "He's finishing repairs to his house roof, using the last light before darkness falls completely.",
-    "thought": "Shelter means safety. Shelter means I belong.",
-    "location": {
-      "x": 48,
-      "y": 50
-    },
-    "shelter": "house",
-    "mood": "focused",
-    "timestamp": "2026-06-04T23:54:29.825879"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "character": "jade",
-    "action": "She sits by her hammock as night falls, fingers tracing the rope knots, thinking about thirst.",
-    "thought": "Without water, we're actually finished, aren't we?",
-    "location": {
-      "x": 25,
-      "y": 60
-    },
-    "shelter": "hammock",
-    "mood": "hopeful",
-    "timestamp": "2026-06-04T23:54:29.825879"
-  },
-  {
-    "day": 1,
-    "cycle": "night",
-    "type": "interaction",
-    "characters": [
-      "marcus",
-      "jade"
-    ],
-    "description": "Marcus returns drenched with a lifesaving discovery—a freshwater spring—but his real admission, drawn out by Jade's pressure, is that he noticed her.",
-    "dialogue": [
-      {
-        "speaker": "jade",
-        "line": "I was starting to worry. You've been gone all day."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Went exploring. Found something."
-      },
-      {
-        "speaker": "jade",
-        "line": "What? You look soaked."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Water. Freshwater spring, east side, past the rocks."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're serious? We have water?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "You're welcome."
-      },
-      {
-        "speaker": "jade",
-        "line": "No, I—sorry. That came out wrong. How did you even find it?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Listened. Most things flow downhill. Took a while."
-      },
-      {
-        "speaker": "jade",
-        "line": "You did this alone. At night. For us."
-      },
-      {
-        "speaker": "marcus",
-        "line": "For you, specifically? No. For water, yes."
-      },
-      {
-        "speaker": "jade",
-        "line": "Don't do that. Don't push it away."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm not pushing anything. I'm being honest."
-      },
-      {
-        "speaker": "jade",
-        "line": "You could have told Ryan. Let him help."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I work better alone."
-      },
-      {
-        "speaker": "jade",
-        "line": "I know. But you didn't have to."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You did."
-      },
-      {
-        "speaker": "jade",
-        "line": "Did what?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Need it. Water. So I found it."
-      },
-      {
-        "speaker": "jade",
-        "line": "There's something else you're not saying."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Maybe I just wanted to be useful."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're useful. You always are."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Doesn't feel like it here."
-      },
-      {
-        "speaker": "jade",
-        "line": "What do you mean?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm just... not used to this. Being around people."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're doing fine."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You don't have to say that."
-      },
-      {
-        "speaker": "jade",
-        "line": "I'm not saying it to be nice. You found water when we were all panicking."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Ryan wasn't panicking."
-      },
-      {
-        "speaker": "jade",
-        "line": "No, but I was. And you noticed."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah."
-      },
-      {
-        "speaker": "jade",
-        "line": "Yeah?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah. I noticed."
-      }
-    ],
-    "timestamp": "2026-06-04T23:54:29.825879"
-  },
-  {
     "day": 2,
     "cycle": "morning",
     "character": "marcus",
@@ -10178,5 +9995,198 @@
       }
     ],
     "timestamp": "2026-06-15T18:33:30.336380"
+  },
+  {
+    "day": 12,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "He sits back from the fire, watching the others in the glow, his hand resting on the pup's neck.",
+    "thought": "I told them everything. They're still here.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "guarded",
+    "timestamp": "2026-06-15T22:32:34.083042"
+  },
+  {
+    "day": 12,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He stares into the flames, jaw tight, fingers picking at a crack in the wood beside him.",
+    "thought": "Did I say too much? Will they leave?",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-15T22:32:34.083042"
+  },
+  {
+    "day": 12,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She wraps her arms around her knees, tilted toward Ryan and Marcus, her gaze flickering between them.",
+    "thought": "They meant it. So why do I doubt?",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "uncertain",
+    "timestamp": "2026-06-15T22:32:34.083042"
+  },
+  {
+    "day": 12,
+    "cycle": "night",
+    "character": "judy",
+    "action": "She settles on the porch steps with the pup at her side, her hand on her belly, breathing slowly.",
+    "thought": "They promised. I heard them. I believe now.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-15T22:32:34.083042"
+  },
+  {
+    "day": 12,
+    "cycle": "night",
+    "character": "stray",
+    "action": "It rests its long body against Judy's leg, one ear twitched toward the fire, content in the quiet.",
+    "thought": "She is safe. We are safe.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-15T22:32:34.083042"
+  },
+  {
+    "day": 12,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "marcus"
+    ],
+    "description": "Late night by the fire, Ryan breaks the silence with a question clawing at him: the hunger, the thirst, the weight of what they just promised each other.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "I'm sorry. I keep thinking about what I said earlier, and now I'm just... what if we can't actually do this?"
+      },
+      {
+        "speaker": "jade",
+        "line": "You mean the promises?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I mean all of it. We're not eating, water's gone, and in three days we're going to be desperate."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We've been desperate since day one."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah, but then we weren't depending on each other to stay sane. Now..."
+      },
+      {
+        "speaker": "jade",
+        "line": "Now if one of us breaks, we all break."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Exactly."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not breaking."
+      },
+      {
+        "speaker": "jade",
+        "line": "You might not have a choice."
+      },
+      {
+        "speaker": "marcus",
+        "line": "There's always a choice. I chose to stay. I'll choose it again tomorrow."
+      },
+      {
+        "speaker": "ryan",
+        "line": "But what if I can't? What if the fear just gets worse?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Then we hold you up. Like you held me."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And if you start falling too?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'll hold you both."
+      },
+      {
+        "speaker": "jade",
+        "line": "You can't carry all of us, Marcus."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Probably not. But I'm going to try anyway."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's the scariest thing you've said all day."
+      },
+      {
+        "speaker": "jade",
+        "line": "Why is it scary?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Because if you fail, I'm going to believe it's my fault for needing you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's not how it works."
+      },
+      {
+        "speaker": "jade",
+        "line": "How does it work, then?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You just show up. You don't owe anyone perfect. Just present."
+      },
+      {
+        "speaker": "ryan",
+        "line": "When did you become the wise one?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "When you made me admit I'm terrified every morning."
+      },
+      {
+        "speaker": "jade",
+        "line": "We're all terrified."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know. And somehow that makes it better."
+      }
+    ],
+    "timestamp": "2026-06-15T22:32:34.083042"
   }
 ]
