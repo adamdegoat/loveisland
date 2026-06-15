@@ -5,19 +5,19 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 57,
-      "openness": 69,
-      "ambition": 46,
-      "loneliness": 3,
+      "trust": 58,
+      "openness": 71,
+      "ambition": 47,
+      "loneliness": 0,
       "resilience": 92,
-      "hunger": 40,
-      "thirst": 32,
-      "energy": 82,
+      "hunger": 39,
+      "thirst": 35,
+      "energy": 70,
       "health": 100
     },
-    "mood": "tender",
+    "mood": "purposeful",
     "location": {
-      "waypoint": "tent_front",
+      "waypoint": "firepit_front",
       "x": 75,
       "y": 25
     },
@@ -31,7 +31,7 @@
       "jade": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 27
+        "attraction": 28
       },
       "judy": {
         "closeness": 56,
@@ -45,7 +45,10 @@
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
-    "interaction": null,
+    "interaction": {
+      "with": "jade",
+      "state": "talking"
+    },
     "memories": [
       {
         "day": 3,
@@ -138,15 +141,15 @@
     "scores": {
       "trust": 97,
       "openness": 100,
-      "ambition": 86,
-      "loneliness": 1,
-      "resilience": 54,
-      "hunger": 40,
-      "thirst": 32,
-      "energy": 82,
+      "ambition": 87,
+      "loneliness": 0,
+      "resilience": 53,
+      "hunger": 39,
+      "thirst": 35,
+      "energy": 70,
       "health": 100
     },
-    "mood": "purposeful",
+    "mood": "urgent",
     "location": {
       "waypoint": "firepit_left",
       "x": 42,
@@ -161,11 +164,11 @@
       },
       "jade": {
         "closeness": 100,
-        "tension": 0,
+        "tension": 1,
         "attraction": 31
       },
       "judy": {
-        "closeness": 71,
+        "closeness": 72,
         "tension": 0,
         "attraction": 0
       },
@@ -177,7 +180,7 @@
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
-      "with": "jade",
+      "with": "marcus",
       "state": "talking"
     },
     "memories": [
@@ -271,14 +274,14 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 91,
+      "trust": 92,
       "openness": 100,
-      "ambition": 40,
+      "ambition": 39,
       "loneliness": 0,
       "resilience": 69,
-      "hunger": 40,
-      "thirst": 32,
-      "energy": 82,
+      "hunger": 39,
+      "thirst": 35,
+      "energy": 70,
       "health": 100
     },
     "mood": "uncertain",
@@ -292,11 +295,11 @@
       "marcus": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 27
+        "attraction": 28
       },
       "ryan": {
         "closeness": 100,
-        "tension": 0,
+        "tension": 1,
         "attraction": 26
       },
       "judy": {
@@ -404,14 +407,14 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 87,
+      "trust": 88,
       "openness": 91,
       "ambition": 34,
-      "loneliness": 40,
-      "resilience": 72,
-      "hunger": 40,
-      "thirst": 32,
-      "energy": 82,
+      "loneliness": 36,
+      "resilience": 73,
+      "hunger": 39,
+      "thirst": 35,
+      "energy": 70,
       "health": 100
     },
     "mood": "peaceful",
@@ -431,7 +434,7 @@
         "attraction": 0
       },
       "ryan": {
-        "closeness": 71,
+        "closeness": 72,
         "tension": 0,
         "attraction": 0
       },
@@ -441,7 +444,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 50,
+        "closeness": 51,
         "tension": 0,
         "attraction": 0
       }
@@ -569,20 +572,20 @@
         "attraction": 0
       },
       "judy": {
-        "closeness": 84,
+        "closeness": 85,
         "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 68,
+      "trust": 69,
       "openness": 46,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 87,
-      "hunger": 40,
-      "thirst": 32,
-      "energy": 82,
+      "hunger": 39,
+      "thirst": 35,
+      "energy": 70,
       "health": 100
     },
     "shelter": "under the palms",
