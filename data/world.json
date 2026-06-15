@@ -1,16 +1,16 @@
 {
-  "day": 12,
-  "cycle": "night",
+  "day": 13,
+  "cycle": "morning",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Ryan's fragility surfaces; Marcus reassures them all; Jade realizes their promise only works if none of them falls apart alone.",
+  "pulse": "Marcus finally speaks his truth fully to Jade—they stand closer now, but the empty stores whisper that survival is still urgent.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 70,
+      "condition": 67,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -22,18 +22,18 @@
   "resources": {
     "food": 0,
     "water": 0,
-    "wood": 78,
+    "wood": 81,
     "medicine": 15
   },
   "resources_prev": {
     "food": 0,
     "water": 0,
-    "wood": 77,
+    "wood": 78,
     "medicine": 15
   },
   "discoveries": [],
-  "last_cycle_key": "2026-06-15:night",
-  "scene": "They held each other by the fire late into night, speaking truths that can't be unsaid; now Marcus sits anchored by his promise, Ryan sleeps fitfully nearby, Jade lies awake wondering if belief is enough.",
+  "last_cycle_key": "2026-06-16:morning",
+  "scene": "At dawn Marcus spoke his fears to Jade by his tent; she steadied him. Now they sit together at his shelter while Ryan moves through camp and Judy rests with the pup on the house porch.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -48,15 +48,15 @@
     "11": "Day 11 cracked open: Marcus finally heard that Jade needed choice, not rescue, and that honesty rippled through the group. By evening, as the fire burned down, Marcus and Jade reached for each other for the first time, their guarded distance finally giving way.",
     "12": "Day 12 cracked them open. Jade pushed Marcus and Ryan to confess their deepest fears; both men answered with brutal honesty. Judy finally believed them. By nightfall, they sat by the dying fire, holding on as hunger pressed close, wondering if their promises can survive what comes next."
   },
-  "last_run_date": "2026-06-15",
+  "last_run_date": "2026-06-16",
   "camp_climate": "steady",
   "fire": {
     "lit": true,
-    "fuel": 18
+    "fuel": 6
   },
   "lean": {
-    "id": "name_fears",
-    "label": "Talk tonight",
-    "desc": "Honesty now, before doubt takes root."
+    "id": "speak_truth",
+    "label": "Say what he feels",
+    "desc": "Marcus speaks, trusting Jade enough to be fully seen."
   }
 }

@@ -1,27 +1,32 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-15",
+    "id": "2026-06-16",
     "closes": "tonight",
-    "question": "Marcus and Jade sit close as night settles. Does Marcus finally voice what's building between them—risking true vulnerability—or does he hold it unspoken, protecting this",
+    "question": "Ryan asks about the hunger, thirst, weight of staying. Who answers first?",
     "options": [
       {
-        "id": "speak_truth",
-        "label": "Say what he feels",
-        "desc": "Marcus speaks, trusting Jade enough to be fully seen."
+        "id": "jade_truth",
+        "label": "Jade's truth",
+        "desc": "She mirrors him: 'Can this actually last? Will you stay when it gets harder?'"
       },
       {
-        "id": "silent_hold",
-        "label": "Keep it unspoken",
-        "desc": "Marcus lets the closeness speak for itself, protecting the new equilibrium."
+        "id": "marcus_presence",
+        "label": "Marcus's presence",
+        "desc": "He moves closer, makes his answer physical—words aren't enough"
+      },
+      {
+        "id": "judy_doubt",
+        "label": "Judy's doubt",
+        "desc": "She breaks first: 'I'm terrified too. I said too much. What if you leave?'"
       }
     ]
   },
   "in_play": {
-    "id": "name_fears",
-    "label": "Talk tonight",
-    "desc": "Honesty now, before doubt takes root.",
-    "decided": "2026-06-15",
+    "id": "speak_truth",
+    "label": "Say what he feels",
+    "desc": "Marcus speaks, trusting Jade enough to be fully seen.",
+    "decided": "2026-06-16",
     "votes": 0,
     "tally": {}
   }

@@ -1,222 +1,6 @@
 [
   {
     "day": 2,
-    "cycle": "morning",
-    "character": "marcus",
-    "action": "He wakes before dawn and walks to the water source, moving through the semi-darkness with practiced ease.",
-    "thought": "She said the water helped. That matters.",
-    "location": {
-      "x": 35,
-      "y": 55
-    },
-    "shelter": "tent",
-    "mood": "watchful",
-    "timestamp": "2026-06-05T08:52:12.100314"
-  },
-  {
-    "day": 2,
-    "cycle": "morning",
-    "character": "ryan",
-    "action": "He emerges from his house as the light rises, stretching and already thinking about what he can build.",
-    "thought": "I feel something good is building today.",
-    "location": {
-      "x": 50,
-      "y": 50
-    },
-    "shelter": "house",
-    "mood": "energetic",
-    "timestamp": "2026-06-05T08:52:12.100314"
-  },
-  {
-    "day": 2,
-    "cycle": "morning",
-    "character": "jade",
-    "action": "She wakes in her hammock to sunlight filtering through the canopy, thinking of Marcus and how he brought her water.",
-    "thought": "He brought water. I can't get past him.",
-    "location": {
-      "x": 20,
-      "y": 60
-    },
-    "shelter": "hammock",
-    "mood": "thoughtful",
-    "timestamp": "2026-06-05T08:52:12.100314"
-  },
-  {
-    "day": 2,
-    "cycle": "morning",
-    "type": "interaction",
-    "characters": [
-      "marcus",
-      "ryan",
-      "jade"
-    ],
-    "description": "All three head north together—Jade awake to Marcus's quiet knowing, Ryan energized by the work—to find higher ground for water collection.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "Morning! Good to see the sun coming up properly."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Water's good today."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah, was just thinking about that. We're going to need a lot more if we want to—"
-      },
-      {
-        "speaker": "jade",
-        "line": "Hi. Sorry, am I interrupting something?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "No, no, of course not. Come on, fill up while it's cool."
-      },
-      {
-        "speaker": "marcus",
-        "line": "It's cold this morning."
-      },
-      {
-        "speaker": "jade",
-        "line": "It is. I was thinking... about something you said last night, Marcus."
-      },
-      {
-        "speaker": "marcus",
-        "line": "What?"
-      },
-      {
-        "speaker": "jade",
-        "line": "That water's everything. You were right. I didn't sleep properly until I drank."
-      },
-      {
-        "speaker": "ryan",
-        "line": "He's good like that. Marcus knows what matters."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Just observation."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Well, I want to set up a better system for collection. Maybe a trap, or—"
-      },
-      {
-        "speaker": "jade",
-        "line": "A trap sounds smart. There was rain yesterday, so—"
-      },
-      {
-        "speaker": "marcus",
-        "line": "North side. More runoff."
-      },
-      {
-        "speaker": "ryan",
-        "line": "North side, yeah okay. Marcus, you want to help me scout?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "After water."
-      },
-      {
-        "speaker": "jade",
-        "line": "I could help too, if you want."
-      },
-      {
-        "speaker": "ryan",
-        "line": "The more the better. It's going to be a lot of work."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're quiet this morning."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Always quiet."
-      },
-      {
-        "speaker": "ryan",
-        "line": "He's reflective. I think that's good. Better than me running my mouth all the time."
-      },
-      {
-        "speaker": "jade",
-        "line": "No, I like it. It feels... honest."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Mm."
-      },
-      {
-        "speaker": "ryan",
-        "line": "We should get going soon though. We're burning daylight."
-      },
-      {
-        "speaker": "jade",
-        "line": "Yeah, yeah, I'm ready."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Ready."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Great. Let's head north then. Jade, you'll see the valley I was talking about?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Okay. I'm excited to see what you're building."
-      },
-      {
-        "speaker": "ryan",
-        "line": "This is good. All three of us working together, it feels—"
-      },
-      {
-        "speaker": "jade",
-        "line": "Like we might actually make it?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "One day at a time."
-      },
-      {
-        "speaker": "ryan",
-        "line": "One day at a time. I'll take it."
-      },
-      {
-        "speaker": "jade",
-        "line": "Come on then."
-      }
-    ],
-    "timestamp": "2026-06-05T08:52:12.100314"
-  },
-  {
-    "day": 2,
-    "cycle": "midday",
-    "character": "marcus",
-    "action": "Repairs the frame of his tent with branches gathered from the island, working methodically in the midday heat.",
-    "thought": "She was at the water source with Ryan. Again. Not that I'm counting.",
-    "location": {
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "quiet",
-    "timestamp": "2026-06-05T12:31:47.221379"
-  },
-  {
-    "day": 2,
-    "cycle": "midday",
-    "character": "ryan",
-    "action": "Approaches Jade at the water source with a warm greeting, already thinking of reasons to work beside her.",
-    "thought": "She's genuinely happy to see me. That has to mean something, doesn't it?",
-    "location": {
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "eager",
-    "timestamp": "2026-06-05T12:31:47.221379"
-  },
-  {
-    "day": 2,
     "cycle": "midday",
     "character": "jade",
     "action": "Sits by the water collecting some for storage, her attention drifting between the work and the presence of both men.",
@@ -10188,5 +9972,141 @@
       }
     ],
     "timestamp": "2026-06-15T22:32:34.083042"
+  },
+  {
+    "day": 13,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "By dawn he was sitting by his tent when Jade found him, and they talked through the morning light.",
+    "thought": "I meant every word I told them.",
+    "location": {
+      "waypoint": "tent_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "vulnerable",
+    "timestamp": "2026-06-16T07:02:43.771244"
+  },
+  {
+    "day": 13,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "He woke early and moved through camp checking the fire and supplies, trying to shake off his anxiety.",
+    "thought": "Are they really here, or just staying for now?",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-16T07:02:43.771244"
+  },
+  {
+    "day": 13,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "She left her hammock at first light and walked toward the cliff area, drawn to find Marcus waiting.",
+    "thought": "They meant it. We're actually doing this.",
+    "location": {
+      "waypoint": "tent_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "hopeful",
+    "timestamp": "2026-06-16T07:02:43.771244"
+  },
+  {
+    "day": 13,
+    "cycle": "morning",
+    "character": "judy",
+    "action": "She woke to the stray pressed against her side and stayed in bed, letting herself rest for the first time.",
+    "thought": "They kept their promise. I'm finally safe.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-16T07:02:43.771244"
+  },
+  {
+    "day": 13,
+    "cycle": "morning",
+    "character": "stray",
+    "action": "The pup woke beside Judy, pressed close as she stirred, completely content in the early morning quiet.",
+    "thought": "She's here. We are safe now.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-16T07:02:43.771244"
+  },
+  {
+    "day": 13,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "jade"
+    ],
+    "description": "In early light by the cliff, Marcus sits with last night's weight—until Jade finds him and they speak the quiet truth they both needed to hear.",
+    "dialogue": [
+      {
+        "speaker": "jade",
+        "line": "You didn't sleep."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Couldn't. Kept going over what I said last night."
+      },
+      {
+        "speaker": "jade",
+        "line": "And?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I meant it. Every word."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know. I could hear it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's different in the morning. More real, more terrifying."
+      },
+      {
+        "speaker": "jade",
+        "line": "But you're still here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "So are you."
+      },
+      {
+        "speaker": "jade",
+        "line": "When it gets hard, are you going to run?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm going to try not to. That's all I can promise right now."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's all I'm doing too. Just choosing to stay today, and we'll choose again tomorrow."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Then we'll do it together."
+      }
+    ],
+    "timestamp": "2026-06-16T07:02:43.771244"
   }
 ]

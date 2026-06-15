@@ -5,19 +5,19 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 61,
-      "openness": 74,
+      "trust": 63,
+      "openness": 75,
       "ambition": 47,
       "loneliness": 0,
       "resilience": 92,
-      "hunger": 40,
-      "thirst": 30,
-      "energy": 78,
-      "health": 92
+      "hunger": 39,
+      "thirst": 27,
+      "energy": 62,
+      "health": 84
     },
-    "mood": "guarded",
+    "mood": "vulnerable",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "tent_front",
       "x": 75,
       "y": 25
     },
@@ -25,17 +25,17 @@
     "relationships": {
       "ryan": {
         "closeness": 98,
-        "tension": 2,
+        "tension": 1,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
         "tension": 2,
-        "attraction": 30
+        "attraction": 31
       },
       "judy": {
         "closeness": 56,
-        "tension": 3,
+        "tension": 2,
         "attraction": 0
       },
       "stray": {
@@ -45,7 +45,10 @@
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
-    "interaction": null,
+    "interaction": {
+      "with": "jade",
+      "state": "talking"
+    },
     "memories": [
       {
         "day": 3,
@@ -71,11 +74,6 @@
         "day": 10,
         "text": "I told Ryan tonight he was my anchor. I meant it fully.",
         "weight": 3
-      },
-      {
-        "day": 10,
-        "text": "He believes in me with the island and I'm letting him in.",
-        "weight": 2
       },
       {
         "day": 11,
@@ -116,6 +114,11 @@
         "day": 12,
         "text": "She asked if I'd stay. I said I won't run. That's enough.",
         "weight": 2
+      },
+      {
+        "day": 13,
+        "text": "I told Jade I meant it. She heard me.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -136,19 +139,19 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 97,
+      "trust": 98,
       "openness": 100,
       "ambition": 87,
-      "loneliness": 0,
-      "resilience": 53,
-      "hunger": 40,
-      "thirst": 30,
-      "energy": 78,
-      "health": 92
+      "loneliness": 3,
+      "resilience": 54,
+      "hunger": 39,
+      "thirst": 27,
+      "energy": 62,
+      "health": 84
     },
     "mood": "anxious",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_front",
       "x": 42,
       "y": 48
     },
@@ -156,7 +159,7 @@
     "relationships": {
       "marcus": {
         "closeness": 98,
-        "tension": 2,
+        "tension": 1,
         "attraction": 0
       },
       "jade": {
@@ -268,19 +271,19 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 93,
+      "trust": 94,
       "openness": 100,
       "ambition": 39,
       "loneliness": 0,
-      "resilience": 70,
-      "hunger": 40,
-      "thirst": 30,
-      "energy": 78,
-      "health": 92
+      "resilience": 71,
+      "hunger": 39,
+      "thirst": 27,
+      "energy": 62,
+      "health": 84
     },
-    "mood": "uncertain",
+    "mood": "hopeful",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "tent_front",
       "x": 40,
       "y": 50
     },
@@ -289,7 +292,7 @@
       "marcus": {
         "closeness": 100,
         "tension": 2,
-        "attraction": 30
+        "attraction": 31
       },
       "ryan": {
         "closeness": 100,
@@ -308,7 +311,10 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "talking"
+    },
     "memories": [
       {
         "day": 5,
@@ -338,11 +344,6 @@
       {
         "day": 8,
         "text": "She finally believes she's wanted. They all made sure.",
-        "weight": 2
-      },
-      {
-        "day": 8,
-        "text": "I finally feel wanted exactly as I am. No pretending.",
         "weight": 2
       },
       {
@@ -379,6 +380,11 @@
         "day": 12,
         "text": "I pushed them to speak hard truths. They answered. Now I believe.",
         "weight": 2
+      },
+      {
+        "day": 13,
+        "text": "He came to me and said the truth. We're both staying.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -398,15 +404,15 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 89,
+      "trust": 91,
       "openness": 92,
       "ambition": 34,
-      "loneliness": 27,
-      "resilience": 73,
-      "hunger": 40,
-      "thirst": 30,
-      "energy": 78,
-      "health": 92
+      "loneliness": 23,
+      "resilience": 74,
+      "hunger": 39,
+      "thirst": 27,
+      "energy": 62,
+      "health": 84
     },
     "mood": "peaceful",
     "location": {
@@ -421,7 +427,7 @@
     "relationships": {
       "marcus": {
         "closeness": 56,
-        "tension": 3,
+        "tension": 2,
         "attraction": 0
       },
       "ryan": {
@@ -435,7 +441,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 54,
+        "closeness": 55,
         "tension": 0,
         "attraction": 0
       }
@@ -563,21 +569,21 @@
         "attraction": 0
       },
       "judy": {
-        "closeness": 87,
-        "tension": 3,
+        "closeness": 88,
+        "tension": 2,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 71,
+      "trust": 72,
       "openness": 46,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 87,
-      "hunger": 40,
-      "thirst": 30,
-      "energy": 78,
-      "health": 92
+      "hunger": 39,
+      "thirst": 27,
+      "energy": 62,
+      "health": 84
     },
     "shelter": "under the palms",
     "memories": [
@@ -590,11 +596,6 @@
         "day": 3,
         "text": "He keeps me safe. I sleep without fearing.",
         "weight": 2
-      },
-      {
-        "day": 3,
-        "text": "The two men were tense, then quiet. I felt safe between.",
-        "weight": 1
       },
       {
         "day": 5,
@@ -628,13 +629,13 @@
       },
       {
         "day": 9,
-        "text": "He stays with me by the fire. I stay with him. We're safe together.",
-        "weight": 2
+        "text": "He holds me close by the fire. I'm his. We're safe.",
+        "weight": 3
       },
       {
         "day": 9,
-        "text": "He holds me close by the fire. I'm his. We're safe.",
-        "weight": 3
+        "text": "He stays with me by the fire. I stay with him. We're safe together.",
+        "weight": 2
       },
       {
         "day": 11,
@@ -650,6 +651,11 @@
         "day": 12,
         "text": "The three humans spoke scared words. The woman was calm. We are safe.",
         "weight": 2
+      },
+      {
+        "day": 13,
+        "text": "Everyone stayed. The family is safe together.",
+        "weight": 1
       }
     ]
   }
