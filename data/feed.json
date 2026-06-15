@@ -9987,5 +9987,196 @@
       }
     ],
     "timestamp": "2026-06-15T15:02:45.163383"
+  },
+  {
+    "day": 12,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "He sits back from the fire, watching Jade and Ryan speak, his responses spare but honest, telling them what solitude cost him.",
+    "thought": "Solitude was safer than this. But this is worth it.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "resolute",
+    "timestamp": "2026-06-15T18:33:30.336380"
+  },
+  {
+    "day": 12,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "He sits close to Judy at the fire's edge, taking her hand as the conversation deepens, promising to stay despite his own fear.",
+    "thought": "I can't leave them, even though I wake afraid.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "urgent",
+    "timestamp": "2026-06-15T18:33:30.336380"
+  },
+  {
+    "day": 12,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "She asks the hardest questions—what scared means, what staying actually means—and listens as both men lay themselves open.",
+    "thought": "They're actually here. They're choosing this.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "uncertain",
+    "timestamp": "2026-06-15T18:33:30.336380"
+  },
+  {
+    "day": 12,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "She sits at the fire with the stray pressed against her leg, listening to the men's confessions, and finally allows herself to believe they meant their promises.",
+    "thought": "Maybe they really will stay. I can rest.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-15T18:33:30.336380"
+  },
+  {
+    "day": 12,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "It moves between the group, whimpering softly at tension, pressing its whole body against Judy's leg, sensing her relief as the evening settles.",
+    "thought": "She is safe now. We are safe together.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-15T18:33:30.336380"
+  },
+  {
+    "day": 12,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "jade",
+      "ryan",
+      "marcus",
+      "judy",
+      "stray"
+    ],
+    "description": "Jade pushed them to speak their deepest fears tonight—Ryan and Marcus answered with brutal honesty, Judy finally believed them, and the stray pressed close, sensing everything shift.",
+    "dialogue": [
+      {
+        "speaker": "jade",
+        "line": "When you say you're scared, do you mean it's not real—or it is?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Both. I wake up convinced I dreamed this."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's real."
+      },
+      {
+        "speaker": "jade",
+        "line": "Real but fragile. We're all holding still, afraid to break it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Because if it breaks—"
+      },
+      {
+        "speaker": "judy",
+        "line": "We're alone again. And I've been alone. I can't go back."
+      },
+      {
+        "speaker": "stray",
+        "line": "Whimpers, shifts closer to Judy; she rests a hand on its head."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You won't."
+      },
+      {
+        "speaker": "judy",
+        "line": "You can't promise that. People leave. That's what they do."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm not people. I'm here. I chose here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "So did I."
+      },
+      {
+        "speaker": "jade",
+        "line": "But we're terrified. All of us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yes."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Fear doesn't mean we're leaving."
+      },
+      {
+        "speaker": "jade",
+        "line": "It means we're human. And humans do leave."
+      },
+      {
+        "speaker": "stray",
+        "line": "Stands, presses its whole body against Judy's leg; she pulls it close."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not all of them."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You used to be alone by choice."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I was. It felt safe until I realized how much it cost."
+      },
+      {
+        "speaker": "judy",
+        "line": "How do you stop being afraid it'll happen again?"
+      },
+      {
+        "speaker": "stray",
+        "line": "A long pause; Ryan reaches over, takes Judy's free hand."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You don't. You just stay anyway."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Every day. The way the pup does."
+      },
+      {
+        "speaker": "jade",
+        "line": "It doesn't even know to be afraid."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Neither did we, once."
+      }
+    ],
+    "timestamp": "2026-06-15T18:33:30.336380"
   }
 ]
