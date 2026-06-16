@@ -5,15 +5,15 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 67,
-      "openness": 79,
+      "trust": 68,
+      "openness": 81,
       "ambition": 47,
       "loneliness": 0,
-      "resilience": 95,
-      "hunger": 36,
-      "thirst": 22,
-      "energy": 8,
-      "health": 60
+      "resilience": 96,
+      "hunger": 35,
+      "thirst": 26,
+      "energy": 22,
+      "health": 52
     },
     "mood": "resolute",
     "location": {
@@ -25,29 +25,29 @@
     "relationships": {
       "ryan": {
         "closeness": 97,
-        "tension": 10,
+        "tension": 12,
         "attraction": 0
       },
       "jade": {
         "closeness": 99,
-        "tension": 9,
-        "attraction": 33
+        "tension": 11,
+        "attraction": 34
       },
       "judy": {
         "closeness": 56,
-        "tension": 10,
+        "tension": 13,
         "attraction": 0
       },
       "stray": {
-        "closeness": 33,
+        "closeness": 34,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "judy",
-      "state": "comforting"
+      "with": "jade",
+      "state": "talking"
     },
     "memories": [
       {
@@ -96,11 +96,6 @@
         "weight": 3
       },
       {
-        "day": 12,
-        "text": "She asked if I'd stay. I said I won't run. That's enough.",
-        "weight": 2
-      },
-      {
         "day": 13,
         "text": "I sat with them instead of running. I told them I'm terrified. They stayed.",
         "weight": 3
@@ -113,6 +108,11 @@
       {
         "day": 13,
         "text": "She was terrified. I promised to stay. I did.",
+        "weight": 3
+      },
+      {
+        "day": 13,
+        "text": "I named the fear at the firepit. They stayed. I'm staying.",
         "weight": 3
       },
       {
@@ -133,7 +133,7 @@
       "beard": true
     },
     "condition": "sick",
-    "recovery": 6
+    "recovery": 4
   },
   "ryan": {
     "name": "Ryan Lim",
@@ -141,15 +141,15 @@
     "archetype": "builder",
     "color": "#fbbf24",
     "scores": {
-      "trust": 99,
+      "trust": 100,
       "openness": 100,
       "ambition": 88,
-      "loneliness": 1,
-      "resilience": 53,
-      "hunger": 36,
-      "thirst": 22,
-      "energy": 8,
-      "health": 60
+      "loneliness": 0,
+      "resilience": 52,
+      "hunger": 35,
+      "thirst": 26,
+      "energy": 22,
+      "health": 52
     },
     "mood": "anxious",
     "location": {
@@ -161,17 +161,17 @@
     "relationships": {
       "marcus": {
         "closeness": 97,
-        "tension": 10,
+        "tension": 12,
         "attraction": 0
       },
       "jade": {
-        "closeness": 98,
-        "tension": 12,
+        "closeness": 97,
+        "tension": 15,
         "attraction": 33
       },
       "judy": {
         "closeness": 72,
-        "tension": 12,
+        "tension": 14,
         "attraction": 0
       },
       "stray": {
@@ -181,7 +181,10 @@
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
-    "interaction": null,
+    "interaction": {
+      "with": "judy",
+      "state": "sitting_together"
+    },
     "memories": [
       {
         "day": 5,
@@ -207,11 +210,6 @@
         "day": 10,
         "text": "Marcus finally said he chose me. Every day since Day 3 proved him right.",
         "weight": 3
-      },
-      {
-        "day": 10,
-        "text": "He woke beside me and didn't run.",
-        "weight": 2
       },
       {
         "day": 11,
@@ -252,6 +250,11 @@
         "day": 13,
         "text": "I failed to forage but Jade saved us. Judy's safe.",
         "weight": 2
+      },
+      {
+        "day": 13,
+        "text": "Marcus breaking open and choosing us anyway. That changed everything.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -267,7 +270,7 @@
       "beard": true
     },
     "condition": "sick",
-    "recovery": 6
+    "recovery": 4
   },
   "jade": {
     "name": "Jade Ng",
@@ -279,11 +282,11 @@
       "openness": 100,
       "ambition": 39,
       "loneliness": 0,
-      "resilience": 71,
-      "hunger": 36,
-      "thirst": 22,
-      "energy": 8,
-      "health": 60
+      "resilience": 72,
+      "hunger": 35,
+      "thirst": 26,
+      "energy": 34,
+      "health": 52
     },
     "mood": "determined",
     "location": {
@@ -295,17 +298,17 @@
     "relationships": {
       "marcus": {
         "closeness": 99,
-        "tension": 9,
-        "attraction": 33
+        "tension": 11,
+        "attraction": 34
       },
       "ryan": {
-        "closeness": 98,
-        "tension": 12,
+        "closeness": 97,
+        "tension": 15,
         "attraction": 28
       },
       "judy": {
-        "closeness": 65,
-        "tension": 12,
+        "closeness": 64,
+        "tension": 15,
         "attraction": 0
       },
       "stray": {
@@ -315,7 +318,10 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "talking"
+    },
     "memories": [
       {
         "day": 5,
@@ -348,11 +354,6 @@
         "weight": 2
       },
       {
-        "day": 11,
-        "text": "He stopped running and finally let me in.",
-        "weight": 2
-      },
-      {
         "day": 12,
         "text": "They admitted they're scared too. I'm not alone in this fear.",
         "weight": 2
@@ -366,6 +367,11 @@
         "day": 12,
         "text": "I pushed them to speak hard truths. They answered. Now I believe.",
         "weight": 2
+      },
+      {
+        "day": 13,
+        "text": "He spoke aloud at the fire — fear, wanting to leave, choosing us.",
+        "weight": 3
       },
       {
         "day": 13,
@@ -405,15 +411,15 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 95,
-      "openness": 93,
+      "trust": 97,
+      "openness": 94,
       "ambition": 34,
-      "loneliness": 13,
-      "resilience": 73,
-      "hunger": 36,
-      "thirst": 22,
-      "energy": 8,
-      "health": 60
+      "loneliness": 10,
+      "resilience": 74,
+      "hunger": 35,
+      "thirst": 26,
+      "energy": 34,
+      "health": 52
     },
     "mood": "hopeful",
     "location": {
@@ -428,36 +434,31 @@
     "relationships": {
       "marcus": {
         "closeness": 56,
-        "tension": 10,
+        "tension": 13,
         "attraction": 0
       },
       "ryan": {
         "closeness": 72,
-        "tension": 12,
+        "tension": 14,
         "attraction": 0
       },
       "jade": {
-        "closeness": 65,
-        "tension": 12,
+        "closeness": 64,
+        "tension": 15,
         "attraction": 0
       },
       "stray": {
-        "closeness": 58,
+        "closeness": 59,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
     "interaction": {
-      "with": "marcus",
-      "state": "comforting"
+      "with": "ryan",
+      "state": "sitting_together"
     },
     "memories": [
-      {
-        "day": 3,
-        "text": "They're together every night now. I'm not part of this.",
-        "weight": 3
-      },
       {
         "day": 4,
         "text": "They all said I belong. Ryan, Marcus, even Jade. I want to believe them.",
@@ -522,6 +523,11 @@
         "day": 13,
         "text": "He stayed through the hunger and fear. He meant it.",
         "weight": 3
+      },
+      {
+        "day": 13,
+        "text": "He chose us at the firepit, in front of everyone. They're staying.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -556,43 +562,38 @@
     "relationships": {
       "marcus": {
         "closeness": 63,
-        "tension": 12,
+        "tension": 15,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 72,
-        "tension": 12,
+        "closeness": 71,
+        "tension": 15,
         "attraction": 0
       },
       "jade": {
-        "closeness": 58,
-        "tension": 12,
+        "closeness": 57,
+        "tension": 15,
         "attraction": 0
       },
       "judy": {
         "closeness": 88,
-        "tension": 10,
+        "tension": 13,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 74,
+      "trust": 76,
       "openness": 46,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 88,
-      "hunger": 36,
-      "thirst": 22,
-      "energy": 8,
-      "health": 60
+      "hunger": 35,
+      "thirst": 26,
+      "energy": 34,
+      "health": 52
     },
     "shelter": "under the palms",
     "memories": [
-      {
-        "day": 3,
-        "text": "Ryan's warmth and his hand keep me safe — I sleep without fear now",
-        "weight": 2
-      },
       {
         "day": 5,
         "text": "All of them together at the fire. All safe. All here.",
@@ -656,6 +657,11 @@
       {
         "day": 13,
         "text": "She was trembling. I pressed close. We're safe together.",
+        "weight": 2
+      },
+      {
+        "day": 13,
+        "text": "All together at the fire. Safe. I belong here.",
         "weight": 2
       }
     ]

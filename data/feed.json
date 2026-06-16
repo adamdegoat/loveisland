@@ -1,210 +1,6 @@
 [
   {
     "day": 3,
-    "cycle": "morning",
-    "character": "marcus",
-    "action": "Wakes early in his tent and lies there for a long moment, his mind elsewhere, before rising to check the fire.",
-    "thought": "I can't stop thinking about her hand.",
-    "location": {
-      "waypoint": "tent_front",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "thoughtful",
-    "timestamp": "2026-06-06T07:02:19.930190"
-  },
-  {
-    "day": 3,
-    "cycle": "morning",
-    "character": "ryan",
-    "action": "Wakes beside Judy in the house, realizing he's slept deeply but still feels hollowed out; lies there gathering strength.",
-    "thought": "How long can I keep this up?",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "exhausted",
-    "timestamp": "2026-06-06T07:02:19.930190"
-  },
-  {
-    "day": 3,
-    "cycle": "morning",
-    "character": "jade",
-    "action": "Wakes in her hammock with unusual energy and heads into the jungle edge to gather firewood.",
-    "thought": "The morning light feels like a gift.",
-    "location": {
-      "waypoint": "jungle_edge",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "peaceful",
-    "timestamp": "2026-06-06T07:02:19.930190"
-  },
-  {
-    "day": 3,
-    "cycle": "morning",
-    "character": "judy",
-    "action": "Wakes in the safety of the house and sits up slowly, one hand on her belly, listening for sounds of the others.",
-    "thought": "Another day. He didn't leave me.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "anxious",
-    "timestamp": "2026-06-06T07:02:19.930190"
-  },
-  {
-    "day": 3,
-    "cycle": "morning",
-    "character": "stray",
-    "action": "Wakes under the palms where Ryan left it the night before, stretches uncertainly, and watches the beach path for movement.",
-    "thought": "Will they come back? Am I safe?",
-    "location": {
-      "waypoint": "beach_left",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "hopeful",
-    "timestamp": "2026-06-06T07:02:19.930190"
-  },
-  {
-    "day": 3,
-    "cycle": "morning",
-    "type": "interaction",
-    "characters": [
-      "marcus",
-      "jade"
-    ],
-    "description": "Marcus tells Jade he came to disappear, but admits he doesn't know how to let anyone close—and when she simply sits with him, he realizes he needed exactly this.",
-    "dialogue": [
-      {
-        "speaker": "jade",
-        "line": "Since we put the puppy down for the night, you've been out here."
-      },
-      {
-        "speaker": "marcus",
-        "line": "It's a good spot. Quiet."
-      },
-      {
-        "speaker": "jade",
-        "line": "You've been crying."
-      },
-      {
-        "speaker": "marcus",
-        "line": "My eyes sweat when I stare at the horizon."
-      },
-      {
-        "speaker": "jade",
-        "line": "You, breaking. Just for a moment."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm fine, Jade."
-      },
-      {
-        "speaker": "jade",
-        "line": "Stop saying that. You're not fine and neither am I."
-      },
-      {
-        "speaker": "marcus",
-        "line": "What do you want from me?"
-      },
-      {
-        "speaker": "jade",
-        "line": "The truth. Why are you really out here?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "I came to the island to disappear. Not like this."
-      },
-      {
-        "speaker": "jade",
-        "line": "Not with people, you mean."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Not with anyone."
-      },
-      {
-        "speaker": "jade",
-        "line": "And now you're stuck with us."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Now I'm stuck with you. That's different."
-      },
-      {
-        "speaker": "jade",
-        "line": "Is that bad?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "I don't know. It scares me."
-      },
-      {
-        "speaker": "jade",
-        "line": "Why?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Because I don't know how to let anyone close."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're letting me close right now."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Jade..."
-      },
-      {
-        "speaker": "jade",
-        "line": "Just sit with me. You don't have to explain anything."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I used to think I was better alone."
-      },
-      {
-        "speaker": "jade",
-        "line": "And now?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Now I'm not sure what I want."
-      },
-      {
-        "speaker": "jade",
-        "line": "We have time to figure it out."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Do we?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Yes. We're not going anywhere."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I think I needed this. You. This."
-      },
-      {
-        "speaker": "jade",
-        "line": "I know."
-      }
-    ],
-    "timestamp": "2026-06-06T07:02:19.930190"
-  },
-  {
-    "day": 3,
     "cycle": "midday",
     "character": "marcus",
     "action": "He sits at the cliff lookout, throwing stones into the ocean one by one, each one an attempt to settle something restless.",
@@ -9878,5 +9674,220 @@
       }
     ],
     "timestamp": "2026-06-16T18:32:39.134961"
+  },
+  {
+    "day": 13,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "Sits at the fire and names his fear — wanting to leave — before choosing to stay.",
+    "thought": "They heard me. I'm choosing to stay.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "resolute",
+    "timestamp": "2026-06-16T22:32:41.228634"
+  },
+  {
+    "day": 13,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "Tends the fire and listens as Marcus speaks his truth, anxiety easing into trust.",
+    "thought": "He's staying. We're all staying.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-16T22:32:41.228634"
+  },
+  {
+    "day": 13,
+    "cycle": "night",
+    "character": "jade",
+    "action": "Sits by Marcus at the fire, witnessing his vulnerability, steadying the moment as he names his choice.",
+    "thought": "He doesn't have to be alone anymore.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "determined",
+    "timestamp": "2026-06-16T22:32:41.228634"
+  },
+  {
+    "day": 13,
+    "cycle": "night",
+    "character": "judy",
+    "action": "Settles beside Ryan and holds the stray close, finally believing the promises won't break.",
+    "thought": "They meant it. We're actually safe.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-16T22:32:41.228634"
+  },
+  {
+    "day": 13,
+    "cycle": "night",
+    "character": "stray",
+    "action": "Pads from the darkness into the firelit circle, pressing close to Judy, finally finding safety.",
+    "thought": "Safe. I'm safe with them.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "calm",
+    "timestamp": "2026-06-16T22:32:41.228634"
+  },
+  {
+    "day": 13,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade",
+      "judy",
+      "stray"
+    ],
+    "description": "Marcus speaks his fear at the firepit — naming the cliff, naming the hunger to leave — and chooses to stay while the group gathers close and the stray drifts into the warmth.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "I keep thinking we should have been fishing all day. I let you all down."
+      },
+      {
+        "speaker": "jade",
+        "line": "You didn't. You were here. You stayed."
+      },
+      {
+        "speaker": "ryan",
+        "line": "But we're hungry. Really hungry now. What if—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "We're still together. That's what matters."
+      },
+      {
+        "speaker": "judy",
+        "line": "Is it? When it gets worse, will you all still—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I thought about leaving. This afternoon. At the cliff."
+      },
+      {
+        "speaker": "jade",
+        "line": "I know. I went after you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I was ready to go. To stop feeling all of this."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Don't say that. Please don't—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm just being honest. I was done. Then I realized something."
+      },
+      {
+        "speaker": "jade",
+        "line": "What?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I don't want to be done. Not if it means losing you."
+      },
+      {
+        "speaker": "judy",
+        "line": "So you're staying? You promise?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm choosing to stay. Every day, I'll choose again."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And we're choosing you. All of us. That has to be enough."
+      },
+      {
+        "speaker": "jade",
+        "line": "It's enough because we choose it. Together."
+      },
+      {
+        "speaker": "judy",
+        "line": "Even when we're starving? Even then?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Even then. That's when it matters most."
+      },
+      {
+        "speaker": "stray",
+        "line": "[whimper, pads over from the shadows, presses against Marcus]"
+      },
+      {
+        "speaker": "jade",
+        "line": "See? Everything stays. The fire, the pup, us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Come here, boy. You're safe."
+      },
+      {
+        "speaker": "judy",
+        "line": "We're all safe now. Because we decided we are."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Rest soon. Tomorrow we try again."
+      },
+      {
+        "speaker": "jade",
+        "line": "Sleep soon. The fire will keep warm."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. Together. That's the plan."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And we have water now. Jade found it. That's something real."
+      },
+      {
+        "speaker": "jade",
+        "line": "We keep finding small things. The fire, the shelter, each other."
+      },
+      {
+        "speaker": "judy",
+        "line": "Tomorrow we'll find more. Right?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Tomorrow we'll find more. Judy's right."
+      },
+      {
+        "speaker": "judy",
+        "line": "And you'll be here? All of you?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "All of us. Always."
+      }
+    ],
+    "timestamp": "2026-06-16T22:32:41.228634"
   }
 ]
