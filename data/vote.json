@@ -1,32 +1,32 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-16",
+    "id": "2026-06-17",
     "closes": "tonight",
-    "question": "Ryan asks about the hunger, thirst, weight of staying. Who answers first?",
+    "question": "Marcus spoke his cliff fear and chose to stay. Tomorrow, should the group organize paired work to keep him close, trust his choice and give him space, or ask him what he ",
     "options": [
       {
-        "id": "jade_truth",
-        "label": "Jade's truth",
-        "desc": "She mirrors him: 'Can this actually last? Will you stay when it gets harder?'"
+        "id": "keep_him_close",
+        "label": "Keep him close",
+        "desc": "Pair off work — fishing, shelter — so Marcus is never alone. Support through structure"
       },
       {
-        "id": "marcus_presence",
-        "label": "Marcus's presence",
-        "desc": "He moves closer, makes his answer physical—words aren't enough"
+        "id": "trust_his_word",
+        "label": "Trust his choice",
+        "desc": "He chose to stay. Let him move freely — his commitment should hold on its own"
       },
       {
-        "id": "judy_doubt",
-        "label": "Judy's doubt",
-        "desc": "She breaks first: 'I'm terrified too. I said too much. What if you leave?'"
+        "id": "ask_directly",
+        "label": "Ask him directly",
+        "desc": "Bring it up at fire — what kind of support does Marcus actually need tomorrow?"
       }
     ]
   },
   "in_play": {
-    "id": "speak_truth",
-    "label": "Say what he feels",
-    "desc": "Marcus speaks, trusting Jade enough to be fully seen.",
-    "decided": "2026-06-16",
+    "id": "jade_truth",
+    "label": "Jade's truth",
+    "desc": "She mirrors him: 'Can this actually last? Will you stay when it gets harder?'",
+    "decided": "2026-06-17",
     "votes": 0,
     "tally": {}
   }

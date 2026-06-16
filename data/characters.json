@@ -5,37 +5,37 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 68,
-      "openness": 81,
+      "trust": 69,
+      "openness": 82,
       "ambition": 47,
       "loneliness": 0,
       "resilience": 96,
-      "hunger": 35,
-      "thirst": 26,
-      "energy": 22,
-      "health": 52
+      "hunger": 34,
+      "thirst": 25,
+      "energy": 0,
+      "health": 44
     },
-    "mood": "resolute",
+    "mood": "steady",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "tide_pool",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 97,
-        "tension": 12,
+        "closeness": 96,
+        "tension": 15,
         "attraction": 0
       },
       "jade": {
         "closeness": 99,
-        "tension": 11,
-        "attraction": 34
+        "tension": 14,
+        "attraction": 35
       },
       "judy": {
-        "closeness": 56,
-        "tension": 13,
+        "closeness": 55,
+        "tension": 16,
         "attraction": 0
       },
       "stray": {
@@ -116,8 +116,8 @@
         "weight": 3
       },
       {
-        "day": 13,
-        "text": "I told Jade I meant it. She heard me.",
+        "day": 14,
+        "text": "She asked if I could stay. I told her I don't know, but today I'm here.",
         "weight": 2
       }
     ],
@@ -133,7 +133,7 @@
       "beard": true
     },
     "condition": "sick",
-    "recovery": 4
+    "recovery": 2
   },
   "ryan": {
     "name": "Ryan Lim",
@@ -144,34 +144,34 @@
       "trust": 100,
       "openness": 100,
       "ambition": 88,
-      "loneliness": 0,
-      "resilience": 52,
-      "hunger": 35,
-      "thirst": 26,
-      "energy": 22,
-      "health": 52
+      "loneliness": 3,
+      "resilience": 51,
+      "hunger": 34,
+      "thirst": 25,
+      "energy": 0,
+      "health": 44
     },
-    "mood": "anxious",
+    "mood": "worried",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_porch",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 97,
-        "tension": 12,
+        "closeness": 96,
+        "tension": 15,
         "attraction": 0
       },
       "jade": {
-        "closeness": 97,
-        "tension": 15,
+        "closeness": 96,
+        "tension": 18,
         "attraction": 33
       },
       "judy": {
-        "closeness": 72,
-        "tension": 14,
+        "closeness": 71,
+        "tension": 17,
         "attraction": 0
       },
       "stray": {
@@ -181,10 +181,7 @@
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
-    "interaction": {
-      "with": "judy",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -270,7 +267,7 @@
       "beard": true
     },
     "condition": "sick",
-    "recovery": 4
+    "recovery": 2
   },
   "jade": {
     "name": "Jade Ng",
@@ -282,15 +279,15 @@
       "openness": 100,
       "ambition": 39,
       "loneliness": 0,
-      "resilience": 72,
-      "hunger": 35,
-      "thirst": 26,
-      "energy": 34,
-      "health": 52
+      "resilience": 73,
+      "hunger": 34,
+      "thirst": 25,
+      "energy": 12,
+      "health": 44
     },
-    "mood": "determined",
+    "mood": "cautious",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "tide_pool",
       "x": 40,
       "y": 50
     },
@@ -298,17 +295,17 @@
     "relationships": {
       "marcus": {
         "closeness": 99,
-        "tension": 11,
-        "attraction": 34
+        "tension": 14,
+        "attraction": 35
       },
       "ryan": {
-        "closeness": 97,
-        "tension": 15,
+        "closeness": 96,
+        "tension": 18,
         "attraction": 28
       },
       "judy": {
-        "closeness": 64,
-        "tension": 15,
+        "closeness": 63,
+        "tension": 18,
         "attraction": 0
       },
       "stray": {
@@ -349,11 +346,6 @@
         "weight": 3
       },
       {
-        "day": 11,
-        "text": "When Judy broke, both men promised not to leave. It shifted something I can't explain.",
-        "weight": 2
-      },
-      {
         "day": 12,
         "text": "They admitted they're scared too. I'm not alone in this fear.",
         "weight": 2
@@ -392,6 +384,11 @@
         "day": 13,
         "text": "Water from tide pools, and they all waited for me.",
         "weight": 2
+      },
+      {
+        "day": 14,
+        "text": "I asked if this could last. He said he doesn't know tomorrow, but he's here today.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -414,12 +411,12 @@
       "trust": 97,
       "openness": 94,
       "ambition": 34,
-      "loneliness": 10,
+      "loneliness": 8,
       "resilience": 74,
-      "hunger": 35,
-      "thirst": 26,
-      "energy": 34,
-      "health": 52
+      "hunger": 34,
+      "thirst": 25,
+      "energy": 12,
+      "health": 44
     },
     "mood": "hopeful",
     "location": {
@@ -433,29 +430,29 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 56,
-        "tension": 13,
+        "closeness": 55,
+        "tension": 16,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 72,
-        "tension": 14,
+        "closeness": 71,
+        "tension": 17,
         "attraction": 0
       },
       "jade": {
-        "closeness": 64,
-        "tension": 15,
+        "closeness": 63,
+        "tension": 18,
         "attraction": 0
       },
       "stray": {
-        "closeness": 59,
+        "closeness": 60,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
     "interaction": {
-      "with": "ryan",
+      "with": "stray",
       "state": "sitting_together"
     },
     "memories": [
@@ -561,23 +558,23 @@
     "mood": "calm",
     "relationships": {
       "marcus": {
-        "closeness": 63,
-        "tension": 15,
+        "closeness": 62,
+        "tension": 18,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 71,
-        "tension": 15,
+        "closeness": 70,
+        "tension": 18,
         "attraction": 0
       },
       "jade": {
-        "closeness": 57,
-        "tension": 15,
+        "closeness": 56,
+        "tension": 18,
         "attraction": 0
       },
       "judy": {
         "closeness": 88,
-        "tension": 13,
+        "tension": 16,
         "attraction": 0
       }
     },
@@ -587,10 +584,10 @@
       "ambition": 0,
       "loneliness": 0,
       "resilience": 88,
-      "hunger": 35,
-      "thirst": 26,
-      "energy": 34,
-      "health": 52
+      "hunger": 34,
+      "thirst": 25,
+      "energy": 12,
+      "health": 44
     },
     "shelter": "under the palms",
     "memories": [

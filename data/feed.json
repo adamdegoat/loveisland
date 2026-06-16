@@ -1,224 +1,6 @@
 [
   {
     "day": 3,
-    "cycle": "midday",
-    "character": "marcus",
-    "action": "He sits at the cliff lookout, throwing stones into the ocean one by one, each one an attempt to settle something restless.",
-    "thought": "Tonight. What do I say tonight?",
-    "location": {
-      "waypoint": "cliff_lookout",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "restless",
-    "timestamp": "2026-06-06T12:32:10.072762"
-  },
-  {
-    "day": 3,
-    "cycle": "midday",
-    "character": "ryan",
-    "action": "He sits near the firepit with the stray's head resting against his leg, slowly hand-feeding it scraps of dried fish, watching its shoulders relax.",
-    "thought": "It's starting to trust me. That matters.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "content",
-    "timestamp": "2026-06-06T12:32:10.072762"
-  },
-  {
-    "day": 3,
-    "cycle": "midday",
-    "character": "jade",
-    "action": "She approaches from the jungle path carrying an armful of coconuts and fresh palm fronds, moving with the ease of someone who belongs everywhere and nowhere.",
-    "thought": "The light is perfect right now. Golden.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "peaceful",
-    "timestamp": "2026-06-06T12:32:10.072762"
-  },
-  {
-    "day": 3,
-    "cycle": "midday",
-    "character": "judy",
-    "action": "She emerges from the house door, one hand pressed to the small of her back, drawn by the sound of voices and the sight of Ryan tending something gentle.",
-    "thought": "He feeds it so gently. Like he cares.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "anxious",
-    "timestamp": "2026-06-06T12:32:10.072762"
-  },
-  {
-    "day": 3,
-    "cycle": "midday",
-    "character": "stray",
-    "action": "The puppy leans fully into Ryan's leg, its tail lifting slightly, testing whether the warmth and kindness are real or another false safety that might vanish.",
-    "thought": "His hand is warm. Is this staying?",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "cautious",
-    "timestamp": "2026-06-06T12:32:10.072762"
-  },
-  {
-    "day": 3,
-    "cycle": "midday",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade",
-      "judy",
-      "stray"
-    ],
-    "description": "The stray finally falls asleep against Ryan, no longer afraid; Jade and Judy see in that moment what Ryan himself is slowly learning—that staying present is how you become real.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "Here, slow. You're safe. Just take it easy."
-      },
-      {
-        "speaker": "stray",
-        "line": "[soft whimper, sniffs the fish, takes it gently]"
-      },
-      {
-        "speaker": "jade",
-        "line": "How much is it eating now? It looks less scared than yesterday."
-      },
-      {
-        "speaker": "ryan",
-        "line": "A little more each time. I think it's starting to understand we're not going to hurt it."
-      },
-      {
-        "speaker": "judy",
-        "line": "Can I... do you want help? I could sit with it?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah, you can. Just keep your movements slow. It spooks easy."
-      },
-      {
-        "speaker": "stray",
-        "line": "[ears perk up, glances at Judy but stays against Ryan's leg]"
-      },
-      {
-        "speaker": "jade",
-        "line": "It bonded with you first because you weren't afraid. Animals know that stuff."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'm not sure what I was afraid of. Still am, kind of. Like if I stop moving, I'll just disappear."
-      },
-      {
-        "speaker": "judy",
-        "line": "You won't. You're here. You're real."
-      },
-      {
-        "speaker": "jade",
-        "line": "That's why it trusts him. He actually shows up."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah well, showing up is the easy part. Staying—that's what matters, right?"
-      },
-      {
-        "speaker": "stray",
-        "line": "[tail wags once, then settles]"
-      },
-      {
-        "speaker": "judy",
-        "line": "I've been thinking about what you said last night. About how something needs you."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I don't remember saying that exactly, but... yeah. It matters to be needed."
-      },
-      {
-        "speaker": "jade",
-        "line": "Everyone here needs something. That's kind of why we're here, isn't it?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Maybe. Or maybe we're all just people who don't fit anywhere else, so the island fits us somehow."
-      },
-      {
-        "speaker": "judy",
-        "line": "Do you think we'll ever leave?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "I think we'll stay as long as we need to. Then we'll know when to go."
-      },
-      {
-        "speaker": "stray",
-        "line": "[rests head fully on Ryan's thigh, a small sigh]"
-      },
-      {
-        "speaker": "jade",
-        "line": "You know, Judy—the puppy came here because it was desperate, and it found the warmest place. That's what we're all doing."
-      },
-      {
-        "speaker": "judy",
-        "line": "I wasn't that brave. I didn't choose this."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Neither did it. But you both survived. That's the same thing, kind of."
-      },
-      {
-        "speaker": "jade",
-        "line": "The island doesn't care how you got here. Just that you did."
-      },
-      {
-        "speaker": "stray",
-        "line": "[tail thumps against the ground, eyes drifting closed]"
-      },
-      {
-        "speaker": "judy",
-        "line": "It's falling asleep. It really does feel safe with you."
-      },
-      {
-        "speaker": "ryan",
-        "line": "We're not safe. None of us are. But we're together. Maybe that's the same thing."
-      },
-      {
-        "speaker": "jade",
-        "line": "That's sweet, Ryan. And probably true."
-      },
-      {
-        "speaker": "stray",
-        "line": "[soft snore, paws twitch in dream]"
-      },
-      {
-        "speaker": "judy",
-        "line": "I hope Marcus sees this. Maybe he'd understand why we're keeping it."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Marcus doesn't need to understand. He just needs to let us try."
-      },
-      {
-        "speaker": "jade",
-        "line": "He will. Marcus is harder on himself than anyone else. The rest of us he just watches."
-      }
-    ],
-    "timestamp": "2026-06-06T12:32:10.072762"
-  },
-  {
-    "day": 3,
     "cycle": "evening",
     "character": "marcus",
     "action": "Walks down from his tent just as Jade and Ryan settle by the fire, staying at the edge of the light.",
@@ -9889,5 +9671,161 @@
       }
     ],
     "timestamp": "2026-06-16T22:32:41.228634"
+  },
+  {
+    "day": 14,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "He wakes sick and finds Jade waiting at his tent—they talk about forever, then head together to the tide pools for water.",
+    "thought": "Today I can stay. Tomorrow, I don't know.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "steady",
+    "timestamp": "2026-06-17T07:03:24.161684"
+  },
+  {
+    "day": 14,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "He wakes in the house and realizes Marcus and Jade are gone—hunger gnaws at him as he waits on the porch.",
+    "thought": "Are they okay? Did I mess this up?",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "worried",
+    "timestamp": "2026-06-17T07:03:24.161684"
+  },
+  {
+    "day": 14,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "She finds Marcus emerging from his tent at dawn and asks him the question she's been afraid to ask—will he stay when it gets harder?",
+    "thought": "Is his answer enough? I'm not sure yet.",
+    "location": {
+      "waypoint": "tide_pool",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "cautious",
+    "timestamp": "2026-06-17T07:03:24.161684"
+  },
+  {
+    "day": 14,
+    "cycle": "morning",
+    "character": "judy",
+    "action": "She wakes in the house and realizes how quiet it is—no voices, no footsteps—just her and the pup breathing nearby.",
+    "thought": "Will they come back to me?",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-17T07:03:24.161684"
+  },
+  {
+    "day": 14,
+    "cycle": "morning",
+    "character": "stray",
+    "action": "It wakes nestled against Judy's side and stretches into the morning, its ears alert but its body calm and trusting.",
+    "thought": "She's here. Safe. We're still together.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "calm",
+    "timestamp": "2026-06-17T07:03:24.161684"
+  },
+  {
+    "day": 14,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "jade"
+    ],
+    "description": "Jade finds Marcus at dawn and asks if his promise lasts beyond today; his honest answer sends them both to the tide pools for water.",
+    "dialogue": [
+      {
+        "speaker": "jade",
+        "line": "You awake? The camp is dry, Marcus."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know. Give me a moment."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're sick. How are you even going to help?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm going. You're not dragging water alone."
+      },
+      {
+        "speaker": "jade",
+        "line": "Last night you said you'd stay. Every day, you said. Every day."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I meant it."
+      },
+      {
+        "speaker": "jade",
+        "line": "Did you? Because tomorrow we're still hungry. The day after, we're still tired. We might never be full, never be safe."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know that."
+      },
+      {
+        "speaker": "jade",
+        "line": "So why stay? Why choose us if it's always going to be this hard?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Because you're here. Because Ryan keeps building like we're staying forever. Because that pup fell asleep against Judy without flinching."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's not an answer, Marcus."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's the only one I have. I'm here today. Tomorrow I'll choose again. Beyond that—I don't know."
+      },
+      {
+        "speaker": "jade",
+        "line": "You can't promise me anything."
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. But I'm standing right here."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's enough. For now, that's enough."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Then let's make sure today has water."
+      },
+      {
+        "speaker": "jade",
+        "line": "Let's go."
+      }
+    ],
+    "timestamp": "2026-06-17T07:03:24.161684"
   }
 ]
