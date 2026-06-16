@@ -5,19 +5,19 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 66,
-      "openness": 78,
+      "trust": 67,
+      "openness": 79,
       "ambition": 47,
       "loneliness": 0,
-      "resilience": 94,
-      "hunger": 37,
-      "thirst": 21,
-      "energy": 30,
-      "health": 68
+      "resilience": 95,
+      "hunger": 36,
+      "thirst": 22,
+      "energy": 8,
+      "health": 60
     },
-    "mood": "vulnerable",
+    "mood": "resolute",
     "location": {
-      "waypoint": "cliff_base",
+      "waypoint": "firepit_left",
       "x": 75,
       "y": 25
     },
@@ -25,29 +25,29 @@
     "relationships": {
       "ryan": {
         "closeness": 97,
-        "tension": 7,
+        "tension": 10,
         "attraction": 0
       },
       "jade": {
         "closeness": 99,
-        "tension": 6,
-        "attraction": 32
+        "tension": 9,
+        "attraction": 33
       },
       "judy": {
-        "closeness": 55,
-        "tension": 8,
+        "closeness": 56,
+        "tension": 10,
         "attraction": 0
       },
       "stray": {
-        "closeness": 32,
+        "closeness": 33,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "jade",
-      "state": "talking"
+      "with": "judy",
+      "state": "comforting"
     },
     "memories": [
       {
@@ -86,11 +86,6 @@
         "weight": 3
       },
       {
-        "day": 11,
-        "text": "She needed to choose to stay, not be decided for. I understood finally.",
-        "weight": 2
-      },
-      {
         "day": 12,
         "text": "Solitude was safer than this. But this is worth it.",
         "weight": 3
@@ -117,6 +112,11 @@
       },
       {
         "day": 13,
+        "text": "She was terrified. I promised to stay. I did.",
+        "weight": 3
+      },
+      {
+        "day": 13,
         "text": "I told Jade I meant it. She heard me.",
         "weight": 2
       }
@@ -131,7 +131,9 @@
       "outfit": "#1e3a5f",
       "pants": "#3a4a55",
       "beard": true
-    }
+    },
+    "condition": "sick",
+    "recovery": 6
   },
   "ryan": {
     "name": "Ryan Lim",
@@ -141,13 +143,13 @@
     "scores": {
       "trust": 99,
       "openness": 100,
-      "ambition": 87,
-      "loneliness": 3,
-      "resilience": 54,
-      "hunger": 37,
-      "thirst": 21,
-      "energy": 30,
-      "health": 68
+      "ambition": 88,
+      "loneliness": 1,
+      "resilience": 53,
+      "hunger": 36,
+      "thirst": 22,
+      "energy": 8,
+      "health": 60
     },
     "mood": "anxious",
     "location": {
@@ -159,21 +161,21 @@
     "relationships": {
       "marcus": {
         "closeness": 97,
-        "tension": 7,
+        "tension": 10,
         "attraction": 0
       },
       "jade": {
         "closeness": 98,
-        "tension": 9,
+        "tension": 12,
         "attraction": 33
       },
       "judy": {
         "closeness": 72,
-        "tension": 9,
+        "tension": 12,
         "attraction": 0
       },
       "stray": {
-        "closeness": 41,
+        "closeness": 42,
         "tension": 0,
         "attraction": 0
       }
@@ -212,11 +214,6 @@
         "weight": 2
       },
       {
-        "day": 10,
-        "text": "He said I can ask him anytime. He promised.",
-        "weight": 2
-      },
-      {
         "day": 11,
         "text": "Judy thought we'd abandon her. I promised we'd stay.",
         "weight": 3
@@ -250,6 +247,11 @@
         "day": 13,
         "text": "Marcus promised to choose us again tomorrow. That's all I needed to hear.",
         "weight": 2
+      },
+      {
+        "day": 13,
+        "text": "I failed to forage but Jade saved us. Judy's safe.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -263,7 +265,9 @@
       "accColor": "#dc2626",
       "pants": "#2e6b6b",
       "beard": true
-    }
+    },
+    "condition": "sick",
+    "recovery": 6
   },
   "jade": {
     "name": "Jade Ng",
@@ -276,14 +280,14 @@
       "ambition": 39,
       "loneliness": 0,
       "resilience": 71,
-      "hunger": 37,
-      "thirst": 21,
-      "energy": 30,
-      "health": 68
+      "hunger": 36,
+      "thirst": 22,
+      "energy": 8,
+      "health": 60
     },
     "mood": "determined",
     "location": {
-      "waypoint": "cliff_base",
+      "waypoint": "firepit_front",
       "x": 40,
       "y": 50
     },
@@ -291,30 +295,27 @@
     "relationships": {
       "marcus": {
         "closeness": 99,
-        "tension": 6,
-        "attraction": 32
+        "tension": 9,
+        "attraction": 33
       },
       "ryan": {
         "closeness": 98,
-        "tension": 9,
+        "tension": 12,
         "attraction": 28
       },
       "judy": {
         "closeness": 65,
-        "tension": 9,
+        "tension": 12,
         "attraction": 0
       },
       "stray": {
-        "closeness": 27,
+        "closeness": 28,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": {
-      "with": "marcus",
-      "state": "talking"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -330,11 +331,6 @@
         "day": 6,
         "text": "Judy was losing herself and I finally saw it. I went to her.",
         "weight": 3
-      },
-      {
-        "day": 8,
-        "text": "He was scared, not of me. We're going slow and that's enough.",
-        "weight": 2
       },
       {
         "day": 11,
@@ -385,6 +381,11 @@
         "day": 13,
         "text": "He wanted to run to the cliff, but I went after him. He chose us.",
         "weight": 2
+      },
+      {
+        "day": 13,
+        "text": "Water from tide pools, and they all waited for me.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -404,19 +405,19 @@
     "archetype": "clinger",
     "color": "#2dd4bf",
     "scores": {
-      "trust": 93,
-      "openness": 92,
+      "trust": 95,
+      "openness": 93,
       "ambition": 34,
-      "loneliness": 17,
-      "resilience": 74,
-      "hunger": 37,
-      "thirst": 21,
-      "energy": 30,
-      "health": 68
+      "loneliness": 13,
+      "resilience": 73,
+      "hunger": 36,
+      "thirst": 22,
+      "energy": 8,
+      "health": 60
     },
-    "mood": "worried",
+    "mood": "hopeful",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_left",
       "x": 50,
       "y": 82
     },
@@ -426,28 +427,31 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 55,
-        "tension": 8,
+        "closeness": 56,
+        "tension": 10,
         "attraction": 0
       },
       "ryan": {
         "closeness": 72,
-        "tension": 9,
+        "tension": 12,
         "attraction": 0
       },
       "jade": {
         "closeness": 65,
-        "tension": 9,
+        "tension": 12,
         "attraction": 0
       },
       "stray": {
-        "closeness": 56,
+        "closeness": 58,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "comforting"
+    },
     "memories": [
       {
         "day": 3,
@@ -510,13 +514,13 @@
         "weight": 3
       },
       {
-        "day": 12,
-        "text": "They promised they'd stay. Tonight, I finally believed them enough to sleep.",
-        "weight": 2
+        "day": 13,
+        "text": "They kept their promises. The family stayed. I'm finally safe.",
+        "weight": 3
       },
       {
         "day": 13,
-        "text": "They kept their promises. The family stayed. I'm finally safe.",
+        "text": "He stayed through the hunger and fear. He meant it.",
         "weight": 3
       }
     ],
@@ -541,57 +545,52 @@
     "color": "#9c6b43",
     "interaction": {
       "with": "judy",
-      "state": "comforting"
+      "state": "sitting_together"
     },
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_left",
       "x": 20,
       "y": 88
     },
-    "mood": "alert",
+    "mood": "calm",
     "relationships": {
       "marcus": {
         "closeness": 63,
-        "tension": 9,
+        "tension": 12,
         "attraction": 0
       },
       "ryan": {
         "closeness": 72,
-        "tension": 9,
+        "tension": 12,
         "attraction": 0
       },
       "jade": {
         "closeness": 58,
-        "tension": 9,
+        "tension": 12,
         "attraction": 0
       },
       "judy": {
-        "closeness": 87,
-        "tension": 8,
+        "closeness": 88,
+        "tension": 10,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 73,
+      "trust": 74,
       "openness": 46,
       "ambition": 0,
-      "loneliness": 1,
-      "resilience": 87,
-      "hunger": 37,
-      "thirst": 21,
-      "energy": 30,
-      "health": 68
+      "loneliness": 0,
+      "resilience": 88,
+      "hunger": 36,
+      "thirst": 22,
+      "energy": 8,
+      "health": 60
     },
     "shelter": "under the palms",
     "memories": [
       {
         "day": 3,
         "text": "Ryan's warmth and his hand keep me safe — I sleep without fear now",
-        "weight": 2
-      },
-      {
-        "day": 3,
-        "text": "He keeps me safe. I sleep without fearing.",
         "weight": 2
       },
       {
@@ -652,6 +651,11 @@
       {
         "day": 13,
         "text": "All four sat by the fire. She was close. We are safe together.",
+        "weight": 2
+      },
+      {
+        "day": 13,
+        "text": "She was trembling. I pressed close. We're safe together.",
         "weight": 2
       }
     ]
