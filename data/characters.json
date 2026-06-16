@@ -5,37 +5,37 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 65,
-      "openness": 76,
+      "trust": 66,
+      "openness": 78,
       "ambition": 47,
       "loneliness": 0,
-      "resilience": 93,
-      "hunger": 38,
-      "thirst": 24,
-      "energy": 46,
-      "health": 76
+      "resilience": 94,
+      "hunger": 37,
+      "thirst": 21,
+      "energy": 30,
+      "health": 68
     },
     "mood": "vulnerable",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "cliff_base",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 98,
-        "tension": 4,
+        "closeness": 97,
+        "tension": 7,
         "attraction": 0
       },
       "jade": {
         "closeness": 99,
-        "tension": 4,
+        "tension": 6,
         "attraction": 32
       },
       "judy": {
-        "closeness": 56,
-        "tension": 5,
+        "closeness": 55,
+        "tension": 8,
         "attraction": 0
       },
       "stray": {
@@ -45,7 +45,10 @@
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
-    "interaction": null,
+    "interaction": {
+      "with": "jade",
+      "state": "talking"
+    },
     "memories": [
       {
         "day": 3,
@@ -88,11 +91,6 @@
         "weight": 2
       },
       {
-        "day": 11,
-        "text": "She's choosing. Really choosing. That's all I needed to see.",
-        "weight": 2
-      },
-      {
         "day": 12,
         "text": "Solitude was safer than this. But this is worth it.",
         "weight": 3
@@ -110,6 +108,11 @@
       {
         "day": 13,
         "text": "I sat with them instead of running. I told them I'm terrified. They stayed.",
+        "weight": 3
+      },
+      {
+        "day": 13,
+        "text": "Doubt pulled me back to the cliff, but Jade wouldn't let me go. I stayed.",
         "weight": 3
       },
       {
@@ -139,34 +142,34 @@
       "trust": 99,
       "openness": 100,
       "ambition": 87,
-      "loneliness": 0,
-      "resilience": 55,
-      "hunger": 38,
-      "thirst": 24,
-      "energy": 46,
-      "health": 76
+      "loneliness": 3,
+      "resilience": 54,
+      "hunger": 37,
+      "thirst": 21,
+      "energy": 30,
+      "health": 68
     },
-    "mood": "hopeful",
+    "mood": "anxious",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_right",
       "x": 42,
       "y": 48
     },
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 98,
-        "tension": 4,
+        "closeness": 97,
+        "tension": 7,
         "attraction": 0
       },
       "jade": {
-        "closeness": 99,
-        "tension": 6,
+        "closeness": 98,
+        "tension": 9,
         "attraction": 33
       },
       "judy": {
-        "closeness": 73,
-        "tension": 6,
+        "closeness": 72,
+        "tension": 9,
         "attraction": 0
       },
       "stray": {
@@ -268,19 +271,19 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 94,
+      "trust": 95,
       "openness": 100,
       "ambition": 39,
       "loneliness": 0,
       "resilience": 71,
-      "hunger": 38,
-      "thirst": 24,
-      "energy": 46,
-      "health": 76
+      "hunger": 37,
+      "thirst": 21,
+      "energy": 30,
+      "health": 68
     },
-    "mood": "content",
+    "mood": "determined",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "cliff_base",
       "x": 40,
       "y": 50
     },
@@ -288,17 +291,17 @@
     "relationships": {
       "marcus": {
         "closeness": 99,
-        "tension": 4,
+        "tension": 6,
         "attraction": 32
       },
       "ryan": {
-        "closeness": 99,
-        "tension": 6,
+        "closeness": 98,
+        "tension": 9,
         "attraction": 28
       },
       "judy": {
-        "closeness": 66,
-        "tension": 6,
+        "closeness": 65,
+        "tension": 9,
         "attraction": 0
       },
       "stray": {
@@ -308,7 +311,10 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "talking"
+    },
     "memories": [
       {
         "day": 5,
@@ -328,11 +334,6 @@
       {
         "day": 8,
         "text": "He was scared, not of me. We're going slow and that's enough.",
-        "weight": 2
-      },
-      {
-        "day": 8,
-        "text": "Judy was drowning and I went for her. She needs to know she's wanted.",
         "weight": 2
       },
       {
@@ -379,6 +380,11 @@
         "day": 13,
         "text": "He came down and said he doesn't have to be alone. He meant it fully.",
         "weight": 2
+      },
+      {
+        "day": 13,
+        "text": "He wanted to run to the cliff, but I went after him. He chose us.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -401,16 +407,16 @@
       "trust": 93,
       "openness": 92,
       "ambition": 34,
-      "loneliness": 19,
-      "resilience": 75,
-      "hunger": 38,
-      "thirst": 24,
-      "energy": 46,
-      "health": 76
+      "loneliness": 17,
+      "resilience": 74,
+      "hunger": 37,
+      "thirst": 21,
+      "energy": 30,
+      "health": 68
     },
-    "mood": "peaceful",
+    "mood": "worried",
     "location": {
-      "waypoint": "path_mid",
+      "waypoint": "house_porch",
       "x": 50,
       "y": 82
     },
@@ -420,22 +426,22 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 56,
-        "tension": 5,
+        "closeness": 55,
+        "tension": 8,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 73,
-        "tension": 6,
+        "closeness": 72,
+        "tension": 9,
         "attraction": 0
       },
       "jade": {
-        "closeness": 66,
-        "tension": 6,
+        "closeness": 65,
+        "tension": 9,
         "attraction": 0
       },
       "stray": {
-        "closeness": 55,
+        "closeness": 56,
         "tension": 0,
         "attraction": 0
       }
@@ -533,45 +539,48 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": null,
+    "interaction": {
+      "with": "judy",
+      "state": "comforting"
+    },
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "house_porch",
       "x": 20,
       "y": 88
     },
-    "mood": "content",
+    "mood": "alert",
     "relationships": {
       "marcus": {
-        "closeness": 64,
-        "tension": 6,
+        "closeness": 63,
+        "tension": 9,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 73,
-        "tension": 6,
+        "closeness": 72,
+        "tension": 9,
         "attraction": 0
       },
       "jade": {
-        "closeness": 59,
-        "tension": 6,
+        "closeness": 58,
+        "tension": 9,
         "attraction": 0
       },
       "judy": {
         "closeness": 87,
-        "tension": 5,
+        "tension": 8,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 72,
+      "trust": 73,
       "openness": 46,
       "ambition": 0,
-      "loneliness": 3,
+      "loneliness": 1,
       "resilience": 87,
-      "hunger": 38,
-      "thirst": 24,
-      "energy": 46,
-      "health": 76
+      "hunger": 37,
+      "thirst": 21,
+      "energy": 30,
+      "health": 68
     },
     "shelter": "under the palms",
     "memories": [
