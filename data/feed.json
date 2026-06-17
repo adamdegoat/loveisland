@@ -1,251 +1,6 @@
 [
   {
     "day": 4,
-    "cycle": "midday",
-    "character": "marcus",
-    "action": "Emerges from the tent area toward the firepit, drawn by voices and laughter.",
-    "thought": "She's laughing. That's not from before.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "wry",
-    "timestamp": "2026-06-07T12:32:45.941116"
-  },
-  {
-    "day": 4,
-    "cycle": "midday",
-    "character": "ryan",
-    "action": "Tends the fire at midday, warm and present as Marcus and Jade arrive at the firepit.",
-    "thought": "They're both here, both okay. That's enough.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "tender",
-    "timestamp": "2026-06-07T12:32:45.941116"
-  },
-  {
-    "day": 4,
-    "cycle": "midday",
-    "character": "jade",
-    "action": "Drifts to the firepit and settles beside Marcus, visibly relaxing as the morning's weight dissolves.",
-    "thought": "He's okay. We're okay. I can feel it.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "lighter",
-    "timestamp": "2026-06-07T12:32:45.941116"
-  },
-  {
-    "day": 4,
-    "cycle": "midday",
-    "character": "judy",
-    "action": "Sits at the beach edge, watching the distant firepit and trying to fill the void of time.",
-    "thought": "They're together. I don't belong there.",
-    "location": {
-      "waypoint": "beach_left",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "anxious",
-    "timestamp": "2026-06-07T12:32:45.941116"
-  },
-  {
-    "day": 4,
-    "cycle": "midday",
-    "character": "stray",
-    "action": "Drifts closer to the firepit, drawn by the warmth and the ease in human voices.",
-    "thought": "They're calm now. I can rest here.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "hopeful",
-    "timestamp": "2026-06-07T12:32:45.941116"
-  },
-  {
-    "day": 4,
-    "cycle": "midday",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade",
-      "marcus"
-    ],
-    "description": "When pressed on his closed-off tone, Marcus jokes—a rare crack—and the three choose to sit in silence together while the puppy draws close.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "Hey, you're up. How's the tent treating you?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Fine."
-      },
-      {
-        "speaker": "jade",
-        "line": "He says fine about everything."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You do, actually. You feeling okay?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Why would I not be?"
-      },
-      {
-        "speaker": "jade",
-        "line": "After last night... and this morning..."
-      },
-      {
-        "speaker": "marcus",
-        "line": "What about it?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Come on. You two had this whole thing."
-      },
-      {
-        "speaker": "jade",
-        "line": "I asked him if I hurt him, and—"
-      },
-      {
-        "speaker": "marcus",
-        "line": "You did."
-      },
-      {
-        "speaker": "jade",
-        "line": "Yeah."
-      },
-      {
-        "speaker": "ryan",
-        "line": "But you're fine now, right?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Obviously."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're not fine. Your voice gets like that."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Like what?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Closed. You sound closed off."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Not intentional."
-      },
-      {
-        "speaker": "jade",
-        "line": "I know. That's why I noticed."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Well, we're here now. All three of us."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Is that what was supposed to happen?"
-      },
-      {
-        "speaker": "jade",
-        "line": "I don't know what's supposed to happen."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Maybe nothing dramatic. Maybe we just sit."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Sitting. How ambitious."
-      },
-      {
-        "speaker": "jade",
-        "line": "Did you just make a joke?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Apparently."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Should we document this? Marcus being funny?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Better things to do."
-      },
-      {
-        "speaker": "jade",
-        "line": "Like what?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Sitting. Not talking if possible."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's exactly what I'm doing."
-      },
-      {
-        "speaker": "jade",
-        "line": "Then we're doing it together."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Okay."
-      },
-      {
-        "speaker": "ryan",
-        "line": "The pup's come closer. He's less scared now."
-      },
-      {
-        "speaker": "jade",
-        "line": "He can feel when things shift in us."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You're better. We're better."
-      },
-      {
-        "speaker": "ryan",
-        "line": "We are."
-      },
-      {
-        "speaker": "jade",
-        "line": "This is good."
-      },
-      {
-        "speaker": "marcus",
-        "line": "For now."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'll take it."
-      }
-    ],
-    "timestamp": "2026-06-07T12:32:45.941116"
-  },
-  {
-    "day": 4,
     "cycle": "evening",
     "character": "marcus",
     "action": "Sits by the fire with the group, trading dry barbs with Ryan while watching Jade laugh.",
@@ -9693,5 +9448,190 @@
       }
     ],
     "timestamp": "2026-06-17T18:36:34.148727"
+  },
+  {
+    "day": 14,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "After naming his fear at the firepit this morning, Marcus sits alone by the dimming fire at nightfall, staring into the embers as if the answers might be there.",
+    "thought": "Today I choose. That's all I have.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "weary",
+    "timestamp": "2026-06-17T22:32:49.671922"
+  },
+  {
+    "day": 14,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "Ryan sits across the firepit from Marcus, close enough to hear every word, his anxiety slowly softening as he listens to the conversation unfold.",
+    "thought": "He's here now. That has to matter.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-17T22:32:49.671922"
+  },
+  {
+    "day": 14,
+    "cycle": "night",
+    "character": "jade",
+    "action": "Jade walks over from the shadows and settles beside Marcus by the dying fire, her presence a quiet question waiting to be spoken.",
+    "thought": "Will he choose us tomorrow too?",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "searching",
+    "timestamp": "2026-06-17T22:32:49.671922"
+  },
+  {
+    "day": 14,
+    "cycle": "night",
+    "character": "judy",
+    "action": "Judy settles down nearby with the stray pressed against her leg, too tired and too scared to retreat to the house alone tonight.",
+    "thought": "They promised. Will they keep choosing?",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "fearful",
+    "timestamp": "2026-06-17T22:32:49.671922"
+  },
+  {
+    "day": 14,
+    "cycle": "night",
+    "character": "stray",
+    "action": "The stray lies against Judy's leg, steady and warm, sensing her fear but offering wordless comfort through simple, loyal presence.",
+    "thought": "She's scared. I stay. We're safe.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "calm",
+    "timestamp": "2026-06-17T22:32:49.671922"
+  },
+  {
+    "day": 14,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "jade",
+      "ryan"
+    ],
+    "description": "After Marcus named his fear at the firepit this morning, he sits silent by the dying fire at nightfall—and Jade finally asks him the question he's been avoiding: Can this actually last?",
+    "dialogue": [
+      {
+        "speaker": "jade",
+        "line": "You're quiet tonight."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah."
+      },
+      {
+        "speaker": "jade",
+        "line": "Can this actually last? Like, between all of us?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I don't know."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's not what I asked."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Today, it lasts. Tomorrow, I'll choose again. That's all I have."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You don't have to figure it out tonight, man."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not. I'm just saying what's true."
+      },
+      {
+        "speaker": "jade",
+        "line": "Will you stay when it gets harder? When you want to leave?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "When I want to leave, I've been running to you instead now. That's a choice I keep making."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's enough for today."
+      },
+      {
+        "speaker": "jade",
+        "line": "Is it though?"
+      },
+      {
+        "speaker": "judy",
+        "line": "I need it to be. Please."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know. I'm trying. Every day I'm trying."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We all are. That's the thing."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm not asking because I don't believe you. I'm asking so you know what scares me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What scares you?"
+      },
+      {
+        "speaker": "jade",
+        "line": "That you'll wake up one day and realize this is too hard. That you'll choose to leave."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I could. But right now, I'm choosing to stay."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then we rest tonight. Together."
+      },
+      {
+        "speaker": "judy",
+        "line": "The stray's scared too."
+      },
+      {
+        "speaker": "jade",
+        "line": "We're all scared. But we're here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. We're here."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's the promise."
+      }
+    ],
+    "timestamp": "2026-06-17T22:32:49.671922"
   }
 ]

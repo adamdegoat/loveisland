@@ -1,16 +1,16 @@
 {
   "day": 14,
-  "cycle": "evening",
+  "cycle": "night",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Marcus won't promise tomorrow, but Judy learns to hold just today — and somehow, that's enough.",
+  "pulse": "Marcus admits he can't promise tomorrow; Ryan struggles with today being enough; Jade watches both of them, still questioning.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 43,
+      "condition": 40,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 62,
+    "water": 71,
+    "wood": 91,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 50,
     "water": 50,
     "wood": 90,
     "medicine": 14
   },
-  "resources_prev": {
-    "food": 0,
-    "water": 0,
-    "wood": 89,
-    "medicine": 8
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-17:evening",
-  "scene": "As evening fell, they gathered at the firepit with Marcus drained and Judy learning to hold just today instead of forever.",
+  "last_cycle_key": "2026-06-17:night",
+  "scene": "By the dying firepit, Marcus told them: today, he chooses us. Tomorrow he'll choose again. Ryan has to believe that's a promise. Jade already does.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -47,13 +47,14 @@
     "10": "Day 10 brought the group's survival into focus—Ryan and Marcus built the fish trap frame on the beach while Jade foraged palm and clams inland, Judy rested by the fire with the pup beside her. By evening they'd eaten together, the work finally yielding food, and when night came Marcus opened up to Ryan about why he was staying, the anchor he'd needed all along.",
     "11": "Day 11 cracked open: Marcus finally heard that Jade needed choice, not rescue, and that honesty rippled through the group. By evening, as the fire burned down, Marcus and Jade reached for each other for the first time, their guarded distance finally giving way.",
     "12": "Day 12 cracked them open. Jade pushed Marcus and Ryan to confess their deepest fears; both men answered with brutal honesty. Judy finally believed them. By nightfall, they sat by the dying fire, holding on as hunger pressed close, wondering if their promises can survive what comes next.",
-    "13": "Day 13 pushed them to breaking: hunger, thirst, Marcus at the cliff's edge. But Jade found water and Marcus finally named his terror — then chose the group. By nightfall at the fire, all four and the stray gathered close, bound by his honesty, and for the first time, the promise felt real."
+    "13": "Day 13 pushed them to breaking: hunger, thirst, Marcus at the cliff's edge. But Jade found water and Marcus finally named his terror — then chose the group. By nightfall at the fire, all four and the stray gathered close, bound by his honesty, and for the first time, the promise felt real.",
+    "14": "Day 14: Marcus named his deepest fear at the firepit—he can't promise tomorrow, only that he's choosing today. By night, Jade asked him directly. Ryan struggled with the answer. They're still sitting by the fire, tired and raw, holding onto a day-by-day promise."
   },
   "last_run_date": "2026-06-17",
-  "camp_climate": "strained",
+  "camp_climate": "content",
   "fire": {
     "lit": true,
-    "fuel": 18
+    "fuel": 6
   },
   "lean": {
     "id": "jade_truth",
