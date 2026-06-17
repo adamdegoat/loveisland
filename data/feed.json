@@ -1,214 +1,5 @@
 [
   {
-    "day": 3,
-    "cycle": "night",
-    "character": "marcus",
-    "action": "He leaves his tent in the dark and walks to the firepit, unable to bear another night alone with his jealousy.",
-    "thought": "I told him the truth. Now I don't know what to do with it.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "withdrawn",
-    "timestamp": "2026-06-06T23:03:27.434600"
-  },
-  {
-    "day": 3,
-    "cycle": "night",
-    "character": "ryan",
-    "action": "He sits by the fire with the restless stray pup, offering quiet company as the night deepens.",
-    "thought": "I want to understand what's broken between us.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "tender",
-    "timestamp": "2026-06-06T23:03:27.434600"
-  },
-  {
-    "day": 3,
-    "cycle": "night",
-    "character": "jade",
-    "action": "She lies in her hammock, replaying the evening's moments and wondering what her closeness with Ryan has cost.",
-    "thought": "Did I hurt someone I didn't mean to hurt?",
-    "location": {
-      "waypoint": "hammock_beside",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "uncertain",
-    "timestamp": "2026-06-06T23:03:27.434600"
-  },
-  {
-    "day": 3,
-    "cycle": "night",
-    "character": "judy",
-    "action": "She stands at the house door, listening to the low voices by the fire, watching the pup settle between the two men.",
-    "thought": "They have each other. Where do I belong here?",
-    "location": {
-      "waypoint": "house_door",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "anxious",
-    "timestamp": "2026-06-06T23:03:27.434600"
-  },
-  {
-    "day": 3,
-    "cycle": "night",
-    "character": "stray",
-    "action": "It paces between Ryan and the fire, whining softly, until Marcus arrives and the two men find their quiet.",
-    "thought": "The kind man's friend came. The air softens now.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "wary",
-    "timestamp": "2026-06-06T23:03:27.434600"
-  },
-  {
-    "day": 3,
-    "cycle": "night",
-    "type": "interaction",
-    "characters": [
-      "marcus",
-      "ryan",
-      "stray"
-    ],
-    "description": "When Marcus admits his fear, the stray—who had tensed and shifted away—cautiously edges back, settling between them as words soften toward reaching.",
-    "dialogue": [
-      {
-        "speaker": "marcus",
-        "line": "Can't sleep either."
-      },
-      {
-        "speaker": "ryan",
-        "line": "No. The pup's been pacing. Seems anxious about something."
-      },
-      {
-        "speaker": "marcus",
-        "line": "It picked the right person then."
-      },
-      {
-        "speaker": "ryan",
-        "line": "What's that supposed to mean?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "You're good at making people feel like they matter. At being needed."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Is this about Jade? Because it's not like that. She was kind to me when I was falling apart."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm not accusing you. I'm just saying what I see."
-      },
-      {
-        "speaker": "ryan",
-        "line": "But you're angry. I can feel it. What did I do wrong?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Nothing. You did nothing wrong. That's almost worse."
-      },
-      {
-        "speaker": "stray",
-        "line": "[whimpers, presses against Ryan's leg, sensing the sharp words between them]"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Marcus, I care about you. That hasn't changed."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I know. But you look at her differently than you look at me."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's not true. You're just hard to read. I never know where I stand with you."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I stand at the edges and I watch everything."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Then why don't you just talk to me instead of suffering alone in the dark?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Because talking doesn't change how things are."
-      },
-      {
-        "speaker": "stray",
-        "line": "[ears flatten, trembles, shifts away from the tension towards the fire]"
-      },
-      {
-        "speaker": "ryan",
-        "line": "You're shutting me out again, like you do with everyone."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Maybe I'm just protecting myself."
-      },
-      {
-        "speaker": "ryan",
-        "line": "From what? From me? I've never given you reason not to trust me."
-      },
-      {
-        "speaker": "marcus",
-        "line": "No. You haven't. And that's the problem. You're too good, and I don't know how to be with that."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Then let me help you figure it out. You don't have to be alone in this."
-      },
-      {
-        "speaker": "stray",
-        "line": "[cautiously returns, sniffs Marcus's hand, tail tentative and hopeful]"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Maybe you're right. I'm sorry, Ryan."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Don't apologize. Just stay. Sit with us for a bit."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I should go. It's late."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Please. Stay. The pup needs you to stop being afraid."
-      },
-      {
-        "speaker": "marcus",
-        "line": "It's not the pup I'm afraid of."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I know. But maybe tonight you can let someone in."
-      },
-      {
-        "speaker": "stray",
-        "line": "[settles between them, still wary but willing, breath slowing to match the moment]"
-      }
-    ],
-    "timestamp": "2026-06-06T23:03:27.434600"
-  },
-  {
     "day": 4,
     "cycle": "morning",
     "character": "marcus",
@@ -9775,5 +9566,185 @@
       }
     ],
     "timestamp": "2026-06-17T11:32:52.823092"
+  },
+  {
+    "day": 14,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "He retreated to the meadow rocks after the tide pools, wrestling with the fear that the group would splinter if he stopped holding so tight.",
+    "thought": "I can't promise tomorrow, only that today I choose.",
+    "location": {
+      "waypoint": "meadow_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "pensive",
+    "timestamp": "2026-06-17T15:03:04.467622"
+  },
+  {
+    "day": 14,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "He worked on reinforcing the firepit frame with leftover wood, filling the afternoon silence with deliberate, careful labor.",
+    "thought": "Did I push too hard this morning?",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "restless",
+    "timestamp": "2026-06-17T15:03:04.467622"
+  },
+  {
+    "day": 14,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "Mid-afternoon she slipped away from camp and found Marcus alone at the meadow rocks, needing to understand what fear she'd seen him carry back from the pools.",
+    "thought": "Why does everything depend on him holding on?",
+    "location": {
+      "waypoint": "meadow_left",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "uncertain",
+    "timestamp": "2026-06-17T15:03:04.467622"
+  },
+  {
+    "day": 14,
+    "cycle": "afternoon",
+    "character": "judy",
+    "action": "She stayed near the house porch all afternoon with the pup pressed against her side, watching the empty paths and worrying about invisible fractures.",
+    "thought": "Will they come back? Will they stay with me?",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "anxious",
+    "timestamp": "2026-06-17T15:03:04.467622"
+  },
+  {
+    "day": 14,
+    "cycle": "afternoon",
+    "character": "stray",
+    "action": "It stayed pressed against Judy's side all afternoon, sensing the group's strain but anchored by the steady rise and fall of her breathing.",
+    "thought": "She's scared but I'm here. We're safe.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "calm",
+    "timestamp": "2026-06-17T15:03:04.467622"
+  },
+  {
+    "day": 14,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "jade"
+    ],
+    "description": "By afternoon, Jade finds Marcus sitting alone at the meadow rocks, unable to ignore the fear she watched settle into him at the tide pools this morning.",
+    "dialogue": [
+      {
+        "speaker": "jade",
+        "line": "You've been alone all afternoon."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. Thinking."
+      },
+      {
+        "speaker": "jade",
+        "line": "About this morning? About Ryan?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "About whether I can actually hold us together."
+      },
+      {
+        "speaker": "jade",
+        "line": "Why do you feel like you have to?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Because I promised. Because I'm terrified that if I don't, you'll all drift."
+      },
+      {
+        "speaker": "jade",
+        "line": "We won't leave because you let go."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You can't promise that."
+      },
+      {
+        "speaker": "jade",
+        "line": "Neither can you, but you keep trying anyway."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know. I hate it. But I can't stop myself."
+      },
+      {
+        "speaker": "jade",
+        "line": "What if you did? What if you just let us choose?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "What if you all choose to leave?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Then I leave. But that doesn't mean I'm leaving because you failed."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I promised to keep you safe."
+      },
+      {
+        "speaker": "jade",
+        "line": "You do. But not by holding us captive. By being here, day after day."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What if one day I can't be here anymore?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Then we figure it out. But I believe you when you say you want to."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I do. More than anything."
+      },
+      {
+        "speaker": "jade",
+        "line": "Then that's your promise. Not forever—just today."
+      },
+      {
+        "speaker": "marcus",
+        "line": "And tomorrow?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Tomorrow you choose again. That's all anyone has."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Every day?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Every day. That's the only kind of love that survives this."
+      }
+    ],
+    "timestamp": "2026-06-17T15:03:04.467622"
   }
 ]

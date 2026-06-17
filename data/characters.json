@@ -6,36 +6,36 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 69,
-      "openness": 82,
+      "openness": 83,
       "ambition": 47,
       "loneliness": 0,
-      "resilience": 97,
-      "hunger": 33,
-      "thirst": 34,
+      "resilience": 98,
+      "hunger": 32,
+      "thirst": 39,
       "energy": 0,
       "health": 44
     },
-    "mood": "resolute",
+    "mood": "pensive",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "meadow_left",
       "x": 75,
       "y": 25
     },
     "shelter": "tent",
     "relationships": {
       "ryan": {
-        "closeness": 96,
-        "tension": 18,
+        "closeness": 94,
+        "tension": 22,
         "attraction": 0
       },
       "jade": {
-        "closeness": 97,
-        "tension": 18,
+        "closeness": 98,
+        "tension": 21,
         "attraction": 35
       },
       "judy": {
-        "closeness": 54,
-        "tension": 19,
+        "closeness": 53,
+        "tension": 22,
         "attraction": 0
       },
       "stray": {
@@ -46,7 +46,7 @@
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "ryan",
+      "with": "jade",
       "state": "talking"
     },
     "memories": [
@@ -117,8 +117,8 @@
       },
       {
         "day": 14,
-        "text": "She asked if I could stay. I told her I don't know, but today I'm here.",
-        "weight": 2
+        "text": "She made me say it: I can't promise tomorrow, only that today I choose.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -142,15 +142,15 @@
     "scores": {
       "trust": 100,
       "openness": 100,
-      "ambition": 89,
-      "loneliness": 1,
+      "ambition": 88,
+      "loneliness": 5,
       "resilience": 50,
-      "hunger": 33,
-      "thirst": 34,
+      "hunger": 32,
+      "thirst": 39,
       "energy": 0,
       "health": 44
     },
-    "mood": "determined",
+    "mood": "restless",
     "location": {
       "waypoint": "firepit_right",
       "x": 42,
@@ -159,18 +159,18 @@
     "shelter": "house",
     "relationships": {
       "marcus": {
-        "closeness": 96,
-        "tension": 18,
+        "closeness": 94,
+        "tension": 22,
         "attraction": 0
       },
       "jade": {
-        "closeness": 95,
-        "tension": 21,
+        "closeness": 94,
+        "tension": 24,
         "attraction": 33
       },
       "judy": {
-        "closeness": 70,
-        "tension": 20,
+        "closeness": 69,
+        "tension": 23,
         "attraction": 0
       },
       "stray": {
@@ -180,10 +180,7 @@
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
-    "interaction": {
-      "with": "marcus",
-      "state": "talking"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -276,37 +273,37 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 94,
+      "trust": 95,
       "openness": 100,
       "ambition": 39,
       "loneliness": 0,
       "resilience": 73,
-      "hunger": 33,
-      "thirst": 34,
+      "hunger": 32,
+      "thirst": 39,
       "energy": 0,
       "health": 44
     },
     "mood": "uncertain",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "meadow_left",
       "x": 40,
       "y": 50
     },
     "shelter": "hammock",
     "relationships": {
       "marcus": {
-        "closeness": 97,
-        "tension": 18,
+        "closeness": 98,
+        "tension": 21,
         "attraction": 35
       },
       "ryan": {
-        "closeness": 95,
-        "tension": 21,
+        "closeness": 94,
+        "tension": 24,
         "attraction": 28
       },
       "judy": {
-        "closeness": 62,
-        "tension": 21,
+        "closeness": 61,
+        "tension": 24,
         "attraction": 0
       },
       "stray": {
@@ -352,11 +349,6 @@
         "weight": 2
       },
       {
-        "day": 12,
-        "text": "We choose to doubt and stay. That's the difference between us and the pup.",
-        "weight": 2
-      },
-      {
         "day": 13,
         "text": "He spoke aloud at the fire — fear, wanting to leave, choosing us.",
         "weight": 3
@@ -383,6 +375,11 @@
       },
       {
         "day": 14,
+        "text": "He named his fear—that we'll drift apart unless he holds everything together. But he stays anyway.",
+        "weight": 3
+      },
+      {
+        "day": 14,
         "text": "I asked if this could last. He said he doesn't know tomorrow, but he's here today.",
         "weight": 2
       },
@@ -403,7 +400,7 @@
       "pants": "#c64a85"
     },
     "condition": "injured",
-    "recovery": 6
+    "recovery": 4
   },
   "judy": {
     "name": "Judy Chen",
@@ -414,10 +411,10 @@
       "trust": 97,
       "openness": 94,
       "ambition": 34,
-      "loneliness": 7,
-      "resilience": 74,
-      "hunger": 33,
-      "thirst": 34,
+      "loneliness": 6,
+      "resilience": 73,
+      "hunger": 32,
+      "thirst": 39,
       "energy": 0,
       "health": 44
     },
@@ -433,22 +430,22 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 54,
-        "tension": 19,
+        "closeness": 53,
+        "tension": 22,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 70,
-        "tension": 20,
+        "closeness": 69,
+        "tension": 23,
         "attraction": 0
       },
       "jade": {
-        "closeness": 62,
-        "tension": 21,
+        "closeness": 61,
+        "tension": 24,
         "attraction": 0
       },
       "stray": {
-        "closeness": 61,
+        "closeness": 62,
         "tension": 0,
         "attraction": 0
       }
@@ -558,37 +555,37 @@
       "x": 20,
       "y": 88
     },
-    "mood": "wary",
+    "mood": "calm",
     "relationships": {
       "marcus": {
-        "closeness": 61,
-        "tension": 21,
+        "closeness": 60,
+        "tension": 24,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 69,
-        "tension": 21,
+        "closeness": 68,
+        "tension": 24,
         "attraction": 0
       },
       "jade": {
-        "closeness": 55,
-        "tension": 21,
+        "closeness": 54,
+        "tension": 24,
         "attraction": 0
       },
       "judy": {
         "closeness": 88,
-        "tension": 19,
+        "tension": 22,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 75,
+      "trust": 76,
       "openness": 46,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 87,
-      "hunger": 33,
-      "thirst": 34,
+      "hunger": 32,
+      "thirst": 39,
       "energy": 0,
       "health": 44
     },

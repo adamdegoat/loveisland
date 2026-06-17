@@ -1,16 +1,16 @@
 {
   "day": 14,
-  "cycle": "midday",
+  "cycle": "afternoon",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Ryan pushes to forage; Marcus refuses to let him go alone; Jade questions if love survives when survival is this hard.",
+  "pulse": "Marcus fears he'll fail his promises; Jade questions whether choosing day by day is real—neither knows what the other truly thinks.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 49,
+      "condition": 46,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -22,18 +22,18 @@
   "resources": {
     "food": 0,
     "water": 0,
-    "wood": 90,
-    "medicine": 9
+    "wood": 89,
+    "medicine": 8
   },
   "resources_prev": {
     "food": 0,
     "water": 0,
-    "wood": 86,
-    "medicine": 11
+    "wood": 90,
+    "medicine": 9
   },
   "discoveries": [],
-  "last_cycle_key": "2026-06-17:midday",
-  "scene": "At the tide pools, Ryan pushed to gather water and Marcus insisted on going together; they returned to camp by midday with brackish water, and now Jade sits between them at the fire, still uncertain.",
+  "last_cycle_key": "2026-06-17:afternoon",
+  "scene": "This morning's disagreement at the tide pools fractured the group. By afternoon, Marcus sat alone at the meadow rocks, Jade joined him to understand, Ryan worked at the firepit to prove himself, and Judy held the pup close for comfort.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -53,7 +53,7 @@
   "camp_climate": "strained",
   "fire": {
     "lit": true,
-    "fuel": 6
+    "fuel": 12
   },
   "lean": {
     "id": "jade_truth",
