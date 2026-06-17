@@ -10,10 +10,10 @@
       "ambition": 47,
       "loneliness": 0,
       "resilience": 98,
-      "hunger": 31,
-      "thirst": 36,
-      "energy": 0,
-      "health": 44
+      "hunger": 72,
+      "thirst": 72,
+      "energy": 72,
+      "health": 95
     },
     "mood": "exhausted",
     "location": {
@@ -145,10 +145,10 @@
       "ambition": 88,
       "loneliness": 3,
       "resilience": 49,
-      "hunger": 31,
-      "thirst": 36,
-      "energy": 0,
-      "health": 44
+      "hunger": 72,
+      "thirst": 72,
+      "energy": 72,
+      "health": 95
     },
     "mood": "resolute",
     "location": {
@@ -281,10 +281,10 @@
       "ambition": 39,
       "loneliness": 0,
       "resilience": 74,
-      "hunger": 31,
-      "thirst": 36,
-      "energy": 0,
-      "health": 44
+      "hunger": 72,
+      "thirst": 72,
+      "energy": 72,
+      "health": 95
     },
     "mood": "observant",
     "location": {
@@ -413,10 +413,10 @@
       "ambition": 34,
       "loneliness": 3,
       "resilience": 75,
-      "hunger": 31,
-      "thirst": 36,
-      "energy": 0,
-      "health": 44
+      "hunger": 72,
+      "thirst": 72,
+      "energy": 72,
+      "health": 95
     },
     "mood": "vulnerable",
     "location": {
@@ -584,10 +584,10 @@
       "ambition": 0,
       "loneliness": 0,
       "resilience": 87,
-      "hunger": 31,
-      "thirst": 36,
-      "energy": 0,
-      "health": 44
+      "hunger": 72,
+      "thirst": 72,
+      "energy": 72,
+      "health": 95
     },
     "shelter": "under the palms",
     "memories": [
