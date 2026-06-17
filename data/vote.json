@@ -1,32 +1,32 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-17",
+    "id": "2026-06-18",
     "closes": "tonight",
-    "question": "Marcus spoke his cliff fear and chose to stay. Tomorrow, should the group organize paired work to keep him close, trust his choice and give him space, or ask him what he ",
+    "question": "After Marcus admits he can only promise today, Jade chooses to:",
     "options": [
       {
-        "id": "keep_him_close",
-        "label": "Keep him close",
-        "desc": "Pair off work — fishing, shelter — so Marcus is never alone. Support through structure"
+        "id": "accept_one_day",
+        "label": "Accept one day",
+        "desc": "Tell him it's enough—she'll choose him tomorrow too, same as him"
       },
       {
-        "id": "trust_his_word",
-        "label": "Trust his choice",
-        "desc": "He chose to stay. Let him move freely — his commitment should hold on its own"
+        "id": "ask_why_scared",
+        "label": "Ask why he's scared",
+        "desc": "Skip the commitment argument—dig into what's really behind his fear"
       },
       {
-        "id": "ask_directly",
-        "label": "Ask him directly",
-        "desc": "Bring it up at fire — what kind of support does Marcus actually need tomorrow?"
+        "id": "push_for_more",
+        "label": "Push for more",
+        "desc": "Test whether he can find any way to promise something beyond today"
       }
     ]
   },
   "in_play": {
-    "id": "jade_truth",
-    "label": "Jade's truth",
-    "desc": "She mirrors him: 'Can this actually last? Will you stay when it gets harder?'",
-    "decided": "2026-06-17",
+    "id": "keep_him_close",
+    "label": "Keep him close",
+    "desc": "Pair off work — fishing, shelter — so Marcus is never alone. Support through structure",
+    "decided": "2026-06-18",
     "votes": 0,
     "tally": {}
   }
