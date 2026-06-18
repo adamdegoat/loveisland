@@ -1,16 +1,16 @@
 {
-  "day": 15,
-  "cycle": "night",
+  "day": 16,
+  "cycle": "morning",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Marcus finally opens up after days of running; Ryan is steady through it; Jade wonders what happens next between them.",
+  "pulse": "Accept one day: after speaking his fear aloud, Marcus wakes choosing today—and everyone else wakes choosing him.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 88,
+      "condition": 85,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 80,
+    "water": 76,
+    "wood": 87,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 75,
     "water": 100,
     "wood": 84,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 85,
-    "water": 86,
-    "wood": 83,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-18:night",
-  "scene": "Marcus and Ryan talked by the fire through the night; now Marcus heads to his tent, Ryan to the house, Jade drifts toward her hammock watching, and Judy rests inside.",
+  "last_cycle_key": "2026-06-19:morning",
+  "scene": "Marcus, Ryan, and the stray settle by the firepit as the day breaks—no strain, no promises beyond today, just peace. Jade wakes in her hammock, Judy steps onto the porch, and the camp breathes easy.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -51,15 +51,15 @@
     "14": "Day 14: Marcus named his deepest fear at the firepit—he can't promise tomorrow, only that he's choosing today. By night, Jade asked him directly. Ryan struggled with the answer. They're still sitting by the fire, tired and raw, holding onto a day-by-day promise.",
     "15": "Day 15 was Marcus's turning point—he chose daylight and the group over solitude, spoke his fear at the firepit, and by evening returned to the fire by his own will. Ryan and Jade watched the shift, Judy rested in certainty, and by night the camp held him close without words, just presence."
   },
-  "last_run_date": "2026-06-18",
+  "last_run_date": "2026-06-19",
   "camp_climate": "content",
   "fire": {
     "lit": true,
-    "fuel": 18
+    "fuel": 6
   },
   "lean": {
-    "id": "keep_him_close",
-    "label": "Keep him close",
-    "desc": "Pair off work — fishing, shelter — so Marcus is never alone. Support through structure"
+    "id": "accept_one_day",
+    "label": "Accept one day",
+    "desc": "Tell him it's enough—she'll choose him tomorrow too, same as him"
   }
 }

@@ -1,32 +1,27 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-18",
+    "id": "2026-06-19",
     "closes": "tonight",
-    "question": "After Marcus admits he can only promise today, Jade chooses to:",
+    "question": "Tomorrow—does Jade tell Marcus what she's feeling, or let him come to her at his own pace?",
     "options": [
       {
-        "id": "accept_one_day",
-        "label": "Accept one day",
-        "desc": "Tell him it's enough—she'll choose him tomorrow too, same as him"
+        "id": "speak_up",
+        "label": "Tell him now",
+        "desc": "Name the feeling. Deepen it with truth, risk disrupting the peace."
       },
       {
-        "id": "ask_why_scared",
-        "label": "Ask why he's scared",
-        "desc": "Skip the commitment argument—dig into what's really behind his fear"
-      },
-      {
-        "id": "push_for_more",
-        "label": "Push for more",
-        "desc": "Test whether he can find any way to promise something beyond today"
+        "id": "wait_his_pace",
+        "label": "Let him lead",
+        "desc": "He just opened. Respect his pace—wait for him to find his way back."
       }
     ]
   },
   "in_play": {
-    "id": "keep_him_close",
-    "label": "Keep him close",
-    "desc": "Pair off work — fishing, shelter — so Marcus is never alone. Support through structure",
-    "decided": "2026-06-18",
+    "id": "accept_one_day",
+    "label": "Accept one day",
+    "desc": "Tell him it's enough—she'll choose him tomorrow too, same as him",
+    "decided": "2026-06-19",
     "votes": 0,
     "tally": {}
   }

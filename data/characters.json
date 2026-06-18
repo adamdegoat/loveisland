@@ -5,19 +5,19 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 74,
+      "trust": 75,
       "openness": 91,
       "ambition": 47,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 45,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "tent_front",
+      "waypoint": "firepit_front",
       "x": 75,
       "y": 25
     },
@@ -25,27 +25,30 @@
     "relationships": {
       "ryan": {
         "closeness": 100,
-        "tension": 17,
+        "tension": 15,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 19,
+        "tension": 18,
         "attraction": 38
       },
       "judy": {
-        "closeness": 61,
-        "tension": 20,
+        "closeness": 63,
+        "tension": 19,
         "attraction": 0
       },
       "stray": {
-        "closeness": 37,
+        "closeness": 39,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
-    "interaction": null,
+    "interaction": {
+      "with": "ryan",
+      "state": "sitting_together"
+    },
     "memories": [
       {
         "day": 8,
@@ -142,14 +145,14 @@
       "ambition": 89,
       "loneliness": 0,
       "resilience": 49,
-      "hunger": 53,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 45,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "hopeful",
     "location": {
-      "waypoint": "house_door",
+      "waypoint": "firepit_left",
       "x": 42,
       "y": 48
     },
@@ -157,17 +160,17 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 17,
+        "tension": 15,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 23,
+        "tension": 22,
         "attraction": 33
       },
       "judy": {
-        "closeness": 74,
-        "tension": 23,
+        "closeness": 77,
+        "tension": 22,
         "attraction": 0
       },
       "stray": {
@@ -177,7 +180,10 @@
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "sitting_together"
+    },
     "memories": [
       {
         "day": 5,
@@ -215,11 +221,6 @@
         "weight": 3
       },
       {
-        "day": 13,
-        "text": "Marcus promised to choose us again tomorrow. That's all I needed to hear.",
-        "weight": 2
-      },
-      {
         "day": 14,
         "text": "I promised myself to today with him, not tomorrow. Today is enough.",
         "weight": 2
@@ -248,6 +249,11 @@
         "day": 15,
         "text": "He moved stones with me all afternoon, choosing us.",
         "weight": 2
+      },
+      {
+        "day": 16,
+        "text": "He came to the fire himself this morning. He's really staying. Choosing us.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -270,14 +276,14 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 98,
+      "trust": 99,
       "openness": 100,
       "ambition": 39,
-      "loneliness": 3,
+      "loneliness": 5,
       "resilience": 76,
-      "hunger": 53,
-      "thirst": 45,
-      "energy": 94,
+      "hunger": 45,
+      "thirst": 53,
+      "energy": 88,
       "health": 100
     },
     "mood": "settled",
@@ -290,17 +296,17 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 19,
+        "tension": 18,
         "attraction": 38
       },
       "ryan": {
         "closeness": 100,
-        "tension": 23,
+        "tension": 22,
         "attraction": 28
       },
       "judy": {
-        "closeness": 67,
-        "tension": 22,
+        "closeness": 69,
+        "tension": 21,
         "attraction": 0
       },
       "stray": {
@@ -404,16 +410,16 @@
       "trust": 100,
       "openness": 95,
       "ambition": 34,
-      "loneliness": 3,
+      "loneliness": 5,
       "resilience": 76,
-      "hunger": 53,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 45,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "house_inside",
+      "waypoint": "house_porch",
       "x": 50,
       "y": 82
     },
@@ -423,18 +429,18 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 61,
-        "tension": 20,
+        "closeness": 63,
+        "tension": 19,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 74,
-        "tension": 23,
+        "closeness": 77,
+        "tension": 22,
         "attraction": 0
       },
       "jade": {
-        "closeness": 67,
-        "tension": 22,
+        "closeness": 69,
+        "tension": 21,
         "attraction": 0
       },
       "stray": {
@@ -538,42 +544,42 @@
     "color": "#9c6b43",
     "interaction": null,
     "location": {
-      "waypoint": "palm_shade",
+      "waypoint": "firepit_right",
       "x": 20,
       "y": 88
     },
     "mood": "calm",
     "relationships": {
       "marcus": {
-        "closeness": 68,
-        "tension": 24,
+        "closeness": 72,
+        "tension": 23,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 74,
-        "tension": 24,
+        "closeness": 76,
+        "tension": 23,
         "attraction": 0
       },
       "jade": {
-        "closeness": 59,
-        "tension": 24,
+        "closeness": 61,
+        "tension": 23,
         "attraction": 0
       },
       "judy": {
-        "closeness": 99,
-        "tension": 21,
+        "closeness": 100,
+        "tension": 19,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 79,
-      "openness": 46,
+      "trust": 80,
+      "openness": 47,
       "ambition": 0,
-      "loneliness": 0,
+      "loneliness": 3,
       "resilience": 87,
-      "hunger": 53,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 45,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "shelter": "under the palms",

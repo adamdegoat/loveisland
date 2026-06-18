@@ -1,230 +1,5 @@
 [
   {
-    "day": 5,
-    "cycle": "night",
-    "character": "marcus",
-    "action": "He approaches the fire to add wood as Ryan and Jade sit close; he kneels beside the flames and joins their conversation, speaking harder truths than he usually allows.",
-    "thought": "She's beautiful when she's not afraid. He sees that too.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "guarded",
-    "timestamp": "2026-06-08T23:03:17.645066"
-  },
-  {
-    "day": 5,
-    "cycle": "night",
-    "character": "ryan",
-    "action": "He sits at the fire with Jade beside him, their hands finding each other in the darkness, speaking softly through the night as the warmth settles between them.",
-    "thought": "She's choosing me. She's really choosing me.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "warm",
-    "timestamp": "2026-06-08T23:03:17.645066"
-  },
-  {
-    "day": 5,
-    "cycle": "night",
-    "character": "jade",
-    "action": "She drifts down to the fire as night deepens, settles against Ryan's side, and lets herself be seen by both him and Marcus at once—unguarded and real.",
-    "thought": "I don't have to be afraid anymore. That's the real fear.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "vulnerable",
-    "timestamp": "2026-06-08T23:03:17.645066"
-  },
-  {
-    "day": 5,
-    "cycle": "night",
-    "character": "judy",
-    "action": "She stands on the house porch watching the fire below, seeing them gathered in the warmth; her hands grip the railing until her knuckles pale.",
-    "thought": "I don't belong in that circle. I never will.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "wistful",
-    "timestamp": "2026-06-08T23:03:17.645066"
-  },
-  {
-    "day": 5,
-    "cycle": "night",
-    "character": "stray",
-    "action": "The pup presses close to the humans at the fire, its large head resting against Jade's leg, tail thumping steadily in the firelight as it feels all of them here, together.",
-    "thought": "Safe. Everybody here. All safe.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "content",
-    "timestamp": "2026-06-08T23:03:17.645066"
-  },
-  {
-    "day": 5,
-    "cycle": "night",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade",
-      "marcus"
-    ],
-    "description": "Jade voices what she sees in both men—Marcus's careful kindness, Ryan's honest hope—and asks them to stay, choosing belief over fear.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "You came back down. I wasn't sure you would."
-      },
-      {
-        "speaker": "jade",
-        "line": "Couldn't sleep. The house is too still when it's dark. Even knowing you're near, it's..."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You're still scared."
-      },
-      {
-        "speaker": "jade",
-        "line": "Not of you. Never of you. Of what it means that I'm not scared anymore."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Then maybe it's time to stop being scared. I'll be here through all of it."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Fire's burning low."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I was going to add wood in a minute. You okay?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Fine. I'll do it."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You're different. Less trapped-looking."
-      },
-      {
-        "speaker": "jade",
-        "line": "Is that... a compliment?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "It's an observation."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Marcus is secretly a poet. Compliments in the form of gentle insults."
-      },
-      {
-        "speaker": "marcus",
-        "line": "That's not poetry."
-      },
-      {
-        "speaker": "jade",
-        "line": "No, he's right. You are like that. You say difficult things as kindly as you can."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Someone has to say true things. Everyone else just says what feels good."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I say true things."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You say hopeful things. Different."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Maybe. But hope is true too, if you're willing to believe it."
-      },
-      {
-        "speaker": "jade",
-        "line": "I'm starting to believe it. That's the scary part."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Belief is always scary. It means you have something to lose."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's the most philosophical thing I've heard you say."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm full of surprises."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're full of surprises but you never surprise me with meanness. I think that's why I trust you."
-      },
-      {
-        "speaker": "jade",
-        "line": "You really are. I thought I had you figured out on the first day."
-      },
-      {
-        "speaker": "marcus",
-        "line": "And now?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Now I think you're the most careful person here. Like you're trying not to break anything—not the island, not the camp, not us."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Hard to break things that are already broken."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Nothing here is broken, mate."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're not broken either. Just... careful. I respect that."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You should get some sleep. You look exhausted."
-      },
-      {
-        "speaker": "jade",
-        "line": "So do you. But you'll stay awake anyway, watching the fire."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Someone has to."
-      },
-      {
-        "speaker": "ryan",
-        "line": "We could take shifts. I can keep an eye on it later."
-      },
-      {
-        "speaker": "jade",
-        "line": "Stay. Both of you. Just a little longer. Please."
-      }
-    ],
-    "timestamp": "2026-06-08T23:03:17.645066"
-  },
-  {
     "day": 6,
     "cycle": "morning",
     "character": "marcus",
@@ -9501,5 +9276,185 @@
       }
     ],
     "timestamp": "2026-06-18T22:32:48.050422"
+  },
+  {
+    "day": 16,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "Emerges from his tent as dawn breaks, settling onto a stone by the fire instead of retreating to the cliff.",
+    "thought": "He's here. We're all here. That's enough.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "peaceful",
+    "timestamp": "2026-06-19T07:02:51.766770"
+  },
+  {
+    "day": 16,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "Tends the firepit since before dawn, adding wood methodically, warm with the certainty that Marcus will choose this day too.",
+    "thought": "He's choosing. Day by day, he's staying.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-19T07:02:51.766770"
+  },
+  {
+    "day": 16,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "Wakes in her hammock as the sun rises and stretches, listening to the soft voices by the fire.",
+    "thought": "He's still there. Still choosing. Still ours.",
+    "location": {
+      "waypoint": "hammock_beside",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "settled",
+    "timestamp": "2026-06-19T07:02:51.766770"
+  },
+  {
+    "day": 16,
+    "cycle": "morning",
+    "character": "judy",
+    "action": "Rises early in the house, moving carefully, and steps onto the porch to breathe in the morning and see the group together.",
+    "thought": "Everyone's awake. Everyone's here. Safe.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-19T07:02:51.766770"
+  },
+  {
+    "day": 16,
+    "cycle": "morning",
+    "character": "stray",
+    "action": "Wakes to the scent of the fire and pads out calmly from the palms, seeking the warmth and Marcus's steady hand.",
+    "thought": "Safe. All together. We stay.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "calm",
+    "timestamp": "2026-06-19T07:02:51.766770"
+  },
+  {
+    "day": 16,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan"
+    ],
+    "description": "Early light finds Ryan tending the fire while Marcus settles onto a stone nearby, no longer keeping distance—the stray wakes and pads out to settle against Marcus, calm and bonded.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Morning. Sleep okay?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. Better."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Good. Fire's been going since before dawn."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Thanks."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's what we do. Just today, right?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Just today."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's enough."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Is it?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "It is for me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "He's not scared anymore."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're not either. Not as much."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's different."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. It is."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Everyone's going to wake up and be here."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. We all will be."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I don't know how long I can hold this."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You don't have to. Just today."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Just today."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And tomorrow you get to choose again. That's what I do."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What if I choose wrong?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "You won't. You're here. That's right."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Okay."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay."
+      }
+    ],
+    "timestamp": "2026-06-19T07:02:51.766770"
   }
 ]
