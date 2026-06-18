@@ -1,214 +1,6 @@
 [
   {
     "day": 5,
-    "cycle": "morning",
-    "character": "marcus",
-    "action": "Emerges from his tent as the sun breaks over the eastern ridge, stretching and pausing to listen to the camp stirring awake.",
-    "thought": "She laughs at my jokes. Still surprising.",
-    "location": {
-      "waypoint": "tent_front",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "lighter",
-    "timestamp": "2026-06-08T07:03:05.126486"
-  },
-  {
-    "day": 5,
-    "cycle": "morning",
-    "character": "ryan",
-    "action": "Crouches by the fire pit with fresh wood, watching the flames catch and strengthen in the early morning light.",
-    "thought": "She should be awake soon. Wanting her to be.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "warm",
-    "timestamp": "2026-06-08T07:03:05.126486"
-  },
-  {
-    "day": 5,
-    "cycle": "morning",
-    "character": "jade",
-    "action": "Wakes in her hammock to golden light filtering through the palms, lies still for a moment listening to the camp, then pushes herself up.",
-    "thought": "I want to know what I'm actually feeling.",
-    "location": {
-      "waypoint": "hammock_beside",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "peaceful",
-    "timestamp": "2026-06-08T07:03:05.126486"
-  },
-  {
-    "day": 5,
-    "cycle": "morning",
-    "character": "judy",
-    "action": "Steps out onto the house porch into the early light, one hand on the wooden post, breathing in the salt air with something like peace.",
-    "thought": "They chose me. They want me here.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "hopeful",
-    "timestamp": "2026-06-08T07:03:05.126486"
-  },
-  {
-    "day": 5,
-    "cycle": "morning",
-    "character": "stray",
-    "action": "Stretches from its sleeping spot in the shade near the palms, tail lifting as it scents the morning breeze and hears the camp waking.",
-    "thought": "Ryan's here. Safe here. Everything safe.",
-    "location": {
-      "waypoint": "under the palms",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "content",
-    "timestamp": "2026-06-08T07:03:05.126486"
-  },
-  {
-    "day": 5,
-    "cycle": "morning",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade"
-    ],
-    "description": "Before the island fully wakes, Jade and Ryan speak what's been building: she's choosing him and staying, he's terrified of losing her, and both finally claim it.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "You're up early."
-      },
-      {
-        "speaker": "jade",
-        "line": "Hammock gets too hot once the sun hits it. You sleep at all?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Not much. I was up thinking."
-      },
-      {
-        "speaker": "jade",
-        "line": "About what?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "About yesterday. About all of us actually fitting together like this."
-      },
-      {
-        "speaker": "jade",
-        "line": "We do fit now. That part changed."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah. I felt lighter. Did you feel it too?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Something shifted, yeah. Everything felt different."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I think it's because I stopped pretending I don't care about... about certain people."
-      },
-      {
-        "speaker": "jade",
-        "line": "Certain people. That's one way to put it."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Specific people. You know who I mean."
-      },
-      {
-        "speaker": "jade",
-        "line": "I think I do. I've been thinking about you too, by the way."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Yeah. And about Marcus, but it's different. He makes me laugh—that's new."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That is new. He's been different since you got here."
-      },
-      {
-        "speaker": "jade",
-        "line": "He has. But you were different from the start."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Different how?"
-      },
-      {
-        "speaker": "jade",
-        "line": "You looked at me like I mattered. Like I wasn't just passing through."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You do matter. You're not passing through."
-      },
-      {
-        "speaker": "jade",
-        "line": "I know that now. I was drifting before. Didn't know what I wanted."
-      },
-      {
-        "speaker": "ryan",
-        "line": "And now?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Now I want to stay. Want to be here with all of you. Especially with you."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That means a lot to me."
-      },
-      {
-        "speaker": "jade",
-        "line": "I know it does. That's why I'm saying it."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I was afraid you might leave."
-      },
-      {
-        "speaker": "jade",
-        "line": "I'm not leaving. Not unless you want me to."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I don't want that. I really don't."
-      },
-      {
-        "speaker": "jade",
-        "line": "What are you thinking?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "That I'm glad. That this is real. That you're choosing to be here."
-      },
-      {
-        "speaker": "jade",
-        "line": "I am choosing. I'm choosing this. I'm choosing you."
-      }
-    ],
-    "timestamp": "2026-06-08T07:03:05.126486"
-  },
-  {
-    "day": 5,
     "cycle": "midday",
     "character": "marcus",
     "action": "Sits at the front of his tent, watching the firepit where Ryan and Jade sit close together, feeling the distance widen.",
@@ -9554,5 +9346,210 @@
       }
     ],
     "timestamp": "2026-06-18T11:32:35.762578"
+  },
+  {
+    "day": 15,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "He and Ryan move stones for the bench, working synchronized in afternoon light.",
+    "thought": "He's choosing daylight. He's choosing this.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "grounded",
+    "timestamp": "2026-06-18T15:02:28.256176"
+  },
+  {
+    "day": 15,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "He works beside Marcus in steady rhythm, hands busy, anchoring him in daylight.",
+    "thought": "He's staying. He's really choosing to stay.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-18T15:02:28.256176"
+  },
+  {
+    "day": 15,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "She drifts to the firepit to watch Marcus work, drawn by his choice holding firm.",
+    "thought": "He's choosing to stay. Really choosing.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "settled",
+    "timestamp": "2026-06-18T15:02:28.256176"
+  },
+  {
+    "day": 15,
+    "cycle": "afternoon",
+    "character": "judy",
+    "action": "She rests on the house porch with the puppy nearby, watching afternoon light settle warm.",
+    "thought": "We're all here. We're all safe.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-18T15:02:28.256176"
+  },
+  {
+    "day": 15,
+    "cycle": "afternoon",
+    "character": "stray",
+    "action": "The puppy curls against Judy's leg, drowsy and warm, content in her steady presence.",
+    "thought": "She is here. I am safe.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "calm",
+    "timestamp": "2026-06-18T15:02:28.256176"
+  },
+  {
+    "day": 15,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade"
+    ],
+    "description": "Afternoon work beneath the island sun: Marcus and Ryan building together, steady and close, while Jade drifts near the firepit—drawn to watch the choice he made hold firm in daylight.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Hand me that stone, yeah? We're almost done with the edge here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What are we actually building?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "A place to sit. For all of us. Like a real bench."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We don't need—"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know we don't need it. I want it."
+      },
+      {
+        "speaker": "jade",
+        "line": "Is this the grand expansion?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Come help. Tell Marcus this is a good idea."
+      },
+      {
+        "speaker": "jade",
+        "line": "I like watching you two work. You're... synchronized."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's uncomfortable."
+      },
+      {
+        "speaker": "jade",
+        "line": "Why? You're good together. He steadies you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "He's louder."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I can be louder. But you listen when it matters."
+      },
+      {
+        "speaker": "jade",
+        "line": "After yesterday, I wasn't sure you'd stay in daylight too."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Neither was I."
+      },
+      {
+        "speaker": "jade",
+        "line": "But you came fishing. You chose him."
+      },
+      {
+        "speaker": "ryan",
+        "line": "He chose us. Plural. That's the whole thing."
+      },
+      {
+        "speaker": "marcus",
+        "line": "One day at a time."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's enough. That's more than most people get."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Help us move this rock. It's heavier than I thought."
+      },
+      {
+        "speaker": "jade",
+        "line": "Of course. Where's it going?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Right there. That corner. Marcus, together?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Same as this morning. Ready?"
+      },
+      {
+        "speaker": "jade",
+        "line": "On three?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "One... two... three."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's settling. That's good."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're all a thing now. A real thing, aren't you?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "We're trying. Right, Marcus?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "We're here. That's all I can promise."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's enough. We're all just trying."
+      }
+    ],
+    "timestamp": "2026-06-18T15:02:28.256176"
   }
 ]
