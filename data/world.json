@@ -1,16 +1,16 @@
 {
   "day": 15,
-  "cycle": "afternoon",
+  "cycle": "evening",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Marcus chooses again in daylight while Jade watches, and Ryan holds them all together—a fragile family learning to stay.",
+  "pulse": "Marcus is choosing to stay another night, with Ryan close and Jade watching — the fear stays, but so does the choice.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 94,
+      "condition": 91,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 85,
+    "water": 86,
+    "wood": 83,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 78,
     "water": 86,
     "wood": 85,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 89,
-    "water": 86,
-    "wood": 91,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-18:afternoon",
-  "scene": "They moved stones together this afternoon, Ryan and Marcus synchronized, Jade watching from the firepit's edge—all three learning what it means to choose the same people again tomorrow.",
+  "last_cycle_key": "2026-06-18:evening",
+  "scene": "Marcus came to the firepit and sat with Ryan, his choice holding firm in daylight now flowing into evening; Jade settled near while Judy rested on the porch with the stray.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -54,7 +54,7 @@
   "camp_climate": "steady",
   "fire": {
     "lit": true,
-    "fuel": 6
+    "fuel": 12
   },
   "lean": {
     "id": "keep_him_close",

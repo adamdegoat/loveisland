@@ -5,14 +5,14 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 72,
-      "openness": 87,
+      "trust": 73,
+      "openness": 89,
       "ambition": 47,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 76,
+      "energy": 70,
       "health": 100
     },
     "mood": "grounded",
@@ -25,7 +25,7 @@
     "relationships": {
       "ryan": {
         "closeness": 100,
-        "tension": 20,
+        "tension": 19,
         "attraction": 0
       },
       "jade": {
@@ -39,7 +39,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 35,
+        "closeness": 36,
         "tension": 0,
         "attraction": 0
       }
@@ -144,10 +144,10 @@
       "openness": 100,
       "ambition": 89,
       "loneliness": 0,
-      "resilience": 48,
-      "hunger": 53,
+      "resilience": 49,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 76,
+      "energy": 70,
       "health": 100
     },
     "mood": "hopeful",
@@ -160,7 +160,7 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 20,
+        "tension": 19,
         "attraction": 0
       },
       "jade": {
@@ -226,11 +226,6 @@
         "weight": 2
       },
       {
-        "day": 13,
-        "text": "I failed to forage but Jade saved us. Judy's safe.",
-        "weight": 2
-      },
-      {
         "day": 14,
         "text": "I promised myself to today with him, not tomorrow. Today is enough.",
         "weight": 2
@@ -239,6 +234,11 @@
         "day": 14,
         "text": "Marcus can't promise forever, but he promises today. Somehow that makes me trust him more.",
         "weight": 2
+      },
+      {
+        "day": 15,
+        "text": "Marcus named his biggest fear at the fire. He's finally letting me know what I'm standing for.",
+        "weight": 3
       },
       {
         "day": 15,
@@ -280,10 +280,10 @@
       "openness": 100,
       "ambition": 39,
       "loneliness": 0,
-      "resilience": 75,
-      "hunger": 53,
+      "resilience": 76,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 64,
+      "energy": 58,
       "health": 100
     },
     "mood": "settled",
@@ -316,10 +316,7 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": {
-      "with": "marcus",
-      "state": "talking"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -357,11 +354,6 @@
         "weight": 2
       },
       {
-        "day": 13,
-        "text": "He came down and said he doesn't have to be alone. He meant it fully.",
-        "weight": 2
-      },
-      {
         "day": 14,
         "text": "He named his fear—that we'll drift apart unless he holds everything together. But he stays anyway.",
         "weight": 3
@@ -390,6 +382,11 @@
         "day": 15,
         "text": "He's really staying. I don't have to be afraid anymore.",
         "weight": 2
+      },
+      {
+        "day": 15,
+        "text": "He's accepting that choosing every day is enough. The fear doesn't have to disappear.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -415,9 +412,9 @@
       "ambition": 34,
       "loneliness": 0,
       "resilience": 76,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 76,
+      "energy": 70,
       "health": 100
     },
     "mood": "peaceful",
@@ -560,7 +557,7 @@
     "mood": "calm",
     "relationships": {
       "marcus": {
-        "closeness": 64,
+        "closeness": 65,
         "tension": 25,
         "attraction": 0
       },
@@ -586,9 +583,9 @@
       "ambition": 0,
       "loneliness": 0,
       "resilience": 87,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 76,
+      "energy": 70,
       "health": 100
     },
     "shelter": "under the palms",
