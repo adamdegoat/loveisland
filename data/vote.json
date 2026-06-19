@@ -1,27 +1,27 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-19",
+    "id": "2026-06-20",
     "closes": "tonight",
-    "question": "Tomorrow—does Jade tell Marcus what she's feeling, or let him come to her at his own pace?",
+    "question": "Marcus finally stopped waiting. Does he tell Ryan and Jade he's choosing them—or show it instead?",
     "options": [
       {
-        "id": "speak_up",
-        "label": "Tell him now",
-        "desc": "Name the feeling. Deepen it with truth, risk disrupting the peace."
+        "id": "speak_it",
+        "label": "Tell them",
+        "desc": "Name the choice aloud. Risk the peace for words."
       },
       {
-        "id": "wait_his_pace",
-        "label": "Let him lead",
-        "desc": "He just opened. Respect his pace—wait for him to find his way back."
+        "id": "show_it",
+        "label": "Show them",
+        "desc": "Let actions and warmth say everything. Tomorrow will prove it."
       }
     ]
   },
   "in_play": {
-    "id": "accept_one_day",
-    "label": "Accept one day",
-    "desc": "Tell him it's enough—she'll choose him tomorrow too, same as him",
-    "decided": "2026-06-19",
+    "id": "speak_up",
+    "label": "Tell him now",
+    "desc": "Name the feeling. Deepen it with truth, risk disrupting the peace.",
+    "decided": "2026-06-20",
     "votes": 0,
     "tally": {}
   }

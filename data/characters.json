@@ -5,19 +5,19 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 79,
-      "openness": 95,
+      "trust": 81,
+      "openness": 96,
       "ambition": 47,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 45,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
-    "mood": "calm",
+    "mood": "peaceful",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_right",
       "x": 75,
       "y": 25
     },
@@ -25,36 +25,31 @@
     "relationships": {
       "ryan": {
         "closeness": 100,
-        "tension": 10,
+        "tension": 9,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 11,
-        "attraction": 40
+        "tension": 8,
+        "attraction": 42
       },
       "judy": {
-        "closeness": 69,
-        "tension": 15,
+        "closeness": 71,
+        "tension": 14,
         "attraction": 0
       },
       "stray": {
-        "closeness": 45,
+        "closeness": 46,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "ryan",
-      "state": "sitting_together"
+      "with": "jade",
+      "state": "talking"
     },
     "memories": [
-      {
-        "day": 11,
-        "text": "She was terrified they'd leave. I promised I wouldn't.",
-        "weight": 3
-      },
       {
         "day": 12,
         "text": "Solitude was safer than this. But this is worth it.",
@@ -119,6 +114,11 @@
         "day": 16,
         "text": "I chose today. Ryan held me. Tomorrow I choose again.",
         "weight": 3
+      },
+      {
+        "day": 17,
+        "text": "Jade told me she's falling. I said it back. We chose each other.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -142,12 +142,12 @@
     "scores": {
       "trust": 100,
       "openness": 100,
-      "ambition": 89,
+      "ambition": 90,
       "loneliness": 0,
       "resilience": 50,
-      "hunger": 45,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "content",
@@ -160,17 +160,17 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 10,
+        "tension": 9,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 20,
+        "tension": 19,
         "attraction": 33
       },
       "judy": {
-        "closeness": 81,
-        "tension": 20,
+        "closeness": 83,
+        "tension": 19,
         "attraction": 0
       },
       "stray": {
@@ -182,7 +182,7 @@
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
       "with": "marcus",
-      "state": "sitting_together"
+      "state": "talking"
     },
     "memories": [
       {
@@ -226,11 +226,6 @@
         "weight": 3
       },
       {
-        "day": 15,
-        "text": "He woke and came. Not forever, just today. I'll take that.",
-        "weight": 2
-      },
-      {
         "day": 16,
         "text": "Marcus finally rested against me. He chose us. That was everything.",
         "weight": 3
@@ -254,6 +249,11 @@
         "day": 16,
         "text": "At the rocks, I said tomorrow I'll choose him again. He finally believed me.",
         "weight": 2
+      },
+      {
+        "day": 17,
+        "text": "I watched them name it aloud. We three are becoming something real now.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -280,15 +280,15 @@
       "openness": 100,
       "ambition": 39,
       "loneliness": 0,
-      "resilience": 76,
-      "hunger": 45,
-      "thirst": 45,
-      "energy": 100,
+      "resilience": 78,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "open",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "firepit_right",
       "x": 40,
       "y": 50
     },
@@ -296,17 +296,17 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 11,
-        "attraction": 40
+        "tension": 8,
+        "attraction": 42
       },
       "ryan": {
         "closeness": 100,
-        "tension": 20,
+        "tension": 19,
         "attraction": 28
       },
       "judy": {
-        "closeness": 73,
-        "tension": 19,
+        "closeness": 75,
+        "tension": 18,
         "attraction": 0
       },
       "stray": {
@@ -318,7 +318,7 @@
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
     "interaction": {
       "with": "marcus",
-      "state": "sitting_together"
+      "state": "talking"
     },
     "memories": [
       {
@@ -367,11 +367,6 @@
         "weight": 2
       },
       {
-        "day": 15,
-        "text": "He's accepting that choosing every day is enough. The fear doesn't have to disappear.",
-        "weight": 2
-      },
-      {
         "day": 16,
         "text": "He's real now. Choosing every day, not performing.",
         "weight": 2
@@ -390,6 +385,11 @@
         "day": 16,
         "text": "He's not performing anymore. Just real. Just choosing. I love this.",
         "weight": 2
+      },
+      {
+        "day": 17,
+        "text": "I named what I was holding. He heard me. We chose each other.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -413,11 +413,11 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 9,
+      "loneliness": 13,
       "resilience": 77,
-      "hunger": 45,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "peaceful",
@@ -432,18 +432,18 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 69,
-        "tension": 15,
+        "closeness": 71,
+        "tension": 14,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 81,
-        "tension": 20,
+        "closeness": 83,
+        "tension": 19,
         "attraction": 0
       },
       "jade": {
-        "closeness": 73,
-        "tension": 19,
+        "closeness": 75,
+        "tension": 18,
         "attraction": 0
       },
       "stray": {
@@ -550,42 +550,42 @@
       "state": "sitting_together"
     },
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_right",
       "x": 20,
       "y": 88
     },
     "mood": "content",
     "relationships": {
       "marcus": {
-        "closeness": 82,
-        "tension": 19,
+        "closeness": 85,
+        "tension": 18,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 80,
-        "tension": 21,
+        "closeness": 82,
+        "tension": 20,
         "attraction": 0
       },
       "jade": {
-        "closeness": 65,
-        "tension": 21,
+        "closeness": 67,
+        "tension": 20,
         "attraction": 0
       },
       "judy": {
         "closeness": 100,
-        "tension": 17,
+        "tension": 16,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 83,
+      "trust": 84,
       "openness": 48,
       "ambition": 0,
       "loneliness": 0,
-      "resilience": 88,
-      "hunger": 45,
-      "thirst": 45,
-      "energy": 100,
+      "resilience": 89,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "shelter": "under the palms",
@@ -593,11 +593,6 @@
       {
         "day": 7,
         "text": "They gathered by the fire warmth. I went to her instead.",
-        "weight": 2
-      },
-      {
-        "day": 7,
-        "text": "She was alone and hurting. I left the fire group to be with her. She needs me.",
         "weight": 2
       },
       {
@@ -658,6 +653,11 @@
       {
         "day": 16,
         "text": "He rested against me at the fire. He's calm. We're safe.",
+        "weight": 2
+      },
+      {
+        "day": 17,
+        "text": "He is safe with her. She is safe with him. I am safe.",
         "weight": 2
       }
     ]
