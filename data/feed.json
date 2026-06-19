@@ -1,216 +1,6 @@
 [
   {
     "day": 6,
-    "cycle": "morning",
-    "character": "marcus",
-    "action": "He wakes to quiet tent light, gathers an armload of firewood, and makes his way toward the firepit.",
-    "thought": "She's there. I can feel it.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "guarded",
-    "timestamp": "2026-06-09T07:02:56.922252"
-  },
-  {
-    "day": 6,
-    "cycle": "morning",
-    "character": "ryan",
-    "action": "He tends the coals of the firepit, adding wood with the care of someone who barely slept, watching the warmth build.",
-    "thought": "She's here with me. This is real.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "warm",
-    "timestamp": "2026-06-09T07:02:56.922252"
-  },
-  {
-    "day": 6,
-    "cycle": "morning",
-    "character": "jade",
-    "action": "She drifts from the hammock toward the firepit, drawn by the light and the gathering, moving without hurry.",
-    "thought": "Morning light and warmth. They're both here.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "peaceful",
-    "timestamp": "2026-06-09T07:02:56.922252"
-  },
-  {
-    "day": 6,
-    "cycle": "morning",
-    "character": "judy",
-    "action": "She stands on the house porch with a cup of water, watching the three at the fire in the distance, her hand moving to her belly.",
-    "thought": "They have something I can't reach.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "wistful",
-    "timestamp": "2026-06-09T07:02:56.922252"
-  },
-  {
-    "day": 6,
-    "cycle": "morning",
-    "character": "stray",
-    "action": "The pup pads soft-footed toward the gathered warmth of the firepit, tail cautious but rising, settling between the seated figures.",
-    "thought": "Safe. All here. All warm.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "content",
-    "timestamp": "2026-06-09T07:02:56.922252"
-  },
-  {
-    "day": 6,
-    "cycle": "morning",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade",
-      "marcus",
-      "stray"
-    ],
-    "description": "They decide against splitting up: instead of separate hunts, all three pack supplies and move down the coast together, the pup trailing, intent on fishing the tide.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "Fire's still strong. Could've gone out with how hard we slept."
-      },
-      {
-        "speaker": "jade",
-        "line": "You kept checking it in the dark, didn't you?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Can't help it. Just... habit."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Fire doesn't keep itself."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Never said it did, mate."
-      },
-      {
-        "speaker": "jade",
-        "line": "We should eat while we have the warmth. The food is running low."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Two days left if we're careful. We need to fish properly today."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I can set traps down the coast. Need to move anyway."
-      },
-      {
-        "speaker": "jade",
-        "line": "What if all three of us went together? The ocean's good if the tide is right."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That work? All together?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Fine. Yeah."
-      },
-      {
-        "speaker": "jade",
-        "line": "He knows something's different."
-      },
-      {
-        "speaker": "ryan",
-        "line": "He knows we're okay. That's all he needs."
-      },
-      {
-        "speaker": "jade",
-        "line": "Marcus, wait—"
-      },
-      {
-        "speaker": "marcus",
-        "line": "What?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Nothing. Just... thank you. For staying. For being here."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I was here. Needed to be, actually."
-      },
-      {
-        "speaker": "ryan",
-        "line": "We all were. All of us."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Water first. Then we pack for fishing."
-      },
-      {
-        "speaker": "jade",
-        "line": "I want to come with you. Both of you."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Then let's move before the heat gets unbearable."
-      },
-      {
-        "speaker": "jade",
-        "line": "The fire's in good shape. We can leave it."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Pup's ready. He wants to move."
-      },
-      {
-        "speaker": "jade",
-        "line": "We'll find enough out there. I know it."
-      },
-      {
-        "speaker": "marcus",
-        "line": "We always do. When we're together."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Then let's go. All of us."
-      },
-      {
-        "speaker": "jade",
-        "line": "Come on, then."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You coming, Marcus?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Right behind you."
-      },
-      {
-        "speaker": "jade",
-        "line": "Good."
-      }
-    ],
-    "timestamp": "2026-06-09T07:02:56.922252"
-  },
-  {
-    "day": 6,
     "cycle": "midday",
     "character": "marcus",
     "action": "Tends the fire with quiet focus, watching how easily Ryan and Jade fit together while the stray settles between them.",
@@ -9456,5 +9246,214 @@
       }
     ],
     "timestamp": "2026-06-19T07:02:51.766770"
+  },
+  {
+    "day": 16,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "He settles by the fire with Ryan and Jade midday, the stray's warmth against him, no longer bracing for a future he fears.",
+    "thought": "Just today is enough. I can choose that.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "peaceful",
+    "timestamp": "2026-06-19T11:32:29.921316"
+  },
+  {
+    "day": 16,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "He tends the catch at the firepit with ease, sharing good food and quietly witnessing Marcus's shift toward something like peace.",
+    "thought": "He's finally letting the fear go now.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-19T11:32:29.921316"
+  },
+  {
+    "day": 16,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "She drifts to the firepit at midday and sits with Marcus and Ryan, watching him carefully, seeing something real shift in him.",
+    "thought": "He's real now. Not performing, just being.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "settled",
+    "timestamp": "2026-06-19T11:32:29.921316"
+  },
+  {
+    "day": 16,
+    "cycle": "midday",
+    "character": "judy",
+    "action": "She rests on the house porch with her swollen belly, watching the camp's contentment with gratitude and deep relief.",
+    "thought": "They're happy. They're safe. So am I.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-19T11:32:29.921316"
+  },
+  {
+    "day": 16,
+    "cycle": "midday",
+    "character": "stray",
+    "action": "The pup settles against Marcus all through midday, calm and steady, a living mirror of the peace he is finally finding.",
+    "thought": "He's calm now. I stay close and help.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "calm",
+    "timestamp": "2026-06-19T11:32:29.921316"
+  },
+  {
+    "day": 16,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade"
+    ],
+    "description": "By midday Ryan tends the fresh catch at the firepit as Marcus settles nearby with Jade, the stray curled against him, and Marcus finally stops waiting for tomorrow.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Catch was good today. Fish is fresh—want to help cook?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. Good."
+      },
+      {
+        "speaker": "jade",
+        "line": "You two look settled this morning."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Work helps. And the fire's in a good mood today."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Wood's stocked. No shortage."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's not what I meant, though."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What did you mean?"
+      },
+      {
+        "speaker": "jade",
+        "line": "You're different. Less guarded than usual."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not thinking about tomorrow right now."
+      },
+      {
+        "speaker": "jade",
+        "line": "Not at all?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not right now. Today is enough."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's what we said—that's what matters. Just today."
+      },
+      {
+        "speaker": "jade",
+        "line": "But you don't usually think like that, Marcus."
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. I don't. But I'm trying."
+      },
+      {
+        "speaker": "stray",
+        "line": "[pads over and settles against Marcus's side]"
+      },
+      {
+        "speaker": "ryan",
+        "line": "The stray knows. It always does."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Something shifted when I named the fear. When I spoke it."
+      },
+      {
+        "speaker": "jade",
+        "line": "Since the firepit? Since you said it out loud?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Since you three didn't leave when I was afraid."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We're still here. We're not leaving, Marcus."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I believe it now. Not just with my head—with everything."
+      },
+      {
+        "speaker": "jade",
+        "line": "And one day is really enough? For you?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Today it is. Tomorrow I'll choose again. But I'm not borrowing trouble anymore."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's real growth. That's huge."
+      },
+      {
+        "speaker": "jade",
+        "line": "So what made you finally believe us?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You all kept the promises. You're still here. And I'm still here."
+      },
+      {
+        "speaker": "stray",
+        "line": "[ears relax fully, tail beats soft against the sand]"
+      },
+      {
+        "speaker": "ryan",
+        "line": "We always will be."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's just eating good fish with people I care about. On a day like this. That's enough."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's... a lot, actually. That you can see it that way."
+      }
+    ],
+    "timestamp": "2026-06-19T11:32:29.921316"
   }
 ]
