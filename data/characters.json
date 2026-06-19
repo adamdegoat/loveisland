@@ -5,19 +5,19 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 75,
-      "openness": 92,
+      "trust": 77,
+      "openness": 93,
       "ambition": 47,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "peaceful",
+    "mood": "grounded",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "rock_cluster",
       "x": 75,
       "y": 25
     },
@@ -30,8 +30,8 @@
       },
       "jade": {
         "closeness": 100,
-        "tension": 16,
-        "attraction": 38
+        "tension": 15,
+        "attraction": 39
       },
       "judy": {
         "closeness": 65,
@@ -39,30 +39,20 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 40,
+        "closeness": 42,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "jade",
+      "with": "ryan",
       "state": "talking"
     },
     "memories": [
       {
-        "day": 9,
-        "text": "Ryan stayed when I finally let him in. He's really here.",
-        "weight": 3
-      },
-      {
         "day": 10,
         "text": "I didn't run this morning. He was waiting.",
-        "weight": 3
-      },
-      {
-        "day": 10,
-        "text": "I told Ryan tonight he was my anchor. I meant it fully.",
         "weight": 3
       },
       {
@@ -119,6 +109,16 @@
         "day": 16,
         "text": "I can choose one day. That's enough. That's everything.",
         "weight": 3
+      },
+      {
+        "day": 16,
+        "text": "I told them I was afraid of them staying. They stayed anyway, today.",
+        "weight": 3
+      },
+      {
+        "day": 16,
+        "text": "Ryan promised to choose me tomorrow. One day is enough now.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -145,14 +145,14 @@
       "ambition": 89,
       "loneliness": 0,
       "resilience": 49,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "content",
+    "mood": "warm",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "rock_cluster",
       "x": 42,
       "y": 48
     },
@@ -221,11 +221,6 @@
         "weight": 3
       },
       {
-        "day": 14,
-        "text": "I promised myself to today with him, not tomorrow. Today is enough.",
-        "weight": 2
-      },
-      {
         "day": 15,
         "text": "Marcus named his biggest fear at the fire. He's finally letting me know what I'm standing for.",
         "weight": 3
@@ -254,6 +249,11 @@
         "day": 16,
         "text": "He finally believed us. He's not running anymore.",
         "weight": 2
+      },
+      {
+        "day": 16,
+        "text": "At the rocks, I said tomorrow I'll choose him again. He finally believed me.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -276,19 +276,19 @@
     "archetype": "drifter",
     "color": "#f472b6",
     "scores": {
-      "trust": 99,
+      "trust": 100,
       "openness": 100,
       "ambition": 39,
-      "loneliness": 3,
+      "loneliness": 1,
       "resilience": 76,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
-    "mood": "settled",
+    "mood": "open",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "rock_cluster",
       "x": 40,
       "y": 50
     },
@@ -296,8 +296,8 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 16,
-        "attraction": 38
+        "tension": 15,
+        "attraction": 39
       },
       "ryan": {
         "closeness": 100,
@@ -316,10 +316,7 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": {
-      "with": "marcus",
-      "state": "talking"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -367,11 +364,6 @@
         "weight": 2
       },
       {
-        "day": 14,
-        "text": "He won't promise tomorrow, but he's here today and choosing us. That's enough.",
-        "weight": 2
-      },
-      {
         "day": 15,
         "text": "He came back. He's choosing them again. It's real, not words.",
         "weight": 2
@@ -389,6 +381,11 @@
       {
         "day": 16,
         "text": "He's real now. Choosing every day, not performing.",
+        "weight": 2
+      },
+      {
+        "day": 16,
+        "text": "I told him we choose every day, not because we have to. He heard me.",
         "weight": 2
       }
     ],
@@ -413,16 +410,16 @@
       "trust": 100,
       "openness": 95,
       "ambition": 34,
-      "loneliness": 8,
+      "loneliness": 11,
       "resilience": 76,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "house_garden",
       "x": 50,
       "y": 82
     },
@@ -550,14 +547,14 @@
       "state": "sitting_together"
     },
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "rock_cluster",
       "x": 20,
       "y": 88
     },
-    "mood": "calm",
+    "mood": "content",
     "relationships": {
       "marcus": {
-        "closeness": 75,
+        "closeness": 77,
         "tension": 22,
         "attraction": 0
       },
@@ -578,14 +575,14 @@
       }
     },
     "scores": {
-      "trust": 80,
+      "trust": 81,
       "openness": 47,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 87,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "shelter": "under the palms",
@@ -593,11 +590,6 @@
       {
         "day": 6,
         "text": "She was alone and sad. I left the fire to be with her.",
-        "weight": 2
-      },
-      {
-        "day": 6,
-        "text": "She was alone. I brought the rest back to her.",
         "weight": 2
       },
       {
@@ -658,6 +650,11 @@
       {
         "day": 16,
         "text": "He's calm with me now. I help him stay.",
+        "weight": 2
+      },
+      {
+        "day": 16,
+        "text": "I settled against him at the rocks. He was calm with me. We are safe.",
         "weight": 2
       }
     ]
