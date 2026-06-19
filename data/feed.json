@@ -1,199 +1,5 @@
 [
   {
-    "day": 6,
-    "cycle": "night",
-    "character": "marcus",
-    "action": "He arrives at the porch as darkness settles, his simple presence completing the circle without need for words.",
-    "thought": "The circle's whole. I'm part of it.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "calm",
-    "timestamp": "2026-06-09T23:02:40.356959"
-  },
-  {
-    "day": 6,
-    "cycle": "night",
-    "character": "ryan",
-    "action": "He settles beside Jade, making sure everyone is warm, his hand resting near hers on the bench.",
-    "thought": "She's safe. We all are now.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "content",
-    "timestamp": "2026-06-09T23:02:40.356959"
-  },
-  {
-    "day": 6,
-    "cycle": "night",
-    "character": "jade",
-    "action": "She keeps herself close to Judy, her body angled toward her, one hand on her knee.",
-    "thought": "I see her now. That changes everything.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "peaceful",
-    "timestamp": "2026-06-09T23:02:40.356959"
-  },
-  {
-    "day": 6,
-    "cycle": "night",
-    "character": "judy",
-    "action": "She leans into the warmth around her, the stray's weight against her leg like an anchor.",
-    "thought": "Maybe I don't have to be alone.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "hopeful",
-    "timestamp": "2026-06-09T23:02:40.356959"
-  },
-  {
-    "day": 6,
-    "cycle": "night",
-    "character": "stray",
-    "action": "She presses against Judy's leg, sighing with the deep contentment of a pup who found her person.",
-    "thought": "She's safe. The pack is whole.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "content",
-    "timestamp": "2026-06-09T23:02:40.356959"
-  },
-  {
-    "day": 6,
-    "cycle": "night",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade",
-      "judy",
-      "marcus"
-    ],
-    "description": "On the porch as night falls, the group gathers—the stray pressed against Judy, who finally sits in the center, Jade beside her, Ryan and Marcus completing a circle that couldn't hold without her.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "Everyone okay? Warm enough?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Yeah, just sitting. It's nice."
-      },
-      {
-        "speaker": "judy",
-        "line": "I... can I stay? Out here with you?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Of course you can. You always could."
-      },
-      {
-        "speaker": "marcus",
-        "line": "She knows that now, I think."
-      },
-      {
-        "speaker": "jade",
-        "line": "The pup knows it. Come here."
-      },
-      {
-        "speaker": "judy",
-        "line": "She really came back to me. I wasn't sure if..."
-      },
-      {
-        "speaker": "ryan",
-        "line": "She knows you're one of us. So do we."
-      },
-      {
-        "speaker": "marcus",
-        "line": "The pup doesn't lie about these things."
-      },
-      {
-        "speaker": "jade",
-        "line": "Neither do we. Not tonight anyway."
-      },
-      {
-        "speaker": "judy",
-        "line": "What changed? This morning I was..."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You were fine. It was us that was wrong."
-      },
-      {
-        "speaker": "marcus",
-        "line": "We saw it too late. But we're seeing it now."
-      },
-      {
-        "speaker": "jade",
-        "line": "And we're not looking away again."
-      },
-      {
-        "speaker": "judy",
-        "line": "I kept waiting for you to forget about me."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Judy, you're not the kind of person we forget."
-      },
-      {
-        "speaker": "jade",
-        "line": "You matter. You're part of this."
-      },
-      {
-        "speaker": "marcus",
-        "line": "The circle doesn't work without you in it."
-      },
-      {
-        "speaker": "judy",
-        "line": "Even though I'm a lot? Even though I'm..."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Even because. You're exactly who we need."
-      },
-      {
-        "speaker": "jade",
-        "line": "Stop questioning it. Just be here."
-      },
-      {
-        "speaker": "judy",
-        "line": "Okay. I can do that."
-      },
-      {
-        "speaker": "marcus",
-        "line": "That's all there is."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Should we think about heading in? It's getting late."
-      },
-      {
-        "speaker": "jade",
-        "line": "Not yet. Let's stay like this."
-      },
-      {
-        "speaker": "judy",
-        "line": "Yeah. Like this. Please."
-      }
-    ],
-    "timestamp": "2026-06-09T23:02:40.356959"
-  },
-  {
     "day": 7,
     "cycle": "morning",
     "character": "marcus",
@@ -9456,5 +9262,154 @@
       }
     ],
     "timestamp": "2026-06-19T18:32:01.648889"
+  },
+  {
+    "day": 16,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "He settles by the firepit as night deepens, the stray warm against his leg, finally resting without the weight of tomorrow pressing him under.",
+    "thought": "Today I chose. Tomorrow I will too.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "calm",
+    "timestamp": "2026-06-19T22:33:05.135240"
+  },
+  {
+    "day": 16,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He sits beside Marcus at the fire, the day's relief settling in his chest as he watches the man he's been holding finally believe he's safe.",
+    "thought": "He's choosing to stay. That's everything.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-19T22:33:05.135240"
+  },
+  {
+    "day": 16,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She drifts from the darkness to settle across from them at the fire, drawn to the quiet realness of this moment without needing to explain.",
+    "thought": "He's not performing anymore. He's just here.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "open",
+    "timestamp": "2026-06-19T22:33:05.135240"
+  },
+  {
+    "day": 16,
+    "cycle": "night",
+    "character": "judy",
+    "action": "She rests on the house porch, watching the three of them by the fire, one hand on her belly, finally able to breathe without fear.",
+    "thought": "They're staying. All of them. We're safe.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-19T22:33:05.135240"
+  },
+  {
+    "day": 16,
+    "cycle": "night",
+    "character": "stray",
+    "action": "It settles against Marcus's leg, close and content, its warmth mirroring his for the first time without flinch or hesitation.",
+    "thought": "Safe. He is calm. We are safe.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-19T22:33:05.135240"
+  },
+  {
+    "day": 16,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade"
+    ],
+    "description": "By the firepit at night, Marcus rests against Ryan with the stray at his leg — choosing today over tomorrow for the first time. Jade sits across from them; Judy rests on the porch, finally able to sleep.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You're still here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. I'm staying."
+      },
+      {
+        "speaker": "jade",
+        "line": "One day at a time?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's the only honest thing I know how to do."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's everything. That's more than I could ask for."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm not there yet. Still scared most of the time."
+      },
+      {
+        "speaker": "jade",
+        "line": "But you chose anyway. That's the whole thing, isn't it?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're not choosing alone. We're all here. Tomorrow and the day after."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I know. I finally know."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're real now. Not performing. Just... here."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm tired."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then rest. We'll hold the fire."
+      },
+      {
+        "speaker": "jade",
+        "line": "And tomorrow we'll do it again. Same people, same choice."
+      },
+      {
+        "speaker": "marcus",
+        "line": "One day at a time."
+      },
+      {
+        "speaker": "ryan",
+        "line": "One day at a time."
+      }
+    ],
+    "timestamp": "2026-06-19T22:33:05.135240"
   }
 ]
