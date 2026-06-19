@@ -1,218 +1,6 @@
 [
   {
     "day": 6,
-    "cycle": "evening",
-    "character": "marcus",
-    "action": "Returned from fishing and helped clean the catch by firelight, watching Jade draw Judy quietly into the group.",
-    "thought": "She understood something we're all still learning.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "content",
-    "timestamp": "2026-06-09T18:02:58.616972"
-  },
-  {
-    "day": 6,
-    "cycle": "evening",
-    "character": "ryan",
-    "action": "Tended the fire for cooking while the pup and Jade worked to bring Judy back in without fuss.",
-    "thought": "Maybe we broke something today. She's fixing it.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "content",
-    "timestamp": "2026-06-09T18:02:58.616972"
-  },
-  {
-    "day": 6,
-    "cycle": "evening",
-    "character": "jade",
-    "action": "Left the fishing group's comfort to find Judy waiting alone and sat with her as evening deepened.",
-    "thought": "She was drowning and I didn't see it.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "peaceful",
-    "timestamp": "2026-06-09T18:02:58.616972"
-  },
-  {
-    "day": 6,
-    "cycle": "evening",
-    "character": "judy",
-    "action": "Waited on the porch all day until the pup sensed it and Jade came, finally breaking the isolation.",
-    "thought": "Maybe there's room. Maybe I'm not alone.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "hopeful",
-    "timestamp": "2026-06-09T18:02:58.616972"
-  },
-  {
-    "day": 6,
-    "cycle": "evening",
-    "character": "stray",
-    "action": "Left the fishing trio mid-evening and went straight to Judy, pressing close in the growing dusk.",
-    "thought": "Her sadness called me. I went. That's how.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "content",
-    "timestamp": "2026-06-09T18:02:58.616972"
-  },
-  {
-    "day": 6,
-    "cycle": "evening",
-    "type": "interaction",
-    "characters": [
-      "jade",
-      "judy"
-    ],
-    "description": "The pup, sensing Judy's loneliness, breaks from the fishing trio to find her on the porch, and Jade understands immediately.",
-    "dialogue": [
-      {
-        "speaker": "jade",
-        "line": "You know we were fishing for dinner tomorrow too, right? Not just today."
-      },
-      {
-        "speaker": "judy",
-        "line": "I know. I guess I just... I'm tired all the time."
-      },
-      {
-        "speaker": "jade",
-        "line": "Come sit with me by the fire?"
-      },
-      {
-        "speaker": "judy",
-        "line": "You three were having a good day together."
-      },
-      {
-        "speaker": "jade",
-        "line": "We were. But the day's not over yet."
-      },
-      {
-        "speaker": "judy",
-        "line": "Ryan and you, you're so easy together."
-      },
-      {
-        "speaker": "jade",
-        "line": "He's steady. But that doesn't mean..."
-      },
-      {
-        "speaker": "judy",
-        "line": "And Marcus, he actually talked to you. He hardly talks to anyone."
-      },
-      {
-        "speaker": "jade",
-        "line": "He talks to all of us."
-      },
-      {
-        "speaker": "judy",
-        "line": "Not like that. Not with that... I don't know. Ease."
-      },
-      {
-        "speaker": "jade",
-        "line": "Come sit. Please."
-      },
-      {
-        "speaker": "judy",
-        "line": "You feel bad for me."
-      },
-      {
-        "speaker": "jade",
-        "line": "I didn't know you were alone until now."
-      },
-      {
-        "speaker": "judy",
-        "line": "I'm always alone."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're not. See?"
-      },
-      {
-        "speaker": "judy",
-        "line": "The pup just wants food."
-      },
-      {
-        "speaker": "jade",
-        "line": "He's been eating fish all day. He wants you."
-      },
-      {
-        "speaker": "judy",
-        "line": "I'm scared."
-      },
-      {
-        "speaker": "jade",
-        "line": "Of what?"
-      },
-      {
-        "speaker": "judy",
-        "line": "That there's no room for me here. That I'll always be watching from outside."
-      },
-      {
-        "speaker": "jade",
-        "line": "There's room. Come sit with me. With us."
-      },
-      {
-        "speaker": "judy",
-        "line": "Why would you want that?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Because you're here. And because I didn't realize you were hurting."
-      },
-      {
-        "speaker": "judy",
-        "line": "I'm not angry at you."
-      },
-      {
-        "speaker": "jade",
-        "line": "I know. But I'm still here now."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Fire's almost ready for dinner."
-      },
-      {
-        "speaker": "marcus",
-        "line": "We got enough for days."
-      },
-      {
-        "speaker": "jade",
-        "line": "Judy's going to help us eat it."
-      },
-      {
-        "speaker": "judy",
-        "line": "If you want me to."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Of course we want you."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You're part of this."
-      }
-    ],
-    "timestamp": "2026-06-09T18:02:58.616972"
-  },
-  {
-    "day": 6,
     "cycle": "night",
     "character": "marcus",
     "action": "He arrives at the porch as darkness settles, his simple presence completing the circle without need for words.",
@@ -9463,5 +9251,210 @@
       }
     ],
     "timestamp": "2026-06-19T15:02:22.214483"
+  },
+  {
+    "day": 16,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "As the fire burned down toward evening, Marcus settled close beside Ryan without pulling away.",
+    "thought": "Choosing today is enough. I can do this.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "grounded",
+    "timestamp": "2026-06-19T18:32:01.648889"
+  },
+  {
+    "day": 16,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "Ryan tended the fire with one eye on Marcus, watching him rest easy for the first time in days.",
+    "thought": "He finally believes I won't leave. He's here.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "warm",
+    "timestamp": "2026-06-19T18:32:01.648889"
+  },
+  {
+    "day": 16,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "Jade drifted to the firepit as evening fell, settling where she could watch the shift in Marcus unfold.",
+    "thought": "Something opened in him. He's real now.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "open",
+    "timestamp": "2026-06-19T18:32:01.648889"
+  },
+  {
+    "day": 16,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "Judy settled on the house porch, the stray pressed close against her, both of them warm and at rest.",
+    "thought": "The family is together. I can finally sleep.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-19T18:32:01.648889"
+  },
+  {
+    "day": 16,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "The stray curled against Judy as evening darkened, its breathing slow and its body finally loose.",
+    "thought": "He is calm. We are all safe.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-19T18:32:01.648889"
+  },
+  {
+    "day": 16,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade"
+    ],
+    "description": "At the firepit, Marcus let himself rest against Ryan while Jade settled nearby—and for the first time, none of them needed to speak about it.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Fire's looking good. The fish should be done soon."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You seem different tonight. Less... I don't know. Heavy?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I stopped waiting for tomorrow to be the problem."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Is that what you were doing? All this time?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Waiting for things to get worse. For me to leave. For you all to give up."
+      },
+      {
+        "speaker": "ryan",
+        "line": "But you didn't leave."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not tonight. Not today either."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's all any of us can do, you know. One day."
+      },
+      {
+        "speaker": "jade",
+        "line": "What's the serious conversation about?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Marcus accepting that staying is okay."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Accepting that I can choose it. Even when it's hard."
+      },
+      {
+        "speaker": "jade",
+        "line": "It's always going to be hard sometimes."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. But maybe that's fine."
+      },
+      {
+        "speaker": "jade",
+        "line": "It's more than fine. It's real."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're both wise tonight."
+      },
+      {
+        "speaker": "jade",
+        "line": "We've had time to think about it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You two stayed even when I was at my worst."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Of course we did."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's what it means to choose someone."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm starting to believe that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Believe it. I wake up praying you'll stay. And you do."
+      },
+      {
+        "speaker": "marcus",
+        "line": "One day."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's everything."
+      },
+      {
+        "speaker": "jade",
+        "line": "And tomorrow we'll choose again."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Together?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Always."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Always."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Okay then. I can do this."
+      }
+    ],
+    "timestamp": "2026-06-19T18:32:01.648889"
   }
 ]

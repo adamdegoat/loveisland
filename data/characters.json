@@ -6,18 +6,18 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 77,
-      "openness": 93,
+      "openness": 94,
       "ambition": 47,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "grounded",
     "location": {
-      "waypoint": "rock_cluster",
+      "waypoint": "firepit_left",
       "x": 75,
       "y": 25
     },
@@ -25,21 +25,21 @@
     "relationships": {
       "ryan": {
         "closeness": 100,
-        "tension": 13,
+        "tension": 12,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 15,
-        "attraction": 39
+        "tension": 14,
+        "attraction": 40
       },
       "judy": {
-        "closeness": 65,
+        "closeness": 66,
         "tension": 18,
         "attraction": 0
       },
       "stray": {
-        "closeness": 42,
+        "closeness": 43,
         "tension": 0,
         "attraction": 0
       }
@@ -50,11 +50,6 @@
       "state": "talking"
     },
     "memories": [
-      {
-        "day": 10,
-        "text": "I didn't run this morning. He was waiting.",
-        "weight": 3
-      },
       {
         "day": 11,
         "text": "She was terrified they'd leave. I promised I wouldn't.",
@@ -119,6 +114,11 @@
         "day": 16,
         "text": "Ryan promised to choose me tomorrow. One day is enough now.",
         "weight": 3
+      },
+      {
+        "day": 16,
+        "text": "I stopped waiting for tomorrow. I chose today. Ryan held me steady.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -145,14 +145,14 @@
       "ambition": 89,
       "loneliness": 0,
       "resilience": 49,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "warm",
     "location": {
-      "waypoint": "rock_cluster",
+      "waypoint": "firepit_right",
       "x": 42,
       "y": 48
     },
@@ -160,7 +160,7 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 13,
+        "tension": 12,
         "attraction": 0
       },
       "jade": {
@@ -236,9 +236,9 @@
         "weight": 2
       },
       {
-        "day": 15,
-        "text": "He moved stones with me all afternoon, choosing us.",
-        "weight": 2
+        "day": 16,
+        "text": "Marcus finally rested against me. He chose us. That was everything.",
+        "weight": 3
       },
       {
         "day": 16,
@@ -279,16 +279,16 @@
       "trust": 100,
       "openness": 100,
       "ambition": 39,
-      "loneliness": 1,
+      "loneliness": 0,
       "resilience": 76,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 76,
+      "energy": 70,
       "health": 100
     },
     "mood": "open",
     "location": {
-      "waypoint": "rock_cluster",
+      "waypoint": "firepit_front",
       "x": 40,
       "y": 50
     },
@@ -296,8 +296,8 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 15,
-        "attraction": 39
+        "tension": 14,
+        "attraction": 40
       },
       "ryan": {
         "closeness": 100,
@@ -359,11 +359,6 @@
         "weight": 2
       },
       {
-        "day": 14,
-        "text": "He said he doesn't know tomorrow. I need him to know.",
-        "weight": 2
-      },
-      {
         "day": 15,
         "text": "He came back. He's choosing them again. It's real, not words.",
         "weight": 2
@@ -387,6 +382,11 @@
         "day": 16,
         "text": "I told him we choose every day, not because we have to. He heard me.",
         "weight": 2
+      },
+      {
+        "day": 16,
+        "text": "He opened at the fire. For the first time, he wasn't performing.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -408,18 +408,18 @@
     "color": "#2dd4bf",
     "scores": {
       "trust": 100,
-      "openness": 95,
+      "openness": 96,
       "ambition": 34,
-      "loneliness": 11,
+      "loneliness": 8,
       "resilience": 76,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "house_garden",
+      "waypoint": "house_porch",
       "x": 50,
       "y": 82
     },
@@ -429,7 +429,7 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 65,
+        "closeness": 66,
         "tension": 18,
         "attraction": 0
       },
@@ -450,7 +450,10 @@
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": null,
+    "interaction": {
+      "with": "stray",
+      "state": "sitting_together"
+    },
     "memories": [
       {
         "day": 4,
@@ -543,18 +546,18 @@
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
     "interaction": {
-      "with": "marcus",
+      "with": "judy",
       "state": "sitting_together"
     },
     "location": {
-      "waypoint": "rock_cluster",
+      "waypoint": "house_porch",
       "x": 20,
       "y": 88
     },
     "mood": "content",
     "relationships": {
       "marcus": {
-        "closeness": 77,
+        "closeness": 78,
         "tension": 22,
         "attraction": 0
       },
@@ -575,14 +578,14 @@
       }
     },
     "scores": {
-      "trust": 81,
+      "trust": 82,
       "openness": 47,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 87,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "shelter": "under the palms",
