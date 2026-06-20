@@ -1,207 +1,6 @@
 [
   {
     "day": 7,
-    "cycle": "evening",
-    "character": "marcus",
-    "action": "Moves quietly beside Jade at the fire, preparing the fish with practiced hands.",
-    "thought": "She reached me and I didn't pull away.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "calm",
-    "timestamp": "2026-06-10T18:32:36.408169"
-  },
-  {
-    "day": 7,
-    "cycle": "evening",
-    "character": "ryan",
-    "action": "Tends the fire and cooks the fish, moving between them with renewed energy.",
-    "thought": "Did she just look at him like that?",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "energized",
-    "timestamp": "2026-06-10T18:32:36.408169"
-  },
-  {
-    "day": 7,
-    "cycle": "evening",
-    "character": "jade",
-    "action": "Moves close to the fire, watching Marcus work, her eyes bright with something she can't quite name.",
-    "thought": "He let me stay beside him. That's everything.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "alive",
-    "timestamp": "2026-06-10T18:32:36.408169"
-  },
-  {
-    "day": 7,
-    "cycle": "evening",
-    "character": "judy",
-    "action": "Sits alone at the shore, watching the three of them work and laugh by the fire, her hand on her belly.",
-    "thought": "They have each other. I have no one.",
-    "location": {
-      "waypoint": "beach_right",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "wistful",
-    "timestamp": "2026-06-10T18:32:36.408169"
-  },
-  {
-    "day": 7,
-    "cycle": "evening",
-    "character": "stray",
-    "action": "Moves between the fire and Judy's side, the pup's eyes sad, finally settling beside her in the dark.",
-    "thought": "She's alone. But my warmth helps. I stay.",
-    "location": {
-      "waypoint": "beach_right",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "protective",
-    "timestamp": "2026-06-10T18:32:36.408169"
-  },
-  {
-    "day": 7,
-    "cycle": "evening",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "marcus",
-      "jade"
-    ],
-    "description": "Evening finds them cooking fresh fish at the fire—Marcus and Jade glow beside the flames while Ryan tends it, and Judy watches from the shore with the stray at her side.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "We actually pulled it off. Fresh fish—real food."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Better than the stores."
-      },
-      {
-        "speaker": "jade",
-        "line": "So much better. The way you showed us... I felt it click."
-      },
-      {
-        "speaker": "ryan",
-        "line": "He's got a gift for it. Something in his hands just knows the water."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You were quick to learn."
-      },
-      {
-        "speaker": "jade",
-        "line": "Because you taught me. Really taught me. Not just the how—the why."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Okay, now I'm envious. What'd he teach you that he didn't teach me?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Different things. You think in structures. You'd build something to catch them."
-      },
-      {
-        "speaker": "jade",
-        "line": "He's right. You would. But Marcus—he reads the water like it's talking to him."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That so? That's—that's something."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Everyone has their way. Building's yours. Reading's mine."
-      },
-      {
-        "speaker": "jade",
-        "line": "And mine?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "You just... follow the feeling. It works."
-      },
-      {
-        "speaker": "ryan",
-        "line": "It does. Worked today anyway. You two were quiet out there at the pools, yeah?"
-      },
-      {
-        "speaker": "jade",
-        "line": "He was teaching me. Showing me things I never would have seen."
-      },
-      {
-        "speaker": "marcus",
-        "line": "She asked good questions."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Jade's good at that."
-      },
-      {
-        "speaker": "jade",
-        "line": "The stray came with us too. Even the pup wanted to learn."
-      },
-      {
-        "speaker": "ryan",
-        "line": "And Judy?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "She stayed at the shore."
-      },
-      {
-        "speaker": "jade",
-        "line": "She was tired. The pregnancy—it's wearing her down."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah. She's been struggling."
-      },
-      {
-        "speaker": "jade",
-        "line": "We should make sure she eats well tonight. Make sure she knows she belongs."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Already thinking about it."
-      },
-      {
-        "speaker": "marcus",
-        "line": "We have enough now."
-      },
-      {
-        "speaker": "jade",
-        "line": "For the first time in days. Thank you for this."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You're welcome."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Let's eat before it gets cold."
-      }
-    ],
-    "timestamp": "2026-06-10T18:32:36.408169"
-  },
-  {
-    "day": 7,
     "cycle": "night",
     "character": "marcus",
     "action": "Retreats to his tent without sitting by the fire, afraid of what he's letting himself feel.",
@@ -9344,5 +9143,182 @@
       }
     ],
     "timestamp": "2026-06-20T18:32:28.217446"
+  },
+  {
+    "day": 17,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "He sits at the fire's edge through the night, listening as Ryan voices the fear that's been gathering, and finally names why he needs both of them to stay.",
+    "thought": "I need him to know he still matters deeply",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "settled",
+    "timestamp": "2026-06-20T22:32:32.693902"
+  },
+  {
+    "day": 17,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He names the fear that's been building all day—that he's being replaced—sitting close to Marcus, needing to be heard and held in the aftermath of the morning's confessions.",
+    "thought": "I need him to still choose me too",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "vulnerable",
+    "timestamp": "2026-06-20T22:32:32.693902"
+  },
+  {
+    "day": 17,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She sits close to Marcus, reaching across to touch Ryan's arm as the night unfolds, holding them both steady as the hardest truths come forward.",
+    "thought": "I have to make them both feel safe",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "grounded",
+    "timestamp": "2026-06-20T22:32:32.693902"
+  },
+  {
+    "day": 17,
+    "cycle": "night",
+    "character": "judy",
+    "action": "She rests near the fire with one hand on her belly, listening to the three process their complicated love, feeling the safety they're building extend to her and her child.",
+    "thought": "All safe now. My baby will know this.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-20T22:32:32.693902"
+  },
+  {
+    "day": 17,
+    "cycle": "night",
+    "character": "stray",
+    "action": "It whimpers softly at the edge of the firepit, sensing the shift in the air as fear passes through the group, then settles close to Judy's side where it's warm and safe.",
+    "thought": "She's safe. We're all safe here.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-20T22:32:32.693902"
+  },
+  {
+    "day": 17,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade"
+    ],
+    "description": "At the fire's edge, Ryan finally voices the fear that's been growing since morning—that he's being replaced—while Marcus and Jade hold him steady, unwilling to let him believe it.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "I keep thinking about what this means. For all of us."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Doesn't have to change anything."
+      },
+      {
+        "speaker": "jade",
+        "line": "But it does. It already has."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm not trying to argue that. I'm just scared."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Of what."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That you'll choose her and I'll be left behind. That I've built all this with you and one day you both just walk away."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's not what's happening."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You don't know that. Tomorrow anything could change. We all know that now."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I chose you on Day 3. I'm still choosing you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "But different now. You're not choosing me because you're afraid. You're choosing her because you want her."
+      },
+      {
+        "speaker": "jade",
+        "line": "He's choosing both. He told us that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know. But it's not the same kind of choice anymore, is it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. It's not. I love her. And I still need you. Both of you. Not because I'm scared. Because you matter."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay."
+      },
+      {
+        "speaker": "jade",
+        "line": "We're not leaving. Any of us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Famous last words. But maybe I'm starting to believe it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Believe it. I mean it."
+      },
+      {
+        "speaker": "jade",
+        "line": "We're going to be okay. All of us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. For the first time since this morning, I can breathe."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We're going to figure it out. The three of us."
+      },
+      {
+        "speaker": "jade",
+        "line": "Together. That's what matters."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Together. Yeah."
+      }
+    ],
+    "timestamp": "2026-06-20T22:32:32.693902"
   }
 ]

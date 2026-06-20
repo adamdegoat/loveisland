@@ -10,9 +10,9 @@
       "ambition": 47,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
-      "thirst": 53,
-      "energy": 82,
+      "hunger": 45,
+      "thirst": 45,
+      "energy": 100,
       "health": 100
     },
     "mood": "settled",
@@ -25,17 +25,17 @@
     "relationships": {
       "ryan": {
         "closeness": 100,
-        "tension": 7,
+        "tension": 5,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 6,
+        "tension": 5,
         "attraction": 43
       },
       "judy": {
-        "closeness": 74,
-        "tension": 13,
+        "closeness": 76,
+        "tension": 12,
         "attraction": 0
       },
       "stray": {
@@ -46,15 +46,10 @@
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "jade",
-      "state": "sitting_together"
+      "with": "ryan",
+      "state": "talking"
     },
     "memories": [
-      {
-        "day": 12,
-        "text": "Solitude was safer than this. But this is worth it.",
-        "weight": 3
-      },
       {
         "day": 13,
         "text": "I sat with them instead of running. I told them I'm terrified. They stayed.",
@@ -119,6 +114,11 @@
         "day": 17,
         "text": "I told them I choose both, daily. Neither cancels the other.",
         "weight": 3
+      },
+      {
+        "day": 17,
+        "text": "I told Ryan he's why I stayed. He's not secondary. I meant every word.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -144,15 +144,15 @@
       "openness": 100,
       "ambition": 90,
       "loneliness": 0,
-      "resilience": 51,
-      "hunger": 53,
-      "thirst": 53,
-      "energy": 82,
+      "resilience": 53,
+      "hunger": 45,
+      "thirst": 45,
+      "energy": 100,
       "health": 100
     },
-    "mood": "thoughtful",
+    "mood": "vulnerable",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "firepit_left",
       "x": 42,
       "y": 48
     },
@@ -160,17 +160,17 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 7,
+        "tension": 5,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 17,
+        "tension": 15,
         "attraction": 33
       },
       "judy": {
-        "closeness": 86,
-        "tension": 18,
+        "closeness": 88,
+        "tension": 17,
         "attraction": 0
       },
       "stray": {
@@ -236,13 +236,13 @@
         "weight": 3
       },
       {
-        "day": 16,
-        "text": "He came to the fire himself this morning. He's really staying. Choosing us.",
-        "weight": 2
+        "day": 17,
+        "text": "I watched them name it aloud. We three are becoming something real now.",
+        "weight": 3
       },
       {
         "day": 17,
-        "text": "I watched them name it aloud. We three are becoming something real now.",
+        "text": "He said I'm why he's still here. I was so afraid I wasn't anymore. He chose me.",
         "weight": 3
       },
       {
@@ -279,16 +279,16 @@
       "trust": 100,
       "openness": 100,
       "ambition": 39,
-      "loneliness": 1,
-      "resilience": 78,
-      "hunger": 53,
-      "thirst": 53,
-      "energy": 82,
+      "loneliness": 0,
+      "resilience": 79,
+      "hunger": 45,
+      "thirst": 45,
+      "energy": 100,
       "health": 100
     },
-    "mood": "content",
+    "mood": "grounded",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_front",
       "x": 40,
       "y": 50
     },
@@ -296,17 +296,17 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 6,
+        "tension": 5,
         "attraction": 43
       },
       "ryan": {
         "closeness": 100,
-        "tension": 17,
+        "tension": 15,
         "attraction": 28
       },
       "judy": {
-        "closeness": 78,
-        "tension": 17,
+        "closeness": 80,
+        "tension": 16,
         "attraction": 0
       },
       "stray": {
@@ -318,7 +318,7 @@
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
     "interaction": {
       "with": "marcus",
-      "state": "sitting_together"
+      "state": "talking"
     },
     "memories": [
       {
@@ -357,11 +357,6 @@
         "weight": 3
       },
       {
-        "day": 15,
-        "text": "He came back. He's choosing them again. It's real, not words.",
-        "weight": 2
-      },
-      {
         "day": 16,
         "text": "He's real now. Choosing every day, not performing.",
         "weight": 2
@@ -390,6 +385,11 @@
         "day": 17,
         "text": "Ryan needed to know Marcus still chose him. I felt it matter.",
         "weight": 2
+      },
+      {
+        "day": 17,
+        "text": "I held them both while they learned to trust this would stay. We held each other.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -413,11 +413,11 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 13,
+      "loneliness": 11,
       "resilience": 77,
-      "hunger": 53,
-      "thirst": 53,
-      "energy": 82,
+      "hunger": 45,
+      "thirst": 45,
+      "energy": 100,
       "health": 100
     },
     "mood": "peaceful",
@@ -432,18 +432,18 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 74,
-        "tension": 13,
+        "closeness": 76,
+        "tension": 12,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 86,
-        "tension": 18,
+        "closeness": 88,
+        "tension": 17,
         "attraction": 0
       },
       "jade": {
-        "closeness": 78,
-        "tension": 17,
+        "closeness": 80,
+        "tension": 16,
         "attraction": 0
       },
       "stray": {
@@ -560,35 +560,35 @@
     "mood": "content",
     "relationships": {
       "marcus": {
-        "closeness": 88,
-        "tension": 17,
+        "closeness": 90,
+        "tension": 16,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 84,
-        "tension": 19,
+        "closeness": 86,
+        "tension": 18,
         "attraction": 0
       },
       "jade": {
-        "closeness": 69,
-        "tension": 19,
+        "closeness": 71,
+        "tension": 18,
         "attraction": 0
       },
       "judy": {
         "closeness": 100,
-        "tension": 15,
+        "tension": 14,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 85,
+      "trust": 86,
       "openness": 48,
       "ambition": 0,
-      "loneliness": 1,
+      "loneliness": 0,
       "resilience": 89,
-      "hunger": 53,
-      "thirst": 53,
-      "energy": 82,
+      "hunger": 45,
+      "thirst": 45,
+      "energy": 100,
       "health": 100
     },
     "shelter": "under the palms",
