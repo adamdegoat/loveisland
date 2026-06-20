@@ -5,19 +5,19 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 81,
+      "trust": 82,
       "openness": 96,
       "ambition": 47,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
-    "mood": "peaceful",
+    "mood": "reflective",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "rock_cluster",
       "x": 75,
       "y": 25
     },
@@ -30,8 +30,8 @@
       },
       "jade": {
         "closeness": 100,
-        "tension": 8,
-        "attraction": 42
+        "tension": 7,
+        "attraction": 43
       },
       "judy": {
         "closeness": 71,
@@ -46,7 +46,7 @@
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "jade",
+      "with": "ryan",
       "state": "talking"
     },
     "memories": [
@@ -145,14 +145,14 @@
       "ambition": 90,
       "loneliness": 0,
       "resilience": 50,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
-    "mood": "content",
+    "mood": "thoughtful",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "rock_cluster",
       "x": 42,
       "y": 48
     },
@@ -165,7 +165,7 @@
       },
       "jade": {
         "closeness": 100,
-        "tension": 19,
+        "tension": 20,
         "attraction": 33
       },
       "judy": {
@@ -246,14 +246,14 @@
         "weight": 2
       },
       {
-        "day": 16,
-        "text": "At the rocks, I said tomorrow I'll choose him again. He finally believed me.",
-        "weight": 2
-      },
-      {
         "day": 17,
         "text": "I watched them name it aloud. We three are becoming something real now.",
         "weight": 3
+      },
+      {
+        "day": 17,
+        "text": "Marcus checked in at the rocks. He said I hold them steady. I still fit here.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -279,16 +279,16 @@
       "trust": 100,
       "openness": 100,
       "ambition": 39,
-      "loneliness": 0,
+      "loneliness": 3,
       "resilience": 78,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
-    "mood": "open",
+    "mood": "content",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "palm_shade",
       "x": 40,
       "y": 50
     },
@@ -296,12 +296,12 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 8,
-        "attraction": 42
+        "tension": 7,
+        "attraction": 43
       },
       "ryan": {
         "closeness": 100,
-        "tension": 19,
+        "tension": 20,
         "attraction": 28
       },
       "judy": {
@@ -316,10 +316,7 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": {
-      "with": "marcus",
-      "state": "talking"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -413,11 +410,11 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 13,
+      "loneliness": 16,
       "resilience": 77,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "peaceful",
@@ -545,10 +542,7 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": {
-      "with": "marcus",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "location": {
       "waypoint": "firepit_right",
       "x": 20,
@@ -581,11 +575,11 @@
       "trust": 84,
       "openness": 48,
       "ambition": 0,
-      "loneliness": 0,
+      "loneliness": 3,
       "resilience": 89,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "shelter": "under the palms",
