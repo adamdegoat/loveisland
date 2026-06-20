@@ -1,28 +1,35 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-20",
+    "id": "2026-06-21",
     "closes": "tonight",
-    "question": "Marcus finally stopped waiting. Does he tell Ryan and Jade he's choosing them—or show it instead?",
+    "question": "Tomorrow: Should Marcus and Jade be openly tender, or move gently through Ryan's adjusting?",
     "options": [
       {
-        "id": "speak_it",
-        "label": "Tell them",
-        "desc": "Name the choice aloud. Risk the peace for words."
+        "id": "openly",
+        "label": "Openly tender",
+        "desc": "Their love is real; watching it is how Ryan learns he's still held."
       },
       {
-        "id": "show_it",
-        "label": "Show them",
-        "desc": "Let actions and warmth say everything. Tomorrow will prove it."
+        "id": "gently",
+        "label": "Move gently",
+        "desc": "Tender care first; Ryan's trust settles when nothing's rushed."
+      },
+      {
+        "id": "three_ways",
+        "label": "Three together",
+        "desc": "All affection flows between all three—no pairing off, all secure."
       }
     ]
   },
   "in_play": {
-    "id": "speak_up",
-    "label": "Tell him now",
-    "desc": "Name the feeling. Deepen it with truth, risk disrupting the peace.",
-    "decided": "2026-06-20",
-    "votes": 0,
-    "tally": {}
+    "id": "speak_it",
+    "label": "Tell them",
+    "desc": "Name the choice aloud. Risk the peace for words.",
+    "decided": "2026-06-21",
+    "votes": 1,
+    "tally": {
+      "speak_it": 1
+    }
   }
 }
