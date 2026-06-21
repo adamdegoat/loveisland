@@ -1,198 +1,6 @@
 [
   {
     "day": 8,
-    "cycle": "morning",
-    "character": "marcus",
-    "action": "He walks to the cliff base in the grey dawn light, needing space from what he let happen.",
-    "thought": "She saw me run. Can I face her?",
-    "location": {
-      "waypoint": "cliff_base",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "guarded",
-    "timestamp": "2026-06-11T07:03:25.284374"
-  },
-  {
-    "day": 8,
-    "cycle": "morning",
-    "character": "ryan",
-    "action": "He's up early tending the fire, laying out water bowls, watching the east sky lighten.",
-    "thought": "Something shifted last night. I felt it.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "thoughtful",
-    "timestamp": "2026-06-11T07:03:25.284374"
-  },
-  {
-    "day": 8,
-    "cycle": "morning",
-    "character": "jade",
-    "action": "She wakes restless and walks toward the cliffs, drawn by something she can't name.",
-    "thought": "He was there. Where did he go?",
-    "location": {
-      "waypoint": "cliff_base",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "restless",
-    "timestamp": "2026-06-11T07:03:25.284374"
-  },
-  {
-    "day": 8,
-    "cycle": "morning",
-    "character": "judy",
-    "action": "She sits at the beach's edge with the pup, watching the water, feeling the distance from last night.",
-    "thought": "They have each other. I'm still alone.",
-    "location": {
-      "waypoint": "beach_left",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "wistful",
-    "timestamp": "2026-06-11T07:03:25.284374"
-  },
-  {
-    "day": 8,
-    "cycle": "morning",
-    "character": "stray",
-    "action": "The pup presses warm against Judy's leg, sensing her sadness and staying close.",
-    "thought": "She's sad. I stay. I'm here.",
-    "location": {
-      "waypoint": "beach_left",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "protective",
-    "timestamp": "2026-06-11T07:03:25.284374"
-  },
-  {
-    "day": 8,
-    "cycle": "morning",
-    "type": "interaction",
-    "characters": [
-      "marcus",
-      "jade"
-    ],
-    "description": "Jade finds Marcus alone at the cliff base at dawn, and they face what shattered between them last night.",
-    "dialogue": [
-      {
-        "speaker": "marcus",
-        "line": "Didn't expect to see you this early."
-      },
-      {
-        "speaker": "jade",
-        "line": "Didn't expect you to run."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I had to."
-      },
-      {
-        "speaker": "jade",
-        "line": "From me?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "No. From how fast it was happening."
-      },
-      {
-        "speaker": "jade",
-        "line": "We were just cooking fish, Marcus."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I know. But you reached for me and I let you. That's when I got scared."
-      },
-      {
-        "speaker": "jade",
-        "line": "Of what?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Of wanting it back."
-      },
-      {
-        "speaker": "jade",
-        "line": "That's not a bad thing."
-      },
-      {
-        "speaker": "marcus",
-        "line": "For me it is. I lose things."
-      },
-      {
-        "speaker": "jade",
-        "line": "Then stop running."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Can't promise that yet."
-      },
-      {
-        "speaker": "jade",
-        "line": "Just promise you'll come back."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah. I can do that."
-      },
-      {
-        "speaker": "jade",
-        "line": "That's enough."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm sorry about last night."
-      },
-      {
-        "speaker": "jade",
-        "line": "You don't have to apologize for being scared."
-      },
-      {
-        "speaker": "marcus",
-        "line": "What about leaving?"
-      },
-      {
-        "speaker": "jade",
-        "line": "That I didn't like. But I understand."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm still figuring this out."
-      },
-      {
-        "speaker": "jade",
-        "line": "So am I."
-      },
-      {
-        "speaker": "marcus",
-        "line": "We could figure it out slow."
-      },
-      {
-        "speaker": "jade",
-        "line": "That sounds nice."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Thank you for coming to find me."
-      },
-      {
-        "speaker": "jade",
-        "line": "Where else would I go?"
-      }
-    ],
-    "timestamp": "2026-06-11T07:03:25.284374"
-  },
-  {
-    "day": 8,
     "cycle": "midday",
     "character": "marcus",
     "action": "He drifted back from the cliff as the sun climbed, settling near the house porch by midday, watching the camp breathe.",
@@ -9307,5 +9115,221 @@
       }
     ],
     "timestamp": "2026-06-21T07:07:31.001345"
+  },
+  {
+    "day": 18,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "He settles on the house step beside Ryan, the afternoon light warm on his face, his hand resting on the stray's head as it presses against his leg.",
+    "thought": "He needs to hear it again. That's alright.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "resolved",
+    "timestamp": "2026-06-21T11:32:19.979383"
+  },
+  {
+    "day": 18,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "He comes to the house step where Marcus sits, seeking the daylight confirmation of what was said at dawn, needing the words to feel real and lasting.",
+    "thought": "He's here. He chose me. I believe it.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "calm",
+    "timestamp": "2026-06-21T11:32:19.979383"
+  },
+  {
+    "day": 18,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "She stays at her hammock through the midday hour, turning the morning's confession over in her mind, trusting in what was said and the space she's been given.",
+    "thought": "He meant it. He really meant it.",
+    "location": {
+      "waypoint": "hammock_beside",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "curious",
+    "timestamp": "2026-06-21T11:32:19.979383"
+  },
+  {
+    "day": 18,
+    "cycle": "midday",
+    "character": "judy",
+    "action": "She rests inside the house, her body heavy with the child and with peace, listening to the quiet voices on the porch and trusting in the steadiness she hears.",
+    "thought": "Safe. My baby will know this.",
+    "location": {
+      "waypoint": "house_inside",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-21T11:32:19.979383"
+  },
+  {
+    "day": 18,
+    "cycle": "midday",
+    "character": "stray",
+    "action": "The pup finds Marcus on the house step and settles against him, its body warm and trusting, breath slowing into sleep as the island quiets at midday.",
+    "thought": "He is calm. We are safe together.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "content",
+    "timestamp": "2026-06-21T11:32:19.979383"
+  },
+  {
+    "day": 18,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus"
+    ],
+    "description": "On the house step at midday, Marcus proves to Ryan that his dawn confession was real, the stray's breathing steady against his leg.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "So you really meant it. This morning."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yes."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Just like that? No second thoughts yet?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not yet."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're good with her."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She's uncomplicated."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Unlike me."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Unlike you, yeah."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And Jade."
+      },
+      {
+        "speaker": "marcus",
+        "line": "And Jade."
+      },
+      {
+        "speaker": "ryan",
+        "line": "How does that work in your head, Marcus? How do you choose two people?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You just do. Every morning, you choose again."
+      },
+      {
+        "speaker": "ryan",
+        "line": "What if you stop choosing one day?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I won't."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You sound sure."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I am."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I hated last night. When I thought maybe I was being left behind."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You weren't. You never were."
+      },
+      {
+        "speaker": "ryan",
+        "line": "But you and Jade—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's not instead of you. It's also you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay. I hear you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Good."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And you hear me too, right? I need to know that."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I hear you. I'm choosing you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Every day?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Every day."
+      },
+      {
+        "speaker": "ryan",
+        "line": "What about Jade? Does she know that too?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "I told her."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "She said yes."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Just like that?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah."
+      }
+    ],
+    "timestamp": "2026-06-21T11:32:19.979383"
   }
 ]

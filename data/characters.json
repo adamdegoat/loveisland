@@ -10,14 +10,14 @@
       "ambition": 47,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "resolved",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_porch",
       "x": 75,
       "y": 25
     },
@@ -25,7 +25,7 @@
     "relationships": {
       "ryan": {
         "closeness": 100,
-        "tension": 3,
+        "tension": 2,
         "attraction": 0
       },
       "jade": {
@@ -39,7 +39,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 49,
+        "closeness": 50,
         "tension": 0,
         "attraction": 0
       }
@@ -144,15 +144,15 @@
       "openness": 100,
       "ambition": 90,
       "loneliness": 0,
-      "resilience": 54,
-      "hunger": 53,
+      "resilience": 56,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
-    "mood": "hopeful",
+    "mood": "calm",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_porch",
       "x": 42,
       "y": 48
     },
@@ -160,7 +160,7 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 3,
+        "tension": 2,
         "attraction": 0
       },
       "jade": {
@@ -246,14 +246,14 @@
         "weight": 3
       },
       {
-        "day": 17,
-        "text": "Marcus checked in at the rocks. He said I hold them steady. I still fit here.",
-        "weight": 2
-      },
-      {
         "day": 18,
         "text": "He said it—I choose you both, completely. I finally believe him.",
         "weight": 3
+      },
+      {
+        "day": 18,
+        "text": "Marcus held the moment steady on the porch. I finally believed he chose me.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -279,16 +279,16 @@
       "trust": 100,
       "openness": 100,
       "ambition": 39,
-      "loneliness": 0,
+      "loneliness": 3,
       "resilience": 79,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "curious",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "hammock_beside",
       "x": 40,
       "y": 50
     },
@@ -410,16 +410,16 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 13,
+      "loneliness": 16,
       "resilience": 78,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "house_inside",
       "x": 50,
       "y": 82
     },
@@ -542,16 +542,19 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "sitting_together"
+    },
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_porch",
       "x": 20,
       "y": 88
     },
     "mood": "content",
     "relationships": {
       "marcus": {
-        "closeness": 94,
+        "closeness": 95,
         "tension": 15,
         "attraction": 0
       },
@@ -573,13 +576,13 @@
     },
     "scores": {
       "trust": 87,
-      "openness": 48,
+      "openness": 49,
       "ambition": 0,
-      "loneliness": 3,
+      "loneliness": 1,
       "resilience": 90,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "shelter": "under the palms",

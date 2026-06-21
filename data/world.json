@@ -1,16 +1,16 @@
 {
   "day": 18,
-  "cycle": "morning",
+  "cycle": "midday",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Ryan needed proof Marcus still chose him; Marcus gave it, naming his love for both out loud while Jade listened.",
+  "pulse": "After his dawn confession, Marcus steadies Ryan with quiet certainty—while Jade waits, trusting what he said was real.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 58,
+      "condition": 55,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 75,
+    "water": 86,
+    "wood": 97,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 64,
     "water": 76,
     "wood": 100,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 77,
-    "water": 100,
-    "wood": 96,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-21:morning",
-  "scene": "At the firepit, Marcus spoke aloud—I love both of you—and both Ryan and Jade heard the words they needed. Judy emerged from the house; the stray settled against Marcus, the family finally whole.",
+  "last_cycle_key": "2026-06-21:midday",
+  "scene": "Marcus confirmed to Ryan on the porch that his words from dawn were real; Jade waits at her hammock, Judy rests in the house, and the stray lies against Marcus's leg.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -54,10 +54,10 @@
     "17": "Day 17 opened with Marcus and Jade confessing their love at the morning fire—real, terrifying, and finally named. By evening, Ryan voiced his deepest fear that he'd been replaced, and Marcus held him steady, promising he was still chosen. The three sat through the night holding each other, shaken but bound together, while Judy slept peacefully nearby with her baby safe and the stray finally rested easy, all five knowing they would stay."
   },
   "last_run_date": "2026-06-21",
-  "camp_climate": "content",
+  "camp_climate": "steady",
   "fire": {
     "lit": true,
-    "fuel": 6
+    "fuel": 12
   },
   "lean": {
     "id": "speak_it",
