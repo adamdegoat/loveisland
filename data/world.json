@@ -1,16 +1,16 @@
 {
   "day": 18,
-  "cycle": "evening",
+  "cycle": "night",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "The three of them chose each other at the fire. Something between them, at last, feels real.",
+  "pulse": "Jade finally believes she's safe to stay—and with the puppy curled between them, the family feels complete.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 49,
+      "condition": 46,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 65,
+    "water": 100,
+    "wood": 97,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 74,
     "water": 86,
     "wood": 100,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 62,
-    "water": 86,
-    "wood": 97,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-21:evening",
-  "scene": "At the firepit, Jade spoke her choice aloud—and by evening, all three sat together, the stray warm against them, Judy safe on the porch believing.",
+  "last_cycle_key": "2026-06-21:night",
+  "scene": "By the fire, Jade asked if they'd really stay—and they said it again, and again, until she believed them; the puppy at their feet, Marcus steady beside her, Ryan warm on her other side.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -51,13 +51,14 @@
     "14": "Day 14: Marcus named his deepest fear at the firepit—he can't promise tomorrow, only that he's choosing today. By night, Jade asked him directly. Ryan struggled with the answer. They're still sitting by the fire, tired and raw, holding onto a day-by-day promise.",
     "15": "Day 15 was Marcus's turning point—he chose daylight and the group over solitude, spoke his fear at the firepit, and by evening returned to the fire by his own will. Ryan and Jade watched the shift, Judy rested in certainty, and by night the camp held him close without words, just presence.",
     "16": "Day 16 was the turning point: Marcus moved from crisis to choosing one day at a time, and the family held him through it — Ryan steady, Jade drawing him into presence, Judy finally safe, the stray bonded to them all. By nightfall they sat together at the firepit, and for the first time the island felt like home.",
-    "17": "Day 17 opened with Marcus and Jade confessing their love at the morning fire—real, terrifying, and finally named. By evening, Ryan voiced his deepest fear that he'd been replaced, and Marcus held him steady, promising he was still chosen. The three sat through the night holding each other, shaken but bound together, while Judy slept peacefully nearby with her baby safe and the stray finally rested easy, all five knowing they would stay."
+    "17": "Day 17 opened with Marcus and Jade confessing their love at the morning fire—real, terrifying, and finally named. By evening, Ryan voiced his deepest fear that he'd been replaced, and Marcus held him steady, promising he was still chosen. The three sat through the night holding each other, shaken but bound together, while Judy slept peacefully nearby with her baby safe and the stray finally rested easy, all five knowing they would stay.",
+    "18": "Day 18 brought the confessions—Marcus said it aloud, Jade said yes. By evening she was testing, still afraid. When Judy anchored it to her baby and they said it again and again, Jade finally believed. The family sat close by the fire, the puppy between them, and the last fear broke."
   },
   "last_run_date": "2026-06-21",
-  "camp_climate": "steady",
+  "camp_climate": "content",
   "fire": {
     "lit": true,
-    "fuel": 6
+    "fuel": 12
   },
   "lean": {
     "id": "speak_it",
