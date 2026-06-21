@@ -1,10 +1,10 @@
 {
-  "day": 17,
-  "text": "Marcus finally collapses where Jade finds him, shattering the loner's careful walls.",
-  "flavor": "a crack in the armor",
-  "cycle": "midday",
-  "happens_at": "12:30pm",
+  "day": 18,
+  "text": "A storm pins Marcus and Judy alone in one shelter through the night.",
+  "flavor": "forced together",
+  "cycle": "night",
+  "happens_at": "11pm",
   "status": "upcoming",
-  "revealed_at": "2026-06-21T00:00:27.585642",
+  "revealed_at": "2026-06-22T00:00:41.687650",
   "activated_at": null
 }
