@@ -10,12 +10,12 @@
       "ambition": 47,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "resolved",
+    "mood": "calm",
     "location": {
       "waypoint": "house_porch",
       "x": 75,
@@ -25,17 +25,17 @@
     "relationships": {
       "ryan": {
         "closeness": 100,
-        "tension": 2,
+        "tension": 1,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 4,
+        "tension": 3,
         "attraction": 43
       },
       "judy": {
-        "closeness": 79,
-        "tension": 11,
+        "closeness": 81,
+        "tension": 10,
         "attraction": 0
       },
       "stray": {
@@ -46,8 +46,8 @@
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "ryan",
-      "state": "talking"
+      "with": "jade",
+      "state": "sitting_together"
     },
     "memories": [
       {
@@ -144,13 +144,13 @@
       "openness": 100,
       "ambition": 90,
       "loneliness": 0,
-      "resilience": 56,
-      "hunger": 45,
+      "resilience": 57,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "calm",
+    "mood": "content",
     "location": {
       "waypoint": "house_porch",
       "x": 42,
@@ -160,17 +160,17 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 2,
+        "tension": 1,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 14,
+        "tension": 12,
         "attraction": 33
       },
       "judy": {
-        "closeness": 90,
-        "tension": 16,
+        "closeness": 92,
+        "tension": 15,
         "attraction": 0
       },
       "stray": {
@@ -182,7 +182,7 @@
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
       "with": "marcus",
-      "state": "talking"
+      "state": "sitting_together"
     },
     "memories": [
       {
@@ -279,16 +279,16 @@
       "trust": 100,
       "openness": 100,
       "ambition": 39,
-      "loneliness": 3,
+      "loneliness": 1,
       "resilience": 79,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "curious",
+    "mood": "tender",
     "location": {
-      "waypoint": "hammock_beside",
+      "waypoint": "house_porch",
       "x": 40,
       "y": 50
     },
@@ -296,17 +296,17 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 4,
+        "tension": 3,
         "attraction": 43
       },
       "ryan": {
         "closeness": 100,
-        "tension": 14,
+        "tension": 12,
         "attraction": 28
       },
       "judy": {
-        "closeness": 82,
-        "tension": 15,
+        "closeness": 84,
+        "tension": 14,
         "attraction": 0
       },
       "stray": {
@@ -316,7 +316,10 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "sitting_together"
+    },
     "memories": [
       {
         "day": 5,
@@ -364,11 +367,6 @@
         "weight": 2
       },
       {
-        "day": 16,
-        "text": "He opened at the fire. For the first time, he wasn't performing.",
-        "weight": 2
-      },
-      {
         "day": 17,
         "text": "I named what I was holding. He heard me. We chose each other.",
         "weight": 3
@@ -387,6 +385,11 @@
         "day": 18,
         "text": "Marcus is in love with me. Really. Not a shadow of something else.",
         "weight": 3
+      },
+      {
+        "day": 18,
+        "text": "He stayed close all afternoon. Not running. Just staying with me.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -410,11 +413,11 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 16,
+      "loneliness": 19,
       "resilience": 78,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "mood": "peaceful",
@@ -429,18 +432,18 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 79,
-        "tension": 11,
+        "closeness": 81,
+        "tension": 10,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 90,
-        "tension": 16,
+        "closeness": 92,
+        "tension": 15,
         "attraction": 0
       },
       "jade": {
-        "closeness": 82,
-        "tension": 15,
+        "closeness": 84,
+        "tension": 14,
         "attraction": 0
       },
       "stray": {
@@ -554,23 +557,23 @@
     "mood": "content",
     "relationships": {
       "marcus": {
-        "closeness": 95,
-        "tension": 15,
+        "closeness": 97,
+        "tension": 14,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 89,
-        "tension": 17,
+        "closeness": 91,
+        "tension": 16,
         "attraction": 0
       },
       "jade": {
-        "closeness": 73,
-        "tension": 17,
+        "closeness": 75,
+        "tension": 16,
         "attraction": 0
       },
       "judy": {
         "closeness": 100,
-        "tension": 13,
+        "tension": 12,
         "attraction": 0
       }
     },
@@ -578,11 +581,11 @@
       "trust": 87,
       "openness": 49,
       "ambition": 0,
-      "loneliness": 1,
+      "loneliness": 0,
       "resilience": 90,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "shelter": "under the palms",
