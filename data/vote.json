@@ -1,35 +1,28 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-21",
+    "id": "2026-06-22",
     "closes": "tonight",
-    "question": "Tomorrow: Should Marcus and Jade be openly tender, or move gently through Ryan's adjusting?",
+    "question": "The puppy curls between Jade, Marcus, and Ryan. Keeping it means they commit to staying—to being needed every single day. Does Jade say yes?",
     "options": [
       {
-        "id": "openly",
-        "label": "Openly tender",
-        "desc": "Their love is real; watching it is how Ryan learns he's still held."
+        "id": "yes_keep_it",
+        "label": "Yes, keep it",
+        "desc": "Love means choosing to be needed, even if it's terrifying"
       },
       {
-        "id": "gently",
-        "label": "Move gently",
-        "desc": "Tender care first; Ryan's trust settles when nothing's rushed."
-      },
-      {
-        "id": "three_ways",
-        "label": "Three together",
-        "desc": "All affection flows between all three—no pairing off, all secure."
+        "id": "no_let_go",
+        "label": "No, let it go",
+        "desc": "She's still learning to believe they'll stay for her"
       }
     ]
   },
   "in_play": {
-    "id": "speak_it",
-    "label": "Tell them",
-    "desc": "Name the choice aloud. Risk the peace for words.",
-    "decided": "2026-06-21",
-    "votes": 1,
-    "tally": {
-      "speak_it": 1
-    }
+    "id": "openly",
+    "label": "Openly tender",
+    "desc": "Their love is real; watching it is how Ryan learns he's still held.",
+    "decided": "2026-06-22",
+    "votes": 0,
+    "tally": {}
   }
 }
