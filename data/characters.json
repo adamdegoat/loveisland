@@ -10,14 +10,14 @@
       "ambition": 47,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "calm",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_left",
       "x": 75,
       "y": 25
     },
@@ -31,7 +31,7 @@
       "jade": {
         "closeness": 100,
         "tension": 3,
-        "attraction": 43
+        "attraction": 44
       },
       "judy": {
         "closeness": 81,
@@ -47,7 +47,7 @@
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
       "with": "jade",
-      "state": "sitting_together"
+      "state": "talking"
     },
     "memories": [
       {
@@ -145,14 +145,14 @@
       "ambition": 90,
       "loneliness": 0,
       "resilience": 57,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_right",
       "x": 42,
       "y": 48
     },
@@ -165,7 +165,7 @@
       },
       "jade": {
         "closeness": 100,
-        "tension": 12,
+        "tension": 11,
         "attraction": 33
       },
       "judy": {
@@ -182,7 +182,7 @@
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
       "with": "marcus",
-      "state": "sitting_together"
+      "state": "talking"
     },
     "memories": [
       {
@@ -279,16 +279,16 @@
       "trust": 100,
       "openness": 100,
       "ambition": 39,
-      "loneliness": 1,
-      "resilience": 79,
-      "hunger": 53,
+      "loneliness": 0,
+      "resilience": 80,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
-    "mood": "tender",
+    "mood": "peaceful",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_front",
       "x": 40,
       "y": 50
     },
@@ -297,11 +297,11 @@
       "marcus": {
         "closeness": 100,
         "tension": 3,
-        "attraction": 43
+        "attraction": 44
       },
       "ryan": {
         "closeness": 100,
-        "tension": 12,
+        "tension": 11,
         "attraction": 28
       },
       "judy": {
@@ -317,8 +317,8 @@
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
     "interaction": {
-      "with": "marcus",
-      "state": "sitting_together"
+      "with": "ryan",
+      "state": "talking"
     },
     "memories": [
       {
@@ -362,11 +362,6 @@
         "weight": 2
       },
       {
-        "day": 16,
-        "text": "I told him we choose every day, not because we have to. He heard me.",
-        "weight": 2
-      },
-      {
         "day": 17,
         "text": "I named what I was holding. He heard me. We chose each other.",
         "weight": 3
@@ -389,6 +384,11 @@
       {
         "day": 18,
         "text": "He stayed close all afternoon. Not running. Just staying with me.",
+        "weight": 2
+      },
+      {
+        "day": 18,
+        "text": "I asked if I fit. Finally I believed. I choose to stay.",
         "weight": 2
       }
     ],
@@ -413,16 +413,16 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 19,
+      "loneliness": 21,
       "resilience": 78,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "house_inside",
+      "waypoint": "house_porch",
       "x": 50,
       "y": 82
     },
@@ -545,12 +545,9 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": {
-      "with": "marcus",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_front",
       "x": 20,
       "y": 88
     },
@@ -578,14 +575,14 @@
       }
     },
     "scores": {
-      "trust": 87,
+      "trust": 88,
       "openness": 49,
       "ambition": 0,
-      "loneliness": 0,
+      "loneliness": 3,
       "resilience": 90,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "shelter": "under the palms",
