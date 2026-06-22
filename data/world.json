@@ -1,16 +1,16 @@
 {
   "day": 19,
-  "cycle": "morning",
+  "cycle": "night",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Morning finds them still believing—Marcus steady, Ryan learning he's held, Jade choosing to believe today.",
+  "pulse": "Ryan finally believes he's held—watching Marcus choose Jade completely, watching them all stay, learning that love doesn't mean being chosen first.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 43,
+      "condition": 40,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 67,
+    "water": 100,
+    "wood": 100,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 76,
     "water": 76,
     "wood": 97,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 65,
-    "water": 100,
-    "wood": 97,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-22:morning",
-  "scene": "By first light at the firepit, they'd gathered and held each other steady—Marcus from his tent, Ryan from the house, Jade from her hammock. No one had left in the night.",
+  "last_cycle_key": "2026-06-22:night",
+  "scene": "They gathered at the fire; Jade asked the fear aloud, and they answered until she believed. Marcus and Jade rest side by side now, the puppy asleep in his lap, Ryan and Judy close by—all five finally at peace.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -52,13 +52,14 @@
     "15": "Day 15 was Marcus's turning point—he chose daylight and the group over solitude, spoke his fear at the firepit, and by evening returned to the fire by his own will. Ryan and Jade watched the shift, Judy rested in certainty, and by night the camp held him close without words, just presence.",
     "16": "Day 16 was the turning point: Marcus moved from crisis to choosing one day at a time, and the family held him through it — Ryan steady, Jade drawing him into presence, Judy finally safe, the stray bonded to them all. By nightfall they sat together at the firepit, and for the first time the island felt like home.",
     "17": "Day 17 opened with Marcus and Jade confessing their love at the morning fire—real, terrifying, and finally named. By evening, Ryan voiced his deepest fear that he'd been replaced, and Marcus held him steady, promising he was still chosen. The three sat through the night holding each other, shaken but bound together, while Judy slept peacefully nearby with her baby safe and the stray finally rested easy, all five knowing they would stay.",
-    "18": "Day 18 brought the confessions—Marcus said it aloud, Jade said yes. By evening she was testing, still afraid. When Judy anchored it to her baby and they said it again and again, Jade finally believed. The family sat close by the fire, the puppy between them, and the last fear broke."
+    "18": "Day 18 brought the confessions—Marcus said it aloud, Jade said yes. By evening she was testing, still afraid. When Judy anchored it to her baby and they said it again and again, Jade finally believed. The family sat close by the fire, the puppy between them, and the last fear broke.",
+    "19": "Day 19 began with a test—would they really stay?—and ended with the answer: yes, repeatedly, until Jade believed. Marcus held the calm needed; Ryan spoke the promises; Judy watched her family settle into peace. By nightfall, the five sat together at the fire, the stray puppy asleep without fear."
   },
   "last_run_date": "2026-06-22",
   "camp_climate": "content",
   "fire": {
     "lit": true,
-    "fuel": 18
+    "fuel": 6
   },
   "lean": {
     "id": "openly",
