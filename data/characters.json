@@ -7,12 +7,12 @@
     "scores": {
       "trust": 83,
       "openness": 99,
-      "ambition": 48,
+      "ambition": 49,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 45,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "peaceful",
@@ -34,8 +34,8 @@
         "attraction": 44
       },
       "judy": {
-        "closeness": 88,
-        "tension": 6,
+        "closeness": 90,
+        "tension": 5,
         "attraction": 0
       },
       "stray": {
@@ -46,8 +46,8 @@
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "jade",
-      "state": "sitting_together"
+      "with": "ryan",
+      "state": "talking"
     },
     "memories": [
       {
@@ -145,9 +145,9 @@
       "ambition": 90,
       "loneliness": 0,
       "resilience": 59,
-      "hunger": 53,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 45,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "content",
@@ -165,12 +165,12 @@
       },
       "jade": {
         "closeness": 100,
-        "tension": 6,
+        "tension": 5,
         "attraction": 33
       },
       "judy": {
-        "closeness": 99,
-        "tension": 10,
+        "closeness": 100,
+        "tension": 9,
         "attraction": 0
       },
       "stray": {
@@ -181,8 +181,8 @@
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
-      "with": "judy",
-      "state": "sitting_together"
+      "with": "marcus",
+      "state": "talking"
     },
     "memories": [
       {
@@ -251,8 +251,8 @@
         "weight": 3
       },
       {
-        "day": 19,
-        "text": "In the morning light, Marcus chose again. He still chose us both.",
+        "day": 20,
+        "text": "I saw him admit his fear and still choose to stay.",
         "weight": 2
       }
     ],
@@ -281,14 +281,14 @@
       "ambition": 39,
       "loneliness": 0,
       "resilience": 81,
-      "hunger": 53,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 45,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_front",
       "x": 40,
       "y": 50
     },
@@ -301,12 +301,12 @@
       },
       "ryan": {
         "closeness": 100,
-        "tension": 6,
+        "tension": 5,
         "attraction": 28
       },
       "judy": {
-        "closeness": 91,
-        "tension": 10,
+        "closeness": 93,
+        "tension": 9,
         "attraction": 0
       },
       "stray": {
@@ -413,16 +413,16 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 17,
+      "loneliness": 20,
       "resilience": 80,
-      "hunger": 53,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 45,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "house_porch",
       "x": 50,
       "y": 82
     },
@@ -432,18 +432,18 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 88,
-        "tension": 6,
+        "closeness": 90,
+        "tension": 5,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 99,
-        "tension": 10,
+        "closeness": 100,
+        "tension": 9,
         "attraction": 0
       },
       "jade": {
-        "closeness": 91,
-        "tension": 10,
+        "closeness": 93,
+        "tension": 9,
         "attraction": 0
       },
       "stray": {
@@ -453,10 +453,7 @@
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": {
-      "with": "ryan",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 4,
@@ -561,22 +558,22 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 9,
+        "tension": 8,
         "attraction": 0
       },
       "ryan": {
-        "closeness": 98,
-        "tension": 12,
+        "closeness": 100,
+        "tension": 11,
         "attraction": 0
       },
       "jade": {
-        "closeness": 82,
-        "tension": 11,
+        "closeness": 84,
+        "tension": 10,
         "attraction": 0
       },
       "judy": {
         "closeness": 100,
-        "tension": 7,
+        "tension": 6,
         "attraction": 0
       }
     },
@@ -586,9 +583,9 @@
       "ambition": 0,
       "loneliness": 0,
       "resilience": 90,
-      "hunger": 53,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 45,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "shelter": "under the palms",

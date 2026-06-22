@@ -1,28 +1,35 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-22",
+    "id": "2026-06-23",
     "closes": "tonight",
-    "question": "The puppy curls between Jade, Marcus, and Ryan. Keeping it means they commit to staying—to being needed every single day. Does Jade say yes?",
+    "question": "Should Marcus tell Jade what she means to him, or let this trust deepen in silence?",
     "options": [
       {
-        "id": "yes_keep_it",
-        "label": "Yes, keep it",
-        "desc": "Love means choosing to be needed, even if it's terrifying"
+        "id": "confess",
+        "label": "Speak tonight",
+        "desc": "Risk vulnerability; say exactly what you feel"
       },
       {
-        "id": "no_let_go",
-        "label": "No, let it go",
-        "desc": "She's still learning to believe they'll stay for her"
+        "id": "silence",
+        "label": "Trust the silence",
+        "desc": "Your steadiness speaks louder than words"
+      },
+      {
+        "id": "group",
+        "label": "All together",
+        "desc": "Make it a moment all four of you share"
       }
     ]
   },
   "in_play": {
-    "id": "openly",
-    "label": "Openly tender",
-    "desc": "Their love is real; watching it is how Ryan learns he's still held.",
-    "decided": "2026-06-22",
-    "votes": 0,
-    "tally": {}
+    "id": "yes_keep_it",
+    "label": "Yes, keep it",
+    "desc": "Love means choosing to be needed, even if it's terrifying",
+    "decided": "2026-06-23",
+    "votes": 1,
+    "tally": {
+      "yes_keep_it": 1
+    }
   }
 }
