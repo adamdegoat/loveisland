@@ -1,10 +1,10 @@
 {
-  "day": 18,
-  "text": "A storm pins Marcus and Judy alone in one shelter through the night.",
-  "flavor": "forced together",
-  "cycle": "night",
-  "happens_at": "11pm",
+  "day": 19,
+  "text": "Jade finally tells Marcus the truth: she's been running all her life, until him.",
+  "flavor": "a confession",
+  "cycle": "morning",
+  "happens_at": "7am",
   "status": "upcoming",
-  "revealed_at": "2026-06-22T00:00:41.687650",
+  "revealed_at": "2026-06-23T00:00:35.792240",
   "activated_at": null
 }
