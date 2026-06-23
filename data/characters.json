@@ -6,18 +6,18 @@
     "color": "#60a5fa",
     "scores": {
       "trust": 83,
-      "openness": 99,
+      "openness": 100,
       "ambition": 49,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
-    "mood": "peaceful",
+    "mood": "calm",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_porch",
       "x": 75,
       "y": 25
     },
@@ -31,11 +31,11 @@
       "jade": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 44
+        "attraction": 46
       },
       "judy": {
-        "closeness": 90,
-        "tension": 5,
+        "closeness": 92,
+        "tension": 3,
         "attraction": 0
       },
       "stray": {
@@ -58,11 +58,6 @@
       {
         "day": 13,
         "text": "Doubt pulled me back to the cliff, but Jade wouldn't let me go. I stayed.",
-        "weight": 3
-      },
-      {
-        "day": 13,
-        "text": "She was terrified. I promised to stay. I did.",
         "weight": 3
       },
       {
@@ -119,6 +114,11 @@
         "day": 18,
         "text": "I spoke it aloud. I love both. Not borrowed, not split.",
         "weight": 3
+      },
+      {
+        "day": 20,
+        "text": "I let them need me. It's not weakness, it's choosing.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -144,15 +144,15 @@
       "openness": 100,
       "ambition": 90,
       "loneliness": 0,
-      "resilience": 59,
-      "hunger": 45,
+      "resilience": 60,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_porch",
       "x": 42,
       "y": 48
     },
@@ -165,12 +165,12 @@
       },
       "jade": {
         "closeness": 100,
-        "tension": 5,
+        "tension": 3,
         "attraction": 33
       },
       "judy": {
         "closeness": 100,
-        "tension": 9,
+        "tension": 7,
         "attraction": 0
       },
       "stray": {
@@ -281,14 +281,14 @@
       "ambition": 39,
       "loneliness": 0,
       "resilience": 81,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "house_porch",
       "x": 40,
       "y": 50
     },
@@ -297,16 +297,16 @@
       "marcus": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 44
+        "attraction": 46
       },
       "ryan": {
         "closeness": 100,
-        "tension": 5,
+        "tension": 3,
         "attraction": 28
       },
       "judy": {
-        "closeness": 93,
-        "tension": 9,
+        "closeness": 95,
+        "tension": 7,
         "attraction": 0
       },
       "stray": {
@@ -316,10 +316,7 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": {
-      "with": "marcus",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -377,11 +374,6 @@
         "weight": 2
       },
       {
-        "day": 18,
-        "text": "They answered every test. I finally believe I can stay.",
-        "weight": 2
-      },
-      {
         "day": 19,
         "text": "They proved it in daylight. I can maybe actually stay. Really.",
         "weight": 2
@@ -390,6 +382,11 @@
         "day": 19,
         "text": "They answered my fear until I believed. Staying is real.",
         "weight": 2
+      },
+      {
+        "day": 20,
+        "text": "I stopped running in my head. I'm actually staying.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -413,11 +410,11 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 20,
+      "loneliness": 22,
       "resilience": 80,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "peaceful",
@@ -432,18 +429,18 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 90,
-        "tension": 5,
+        "closeness": 92,
+        "tension": 3,
         "attraction": 0
       },
       "ryan": {
         "closeness": 100,
-        "tension": 9,
+        "tension": 7,
         "attraction": 0
       },
       "jade": {
-        "closeness": 93,
-        "tension": 9,
+        "closeness": 95,
+        "tension": 7,
         "attraction": 0
       },
       "stray": {
@@ -545,47 +542,44 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": {
-      "with": "marcus",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_porch",
       "x": 20,
       "y": 88
     },
-    "mood": "peaceful",
+    "mood": "calm",
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 8,
+        "tension": 6,
         "attraction": 0
       },
       "ryan": {
         "closeness": 100,
-        "tension": 11,
+        "tension": 9,
         "attraction": 0
       },
       "jade": {
-        "closeness": 84,
-        "tension": 10,
+        "closeness": 86,
+        "tension": 8,
         "attraction": 0
       },
       "judy": {
         "closeness": 100,
-        "tension": 6,
+        "tension": 4,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 90,
+      "trust": 91,
       "openness": 49,
       "ambition": 0,
-      "loneliness": 0,
+      "loneliness": 3,
       "resilience": 90,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "shelter": "under the palms",
