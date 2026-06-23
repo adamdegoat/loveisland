@@ -10,14 +10,14 @@
       "ambition": 49,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "calm",
+    "mood": "peaceful",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_left",
       "x": 75,
       "y": 25
     },
@@ -39,15 +39,15 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 51,
+        "closeness": 52,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "ryan",
-      "state": "talking"
+      "with": "stray",
+      "state": "sitting_together"
     },
     "memories": [
       {
@@ -145,14 +145,14 @@
       "ambition": 90,
       "loneliness": 0,
       "resilience": 60,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_right",
       "x": 42,
       "y": 48
     },
@@ -281,14 +281,14 @@
       "ambition": 39,
       "loneliness": 0,
       "resilience": 81,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_left",
       "x": 40,
       "y": 50
     },
@@ -310,13 +310,16 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 29,
+        "closeness": 30,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "talking"
+    },
     "memories": [
       {
         "day": 5,
@@ -410,16 +413,16 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 22,
+      "loneliness": 24,
       "resilience": 80,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "peaceful",
+    "mood": "content",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "house_inside",
       "x": 50,
       "y": 82
     },
@@ -542,9 +545,12 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "sitting_together"
+    },
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "firepit_left",
       "x": 20,
       "y": 88
     },
@@ -561,7 +567,7 @@
         "attraction": 0
       },
       "jade": {
-        "closeness": 86,
+        "closeness": 87,
         "tension": 8,
         "attraction": 0
       },
@@ -572,14 +578,14 @@
       }
     },
     "scores": {
-      "trust": 91,
-      "openness": 49,
+      "trust": 92,
+      "openness": 50,
       "ambition": 0,
-      "loneliness": 3,
+      "loneliness": 0,
       "resilience": 90,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "shelter": "under the palms",

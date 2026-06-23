@@ -1,16 +1,16 @@
 {
   "day": 20,
-  "cycle": "midday",
+  "cycle": "afternoon",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Marcus lets someone need him; Ryan stops wondering if he's worth staying for; Jade finally trusts the choice to stay.",
+  "pulse": "Marcus has stopped running from need; Jade is finally at peace; Ryan is still afraid it will fall apart.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 34,
+      "condition": 31,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 76,
+    "water": 86,
+    "wood": 100,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 65,
     "water": 86,
     "wood": 97,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 78,
-    "water": 76,
-    "wood": 97,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-23:midday",
-  "scene": "After yesterday's confessions, Ryan and Marcus work steady together on the porch by midday; Jade brings supplies and Judy rests and watches, the puppy calm for the first time.",
+  "last_cycle_key": "2026-06-23:afternoon",
+  "scene": "The puppy settles against Marcus at the firepit; by afternoon, Jade sits beside them and Ryan watches from the adjacent side.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -56,10 +56,10 @@
     "19": "Day 19 began with a test—would they really stay?—and ended with the answer: yes, repeatedly, until Jade believed. Marcus held the calm needed; Ryan spoke the promises; Judy watched her family settle into peace. By nightfall, the five sat together at the fire, the stray puppy asleep without fear."
   },
   "last_run_date": "2026-06-23",
-  "camp_climate": "content",
+  "camp_climate": "steady",
   "fire": {
     "lit": true,
-    "fuel": 18
+    "fuel": 6
   },
   "lean": {
     "id": "yes_keep_it",

@@ -1,204 +1,6 @@
 [
   {
     "day": 9,
-    "cycle": "evening",
-    "character": "marcus",
-    "action": "He let Ryan help steady his fears in the fading light, then gathered firewood together, finally choosing to stay by the fire.",
-    "thought": "He's not leaving. Maybe I don't have to run.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "settled",
-    "timestamp": "2026-06-12T18:32:25.528833"
-  },
-  {
-    "day": 9,
-    "cycle": "evening",
-    "character": "ryan",
-    "action": "He found Marcus alone at dusk, sat with him and promised to stay, then gathered firewood as the light faded.",
-    "thought": "He finally let me in. This is real.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "warm",
-    "timestamp": "2026-06-12T18:32:25.528833"
-  },
-  {
-    "day": 9,
-    "cycle": "evening",
-    "character": "jade",
-    "action": "She watched from the firelight as Ryan and Marcus gathered wood together, then quietly affirmed Marcus when they returned.",
-    "thought": "He's staying. We all are staying now.",
-    "location": {
-      "waypoint": "firepit_front",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "serene",
-    "timestamp": "2026-06-12T18:32:25.528833"
-  },
-  {
-    "day": 9,
-    "cycle": "evening",
-    "character": "judy",
-    "action": "She tended the fire by the house porch, made tea from fresh leaves, and welcomed everyone back to warmth.",
-    "thought": "They all came back to the fire, to me.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "content",
-    "timestamp": "2026-06-12T18:32:25.528833"
-  },
-  {
-    "day": 9,
-    "cycle": "evening",
-    "character": "stray",
-    "action": "It settled against Marcus as evening fell, offering silent support, staying at his side by the fire with quiet devotion.",
-    "thought": "He's mine and I'm his. We stay.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "happy",
-    "timestamp": "2026-06-12T18:32:25.528833"
-  },
-  {
-    "day": 9,
-    "cycle": "evening",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "marcus",
-      "jade",
-      "judy"
-    ],
-    "description": "In the fading light, Ryan gently steadied Marcus's fears while gathering firewood; by evening, all four sat at the fire with the stray nestled against Marcus, the group finally whole and grounded.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "You've been quiet all evening. What's going on?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Just thinking."
-      },
-      {
-        "speaker": "ryan",
-        "line": "About this morning?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "About what happens after. When you get tired of me."
-      },
-      {
-        "speaker": "ryan",
-        "line": "What if we don't?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "People always do."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'm not going anywhere. I'm staying."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Until you're not."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You're scared."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's okay. I see who you are, and I'm choosing to stay."
-      },
-      {
-        "speaker": "marcus",
-        "line": "How are you so sure?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Because I know you. And I meant it."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Come on. Let's get some wood while there's still light."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Alright."
-      },
-      {
-        "speaker": "jade",
-        "line": "There you are. We were getting worried."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Just needed some air. Needed to talk."
-      },
-      {
-        "speaker": "jade",
-        "line": "Marcus, you alright?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah. Better."
-      },
-      {
-        "speaker": "jade",
-        "line": "Good. I'm glad."
-      },
-      {
-        "speaker": "judy",
-        "line": "I made tea. Come sit by the fire."
-      },
-      {
-        "speaker": "ryan",
-        "line": "He's had enough darkness for one day."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're really staying."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I am."
-      },
-      {
-        "speaker": "jade",
-        "line": "That means everything."
-      },
-      {
-        "speaker": "judy",
-        "line": "You belong with us, Marcus. All of you."
-      }
-    ],
-    "timestamp": "2026-06-12T18:32:25.528833"
-  },
-  {
-    "day": 9,
     "cycle": "night",
     "character": "marcus",
     "action": "He settles by the dying fire, the stray pressed against his chest, finally still.",
@@ -9522,5 +9324,171 @@
       }
     ],
     "timestamp": "2026-06-23T11:33:13.681246"
+  },
+  {
+    "day": 20,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "Sits by the firepit with the puppy settling against him, anchored and still.",
+    "thought": "He trusts me. I can feel that now.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "peaceful",
+    "timestamp": "2026-06-23T15:09:23.977274"
+  },
+  {
+    "day": 20,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "Leaves his work at the house porch to join Marcus and Jade by the fire.",
+    "thought": "He's actually letting us need him.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-23T15:09:23.977274"
+  },
+  {
+    "day": 20,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "Brings firewood from the pile and settles near Marcus, watching the puppy's trust deepen.",
+    "thought": "Everything we fought for is holding.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-23T15:09:23.977274"
+  },
+  {
+    "day": 20,
+    "cycle": "afternoon",
+    "character": "judy",
+    "action": "Rests in the house and watches the group by the fire, finally able to be still.",
+    "thought": "I can sleep now. I'm safe.",
+    "location": {
+      "waypoint": "house_inside",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-23T15:09:23.977274"
+  },
+  {
+    "day": 20,
+    "cycle": "afternoon",
+    "character": "stray",
+    "action": "Emerges from the palms and walks directly to Marcus, pressing close without hesitation or fear.",
+    "thought": "He's safe. We are safe.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "calm",
+    "timestamp": "2026-06-23T15:09:23.977274"
+  },
+  {
+    "day": 20,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade",
+      "stray"
+    ],
+    "description": "The puppy settles against Marcus by the firepit without fear, and Jade and Ryan gather close to watch this small miracle.",
+    "dialogue": [
+      {
+        "speaker": "jade",
+        "line": "He's been following you since morning."
+      },
+      {
+        "speaker": "marcus",
+        "line": "He knows how to be with me."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You've really got him now. He won't even come to me anymore."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's different. He just trusts it will be okay."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's what we all had to learn. That you would be okay."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Hard-won, too. You fought us pretty hard on it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Didn't think I was worth the fight."
+      },
+      {
+        "speaker": "jade",
+        "line": "He doesn't have that doubt. He just knows you won't hurt him."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Maybe that's why he needed you. Because you're learning the same thing."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What thing?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "That people won't leave. That staying is a choice, not a trap."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm still terrified, though. Some days more than others."
+      },
+      {
+        "speaker": "ryan",
+        "line": "We know. You wake up scared."
+      },
+      {
+        "speaker": "jade",
+        "line": "But you're still here. And that's the whole thing, isn't it?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yeah. And you're there too. That matters more than the fear."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's love, isn't it? Choosing it even when you're terrified."
+      },
+      {
+        "speaker": "jade",
+        "line": "You're teaching him that. Not by talking. By showing up."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're going to be alright, you know. We're not going anywhere."
+      },
+      {
+        "speaker": "jade",
+        "line": "None of us are."
+      }
+    ],
+    "timestamp": "2026-06-23T15:09:23.977274"
   }
 ]
