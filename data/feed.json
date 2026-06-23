@@ -1,178 +1,5 @@
 [
   {
-    "day": 9,
-    "cycle": "night",
-    "character": "marcus",
-    "action": "He settles by the dying fire, the stray pressed against his chest, finally still.",
-    "thought": "Not running. I'm finally staying.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "settled",
-    "timestamp": "2026-06-12T22:32:13.818422"
-  },
-  {
-    "day": 9,
-    "cycle": "night",
-    "character": "ryan",
-    "action": "He sits beside Marcus at the fire's edge, steady and present as the night deepens.",
-    "thought": "He opened. He's choosing me.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "warm",
-    "timestamp": "2026-06-12T22:32:13.818422"
-  },
-  {
-    "day": 9,
-    "cycle": "night",
-    "character": "jade",
-    "action": "She climbs into her hammock as the fire fades, watching the stars settle into quiet.",
-    "thought": "Everyone feels safe. I feel right.",
-    "location": {
-      "waypoint": "hammock_beside",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "serene",
-    "timestamp": "2026-06-12T22:32:13.818422"
-  },
-  {
-    "day": 9,
-    "cycle": "night",
-    "character": "judy",
-    "action": "She rests in the house, listening to the murmur of voices outside, finally at peace.",
-    "thought": "They want me here. I'm safe.",
-    "location": {
-      "waypoint": "house_inside",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "content",
-    "timestamp": "2026-06-12T22:32:13.818422"
-  },
-  {
-    "day": 9,
-    "cycle": "night",
-    "character": "stray",
-    "action": "It drifts into sleep against Marcus's chest, safe and wanted, no longer wandering the dark.",
-    "thought": "He's my safe place now. Forever.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "happy",
-    "timestamp": "2026-06-12T22:32:13.818422"
-  },
-  {
-    "day": 9,
-    "cycle": "night",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "marcus",
-      "stray"
-    ],
-    "description": "By the dying fire, Marcus finally lets Ryan stay—and the stray settles between them, asking nothing but presence.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "You brought us to your place. I've never seen you do that—open like that."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You were already there. I couldn't send you away."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You could have. You've sent me away before."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Not this time."
-      },
-      {
-        "speaker": "ryan",
-        "line": "No. Not this time."
-      },
-      {
-        "speaker": "marcus",
-        "line": "It's getting cold."
-      },
-      {
-        "speaker": "ryan",
-        "line": "We could go inside. There's room in the house if you want to keep it warm."
-      },
-      {
-        "speaker": "marcus",
-        "line": "No. Here's fine. This is where I want to be."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Okay. Then I'll stay too."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I know you will."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You're sure about that?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah. You're steady. You don't leave."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I won't. Not unless you tell me to."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I won't."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You don't have to do this alone anymore, you know."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm not. You're here."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I am. And I'm staying."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I know."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Do you? Do you really?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "I do, Ryan. I'm here too."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's all I needed."
-      }
-    ],
-    "timestamp": "2026-06-12T22:32:13.818422"
-  },
-  {
     "day": 10,
     "cycle": "morning",
     "character": "marcus",
@@ -9490,5 +9317,224 @@
       }
     ],
     "timestamp": "2026-06-23T15:09:23.977274"
+  },
+  {
+    "day": 20,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "Settled at the firepit's edge as the sun went gold, still feeling Ryan's shoulder-press from the afternoon's work sinking into his bones.",
+    "thought": "They're choosing me. Every day they choose.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "peaceful",
+    "timestamp": "2026-06-23T18:33:14.262131"
+  },
+  {
+    "day": 20,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "Crossed from the porch to the circle as dusk fell, hands callused, chest light in a way it had never been before.",
+    "thought": "This is what being home actually feels like.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-23T18:33:14.262131"
+  },
+  {
+    "day": 20,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "Drifted to the fire and settled without thinking, close enough to Marcus that their shoulders nearly touched, no part of her running anymore.",
+    "thought": "I'm staying. Not someday. Now. Really.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-23T18:33:14.262131"
+  },
+  {
+    "day": 20,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "Rested in the circle's warmth, one hand on her belly, watching the three of them breathe, finally believing they would not disappear.",
+    "thought": "They stayed. They're still staying.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-23T18:33:14.262131"
+  },
+  {
+    "day": 20,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "Pressed against Marcus's leg without tension, breathing steady, no longer tensed for the moment the world would shatter.",
+    "thought": "All here. All safe. All chosen.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "calm",
+    "timestamp": "2026-06-23T18:33:14.262131"
+  },
+  {
+    "day": 20,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade",
+      "judy",
+      "stray"
+    ],
+    "description": "After a day of building together, all five rest at the firepit—Marcus and Ryan tired but secure, Jade beside Marcus, Judy calm, the stray still.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "Those posts are going to hold for years. We built something solid today."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We did. Didn't know you had it in you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Was that a compliment, or just an observation?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yes."
+      },
+      {
+        "speaker": "jade",
+        "line": "The sun's hitting the water just right. Everything's turning gold."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Like we planned it."
+      },
+      {
+        "speaker": "jade",
+        "line": "We didn't plan anything. That's what makes it feel real."
+      },
+      {
+        "speaker": "judy",
+        "line": "I was watching you both work. The way you move together now—it's like you've always done this."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's different."
+      },
+      {
+        "speaker": "ryan",
+        "line": "First time building with someone I actually trust like this."
+      },
+      {
+        "speaker": "jade",
+        "line": "First time for all of us. I didn't know I could feel like this."
+      },
+      {
+        "speaker": "judy",
+        "line": "Is it always going to feel this safe?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. Sometimes it'll be harder, but we'll stay anyway. That's what choosing means."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Every morning, if I have to. Every single day."
+      },
+      {
+        "speaker": "jade",
+        "line": "I was afraid of staying because I had to. But this is different."
+      },
+      {
+        "speaker": "judy",
+        "line": "How is it different?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Because I want to. Because waking up next to him means everything."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Even the pup knows it. He's not waiting for the world to break."
+      },
+      {
+        "speaker": "marcus",
+        "line": "He learned we stay."
+      },
+      {
+        "speaker": "jade",
+        "line": "Should we give him a name?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not yet. Let him show us who he is first."
+      },
+      {
+        "speaker": "judy",
+        "line": "How long will that take?"
+      },
+      {
+        "speaker": "jade",
+        "line": "However long it takes. That's what staying means."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We're not going anywhere."
+      },
+      {
+        "speaker": "judy",
+        "line": "I believe that now. I'm learning to believe that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "None of us are. We're choosing to be here, every day."
+      },
+      {
+        "speaker": "judy",
+        "line": "The baby's moving. I think the baby can feel this safety."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Of course it can. All of this is for the people we love."
+      },
+      {
+        "speaker": "judy",
+        "line": "I never thought I'd feel this. After the crash, after everything..."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're safe now. We all are."
+      },
+      {
+        "speaker": "jade",
+        "line": "No one's taking that from us."
+      },
+      {
+        "speaker": "judy",
+        "line": "I believe that. Finally, I believe that."
+      }
+    ],
+    "timestamp": "2026-06-23T18:33:14.262131"
   }
 ]

@@ -10,9 +10,9 @@
       "ambition": 49,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "peaceful",
@@ -31,7 +31,7 @@
       "jade": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 46
+        "attraction": 47
       },
       "judy": {
         "closeness": 92,
@@ -45,10 +45,7 @@
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
-    "interaction": {
-      "with": "stray",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 13,
@@ -145,9 +142,9 @@
       "ambition": 90,
       "loneliness": 0,
       "resilience": 60,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "content",
@@ -166,7 +163,7 @@
       "jade": {
         "closeness": 100,
         "tension": 3,
-        "attraction": 33
+        "attraction": 34
       },
       "judy": {
         "closeness": 100,
@@ -180,10 +177,7 @@
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
-    "interaction": {
-      "with": "marcus",
-      "state": "talking"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -281,9 +275,9 @@
       "ambition": 39,
       "loneliness": 0,
       "resilience": 81,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "peaceful",
@@ -297,12 +291,12 @@
       "marcus": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 46
+        "attraction": 47
       },
       "ryan": {
         "closeness": 100,
         "tension": 3,
-        "attraction": 28
+        "attraction": 29
       },
       "judy": {
         "closeness": 95,
@@ -316,10 +310,7 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": {
-      "with": "marcus",
-      "state": "talking"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -413,16 +404,16 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 24,
+      "loneliness": 21,
       "resilience": 80,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "house_inside",
+      "waypoint": "firepit_front",
       "x": 50,
       "y": 82
     },
@@ -545,10 +536,7 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": {
-      "with": "marcus",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "location": {
       "waypoint": "firepit_left",
       "x": 20,
@@ -578,14 +566,14 @@
       }
     },
     "scores": {
-      "trust": 92,
+      "trust": 93,
       "openness": 50,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 90,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "shelter": "under the palms",
