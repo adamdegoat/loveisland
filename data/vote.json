@@ -1,35 +1,33 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-23",
+    "id": "2026-06-24",
     "closes": "tonight",
-    "question": "Should Marcus tell Jade what she means to him, or let this trust deepen in silence?",
+    "question": "Marcus wants to build the stray shelter, even if it means rationing harder. Does he go through with it?",
     "options": [
       {
-        "id": "confess",
-        "label": "Speak tonight",
-        "desc": "Risk vulnerability; say exactly what you feel"
+        "id": "shelter_the_stray",
+        "label": "Yes, build it",
+        "desc": "Love first—they're staying, they're choosing, they can share"
       },
       {
-        "id": "silence",
-        "label": "Trust the silence",
-        "desc": "Your steadiness speaks louder than words"
+        "id": "ration_safely",
+        "label": "No, wait longer",
+        "desc": "Survival first—secure the group before taking on more"
       },
       {
-        "id": "group",
-        "label": "All together",
-        "desc": "Make it a moment all four of you share"
+        "id": "ask_the_group",
+        "label": "Ask the group",
+        "desc": "It's everyone's call—no one person decides for all"
       }
     ]
   },
   "in_play": {
-    "id": "yes_keep_it",
-    "label": "Yes, keep it",
-    "desc": "Love means choosing to be needed, even if it's terrifying",
-    "decided": "2026-06-23",
-    "votes": 1,
-    "tally": {
-      "yes_keep_it": 1
-    }
+    "id": "confess",
+    "label": "Speak tonight",
+    "desc": "Risk vulnerability; say exactly what you feel",
+    "decided": "2026-06-24",
+    "votes": 0,
+    "tally": {}
   }
 }

@@ -10,9 +10,9 @@
       "ambition": 49,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 45,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "peaceful",
@@ -34,12 +34,12 @@
         "attraction": 48
       },
       "judy": {
-        "closeness": 94,
-        "tension": 2,
+        "closeness": 96,
+        "tension": 1,
         "attraction": 0
       },
       "stray": {
-        "closeness": 52,
+        "closeness": 53,
         "tension": 0,
         "attraction": 0
       }
@@ -47,7 +47,7 @@
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
       "with": "stray",
-      "state": "sitting_together"
+      "state": "holding"
     },
     "memories": [
       {
@@ -144,10 +144,10 @@
       "openness": 100,
       "ambition": 90,
       "loneliness": 0,
-      "resilience": 60,
-      "hunger": 45,
-      "thirst": 45,
-      "energy": 100,
+      "resilience": 61,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "content",
@@ -165,12 +165,12 @@
       },
       "jade": {
         "closeness": 100,
-        "tension": 2,
+        "tension": 1,
         "attraction": 34
       },
       "judy": {
         "closeness": 100,
-        "tension": 6,
+        "tension": 5,
         "attraction": 0
       },
       "stray": {
@@ -182,7 +182,7 @@
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
     "interaction": {
       "with": "marcus",
-      "state": "sitting_together"
+      "state": "talking"
     },
     "memories": [
       {
@@ -281,14 +281,14 @@
       "ambition": 39,
       "loneliness": 0,
       "resilience": 81,
-      "hunger": 45,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "firepit_front",
       "x": 40,
       "y": 50
     },
@@ -301,12 +301,12 @@
       },
       "ryan": {
         "closeness": 100,
-        "tension": 2,
+        "tension": 1,
         "attraction": 29
       },
       "judy": {
-        "closeness": 97,
-        "tension": 6,
+        "closeness": 99,
+        "tension": 5,
         "attraction": 0
       },
       "stray": {
@@ -316,7 +316,10 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "sitting_together"
+    },
     "memories": [
       {
         "day": 5,
@@ -410,11 +413,11 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 23,
+      "loneliness": 26,
       "resilience": 81,
-      "hunger": 45,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "mood": "content",
@@ -429,18 +432,18 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 94,
-        "tension": 2,
+        "closeness": 96,
+        "tension": 1,
         "attraction": 0
       },
       "ryan": {
         "closeness": 100,
-        "tension": 6,
+        "tension": 5,
         "attraction": 0
       },
       "jade": {
-        "closeness": 97,
-        "tension": 6,
+        "closeness": 99,
+        "tension": 5,
         "attraction": 0
       },
       "stray": {
@@ -544,33 +547,33 @@
     "color": "#9c6b43",
     "interaction": {
       "with": "marcus",
-      "state": "sitting_together"
+      "state": "holding"
     },
     "location": {
       "waypoint": "firepit_left",
       "x": 20,
       "y": 88
     },
-    "mood": "calm",
+    "mood": "happy",
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 4,
+        "tension": 3,
         "attraction": 0
       },
       "ryan": {
         "closeness": 100,
-        "tension": 8,
+        "tension": 7,
         "attraction": 0
       },
       "jade": {
-        "closeness": 89,
-        "tension": 7,
+        "closeness": 91,
+        "tension": 6,
         "attraction": 0
       },
       "judy": {
         "closeness": 100,
-        "tension": 3,
+        "tension": 2,
         "attraction": 0
       }
     },
@@ -580,9 +583,9 @@
       "ambition": 0,
       "loneliness": 0,
       "resilience": 90,
-      "hunger": 45,
-      "thirst": 45,
-      "energy": 100,
+      "hunger": 53,
+      "thirst": 53,
+      "energy": 94,
       "health": 100
     },
     "shelter": "under the palms",
