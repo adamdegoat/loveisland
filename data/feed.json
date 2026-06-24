@@ -1,198 +1,6 @@
 [
   {
     "day": 10,
-    "cycle": "evening",
-    "character": "marcus",
-    "action": "Returned from the beach with Ryan and settled by the fire, choosing not to pull away from his closeness.",
-    "thought": "He stays, and so do I.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "settled",
-    "timestamp": "2026-06-13T18:32:36.854348"
-  },
-  {
-    "day": 10,
-    "cycle": "evening",
-    "character": "ryan",
-    "action": "Spent the afternoon building a fish trap with Marcus on the beach, then brought water back to share as evening fell.",
-    "thought": "He finally believes we're worth staying for.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "content",
-    "timestamp": "2026-06-13T18:32:36.854348"
-  },
-  {
-    "day": 10,
-    "cycle": "evening",
-    "character": "jade",
-    "action": "Foraged through inland palm groves all day, returning with palm heart, clams, and coconuts to feed the group.",
-    "thought": "The island gives, and we all eat.",
-    "location": {
-      "waypoint": "firepit_front",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "satisfied",
-    "timestamp": "2026-06-13T18:32:36.854348"
-  },
-  {
-    "day": 10,
-    "cycle": "evening",
-    "character": "judy",
-    "action": "Rested by the firepit, caring for the stray, and was waiting with peace when everyone gathered for the evening meal.",
-    "thought": "They want me here. The baby's safe.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "peaceful",
-    "timestamp": "2026-06-13T18:32:36.854348"
-  },
-  {
-    "day": 10,
-    "cycle": "evening",
-    "character": "stray",
-    "action": "Waited anxiously with Judy at the fire, whimpered for food, and settled close to her when the meal was shared.",
-    "thought": "She's warm, and food is coming soon.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "hopeful",
-    "timestamp": "2026-06-13T18:32:36.854348"
-  },
-  {
-    "day": 10,
-    "cycle": "evening",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "marcus"
-    ],
-    "description": "By evening's fire, Marcus called them family—truly meaning it—while Ryan brought back the trap frame and Jade her foraged palm and clams.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "I am absolutely dying of thirst. Please tell me there's water."
-      },
-      {
-        "speaker": "marcus",
-        "line": "There should be in the barrel from yesterday."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Come help me get it before dark?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yeah."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That was good work today. The trap frame is really solid."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I was just... staying. Doing what needed to be done."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah. That's the whole thing, though. You stayed. You're staying."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I am."
-      },
-      {
-        "speaker": "jade",
-        "line": "Look what I found—palm, clams, some green coconuts."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Jade, you're amazing. Seriously."
-      },
-      {
-        "speaker": "judy",
-        "line": "Thank god. I was so worried about food."
-      },
-      {
-        "speaker": "marcus",
-        "line": "The trap will be ready soon. Maybe tomorrow."
-      },
-      {
-        "speaker": "jade",
-        "line": "How soon until we have fish?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Day or two. Once it's set and the fish find it."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Here, drink this. You worked hardest today."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Thanks."
-      },
-      {
-        "speaker": "judy",
-        "line": "Here, sweet thing. You're safe. You're home."
-      },
-      {
-        "speaker": "jade",
-        "line": "It's like the pup chose us somehow."
-      },
-      {
-        "speaker": "judy",
-        "line": "We all chose each other. That's what matters."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's what we're building here. A real family."
-      },
-      {
-        "speaker": "marcus",
-        "line": "A real one."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah. A real one."
-      },
-      {
-        "speaker": "jade",
-        "line": "Tomorrow the trap works. Tomorrow things shift."
-      },
-      {
-        "speaker": "judy",
-        "line": "We're going to be okay. I feel it now."
-      },
-      {
-        "speaker": "marcus",
-        "line": "We will be."
-      },
-      {
-        "speaker": "ryan",
-        "line": "We will."
-      }
-    ],
-    "timestamp": "2026-06-13T18:32:36.854348"
-  },
-  {
-    "day": 10,
     "cycle": "night",
     "character": "marcus",
     "action": "He settled by the fire as the sun set, letting Ryan sit close without pulling away, finally at ease in the warmth.",
@@ -9611,5 +9419,192 @@
       }
     ],
     "timestamp": "2026-06-24T11:33:00.654497"
+  },
+  {
+    "day": 21,
+    "cycle": "afternoon",
+    "character": "marcus",
+    "action": "Settles on a log in the garden with the stray beside him, watching Ryan and Jade work with quiet attention.",
+    "thought": "They're all here. That's still surprising me.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "peaceful",
+    "timestamp": "2026-06-24T15:02:14.923385"
+  },
+  {
+    "day": 21,
+    "cycle": "afternoon",
+    "character": "ryan",
+    "action": "Kneels in the garden with Jade, measuring and testing the weathered garden posts, voice warm and steady.",
+    "thought": "Fixing things. Being here. This is enough.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-24T15:02:14.923385"
+  },
+  {
+    "day": 21,
+    "cycle": "afternoon",
+    "character": "jade",
+    "action": "Works beside Ryan in the garden, crouching and pushing on the wooden posts to assess the damage.",
+    "thought": "I'm not running. I'm actually staying.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-24T15:02:14.923385"
+  },
+  {
+    "day": 21,
+    "cycle": "afternoon",
+    "character": "judy",
+    "action": "Emerges from the house and settles on a stone in the garden, watching the others work, her deepest fear surfacing.",
+    "thought": "What if they leave? I couldn't survive.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-24T15:02:14.923385"
+  },
+  {
+    "day": 21,
+    "cycle": "afternoon",
+    "character": "stray",
+    "action": "Lies down among them as they work, head resting between their feet, tail thumping in response to the emotional moment.",
+    "thought": "Safe. All here. All safe together.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "happy",
+    "timestamp": "2026-06-24T15:02:14.923385"
+  },
+  {
+    "day": 21,
+    "cycle": "afternoon",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "jade",
+      "marcus",
+      "judy",
+      "stray"
+    ],
+    "description": "In the garden at midday, Ryan and Jade repair posts while Marcus arrives with the stray; when Judy joins, they talk about staying—about fear, about choosing to believe.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "The base is soft. That rain two days ago soaked deeper than I thought."
+      },
+      {
+        "speaker": "jade",
+        "line": "I noticed yesterday. Wasn't sure if I should worry you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Worry me. That's what we do now. For each other."
+      },
+      {
+        "speaker": "marcus",
+        "line": "What's happening?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Just maintenance. Garden's taking damage slower than I expected, actually."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Good."
+      },
+      {
+        "speaker": "jade",
+        "line": "You could help us, if you want."
+      },
+      {
+        "speaker": "marcus",
+        "line": "I'm already here."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You know what I was thinking about?"
+      },
+      {
+        "speaker": "jade",
+        "line": "What?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "How we used to be careful around each other. All of us. And now we're just—fixing things together like it's the easiest thing we've ever done."
+      },
+      {
+        "speaker": "jade",
+        "line": "It is easy. Being with you all is easy."
+      },
+      {
+        "speaker": "judy",
+        "line": "Is the garden falling apart? Should I be worried?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "No, it's fine. Just keeping it solid."
+      },
+      {
+        "speaker": "judy",
+        "line": "I'll stay out here then. I get tired of being inside."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're past the worst of it now, I think."
+      },
+      {
+        "speaker": "judy",
+        "line": "I'm terrified that won't last. That one day you'll all decide—"
+      },
+      {
+        "speaker": "jade",
+        "line": "We won't. You know we won't."
+      },
+      {
+        "speaker": "judy",
+        "line": "I know. But I'm scared to believe it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Believe it. Please just believe it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Tonight we can say it all again if you need us to."
+      },
+      {
+        "speaker": "jade",
+        "line": "We'll say it as many times as it takes."
+      },
+      {
+        "speaker": "judy",
+        "line": "You'd do that?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yes."
+      }
+    ],
+    "timestamp": "2026-06-24T15:02:14.923385"
   }
 ]
