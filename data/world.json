@@ -1,16 +1,16 @@
 {
   "day": 21,
-  "cycle": "evening",
+  "cycle": "night",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Judy finally believes they'll stay; Ryan needs to hear it again; Marcus holds them all; Jade never stopped knowing.",
+  "pulse": "Judy finally broke open and they held her; by night's end, she sleeps between them, believing—really believing—that they'll choose her daily, forever.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 13,
+      "condition": 10,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 61,
+    "water": 100,
+    "wood": 97,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 69,
     "water": 86,
     "wood": 96,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 62,
-    "water": 86,
-    "wood": 94,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-24:evening",
-  "scene": "At the firepit, they spoke their deepest fears aloud, and Judy finally said yes to believing them. Now Marcus holds the sleeping stray, Ryan and Jade lean close, and Judy rests her hands on her baby, all together.",
+  "last_cycle_key": "2026-06-24:night",
+  "scene": "They held Judy at the dying fire—Ryan and Jade beside her, Marcus keeping the stray steady—and promised her every day, daily, completely. By night's end she slept between them, finally safe.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -54,13 +54,14 @@
     "17": "Day 17 opened with Marcus and Jade confessing their love at the morning fire—real, terrifying, and finally named. By evening, Ryan voiced his deepest fear that he'd been replaced, and Marcus held him steady, promising he was still chosen. The three sat through the night holding each other, shaken but bound together, while Judy slept peacefully nearby with her baby safe and the stray finally rested easy, all five knowing they would stay.",
     "18": "Day 18 brought the confessions—Marcus said it aloud, Jade said yes. By evening she was testing, still afraid. When Judy anchored it to her baby and they said it again and again, Jade finally believed. The family sat close by the fire, the puppy between them, and the last fear broke.",
     "19": "Day 19 began with a test—would they really stay?—and ended with the answer: yes, repeatedly, until Jade believed. Marcus held the calm needed; Ryan spoke the promises; Judy watched her family settle into peace. By nightfall, the five sat together at the fire, the stray puppy asleep without fear.",
-    "20": "Day 20 was quiet and grounded—all five built together and moved with easy grace, no one reaching for drama. As evening fell, Marcus held the stray while Ryan and Jade watched, a moment so fragile it felt sacred. By night, Judy slept in deep safety, and the island seemed to breathe with them."
+    "20": "Day 20 was quiet and grounded—all five built together and moved with easy grace, no one reaching for drama. As evening fell, Marcus held the stray while Ryan and Jade watched, a moment so fragile it felt sacred. By night, Judy slept in deep safety, and the island seemed to breathe with them.",
+    "21": "Day 21 started with them mending the garden, talking quietly about fear and staying. By evening, they gathered at the firepit and named their deepest terrors—Ryan's doubt about belonging, Judy's terror for her daughter, Marcus's weight of holding them all. As night fell, unable to sleep, Judy returned to find them still awake, and in the dark they held her and promised—every single day—until she finally believed them."
   },
   "last_run_date": "2026-06-24",
-  "camp_climate": "steady",
+  "camp_climate": "content",
   "fire": {
     "lit": true,
-    "fuel": 6
+    "fuel": 12
   },
   "lean": {
     "id": "confess",

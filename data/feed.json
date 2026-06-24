@@ -1,188 +1,6 @@
 [
   {
     "day": 11,
-    "cycle": "morning",
-    "character": "marcus",
-    "action": "He walked from the wreckage of his tent to the firepit, where the others were gathering, and took stock of what remained.",
-    "thought": "Everything's gone. I'm not going anywhere.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "resolute",
-    "timestamp": "2026-06-14T07:04:08.587786"
-  },
-  {
-    "day": 11,
-    "cycle": "morning",
-    "character": "ryan",
-    "action": "He emerged from the collapsed house, quickly checked on Judy, then gathered everyone at the firepit to assess the damage and plan.",
-    "thought": "We're going to rebuild everything. Better.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "determined",
-    "timestamp": "2026-06-14T07:04:08.587786"
-  },
-  {
-    "day": 11,
-    "cycle": "morning",
-    "character": "jade",
-    "action": "She came running from the palms when she realized something was wrong, and by the time she reached the firepit, she understood the scope of the disaster.",
-    "thought": "Something about watching them promise unsettled her.",
-    "location": {
-      "waypoint": "firepit_front",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "unsettled",
-    "timestamp": "2026-06-14T07:04:08.587786"
-  },
-  {
-    "day": 11,
-    "cycle": "morning",
-    "character": "judy",
-    "action": "She scrambled out of the collapsed house in the gray light, shaken and confused, and found the others gathered at the firepit where they promised not to leave.",
-    "thought": "They promised. They're staying. I'm safe.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "anxious",
-    "timestamp": "2026-06-14T07:04:08.587786"
-  },
-  {
-    "day": 11,
-    "cycle": "morning",
-    "character": "stray",
-    "action": "Sensing the chaos and distress, the pup emerged from shelter and padded to Judy's side, pressing close and whimpering as the group gathered.",
-    "thought": "The family stayed together. We're safe.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "protective",
-    "timestamp": "2026-06-14T07:04:08.587786"
-  },
-  {
-    "day": 11,
-    "cycle": "morning",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "marcus",
-      "jade",
-      "judy"
-    ],
-    "description": "All four structures collapsed in the night; by morning they gathered at the firepit—wet, shaken, taking stock—to face what came next together.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "The posts gave way. How much wood did we lose?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Some. But water's the real problem. The barrel's gone."
-      },
-      {
-        "speaker": "jade",
-        "line": "Where's everything? What happened?"
-      },
-      {
-        "speaker": "judy",
-        "line": "I was in the house when it fell. I didn't understand..."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You're okay now. We're all okay. We rebuild."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Water first. We can build anything, but we need water today."
-      },
-      {
-        "speaker": "jade",
-        "line": "I'll get water from the stream if someone can start on shelter tonight."
-      },
-      {
-        "speaker": "judy",
-        "line": "I want to help. I'm not useless."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You rest. The baby needs you calm. Let us handle this."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Hers first anyway. Non-negotiable."
-      },
-      {
-        "speaker": "jade",
-        "line": "So we build hers tonight, then ours after?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "All three. I want all three standing by tomorrow night."
-      },
-      {
-        "speaker": "marcus",
-        "line": "That's tight. We'd need to go straight through."
-      },
-      {
-        "speaker": "ryan",
-        "line": "We've got sixty-seven wood and four hands. It's possible."
-      },
-      {
-        "speaker": "judy",
-        "line": "What if you can't? What if you get tired and leave me?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "We don't leave. Judy, we don't leave you."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm not going anywhere."
-      },
-      {
-        "speaker": "jade",
-        "line": "So are we talking or working?"
-      },
-      {
-        "speaker": "judy",
-        "line": "Promise? All of you?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "I promise. Judy, I promise."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Let's build."
-      },
-      {
-        "speaker": "jade",
-        "line": "Let's start with hers."
-      },
-      {
-        "speaker": "judy",
-        "line": "Thank you. All of you."
-      }
-    ],
-    "timestamp": "2026-06-14T07:04:08.587786"
-  },
-  {
-    "day": 11,
     "cycle": "midday",
     "character": "marcus",
     "action": "Walks to the firepit to assess the damage with Ryan and Jade, sitting with them as they plan the next steps.",
@@ -9628,5 +9446,216 @@
       }
     ],
     "timestamp": "2026-06-24T18:33:34.673957"
+  },
+  {
+    "day": 21,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "He sits with the stray's head on his lap, stroking its ear slowly, watching Judy settle into sleep between Ryan and the dying fire.",
+    "thought": "They're all finally here. That's what matters.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "peaceful",
+    "timestamp": "2026-06-24T22:32:20.863906"
+  },
+  {
+    "day": 21,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He settles beside Judy, keeping her warm as her breathing deepens, his hand resting gently on her back in the dark.",
+    "thought": "This is what I was afraid to want.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "tender",
+    "timestamp": "2026-06-24T22:32:20.863906"
+  },
+  {
+    "day": 21,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She sits at the fire's edge, tending the last embers, close enough to Judy to feel the moment, far enough to let it breathe.",
+    "thought": "I'm staying. I'm actually, really staying.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "fulfilled",
+    "timestamp": "2026-06-24T22:32:20.863906"
+  },
+  {
+    "day": 21,
+    "cycle": "night",
+    "character": "judy",
+    "action": "She leans against Ryan, her hand resting on her belly where the baby has finally quieted, eyes closed, tears still wet on her face but breathing steady.",
+    "thought": "My daughter will know she's loved.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "safe",
+    "timestamp": "2026-06-24T22:32:20.863906"
+  },
+  {
+    "day": 21,
+    "cycle": "night",
+    "character": "stray",
+    "action": "It shifts against Marcus's leg, one paw resting on Judy's knee as it sleeps, fully anchored to all of them at once.",
+    "thought": "All safe. All here. All chosen.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "happy",
+    "timestamp": "2026-06-24T22:32:20.863906"
+  },
+  {
+    "day": 21,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade",
+      "judy",
+      "stray"
+    ],
+    "description": "Unable to sleep, Judy found them still awake at the fire, and they held her through the dark, whispering the promises she needed: every day, every single day.",
+    "dialogue": [
+      {
+        "speaker": "judy",
+        "line": "I can't settle. The baby won't let me rest."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Come sit. We're still up."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Fire's warm."
+      },
+      {
+        "speaker": "jade",
+        "line": "We were just sitting. Thinking about tomorrow. All the tomorrows."
+      },
+      {
+        "speaker": "judy",
+        "line": "About what? About us?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "About how we're actually here. All of us."
+      },
+      {
+        "speaker": "marcus",
+        "line": "About choosing to stay."
+      },
+      {
+        "speaker": "judy",
+        "line": "I wake up some mornings and think it's not real."
+      },
+      {
+        "speaker": "jade",
+        "line": "But you wake up and we're here."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It's real, Judy. We're here."
+      },
+      {
+        "speaker": "judy",
+        "line": "What if I'm not enough? What if I can't—"
+      },
+      {
+        "speaker": "jade",
+        "line": "You're more than enough."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're her mother. That's everything."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She'll know she's safe because you'll be there."
+      },
+      {
+        "speaker": "judy",
+        "line": "Will I be? Really? Every day?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "We all will. We promised you that."
+      },
+      {
+        "speaker": "marcus",
+        "line": "And we meant it."
+      },
+      {
+        "speaker": "judy",
+        "line": "I didn't know people like you existed."
+      },
+      {
+        "speaker": "jade",
+        "line": "We existed. We just needed to find each other."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And now we're not leaving. Not ever."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not even when it's hard."
+      },
+      {
+        "speaker": "judy",
+        "line": "It's going to be hard."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yes. And we'll be here anyway."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's what family does."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's late. You should sleep."
+      },
+      {
+        "speaker": "judy",
+        "line": "If I sleep here, nearby you all?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Right here beside you."
+      },
+      {
+        "speaker": "jade",
+        "line": "We'll still be here when you wake."
+      },
+      {
+        "speaker": "judy",
+        "line": "Promise?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Promise. Every single day."
+      }
+    ],
+    "timestamp": "2026-06-24T22:32:20.863906"
   }
 ]

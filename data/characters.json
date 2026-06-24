@@ -10,9 +10,9 @@
       "ambition": 49,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 45,
-      "thirst": 53,
-      "energy": 76,
+      "hunger": 53,
+      "thirst": 45,
+      "energy": 100,
       "health": 100
     },
     "mood": "peaceful",
@@ -39,7 +39,7 @@
         "attraction": 0
       },
       "stray": {
-        "closeness": 55,
+        "closeness": 56,
         "tension": 0,
         "attraction": 0
       }
@@ -144,13 +144,13 @@
       "openness": 100,
       "ambition": 90,
       "loneliness": 0,
-      "resilience": 63,
-      "hunger": 45,
-      "thirst": 53,
-      "energy": 76,
+      "resilience": 64,
+      "hunger": 53,
+      "thirst": 45,
+      "energy": 100,
       "health": 100
     },
-    "mood": "content",
+    "mood": "tender",
     "location": {
       "waypoint": "firepit_right",
       "x": 42,
@@ -170,17 +170,20 @@
       },
       "judy": {
         "closeness": 100,
-        "tension": 2,
+        "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 47,
+        "closeness": 48,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
-    "interaction": null,
+    "interaction": {
+      "with": "judy",
+      "state": "comforting"
+    },
     "memories": [
       {
         "day": 5,
@@ -277,10 +280,10 @@
       "openness": 100,
       "ambition": 39,
       "loneliness": 0,
-      "resilience": 81,
-      "hunger": 45,
-      "thirst": 53,
-      "energy": 76,
+      "resilience": 82,
+      "hunger": 53,
+      "thirst": 45,
+      "energy": 100,
       "health": 100
     },
     "mood": "fulfilled",
@@ -303,11 +306,11 @@
       },
       "judy": {
         "closeness": 100,
-        "tension": 2,
+        "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 32,
+        "closeness": 33,
         "tension": 0,
         "attraction": 0
       }
@@ -366,11 +369,6 @@
         "weight": 2
       },
       {
-        "day": 18,
-        "text": "I asked if I fit. Finally I believed. I choose to stay.",
-        "weight": 2
-      },
-      {
         "day": 19,
         "text": "They proved it in daylight. I can maybe actually stay. Really.",
         "weight": 2
@@ -384,6 +382,11 @@
         "day": 20,
         "text": "I stopped running in my head. I'm actually staying.",
         "weight": 3
+      },
+      {
+        "day": 21,
+        "text": "Judy showed her fear. I reached out. She's family now.",
+        "weight": 2
       }
     ],
     "appearance": {
@@ -407,14 +410,14 @@
       "trust": 100,
       "openness": 97,
       "ambition": 34,
-      "loneliness": 23,
-      "resilience": 81,
-      "hunger": 45,
-      "thirst": 53,
-      "energy": 76,
+      "loneliness": 16,
+      "resilience": 83,
+      "hunger": 53,
+      "thirst": 45,
+      "energy": 100,
       "health": 100
     },
-    "mood": "hopeful",
+    "mood": "safe",
     "location": {
       "waypoint": "firepit_right",
       "x": 50,
@@ -432,22 +435,25 @@
       },
       "ryan": {
         "closeness": 100,
-        "tension": 2,
+        "tension": 0,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 2,
+        "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 71,
+        "closeness": 73,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": null,
+    "interaction": {
+      "with": "ryan",
+      "state": "comforting"
+    },
     "memories": [
       {
         "day": 6,
@@ -457,11 +463,6 @@
       {
         "day": 6,
         "text": "Jade saw I was drowning and wouldn't let me disappear.",
-        "weight": 3
-      },
-      {
-        "day": 6,
-        "text": "They all came. They all stayed. I actually belong here.",
         "weight": 3
       },
       {
@@ -518,6 +519,11 @@
         "day": 21,
         "text": "They looked me in the eye and said yes. The baby will be safe.",
         "weight": 3
+      },
+      {
+        "day": 21,
+        "text": "They promised me—really promised, daily—that my daughter will be safe.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -552,34 +558,34 @@
     "relationships": {
       "marcus": {
         "closeness": 100,
-        "tension": 2,
+        "tension": 1,
         "attraction": 0
       },
       "ryan": {
         "closeness": 100,
-        "tension": 5,
+        "tension": 4,
         "attraction": 0
       },
       "jade": {
-        "closeness": 95,
-        "tension": 5,
+        "closeness": 98,
+        "tension": 4,
         "attraction": 0
       },
       "judy": {
         "closeness": 100,
-        "tension": 1,
+        "tension": 0,
         "attraction": 0
       }
     },
     "scores": {
-      "trust": 96,
+      "trust": 97,
       "openness": 51,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 91,
-      "hunger": 45,
-      "thirst": 53,
-      "energy": 76,
+      "hunger": 53,
+      "thirst": 45,
+      "energy": 100,
       "health": 100
     },
     "shelter": "under the palms",
@@ -592,11 +598,6 @@
       {
         "day": 12,
         "text": "She pulls me close when she's scared. We're safe in this together.",
-        "weight": 2
-      },
-      {
-        "day": 12,
-        "text": "The three humans spoke scared words. The woman was calm. We are safe.",
         "weight": 2
       },
       {
@@ -652,6 +653,11 @@
       {
         "day": 19,
         "text": "All five stayed. All safe. All stayed. Sleep.",
+        "weight": 2
+      },
+      {
+        "day": 21,
+        "text": "Judy cried and I checked on her. We're all safe.",
         "weight": 2
       }
     ]
