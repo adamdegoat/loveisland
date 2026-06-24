@@ -10,14 +10,14 @@
       "ambition": 49,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "house_garden",
+      "waypoint": "firepit_left",
       "x": 75,
       "y": 25
     },
@@ -34,18 +34,21 @@
         "attraction": 48
       },
       "judy": {
-        "closeness": 99,
+        "closeness": 100,
         "tension": 0,
         "attraction": 0
       },
       "stray": {
-        "closeness": 53,
+        "closeness": 55,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
-    "interaction": null,
+    "interaction": {
+      "with": "stray",
+      "state": "sitting_together"
+    },
     "memories": [
       {
         "day": 13,
@@ -142,14 +145,14 @@
       "ambition": 90,
       "loneliness": 0,
       "resilience": 63,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "house_garden",
+      "waypoint": "firepit_right",
       "x": 42,
       "y": 48
     },
@@ -167,20 +170,17 @@
       },
       "judy": {
         "closeness": 100,
-        "tension": 4,
+        "tension": 2,
         "attraction": 0
       },
       "stray": {
-        "closeness": 45,
+        "closeness": 47,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
-    "interaction": {
-      "with": "jade",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -276,16 +276,16 @@
       "trust": 100,
       "openness": 100,
       "ambition": 39,
-      "loneliness": 1,
+      "loneliness": 0,
       "resilience": 81,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
-    "mood": "peaceful",
+    "mood": "fulfilled",
     "location": {
-      "waypoint": "house_garden",
+      "waypoint": "firepit_front",
       "x": 40,
       "y": 50
     },
@@ -303,20 +303,17 @@
       },
       "judy": {
         "closeness": 100,
-        "tension": 4,
+        "tension": 2,
         "attraction": 0
       },
       "stray": {
-        "closeness": 30,
+        "closeness": 32,
         "tension": 0,
         "attraction": 0
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": {
-      "with": "ryan",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -408,18 +405,18 @@
     "color": "#2dd4bf",
     "scores": {
       "trust": 100,
-      "openness": 96,
+      "openness": 97,
       "ambition": 34,
-      "loneliness": 27,
+      "loneliness": 23,
       "resilience": 81,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
-    "mood": "content",
+    "mood": "hopeful",
     "location": {
-      "waypoint": "house_garden",
+      "waypoint": "firepit_right",
       "x": 50,
       "y": 82
     },
@@ -429,22 +426,22 @@
     "joined_day": 2,
     "relationships": {
       "marcus": {
-        "closeness": 99,
+        "closeness": 100,
         "tension": 0,
         "attraction": 0
       },
       "ryan": {
         "closeness": 100,
-        "tension": 4,
+        "tension": 2,
         "attraction": 0
       },
       "jade": {
         "closeness": 100,
-        "tension": 4,
+        "tension": 2,
         "attraction": 0
       },
       "stray": {
-        "closeness": 69,
+        "closeness": 71,
         "tension": 0,
         "attraction": 0
       }
@@ -452,11 +449,6 @@
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
     "interaction": null,
     "memories": [
-      {
-        "day": 4,
-        "text": "They all said I belong. Ryan, Marcus, even Jade. I want to believe them.",
-        "weight": 3
-      },
       {
         "day": 6,
         "text": "Jade found me on the porch and stayed. The pup pressed against me.",
@@ -521,6 +513,11 @@
         "day": 16,
         "text": "He chose to stay. All of them did. I can finally sleep.",
         "weight": 3
+      },
+      {
+        "day": 21,
+        "text": "They looked me in the eye and said yes. The baby will be safe.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -542,9 +539,12 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "sitting_together"
+    },
     "location": {
-      "waypoint": "house_garden",
+      "waypoint": "firepit_left",
       "x": 20,
       "y": 88
     },
@@ -561,7 +561,7 @@
         "attraction": 0
       },
       "jade": {
-        "closeness": 93,
+        "closeness": 95,
         "tension": 5,
         "attraction": 0
       },
@@ -572,14 +572,14 @@
       }
     },
     "scores": {
-      "trust": 95,
-      "openness": 50,
+      "trust": 96,
+      "openness": 51,
       "ambition": 0,
       "loneliness": 0,
       "resilience": 91,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 82,
+      "energy": 76,
       "health": 100
     },
     "shelter": "under the palms",

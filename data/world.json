@@ -1,16 +1,16 @@
 {
   "day": 21,
-  "cycle": "afternoon",
+  "cycle": "evening",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Judy's fear that they'll leave surfaces, and Marcus, Ryan, and Jade answer her over and over until she almost believes.",
+  "pulse": "Judy finally believes they'll stay; Ryan needs to hear it again; Marcus holds them all; Jade never stopped knowing.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 16,
+      "condition": 13,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 69,
+    "water": 86,
+    "wood": 96,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 62,
     "water": 86,
     "wood": 94,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 75,
-    "water": 86,
-    "wood": 93,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-24:afternoon",
-  "scene": "They worked on the garden together, and when Judy appeared from the house, they all sat discussing what it means to stay. Now all five orbit the garden in the late afternoon—fixing, resting, speaking carefully about tonight.",
+  "last_cycle_key": "2026-06-24:evening",
+  "scene": "At the firepit, they spoke their deepest fears aloud, and Judy finally said yes to believing them. Now Marcus holds the sleeping stray, Ryan and Jade lean close, and Judy rests her hands on her baby, all together.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -57,10 +57,10 @@
     "20": "Day 20 was quiet and grounded—all five built together and moved with easy grace, no one reaching for drama. As evening fell, Marcus held the stray while Ryan and Jade watched, a moment so fragile it felt sacred. By night, Judy slept in deep safety, and the island seemed to breathe with them."
   },
   "last_run_date": "2026-06-24",
-  "camp_climate": "content",
+  "camp_climate": "steady",
   "fire": {
     "lit": true,
-    "fuel": 18
+    "fuel": 6
   },
   "lean": {
     "id": "confess",
