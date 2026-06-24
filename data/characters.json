@@ -5,19 +5,19 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 84,
+      "trust": 85,
       "openness": 100,
       "ambition": 49,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_garden",
       "x": 75,
       "y": 25
     },
@@ -46,8 +46,8 @@
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "stray",
-      "state": "holding"
+      "with": "ryan",
+      "state": "talking"
     },
     "memories": [
       {
@@ -144,15 +144,15 @@
       "openness": 100,
       "ambition": 90,
       "loneliness": 0,
-      "resilience": 61,
-      "hunger": 53,
+      "resilience": 62,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_garden",
       "x": 42,
       "y": 48
     },
@@ -251,8 +251,8 @@
         "weight": 3
       },
       {
-        "day": 20,
-        "text": "I saw him admit his fear and still choose to stay.",
+        "day": 21,
+        "text": "Marcus said he chose me every time and I finally believed it.",
         "weight": 2
       }
     ],
@@ -279,16 +279,16 @@
       "trust": 100,
       "openness": 100,
       "ambition": 39,
-      "loneliness": 0,
+      "loneliness": 3,
       "resilience": 81,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "peaceful",
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "palm_shade",
       "x": 40,
       "y": 50
     },
@@ -316,10 +316,7 @@
       }
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
-    "interaction": {
-      "with": "marcus",
-      "state": "sitting_together"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -413,16 +410,16 @@
       "trust": 100,
       "openness": 96,
       "ambition": 34,
-      "loneliness": 26,
+      "loneliness": 29,
       "resilience": 81,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "house_inside",
+      "waypoint": "house_porch",
       "x": 50,
       "y": 82
     },
@@ -546,11 +543,11 @@
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
     "interaction": {
-      "with": "marcus",
-      "state": "holding"
+      "with": "ryan",
+      "state": "sitting_together"
     },
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_garden",
       "x": 20,
       "y": 88
     },
@@ -563,7 +560,7 @@
       },
       "ryan": {
         "closeness": 100,
-        "tension": 7,
+        "tension": 6,
         "attraction": 0
       },
       "jade": {
@@ -578,14 +575,14 @@
       }
     },
     "scores": {
-      "trust": 94,
+      "trust": 95,
       "openness": 50,
       "ambition": 0,
       "loneliness": 0,
-      "resilience": 90,
-      "hunger": 53,
+      "resilience": 91,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "shelter": "under the palms",

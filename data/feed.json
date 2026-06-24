@@ -1,190 +1,6 @@
 [
   {
     "day": 10,
-    "cycle": "afternoon",
-    "character": "marcus",
-    "action": "He scouts the tide and beach with Ryan, assessing fishing possibilities and lashing together a trap using branches and stones.",
-    "thought": "I'm okay when he's here with me.",
-    "location": {
-      "waypoint": "beach_mid",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "focused",
-    "timestamp": "2026-06-13T15:02:37.899519"
-  },
-  {
-    "day": 10,
-    "cycle": "afternoon",
-    "character": "ryan",
-    "action": "He stands with Marcus in the shallows, gathering stones and branches to build a fish trap, planning the reef dive for tomorrow.",
-    "thought": "He lets me in more each time.",
-    "location": {
-      "waypoint": "beach_mid",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "determined",
-    "timestamp": "2026-06-13T15:02:37.899519"
-  },
-  {
-    "day": 10,
-    "cycle": "afternoon",
-    "character": "jade",
-    "action": "She moves into the jungle edge, searching for plants, roots, and fruit that the group can eat, moving freely and trusting her instinct.",
-    "thought": "The island gives if I listen close.",
-    "location": {
-      "waypoint": "jungle_edge",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "restless",
-    "timestamp": "2026-06-13T15:02:37.899519"
-  },
-  {
-    "day": 10,
-    "cycle": "afternoon",
-    "character": "judy",
-    "action": "She stays at the firepit, resting as much as a restless pregnant woman can, keeping the fire burning and reassuring the stray who whimpers with hunger.",
-    "thought": "They're working. They won't let us starve.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "tired",
-    "timestamp": "2026-06-13T15:02:37.899519"
-  },
-  {
-    "day": 10,
-    "cycle": "afternoon",
-    "character": "stray",
-    "action": "It whimpers softly near Judy, pressing against her leg, sensing her worry and seeking her warmth as the afternoon stretches.",
-    "thought": "She's scared but not leaving me.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "anxious",
-    "timestamp": "2026-06-13T15:02:37.899519"
-  },
-  {
-    "day": 10,
-    "cycle": "afternoon",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "marcus"
-    ],
-    "description": "On the beach at low tide, Ryan and Marcus begin building a fish trap while Jade forages inland and Judy rests by the fire—survival pressing them into urgent collaboration.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "The camp's empty. We can't just sit and wait."
-      },
-      {
-        "speaker": "marcus",
-        "line": "The tide's low. We can build a trap in the shallows—should catch something by evening."
-      },
-      {
-        "speaker": "ryan",
-        "line": "How long does it take to build?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "A few hours if we work together. The design's simple—just rocks and branches made into a funnel."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Show me. I'll help you."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Okay. We'll need twenty rocks and maybe thirty branches. Not too thick."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Like this one?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "That's good. We stack them into a circle, then narrow the mouth so the fish swim in but can't swim out."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You've done this before."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Once. Years ago, before I came here. I was running then, too. I wasn't staying anywhere."
-      },
-      {
-        "speaker": "ryan",
-        "line": "And now you are."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yes. Because of you."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'm glad. And I'm not going anywhere."
-      },
-      {
-        "speaker": "marcus",
-        "line": "There's water up in the cliffs. We should check it tomorrow—the pool up there fills after rain."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'll go with you. Show me the way."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I want you to. If the trap doesn't work, there's another option—the reef has octopus in the rocks, but the water's deeper and cold."
-      },
-      {
-        "speaker": "ryan",
-        "line": "What would you need from me?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Someone on the shore, watching. Calling out if something goes wrong. I can dive, but I don't want to go alone."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'll be there. On the rocks, close, watching."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You mean that?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Every word. Wherever you need me, I'm there."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Then we're going to make it. We'll have food and water, and you'll be right there."
-      },
-      {
-        "speaker": "ryan",
-        "line": "We will. I promise."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I believe you."
-      }
-    ],
-    "timestamp": "2026-06-13T15:02:37.899519"
-  },
-  {
-    "day": 10,
     "cycle": "evening",
     "character": "marcus",
     "action": "Returned from the beach with Ryan and settled by the fire, choosing not to pull away from his closeness.",
@@ -9602,5 +9418,198 @@
       }
     ],
     "timestamp": "2026-06-24T07:03:03.634142"
+  },
+  {
+    "day": 21,
+    "cycle": "midday",
+    "character": "marcus",
+    "action": "Marcus arrives at the garden midday with palm fronds, finding Ryan sitting anxiously with the stray, and stays to listen.",
+    "thought": "He needed to hear it again. I'll tell him as many times as it takes.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "peaceful",
+    "timestamp": "2026-06-24T11:33:00.654497"
+  },
+  {
+    "day": 21,
+    "cycle": "midday",
+    "character": "ryan",
+    "action": "Ryan sits in the garden talking to the stray, waiting for something to be wrong; when Marcus arrives, he finally speaks what he's been holding.",
+    "thought": "He chose me. Every time. I can actually rest now.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-24T11:33:00.654497"
+  },
+  {
+    "day": 21,
+    "cycle": "midday",
+    "character": "jade",
+    "action": "Jade drifts to the palm shade after the morning work, watching the camp settle into its rhythm and feeling the weight of yesterday lift.",
+    "thought": "This is what staying feels like. It's real.",
+    "location": {
+      "waypoint": "palm_shade",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-24T11:33:00.654497"
+  },
+  {
+    "day": 21,
+    "cycle": "midday",
+    "character": "judy",
+    "action": "Judy settles on the house porch, resting her back against the wall, watching Ryan and Marcus in the distance with the stray and feeling safe in their nearness.",
+    "thought": "They're still here. Everyone is still here.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-24T11:33:00.654497"
+  },
+  {
+    "day": 21,
+    "cycle": "midday",
+    "character": "stray",
+    "action": "The stray naps in the garden between Ryan and Marcus, pressed against both their legs, breathing out the last of its worry.",
+    "thought": "Safe. Both here. We are safe.",
+    "location": {
+      "waypoint": "house_garden",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "happy",
+    "timestamp": "2026-06-24T11:33:00.654497"
+  },
+  {
+    "day": 21,
+    "cycle": "midday",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "stray"
+    ],
+    "description": "In the garden midday, Marcus finds Ryan sitting anxiously with the stray and stays to listen—and through the work of building a shelter, Ryan finally speaks his fear of being secondary and Marcus answers him plainly.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You know what, I think you're actually the smartest one here. You get fed, you get rest, nobody asks you to worry about anything."
+      },
+      {
+        "speaker": "stray",
+        "line": "(lifts head, ear perks, then settles back down)"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah, I see you listening. You're faking sleep, aren't you."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's been awake the whole time. (approaching with palm fronds) Thought the pup might want a better shelter."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Where'd you come from? (turning) I was just thinking the same thing. Like, I've been sitting here worrying about it..."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Sits in the rain under the palms. It's fine there, but it could be drier. (sets down fronds, sits)"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Right. Except I don't think I was really worrying about the shelter. (laughs at himself) I was waiting for something to be wrong so I could fix it."
+      },
+      {
+        "speaker": "stray",
+        "line": "(stands, shakes, presses against Marcus's leg)"
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're fine, aren't you. (scratches the pup's ears)"
+      },
+      {
+        "speaker": "stray",
+        "line": "(tail thumps, moves to sniff Ryan, then back to Marcus, circling both)"
+      },
+      {
+        "speaker": "ryan",
+        "line": "It loves you more. Look at that."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It's safe with me. That's all."
+      },
+      {
+        "speaker": "ryan",
+        "line": "No, that's not true. It loves you more. I see it every day."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It loves you the same. You just want it to choose you specifically."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. Yeah, I do. (defensive, then softer) Because I need to be chosen. Every time. Even by a dog."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You are chosen. By me."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Even with Jade and Judy in the picture?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "(finally looks at him) Even with them. I chose you. That didn't change when I chose them."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I keep thinking I'm secondary."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You're not."
+      },
+      {
+        "speaker": "stray",
+        "line": "(settles between them both, pressing into their legs, exhales)"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Okay. Okay, I believe you. (shoulders drop)"
+      },
+      {
+        "speaker": "marcus",
+        "line": "We can build the pup a better shelter. Keep it drier in the rains."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. Let's do that. (stands, extends his hand to Marcus) Come on."
+      },
+      {
+        "speaker": "marcus",
+        "line": "(takes his hand, stands) After we gather the leaves."
+      },
+      {
+        "speaker": "stray",
+        "line": "(follows both of them as they stand, tail up, no anxiety)"
+      }
+    ],
+    "timestamp": "2026-06-24T11:33:00.654497"
   }
 ]
