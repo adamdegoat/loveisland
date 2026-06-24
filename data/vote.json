@@ -1,32 +1,27 @@
 {
   "world": "tropicana",
   "poll": {
-    "id": "2026-06-24",
+    "id": "2026-06-25",
     "closes": "tonight",
-    "question": "Marcus wants to build the stray shelter, even if it means rationing harder. Does he go through with it?",
+    "question": "When Marcus scouts the far side of the island for shelter, does Judy ask him to stay or trust the promise holds across distance?",
     "options": [
       {
-        "id": "shelter_the_stray",
-        "label": "Yes, build it",
-        "desc": "Love first—they're staying, they're choosing, they can share"
+        "id": "trust_promise",
+        "label": "Trust the promise",
+        "desc": "It's strong enough to survive separation—he chose to stay with you, and he will come back."
       },
       {
-        "id": "ration_safely",
-        "label": "No, wait longer",
-        "desc": "Survival first—secure the group before taking on more"
-      },
-      {
-        "id": "ask_the_group",
-        "label": "Ask the group",
-        "desc": "It's everyone's call—no one person decides for all"
+        "id": "ask_stay",
+        "label": "Ask him to stay",
+        "desc": "Some promises need time before they're tested by distance—certainty matters more than supplies today."
       }
     ]
   },
   "in_play": {
-    "id": "confess",
-    "label": "Speak tonight",
-    "desc": "Risk vulnerability; say exactly what you feel",
-    "decided": "2026-06-24",
+    "id": "shelter_the_stray",
+    "label": "Yes, build it",
+    "desc": "Love first—they're staying, they're choosing, they can share",
+    "decided": "2026-06-25",
     "votes": 0,
     "tally": {}
   }

@@ -1,175 +1,6 @@
 [
   {
     "day": 11,
-    "cycle": "midday",
-    "character": "marcus",
-    "action": "Walks to the firepit to assess the damage with Ryan and Jade, sitting with them as they plan the next steps.",
-    "thought": "I can hold them steady. One day at a time.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "resolute",
-    "timestamp": "2026-06-14T11:33:10.404795"
-  },
-  {
-    "day": 11,
-    "cycle": "midday",
-    "character": "ryan",
-    "action": "Gathers everyone by the firepit and organizes the work: he'll scout the stream, Marcus will search for water, Jade will help Judy prepare the cooking pit.",
-    "thought": "I keep us moving forward. That's my part.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "determined",
-    "timestamp": "2026-06-14T11:33:10.404795"
-  },
-  {
-    "day": 11,
-    "cycle": "midday",
-    "character": "jade",
-    "action": "Sits with Ryan and Marcus by the fire, speaking her uncertainty—that maybe they're supposed to be different now, that she doesn't know what she wants.",
-    "thought": "I don't know who I am without structure.",
-    "location": {
-      "waypoint": "firepit_front",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "unsettled",
-    "timestamp": "2026-06-14T11:33:10.404795"
-  },
-  {
-    "day": 11,
-    "cycle": "midday",
-    "character": "judy",
-    "action": "Waits by the porch with the stray, listening to the men plan, her anxiety rising—testing whether they'll really stay.",
-    "thought": "Will they leave? Will I be alone?",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "anxious",
-    "timestamp": "2026-06-14T11:33:10.404795"
-  },
-  {
-    "day": 11,
-    "cycle": "midday",
-    "character": "stray",
-    "action": "Stays pressed to Judy's leg, whimpering softly, sensing her fear and refusing to leave her side.",
-    "thought": "She needs me. I stay with her.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "protective",
-    "timestamp": "2026-06-14T11:33:10.404795"
-  },
-  {
-    "day": 11,
-    "cycle": "midday",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "marcus",
-      "jade"
-    ],
-    "description": "They divided labor by the firepit—Ryan and Marcus scouting for water and food, Jade staying with Judy to prep the pit, the stray at her side.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "The fire held. We rebuild—the house frame, a lean-to for Marcus, Jade's hammock."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Water's the problem. We're bleeding it out and nothing since the rain trough."
-      },
-      {
-        "speaker": "jade",
-        "line": "Does it matter? We lost everything and we're still here, talking. Maybe that's enough."
-      },
-      {
-        "speaker": "ryan",
-        "line": "It's enough for now. But Judy needs walls before the baby comes. Four weeks, maybe less."
-      },
-      {
-        "speaker": "marcus",
-        "line": "He's right. And we need water and food today, or the rest doesn't matter anyway."
-      },
-      {
-        "speaker": "jade",
-        "line": "When I woke up with no hammock, I thought—maybe we're supposed to be different now. No shelter. Just fire and each other."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's beautiful. But you'll be freezing and sick in two days without a roof."
-      },
-      {
-        "speaker": "jade",
-        "line": "I know. I'm just... processing. When you lose everything, you have to figure out who you are without it."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You're still Jade. Still the same person. Just colder and wetter."
-      },
-      {
-        "speaker": "jade",
-        "line": "That's not how it feels."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I'll scout the stream for fish and water. Marcus, you check inland for a spring or fresh source."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Half day, maybe less. We're back by late afternoon."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Jade, can you and Judy prep the firepit for cooking? We bring back whatever we find and eat first, then build."
-      },
-      {
-        "speaker": "jade",
-        "line": "What if you don't find anything out there?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Then we make do. But we will find something."
-      },
-      {
-        "speaker": "marcus",
-        "line": "The pup stays with Judy. So she knows we're coming back."
-      },
-      {
-        "speaker": "jade",
-        "line": "Is she that scared?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yes. And we promised her we wouldn't leave. So we don't."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Any of us."
-      },
-      {
-        "speaker": "jade",
-        "line": "Okay. I'll keep her steady. Go find water."
-      }
-    ],
-    "timestamp": "2026-06-14T11:33:10.404795"
-  },
-  {
-    "day": 11,
     "cycle": "afternoon",
     "character": "marcus",
     "action": "He returned from scouting with Ryan, water-heavy, and settled by the fire as Jade began to speak her mind.",
@@ -9657,5 +9488,214 @@
       }
     ],
     "timestamp": "2026-06-24T22:32:20.863906"
+  },
+  {
+    "day": 22,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "He emerges from his tent into early morning light, moving toward the voices at the firepit.",
+    "thought": "The night held them all. I'm still here.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "calm",
+    "timestamp": "2026-06-25T07:03:57.348447"
+  },
+  {
+    "day": 22,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "He tends the fire with steady hands, feeding the embers carefully, watching for Marcus to emerge.",
+    "thought": "He meant every word at the fire.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "tender",
+    "timestamp": "2026-06-25T07:03:57.348447"
+  },
+  {
+    "day": 22,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "She drifts down from her hammock, drawn by their voices, moving to join them without hesitation.",
+    "thought": "I'm actually staying here. Not running.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "content",
+    "timestamp": "2026-06-25T07:03:57.348447"
+  },
+  {
+    "day": 22,
+    "cycle": "morning",
+    "character": "judy",
+    "action": "She wakes in the house, morning light soft through the cracks, feeling the echo of last night's promises settle into her chest.",
+    "thought": "They meant it. They really meant it.",
+    "location": {
+      "waypoint": "house_inside",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "safe",
+    "timestamp": "2026-06-25T07:03:57.348447"
+  },
+  {
+    "day": 22,
+    "cycle": "morning",
+    "character": "stray",
+    "action": "The pup wakes under the palms, stretches, and pads toward the firepit where voices are gathering, tail already raised.",
+    "thought": "Everyone's waking up. They're all here.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "happy",
+    "timestamp": "2026-06-25T07:03:57.348447"
+  },
+  {
+    "day": 22,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade"
+    ],
+    "description": "After holding Judy through the dark, Marcus emerges to find Ryan at the fire and Jade already there — no distance, just the three of them and the stray in morning light.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "You actually slept?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Enough."
+      },
+      {
+        "speaker": "jade",
+        "line": "We should wake Judy. Check on her."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Let her rest. She was up half the night."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You stayed up too."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know. But it felt right, being with her."
+      },
+      {
+        "speaker": "jade",
+        "line": "It did feel right. All of it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "The way she finally breathed, at the end. Like she believed us."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She will, if we mean it."
+      },
+      {
+        "speaker": "jade",
+        "line": "We do. Don't we?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yes."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Every day."
+      },
+      {
+        "speaker": "jade",
+        "line": "I can say that. Every day."
+      },
+      {
+        "speaker": "ryan",
+        "line": "What changed for you?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I stopped running in my head. I'm actually here."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Are you? Really?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm actually here. With you two. With Judy. With the baby."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Good."
+      },
+      {
+        "speaker": "ryan",
+        "line": "That's all you have to say?"
+      },
+      {
+        "speaker": "marcus",
+        "line": "What else is there?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I don't know. That feels like it should be bigger."
+      },
+      {
+        "speaker": "jade",
+        "line": "It's not bigger than this. It's just real."
+      },
+      {
+        "speaker": "marcus",
+        "line": "That's all that matters."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're different this morning."
+      },
+      {
+        "speaker": "marcus",
+        "line": "No. I'm the same."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You're softer. You were softer."
+      },
+      {
+        "speaker": "marcus",
+        "line": "The night did that."
+      },
+      {
+        "speaker": "jade",
+        "line": "He let us hold him. That's everything."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It is. It really is."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Every day."
+      }
+    ],
+    "timestamp": "2026-06-25T07:03:57.348447"
   }
 ]
