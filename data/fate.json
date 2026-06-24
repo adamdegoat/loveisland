@@ -1,10 +1,10 @@
 {
-  "day": 20,
-  "text": "Marcus and Jade finally answer their pull, splintering the group.",
-  "flavor": "a shift in the group",
-  "cycle": "evening",
-  "happens_at": "6pm",
+  "day": 21,
+  "text": "A storm pins Marcus and Jade in the cave, alone and afraid.",
+  "flavor": "forced together",
+  "cycle": "midday",
+  "happens_at": "12:30pm",
   "status": "upcoming",
-  "revealed_at": "2026-06-24T00:00:33.561302",
+  "revealed_at": "2026-06-25T00:00:46.568884",
   "activated_at": null
 }
