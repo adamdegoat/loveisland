@@ -1,39 +1,41 @@
 {
   "day": 22,
-  "cycle": "afternoon",
+  "cycle": "evening",
   "weather": "clear",
-  "pending_events": [],
+  "pending_events": [
+    "Firepit collapsed from neglect/weather."
+  ],
   "started": "2026-06-04",
-  "pulse": "Marcus is drawn to Jade as they work; Ryan feels them synchronizing and holds the frame steady; Judy watches and finally breathes.",
+  "pulse": "All five of them caught in the same quiet moment—choosing this, choosing each other, building the proof they promised.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 1,
+      "condition": 100,
       "x": 50,
       "y": 55,
       "builder": null,
-      "day": 10,
+      "day": 22,
       "label": "Firepit",
       "baked": true
     }
   ],
   "resources": {
+    "food": 45,
+    "water": 86,
+    "wood": 94,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 71,
     "water": 86,
     "wood": 93,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 59,
-    "water": 86,
-    "wood": 100,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-25:afternoon",
-  "scene": "They worked the shelter frame together all afternoon, hands steady and synchronized; as evening approaches, the three step back to admire the rising frame while Judy rests on the porch, and the stray lies in the dust nearby, content.",
+  "last_cycle_key": "2026-06-25:evening",
+  "scene": "Jade leans against Marcus by the fire while Ryan passes them food; Judy watches with her hand on her belly; the stray curls at Judy's feet.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -61,7 +63,7 @@
   "camp_climate": "steady",
   "fire": {
     "lit": true,
-    "fuel": 12
+    "fuel": 30
   },
   "lean": {
     "id": "shelter_the_stray",

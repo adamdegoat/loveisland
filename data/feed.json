@@ -1,189 +1,5 @@
 [
   {
-    "day": 11,
-    "cycle": "night",
-    "character": "marcus",
-    "action": "He feeds the fire and settles into the night, watching the flames grow quieter as darkness deepens around him.",
-    "thought": "She reached back when I finally did.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "tender",
-    "timestamp": "2026-06-14T22:32:42.930350"
-  },
-  {
-    "day": 11,
-    "cycle": "night",
-    "character": "ryan",
-    "action": "He checks the house one more time, ensuring Judy is resting well and the stray is comfortable beside her.",
-    "thought": "All of them. All here. That's everything.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "warm",
-    "timestamp": "2026-06-14T22:32:42.930350"
-  },
-  {
-    "day": 11,
-    "cycle": "night",
-    "character": "jade",
-    "action": "She brings driftwood to the fire and settles beside Marcus, and as the night deepens they move closer, no longer afraid.",
-    "thought": "He stopped running and finally let me in.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "vulnerable",
-    "timestamp": "2026-06-14T22:32:42.930350"
-  },
-  {
-    "day": 11,
-    "cycle": "night",
-    "character": "judy",
-    "action": "She settles into the house porch with the stray curled against her, finally feeling the weight lift from her chest.",
-    "thought": "They meant it. They're staying with me.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "peaceful",
-    "timestamp": "2026-06-14T22:32:42.930350"
-  },
-  {
-    "day": 11,
-    "cycle": "night",
-    "character": "stray",
-    "action": "The puppy presses close to Judy through the night, ears alert but body relaxed, knowing the family is safe together.",
-    "thought": "She is safe. We are safe together.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "content",
-    "timestamp": "2026-06-14T22:32:42.930350"
-  },
-  {
-    "day": 11,
-    "cycle": "night",
-    "type": "interaction",
-    "characters": [
-      "marcus",
-      "jade"
-    ],
-    "description": "Marcus and Jade finally break their careful distance, sitting close as night settles, honest about what they're beginning to feel.",
-    "dialogue": [
-      {
-        "speaker": "jade",
-        "line": "We should talk about it. About how close everything's getting."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Okay."
-      },
-      {
-        "speaker": "jade",
-        "line": "Are you scared?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Of what?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Of losing it. This. Us."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm scared of running."
-      },
-      {
-        "speaker": "jade",
-        "line": "Do you want to?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "No."
-      },
-      {
-        "speaker": "jade",
-        "line": "Then don't."
-      },
-      {
-        "speaker": "marcus",
-        "line": "(looks at her) Wasn't planning to."
-      },
-      {
-        "speaker": "jade",
-        "line": "Because if you leave, I think... (stops, shakes head) I can't say it."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Say it."
-      },
-      {
-        "speaker": "jade",
-        "line": "It would hurt. Really hurt. And I hate needing someone like that."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm not leaving."
-      },
-      {
-        "speaker": "jade",
-        "line": "You can say it, but tomorrow something changes, and everything falls—"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Tomorrow I'll say it again. And the day after. And the day after that."
-      },
-      {
-        "speaker": "jade",
-        "line": "How are you sure?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm not. But I'm staying anyway."
-      },
-      {
-        "speaker": "jade",
-        "line": "(reaches over, takes his hand) Okay then."
-      },
-      {
-        "speaker": "marcus",
-        "line": "(doesn't pull away, holds it back) Okay."
-      },
-      {
-        "speaker": "jade",
-        "line": "You won't disappear?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "No. I won't."
-      },
-      {
-        "speaker": "jade",
-        "line": "Good. Good."
-      },
-      {
-        "speaker": "marcus",
-        "line": "(leans slightly closer) We can do this."
-      }
-    ],
-    "timestamp": "2026-06-14T22:32:42.930350"
-  },
-  {
     "day": 12,
     "cycle": "morning",
     "character": "marcus",
@@ -9714,5 +9530,224 @@
       }
     ],
     "timestamp": "2026-06-25T15:02:51.690145"
+  },
+  {
+    "day": 22,
+    "cycle": "evening",
+    "character": "marcus",
+    "action": "He helps frame the shelter, then settles at the firepit with Jade against his shoulder as evening falls.",
+    "thought": "We're actually doing this. Every day with them.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "peaceful",
+    "timestamp": "2026-06-25T18:44:58.068195"
+  },
+  {
+    "day": 22,
+    "cycle": "evening",
+    "character": "ryan",
+    "action": "He leads the framing work with quiet enthusiasm, then sits at the firepit attending to everyone's needs.",
+    "thought": "This is what we're building. This exact thing.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-25T18:44:58.068195"
+  },
+  {
+    "day": 22,
+    "cycle": "evening",
+    "character": "jade",
+    "action": "She works the frame, then shifts to lean against Marcus by the firepit, content and still.",
+    "thought": "I stopped running. I'm actually here.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "content",
+    "timestamp": "2026-06-25T18:44:58.068195"
+  },
+  {
+    "day": 22,
+    "cycle": "evening",
+    "character": "judy",
+    "action": "She helps build the shelter, then sits by the fire with her hand on her belly, watching them with gratitude.",
+    "thought": "She'll be safe. They promised. They mean it.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-25T18:44:58.068195"
+  },
+  {
+    "day": 22,
+    "cycle": "evening",
+    "character": "stray",
+    "action": "It brings sticks and energy to the framing work, then curls at Judy's feet by the firepit as night falls.",
+    "thought": "All here. All staying. All safe together.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "happy",
+    "timestamp": "2026-06-25T18:44:58.068195"
+  },
+  {
+    "day": 22,
+    "cycle": "evening",
+    "type": "interaction",
+    "characters": [
+      "marcus",
+      "ryan",
+      "jade",
+      "judy",
+      "stray"
+    ],
+    "description": "As evening falls after a full day building, the five of them gather at the firepit—content, tired, and entirely chosen.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "We actually did it—look at that frame. It's real."
+      },
+      {
+        "speaker": "jade",
+        "line": "It looks like something we built. Something we're building."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Tomorrow we add the roof beams."
+      },
+      {
+        "speaker": "judy",
+        "line": "You really think it'll be done soon? For the baby?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "A few more days and it's weatherproof. Then we can focus on making it comfortable."
+      },
+      {
+        "speaker": "jade",
+        "line": "I like watching you build things. It's not something I ever thought about before."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Neither did I."
+      },
+      {
+        "speaker": "judy",
+        "line": "Thank you. I know I say it too much, but—thank you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "You don't have to thank us. We're doing this because we want to."
+      },
+      {
+        "speaker": "jade",
+        "line": "Because we're staying. Because this is home now."
+      },
+      {
+        "speaker": "marcus",
+        "line": "It is."
+      },
+      {
+        "speaker": "judy",
+        "line": "Some mornings I still wake up afraid it's not real."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It's real. We're here. All of us."
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm not going anywhere. Not anymore."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Not because you have to. Because you chose to."
+      },
+      {
+        "speaker": "judy",
+        "line": "I know that now. I can feel it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then we're good. We're actually good."
+      },
+      {
+        "speaker": "jade",
+        "line": "Better than good. This is—I don't even have words for this."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You don't need words for it."
+      },
+      {
+        "speaker": "judy",
+        "line": "The baby's going to grow up knowing all of you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Every day. From the moment she's born."
+      },
+      {
+        "speaker": "jade",
+        "line": "She's going to look around and see all this. Us, the shelter, the fire—"
+      },
+      {
+        "speaker": "marcus",
+        "line": "A home someone built for her before she was even here."
+      },
+      {
+        "speaker": "judy",
+        "line": "I never thought I'd feel safe enough to imagine that."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And now?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Now it's all she's going to know."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Safety and choice and knowing she was wanted before she was born."
+      },
+      {
+        "speaker": "judy",
+        "line": "That's everything."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Then we keep building."
+      },
+      {
+        "speaker": "jade",
+        "line": "Yeah. We keep building."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Every day."
+      },
+      {
+        "speaker": "judy",
+        "line": "Every day."
+      }
+    ],
+    "timestamp": "2026-06-25T18:44:58.068195"
   }
 ]
