@@ -1,16 +1,16 @@
 {
-  "day": 22,
-  "cycle": "night",
+  "day": 23,
+  "cycle": "morning",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Tonight Marcus and Jade were quiet together, Ryan finally certain they'd all stay, and Judy slept with peace at last.",
+  "pulse": "Ryan promises he'll return by sunset, Jade wants to believe him, and Marcus already does.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 97,
+      "condition": 94,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 46,
+    "water": 76,
+    "wood": 85,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 55,
     "water": 100,
     "wood": 81,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 45,
-    "water": 86,
-    "wood": 94,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-25:night",
-  "scene": "They gathered as darkness fell, exhausted and at peace. Marcus and Jade sat close; Ryan tended the fire; Judy and the pup slept.",
+  "last_cycle_key": "2026-06-26:morning",
+  "scene": "Ryan prepared to hunt deep in the jungle today; Marcus trusts him by the firepit while Jade wrestles with her need to ask him to stay.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -58,15 +58,15 @@
     "21": "Day 21 started with them mending the garden, talking quietly about fear and staying. By evening, they gathered at the firepit and named their deepest terrors—Ryan's doubt about belonging, Judy's terror for her daughter, Marcus's weight of holding them all. As night fell, unable to sleep, Judy returned to find them still awake, and in the dark they held her and promised—every single day—until she finally believed them.",
     "22": "Day 22 was the day they proved their promises real—a full day of building the shelter together, hands steady and voices calm, all five choosing to stay. By nightfall, the frame stood solid and whole. They had built something that would hold, and so would they."
   },
-  "last_run_date": "2026-06-25",
+  "last_run_date": "2026-06-26",
   "camp_climate": "content",
   "fire": {
     "lit": true,
-    "fuel": 18
+    "fuel": 6
   },
   "lean": {
-    "id": "shelter_the_stray",
-    "label": "Yes, build it",
-    "desc": "Love first—they're staying, they're choosing, they can share"
+    "id": "trust_promise",
+    "label": "Trust the promise",
+    "desc": "It's strong enough to survive separation—he chose to stay with you, and he will come back."
   }
 }

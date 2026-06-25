@@ -1,231 +1,6 @@
 [
   {
     "day": 12,
-    "cycle": "midday",
-    "character": "marcus",
-    "action": "Hearing voices at the firepit, he cuts his morning's solitude short and joins the group to help plan the day's forage.",
-    "thought": "I can't hide anymore. She knows that now.",
-    "location": {
-      "waypoint": "firepit_front",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "purposeful",
-    "timestamp": "2026-06-15T11:32:51.679571"
-  },
-  {
-    "day": 12,
-    "cycle": "midday",
-    "character": "ryan",
-    "action": "He empties the last of the stores and calls the group together, urgency sharp in his movements and voice.",
-    "thought": "Everything depends on keeping them steady.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "urgent",
-    "timestamp": "2026-06-15T11:32:51.679571"
-  },
-  {
-    "day": 12,
-    "cycle": "midday",
-    "character": "jade",
-    "action": "She returns from her morning water-gathering to find Ryan and Marcus waiting, and settles between them to work through the plan.",
-    "thought": "I didn't expect him to show up.",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "uncertain",
-    "timestamp": "2026-06-15T11:32:51.679571"
-  },
-  {
-    "day": 12,
-    "cycle": "midday",
-    "character": "judy",
-    "action": "She remains on the porch with one hand on the stray's warm flank, watching the three of them work, steady and calm.",
-    "thought": "They stayed. They all stayed. I'm safe.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "peaceful",
-    "timestamp": "2026-06-15T11:32:51.679571"
-  },
-  {
-    "day": 12,
-    "cycle": "midday",
-    "character": "stray",
-    "action": "It curls tight against Judy's leg, sensing the group's focus and energy, its body warm and calm against her thigh.",
-    "thought": "She is safe. I stay with her.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "content",
-    "timestamp": "2026-06-15T11:32:51.679571"
-  },
-  {
-    "day": 12,
-    "cycle": "midday",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade",
-      "marcus"
-    ],
-    "description": "At midday, the empty food and water stores sent Ryan, Jade, and Marcus to the firepit to plan the forage—while Judy kept the stray close on the porch, watching.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "The cache is completely empty. No water, no food. We have to move today."
-      },
-      {
-        "speaker": "jade",
-        "line": "I know. I already looked this morning."
-      },
-      {
-        "speaker": "marcus",
-        "line": "And?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Found a stream bed with water pooling. Not much, but something."
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's good. The tide pools north of the beach should have fish."
-      },
-      {
-        "speaker": "marcus",
-        "line": "For traps?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah. I can build them, but I need wood and hands."
-      },
-      {
-        "speaker": "jade",
-        "line": "I can help. I'm not afraid of the water."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I know. I'm going to need both of you, honestly."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Then we should go now."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Yeah. Yeah. Jade, you know the beach well?"
-      },
-      {
-        "speaker": "jade",
-        "line": "The north part especially. There's a cove that's quieter."
-      },
-      {
-        "speaker": "marcus",
-        "line": "You've been alone there?"
-      },
-      {
-        "speaker": "jade",
-        "line": "A few times. It felt right, you know?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "Can you get us back there?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Yes."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Then we go together."
-      },
-      {
-        "speaker": "jade",
-        "line": "Okay."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Wait—what about Judy and the pup? We can't just leave them."
-      },
-      {
-        "speaker": "marcus",
-        "line": "They're stable. We leave food for the night and come back before sunset."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You're confident about that?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Yes."
-      },
-      {
-        "speaker": "jade",
-        "line": "When did you start planning ahead like this?"
-      },
-      {
-        "speaker": "marcus",
-        "line": "Recently."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I was going to suggest the same thing, actually."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I know you were."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Do you."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Ryan. We're on the same side."
-      },
-      {
-        "speaker": "ryan",
-        "line": "I know. I'm sorry. The baby, Judy, the pup—it all depends on us."
-      },
-      {
-        "speaker": "jade",
-        "line": "We won't fail."
-      },
-      {
-        "speaker": "marcus",
-        "line": "Come on. If we're going, we waste no more time."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Stay close. If anyone splits off, we circle back here."
-      },
-      {
-        "speaker": "jade",
-        "line": "You're different."
-      },
-      {
-        "speaker": "marcus",
-        "line": "I'm trying."
-      }
-    ],
-    "timestamp": "2026-06-15T11:32:51.679571"
-  },
-  {
-    "day": 12,
     "cycle": "afternoon",
     "character": "marcus",
     "action": "Returns from the afternoon forage with Ryan and Jade; takes position at the firepit to cook the fish over hot flames, movements deliberate and grounded.",
@@ -9808,5 +9583,199 @@
       }
     ],
     "timestamp": "2026-06-25T22:33:08.247840"
+  },
+  {
+    "day": 23,
+    "cycle": "morning",
+    "character": "marcus",
+    "action": "He sits by the fire at dawn, watching Ryan gather supplies and needing something only certainty can give.",
+    "thought": "He needs to go. I'll let him.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "content",
+    "timestamp": "2026-06-26T07:03:49.592369"
+  },
+  {
+    "day": 23,
+    "cycle": "morning",
+    "character": "ryan",
+    "action": "He moves between his house and the firepit, restless with purpose, needing reassurance before he can leave.",
+    "thought": "They believe in me. I need that.",
+    "location": {
+      "waypoint": "house_door",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "determined",
+    "timestamp": "2026-06-26T07:03:49.592369"
+  },
+  {
+    "day": 23,
+    "cycle": "morning",
+    "character": "jade",
+    "action": "She emerges from her hammock and drifts toward the firepit, drawn by Ryan's nervous energy.",
+    "thought": "I can't ask him to stay.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "anxious",
+    "timestamp": "2026-06-26T07:03:49.592369"
+  },
+  {
+    "day": 23,
+    "cycle": "morning",
+    "character": "judy",
+    "action": "She steps onto the porch of the house, pregnant and heavy, watching Ryan prepare to disappear into the jungle.",
+    "thought": "He promised. He always comes back.",
+    "location": {
+      "waypoint": "house_porch",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "hopeful",
+    "timestamp": "2026-06-26T07:03:49.592369"
+  },
+  {
+    "day": 23,
+    "cycle": "morning",
+    "character": "stray",
+    "action": "The pup paces between Ryan and the fire, whimpering softly as it senses the impending departure.",
+    "thought": "He's leaving. But he promised me.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "sad",
+    "timestamp": "2026-06-26T07:03:49.592369"
+  },
+  {
+    "day": 23,
+    "cycle": "morning",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade",
+      "judy"
+    ],
+    "description": "Ryan prepares to hunt in the jungle for the day while Marcus and Jade manage the quiet anxiety of trusting he'll return.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "I want to head into the jungle today. Hunt deep, scout the ridge. But I need to know you trust I'll come back."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We trust you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Even when I'm gone all day?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Especially then."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Why especially?"
+      },
+      {
+        "speaker": "jade",
+        "line": "Because you're asking. That means you need it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. I do."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Then you have it."
+      },
+      {
+        "speaker": "judy",
+        "line": "What time will you be back?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Before sunset. Full day, but not too far past dark."
+      },
+      {
+        "speaker": "judy",
+        "line": "You're sure?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm sure."
+      },
+      {
+        "speaker": "jade",
+        "line": "What if you get lost?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I won't. I know the ridge now. I know how to find my way back."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You do."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Yeah. And I'll have paracord, mark my trail, be careful with my steps."
+      },
+      {
+        "speaker": "jade",
+        "line": "And water?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Water, food, a knife. I'll be fine."
+      },
+      {
+        "speaker": "judy",
+        "line": "You promise you'll come back?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "I promise."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We'll have the fire going. And dinner."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'll bring the meat for it."
+      },
+      {
+        "speaker": "jade",
+        "line": "Just come back to us."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I will."
+      },
+      {
+        "speaker": "judy",
+        "line": "We're counting on you."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know. And I won't let you down."
+      }
+    ],
+    "timestamp": "2026-06-26T07:03:49.592369"
   }
 ]
