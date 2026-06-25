@@ -1,16 +1,16 @@
 {
   "day": 22,
-  "cycle": "morning",
+  "cycle": "midday",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "Marcus and Ryan and Jade wake into daylight without pretense — no distance, no doubt, just the quiet certainty that they chose right.",
+  "pulse": "All five finally at peace — no jealousy, no pulling away, no one left behind.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 7,
+      "condition": 4,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 59,
+    "water": 86,
+    "wood": 100,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 71,
     "water": 76,
     "wood": 97,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 61,
-    "water": 100,
-    "wood": 97,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-25:morning",
-  "scene": "Last night they held Judy through the dark, whispering promises till she breathed easy; by morning, Marcus emerges from his tent to find Ryan tending the fire and Jade already there, the stray at the edge of their circle.",
+  "last_cycle_key": "2026-06-25:midday",
+  "scene": "They gathered by the wood pile and dreamed aloud about building a storage shelter; by midday they'd claimed their roles and chosen a site east of the house.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -61,7 +61,7 @@
   "camp_climate": "content",
   "fire": {
     "lit": true,
-    "fuel": 18
+    "fuel": 6
   },
   "lean": {
     "id": "shelter_the_stray",
