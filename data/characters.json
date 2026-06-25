@@ -7,17 +7,17 @@
     "scores": {
       "trust": 85,
       "openness": 100,
-      "ambition": 49,
+      "ambition": 51,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "calm",
+    "mood": "determined",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "rock_cluster",
       "x": 75,
       "y": 25
     },
@@ -31,7 +31,7 @@
       "jade": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 49
+        "attraction": 50
       },
       "judy": {
         "closeness": 100,
@@ -139,17 +139,17 @@
     "scores": {
       "trust": 100,
       "openness": 100,
-      "ambition": 90,
+      "ambition": 91,
       "loneliness": 0,
       "resilience": 65,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "warm",
+    "mood": "engaged",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "rock_cluster",
       "x": 42,
       "y": 48
     },
@@ -163,7 +163,7 @@
       "jade": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 35
+        "attraction": 36
       },
       "judy": {
         "closeness": 100,
@@ -272,17 +272,17 @@
     "scores": {
       "trust": 100,
       "openness": 100,
-      "ambition": 39,
+      "ambition": 40,
       "loneliness": 0,
       "resilience": 82,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "mood": "content",
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "rock_cluster",
       "x": 40,
       "y": 50
     },
@@ -291,12 +291,12 @@
       "marcus": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 49
+        "attraction": 50
       },
       "ryan": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 30
+        "attraction": 31
       },
       "judy": {
         "closeness": 100,
@@ -363,11 +363,6 @@
         "weight": 2
       },
       {
-        "day": 19,
-        "text": "They answered my fear until I believed. Staying is real.",
-        "weight": 2
-      },
-      {
         "day": 20,
         "text": "I stopped running in my head. I'm actually staying.",
         "weight": 3
@@ -380,6 +375,11 @@
       {
         "day": 22,
         "text": "I said it in daylight. I'm staying. I'm not running away in my head.",
+        "weight": 2
+      },
+      {
+        "day": 22,
+        "text": "Working with them both, hands moving in time. This is staying.",
         "weight": 2
       }
     ],
@@ -404,14 +404,14 @@
       "trust": 100,
       "openness": 97,
       "ambition": 34,
-      "loneliness": 12,
-      "resilience": 84,
-      "hunger": 53,
+      "loneliness": 13,
+      "resilience": 85,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "hopeful",
+    "mood": "peaceful",
     "location": {
       "waypoint": "house_porch",
       "x": 50,
@@ -449,11 +449,6 @@
       {
         "day": 6,
         "text": "Jade found me on the porch and stayed. The pup pressed against me.",
-        "weight": 3
-      },
-      {
-        "day": 6,
-        "text": "Jade saw I was drowning and wouldn't let me disappear.",
         "weight": 3
       },
       {
@@ -515,6 +510,11 @@
         "day": 21,
         "text": "They promised me—really promised, daily—that my daughter will be safe.",
         "weight": 3
+      },
+      {
+        "day": 22,
+        "text": "They're building a home for my daughter. They're really staying.",
+        "weight": 3
       }
     ],
     "appearance": {
@@ -538,7 +538,7 @@
     "color": "#9c6b43",
     "interaction": null,
     "location": {
-      "waypoint": "house_porch",
+      "waypoint": "rock_cluster",
       "x": 20,
       "y": 88
     },
@@ -569,11 +569,11 @@
       "trust": 98,
       "openness": 51,
       "ambition": 0,
-      "loneliness": 3,
-      "resilience": 91,
-      "hunger": 53,
+      "loneliness": 5,
+      "resilience": 92,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "shelter": "under the palms",
@@ -582,11 +582,6 @@
         "day": 9,
         "text": "He holds me close by the fire. I'm his. We're safe.",
         "weight": 3
-      },
-      {
-        "day": 12,
-        "text": "She pulls me close when she's scared. We're safe in this together.",
-        "weight": 2
       },
       {
         "day": 13,
@@ -646,6 +641,11 @@
       {
         "day": 21,
         "text": "Judy cried and I checked on her. We're all safe.",
+        "weight": 2
+      },
+      {
+        "day": 22,
+        "text": "All five together. All safe. All truly home.",
         "weight": 2
       }
     ]

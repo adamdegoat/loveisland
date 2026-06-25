@@ -1,16 +1,16 @@
 {
   "day": 22,
-  "cycle": "midday",
+  "cycle": "afternoon",
   "weather": "clear",
   "pending_events": [],
   "started": "2026-06-04",
-  "pulse": "All five finally at peace — no jealousy, no pulling away, no one left behind.",
+  "pulse": "Marcus is drawn to Jade as they work; Ryan feels them synchronizing and holds the frame steady; Judy watches and finally breathes.",
   "structures": [
     {
       "id": "firepit",
       "type": "firepit",
       "level": 1,
-      "condition": 4,
+      "condition": 1,
       "x": 50,
       "y": 55,
       "builder": null,
@@ -20,20 +20,20 @@
     }
   ],
   "resources": {
+    "food": 71,
+    "water": 86,
+    "wood": 93,
+    "medicine": 13
+  },
+  "resources_prev": {
     "food": 59,
     "water": 86,
     "wood": 100,
     "medicine": 13
   },
-  "resources_prev": {
-    "food": 71,
-    "water": 76,
-    "wood": 97,
-    "medicine": 13
-  },
   "discoveries": [],
-  "last_cycle_key": "2026-06-25:midday",
-  "scene": "They gathered by the wood pile and dreamed aloud about building a storage shelter; by midday they'd claimed their roles and chosen a site east of the house.",
+  "last_cycle_key": "2026-06-25:afternoon",
+  "scene": "They worked the shelter frame together all afternoon, hands steady and synchronized; as evening approaches, the three step back to admire the rising frame while Judy rests on the porch, and the stray lies in the dust nearby, content.",
   "day_summaries": {
     "1": "The island claimed three strangers — Marcus, Ryan and Jade — washed ashore with nothing but the clothes on their backs. By nightfall Marcus had hauled fresh water from the east, Ryan patched a roof over his head, and Jade sat alone with her thoughts, the three of them quietly sizing each other up across the dark.",
     "2": "Day two delivered a fourth survivor — Judy, half-drowned from a crash offshore, found collapsed on the beach by Ryan and taken into his house. By evening the group had gathered around the firepit and a soaked stray pup crept in from the dark, while Marcus and Jade circled a tension neither of them would name.",
@@ -58,10 +58,10 @@
     "21": "Day 21 started with them mending the garden, talking quietly about fear and staying. By evening, they gathered at the firepit and named their deepest terrors—Ryan's doubt about belonging, Judy's terror for her daughter, Marcus's weight of holding them all. As night fell, unable to sleep, Judy returned to find them still awake, and in the dark they held her and promised—every single day—until she finally believed them."
   },
   "last_run_date": "2026-06-25",
-  "camp_climate": "content",
+  "camp_climate": "steady",
   "fire": {
     "lit": true,
-    "fuel": 6
+    "fuel": 12
   },
   "lean": {
     "id": "shelter_the_stray",
