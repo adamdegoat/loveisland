@@ -1,166 +1,6 @@
 [
   {
     "day": 12,
-    "cycle": "morning",
-    "character": "marcus",
-    "action": "Woke before dawn and waited by his tent, watching the camp stir, thinking about Jade.",
-    "thought": "Will she come? Did last night change anything?",
-    "location": {
-      "waypoint": "tent_front",
-      "x": 75,
-      "y": 25
-    },
-    "shelter": "tent",
-    "mood": "tender",
-    "timestamp": "2026-06-15T07:03:09.941270"
-  },
-  {
-    "day": 12,
-    "cycle": "morning",
-    "character": "ryan",
-    "action": "Checked the water containers at the firepit and found them completely empty.",
-    "thought": "We need a plan. Food and water today.",
-    "location": {
-      "waypoint": "firepit_left",
-      "x": 42,
-      "y": 48
-    },
-    "shelter": "house",
-    "mood": "purposeful",
-    "timestamp": "2026-06-15T07:03:09.941270"
-  },
-  {
-    "day": 12,
-    "cycle": "morning",
-    "character": "jade",
-    "action": "Moved through the camp and converged on Ryan at the firepit, realizing the day's urgent work.",
-    "thought": "Where is Marcus? Is he okay?",
-    "location": {
-      "waypoint": "firepit_right",
-      "x": 40,
-      "y": 50
-    },
-    "shelter": "hammock",
-    "mood": "uncertain",
-    "timestamp": "2026-06-15T07:03:09.941270"
-  },
-  {
-    "day": 12,
-    "cycle": "morning",
-    "character": "judy",
-    "action": "Emerged from the house onto the porch, peaceful and stable, watching the group move through camp.",
-    "thought": "They kept their promises. I'm safe.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 50,
-      "y": 82
-    },
-    "shelter": "house",
-    "mood": "peaceful",
-    "timestamp": "2026-06-15T07:03:09.941270"
-  },
-  {
-    "day": 12,
-    "cycle": "morning",
-    "character": "stray",
-    "action": "Followed Judy out to the porch, pressing against her leg, content in her presence.",
-    "thought": "She is safe. We are safe.",
-    "location": {
-      "waypoint": "house_porch",
-      "x": 20,
-      "y": 88
-    },
-    "shelter": "under the palms",
-    "mood": "content",
-    "timestamp": "2026-06-15T07:03:09.941270"
-  },
-  {
-    "day": 12,
-    "cycle": "morning",
-    "type": "interaction",
-    "characters": [
-      "ryan",
-      "jade"
-    ],
-    "description": "Jade and Ryan face the empty water containers and organize the day's work at the firepit; Marcus waits at his tent for Jade; Judy is stable on the porch with the stray.",
-    "dialogue": [
-      {
-        "speaker": "ryan",
-        "line": "The water's completely gone. How did we not refill yesterday?"
-      },
-      {
-        "speaker": "jade",
-        "line": "We were all focused on... talking. That needed to happen."
-      },
-      {
-        "speaker": "ryan",
-        "line": "It did. And I'm not blaming anyone. But now we need water. And food. And urgency."
-      },
-      {
-        "speaker": "jade",
-        "line": "I know. Marcus can fish. We just... we figure it out together, right?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "That's the plan. But he's been up since dawn. Didn't want to interrupt whatever's happening between you two."
-      },
-      {
-        "speaker": "jade",
-        "line": "Whatever we're... I don't even know what we are now. Are we anything?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "You don't have to know yet. But he's going to wait for you to figure it out. That's who he is."
-      },
-      {
-        "speaker": "jade",
-        "line": "I hate that. I don't want to wait. I want him here. I want both of you here, actually."
-      },
-      {
-        "speaker": "ryan",
-        "line": "You can have that. But first we need to not starve. Then we sort the rest out. Okay?"
-      },
-      {
-        "speaker": "jade",
-        "line": "Okay. Yes. So what's the plan?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "I fish today. You and Marcus go gather water from the stream. Judy stays here with the pup, keeps the fire."
-      },
-      {
-        "speaker": "jade",
-        "line": "What if he doesn't want to go? What if he's... I don't know, changed his mind?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "He won't have. But if you need reassurance, go ask him. Go now, actually."
-      },
-      {
-        "speaker": "jade",
-        "line": "Since when are you the one making all the plans? When did that become your thing?"
-      },
-      {
-        "speaker": "ryan",
-        "line": "I don't know. Somewhere between building the house and realizing I need to build things to feel like I matter."
-      },
-      {
-        "speaker": "jade",
-        "line": "You matter, Ryan. We all know that. You don't have to prove it every day."
-      },
-      {
-        "speaker": "ryan",
-        "line": "Maybe I do, a little. But thank you. Now go. We're losing good daylight."
-      },
-      {
-        "speaker": "jade",
-        "line": "Okay. I'm going. And... thanks for organizing this."
-      }
-    ],
-    "timestamp": "2026-06-15T07:03:09.941270"
-  },
-  {
-    "day": 12,
     "cycle": "midday",
     "character": "marcus",
     "action": "Hearing voices at the firepit, he cuts his morning's solitude short and joins the group to help plan the day's forage.",
@@ -9749,5 +9589,224 @@
       }
     ],
     "timestamp": "2026-06-25T18:44:58.068195"
+  },
+  {
+    "day": 22,
+    "cycle": "night",
+    "character": "marcus",
+    "action": "After the day of building, he settles at the firepit's edge as night falls, exhausted and at peace.",
+    "thought": "They all stayed. Every single day.",
+    "location": {
+      "waypoint": "firepit_right",
+      "x": 75,
+      "y": 25
+    },
+    "shelter": "tent",
+    "mood": "peaceful",
+    "timestamp": "2026-06-25T22:33:08.247840"
+  },
+  {
+    "day": 22,
+    "cycle": "night",
+    "character": "ryan",
+    "action": "He tends the fire carefully as it settles to embers, the pup warm against his leg.",
+    "thought": "We actually built it. It's real.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 42,
+      "y": 48
+    },
+    "shelter": "house",
+    "mood": "content",
+    "timestamp": "2026-06-25T22:33:08.247840"
+  },
+  {
+    "day": 22,
+    "cycle": "night",
+    "character": "jade",
+    "action": "She leans back against a palm-log seat near the flames, watching the firelight reflect in Marcus's eyes.",
+    "thought": "I stopped running. I'm actually here.",
+    "location": {
+      "waypoint": "firepit_left",
+      "x": 40,
+      "y": 50
+    },
+    "shelter": "hammock",
+    "mood": "peaceful",
+    "timestamp": "2026-06-25T22:33:08.247840"
+  },
+  {
+    "day": 22,
+    "cycle": "night",
+    "character": "judy",
+    "action": "She settles on the ground near the fire's warmth, one hand resting on her belly, breathing finally at ease.",
+    "thought": "She'll be safe. They're building her a home.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 50,
+      "y": 82
+    },
+    "shelter": "house",
+    "mood": "peaceful",
+    "timestamp": "2026-06-25T22:33:08.247840"
+  },
+  {
+    "day": 22,
+    "cycle": "night",
+    "character": "stray",
+    "action": "The pup settles against Ryan's leg near the fire, then curls up completely into sleep.",
+    "thought": "All five stayed. All safe together. All mine.",
+    "location": {
+      "waypoint": "firepit_front",
+      "x": 20,
+      "y": 88
+    },
+    "shelter": "under the palms",
+    "mood": "happy",
+    "timestamp": "2026-06-25T22:33:08.247840"
+  },
+  {
+    "day": 22,
+    "cycle": "night",
+    "type": "interaction",
+    "characters": [
+      "ryan",
+      "marcus",
+      "jade",
+      "judy",
+      "stray"
+    ],
+    "description": "As evening falls after a day of building together, the five of them gather around the fire—Marcus and Jade close on opposite sides, Ryan tending the flames while the pup sleeps against his leg, Judy finally at rest.",
+    "dialogue": [
+      {
+        "speaker": "ryan",
+        "line": "This frame is solid. It'll hold everything we put in it."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We did good work today."
+      },
+      {
+        "speaker": "jade",
+        "line": "It feels different now. Like it's actually ours."
+      },
+      {
+        "speaker": "ryan",
+        "line": "It is ours. We built it from nothing."
+      },
+      {
+        "speaker": "judy",
+        "line": "She's going to have real walls. A real shelter."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Every day. That was the promise, right?"
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm actually staying."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I'm glad. I was afraid you'd leave one day."
+      },
+      {
+        "speaker": "marcus",
+        "line": "She's not leaving now."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I know that now, but I was so afraid—"
+      },
+      {
+        "speaker": "jade",
+        "line": "I'm not going anywhere."
+      },
+      {
+        "speaker": "judy",
+        "line": "He'd build anyway even if you did."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's exactly what he'd do, honestly."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Maybe."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Definitely."
+      },
+      {
+        "speaker": "judy",
+        "line": "Look at the pup. She knows she's finally safe."
+      },
+      {
+        "speaker": "ryan",
+        "line": "Safer than any house I could build."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Is that a pun?"
+      },
+      {
+        "speaker": "jade",
+        "line": "He's absolutely terrible with jokes."
+      },
+      {
+        "speaker": "ryan",
+        "line": "And yet I keep making them."
+      },
+      {
+        "speaker": "judy",
+        "line": "It's dedication to failure."
+      },
+      {
+        "speaker": "jade",
+        "line": "That's the kindest way to put it."
+      },
+      {
+        "speaker": "ryan",
+        "line": "I can live with that description."
+      },
+      {
+        "speaker": "marcus",
+        "line": "We should get some sleep."
+      },
+      {
+        "speaker": "jade",
+        "line": "It was a good day, though. A really good one."
+      },
+      {
+        "speaker": "judy",
+        "line": "The best day since I arrived."
+      },
+      {
+        "speaker": "marcus",
+        "line": "Yes."
+      },
+      {
+        "speaker": "ryan",
+        "line": "This is what we're building. This right here."
+      },
+      {
+        "speaker": "judy",
+        "line": "Every single day?"
+      },
+      {
+        "speaker": "ryan",
+        "line": "Every single day."
+      },
+      {
+        "speaker": "judy",
+        "line": "I believe you now. I really do."
+      },
+      {
+        "speaker": "marcus",
+        "line": "You should."
+      }
+    ],
+    "timestamp": "2026-06-25T22:33:08.247840"
   }
 ]
