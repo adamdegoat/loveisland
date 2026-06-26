@@ -10,14 +10,14 @@
       "ambition": 52,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
-    "mood": "content",
+    "mood": "anxious",
     "location": {
-      "waypoint": "firepit_left",
+      "waypoint": "house_garden",
       "x": 75,
       "y": 25
     },
@@ -46,7 +46,7 @@
     },
     "bio": "32, ex-navy. Came here after a bad breakup he never talks about. Built his tent on the eastern cliff. Notices everything. Says nothing.",
     "interaction": {
-      "with": "ryan",
+      "with": "jade",
       "state": "talking"
     },
     "memories": [
@@ -143,16 +143,16 @@
       "trust": 100,
       "openness": 100,
       "ambition": 94,
-      "loneliness": 0,
+      "loneliness": 3,
       "resilience": 66,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "mood": "determined",
     "location": {
-      "waypoint": "house_door",
+      "waypoint": "jungle_path",
       "x": 42,
       "y": 48
     },
@@ -180,10 +180,7 @@
       }
     },
     "bio": "28, ex-property agent. Built a proper house in his first week. Always makes room for people. Gets hurt easily but forgives even easier.",
-    "interaction": {
-      "with": "marcus",
-      "state": "talking"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 5,
@@ -281,14 +278,14 @@
       "ambition": 40,
       "loneliness": 0,
       "resilience": 82,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
-    "mood": "anxious",
+    "mood": "grounded",
     "location": {
-      "waypoint": "firepit_right",
+      "waypoint": "house_garden",
       "x": 40,
       "y": 50
     },
@@ -317,7 +314,7 @@
     },
     "bio": "26, ex-startup marketing. Burned out, quit everything, ended up here. Sleeps wherever feels right. Both guys think she's thinking about them. She isn't.",
     "interaction": {
-      "with": "ryan",
+      "with": "marcus",
       "state": "talking"
     },
     "memories": [
@@ -413,14 +410,14 @@
       "trust": 100,
       "openness": 97,
       "ambition": 34,
-      "loneliness": 4,
+      "loneliness": 6,
       "resilience": 85,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
-    "mood": "hopeful",
+    "mood": "peaceful",
     "location": {
       "waypoint": "house_porch",
       "x": 50,
@@ -453,10 +450,7 @@
       }
     },
     "bio": "33, ex-flight attendant. 8 months pregnant with her ex's baby — he didn't survive the crash. Swam ashore alone from a charter plane that went down 3 miles offshore. Latches onto whoever shows her kindness with an intensity that makes people uncomfortable. Warmth and paranoia live right next to each other in her.",
-    "interaction": {
-      "with": "ryan",
-      "state": "talking"
-    },
+    "interaction": null,
     "memories": [
       {
         "day": 8,
@@ -548,16 +542,13 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": {
-      "with": "ryan",
-      "state": "comforting"
-    },
+    "interaction": null,
     "location": {
-      "waypoint": "firepit_front",
+      "waypoint": "house_garden",
       "x": 20,
       "y": 88
     },
-    "mood": "sad",
+    "mood": "watchful",
     "relationships": {
       "marcus": {
         "closeness": 100,
@@ -584,11 +575,11 @@
       "trust": 98,
       "openness": 52,
       "ambition": 0,
-      "loneliness": 0,
+      "loneliness": 3,
       "resilience": 92,
-      "hunger": 53,
+      "hunger": 45,
       "thirst": 53,
-      "energy": 94,
+      "energy": 88,
       "health": 100
     },
     "shelter": "under the palms",
