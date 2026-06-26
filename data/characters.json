@@ -5,19 +5,19 @@
     "archetype": "loner",
     "color": "#60a5fa",
     "scores": {
-      "trust": 87,
+      "trust": 88,
       "openness": 100,
       "ambition": 52,
       "loneliness": 0,
       "resilience": 100,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
-    "mood": "anxious",
+    "mood": "uncertain",
     "location": {
-      "waypoint": "house_garden",
+      "waypoint": "firepit_left",
       "x": 75,
       "y": 25
     },
@@ -31,7 +31,7 @@
       "jade": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 50
+        "attraction": 54
       },
       "judy": {
         "closeness": 100,
@@ -143,11 +143,11 @@
       "trust": 100,
       "openness": 100,
       "ambition": 94,
-      "loneliness": 3,
-      "resilience": 66,
-      "hunger": 45,
+      "loneliness": 5,
+      "resilience": 67,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "mood": "determined",
@@ -277,15 +277,15 @@
       "openness": 100,
       "ambition": 40,
       "loneliness": 0,
-      "resilience": 82,
-      "hunger": 45,
+      "resilience": 83,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "mood": "grounded",
     "location": {
-      "waypoint": "house_garden",
+      "waypoint": "firepit_right",
       "x": 40,
       "y": 50
     },
@@ -294,7 +294,7 @@
       "marcus": {
         "closeness": 100,
         "tension": 0,
-        "attraction": 50
+        "attraction": 54
       },
       "ryan": {
         "closeness": 100,
@@ -410,11 +410,11 @@
       "trust": 100,
       "openness": 97,
       "ambition": 34,
-      "loneliness": 6,
+      "loneliness": 9,
       "resilience": 85,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "mood": "peaceful",
@@ -542,9 +542,12 @@
     "archetype": "stray pup",
     "bio": "A frightened brown Great Dane puppy — all big paws and ribs. Flinches at sudden moves but watches the humans with hungry, hopeful eyes.",
     "color": "#9c6b43",
-    "interaction": null,
+    "interaction": {
+      "with": "marcus",
+      "state": "sitting_together"
+    },
     "location": {
-      "waypoint": "house_garden",
+      "waypoint": "firepit_left",
       "x": 20,
       "y": 88
     },
@@ -575,11 +578,11 @@
       "trust": 98,
       "openness": 52,
       "ambition": 0,
-      "loneliness": 3,
+      "loneliness": 1,
       "resilience": 92,
-      "hunger": 45,
+      "hunger": 53,
       "thirst": 53,
-      "energy": 88,
+      "energy": 82,
       "health": 100
     },
     "shelter": "under the palms",
